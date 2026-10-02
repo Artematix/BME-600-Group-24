@@ -58,3 +58,6 @@ MAUDE is a voluntary, manufacturer-filed reporting system. Report counts reflect
 We are currently leaning toward: Candidate Project 1, CGM reading reliability with a bias simulation, with elements of Project 2 as a supporting analysis if time allows.
 
 Because: it uses openly available datasets with a true reference measurement, so we can make defensible accuracy claims rather than descriptive ones. The analysis (error metrics, error grids, and a simple bias simulation on real traces) does not require machine learning, is achievable in the course timeline, and connects directly to the mechanism of harm behind the recall. The MAUDE analysis is a natural complement that grounds the simulation in what actually happened to patients.
+
+## Team Decision Excel File Link
+https://uofc-my.sharepoint.com/:x:/r/personal/myleni_zatorredeoliv_ucalgary_ca/Documents/BME%20600%20-%20Tracker.xlsx?d=we8aea8cda4394949a99a19cc7bc40a6a&csf=1&web=1&e=a7jedx
