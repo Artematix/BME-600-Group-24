@@ -1,0 +1,1305 @@
+{
+  "replace_bg": {
+    "n_participants": 226,
+    "n_sites": 14,
+    "status": {
+      "Completed": 217,
+      "Dropped": 9
+    },
+    "treatment_group": {
+      "CGM Only": 149,
+      "CGM+BGM": 77
+    },
+    "age": {
+      "count": 226.0,
+      "mean": 44.0,
+      "std": 13.8,
+      "min": 19.0,
+      "25%": 31.0,
+      "50%": 43.0,
+      "75%": 55.0,
+      "max": 78.0
+    },
+    "age_bands": {
+      "[18, 25)": 5,
+      "[25, 35)": 64,
+      "[35, 45)": 54,
+      "[45, 55)": 44,
+      "[55, 65)": 40,
+      "[65, 80)": 19
+    },
+    "sex": {
+      "M": 114,
+      "F": 112
+    },
+    "race": {
+      "White": 212,
+      "Black/African American": 5,
+      "Asian": 4,
+      "More than one race": 3,
+      "Unknown/not reported": 2
+    },
+    "ethnicity": {
+      "Not Hispanic or Latino": 216,
+      "Hispanic or Latino": 9,
+      "Unknown/not reported": 1
+    },
+    "education": {
+      "Bachelor's Degree": 110,
+      "Master's Degree": 47,
+      "Some college but no degree": 30,
+      "Professional Degree": 11,
+      "Associate Degree": 9,
+      "High school graduate/diploma/GED": 8,
+      "Doctorate Degree": 6,
+      "Not answered": 5
+    },
+    "income": {
+      "Not answered/unknown": 58,
+      "$100,000 - less than $200,000": 55,
+      "$50,000 - less than $75,000": 35,
+      "$200,000 or more": 32,
+      "$75,000 - less than $100,000": 21,
+      "$35,000 - less than $50,000": 13,
+      "$25,000 - $35,000": 6,
+      "Less than $25,000": 6
+    },
+    "insurance_private_pct": 87.611,
+    "diag_age": {
+      "count": 226.0,
+      "mean": 20.7,
+      "std": 13.5,
+      "min": 0.0,
+      "25%": 10.0,
+      "50%": 18.0,
+      "75%": 28.8,
+      "max": 61.0
+    },
+    "diab_duration_yrs": {
+      "count": 226.0,
+      "mean": 23.3,
+      "std": 12.2,
+      "min": 2.0,
+      "25%": 14.2,
+      "50%": 21.5,
+      "75%": 31.0,
+      "max": 64.0
+    },
+    "bmi": {
+      "count": 226.0,
+      "mean": 27.3,
+      "std": 4.4,
+      "min": 18.7,
+      "25%": 24.0,
+      "50%": 26.7,
+      "75%": 30.1,
+      "max": 42.7
+    },
+    "bmi_ge_30_pct": 25.221,
+    "cgm_use_status": {
+      "Current": 107,
+      "In past, but not current": 79,
+      "Never": 40
+    },
+    "cgm_use_device": {
+      "n/a (never used)": 119,
+      "Dexcom": 77,
+      "Medtronic": 30
+    },
+    "severe_hypo_history": {
+      "Never": 146,
+      "More than 12 months ago": 80
+    },
+    "dka_history": {
+      "Never": 166,
+      "More than 12 months ago": 58,
+      "6-12 months ago": 2
+    },
+    "fingersticks_per_day": {
+      "count": 226.0,
+      "mean": 5.1,
+      "std": 2.0,
+      "min": 1.0,
+      "25%": 4.0,
+      "50%": 5.0,
+      "75%": 6.0,
+      "max": 12.0
+    },
+    "screening_missing_counts": {
+      "DiagAgeApprox": 198,
+      "EduLevel": 5,
+      "EduLevelUnk": 225,
+      "EduLevelNoAns": 222,
+      "AnnualInc": 58,
+      "AnnualIncUnk": 212,
+      "AnnualIncNoAns": 182,
+      "InsPrivate": 28,
+      "InsMedicare": 210,
+      "InsMediGap": 225,
+      "InsMedicaid": 218,
+      "InsSCHIP": 226,
+      "InsMilitary": 224,
+      "InsIndian": 226,
+      "InsState": 223,
+      "InsOtherGov": 226,
+      "InsSingleService": 217,
+      "InsNoCoverage": 222,
+      "InsUnknown": 226,
+      "InsNoAns": 224,
+      "CGMUseDuration": 119,
+      "CGMUseDevice": 119,
+      "CGMDLoadMinDays": 119,
+      "CGMGlucUnder60": 127
+    },
+    "hba1c_by_visit": {
+      "Screening Visit": {
+        "count": 226.0,
+        "mean": 7.27,
+        "std": 0.7,
+        "min": 5.2,
+        "25%": 6.8,
+        "50%": 7.3,
+        "75%": 7.8,
+        "max": 8.9
+      },
+      "Randomization": {
+        "count": 226.0,
+        "mean": 7.02,
+        "std": 0.61,
+        "min": 5.3,
+        "25%": 6.6,
+        "50%": 7.0,
+        "75%": 7.4,
+        "max": 9.1
+      },
+      "Week 13 Visit": {
+        "count": 218.0,
+        "mean": 7.02,
+        "std": 0.69,
+        "min": 4.8,
+        "25%": 6.6,
+        "50%": 7.0,
+        "75%": 7.4,
+        "max": 9.7
+      },
+      "Week 26 Visit": {
+        "count": 216.0,
+        "mean": 7.03,
+        "std": 0.68,
+        "min": 5.2,
+        "25%": 6.6,
+        "50%": 7.1,
+        "75%": 7.4,
+        "max": 10.2
+      }
+    },
+    "hba1c_missing_rows": 4,
+    "cgm_models": {
+      "G4Receiver": 226,
+      "G4ShareReceiver": 23,
+      "G5MobileReceiver": 1
+    },
+    "bgm_models": {
+      "Contour Next": 226,
+      "Precision Xtra": 203,
+      "FreeStyle Precision Xtra": 61,
+      "OmniPod": 30
+    },
+    "pump_participants": 224,
+    "top_comorbidities": {
+      "Hyperlipidemia": 79,
+      "Hypertension": 60,
+      "Hypothyroidism": 51,
+      "Depression": 40,
+      "Vitamin D deficiency": 30,
+      "Seasonal allergy": 22,
+      "Erectile dysfunction": 18,
+      "Diabetic retinopathy": 17
+    },
+    "cgm_device_data": {
+      "n_cgm_readings": 14807435,
+      "n_calibration_records": 143226,
+      "cgm_glucose_missing": 0,
+      "cgm_min": 39.0,
+      "cgm_max": 401.0,
+      "cgm_pct_at_floor_39": 0.195,
+      "cgm_pct_at_ceiling_401": 0.33,
+      "cgm_glucose_describe": {
+        "count": 14807435.0,
+        "mean": 160.4,
+        "std": 64.6,
+        "min": 39.0,
+        "25%": 112.0,
+        "50%": 150.0,
+        "75%": 198.0,
+        "max": 401.0
+      },
+      "cgm_pct_by_range": {
+        "<54": 0.94,
+        "54-69": 2.81,
+        "70-180": 62.78,
+        "181-250": 23.71,
+        ">250": 9.75
+      },
+      "time_in_range": {
+        "<70": 3.753,
+        "70-180": 62.78,
+        ">180": 33.467
+      },
+      "participants_with_cgm": 226,
+      "days_with_cgm_per_pt": {
+        "count": 226.0,
+        "mean": 244.4,
+        "std": 38.6,
+        "min": 67.0,
+        "25%": 229.0,
+        "50%": 249.0,
+        "75%": 260.0,
+        "max": 351.0
+      },
+      "span_days_per_pt": {
+        "count": 226.0,
+        "mean": 271.0,
+        "std": 72.4,
+        "min": 74.0,
+        "25%": 243.0,
+        "50%": 255.0,
+        "75%": 279.5,
+        "max": 814.0
+      },
+      "readings_per_day_per_pt": {
+        "count": 226.0,
+        "mean": 268.0,
+        "std": 11.1,
+        "min": 205.2,
+        "25%": 261.9,
+        "50%": 270.7,
+        "75%": 276.1,
+        "max": 287.8
+      },
+      "coverage_pct_of_288_per_day": {
+        "count": 226.0,
+        "mean": 86.2,
+        "std": 12.8,
+        "min": 26.8,
+        "25%": 82.5,
+        "50%": 90.2,
+        "75%": 95.2,
+        "max": 98.0
+      },
+      "days_before_enrollment_min": -595,
+      "days_after_enrollment_max": 329,
+      "pct_readings_pre_enrollment": 7.443,
+      "participants_with_readings_before_day_minus_30": 93,
+      "pct_readings_before_day_minus_30": 3.226,
+      "duplicate_pt_timestamp_rows": 1356,
+      "interval_median_s": 300.0,
+      "pct_intervals_gt_10min": 0.382,
+      "pct_intervals_gt_1h": 0.1
+    },
+    "pairs_calibration_vs_cgm": {
+      "method": "Calibration record matched to most recent CGM reading of same participant within 10 min before it",
+      "n_calibrations_with_value": 143226,
+      "n_calibrations_outside_20_600": 2,
+      "n_pairs": 120202,
+      "participants_in_pairs": 226,
+      "by_range": [
+        {
+          "range": "<54",
+          "n": 1319,
+          "mean_bias_mgdl": 10.24,
+          "mean_rel_bias_pct": 22.68,
+          "mard_pct": 30.63,
+          "within_20pct_or_20mgdl": 78.92,
+          "pct_cgm_reads_low": 30.55
+        },
+        {
+          "range": "54-69",
+          "n": 5270,
+          "mean_bias_mgdl": 1.76,
+          "mean_rel_bias_pct": 3.02,
+          "mard_pct": 19.75,
+          "within_20pct_or_20mgdl": 83.93,
+          "pct_cgm_reads_low": 46.85
+        },
+        {
+          "range": "70-180",
+          "n": 73246,
+          "mean_bias_mgdl": -3.94,
+          "mean_rel_bias_pct": -3.21,
+          "mard_pct": 14.53,
+          "within_20pct_or_20mgdl": 77.72,
+          "pct_cgm_reads_low": 58.28
+        },
+        {
+          "range": "181-250",
+          "n": 27474,
+          "mean_bias_mgdl": -6.59,
+          "mean_rel_bias_pct": -3.14,
+          "mard_pct": 12.12,
+          "within_20pct_or_20mgdl": 82.6,
+          "pct_cgm_reads_low": 60.26
+        },
+        {
+          "range": ">250",
+          "n": 12893,
+          "mean_bias_mgdl": -14.25,
+          "mean_rel_bias_pct": -4.53,
+          "mard_pct": 11.79,
+          "within_20pct_or_20mgdl": 83.13,
+          "pct_cgm_reads_low": 62.86
+        }
+      ],
+      "overall": {
+        "by_cgm_range": [
+          {
+            "cgm_range": "<54",
+            "n": 3941,
+            "mean_rel_bias_pct": -31.89,
+            "mard_pct": 33.22,
+            "pct_cgm_reads_low": 93.2
+          },
+          {
+            "cgm_range": "54-69",
+            "n": 7097,
+            "mean_rel_bias_pct": -15.62,
+            "mard_pct": 21.07,
+            "pct_cgm_reads_low": 79.27
+          },
+          {
+            "cgm_range": "70-180",
+            "n": 71732,
+            "mean_rel_bias_pct": -3.18,
+            "mard_pct": 13.2,
+            "pct_cgm_reads_low": 60.95
+          },
+          {
+            "cgm_range": "181-250",
+            "n": 25001,
+            "mean_rel_bias_pct": 1.25,
+            "mard_pct": 11.59,
+            "pct_cgm_reads_low": 50.94
+          },
+          {
+            "cgm_range": ">250",
+            "n": 12431,
+            "mean_rel_bias_pct": 7.97,
+            "mard_pct": 14.19,
+            "pct_cgm_reads_low": 35.93
+          }
+        ],
+        "by_avg_range": [
+          {
+            "avg_range": "<54",
+            "n": 1524,
+            "mean_bias_mgdl": -7.21,
+            "mean_rel_bias_pct": -11.08,
+            "mard_pct": 20.53,
+            "pct_cgm_reads_low": 72.77
+          },
+          {
+            "avg_range": "54-69",
+            "n": 6440,
+            "mean_bias_mgdl": -8.6,
+            "mean_rel_bias_pct": -9.54,
+            "mard_pct": 21.89,
+            "pct_cgm_reads_low": 66.46
+          },
+          {
+            "avg_range": "70-180",
+            "n": 73456,
+            "mean_bias_mgdl": -6.33,
+            "mean_rel_bias_pct": -3.54,
+            "mard_pct": 14.28,
+            "pct_cgm_reads_low": 60.04
+          },
+          {
+            "avg_range": "181-250",
+            "n": 26570,
+            "mean_bias_mgdl": -4.27,
+            "mean_rel_bias_pct": -0.69,
+            "mard_pct": 12.1,
+            "pct_cgm_reads_low": 55.65
+          },
+          {
+            "avg_range": ">250",
+            "n": 12212,
+            "mean_bias_mgdl": 1.2,
+            "mean_rel_bias_pct": 1.85,
+            "mard_pct": 12.32,
+            "pct_cgm_reads_low": 48.7
+          }
+        ],
+        "range": "all",
+        "n": 120202,
+        "mean_bias_mgdl": -5.25,
+        "mean_rel_bias_pct": -2.78,
+        "mard_pct": 14.09,
+        "within_20pct_or_20mgdl": 79.7,
+        "pct_cgm_reads_low": 58.42
+      },
+      "clarke_pct": {
+        "A": 78.47,
+        "B": 19.69,
+        "C": 0.4,
+        "D": 1.37,
+        "E": 0.07
+      },
+      "parkes_pct": {
+        "A": 79.9,
+        "B": 19.41,
+        "C": 0.66,
+        "D": 0.03,
+        "E": 0.0
+      },
+      "n_ref_below_70": 6589,
+      "n_ref_below_54": 1319,
+      "per_participant_mard": {
+        "count": 226.0,
+        "mean": 14.22,
+        "std": 2.56,
+        "min": 8.85,
+        "25%": 12.39,
+        "50%": 13.85,
+        "75%": 15.73,
+        "max": 23.2
+      }
+    },
+    "bgm_device_data": {
+      "n_rows": 583985,
+      "record_types": {
+        "BGM": 580577,
+        "Ketone": 3408
+      },
+      "bgm_subtypes": {
+        "(blank)": 360408,
+        "manual": 190986,
+        "linked": 29183
+      },
+      "bgm_glucose_describe": {
+        "count": 580577.0,
+        "mean": 171.0,
+        "std": 72.8,
+        "min": 2.0,
+        "25%": 116.0,
+        "50%": 162.0,
+        "75%": 216.0,
+        "max": 601.0
+      },
+      "bgm_n_below_20_mgdl": 16,
+      "bgm_n_ge_600_mgdl": 34,
+      "bgm_pct_by_range": {
+        "<54": 1.03,
+        "54-69": 3.42,
+        "70-180": 54.42,
+        "181-250": 26.87,
+        ">250": 14.26
+      },
+      "bgm_per_pt_per_cgm_day": {
+        "count": 226.0,
+        "mean": 10.6,
+        "std": 3.7,
+        "min": 3.9,
+        "25%": 8.0,
+        "50%": 10.1,
+        "75%": 12.8,
+        "max": 28.4
+      }
+    },
+    "pairs_bgm_vs_cgm": {
+      "method": "Meter reading matched to nearest CGM reading of same participant within ±5 min (separate device clocks)",
+      "n_pairs": 475502,
+      "pct_of_bgm_matched": 81.909,
+      "by_range": [
+        {
+          "range": "<54",
+          "n": 4166,
+          "mean_bias_mgdl": 12.76,
+          "mean_rel_bias_pct": 33.44,
+          "mard_pct": 41.76,
+          "within_20pct_or_20mgdl": 81.69,
+          "pct_cgm_reads_low": 34.37
+        },
+        {
+          "range": "54-69",
+          "n": 15944,
+          "mean_bias_mgdl": 3.49,
+          "mean_rel_bias_pct": 5.75,
+          "mard_pct": 18.73,
+          "within_20pct_or_20mgdl": 87.82,
+          "pct_cgm_reads_low": 47.49
+        },
+        {
+          "range": "70-180",
+          "n": 261471,
+          "mean_bias_mgdl": -1.73,
+          "mean_rel_bias_pct": -0.92,
+          "mard_pct": 11.03,
+          "within_20pct_or_20mgdl": 86.69,
+          "pct_cgm_reads_low": 55.0
+        },
+        {
+          "range": "181-250",
+          "n": 128495,
+          "mean_bias_mgdl": -5.61,
+          "mean_rel_bias_pct": -2.65,
+          "mard_pct": 8.08,
+          "within_20pct_or_20mgdl": 90.58,
+          "pct_cgm_reads_low": 55.4
+        },
+        {
+          "range": ">250",
+          "n": 65426,
+          "mean_bias_mgdl": -12.82,
+          "mean_rel_bias_pct": -3.99,
+          "mard_pct": 8.17,
+          "within_20pct_or_20mgdl": 90.29,
+          "pct_cgm_reads_low": 58.87
+        }
+      ],
+      "overall": {
+        "by_cgm_range": [
+          {
+            "cgm_range": "<54",
+            "n": 7805,
+            "mean_rel_bias_pct": -23.29,
+            "mard_pct": 25.67,
+            "pct_cgm_reads_low": 88.76
+          },
+          {
+            "cgm_range": "54-69",
+            "n": 18609,
+            "mean_rel_bias_pct": -10.42,
+            "mard_pct": 15.97,
+            "pct_cgm_reads_low": 73.82
+          },
+          {
+            "cgm_range": "70-180",
+            "n": 265988,
+            "mean_rel_bias_pct": -2.36,
+            "mard_pct": 10.54,
+            "pct_cgm_reads_low": 58.74
+          },
+          {
+            "cgm_range": "181-250",
+            "n": 121531,
+            "mean_rel_bias_pct": 1.12,
+            "mard_pct": 8.61,
+            "pct_cgm_reads_low": 49.57
+          },
+          {
+            "cgm_range": ">250",
+            "n": 61569,
+            "mean_rel_bias_pct": 4.17,
+            "mard_pct": 9.49,
+            "pct_cgm_reads_low": 41.22
+          }
+        ],
+        "by_avg_range": [
+          {
+            "avg_range": "<54",
+            "n": 4474,
+            "mean_bias_mgdl": -4.65,
+            "mean_rel_bias_pct": -6.56,
+            "mard_pct": 17.99,
+            "pct_cgm_reads_low": 68.73
+          },
+          {
+            "avg_range": "54-69",
+            "n": 17263,
+            "mean_bias_mgdl": -4.59,
+            "mean_rel_bias_pct": -4.85,
+            "mard_pct": 15.96,
+            "pct_cgm_reads_low": 62.63
+          },
+          {
+            "avg_range": "70-180",
+            "n": 266221,
+            "mean_bias_mgdl": -3.86,
+            "mean_rel_bias_pct": -1.32,
+            "mard_pct": 11.44,
+            "pct_cgm_reads_low": 56.94
+          },
+          {
+            "avg_range": "181-250",
+            "n": 125761,
+            "mean_bias_mgdl": -4.2,
+            "mean_rel_bias_pct": -0.95,
+            "mard_pct": 8.41,
+            "pct_cgm_reads_low": 52.65
+          },
+          {
+            "avg_range": ">250",
+            "n": 61783,
+            "mean_bias_mgdl": -3.97,
+            "mean_rel_bias_pct": -0.44,
+            "mard_pct": 7.64,
+            "pct_cgm_reads_low": 49.92
+          }
+        ],
+        "range": "all",
+        "n": 475502,
+        "mean_bias_mgdl": -4.0,
+        "mean_rel_bias_pct": -1.29,
+        "mard_pct": 10.37,
+        "within_20pct_or_20mgdl": 88.23,
+        "pct_cgm_reads_low": 55.21
+      },
+      "clarke_pct": {
+        "A": 87.51,
+        "B": 10.89,
+        "C": 0.34,
+        "D": 1.16,
+        "E": 0.1
+      },
+      "parkes_pct": {
+        "A": 88.12,
+        "B": 10.93,
+        "C": 0.83,
+        "D": 0.11,
+        "E": 0.01
+      },
+      "n_ref_below_70": 20110,
+      "n_ref_below_54": 4166
+    }
+  },
+  "shanghai_t1dm": {
+    "n_records": 16,
+    "n_patients": 12,
+    "visits_per_patient": {
+      "1": 10,
+      "3": 2
+    },
+    "sex": {
+      "F": 7,
+      "M": 5
+    },
+    "age": {
+      "count": 12.0,
+      "mean": 57.8,
+      "std": 11.1,
+      "min": 37.0,
+      "25%": 52.5,
+      "50%": 58.5,
+      "75%": 66.2,
+      "max": 73.0
+    },
+    "age_bands": {
+      "[18, 25)": 0,
+      "[25, 35)": 0,
+      "[35, 45)": 2,
+      "[45, 55)": 2,
+      "[55, 65)": 3,
+      "[65, 100)": 5
+    },
+    "bmi": {
+      "count": 12.0,
+      "mean": 21.1,
+      "std": 4.1,
+      "min": 13.7,
+      "25%": 19.0,
+      "50%": 20.9,
+      "75%": 23.3,
+      "max": 27.5
+    },
+    "duration_yrs": {
+      "count": 12.0,
+      "mean": 9.9,
+      "std": 8.4,
+      "min": 0.0,
+      "25%": 2.8,
+      "50%": 8.5,
+      "75%": 16.2,
+      "max": 26.0
+    },
+    "hba1c_pct": {
+      "count": 11.0,
+      "mean": 10.33,
+      "std": 3.35,
+      "min": 7.1,
+      "25%": 8.15,
+      "50%": 8.5,
+      "75%": 13.0,
+      "max": 17.3
+    },
+    "on_insulin_pct": 100.0,
+    "hypoglycemia_flag": {
+      "yes": 14,
+      "no": 2
+    },
+    "acute_complications": {
+      "none": 12,
+      "diabetic ketoacidosis": 4
+    },
+    "alcohol": {
+      "non-drinker": 11,
+      "drinker": 1
+    },
+    "missing_counts": {
+      "Acute Diabetic Complications": 12,
+      "Diabetic Macrovascular Complications": 9,
+      "Diabetic Microvascular Complications": 7,
+      "Comorbidities": 4,
+      "Other Agents": 4,
+      "2-hour Postprandial Plasma Glucose (mg/dl)": 2,
+      "Fasting C-peptide (nmol/L)": 1,
+      "2-hour Postprandial C-peptide (nmol/L)": 1,
+      "Fasting Insulin (pmol/L)": 5,
+      "2-hour Postprandial Insulin (pmol/L)": 6,
+      "HbA1c (mmol/mol)": 1,
+      "Glycated Albumin (%)": 1,
+      "Creatinine (umol/L)": 1,
+      "Estimated Glomerular Filtration Rate (ml/min/1.73m2)": 1,
+      "Uric Acid (mmol/L)": 1,
+      "Blood Urea Nitrogen (mmol/L)": 1
+    }
+  },
+  "shanghai_t2dm": {
+    "n_records": 109,
+    "n_patients": 100,
+    "visits_per_patient": {
+      "1": 92,
+      "2": 7,
+      "3": 1
+    },
+    "sex": {
+      "M": 56,
+      "F": 44
+    },
+    "age": {
+      "count": 100.0,
+      "mean": 60.2,
+      "std": 13.7,
+      "min": 22.0,
+      "25%": 51.0,
+      "50%": 62.5,
+      "75%": 68.0,
+      "max": 97.0
+    },
+    "age_bands": {
+      "[18, 25)": 1,
+      "[25, 35)": 1,
+      "[35, 45)": 13,
+      "[45, 55)": 15,
+      "[55, 65)": 29,
+      "[65, 100)": 41
+    },
+    "bmi": {
+      "count": 100.0,
+      "mean": 24.1,
+      "std": 3.3,
+      "min": 17.1,
+      "25%": 22.2,
+      "50%": 23.7,
+      "75%": 25.5,
+      "max": 36.7
+    },
+    "duration_yrs": {
+      "count": 100.0,
+      "mean": 8.7,
+      "std": 8.5,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 7.0,
+      "75%": 14.2,
+      "max": 40.0
+    },
+    "hba1c_pct": {
+      "count": 92.0,
+      "mean": 9.1,
+      "std": 2.48,
+      "min": 4.3,
+      "25%": 7.08,
+      "50%": 8.5,
+      "75%": 10.95,
+      "max": 15.4
+    },
+    "on_insulin_pct": 50.0,
+    "hypoglycemia_flag": {
+      "no": 99,
+      "yes": 10
+    },
+    "acute_complications": {
+      "none": 109
+    },
+    "alcohol": {
+      "non-drinker": 87,
+      "drinker": 13
+    },
+    "missing_counts": {
+      "Acute Diabetic Complications": 109,
+      "Diabetic Macrovascular Complications": 69,
+      "Diabetic Microvascular Complications": 82,
+      "Comorbidities": 39,
+      "Hypoglycemic Agents": 5,
+      "Other Agents": 42,
+      "Fasting Plasma Glucose (mg/dl)": 3,
+      "2-hour Postprandial Plasma Glucose (mg/dl)": 22,
+      "Fasting C-peptide (nmol/L)": 23,
+      "2-hour Postprandial C-peptide (nmol/L)": 45,
+      "Fasting Insulin (pmol/L)": 33,
+      "2-hour Postprandial Insulin (pmol/L)": 55,
+      "HbA1c (mmol/mol)": 8,
+      "Glycated Albumin (%)": 23,
+      "Total Cholesterol (mmol/L)": 22,
+      "Triglyceride (mmol/L)": 18,
+      "High-Density Lipoprotein Cholesterol (mmol/L)": 18,
+      "Low-Density Lipoprotein Cholesterol (mmol/L)": 18,
+      "Creatinine (umol/L)": 23,
+      "Estimated Glomerular Filtration Rate (ml/min/1.73m2)": 24,
+      "Uric Acid (mmol/L)": 24,
+      "Blood Urea Nitrogen (mmol/L)": 27
+    }
+  },
+  "shanghai_cgm_files": {
+    "n_files": 125,
+    "files_by_group": {
+      "T2DM": 109,
+      "T1DM": 16
+    },
+    "patients_by_group": {
+      "T1DM": 12,
+      "T2DM": 100
+    },
+    "total_cgm_readings": 127982,
+    "total_cbg_readings": 4012,
+    "files_with_zero_cbg": 17,
+    "cbg_per_file": {
+      "count": 125.0,
+      "mean": 32.1,
+      "std": 29.1,
+      "min": 0.0,
+      "25%": 5.0,
+      "50%": 26.0,
+      "75%": 53.0,
+      "max": 100.0
+    },
+    "days_per_file": {
+      "count": 125.0,
+      "mean": 10.7,
+      "std": 3.5,
+      "min": 2.6,
+      "25%": 7.7,
+      "50%": 12.7,
+      "75%": 13.9,
+      "max": 13.9
+    },
+    "interval_min_mode": 15.0,
+    "files_with_nonstandard_columns": {
+      "2001_0_20201102.xlsx": [
+        "CSII - bolus insulin (Novolin R  IU)",
+        "CSII - basal insulin (Novolin R  IU / H)"
+      ],
+      "2001_1_20201117.xlsx": [
+        "进食量"
+      ],
+      "2013_0_20220123.xlsx": [
+        "进食量"
+      ],
+      "2027_0_20210521.xls": [
+        "胰岛素泵基础量 (Novolin R, IU / H)"
+      ],
+      "2045_0_20201216.xls": [
+        "CGM ",
+        "CBG ",
+        "Blood Ketone ",
+        "CSII - bolus insulin ",
+        "CSII - basal insulin "
+      ],
+      "2083_0_20201214.xls": [
+        "进食量"
+      ],
+      "2095_0_20201116.xls": [
+        "CGM ",
+        "CBG ",
+        "Blood Ketone ",
+        "CSII - bolus insulin ",
+        "CSII - basal insulin "
+      ]
+    },
+    "files_unit_converted_from_mmol": [],
+    "T1DM_cgm_describe": {
+      "count": 15695.0,
+      "mean": 164.8,
+      "std": 72.3,
+      "min": 39.6,
+      "25%": 108.0,
+      "50%": 156.6,
+      "75%": 214.2,
+      "max": 475.2
+    },
+    "T1DM_cgm_pct_by_range": {
+      "<54": 2.82,
+      "54-69": 4.82,
+      "70-180": 53.16,
+      "181-250": 25.72,
+      ">250": 13.48
+    },
+    "T1DM_time_in_range": {
+      "<70": 7.646,
+      "70-180": 53.157,
+      ">180": 39.197
+    },
+    "T1DM_cgm_min": 39.6,
+    "T1DM_cgm_max": 475.2,
+    "T2DM_cgm_describe": {
+      "count": 112287.0,
+      "mean": 140.2,
+      "std": 51.0,
+      "min": 39.6,
+      "25%": 102.6,
+      "50%": 129.6,
+      "75%": 167.4,
+      "max": 468.0
+    },
+    "T2DM_cgm_pct_by_range": {
+      "<54": 0.77,
+      "54-69": 1.58,
+      "70-180": 78.32,
+      "181-250": 15.48,
+      ">250": 3.85
+    },
+    "T2DM_time_in_range": {
+      "<70": 2.347,
+      "70-180": 78.322,
+      ">180": 19.332
+    },
+    "T2DM_cgm_min": 39.6,
+    "T2DM_cgm_max": 468.0,
+    "pairs_cbg_vs_cgm": {
+      "method": "Capillary blood glucose (CBG) recorded on the same 15-min CGM row",
+      "n_pairs": 4012,
+      "n_pairs_by_group": {
+        "T2DM": 3262,
+        "T1DM": 750
+      },
+      "by_range": [
+        {
+          "range": "<54",
+          "n": 7,
+          "mean_bias_mgdl": 10.54,
+          "mean_rel_bias_pct": 24.52,
+          "mard_pct": 25.51,
+          "within_20pct_or_20mgdl": 71.43,
+          "pct_cgm_reads_low": 14.29
+        },
+        {
+          "range": "54-69",
+          "n": 30,
+          "mean_bias_mgdl": 7.74,
+          "mean_rel_bias_pct": 12.65,
+          "mard_pct": 19.78,
+          "within_20pct_or_20mgdl": 80.0,
+          "pct_cgm_reads_low": 30.0
+        },
+        {
+          "range": "70-180",
+          "n": 2531,
+          "mean_bias_mgdl": -8.01,
+          "mean_rel_bias_pct": -5.71,
+          "mard_pct": 13.61,
+          "within_20pct_or_20mgdl": 78.11,
+          "pct_cgm_reads_low": 62.43
+        },
+        {
+          "range": "181-250",
+          "n": 967,
+          "mean_bias_mgdl": -21.34,
+          "mean_rel_bias_pct": -10.1,
+          "mard_pct": 13.88,
+          "within_20pct_or_20mgdl": 74.25,
+          "pct_cgm_reads_low": 75.7
+        },
+        {
+          "range": ">250",
+          "n": 477,
+          "mean_bias_mgdl": -42.03,
+          "mean_rel_bias_pct": -13.01,
+          "mard_pct": 14.84,
+          "within_20pct_or_20mgdl": 74.84,
+          "pct_cgm_reads_low": 85.53
+        }
+      ],
+      "overall": {
+        "by_cgm_range": [
+          {
+            "cgm_range": "<54",
+            "n": 37,
+            "mean_rel_bias_pct": -44.55,
+            "mard_pct": 46.14,
+            "pct_cgm_reads_low": 91.89
+          },
+          {
+            "cgm_range": "54-69",
+            "n": 87,
+            "mean_rel_bias_pct": -26.9,
+            "mard_pct": 29.2,
+            "pct_cgm_reads_low": 89.66
+          },
+          {
+            "cgm_range": "70-180",
+            "n": 2747,
+            "mean_rel_bias_pct": -7.67,
+            "mard_pct": 14.01,
+            "pct_cgm_reads_low": 68.33
+          },
+          {
+            "cgm_range": "181-250",
+            "n": 847,
+            "mean_rel_bias_pct": -4.51,
+            "mard_pct": 11.59,
+            "pct_cgm_reads_low": 65.29
+          },
+          {
+            "cgm_range": ">250",
+            "n": 294,
+            "mean_rel_bias_pct": -3.34,
+            "mard_pct": 10.89,
+            "pct_cgm_reads_low": 63.95
+          }
+        ],
+        "by_avg_range": [
+          {
+            "avg_range": "<54",
+            "n": 6,
+            "mean_bias_mgdl": -0.9,
+            "mean_rel_bias_pct": 1.78,
+            "mard_pct": 14.69,
+            "pct_cgm_reads_low": 33.33
+          },
+          {
+            "avg_range": "54-69",
+            "n": 44,
+            "mean_bias_mgdl": -14.11,
+            "mean_rel_bias_pct": -15.16,
+            "mard_pct": 28.05,
+            "pct_cgm_reads_low": 68.18
+          },
+          {
+            "avg_range": "70-180",
+            "n": 2679,
+            "mean_bias_mgdl": -11.04,
+            "mean_rel_bias_pct": -6.93,
+            "mard_pct": 14.16,
+            "pct_cgm_reads_low": 65.62
+          },
+          {
+            "avg_range": "181-250",
+            "n": 930,
+            "mean_bias_mgdl": -20.6,
+            "mean_rel_bias_pct": -8.31,
+            "mard_pct": 13.09,
+            "pct_cgm_reads_low": 72.15
+          },
+          {
+            "avg_range": ">250",
+            "n": 353,
+            "mean_bias_mgdl": -31.98,
+            "mean_rel_bias_pct": -8.24,
+            "mard_pct": 12.2,
+            "pct_cgm_reads_low": 76.2
+          }
+        ],
+        "range": "all",
+        "n": 4012,
+        "mean_bias_mgdl": -15.12,
+        "mean_rel_bias_pct": -7.44,
+        "mard_pct": 13.89,
+        "within_20pct_or_20mgdl": 76.79,
+        "pct_cgm_reads_low": 68.05
+      },
+      "clarke_pct": {
+        "A": 75.95,
+        "B": 22.78,
+        "C": 0.02,
+        "D": 1.22,
+        "E": 0.02
+      },
+      "parkes_pct": {
+        "A": 74.65,
+        "B": 25.05,
+        "C": 0.3,
+        "D": 0.0,
+        "E": 0.0
+      },
+      "n_ref_below_70": 37,
+      "n_ref_below_54": 7,
+      "overall_T1DM": {
+        "by_cgm_range": [
+          {
+            "cgm_range": "<54",
+            "n": 18,
+            "mean_rel_bias_pct": -42.63,
+            "mard_pct": 45.9,
+            "pct_cgm_reads_low": 94.44
+          },
+          {
+            "cgm_range": "54-69",
+            "n": 42,
+            "mean_rel_bias_pct": -26.05,
+            "mard_pct": 30.08,
+            "pct_cgm_reads_low": 83.33
+          },
+          {
+            "cgm_range": "70-180",
+            "n": 375,
+            "mean_rel_bias_pct": -16.58,
+            "mard_pct": 20.23,
+            "pct_cgm_reads_low": 85.6
+          },
+          {
+            "cgm_range": "181-250",
+            "n": 223,
+            "mean_rel_bias_pct": -6.9,
+            "mard_pct": 13.96,
+            "pct_cgm_reads_low": 71.3
+          },
+          {
+            "cgm_range": ">250",
+            "n": 92,
+            "mean_rel_bias_pct": -3.95,
+            "mard_pct": 10.75,
+            "pct_cgm_reads_low": 67.39
+          }
+        ],
+        "by_avg_range": [
+          {
+            "avg_range": "<54",
+            "n": 4,
+            "mean_bias_mgdl": -1.35,
+            "mean_rel_bias_pct": 2.67,
+            "mard_pct": 22.04,
+            "pct_cgm_reads_low": 50.0
+          },
+          {
+            "avg_range": "54-69",
+            "n": 25,
+            "mean_bias_mgdl": -14.47,
+            "mean_rel_bias_pct": -15.74,
+            "mard_pct": 28.47,
+            "pct_cgm_reads_low": 68.0
+          },
+          {
+            "avg_range": "70-180",
+            "n": 353,
+            "mean_bias_mgdl": -26.3,
+            "mean_rel_bias_pct": -16.88,
+            "mard_pct": 21.06,
+            "pct_cgm_reads_low": 83.57
+          },
+          {
+            "avg_range": "181-250",
+            "n": 255,
+            "mean_bias_mgdl": -25.85,
+            "mean_rel_bias_pct": -10.09,
+            "mard_pct": 16.23,
+            "pct_cgm_reads_low": 74.51
+          },
+          {
+            "avg_range": ">250",
+            "n": 113,
+            "mean_bias_mgdl": -32.1,
+            "mean_rel_bias_pct": -9.44,
+            "mard_pct": 12.43,
+            "pct_cgm_reads_low": 79.65
+          }
+        ],
+        "range": "all",
+        "n": 750,
+        "mean_bias_mgdl": -26.49,
+        "mean_rel_bias_pct": -13.31,
+        "mard_pct": 18.37,
+        "within_20pct_or_20mgdl": 62.4,
+        "pct_cgm_reads_low": 79.2
+      },
+      "overall_T2DM": {
+        "by_cgm_range": [
+          {
+            "cgm_range": "<54",
+            "n": 19,
+            "mean_rel_bias_pct": -46.37,
+            "mard_pct": 46.37,
+            "pct_cgm_reads_low": 89.47
+          },
+          {
+            "cgm_range": "54-69",
+            "n": 45,
+            "mean_rel_bias_pct": -27.69,
+            "mard_pct": 28.38,
+            "pct_cgm_reads_low": 95.56
+          },
+          {
+            "cgm_range": "70-180",
+            "n": 2372,
+            "mean_rel_bias_pct": -6.26,
+            "mard_pct": 13.02,
+            "pct_cgm_reads_low": 65.6
+          },
+          {
+            "cgm_range": "181-250",
+            "n": 624,
+            "mean_rel_bias_pct": -3.66,
+            "mard_pct": 10.74,
+            "pct_cgm_reads_low": 63.14
+          },
+          {
+            "cgm_range": ">250",
+            "n": 202,
+            "mean_rel_bias_pct": -3.06,
+            "mard_pct": 10.96,
+            "pct_cgm_reads_low": 62.38
+          }
+        ],
+        "by_avg_range": [
+          {
+            "avg_range": "<54",
+            "n": 2,
+            "mean_bias_mgdl": 0.0,
+            "mean_rel_bias_pct": 0.0,
+            "mard_pct": 0.0,
+            "pct_cgm_reads_low": 0.0
+          },
+          {
+            "avg_range": "54-69",
+            "n": 19,
+            "mean_bias_mgdl": -13.64,
+            "mean_rel_bias_pct": -14.4,
+            "mard_pct": 27.51,
+            "pct_cgm_reads_low": 68.42
+          },
+          {
+            "avg_range": "70-180",
+            "n": 2326,
+            "mean_bias_mgdl": -8.73,
+            "mean_rel_bias_pct": -5.43,
+            "mard_pct": 13.11,
+            "pct_cgm_reads_low": 62.9
+          },
+          {
+            "avg_range": "181-250",
+            "n": 675,
+            "mean_bias_mgdl": -18.61,
+            "mean_rel_bias_pct": -7.63,
+            "mard_pct": 11.91,
+            "pct_cgm_reads_low": 71.26
+          },
+          {
+            "avg_range": ">250",
+            "n": 240,
+            "mean_bias_mgdl": -31.92,
+            "mean_rel_bias_pct": -7.68,
+            "mard_pct": 12.1,
+            "pct_cgm_reads_low": 74.58
+          }
+        ],
+        "range": "all",
+        "n": 3262,
+        "mean_bias_mgdl": -12.5,
+        "mean_rel_bias_pct": -6.1,
+        "mard_pct": 12.86,
+        "within_20pct_or_20mgdl": 80.1,
+        "pct_cgm_reads_low": 65.48
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Raw datasets and team PDFs. Too big / not ours to publish.
+Uncommitted Data/
+Raw Data Dump/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Team-internal notes (draft critique, private links). Keep local.
+docs/team-docs/
+README_DRAFT.md

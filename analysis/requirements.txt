@@ -1,0 +1,7 @@
+# Packages needed by analysis/explore_raw_data.py
+# Install with:  python -m pip install -r analysis/requirements.txt
+pandas
+numpy
+matplotlib
+openpyxl   # reads the Shanghai .xlsx files
+xlrd       # reads the Shanghai .xls files (101 of 130 are old .xls)

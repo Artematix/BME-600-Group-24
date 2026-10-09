@@ -1,0 +1,279 @@
+{
+  "method": {
+    "dataset": "REPLACE-BG HDeviceCGM, RecordType == CGM only",
+    "study_window_days": [
+      0,
+      329
+    ],
+    "rule_L": "treat low sugar when CGM < 70 mg/dL",
+    "rule_H": "correction insulin when CGM > 200 mg/dL",
+    "bias": "constant low bias, reading * (1 - bias/100)",
+    "per_day_denominator": "days with at least one CGM reading in the window, per person",
+    "paired_subset": "meter reading matched to nearest CGM reading within 300 s, reference 20-600 mg/dL"
+  },
+  "loading": {
+    "rows_in_file": 14950661,
+    "cgm_readings": 14807435,
+    "in_study_window": 13705275,
+    "after_dropping_duplicates": 13705193,
+    "participants": 226
+  },
+  "days_with_data_per_person": {
+    "median": 235.0,
+    "q1": 200.0,
+    "q3": 252.0,
+    "mean": 224.66814159292036,
+    "n_people": 226
+  },
+  "by_bias": [
+    {
+      "bias_pct": 0,
+      "n_readings": 13705193,
+      "baseline_low_alerts": 511984,
+      "baseline_high_alerts": 3302421,
+      "false_low_alerts": {
+        "n": 0,
+        "pct_of_readings": 0.0,
+        "per_person_per_day": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "mean": 0.0,
+          "n_people": 226
+        }
+      },
+      "missed_high_alerts": {
+        "n": 0,
+        "pct_of_readings": 0.0,
+        "per_person_per_day": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "mean": 0.0,
+          "n_people": 226
+        }
+      },
+      "baseline_category_changed": {
+        "below_70": {
+          "n_readings": 511984,
+          "pct_changed_category": 0.0
+        },
+        "70_to_200": {
+          "n_readings": 9890788,
+          "pct_changed_category": 0.0
+        },
+        "above_200": {
+          "n_readings": 3302421,
+          "pct_changed_category": 0.0
+        }
+      },
+      "flip_band_rule_L_mgdl": null,
+      "flip_band_rule_H_mgdl": null
+    },
+    {
+      "bias_pct": 10,
+      "n_readings": 13705193,
+      "baseline_low_alerts": 511984,
+      "baseline_high_alerts": 3302421,
+      "false_low_alerts": {
+        "n": 352233,
+        "pct_of_readings": 2.5700696079216105,
+        "per_person_per_day": {
+          "median": 6.545277695277695,
+          "q1": 4.605539267015707,
+          "q3": 8.775564512973038,
+          "mean": 6.934524463757991,
+          "n_people": 226
+        }
+      },
+      "missed_high_alerts": {
+        "n": 1046169,
+        "pct_of_readings": 7.633376633222166,
+        "per_person_per_day": {
+          "median": 20.674444444444443,
+          "q1": 17.431493889199082,
+          "q3": 24.351807092839394,
+          "mean": 20.528088567030558,
+          "n_people": 226
+        }
+      },
+      "baseline_category_changed": {
+        "below_70": {
+          "n_readings": 511984,
+          "pct_changed_category": 0.0
+        },
+        "70_to_200": {
+          "n_readings": 9890788,
+          "pct_changed_category": 3.561222826735342
+        },
+        "above_200": {
+          "n_readings": 3302421,
+          "pct_changed_category": 31.678850152660733
+        }
+      },
+      "flip_band_rule_L_mgdl": [
+        70,
+        77.77777777777777
+      ],
+      "flip_band_rule_H_mgdl": [
+        200,
+        222.22222222222223
+      ]
+    },
+    {
+      "bias_pct": 20,
+      "n_readings": 13705193,
+      "baseline_low_alerts": 511984,
+      "baseline_high_alerts": 3302421,
+      "false_low_alerts": {
+        "n": 943253,
+        "pct_of_readings": 6.882449594106409,
+        "per_person_per_day": {
+          "median": 17.20089776187337,
+          "q1": 12.950509770603228,
+          "q3": 22.62310246679317,
+          "mean": 18.567719968257034,
+          "n_people": 226
+        }
+      },
+      "missed_high_alerts": {
+        "n": 1983446,
+        "pct_of_readings": 14.472222317482139,
+        "per_person_per_day": {
+          "median": 39.83943577430972,
+          "q1": 31.603221349621872,
+          "q3": 48.14249569707401,
+          "mean": 38.85133587120175,
+          "n_people": 226
+        }
+      },
+      "baseline_category_changed": {
+        "below_70": {
+          "n_readings": 511984,
+          "pct_changed_category": 0.0
+        },
+        "70_to_200": {
+          "n_readings": 9890788,
+          "pct_changed_category": 9.53668201158492
+        },
+        "above_200": {
+          "n_readings": 3302421,
+          "pct_changed_category": 60.06036177701147
+        }
+      },
+      "flip_band_rule_L_mgdl": [
+        70,
+        87.5
+      ],
+      "flip_band_rule_H_mgdl": [
+        200,
+        250.0
+      ]
+    },
+    {
+      "bias_pct": 30,
+      "n_readings": 13705193,
+      "baseline_low_alerts": 511984,
+      "baseline_high_alerts": 3302421,
+      "false_low_alerts": {
+        "n": 1829900,
+        "pct_of_readings": 13.351873264389639,
+        "per_person_per_day": {
+          "median": 33.27844979919679,
+          "q1": 26.110435153252993,
+          "q3": 42.4678125,
+          "mean": 36.019064016555795,
+          "n_people": 226
+        }
+      },
+      "missed_high_alerts": {
+        "n": 2672692,
+        "pct_of_readings": 19.50130873749826,
+        "per_person_per_day": {
+          "median": 53.14915966386555,
+          "q1": 39.79449838187702,
+          "q3": 66.92925104468016,
+          "mean": 52.29656004718174,
+          "n_people": 226
+        }
+      },
+      "baseline_category_changed": {
+        "below_70": {
+          "n_readings": 511984,
+          "pct_changed_category": 0.0
+        },
+        "70_to_200": {
+          "n_readings": 9890788,
+          "pct_changed_category": 18.501053707753112
+        },
+        "above_200": {
+          "n_readings": 3302421,
+          "pct_changed_category": 80.93129252751238
+        }
+      },
+      "flip_band_rule_L_mgdl": [
+        70,
+        100.0
+      ],
+      "flip_band_rule_H_mgdl": [
+        200,
+        285.7142857142857
+      ]
+    }
+  ],
+  "paired_subset_by_bias": [
+    {
+      "bias_pct": 0,
+      "n_pairs": 460634,
+      "false_low_alerts_pct_of_pairs": 0.0,
+      "missed_high_alerts_pct_of_pairs": 0.0,
+      "vs_fingerstick": {
+        "cgm_low_but_fingerstick_not_low_pct": 2.4457595401121064,
+        "fingerstick_low_but_cgm_not_low_pct": 1.0917561447917434,
+        "fingerstick_high_but_cgm_not_high_pct": 4.390687617501096,
+        "cgm_high_but_fingerstick_not_high_pct": 2.7944094443744927,
+        "pct_pairs_same_decision_both_rules": 89.33100900063825
+      }
+    },
+    {
+      "bias_pct": 10,
+      "n_pairs": 460634,
+      "false_low_alerts_pct_of_pairs": 2.923579240785526,
+      "missed_high_alerts_pct_of_pairs": 8.687591450044938,
+      "vs_fingerstick": {
+        "cgm_low_but_fingerstick_not_low_pct": 4.8552647003912,
+        "fingerstick_low_but_cgm_not_low_pct": 0.5776820642853111,
+        "fingerstick_high_but_cgm_not_high_pct": 11.13964666090649,
+        "cgm_high_but_fingerstick_not_high_pct": 0.855777037734948,
+        "pct_pairs_same_decision_both_rules": 82.62308036315166
+      }
+    },
+    {
+      "bias_pct": 20,
+      "n_pairs": 460634,
+      "false_low_alerts_pct_of_pairs": 7.111937025925139,
+      "missed_high_alerts_pct_of_pairs": 16.47946091691017,
+      "vs_fingerstick": {
+        "cgm_low_but_fingerstick_not_low_pct": 8.756192552004412,
+        "fingerstick_low_but_cgm_not_low_pct": 0.29025213075891054,
+        "fingerstick_high_but_cgm_not_high_pct": 18.374891996682834,
+        "cgm_high_but_fingerstick_not_high_pct": 0.29915290664605737,
+        "pct_pairs_same_decision_both_rules": 72.34311839768667
+      }
+    },
+    {
+      "bias_pct": 30,
+      "n_pairs": 460634,
+      "false_low_alerts_pct_of_pairs": 12.821024935198011,
+      "missed_high_alerts_pct_of_pairs": 22.83309525566936,
+      "vs_fingerstick": {
+        "cgm_low_but_fingerstick_not_low_pct": 14.347833637985907,
+        "fingerstick_low_but_cgm_not_low_pct": 0.1728053074675339,
+        "fingerstick_high_but_cgm_not_high_pct": 24.537051107820957,
+        "cgm_high_but_fingerstick_not_high_pct": 0.10767767902499599,
+        "pct_pairs_same_decision_both_rules": 60.92667931589939
+      }
+    }
+  ],
+  "runtime_s": 24.6
+}
