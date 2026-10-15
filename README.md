@@ -33,8 +33,8 @@ How much error in a continuous glucose monitor reading is needed before it chang
 
 | Dataset | Source | Who and how big | How to get it |
 |---|---|---|---|
-| REPLACE-BG (US, 2015-16) | Jaeb Center for Health Research, public datasets page | 226 adults with type 1 diabetes. Dexcom G4. 26 weeks each. 14.8 million CGM readings. About 600,000 pairs. | Free. Registration may be needed. |
-| Shanghai T1DM / T2DM (China, 2019-21) | Figshare, Zhao et al. 2023 | 112 hospital patients (12 type 1, 100 type 2). Abbott-type flash sensor. About 2 weeks each. 128,000 readings. 4,012 pairs. | Free. |
+| REPLACE-BG (US, 2015-16) | Jaeb Center for Health Research, public datasets page | 226 adults with type 1 diabetes. Dexcom G4. 26 weeks each. 14.8 million CGM readings (13.7 million inside the study window). 475,502 pairs with a fingerstick meter. | Free. Registration may be needed. |
+| Shanghai T1DM / T2DM (China, 2019-21) | Figshare, Zhao et al. 2023 | 112 adults recruited through two Shanghai hospitals (12 type 1, 100 type 2). Abbott FreeStyle Libre H sensor. About 2 weeks each. 127,982 readings. 4,012 pairs. | Free. |
 | OhioT1DM (US) | Ohio University (Marling and Bunescu) | 12 adults with type 1 diabetes. 8 weeks each. | Optional. Needs a signed data use agreement. Not used yet. |
 
 - The data is NOT in this repo. It is about 919 MB, and each dataset has its own use terms.
@@ -64,6 +64,10 @@ docs/
   PROJECT_OVERVIEW.md      Repo map, status, open questions.
   WRITING_RULES.md         Plain-language rules for all project writing.
   plans/                   Team brief and research plan drafts.
+    2026-10-14_midterm-research-plan.pdf               Midterm research plan (final draft).
+    2026-10-14_midterm-research-plan.docx              Same, editable.
+    2026-10-14_midterm-research-plan_change-notes.docx Same, with comments explaining each change.
+    2026-10-14_midterm-research-plan.md                Source text.
 analysis/                  Phase 2 code and outputs.
   explore_raw_data.py      Loads both datasets, measures accuracy, makes the figures.
   bias_simulation.py       Adds faults to real traces, counts decision flips.
@@ -89,7 +93,7 @@ MARD = the sensor's average percent error. Lower is better. Bias = average of (s
 | Sensor | Reads too low by |
 |---|---|
 | Dexcom G4 (REPLACE-BG) | 3 to 5 percent |
-| Abbott-type flash (Shanghai) | 6 to 13 percent |
+| FreeStyle Libre H (Shanghai) | 6 to 13 percent |
 
 - MARD roughly doubles when sugar is low.
 

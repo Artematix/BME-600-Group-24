@@ -32,7 +32,7 @@ Last updated: 2026-10-09
 
 | Dataset | What | Status | Role |
 |---|---|---|---|
-| REPLACE-BG | 226 adults, type 1, Dexcom G4, 26 weeks, 14.8M CGM rows, 600k pairs with fingerstick | Downloaded, explored | PRIMARY |
+| REPLACE-BG | 226 adults, type 1, Dexcom G4, 26 weeks, 14.8M CGM rows (13.7M in study window), 475,502 meter pairs | Downloaded, explored | PRIMARY |
 | Shanghai T1DM/T2DM | 112 patients, flash CGM, ~2 weeks each, 4k pairs | Downloaded, explored | Comparator only (too few low readings) |
 | OhioT1DM | 12 patients, 8 weeks | Not downloaded. Needs data agreement | Maybe later |
 
@@ -45,7 +45,7 @@ Data lives in `Uncommitted Data/Raw Data Dump/`. Not in git. Each teammate needs
 - Both sensors read a bit low in normal/high range. Same direction as the recall fault. Good for us.
 - Pitfall: in the low range, the error direction flips depending on how you group the data. Must handle carefully.
 - Pitfall: 7% of REPLACE-BG CGM rows are from before the study started. Must filter.
-- Both cohorts are narrow (adults only, REPLACE-BG 94% White, Shanghai all Chinese hospital patients).
+- Both cohorts are narrow (adults only, REPLACE-BG 94% White, Shanghai all Chinese adults recruited through hospitals).
 
 ## Deadline (from team docs, see docs/team-docs/)
 
@@ -73,7 +73,7 @@ Data lives in `Uncommitted Data/Raw Data Dump/`. Not in git. Each teammate needs
 | Repo organized, manager rules, logging | Done 2026-10-07 |
 | First data exploration | Done. Figure 09 fixed and Parkes error grid added 2026-10-09. See analysis/REPRODUCIBILITY.md |
 | Team docs summarized | Done 2026-10-07, 6 PDFs, see docs/team-docs/ |
-| Research plan (deliverable 1) | Draft 2 done 2026-10-07: docs/plans/2026-10-07_research-plan.md. Team review needed |
+| Research plan (deliverable 1) | Final draft 2026-10-14: docs/plans/2026-10-14_midterm-research-plan.pdf. Change-notes version for the team: ..._change-notes.docx. Team to fill [CONFIRM]/[DATE] items, then submit Oct 16 |
 | Phase 1: FDA/MAUDE mining | Not started, folder + plan exist |
 | Phase 2: fault simulation | First version done 2026-10-09 (constant low bias 10/20/30%). See analysis/SIMULATION_RESULTS.md. More fault types wait on Phase 1 |
 
@@ -84,7 +84,7 @@ Data lives in `Uncommitted Data/Raw Data Dump/`. Not in git. Each teammate needs
 - Does Phase 1 (FDA mining) stay in the plan? The lead's research description does not mention it.
 
 - Which treatment rules to simulate: fixed thresholds (70/180), real pump dose-calculator events, or both?
-- Headline accuracy set: REPLACE-BG meter pairs or calibration pairs?
+- Headline accuracy set: decided 2026-10-14. Meter pairs are primary; calibration pairs reported alongside.
 
 - Which treatment decision rules do we simulate? (e.g. "treat hypo if CGM < 70", "correction bolus if CGM > 180")
 - Which sensor fault types do we simulate? Wait for Phase 1 results.
