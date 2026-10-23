@@ -1,0 +1,9 @@
+Problem family,Problem mentions,Mentions per 100 reports
+Wrong readings (accuracy),1013155,30.0
+Signal loss / connection,1112363,32.9
+No readings / sensor stopped,549952,16.3
+Falls off / insertion / applicator,172809,5.1
+Alarms,96655,2.9
+"App, software, display",244306,7.2
+"Hardware, battery, packaging",53692,1.6
+Unclear / other,274334,8.1

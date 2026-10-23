@@ -1,0 +1,9 @@
+Patient outcome,All serious,% of serious reports,Dexcom,Abbott,Medtronic,Senseonics,Other / unknown
+Required Intervention,64888,52.5,1109,62938,781,4,56
+Other,43254,35.0,30830,10508,642,1252,22
+Hospitalization,17194,13.9,7253,2912,6577,413,39
+(blank),7398,6.0,1198,3942,898,1342,18
+Life Threatening,1541,1.2,1114,270,43,8,106
+Disability,1026,0.8,860,148,16,0,2
+Death,632,0.5,359,164,105,2,2
+Congenital Anomaly,9,0.0,6,1,2,0,0

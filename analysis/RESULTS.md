@@ -18,7 +18,7 @@ Key terms used in this file:
 - The data folder is 919 MB. Too big for a normal git push. It is already in `.gitignore`.
 
 ## The data we have
-The `Uncommitted Data/Raw Data Dump/` folder is 919 MB. It is gitignored. It holds two of the three datasets named in the README for Project 1 (CGM accuracy vs reference glucose). OhioT1DM (the third) is not in the folder.
+The `Uncommitted Data/Raw Data Dump/` folder is 919 MB. It is gitignored. It holds the two datasets we use: REPLACE-BG and Shanghai.
 
 | Dataset | Who made it | What it is | Size |
 |---|---|---|---|
@@ -34,7 +34,14 @@ The `Uncommitted Data/Raw Data Dump/` folder is 919 MB. It is gitignored. It hol
 | Reference below 70 | 6,600 | 20,000 | 37 |
 | Reference below 54 | 1,300 | 4,200 | 7 |
 
-2. Above 70 mg/dL, both sensors read too low. Dexcom G4 (REPLACE-BG): 3-5 % low. Shanghai flash sensor: 6-13 % low, and worse as glucose rises. Same direction as the Libre 3 recall fault, so the data is a realistic base for our bias simulation.
+2. Above 70 mg/dL, both sensors read too low. Same direction as the Libre 3 recall fault, so the data is a realistic base for our bias simulation. The size depends on how pairs are grouped into ranges (tables in section 6):
+
+| Grouping (ranges above 70 mg/dL) | Dexcom G4, meter pairs | Dexcom G4, calibration pairs | Shanghai flash sensor |
+|---|---|---|---|
+| By reference value | 0.9-4.0 % low | 3.1-4.5 % low | 5.7-13.0 % low, worse as glucose rises |
+| By average of CGM and reference (used in figure 09) | 0.4-1.3 % low | 3.5 % low to 1.8 % high | 6.9-8.3 % low |
+
+   The midterm plan quotes "1-4 %" (Dexcom meter pairs, by reference) and "7-8 %" (Shanghai, by average).
 3. Below 54 mg/dL, the sign of the bias depends on how pairs are grouped. Grouped by reference value: 23-33 % too HIGH. Grouped by CGM value: 23-32 % too LOW. Grouped by the average of the two readings (the fair way, used in figure 09): 7-11 % too LOW in REPLACE-BG. Maths effect, not a sensor fact. See section 6.
 4. MARD is 10-14 % overall. It roughly doubles below 70 mg/dL. Per person in REPLACE-BG: 9-23 %, median 13.9 %.
 5. The two groups of people are very different. Each is narrow. REPLACE-BG: median age 43, 94 % White, highly educated, well controlled (HbA1c 7.3 %), US. Shanghai: median age 58-62, Chinese, hospital in-patients, poorly controlled (HbA1c median 8.5 %, up to 17 %). No children in either.
@@ -213,7 +220,7 @@ Script: `analysis/explore_raw_data.py`. Every number above is also saved in `ana
 
 To rerun, from the repo root (takes about 35 s; needs several GB of RAM because the CGM table is held in memory):
 ```
-python -m pip install pandas numpy matplotlib openpyxl xlrd
+python -m pip install -r requirements.txt
 python analysis/explore_raw_data.py "Uncommitted Data/Raw Data Dump" analysis
 ```
-Detailed version with full prose: RESULTS_detailed.md
+Use Python 3.11. On Windows, type `py -3.11` in place of `python`. Full steps: `analysis/REPRODUCIBILITY.md`.

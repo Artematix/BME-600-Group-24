@@ -1,0 +1,26 @@
+Manufacturer,Problem (FDA term),Reports,% of manufacturer's serious reports
+Dexcom,Adverse Event Without Identified Device or Use Problem,7459,22.1
+Dexcom,"Incorrect, Inadequate or Imprecise Result or Readings",7336,21.7
+Dexcom,Appropriate Device Problem Term/Code Not Available,4358,12.9
+Dexcom,Imprecision,4017,11.9
+Dexcom,Low Readings,2251,6.7
+Abbott,Unable to Obtain Readings,25658,33.0
+Abbott,Device Displays Incorrect Message,25470,32.8
+Abbott,Low Readings,13492,17.4
+Abbott,High Readings,9111,11.7
+Abbott,Detachment of Device or Device Component,6873,8.8
+Medtronic,Insufficient Device Problem Information,2133,24.0
+Medtronic,Adverse Event Without Identified Device or Use Problem,1136,12.8
+Medtronic,Device Displays Incorrect Message,938,10.5
+Medtronic,Improper or Incorrect Procedure or Method,783,8.8
+Medtronic,Failure to Deliver,682,7.7
+Senseonics,Adverse Event Without Identified Device or Use Problem,1212,40.3
+Senseonics,Imprecision,989,32.9
+Senseonics,Difficult to Remove,486,16.2
+Senseonics,Material Separation,140,4.7
+Senseonics,Insufficient Device Problem Information,39,1.3
+Other / unknown,High Test Results,26,15.3
+Other / unknown,Adverse Event Without Identified Device or Use Problem,21,12.4
+Other / unknown,Inaccurate Delivery,15,8.8
+Other / unknown,Device Displays Incorrect Message,12,7.1
+Other / unknown,Improper or Incorrect Procedure or Method,12,7.1

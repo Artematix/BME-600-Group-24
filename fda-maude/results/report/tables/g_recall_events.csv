@@ -1,0 +1,33 @@
+Date started,Firm,Product,Class,Type,Reason (plain words),Quantity (approx.),FDA records
+2008-11-01,Abbott,FreeStyle Navigator receiver,No class (old),Wrong readings,Set to wrong glucose units (mmol/L instead of mg/dL),2,1
+2009-04-14,Abbott,FreeStyle Navigator system,No class (old),Wrong readings,Housing may crack and let in moisture; possible wrong readings,"108,980",20
+2014-07-21,Medtronic,Guardian REAL-Time monitor,Class II,Hardware / sensor stops,Manufacturing issue; may not be water resistant,86,1
+2015-07-22,Medtronic,Guardian REAL-Time system,Class II,"Software / app (no or late readings, data)",Finnish translation error in low-glucose alert setting,254,1
+2016-02-23,Dexcom,Dexcom G4 PLATINUM receiver,Class I,Missed alarms (receiver/app),Alarm may not sound,"270,111",6
+2016-08-05,Medtronic,CareLink iPro software,Class II,"Software / app (no or late readings, data)",Time stamp error,33,1
+2018-07-04,Medtronic,Guardian Connect app (iOS),Class II,"Software / app (no or late readings, data)",Phone may close the app silently; alerts missed,"9,328",1
+2019-05-20,Medtronic,Guardian Connect app + transmitter,Class II,"Software / app (no or late readings, data)",iOS 12 drains transmitter battery early,"23,978",1
+2019-07-12,Dexcom,Dexcom receiver,Class II,"Software / app (no or late readings, data)",Software: receiver stuck on start screen; no readings,"112,415",1
+2019-09-18,Senseonics,Eversense sensor,Class II,Hardware / sensor stops,Sensors stopped working early,"1,344",1
+2019-11-19,Dexcom,Dexcom G6 iOS app,Class II,Missed alarms (receiver/app),Low alarm may not sound with Alert Schedule,"237,888",1
+2020-02-03,Dexcom,Dexcom G4/G5/G6 systems,Class II,Wrong readings,Drug hydroxyurea makes readings falsely high,"364,203",3
+2020-07-15,Medtronic,Guardian Connect app (iOS),Class II,"Software / app (no or late readings, data)",App stopped uploading data,"3,588",1
+2021-02-26,Medtronic,Medtronic Guardian sensors,Class II,Wrong readings,Drug hydroxyurea makes readings falsely high,"2,883,446",20
+2021-03-16,Cardinal Health,FreeStyle Libre kits (Cardinal Health),Class II,Wrong readings,Exposed to cold in shipping; possible wrong readings,"13,431",3
+2022-11-21,Medtronic,Guardian 4 apps,Class II,"Software / app (no or late readings, data)",App logs out; care partners miss alerts,"3,235",1
+2023-02-09,Abbott,FreeStyle Libre 3 app (Android 13),Class II,"Software / app (no or late readings, data)",Long signal loss; alarms missed,"45,173",1
+2023-02-13,Abbott,FreeStyle Libre readers,Class I,Hardware / sensor stops,"Reader battery may swell, overheat, or catch fire","3,243,928",3
+2023-07-12,Abbott,FreeStyle Libre 2 readers,Class II,"Software / app (no or late readings, data)",'Incompatible sensor' message blocks new sensor,"1,722,645",1
+2023-11-15,Medtronic,Medtronic Guardian 4 sensor,Class II,Wrong readings,Sensing layer thickness out of spec; wrong or no readings,"114,758",1
+2024-07-24,Abbott,FreeStyle Libre 3 sensors,Class I,Wrong readings,Readings falsely HIGH,"8,174",1
+2025-01-27,Dexcom,Dexcom G6 receiver,Class II,Missed alarms (receiver/app),High/low alarms may not sound,,3
+2025-05-05,Dexcom,Dexcom G7 iOS app,Class II,"Software / app (no or late readings, data)",App shows an old (stale) reading; alerts missed,"61,355",1
+2025-05-07,Medtronic,Medtronic Simplera sensor,Class II,Sterility / unapproved / stolen,Cap label may not stick; sterility and infection risk,"1,440",1
+2025-05-12,Dexcom,Dexcom G6/ONE receivers,Class I,Missed alarms (receiver/app),Speaker fault; audible alarms missed,"703,687",4
+2025-07-24,Dexcom,Dexcom G7 / ONE+ apps,Class I,"Software / app (no or late readings, data)",App software fault; alerts or readings missed,"2,429,443",5
+2025-08-28,Dexcom,Dexcom G6 Android app,Class I,"Software / app (no or late readings, data)",App closes unexpectedly; no readings or alarms,333,1
+2025-10-21,Medtronic,Medtronic CareLink Clinic software,Class II,"Software / app (no or late readings, data)",Wrong data on 24-hour glucose graph,"12,126",1
+2025-11-03,Get Tested Intl.,Unapproved CGM (Get Tested Intl.),Class II,Sterility / unapproved / stolen,Sold without FDA clearance,4,1
+2025-11-24,Abbott,FreeStyle Libre 3 / 3 Plus sensors,Class I,Wrong readings,Readings falsely LOW (carbon build-up in sensor),"2,990,939",4
+2026-04-14,Dexcom,Dexcom G7 / ONE+ iOS apps,Class II,"Software / app (no or late readings, data)",Delayed readings; app may show old values,"187,376",3
+2026-05-27,Dexcom,Dexcom G7 sensors (stolen scrap),Class II,Sterility / unapproved / stolen,Stolen scrap sensors resold; may be unsterile or inaccurate,,1

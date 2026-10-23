@@ -22,25 +22,27 @@ If you catch yourself opening a dataset, a PDF, or a 500-line script: STOP. Dele
 
 - Course project. Topic: failing glucose sensors (CGMs). Motivated by the 2025 FDA Class I recall of Abbott FreeStyle Libre 3 (sensors read too low; 860 injuries, 7 deaths).
 - Team: 5 biomedical engineering students. Artemy (the user) leads the data and code side.
-- Phase 1 (preliminary, guides everything after): mine FDA recall + MAUDE adverse event reports for CGMs. Robot or API to collect, LLM to categorize. Output: what actually goes wrong with sensors, how often, how bad. Teammates use this to steer later decisions and to write insights. Scope is open; depends on what comes out.
+- Phase 1 (preliminary, guides everything after): mine FDA recall + MAUDE adverse event reports for CGMs. DONE: openFDA robot, full pull, report, country spread (`fda-maude/`). LLM sorting of report texts is planned. Teammates use the results to steer later decisions and to write insights.
 - Phase 2 (main): measure how accurate CGM readings are vs fingerstick reference, by glucose range. Then simulate failing sensors on real traces and see how treatment decisions change. MANY fault types are possible (low bias, drift, noise, dropouts, lag, etc.). "Reads too low" is only one example. Keep this open. Phase 1 picks which faults matter.
-- Data on hand (not committed, in `Uncommitted Data/`): REPLACE-BG (Jaeb, 226 adults, Dexcom G4, 14.8M CGM rows) = primary. Shanghai T1DM/T2DM (112 patients, flash CGM) = comparator only. OhioT1DM not downloaded yet.
-- First deliverable: a short, simple research plan.
+- Data on hand (not committed, in `Uncommitted Data/`): REPLACE-BG (Jaeb, 226 adults, Dexcom G4, 14.8M CGM rows) = primary. Shanghai T1DM/T2DM (112 patients, flash CGM) = comparator only.
+- Midterm research plan: submitted. Final project: due Dec 4 2026.
 - Full overview: `docs/PROJECT_OVERVIEW.md`.
 
 ## 3. Repo map
 
 ```
 CLAUDE.md               this file
-README.md               team-facing project description (team wrote it)
+README.md               team-facing project description
+requirements.txt        pinned Python packages for every script
 docs/
   PROJECT_OVERVIEW.md   lay of the land, current status, open questions
   WRITING_RULES.md      how everything must be written (simple language)
-  plans/                research plans, dated
-  team-docs/            summaries of docs the team wrote (originals stay uncommitted)
+  plans/                research plans, dated (index: plans/README.md)
+  team-docs/            team notes. Local only (gitignored)
+  rubrics/              course PDFs from the instructor. Local only (gitignored)
 logs/                   one file per agent session or work chunk, dated
-analysis/               data exploration code + results
-fda-maude/              FDA recall / MAUDE report mining (not started)
+analysis/               Phase 2: accuracy + fault simulation code and results
+fda-maude/              Phase 1: FDA recall / MAUDE mining. Done (robot, full pull, report, country spread)
 Uncommitted Data/       raw datasets + team PDFs. Gitignored. Never commit.
 ```
 
@@ -78,9 +80,13 @@ Do not log trivia. Do log anything a teammate would ask "wait, why did we do tha
 
 ## 7. Environment notes
 
-- Windows 11, PowerShell + Git Bash. Python 3.11 is the Windows Store build: run scripts with plain `python`, NOT `python -I`. Write scripts to files; long heredocs fail.
-- Node.js is not installed.
-- Data lives in `Uncommitted Data/Raw Data Dump/`. Analysis script expects that path as its first argument.
+- Use Python 3.11. On Windows, run it as `py -3.11`.
+- Install packages from the root file: `py -3.11 -m pip install -r requirements.txt`.
+- Write scripts to files; long heredocs can fail.
+- Not in git, copied by hand to each machine:
+  - raw CGM data: `Uncommitted Data/Raw Data Dump/` (analysis scripts take this path as argument 1)
+  - MAUDE downloads: `fda-maude/raw/` and `fda-maude/clean/`
+- New openFDA pulls: set the `OPENFDA_API_KEY` environment variable first.
 - Git: do not commit or push unless the user asks. Never commit `Uncommitted Data/`.
 
 ## 8. Current status

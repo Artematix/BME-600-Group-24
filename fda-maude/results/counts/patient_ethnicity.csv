@@ -1,0 +1,31 @@
+product_code,patient_ethnicity,reports
+QBJ,,2340762
+QBJ,Non Hispanic,8394
+QBJ,Hispanic,347
+PQF,,327265
+PQF,Non Hispanic,9
+MDS,,282045
+MDS,Non Hispanic,193
+MDS,Hispanic,9
+QLG,,258861
+QLG,Non Hispanic,1677
+QLG,Hispanic,188
+PZE,,142330
+PZE,Non Hispanic,697
+PZE,Hispanic,66
+SFI,,5019
+SBA,,3757
+SBA,Non Hispanic,1
+SAF,,2747
+SAF,Non Hispanic,50
+SAF,Hispanic,9
+QHJ,,2484
+QHJ,Non Hispanic,1
+QCD,,1509
+QCD,Non Hispanic,1
+QDK,,617
+QDK,Non Hispanic,2
+QDK,Hispanic,1
+QII,,237
+SBH,,1
+SBH,Non Hispanic,1

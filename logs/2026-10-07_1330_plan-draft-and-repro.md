@@ -20,7 +20,7 @@ Asked by: Artemy
 - Phase 2 waits on Phase 1 for fault choice, but team should pick a fallback fault set now.
 
 ## Open questions / next
-- Team must confirm research question (README version) and fix the 18 draft problems listed in the plan.
+- Team to confirm the research question (README version) and revise the draft.
 - Treatment rules to simulate: thresholds vs real pump events vs both.
 - Possibly build an error-grid figure that shows decision flips. Needs new code.
 - Nothing committed.

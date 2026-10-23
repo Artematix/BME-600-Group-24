@@ -1,0 +1,392 @@
+Problem (FDA term),Reports,Family,% of all reports
+Wireless Communication Problem,1057609,Signal loss / connection,31.3
+"Incorrect, Inadequate or Imprecise Result or Readings",602892,Wrong readings (accuracy),17.8
+No Device Output,325299,No readings / sensor stopped,9.6
+Low Readings,174493,Wrong readings (accuracy),5.2
+Imprecision,171362,Wrong readings (accuracy),5.1
+Detachment of Device or Device Component,156989,Falls off / insertion / applicator,4.6
+Device Displays Incorrect Message,129766,"App, software, display",3.8
+Premature End-of-Life Indicator,113104,No readings / sensor stopped,3.3
+Device Operates Differently Than Expected,83231,Unclear / other,2.5
+Unintended Application Program Shut Down,73138,"App, software, display",2.2
+Protective Measures Problem,58898,Unclear / other,1.7
+Use of Device Problem,50197,Unclear / other,1.5
+Appropriate Device Problem Term/Code Not Available,46942,Unclear / other,1.4
+Communication or Transmission Problem,42792,Signal loss / connection,1.3
+Unable to Obtain Readings,41664,No readings / sensor stopped,1.2
+Device Alarm System,34388,Alarms,1.0
+Invalid Sensing,32321,Wrong readings (accuracy),1.0
+No Audible Alarm,30242,Alarms,0.9
+Break,30099,"Hardware, battery, packaging",0.9
+Inappropriate or Unexpected Reset,29240,No readings / sensor stopped,0.9
+Defective Alarm,27371,Alarms,0.8
+High Readings,26681,Wrong readings (accuracy),0.8
+Unexpected Shutdown,21173,No readings / sensor stopped,0.6
+Display or Visual Feedback Problem,18491,"App, software, display",0.5
+Adverse Event Without Identified Device or Use Problem,16923,Unclear / other,0.5
+Connection Problem,11785,Signal loss / connection,0.3
+Operating System Version or Upgrade Problem,9324,"App, software, display",0.3
+Failure to Sense,7583,No readings / sensor stopped,0.2
+Product Quality Problem,6967,Unclear / other,0.2
+Device Inoperable,6883,No readings / sensor stopped,0.2
+Battery Problem,6762,"Hardware, battery, packaging",0.2
+Component Missing,4378,"Hardware, battery, packaging",0.1
+Application Program Freezes or Fails to Launch,4281,"App, software, display",0.1
+Retraction Problem,4030,Falls off / insertion / applicator,0.1
+Detachment Of Device Component,3953,Falls off / insertion / applicator,0.1
+Computer Software Problem,3786,"App, software, display",0.1
+Calibration Problem,3448,Wrong readings (accuracy),0.1
+Unintended Ejection,3286,Falls off / insertion / applicator,0.1
+Low Audible Alarm,3036,Alarms,0.1
+Insufficient Device Problem Information,2871,Unclear / other,0.1
+Application Program Problem,2269,"App, software, display",0.1
+Low Battery,2164,"Hardware, battery, packaging",0.1
+Failure to Power Up,2139,No readings / sensor stopped,0.1
+Overheating of Device,1937,"Hardware, battery, packaging",0.1
+Delivered as Unsterile Product,1890,"Hardware, battery, packaging",0.1
+Improper or Incorrect Procedure or Method,1297,Unclear / other,0.0
+Crack,1244,"Hardware, battery, packaging",0.0
+No Display/Image,1087,"App, software, display",0.0
+Poor Quality Image,1019,"App, software, display",0.0
+Physical Resistance/Sticking,982,Falls off / insertion / applicator,0.0
+Alarm Not Visible,971,Alarms,0.0
+Failure to Deliver,939,Unclear / other,0.0
+Defective Device,867,Unclear / other,0.0
+Structural Problem,792,"Hardware, battery, packaging",0.0
+Output Problem,777,No readings / sensor stopped,0.0
+Device Sensing Problem,675,No readings / sensor stopped,0.0
+Difficult to Remove,669,Falls off / insertion / applicator,0.0
+Bent,665,"Hardware, battery, packaging",0.0
+Moisture Damage,647,"Hardware, battery, packaging",0.0
+Therapeutic or Diagnostic Output Failure,630,No readings / sensor stopped,0.0
+Incorrect Or Inadequate Test Results,617,Wrong readings (accuracy),0.0
+Unexpected Therapeutic Results,596,Wrong readings (accuracy),0.0
+Delayed Alarm,542,Alarms,0.0
+Data Problem,506,"App, software, display",0.0
+Unintended Electrical Shock,498,"Hardware, battery, packaging",0.0
+"Activation, Positioning or Separation Problem",487,Falls off / insertion / applicator,0.0
+Patient-Device Incompatibility,444,Falls off / insertion / applicator,0.0
+Material Twisted/Bent,432,"Hardware, battery, packaging",0.0
+Premature Discharge of Battery,429,"Hardware, battery, packaging",0.0
+Image Display Error/Artifact,380,"App, software, display",0.0
+Failure of Device to Self-Test,358,No readings / sensor stopped,0.0
+Fracture,356,"Hardware, battery, packaging",0.0
+Failure to Fire,295,Falls off / insertion / applicator,0.0
+Nonstandard Device,290,Unclear / other,0.0
+Loss of or Failure to Bond,271,Falls off / insertion / applicator,0.0
+No Apparent Adverse Event,268,Unclear / other,0.0
+Failure to Prime,237,Unclear / other,0.0
+Sticking,233,Falls off / insertion / applicator,0.0
+Excess Flow or Over-Infusion,230,Unclear / other,0.0
+"Device, or device fragments remain in patient",225,Falls off / insertion / applicator,0.0
+Difficult to Insert,223,Falls off / insertion / applicator,0.0
+Fluid/Blood Leak,204,"Hardware, battery, packaging",0.0
+High Test Results,202,Wrong readings (accuracy),0.0
+Fail-Safe Problem,185,Unclear / other,0.0
+Loss of Power,182,No readings / sensor stopped,0.0
+Activation Problem,175,Falls off / insertion / applicator,0.0
+Material Integrity Problem,172,"Hardware, battery, packaging",0.0
+Material Separation,167,"Hardware, battery, packaging",0.0
+Moisture or Humidity Problem,163,"Hardware, battery, packaging",0.0
+Self-Activation or Keying,161,Falls off / insertion / applicator,0.0
+Power Problem,154,"Hardware, battery, packaging",0.0
+Difficult or Delayed Activation,150,Falls off / insertion / applicator,0.0
+Device Stops Intermittently,143,No readings / sensor stopped,0.0
+Inaccurate Delivery,141,Unclear / other,0.0
+False Reading From Device Non-Compliance,137,Wrong readings (accuracy),0.0
+Mechanical Problem,131,"Hardware, battery, packaging",0.0
+Defective Component,123,"Hardware, battery, packaging",0.0
+Application Interface Becomes Non-Functional Or Program Exits Abnormally,122,"App, software, display",0.0
+Electrical /Electronic Property Problem,119,"Hardware, battery, packaging",0.0
+Failure to Calibrate,110,Wrong readings (accuracy),0.0
+Activation Failure,109,Falls off / insertion / applicator,0.0
+Date/Time-Related Software Problem,108,"App, software, display",0.0
+Calibration Error,106,Wrong readings (accuracy),0.0
+False Alarm,105,Alarms,0.0
+Incorrect Measurement,103,Wrong readings (accuracy),0.0
+Patient Device Interaction Problem,101,Falls off / insertion / applicator,0.0
+Failure to Read Input Signal,100,No readings / sensor stopped,0.0
+Normal,100,Unclear / other,0.0
+Application Network Problem,99,Signal loss / connection,0.0
+Use of Incorrect Control/Treatment Settings,93,Unclear / other,0.0
+Key or Button Unresponsive/not Working,91,Unclear / other,0.0
+Human-Device Interface Problem,88,Unclear / other,0.0
+Packaging Problem,84,"Hardware, battery, packaging",0.0
+"Manufacturing, Packaging or Shipping Problem",78,Unclear / other,0.0
+Low Test Results,77,Wrong readings (accuracy),0.0
+Failure to Charge,77,Unclear / other,0.0
+Infusion or Flow Problem,75,Unclear / other,0.0
+Device Issue,74,Unclear / other,0.0
+Erratic or Intermittent Display,70,Unclear / other,0.0
+Improper Device Output,69,Unclear / other,0.0
+Component Falling,68,Unclear / other,0.0
+Loss of Data,68,Signal loss / connection,0.0
+Device Dislodged or Dislocated,63,Unclear / other,0.0
+Charging Problem,59,"Hardware, battery, packaging",0.0
+Improper Flow or Infusion,55,Unclear / other,0.0
+Vibration,54,Unclear / other,0.0
+Occlusion Within Device,54,Unclear / other,0.0
+Device-Device Incompatibility,52,Unclear / other,0.0
+Temperature Problem,48,Unclear / other,0.0
+Disconnection,48,Unclear / other,0.0
+Device Slipped,48,Unclear / other,0.0
+Inappropriate Audible Prompt/Feedback,46,Unclear / other,0.0
+Premature Separation,46,Unclear / other,0.0
+Failure To Adhere Or Bond,45,Unclear / other,0.0
+Material Fragmentation,44,Unclear / other,0.0
+Device Markings/Labelling Problem,42,Unclear / other,0.0
+Leak/Splash,42,Unclear / other,0.0
+Failure to Recalibrate,41,Unclear / other,0.0
+Insufficient Flow or Under Infusion,40,Unclear / other,0.0
+Unauthorized Access to Computer System,39,Unclear / other,0.0
+Air Leak,39,Unclear / other,0.0
+Separation Failure,37,Unclear / other,0.0
+Scratched Material,37,Unclear / other,0.0
+Programming Issue,37,Unclear / other,0.0
+Incomplete or Inadequate Connection,36,Unclear / other,0.0
+Kinked,36,Unclear / other,0.0
+Material Protrusion/Extrusion,35,Unclear / other,0.0
+Improper Alarm,35,Unclear / other,0.0
+Environmental Particulates,33,Unclear / other,0.0
+Application Program Version or Upgrade Problem,33,Unclear / other,0.0
+Audible Prompt/Feedback Problem,32,Unclear / other,0.0
+Device Expiration Issue,31,Unclear / other,0.0
+Device Damaged Prior to Use,31,Unclear / other,0.0
+Output below Specifications,31,Unclear / other,0.0
+Corroded,30,Unclear / other,0.0
+Malposition of Device,30,Unclear / other,0.0
+Inadequate or Insufficient Training,30,Unclear / other,0.0
+Problem with Software Installation,29,"App, software, display",0.0
+Device Difficult to Program or Calibrate,29,Unclear / other,0.0
+Misfire,29,Unclear / other,0.0
+Material Discolored,28,Unclear / other,0.0
+Entrapment of Device,28,Unclear / other,0.0
+Electromagnetic Interference,27,Unclear / other,0.0
+Compatibility Problem,27,Unclear / other,0.0
+Device Fell,27,Unclear / other,0.0
+Mechanical Jam,26,Unclear / other,0.0
+Installation-Related Problem,25,Unclear / other,0.0
+Firing Problem,24,Unclear / other,0.0
+Loose or Intermittent Connection,24,Unclear / other,0.0
+Intermittent Continuity,24,Unclear / other,0.0
+Positioning Problem,22,Falls off / insertion / applicator,0.0
+Obstruction of Flow,22,Unclear / other,0.0
+Difficult to Open or Remove Packaging Material,22,Unclear / other,0.0
+Computer Operating System Problem,22,Unclear / other,0.0
+Intermittent Program or Algorithm Execution,22,Unclear / other,0.0
+Arcing at Paddles,21,Unclear / other,0.0
+No Flow,21,Unclear / other,0.0
+Device Or Device Fragments Location Unknown,20,Unclear / other,0.0
+No Audible Prompt/Feedback,20,Unclear / other,0.0
+"Noise, Audible",19,Unclear / other,0.0
+Pumping Stopped,19,Unclear / other,0.0
+Device Ingredient or Reagent Problem,19,Unclear / other,0.0
+Gel Leak,18,Unclear / other,0.0
+"Dull, Blunt",18,Unclear / other,0.0
+Failure to Shut Off,18,Unclear / other,0.0
+Shelf Life Exceeded,17,Unclear / other,0.0
+Optical Problem,17,Unclear / other,0.0
+Device Handling Problem,17,Unclear / other,0.0
+"Component(s), broken",17,Unclear / other,0.0
+Device Contamination with Body Fluid,17,Unclear / other,0.0
+Material Deformation,16,Unclear / other,0.0
+Inaccurate Information,16,Unclear / other,0.0
+Radio Signal Problem,16,Unclear / other,0.0
+Unintended System Motion,15,Unclear / other,0.0
+Application Program Problem: Dose Calculation Error,15,Unclear / other,0.0
+Display Difficult to Read,15,Unclear / other,0.0
+Fire,15,"Hardware, battery, packaging",0.0
+Visual Prompts will not Clear,14,Unclear / other,0.0
+Split,14,Unclear / other,0.0
+Failure to Analyze Signal,14,Unclear / other,0.0
+Failure to Advance,14,Unclear / other,0.0
+Device Difficult to Setup or Prepare,14,Unclear / other,0.0
+Sensing Intermittently,14,Unclear / other,0.0
+"Labelling, Instructions for Use or Training Problem",14,Unclear / other,0.0
+Device Emits Odor,13,Unclear / other,0.0
+Inaccurate Synchronization,13,Unclear / other,0.0
+Loss of Threshold,13,Unclear / other,0.0
+High Capture Threshold,13,Unclear / other,0.0
+Device Remains Activated,12,Unclear / other,0.0
+Mechanics Altered,12,Unclear / other,0.0
+Failure to Transmit Record,12,Unclear / other,0.0
+Failure to Run on Battery,12,Unclear / other,0.0
+Device Damaged Prior to Receipt by User,11,Unclear / other,0.0
+Inaudible or Unclear Audible Prompt/Feedback,11,Unclear / other,0.0
+Inappropriate/Inadequate Shock/Stimulation,11,Unclear / other,0.0
+Failure to Eject,10,Unclear / other,0.0
+Off-Label Use,10,Unclear / other,0.0
+Environmental Compatibility Problem,10,Unclear / other,0.0
+Partial Blockage,10,Unclear / other,0.0
+Positioning Failure,10,Unclear / other,0.0
+Intermittent Communication Failure,10,Signal loss / connection,0.0
+Inadequate Instructions for Healthcare Professional,10,Unclear / other,0.0
+Accessory Incompatible,10,Unclear / other,0.0
+Signal Artifact/Noise,9,Unclear / other,0.0
+Inadequate Instructions for Non-Healthcare Professional,9,Unclear / other,0.0
+Missing Test Results,9,Unclear / other,0.0
+Device Operational Issue,9,Unclear / other,0.0
+Component or Accessory Incompatibility,9,Unclear / other,0.0
+"Tear, Rip or Hole in Device Packaging",9,Unclear / other,0.0
+Fitting Problem,9,Unclear / other,0.0
+Inadequacy of Device Shape and/or Size,8,Unclear / other,0.0
+Output above Specifications,8,Unclear / other,0.0
+Contamination,8,Unclear / other,0.0
+Excessive Heating,8,Unclear / other,0.0
+Electromagnetic Compatibility Problem,8,Unclear / other,0.0
+Volume Accuracy Problem,8,Unclear / other,0.0
+Unsealed Device Packaging,8,Unclear / other,0.0
+Chemical Problem,8,Unclear / other,0.0
+Device Appears to Trigger Rejection,7,Unclear / other,0.0
+Expiration Date Error,7,Unclear / other,0.0
+Failure to Discharge,7,Unclear / other,0.0
+Fogging,7,Unclear / other,0.0
+Device Provides Uninformative Message,7,Unclear / other,0.0
+Explosion,7,Unclear / other,0.0
+Difficult to Open or Close,7,Unclear / other,0.0
+Peeled/Delaminated,7,Unclear / other,0.0
+Data Back-Up Problem,6,Unclear / other,0.0
+Material Puncture/Hole,6,Unclear / other,0.0
+Device Contamination with Chemical or Other Material,6,Unclear / other,0.0
+Filling Problem,6,Unclear / other,0.0
+Imprecise or Erratic Results,6,Unclear / other,0.0
+Operating System Becomes Nonfunctional,5,Unclear / other,0.0
+Decrease in Pressure,5,Unclear / other,0.0
+Reset Problem,5,Unclear / other,0.0
+Pumping Problem,5,Unclear / other,0.0
+Issue With Displayed Error Message,5,Unclear / other,0.0
+Naturally Worn,5,Unclear / other,0.0
+False Negative Result,5,Wrong readings (accuracy),0.0
+False Positive Result,5,Wrong readings (accuracy),0.0
+Under-Sensing,5,Unclear / other,0.0
+Application Program Problem: Medication Error,5,Unclear / other,0.0
+Unintended Collision,5,Unclear / other,0.0
+Inadequate User Interface,5,Unclear / other,0.0
+Hole In Material,5,Unclear / other,0.0
+Migration or Expulsion of Device,4,Falls off / insertion / applicator,0.0
+Human Factors Issue,4,Unclear / other,0.0
+Decreased Sensitivity,4,Unclear / other,0.0
+Looping,4,Unclear / other,0.0
+Failure to Disconnect,4,Unclear / other,0.0
+Failure to Obtain Sample,4,Unclear / other,0.0
+Degraded,4,Unclear / other,0.0
+Image Orientation Incorrect,4,Unclear / other,0.0
+Pressure Problem,4,Unclear / other,0.0
+Unstable,4,Unclear / other,0.0
+Solder Joint Fracture,4,Unclear / other,0.0
+Device Damaged by Another Device,4,Unclear / other,0.0
+Torn Material,4,Unclear / other,0.0
+Circuit Failure,4,Unclear / other,0.0
+"Material Split, Cut or Torn",4,Unclear / other,0.0
+Insufficient Cooling,4,Unclear / other,0.0
+Intermittent Infusion,4,Unclear / other,0.0
+Separation Problem,4,Unclear / other,0.0
+Ambient Temperature Problem,4,Unclear / other,0.0
+Incomplete or Missing Packaging,4,Unclear / other,0.0
+Unexpected Deactivation,3,Unclear / other,0.0
+Failure to Select Signal,3,Unclear / other,0.0
+Inaccurate Flow Rate,3,Unclear / other,0.0
+Burst Container or Vessel,3,"Hardware, battery, packaging",0.0
+Calcified,3,Unclear / other,0.0
+Unintended Movement,3,Unclear / other,0.0
+Biocompatibility,3,Unclear / other,0.0
+Sharp Edges,3,Unclear / other,0.0
+Incorrect Device Or Component Shipped,3,Unclear / other,0.0
+Inappropriate Tactile Prompt/Feedback,3,Unclear / other,0.0
+Power Conditioning Problem,3,Unclear / other,0.0
+Smoking,3,"Hardware, battery, packaging",0.0
+Failure to Back-Up,3,Unclear / other,0.0
+Melted,3,Unclear / other,0.0
+Out-Of-Box Failure,3,Unclear / other,0.0
+Failure to Auto Stop,3,Unclear / other,0.0
+Low Sensing Threshold,3,Unclear / other,0.0
+Material Rupture,3,Unclear / other,0.0
+Premature Activation,3,Unclear / other,0.0
+Delivery System Failure,3,Unclear / other,0.0
+Maintenance Does Not Comply To Manufacturers Recommendations,3,Unclear / other,0.0
+Sparking,2,"Hardware, battery, packaging",0.0
+Collapse,2,Unclear / other,0.0
+Complete Blockage,2,Unclear / other,0.0
+Intermittent Loss of Power,2,No readings / sensor stopped,0.0
+Incorrect Software Programming Calculations,2,Unclear / other,0.0
+Unintended Power Up,2,Unclear / other,0.0
+Intermittent Energy Output,2,Unclear / other,0.0
+Unknown (for use when the device problem is not known),2,Unclear / other,0.0
+Device Packaging Compromised,2,Unclear / other,0.0
+Thermal Decomposition of Device,2,Unclear / other,0.0
+Stretched,2,Unclear / other,0.0
+Device Unsafe to Use in Environment,2,Unclear / other,0.0
+"Sediment, Precipitate Or Deposit In Device Or Device Ingredient",2,Unclear / other,0.0
+Restricted Flow rate,2,Unclear / other,0.0
+Radiofrequency Interference (RFI),2,Unclear / other,0.0
+Radiation Overexposure,2,Unclear / other,0.0
+Difficult or Delayed Positioning,2,Unclear / other,0.0
+Misconnection,2,Unclear / other,0.0
+Deformation Due to Compressive Stress,2,Unclear / other,0.0
+Material Distortion,2,Unclear / other,0.0
+Migration,2,Unclear / other,0.0
+No Visual Prompts/Feedback,2,Unclear / other,0.0
+Problem with Removal of Enzymatic Cleaner,2,Unclear / other,0.0
+Patient Data Problem,2,Unclear / other,0.0
+Complete Loss of Power,2,Unclear / other,0.0
+Pacing Asynchronously,2,Unclear / other,0.0
+Physical Resistance,2,Unclear / other,0.0
+"Alarm, audible",1,Unclear / other,0.0
+Lack of Maintenance Documentation or Guidelines,1,Unclear / other,0.0
+Knotted,1,Unclear / other,0.0
+Application Program Problem: Parameter Calculation Error,1,Unclear / other,0.0
+Battery Problem: Low Impedance,1,Unclear / other,0.0
+Backflow,1,Unclear / other,0.0
+Application Program Problem: Power Calculation Error,1,Unclear / other,0.0
+Biological Environmental Factor,1,Unclear / other,0.0
+Ambient Noise Problem,1,Unclear / other,0.0
+Increased Sensitivity,1,Unclear / other,0.0
+Incorrect Error Code,1,Unclear / other,0.0
+Intermittent Shock/Stimulation,1,Unclear / other,0.0
+Inadequate Service,1,Unclear / other,0.0
+Folded,1,Unclear / other,0.0
+Delayed Program or Algorithm Execution,1,Unclear / other,0.0
+Cross Reactivity,1,Unclear / other,0.0
+Decoupling,1,Unclear / other,0.0
+Impedance Problem,1,Unclear / other,0.0
+Contamination /Decontamination Problem,1,Unclear / other,0.0
+Flare or Flash,1,Unclear / other,0.0
+Fumes or Vapors,1,Unclear / other,0.0
+Contamination of Device Ingredient or Reagent,1,Unclear / other,0.0
+Misassembly by Users,1,Unclear / other,0.0
+Measurement System Incompatibility,1,Unclear / other,0.0
+Defibrillation/Stimulation Problem,1,Unclear / other,0.0
+Device Contamination With Biological Material,1,Unclear / other,0.0
+Material Frayed,1,Unclear / other,0.0
+Failure to Cycle,1,Unclear / other,0.0
+Failure to Conduct,1,Unclear / other,0.0
+Failure to Deliver Energy,1,Unclear / other,0.0
+No Fail-Safe Mechanism,1,Unclear / other,0.0
+"Cannula Guide, Needle Insertion Difficult",1,Unclear / other,0.0
+Failure to Interrogate,1,Unclear / other,0.0
+False Device Output,1,Unclear / other,0.0
+Failure to Reset,1,Unclear / other,0.0
+Metal Shedding Debris,1,Unclear / other,0.0
+Missing Information,1,Unclear / other,0.0
+Misfocusing,1,Unclear / other,0.0
+Failure to Align,1,Unclear / other,0.0
+Component Incompatible,1,Unclear / other,0.0
+Over-Sensing,1,Unclear / other,0.0
+Chemical Spillage,1,Unclear / other,0.0
+Capturing Problem,1,Unclear / other,0.0
+Dislodged,1,Unclear / other,0.0
+Ejection Problem,1,Unclear / other,0.0
+Program or Algorithm Execution Problem,1,Unclear / other,0.0
+Precipitate in Device or Device Ingredient,1,Unclear / other,0.0
+Device Difficult to Maintain,1,Unclear / other,0.0
+Coiled,1,Unclear / other,0.0
+Difficult to Interrogate,1,Unclear / other,0.0
+Difficult or Delayed Separation,1,Unclear / other,0.0
+Device Reprocessing Problem,1,Unclear / other,0.0
+Reservoir,1,Unclear / other,0.0
+Reflux within Device,1,Unclear / other,0.0
+Residue After Decontamination,1,Unclear / other,0.0
+Sensor problems,1,Unclear / other,0.0
+Adhesive Too Strong,1,Unclear / other,0.0
+System fails to activate,1,Unclear / other,0.0
+Tactile Prompts/Feedback,1,Unclear / other,0.0

@@ -19,7 +19,7 @@
 - Headline accuracy set: REPLACE-BG meter pairs (475,502). Calibration pairs (120,202) reported alongside.
 - Primary REPLACE-BG sample for the next phase: CGM+BGM arm (routine testing). CGM-only arm as a check.
 - Bias in the low range is grouped by the average of CGM and fingerstick (regression to the mean fix).
-- Corrections to the old draft:
+- Updates from the Oct 12 draft:
 
 | Old | New | Why |
 |---|---|---|

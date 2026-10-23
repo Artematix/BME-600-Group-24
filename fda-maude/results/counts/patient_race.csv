@@ -1,0 +1,76 @@
+product_code,patient_race,reports
+QBJ,,2343876
+QBJ,White,4807
+QBJ,Black Or African American,338
+QBJ,Asian,297
+QBJ,American Indian Or Alaskan Native,57
+QBJ,Native Hawaiian Or Other Pacific Islander,37
+QBJ,"Asian, White",22
+QBJ,"Black Or African American, White",22
+QBJ,"American Indian Or Alaskan Native, White",17
+QBJ,"American Indian Or Alaskan Native, Black Or African American, White",7
+QBJ,"White, American Indian Or Alaskan Native",6
+QBJ,"American Indian Or Alaskan Native, Black Or African American",3
+QBJ,"Black Or African American, White, American Indian Or Alaskan Native",3
+QBJ,"Asian, Black Or African American, White",2
+QBJ,"Black Or African American, Native Hawaiian Or Other Pacific Islander",2
+QBJ,"Native Hawaiian Or Other Pacific Islander, White",2
+QBJ,"American Indian Or Alaskan Native, Asian, Black Or African American, Native Hawaiian Or Other Pacific Islander, White",1
+QBJ,"American Indian Or Alaskan Native, Black Or African American, Native Hawaiian Or Other Pacific Islander, White",1
+QBJ,"Asian, Black Or African American",1
+QBJ,"Asian, Black Or African American, White, American Indian Or Alaskan Native, Native Hawaiian Or Other Pacific Islander",1
+QBJ,"White, Native Hawaiian Or Other Pacific Islander",1
+PQF,,327262
+PQF,White,11
+PQF,Black Or African American,1
+MDS,,282035
+MDS,White,176
+MDS,Asian,18
+MDS,Black Or African American,6
+MDS,American Indian Or Alaskan Native,3
+MDS,"Asian, White, American Indian Or Alaskan Native",3
+MDS,"White, American Indian Or Alaskan Native",3
+MDS,"American Indian Or Alaskan Native, Black Or African American, White",1
+MDS,"Black Or African American, White",1
+MDS,Native Hawaiian Or Other Pacific Islander,1
+QLG,,258702
+QLG,White,1612
+QLG,Black Or African American,206
+QLG,American Indian Or Alaskan Native,89
+QLG,Asian,78
+QLG,Native Hawaiian Or Other Pacific Islander,20
+QLG,"White, American Indian Or Alaskan Native",5
+QLG,"American Indian Or Alaskan Native, White",4
+QLG,"American Indian Or Alaskan Native, Black Or African American",3
+QLG,"Asian, White",3
+QLG,"Black Or African American, White",2
+QLG,"American Indian Or Alaskan Native, Black Or African American, Native Hawaiian Or Other Pacific Islander",1
+QLG,"Asian, Black Or African American",1
+PZE,,142307
+PZE,White,611
+PZE,Black Or African American,82
+PZE,Asian,42
+PZE,American Indian Or Alaskan Native,31
+PZE,Native Hawaiian Or Other Pacific Islander,9
+PZE,"American Indian Or Alaskan Native, White",8
+PZE,"Asian, Black Or African American",1
+PZE,"Black Or African American, White",1
+PZE,"White, American Indian Or Alaskan Native",1
+SFI,,5007
+SFI,White,12
+SBA,,3757
+SBA,Black Or African American,1
+SAF,,2687
+SAF,White,80
+SAF,Asian,36
+SAF,Black Or African American,3
+QHJ,,2485
+QCD,,1509
+QCD,White,1
+QDK,,617
+QDK,Asian,1
+QDK,"Black Or African American, White, American Indian Or Alaskan Native",1
+QDK,White,1
+QII,,237
+SBH,,1
+SBH,White,1

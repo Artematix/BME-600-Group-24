@@ -1,0 +1,54 @@
+{
+  "_note": "Settings for maude_robot.py. Paths are relative to the fda-maude folder.",
+  "product_codes": ["QBJ", "PQF", "MDS", "QLG", "PZE", "SFI", "SBA", "SAF", "QHJ", "QCD", "QDK", "QII", "SBH"],
+  "excluded_codes_note": "QFG is an insulin pump code. Not used.",
+
+  "daily_call_cap": 900,
+  "daily_call_cap_by_date": {"2026-10-19": 700},
+  "daily_call_cap_with_key": 100000,
+  "min_seconds_between_calls": 1.1,
+  "max_retries": 5,
+  "page_size": 999,
+
+  "count_limit": 999,
+
+  "serious_event_types": ["Death", "Injury"],
+  "serious_max_slice": 10000,
+
+  "sample_size": 5000,
+  "sample_min_per_stratum": 25,
+  "sample_cluster_size": 10,
+  "sample_seed": 20261019,
+
+  "full_max_slice": 20000,
+  "full_workers": 4,
+  "full_min_seconds_between_calls": 0.6,
+
+  "recall_extra_codes": ["PYV", "QDL", "SJD", "PJT", "PHV", "QRX"],
+  "recall_extra_queries": ["product_code:OZP+AND+product_description:\"sensor\""],
+  "enforcement_text_queries": [
+    "product_description:\"Libre\"",
+    "product_description:\"Dexcom\"",
+    "recalling_firm:\"Dexcom\"",
+    "product_description:\"Guardian\"",
+    "product_description:\"Eversense\"",
+    "product_description:\"continuous glucose\""
+  ],
+  "recall_exclude_events": {
+    "97997": "MiniMed 780G insulin pump software",
+    "97597": "Omnipod 5 iOS app (pump)",
+    "96945": "Omnipod 5 iOS app (pump)",
+    "96925": "Bigfoot Unity insulin pen cap",
+    "90628": "Tandem t:slim X2 insulin pump",
+    "90113": "Tandem t:slim X2 insulin pump battery",
+    "86895": "CareLink Personal pump basal-rate upload",
+    "85711": "MiniMed 670G insulin pump battery",
+    "80685": "Contour Plus Link blood glucose meter"
+  },
+
+  "paths": {
+    "raw": "raw",
+    "clean": "clean",
+    "results": "results"
+  }
+}

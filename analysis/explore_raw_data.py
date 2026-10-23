@@ -7,8 +7,10 @@ Datasets
   2. Shanghai T1DM / T2DM (Zhao et al., Figshare) - one Excel file per
      patient-visit plus two summary workbooks in "Uncommitted Data/Raw Data Dump/Shanghai"
 
-Usage (from the repo root)
+Usage (from the repo root; use Python 3.11, on Windows `py -3.11`)
   python analysis/explore_raw_data.py "Uncommitted Data/Raw Data Dump" analysis
+  Argument 1 = data folder, argument 2 = output folder (these are the defaults).
+  Packages: pip install -r requirements.txt (repo root).
 
 Outputs
   analysis/figures/*.png         figures referenced by RESULTS.md
@@ -28,13 +30,29 @@ matplotlib.use("Agg")
 import matplotlib.patches
 import matplotlib.pyplot as plt
 
-ROOT = sys.argv[1] if len(sys.argv) > 1 else "Raw Data Dump"
+if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help"):
+    print(__doc__.strip())
+    sys.exit(0)
+
+ROOT = sys.argv[1] if len(sys.argv) > 1 else "Uncommitted Data/Raw Data Dump"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "analysis"
 FIG = os.path.join(OUT, "figures")
-os.makedirs(FIG, exist_ok=True)
 
 RB = os.path.join(ROOT, "Replace-BG Dataset", "Data Tables")
 SH = os.path.join(ROOT, "Shanghai")
+
+# Stop early with one plain line if the raw data is not where the script expects it.
+for _f in ["HPtRoster.txt", "HScreening.txt", "HLocalHbA1c.txt", "HDeviceUploads.txt",
+           "HMedicalCondition.txt", "HDeviceCGM.txt", "HDeviceBGM.txt"]:
+    if not os.path.isfile(os.path.join(RB, _f)):
+        sys.exit(f"Data not found: expected {os.path.join(RB, _f)}. "
+                 f"Pass the data folder as the first argument (see analysis/REPRODUCIBILITY.md).")
+for _pat in ["Shanghai_T1DM_Summary.xlsx", "Shanghai_T2DM_Summary.xlsx", "Shanghai_T1DM", "Shanghai_T2DM"]:
+    if not glob.glob(os.path.join(SH, "*", _pat)):
+        sys.exit(f"Data not found: expected {os.path.join(SH, '<one sub-folder>', _pat)}. "
+                 f"See analysis/REPRODUCIBILITY.md for the folder layout.")
+
+os.makedirs(FIG, exist_ok=True)
 
 STATS = {}
 T0 = time.time()
@@ -709,11 +727,11 @@ for i, (lab, tab, avg, c) in enumerate(series):
     lo1, hi1 = min(lo1, avg.mean_rel_bias_pct.min()), max(hi1, avg.mean_rel_bias_pct.max())
     hi2 = max(hi2, tab.mard_pct.max())
 axes[0].set_yscale("log"); axes[0].set_ylim(0.5, 5e7)
-axes[0].set_title("Number of paired readings"); axes[0].set_ylabel("Pairs (count, log scale)")
+axes[0].set_title("A. Number of paired readings"); axes[0].set_ylabel("Pairs (count, log scale)")
 axes[1].axhline(0, color=AXIS, lw=1); pad_ylim(axes[1], lo1, hi1)
-axes[1].set_title("Mean relative bias, CGM minus reference"); axes[1].set_ylabel("Bias (%)")
+axes[1].set_title("B. Mean relative bias, CGM minus reference"); axes[1].set_ylabel("Bias (%)")
 pad_ylim(axes[2], 0, hi2)
-axes[2].set_title("Mean absolute relative difference (MARD)"); axes[2].set_ylabel("MARD (%)")
+axes[2].set_title("C. Mean absolute relative difference (MARD)"); axes[2].set_ylabel("MARD (%)")
 for ax in axes:
     ax.set_xticks(x, RANGE_LABELS)
 axes[0].set_xlabel("Reference glucose range (mg/dL)")
@@ -723,9 +741,7 @@ handles, labels_ = axes[0].get_legend_handles_labels()
 handles.append(matplotlib.patches.Patch(facecolor=MUTED, hatch="////", edgecolor=SURFACE, linewidth=0, label=f"hatched = fewer than {SMALL_N} pairs"))
 fig.legend(handles=handles, loc="upper left", ncol=4, fontsize=9, bbox_to_anchor=(0.01, 0.935))
 fig.suptitle("Accuracy by glucose range: error is largest below 70 mg/dL, where pairs are fewest", x=0.01, y=0.995, ha="left", fontsize=12, fontweight="semibold", color=INK)
-fig.text(0.01, 0.845, "Bias is grouped by the average of CGM and reference, so the low bins are not biased by picking low reference values. "
-         "MARD is grouped by reference value; this inflates MARD a little in the lowest bins.", fontsize=8.5, color=INK2)
-fig.tight_layout(rect=(0, 0, 1, 0.835))
+fig.tight_layout(rect=(0, 0, 1, 0.89))
 save(fig, "09_accuracy_by_range.png")
 
 # F10 per-participant MARD (REPLACE-BG calibrations)

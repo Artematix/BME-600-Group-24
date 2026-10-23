@@ -1,0 +1,23 @@
+rank,country,codes,reports,pct_of_non_us
+1,Germany,GM+DE,257552,26.28
+2,United Kingdom,UK+GB,107552,10.97
+3,Canada,CA,92487,9.44
+4,France,FR,86278,8.8
+5,Italy,IT,50797,5.18
+6,Australia,AS+AU,40097,4.09
+7,Spain,SP+ES,38822,3.96
+8,Poland,PL,30938,3.16
+9,Sweden,SW+SE,29466,3.01
+10,Switzerland,SZ+CH,27583,2.81
+11,Netherlands,NL,23656,2.41
+12,Japan,JA+JP,21962,2.24
+13,Austria,AU+AT,14966,1.53
+14,Ireland,IE+EI,14301,1.46
+15,Israel,IS+IL,13549,1.38
+16,Belgium,BE,12648,1.29
+17,Brazil,BR,12297,1.25
+18,Finland,FI,9878,1.01
+19,South Korea,KR+KS,9321,0.95
+20,Czech Republic,EZ+CZ,7034,0.72
+,Other (101 countries/areas),,78938,8.05
+,All non-US,,980122,100.0

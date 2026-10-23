@@ -1,0 +1,9 @@
+Problem family,Main FDA terms,All reports: mentions per 100,Serious: All serious %,Serious: Dexcom %,Serious: Abbott %,Serious: Medtronic %
+Wrong readings (accuracy),"Incorrect...Readings, Low Readings, Imprecision",30.0,33.1,44.4,31.0,9.0
+Signal loss / connection,"Wireless Communication Problem, Communication or Transmission Problem, Connection Problem",32.9,1.3,3.0,0.1,4.9
+No readings / sensor stopped,"No Device Output, Premature End-of-Life Indicator, Unable to Obtain Readings",16.3,22.4,1.9,34.4,2.7
+Falls off / insertion / applicator,"Detachment of Device or Device Component, Retraction Problem, Detachment Of Device Component",5.1,8.0,4.2,10.0,3.1
+Alarms,"Device Alarm System, No Audible Alarm, Defective Alarm",2.9,6.2,6.2,6.8,2.3
+"App, software, display","Device Displays Incorrect Message, Unintended Application Program Shut Down, Display or Visual Feedback Problem",7.2,23.1,0.6,34.8,13.8
+"Hardware, battery, packaging","Break, Battery Problem, Component Missing",1.6,2.2,1.3,1.2,12.3
+Unclear / other,"Device Operates Differently Than Expected, Use of Device Problem, Adverse Event Without...",8.1,28.1,43.9,15.9,68.2

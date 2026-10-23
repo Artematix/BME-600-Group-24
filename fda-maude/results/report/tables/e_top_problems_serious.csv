@@ -1,0 +1,11 @@
+Problem (FDA term),Reports,% of serious reports,Family
+Device Displays Incorrect Message,26482,21.4,"App, software, display"
+Unable to Obtain Readings,25713,20.8,No readings / sensor stopped
+Adverse Event Without Identified Device or Use Problem,16439,13.3,Unclear / other
+Low Readings,15824,12.8,Wrong readings (accuracy)
+High Readings,10345,8.4,Wrong readings (accuracy)
+"Incorrect, Inadequate or Imprecise Result or Readings",9408,7.6,Wrong readings (accuracy)
+Appropriate Device Problem Term/Code Not Available,8593,7.0,Unclear / other
+Detachment of Device or Device Component,7621,6.2,Falls off / insertion / applicator
+Device Alarm System,5538,4.5,Alarms
+Imprecision,5009,4.1,Wrong readings (accuracy)

@@ -1,0 +1,5 @@
+reporter_country,set,reports,flagged_foreign,not_flagged,pct_flagged_foreign
+United States,all,2156966,10249,2146717,0.48
+Not United States,all,980122,550021,430101,56.12
+United States,death+injury,54811,279,54532,0.51
+Not United States,death+injury,62478,5619,56859,8.99

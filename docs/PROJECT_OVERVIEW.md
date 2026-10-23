@@ -1,92 +1,91 @@
 # Project overview
 
-Last updated: 2026-10-09
+Last updated: 2026-10-23
 
 ## The problem (why we care)
 
 - CGMs (continuous glucose monitors) read blood sugar every 5 minutes. People with diabetes dose insulin from them.
-- In 2025 the FDA recalled ~3 million Abbott FreeStyle Libre 3 sensors. They read too LOW.
-- Result: 860 serious injuries, 7 deaths. People ate sugar they didn't need, or skipped insulin.
+- In 2025 the FDA recalled about 3 million Abbott FreeStyle Libre 3 sensors. They read too LOW.
+- Abbott reported 860 serious injuries and 7 deaths to the FDA. People ate sugar they did not need, or skipped insulin.
 - Our question: how wrong does a sensor have to be before it changes a treatment decision?
 
 ## Two phases
 
-### Phase 1. FDA report mining (preliminary, guides Phase 2)
-- Pull FDA recall records and MAUDE problem reports for CGM sensors.
-- Sort them by what went wrong, using an LLM. Count by type, brand, time.
-- Output: a list of real sensor failure types and how common / harmful each is.
-- Teammates use this to (a) decide what to simulate in Phase 2 and (b) write insights.
-- Big enough to be its own section of the report. Scope stays open until we see the data.
-- Details: `fda-maude/README.md`.
+### Phase 1. FDA report mining (done; guides Phase 2)
+- Pulled FDA recall records and MAUDE problem reports for CGM sensors. MAUDE = the FDA database of medical device problem reports.
+- Used the openFDA API (the FDA's public data service). No web scraping.
+- Counted reports by problem type, brand, year and country.
+- Planned: sort report texts by what went wrong, using an LLM (large language model, an AI text tool).
+- Details: `fda-maude/README.md`. Results: `fda-maude/results/report/report_results.md`.
 
 ### Phase 2. Sensor accuracy + failure simulation (main)
 - Compare CGM readings to fingerstick readings (the "truth") in real data.
 - Measure error by range: low / normal / high blood sugar.
-- Then simulate failing sensors on the real traces. Many possible faults:
-  constant low bias, drift over wear days, extra noise, dropouts, lag, pressure lows, etc.
-  Phase 1 tells us which ones matter. "Reads too low by X%" is just one example.
+- Then simulate failing sensors on the real traces. Many possible faults: constant low bias, drift over wear days, extra noise, dropouts, lag, pressure lows.
+- Phase 1 tells us which faults matter. "Reads too low by X %" is one example.
 - Measure how treatment decisions change under each fault.
 - No machine learning needed. Stats + simulation.
 
-## Data we have
+## Data we use
 
-| Dataset | What | Status | Role |
-|---|---|---|---|
-| REPLACE-BG | 226 adults, type 1, Dexcom G4, 26 weeks, 14.8M CGM rows (13.7M in study window), 475,502 meter pairs | Downloaded, explored | PRIMARY |
-| Shanghai T1DM/T2DM | 112 patients, flash CGM, ~2 weeks each, 4k pairs | Downloaded, explored | Comparator only (too few low readings) |
-| OhioT1DM | 12 patients, 8 weeks | Not downloaded. Needs data agreement | Maybe later |
+| Dataset | What | Role |
+|---|---|---|
+| REPLACE-BG | 226 adults, type 1, Dexcom G4, 26 weeks, 14.8M CGM rows, 475,502 meter pairs | Primary |
+| Shanghai T1DM/T2DM | 112 patients, Abbott flash CGM, about 2 weeks each, 4,012 pairs | Comparator only (too few low readings) |
+| FDA MAUDE + recalls | 3.4 million CGM problem reports, 32 recall events | Phase 1 |
 
-Data lives in `Uncommitted Data/Raw Data Dump/`. Not in git. Each teammate needs their own copy.
-
-## What the first exploration found (details: analysis/RESULTS.md)
-
-- REPLACE-BG has thousands of low-range pairs. Enough to answer our question. Big uncertainty from README is resolved.
-- Shanghai has only 37 low-range pairs. Not enough on its own.
-- Both sensors read a bit low in normal/high range. Same direction as the recall fault. Good for us.
-- Pitfall: in the low range, the error direction flips depending on how you group the data. Must handle carefully.
-- Pitfall: 7% of REPLACE-BG CGM rows are from before the study started. Must filter.
-- Both cohorts are narrow (adults only, REPLACE-BG 94% White, Shanghai all Chinese adults recruited through hospitals).
-
-## Deadline (from team docs, see docs/team-docs/)
-
-| Date | What |
-|---|---|
-| Oct 13, 1 PM | Online team meeting. Polish draft. |
-| **Oct 16, 11:59 PM** | **Midterm Research Plan due.** Max 6 pages PDF + GitHub link. 15% of grade. |
-
-- Required sections: Intro, Background (6+ scholarly sources), Dataset, Methods, Preliminary Results (real figure), Teamwork. Plus data/code availability, AI-use statement, author contributions, IEEE references.
-- Repo must have: README with research question + data access + file map + how to run; working code that makes the figure; clean layout.
-- Draft so far: Intro, Background, Dataset written. Methods, Results, Teamwork empty. Many placeholders.
-
-## Problems found in team docs (must fix before Oct 16)
-
-- Research question conflict. The draft asks about "people affected by the recalled sensors, demographics and time of day". No such dataset exists. The README asks about sensor error by range + a fault simulation. We have data for the README version. Team must pick one. Recommendation: README version.
-- Factual errors: draft says sensors read "high or low" (FDA: low only). Notes say "insulin sensor" (it measures glucose). "Diabetes = autoimmune" is only true for type 1.
-- Injury count: 736 vs 860. Use the latest FDA number and cite it.
-- References are APA. Course wants IEEE. Only 3 scholarly sources; need 6+.
-- Team size: assignment says 3-4, we have 5. Ask instructor.
+- Raw CGM data lives in `Uncommitted Data/Raw Data Dump/`. Not in git. Each teammate needs their own copy.
+- Raw MAUDE downloads (`fda-maude/raw/`, `fda-maude/clean/`) are not in git either. The robot script can re-create them.
 
 ## Status
 
 | Item | State |
 |---|---|
-| Repo organized, manager rules, logging | Done 2026-10-07 |
-| First data exploration | Done. Figure 09 fixed and Parkes error grid added 2026-10-09. See analysis/REPRODUCIBILITY.md |
-| Team docs summarized | Done 2026-10-07, 6 PDFs, see docs/team-docs/ |
-| Research plan (deliverable 1) | Final draft 2026-10-14: docs/plans/2026-10-14_midterm-research-plan.pdf. Change-notes version for the team: ..._change-notes.docx. Team to fill [CONFIRM]/[DATE] items, then submit Oct 16 |
-| Phase 1: FDA/MAUDE mining | Not started, folder + plan exist |
-| Phase 2: fault simulation | First version done 2026-10-09 (constant low bias 10/20/30%). See analysis/SIMULATION_RESULTS.md. More fault types wait on Phase 1 |
+| Phase 1: FDA/MAUDE mining | Done. Full pull, report and country analysis finished 2026-10-22. |
+| Phase 1: LLM sorting of report texts | Planned |
+| Phase 2: accuracy by glucose range | First results done. See `analysis/RESULTS.md`. |
+| Phase 2: fault simulation | Version 1 done (constant low bias 10/20/30 %). See `analysis/SIMULATION_RESULTS.md`. |
+| Midterm research plan | Submitted. File: `docs/plans/2026-10-23_midterm-research-plan.pdf` |
+| Final project | Due Dec 4 2026, 11:59 PM. One PDF + GitHub link. |
+
+### Phase 1 key numbers
+
+| What | Value |
+|---|---|
+| All CGM reports in MAUDE (1992-03 to 2026-09) | 3,382,071 |
+| Death + injury reports | 123,607 |
+| of these, deaths | 623 |
+| Top problem type in death + injury reports | Wrong readings (33.1 %) |
+| Recall events | 32 |
+| of these, Class I (most serious) | 7 |
+| Share of all reports from the US | 63.8 % |
+
+- Report counts are NOT failure rates. Brands differ in how they file reports.
+
+### Phase 2 key numbers
+
+| What | REPLACE-BG (Dexcom G4) | Shanghai (Abbott) |
+|---|---|---|
+| MARD, meter pairs (average percent error) | 10.4 % | 13.9 % |
+| Meter pairs below 70 mg/dL | 20,110 | 37 |
+
+- Pitfall: in the low range, the error direction flips depending on how the pairs are grouped. We group by the average of CGM and reference.
+- Pitfall: 7 % of REPLACE-BG CGM rows are from before the study started. They are filtered out.
+- Both cohorts are narrow: adults only. REPLACE-BG is 94 % White. Shanghai is all Chinese adults recruited through two hospitals.
+
+## Next steps (to Dec 4 2026)
+
+- Pick the fault types to simulate, from the Phase 1 results.
+- Simulation version 2: more fault types and more realistic treatment rules.
+- Rerun both analysis scripts on the machine with the data (see `analysis/REPRODUCIBILITY.md`).
+- Write the final project paper.
 
 ## Open questions
 
-- Parkes grid zone borders were typed from memory of the paper. Check against the PDF before the report.
+- Which treatment rules to simulate: fixed thresholds (e.g. treat low if CGM < 70, correction dose if CGM > 180), real pump dose-calculator events, or both?
+- Which sensor fault types to simulate? Decided by Phase 1 results.
 
-- Does Phase 1 (FDA mining) stay in the plan? The lead's research description does not mention it.
+## Decided
 
-- Which treatment rules to simulate: fixed thresholds (70/180), real pump dose-calculator events, or both?
-- Headline accuracy set: decided 2026-10-14. Meter pairs are primary; calibration pairs reported alongside.
-
-- Which treatment decision rules do we simulate? (e.g. "treat hypo if CGM < 70", "correction bolus if CGM > 180")
-- Which sensor fault types do we simulate? Wait for Phase 1 results.
-- Robot vs openFDA API for MAUDE?
-- Do we need OhioT1DM at all?
+- 2026-10-14: meter pairs are the headline accuracy set. Calibration pairs are reported alongside.
+- 2026-10-19: openFDA API for MAUDE, no web scraping. See `docs/plans/2026-10-19_maude-robot-plan.md`.

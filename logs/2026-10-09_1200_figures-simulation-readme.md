@@ -11,7 +11,7 @@ Asked by: Artemy
 - analysis/explore_raw_data.py: bias now binned by average of CGM and reference (fixes the "reads high" artifact). Parkes error grid added (figure 11). Value labels, n= flags, units.
 - analysis/bias_simulation.py (new): constant low bias 10/20/30%. Rules: CGM < 70 -> carbs, CGM > 200 -> insulin. Figure 12, simulation_stats.json, SIMULATION_RESULTS.md.
 - README_DRAFT.md: rubric-driven README. Awaiting lead review.
-- Public-repo cleanup: team-skill remarks reworded; draft feedback moved to docs/team-docs/ (gitignored); log trimmed.
+- Public-repo cleanup: moved draft feedback to a local, unshared folder (docs/team-docs/, gitignored); log trimmed.
 
 ## Key numbers
 - Parkes zones, REPLACE-BG meter pairs: A 88.1%, B 10.9%, C+D+E 0.9%.

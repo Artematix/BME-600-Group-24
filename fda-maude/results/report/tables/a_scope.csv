@@ -1,0 +1,9 @@
+Item,Value
+Sources,FDA MAUDE (device problem reports) via openFDA; FDA recall database
+CGM product codes,"13 codes: QBJ, PQF, MDS, QLG, PZE, SFI, SBA, SAF, QHJ, QCD, QDK, QII, SBH"
+Reports received,1992-03 to 2026-09
+All CGM reports,"3,382,071"
+Death + injury reports downloaded,"123,607 unique"
+Recall events,32 (95 recall records)
+Pull date,2026-10-19
+FDA data last updated,2026-10-07

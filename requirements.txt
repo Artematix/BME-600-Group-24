@@ -1,0 +1,11 @@
+# Python packages for every script in this repo (analysis/ and fda-maude/scripts/).
+# Use Python 3.11. Install from the repo root:
+#   Windows:     py -3.11 -m pip install -r requirements.txt
+#   Mac / Linux: python3 -m pip install -r requirements.txt
+# Versions are the ones that made the committed figures and tables.
+pandas==3.0.6       # tables: load, pair and count the data (all scripts)
+numpy==2.4.6        # number crunching (all scripts)
+matplotlib==3.11.2  # draws every figure (all scripts)
+openpyxl==3.1.5     # lets pandas read the Shanghai .xlsx files (explore_raw_data.py)
+xlrd==2.0.2         # lets pandas read the Shanghai old .xls files (explore_raw_data.py)
+requests==2.34.2    # downloads from the FDA openFDA API (fda-maude/scripts/)

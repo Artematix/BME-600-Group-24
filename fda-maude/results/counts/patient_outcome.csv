@@ -1,0 +1,122 @@
+product_code,patient_outcome,reports
+QBJ,,2302838
+QBJ,Other,25548
+QBJ,Required Intervention,15650
+QBJ,Hospitalization,3982
+QBJ, O,3721
+QBJ, H,3605
+QBJ,Life Threatening,938
+QBJ, R,915
+QBJ, S,489
+QBJ, L,456
+QBJ,Disability,361
+QBJ,Death,183
+QBJ, D,63
+QBJ,Congenital Anomaly,3
+QBJ, C,1
+PQF,,324544
+PQF,Other,2061
+PQF,Hospitalization,266
+PQF,Life Threatening,217
+PQF, O,193
+PQF,Required Intervention,78
+PQF,Disability,63
+PQF, H,34
+PQF, S,33
+PQF,Congenital Anomaly,30
+PQF, R,27
+PQF,Death,15
+PQF, D,1
+MDS,,255862
+MDS,Other,17173
+MDS,Hospitalization,7307
+MDS,Required Intervention,951
+MDS, O,720
+MDS,Death,395
+MDS,Life Threatening,292
+MDS, R,193
+MDS,Congenital Anomaly,143
+MDS,Disability,124
+MDS, H,103
+MDS, S,75
+MDS, L,61
+MDS, D,2
+QLG,,219419
+QLG,Required Intervention,34762
+QLG,Other,5832
+QLG, R,643
+QLG,Hospitalization,640
+QLG, H,445
+QLG, O,33
+QLG,Death,29
+QLG,Life Threatening,28
+QLG,Disability,16
+QLG, L,15
+QLG, S,15
+QLG, D,2
+PZE,,126409
+PZE,Required Intervention,14998
+PZE,Other,962
+PZE,Hospitalization,695
+PZE, R,636
+PZE, H,126
+PZE, O,16
+PZE,Death,12
+PZE,Life Threatening,12
+PZE,Disability,5
+PZE, L,2
+PZE, D,1
+SFI,,4910
+SFI,Other,94
+SFI,Required Intervention,12
+SFI, H,3
+SFI, R,3
+SFI,Hospitalization,3
+SFI, O,1
+SBA,,3468
+SBA,Hospitalization,214
+SBA,Other,71
+SBA,Death,2
+SBA,Congenital Anomaly,1
+SBA,Life Threatening,1
+SBA,Required Intervention,1
+SAF,,2562
+SAF,Other,189
+SAF,Required Intervention,49
+SAF, O,6
+SAF,Hospitalization,3
+SAF,Life Threatening,2
+SAF, H,1
+SAF, S,1
+SAF,Disability,1
+QHJ,,1665
+QHJ,Other,680
+QHJ,Hospitalization,139
+QHJ,Death,1
+QCD,,882
+QCD,Other,557
+QCD,Hospitalization,64
+QCD, O,5
+QCD,Life Threatening,5
+QCD, H,4
+QCD, L,3
+QCD, R,2
+QCD,Required Intervention,2
+QDK,,598
+QDK,Other,12
+QDK, R,4
+QDK,Life Threatening,4
+QDK,Required Intervention,4
+QDK, L,3
+QDK, O,2
+QDK, H,1
+QDK, S,1
+QDK,Death,1
+QDK,Hospitalization,1
+QII,,232
+QII,Other,2
+QII, O,1
+QII,Death,1
+QII,Disability,1
+QII,Required Intervention,1
+SBH,Other,2

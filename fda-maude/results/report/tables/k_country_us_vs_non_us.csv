@@ -1,0 +1,6 @@
+group,reports,death_injury_reports,pct_of_reports,pct_of_death_injury
+United States,2156966,54811,63.78,44.34
+"US territories (Puerto Rico, Guam, ...)",49,5,0.0,0.0
+Other countries,980073,62473,28.98,50.54
+Blank country field,244983,6318,7.24,5.11
+Total,3382071,123607,100.0,100.0

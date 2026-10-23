@@ -66,6 +66,9 @@ Flip counts on the paired readings match the full data closely:
 ## How to run
 From the repo root (takes about 25 seconds; needs several GB of RAM):
 ```
+python -m pip install -r requirements.txt
 python analysis/bias_simulation.py "Uncommitted Data/Raw Data Dump" analysis
 ```
+Use Python 3.11. On Windows, type `py -3.11` in place of `python`. Full steps: `analysis/REPRODUCIBILITY.md`.
+
 Outputs: `analysis/figures/12_decision_flips.png`, `analysis/simulation_stats.json`. Every number above is in the JSON.

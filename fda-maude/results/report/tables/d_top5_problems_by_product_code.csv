@@ -1,0 +1,31 @@
+Product code,Problem (FDA term),Reports,% of code's reports
+QBJ,Wireless Communication Problem,821705,34.9
+QBJ,No Device Output,299326,12.7
+QBJ,"Incorrect, Inadequate or Imprecise Result or Readings",285795,12.2
+QLG,"Incorrect, Inadequate or Imprecise Result or Readings",196195,75.2
+PQF,Wireless Communication Problem,171817,52.5
+QBJ,Low Readings,165358,7.0
+QBJ,Detachment of Device or Device Component,138723,5.9
+PZE,"Incorrect, Inadequate or Imprecise Result or Readings",114526,80.0
+MDS,Device Operates Differently Than Expected,81012,28.7
+MDS,Wireless Communication Problem,60312,21.4
+MDS,Device Displays Incorrect Message,57574,20.4
+PQF,Imprecision,51355,15.7
+PQF,Device Displays Incorrect Message,28079,8.6
+MDS,Use of Device Problem,25692,9.1
+MDS,Invalid Sensing,25600,9.1
+PQF,No Device Output,25215,7.7
+PQF,Use of Device Problem,24263,7.4
+QLG,Unable to Obtain Readings,18417,7.1
+QLG,Device Displays Incorrect Message,18078,6.9
+QLG,Device Alarm System,13279,5.1
+QLG,Detachment of Device or Device Component,10743,4.1
+PZE,Device Alarm System,8208,5.7
+PZE,Device Displays Incorrect Message,4099,2.9
+PZE,Appropriate Device Problem Term/Code Not Available,4085,2.9
+PZE,Unable to Obtain Readings,3850,2.7
+8 small codes,Wireless Communication Problem,3245,19.7
+8 small codes,Imprecision,2649,16.1
+8 small codes,Detachment of Device or Device Component,1638,10.0
+8 small codes,"Incorrect, Inadequate or Imprecise Result or Readings",1567,9.5
+8 small codes,Imprecision,753,4.6

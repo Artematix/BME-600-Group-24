@@ -19,8 +19,10 @@ Method (kept simple on purpose)
   5. Sanity check on the fingerstick-paired subset (meter reading within 5 min).
   6. One figure, one JSON file.
 
-Usage (from the repo root)
+Usage (from the repo root; use Python 3.11, on Windows `py -3.11`)
   python analysis/bias_simulation.py "Uncommitted Data/Raw Data Dump" analysis
+  Argument 1 = data folder, argument 2 = output folder (these are the defaults).
+  Packages: pip install -r requirements.txt (repo root).
 
 Outputs
   analysis/figures/12_decision_flips.png
@@ -38,10 +40,20 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help"):
+    print(__doc__.strip())
+    sys.exit(0)
+
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "Uncommitted Data/Raw Data Dump"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "analysis"
 FIG = os.path.join(OUT, "figures")
 RB = os.path.join(ROOT, "Replace-BG Dataset", "Data Tables")
+
+# Stop early with one plain line if the raw data is not where the script expects it.
+for _f in ["HDeviceCGM.txt", "HDeviceBGM.txt"]:
+    if not os.path.isfile(os.path.join(RB, _f)):
+        sys.exit(f"Data not found: expected {os.path.join(RB, _f)}. "
+                 f"Pass the data folder as the first argument (see analysis/REPRODUCIBILITY.md).")
 
 # --- first, simple choices (state them clearly; change later if the team decides) ---
 LOW_T = 70            # mg/dL. Rule L fires when CGM < LOW_T.
@@ -234,10 +246,11 @@ def draw_figure(results, path):
     ax.set_xlabel("Sensor bias: reads low by (% of true value)")
     ax.set_ylabel("Flipped decisions per person per day")
     ax.set_title(f"Decision flips from a low-reading CGM (REPLACE-BG, {results[0]['n_readings'] / 1e6:.1f} M readings)")
-    ax.legend(loc="upper left")
-    ax.text(0, -0.26, f"Line = median person. Band = middle half of people (IQR). "
-                      f"Rule L: CGM < {LOW_T} mg/dL -> carbs. Rule H: CGM > {HIGH_T} mg/dL -> insulin.",
-            transform=ax.transAxes, fontsize=8, color=MUTED)
+    ax.legend(loc="upper left", frameon=True, facecolor="white", edgecolor=GRID, framealpha=1)
+    # Two short lines so the note never runs wider than the plot (a long line padded the saved image).
+    ax.text(0, -0.2, f"Line = median person. Band = middle half of people (IQR).\n"
+                     f"Rule L: CGM < {LOW_T} mg/dL -> carbs. Rule H: CGM > {HIGH_T} mg/dL -> insulin.",
+            transform=ax.transAxes, fontsize=8, color=MUTED, va="top", linespacing=1.4)
     fig.tight_layout()
     fig.savefig(path)
     plt.close(fig)

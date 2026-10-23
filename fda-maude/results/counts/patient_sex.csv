@@ -1,0 +1,54 @@
+product_code,patient_sex,reports
+QBJ,Female,738796
+QBJ,Male,724764
+QBJ,,521297
+QBJ,Unknown,333231
+QBJ,Prefer Not To Disclose,31416
+PQF,,240200
+PQF,Unknown,42723
+PQF,Male,23049
+PQF,Female,21266
+PQF,Prefer Not To Disclose,36
+MDS,,248612
+MDS,Unknown,27628
+MDS,Male,3215
+MDS,Female,2788
+MDS,Prefer Not To Disclose,4
+QLG,Unknown,224406
+QLG,,18367
+QLG,Male,9618
+QLG,Female,8330
+QLG,Prefer Not To Disclose,5
+PZE,,76471
+PZE,Unknown,60928
+PZE,Male,3254
+PZE,Female,2440
+SFI,Unknown,3863
+SFI,Male,757
+SFI,Female,399
+SBA,Male,1703
+SBA,Female,1397
+SBA,Unknown,658
+SAF,Unknown,1442
+SAF,Female,804
+SAF,Male,548
+SAF,Prefer Not To Disclose,12
+QHJ,Unknown,1606
+QHJ,Male,480
+QHJ,Female,379
+QHJ,Prefer Not To Disclose,20
+QCD,,945
+QCD,Unknown,455
+QCD,Male,56
+QCD,Female,53
+QCD,Prefer Not To Disclose,1
+QDK,Female,325
+QDK,Male,246
+QDK,,45
+QDK,Unknown,4
+QII,,89
+QII,Female,60
+QII,Male,45
+QII,Unknown,41
+QII,Prefer Not To Disclose,2
+SBH,Female,2

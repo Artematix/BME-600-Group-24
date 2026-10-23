@@ -1,0 +1,17 @@
+Manufacturer,Product family,All reports,Deaths,Injuries,Malfunction (and other),Injuries per 100 reports
+Dexcom,Dexcom G4,131118,130,2714,128274,2.1
+Dexcom,Dexcom G5,334114,25,3175,330914,1.0
+Dexcom,Dexcom G6,1351070,68,13045,1337957,1.0
+Dexcom,Dexcom G7,680526,56,13395,667075,2.0
+Dexcom,Dexcom Stelo,2716,0,161,2555,5.9
+Dexcom,"Dexcom other (Seven, ONE, apps)",3504,75,945,2484,
+Abbott,Abbott Libre 14-day / original,133828,14,16462,117352,12.3
+Abbott,Abbott Libre 2 / 2 Plus,306971,48,41441,265482,13.5
+Abbott,Abbott Libre 3 / 3 Plus,271057,94,18198,252765,6.7
+Abbott,Abbott Lingo,107,0,72,35,
+Abbott,"Abbott other (Navigator, apps)",10573,6,1412,9155,
+Medtronic,Medtronic Guardian and older,113925,103,8521,105301,7.5
+Medtronic,Medtronic Simplera,5407,0,86,5321,1.6
+Medtronic,Medtronic Instinct (made by Abbott),9453,0,184,9269,1.9
+Senseonics,Senseonics Eversense,7754,1,3006,4747,38.8
+Other / unknown,Other / unknown,20008,3,167,19838,

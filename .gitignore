@@ -16,3 +16,13 @@ Thumbs.db
 # Team-internal notes (draft critique, private links). Keep local.
 docs/team-docs/
 README_DRAFT.md
+
+# FDA MAUDE robot downloads (large, re-creatable by the robot)
+fda-maude/raw/
+fda-maude/clean/
+
+# Course PDFs and the instructor's documents. Keep local.
+docs/rubrics/
+
+# Change-notes version of the midterm plan (quotes team comments). Keep local.
+docs/plans/2026-10-14_midterm-research-plan_change-notes.docx

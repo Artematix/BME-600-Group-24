@@ -1,0 +1,1178 @@
+product_code,product_problem,reports
+QBJ,Wireless Communication Problem,821705
+QBJ,No Device Output,299326
+QBJ,"Incorrect, Inadequate or Imprecise Result or Readings",285795
+QBJ,Low Readings,165358
+QBJ,Detachment of Device or Device Component,138723
+QBJ,Imprecision,110410
+QBJ,Premature End-of-Life Indicator,107666
+QBJ,Unintended Application Program Shut Down,71778
+QBJ,Protective Measures Problem,58885
+QBJ,Appropriate Device Problem Term/Code Not Available,39233
+QBJ,Communication or Transmission Problem,30919
+QBJ,Break,26135
+QBJ,Inappropriate or Unexpected Reset,22445
+QBJ,Device Displays Incorrect Message,21933
+QBJ,High Readings,18029
+QBJ,Unexpected Shutdown,17845
+QBJ,No Audible Alarm,16890
+QBJ,Defective Alarm,16261
+QBJ,Unable to Obtain Readings,14281
+QBJ,Device Alarm System,12303
+QBJ,Display or Visual Feedback Problem,12224
+QBJ,Connection Problem,9923
+QBJ,Operating System Version or Upgrade Problem,9205
+QBJ,Failure to Sense,6621
+QBJ,Adverse Event Without Identified Device or Use Problem,6374
+QBJ,Application Program Freezes or Fails to Launch,4051
+QBJ,Retraction Problem,3515
+QBJ,Unintended Ejection,3277
+QBJ,Low Audible Alarm,2831
+QBJ,Delivered as Unsterile Product,1274
+QBJ,Product Quality Problem,1217
+QBJ,Overheating of Device,1183
+QBJ,Alarm Not Visible,846
+QBJ,Defective Device,718
+QBJ,Therapeutic or Diagnostic Output Failure,508
+QBJ,Device Sensing Problem,475
+QBJ,Delayed Alarm,466
+QBJ,Insufficient Device Problem Information,432
+QBJ,Unintended Electrical Shock,327
+QBJ,Application Program Problem,290
+QBJ,"Activation, Positioning or Separation Problem",278
+QBJ,Nonstandard Device,271
+QBJ,Output Problem,256
+QBJ,Use of Device Problem,221
+QBJ,Failure to Power Up,165
+QBJ,Material Twisted/Bent,138
+QBJ,No Apparent Adverse Event,110
+QBJ,Patient-Device Incompatibility,104
+QBJ,Loss of or Failure to Bond,103
+QBJ,False Alarm,85
+QBJ,Defective Component,77
+QBJ,Activation Failure,69
+QBJ,Failure to Fire,64
+QBJ,Calibration Problem,54
+QBJ,Failure to Calibrate,53
+QBJ,Premature Discharge of Battery,52
+QBJ,Difficult to Insert,50
+QBJ,Premature Separation,45
+QBJ,Device-Device Incompatibility,41
+QBJ,Component Missing,38
+QBJ,Computer Software Problem,37
+QBJ,Failure to Recalibrate,37
+QBJ,Activation Problem,34
+QBJ,Loss of Data,34
+QBJ,Material Integrity Problem,32
+QBJ,Patient Device Interaction Problem,30
+QBJ,Inaccurate Delivery,26
+QBJ,Separation Failure,23
+QBJ,Intermittent Program or Algorithm Execution,22
+QBJ,Misfire,22
+QBJ,Physical Resistance/Sticking,22
+QBJ,Difficult to Remove,21
+QBJ,Key or Button Unresponsive/not Working,21
+QBJ,Low Test Results,21
+QBJ,Charging Problem,20
+QBJ,Device Markings/Labelling Problem,20
+QBJ,Failure to Read Input Signal,20
+QBJ,Difficult to Open or Remove Packaging Material,19
+QBJ,Material Protrusion/Extrusion,19
+QBJ,Output below Specifications,19
+QBJ,Audible Prompt/Feedback Problem,18
+QBJ,"Dull, Blunt",18
+QBJ,Power Problem,18
+QBJ,Incomplete or Inadequate Connection,17
+QBJ,Pumping Stopped,17
+QBJ,Arcing at Paddles,16
+QBJ,High Test Results,16
+QBJ,Image Display Error/Artifact,16
+QBJ,Incorrect Measurement,16
+QBJ,Entrapment of Device,15
+QBJ,Data Problem,14
+QBJ,Mechanical Problem,14
+QBJ,Battery Problem,13
+QBJ,Electrical /Electronic Property Problem,13
+QBJ,High Capture Threshold,13
+QBJ,Unintended System Motion,13
+QBJ,Device Dislodged or Dislocated,12
+QBJ,Excess Flow or Over-Infusion,12
+QBJ,Inaccurate Information,12
+QBJ,"Manufacturing, Packaging or Shipping Problem",12
+QBJ,Fail-Safe Problem,11
+QBJ,Loose or Intermittent Connection,11
+QBJ,Application Program Version or Upgrade Problem,10
+QBJ,Failure to Eject,10
+QBJ,Device Damaged Prior to Use,9
+QBJ,Device Fell,9
+QBJ,Device Operates Differently Than Expected,9
+QBJ,Difficult or Delayed Activation,9
+QBJ,Disconnection,9
+QBJ,Failure to Analyze Signal,9
+QBJ,"Noise, Audible",9
+QBJ,Signal Artifact/Noise,9
+QBJ,"Tear, Rip or Hole in Device Packaging",9
+QBJ,Compatibility Problem,8
+QBJ,Improper Flow or Infusion,8
+QBJ,Inaccurate Synchronization,8
+QBJ,Inadequate Instructions for Healthcare Professional,8
+QBJ,"Labelling, Instructions for Use or Training Problem",8
+QBJ,Mechanical Jam,8
+QBJ,Output above Specifications,8
+QBJ,Application Network Problem,7
+QBJ,Computer Operating System Problem,7
+QBJ,Device Provides Uninformative Message,7
+QBJ,Inaudible or Unclear Audible Prompt/Feedback,7
+QBJ,Material Deformation,7
+QBJ,Mechanics Altered,7
+QBJ,No Display/Image,7
+QBJ,Device Slipped,6
+QBJ,Failure to Transmit Record,6
+QBJ,Improper or Incorrect Procedure or Method,6
+QBJ,Material Fragmentation,6
+QBJ,Material Puncture/Hole,6
+QBJ,Accessory Incompatible,5
+QBJ,Date/Time-Related Software Problem,5
+QBJ,Device Contamination with Body Fluid,5
+QBJ,Display Difficult to Read,5
+QBJ,Erratic or Intermittent Display,5
+QBJ,False Negative Result,5
+QBJ,False Positive Result,5
+QBJ,Human-Device Interface Problem,5
+QBJ,Imprecise or Erratic Results,5
+QBJ,Intermittent Communication Failure,5
+QBJ,Leak/Splash,5
+QBJ,Malposition of Device,5
+QBJ,Moisture or Humidity Problem,5
+QBJ,Packaging Problem,5
+QBJ,Positioning Problem,5
+QBJ,Sensing Intermittently,5
+QBJ,Unexpected Therapeutic Results,5
+QBJ,Failure to Run on Battery,4
+QBJ,Fluid/Blood Leak,4
+QBJ,Obstruction of Flow,4
+QBJ,Poor Quality Image,4
+QBJ,Solder Joint Fracture,4
+QBJ,Unsealed Device Packaging,4
+QBJ,Biocompatibility,3
+QBJ,Chemical Problem,3
+QBJ,Decrease in Pressure,3
+QBJ,Device Ingredient or Reagent Problem,3
+QBJ,Electromagnetic Interference,3
+QBJ,Expiration Date Error,3
+QBJ,Failure to Deliver,3
+QBJ,Firing Problem,3
+QBJ,Inadequate Instructions for Non-Healthcare Professional,3
+QBJ,Inadequate User Interface,3
+QBJ,Inappropriate Tactile Prompt/Feedback,3
+QBJ,Infusion or Flow Problem,3
+QBJ,Insufficient Cooling,3
+QBJ,Material Separation,3
+QBJ,"Material Split, Cut or Torn",3
+QBJ,Missing Test Results,3
+QBJ,No Flow,3
+QBJ,Positioning Failure,3
+QBJ,Premature Activation,3
+QBJ,Problem with Software Installation,3
+QBJ,Pumping Problem,3
+QBJ,Separation Problem,3
+QBJ,Under-Sensing,3
+QBJ,Unexpected Deactivation,3
+QBJ,Application Program Problem: Medication Error,2
+QBJ,Component or Accessory Incompatibility,2
+QBJ,Corroded,2
+QBJ,Deformation Due to Compressive Stress,2
+QBJ,Degraded,2
+QBJ,Device Appears to Trigger Rejection,2
+QBJ,Device Damaged by Another Device,2
+QBJ,Device Difficult to Program or Calibrate,2
+QBJ,Device Handling Problem,2
+QBJ,Device Inoperable,2
+QBJ,Environmental Compatibility Problem,2
+QBJ,Excessive Heating,2
+QBJ,Failure to Charge,2
+QBJ,Fire,2
+QBJ,Intermittent Energy Output,2
+QBJ,Material Rupture,2
+QBJ,Migration,2
+QBJ,Migration or Expulsion of Device,2
+QBJ,No Audible Prompt/Feedback,2
+QBJ,Off-Label Use,2
+QBJ,Operating System Becomes Nonfunctional,2
+QBJ,Pacing Asynchronously,2
+QBJ,Problem with Removal of Enzymatic Cleaner,2
+QBJ,Restricted Flow rate,2
+QBJ,Structural Problem,2
+QBJ,Unintended Collision,2
+QBJ,Unintended Movement,2
+QBJ,Unstable,2
+QBJ,Adhesive Too Strong,1
+QBJ,Application Program Problem: Parameter Calculation Error,1
+QBJ,Capturing Problem,1
+QBJ,Complete Loss of Power,1
+QBJ,Contamination,1
+QBJ,Cross Reactivity,1
+QBJ,Data Back-Up Problem,1
+QBJ,Decoupling,1
+QBJ,Decreased Sensitivity,1
+QBJ,Defibrillation/Stimulation Problem,1
+QBJ,Delayed Program or Algorithm Execution,1
+QBJ,Detachment Of Device Component,1
+QBJ,Device Difficult to Maintain,1
+QBJ,Device Difficult to Setup or Prepare,1
+QBJ,Device Emits Odor,1
+QBJ,Device Remains Activated,1
+QBJ,Device Unsafe to Use in Environment,1
+QBJ,Difficult to Interrogate,1
+QBJ,Difficult to Open or Close,1
+QBJ,Explosion,1
+QBJ,Failure to Advance,1
+QBJ,Failure to Align,1
+QBJ,Failure to Auto Stop,1
+QBJ,Failure to Disconnect,1
+QBJ,Failure to Obtain Sample,1
+QBJ,Failure to Shut Off,1
+QBJ,Image Orientation Incorrect,1
+QBJ,Inadequacy of Device Shape and/or Size,1
+QBJ,Installation-Related Problem,1
+QBJ,Insufficient Flow or Under Infusion,1
+QBJ,Intermittent Continuity,1
+QBJ,Intermittent Loss of Power,1
+QBJ,Intermittent Shock/Stimulation,1
+QBJ,Lack of Maintenance Documentation or Guidelines,1
+QBJ,Loss of Power,1
+QBJ,Misfocusing,1
+QBJ,Moisture Damage,1
+QBJ,No Fail-Safe Mechanism,1
+QBJ,Over-Sensing,1
+QBJ,Peeled/Delaminated,1
+QBJ,Radiofrequency Interference (RFI),1
+QBJ,Reset Problem,1
+QBJ,Residue After Decontamination,1
+QBJ,Sharp Edges,1
+QBJ,Tactile Prompts/Feedback,1
+QBJ,Unauthorized Access to Computer System,1
+QBJ,Visual Prompts will not Clear,1
+PQF,Wireless Communication Problem,171817
+PQF,Imprecision,51355
+PQF,Device Displays Incorrect Message,28079
+PQF,No Device Output,25215
+PQF,Use of Device Problem,24263
+PQF,Invalid Sensing,6721
+PQF,Premature End-of-Life Indicator,4964
+PQF,Display or Visual Feedback Problem,4377
+PQF,Communication or Transmission Problem,4126
+PQF,Unable to Obtain Readings,4084
+PQF,Defective Alarm,4067
+PQF,Device Inoperable,3759
+PQF,Inappropriate or Unexpected Reset,3624
+PQF,"Incorrect, Inadequate or Imprecise Result or Readings",3104
+PQF,Detachment of Device or Device Component,2967
+PQF,Unexpected Shutdown,2846
+PQF,Battery Problem,2483
+PQF,Device Operates Differently Than Expected,2209
+PQF,Appropriate Device Problem Term/Code Not Available,2112
+PQF,Calibration Problem,2002
+PQF,Low Battery,1878
+PQF,Connection Problem,1596
+PQF,Component Missing,1319
+PQF,Unintended Application Program Shut Down,1314
+PQF,No Audible Alarm,1083
+PQF,Break,1027
+PQF,Detachment Of Device Component,984
+PQF,Adverse Event Without Identified Device or Use Problem,769
+PQF,Overheating of Device,412
+PQF,Retraction Problem,250
+PQF,Unexpected Therapeutic Results,236
+PQF,Computer Software Problem,190
+PQF,Application Program Freezes or Fails to Launch,174
+PQF,Low Audible Alarm,161
+PQF,Alarm Not Visible,120
+PQF,Output Problem,101
+PQF,Moisture or Humidity Problem,87
+PQF,Material Integrity Problem,85
+PQF,Delayed Alarm,71
+PQF,Failure of Device to Self-Test,59
+PQF,Operating System Version or Upgrade Problem,55
+PQF,Activation Problem,48
+PQF,Material Twisted/Bent,41
+PQF,Insufficient Device Problem Information,35
+PQF,Environmental Particulates,30
+PQF,Device Alarm System,28
+PQF,Delivered as Unsterile Product,24
+PQF,Loss of or Failure to Bond,23
+PQF,Packaging Problem,20
+PQF,Failure to Calibrate,19
+PQF,Failure to Power Up,18
+PQF,Device Difficult to Program or Calibrate,17
+PQF,Gel Leak,17
+PQF,"Manufacturing, Packaging or Shipping Problem",16
+PQF,Calibration Error,15
+PQF,Unintended Electrical Shock,15
+PQF,Failure to Fire,14
+PQF,Device Issue,13
+PQF,Disconnection,13
+PQF,Difficult to Remove,11
+PQF,Failure to Sense,11
+PQF,Incomplete or Inadequate Connection,11
+PQF,Obstruction of Flow,11
+PQF,Unauthorized Access to Computer System,11
+PQF,Data Problem,10
+PQF,Patient Device Interaction Problem,10
+PQF,Application Network Problem,8
+PQF,Firing Problem,8
+PQF,Physical Resistance/Sticking,8
+PQF,"Activation, Positioning or Separation Problem",6
+PQF,Product Quality Problem,6
+PQF,Unintended Ejection,6
+PQF,Arcing at Paddles,5
+PQF,Date/Time-Related Software Problem,5
+PQF,Fracture,4
+PQF,Inappropriate/Inadequate Shock/Stimulation,4
+PQF,Calcified,3
+PQF,Device Markings/Labelling Problem,3
+PQF,False Alarm,3
+PQF,Inaccurate Synchronization,3
+PQF,Decrease in Pressure,2
+PQF,Defective Component,2
+PQF,Electrical /Electronic Property Problem,2
+PQF,Failure to Charge,2
+PQF,Fire,2
+PQF,Fluid/Blood Leak,2
+PQF,Improper Alarm,2
+PQF,Improper or Incorrect Procedure or Method,2
+PQF,Therapeutic or Diagnostic Output Failure,2
+PQF,Application Program Problem,1
+PQF,Defective Device,1
+PQF,Device Handling Problem,1
+PQF,Device Or Device Fragments Location Unknown,1
+PQF,Device Sensing Problem,1
+PQF,Device Unsafe to Use in Environment,1
+PQF,Difficult to Insert,1
+PQF,Environmental Compatibility Problem,1
+PQF,Failure to Conduct,1
+PQF,Failure to Deliver,1
+PQF,High Readings,1
+PQF,Image Orientation Incorrect,1
+PQF,Impedance Problem,1
+PQF,Incorrect Or Inadequate Test Results,1
+PQF,Insufficient Cooling,1
+PQF,Insufficient Flow or Under Infusion,1
+PQF,Issue With Displayed Error Message,1
+PQF,Looping,1
+PQF,Loss of Threshold,1
+PQF,"Material Split, Cut or Torn",1
+PQF,Mechanical Jam,1
+PQF,Misfire,1
+PQF,Off-Label Use,1
+PQF,Power Problem,1
+PQF,Premature Discharge of Battery,1
+PQF,Radiofrequency Interference (RFI),1
+PQF,Unintended System Motion,1
+PQF,Vibration,1
+MDS,Device Operates Differently Than Expected,81012
+MDS,Wireless Communication Problem,60312
+MDS,Device Displays Incorrect Message,57574
+MDS,Use of Device Problem,25692
+MDS,Invalid Sensing,25600
+MDS,No Audible Alarm,12119
+MDS,Communication or Transmission Problem,7506
+MDS,Defective Alarm,7033
+MDS,Imprecision,5653
+MDS,Adverse Event Without Identified Device or Use Problem,4268
+MDS,Battery Problem,4183
+MDS,Computer Software Problem,3506
+MDS,Inappropriate or Unexpected Reset,3167
+MDS,Device Inoperable,3122
+MDS,Component Missing,2983
+MDS,Detachment Of Device Component,2967
+MDS,Break,2355
+MDS,Insufficient Device Problem Information,2273
+MDS,Display or Visual Feedback Problem,1799
+MDS,"Incorrect, Inadequate or Imprecise Result or Readings",1637
+MDS,Improper or Incorrect Procedure or Method,1281
+MDS,Crack,1227
+MDS,Appropriate Device Problem Term/Code Not Available,1077
+MDS,No Display/Image,1024
+MDS,Poor Quality Image,1015
+MDS,Unable to Obtain Readings,967
+MDS,Physical Resistance/Sticking,946
+MDS,Failure to Deliver,928
+MDS,Calibration Problem,901
+MDS,Structural Problem,789
+MDS,Failure to Power Up,667
+MDS,Bent,664
+MDS,Moisture Damage,646
+MDS,Incorrect Or Inadequate Test Results,615
+MDS,Device Alarm System,538
+MDS,Unexpected Shutdown,461
+MDS,Data Problem,438
+MDS,Detachment of Device or Device Component,400
+MDS,No Device Output,357
+MDS,Image Display Error/Artifact,354
+MDS,Fracture,352
+MDS,Patient-Device Incompatibility,323
+MDS,Overheating of Device,321
+MDS,Unexpected Therapeutic Results,301
+MDS,Failure of Device to Self-Test,299
+MDS,Low Battery,286
+MDS,Failure to Prime,237
+MDS,Sticking,233
+MDS,"Device, or device fragments remain in patient",225
+MDS,Excess Flow or Over-Infusion,218
+MDS,Fluid/Blood Leak,198
+MDS,Connection Problem,193
+MDS,High Test Results,184
+MDS,Loss of Power,181
+MDS,Fail-Safe Problem,174
+MDS,Self-Activation or Keying,158
+MDS,Device Stops Intermittently,143
+MDS,False Reading From Device Non-Compliance,137
+MDS,Difficult or Delayed Activation,129
+MDS,Application Interface Becomes Non-Functional Or Program Exits Abnormally,122
+MDS,Difficult to Remove,118
+MDS,Inaccurate Delivery,115
+MDS,Device Sensing Problem,112
+MDS,No Apparent Adverse Event,112
+MDS,Mechanical Problem,108
+MDS,Product Quality Problem,104
+MDS,Loss of or Failure to Bond,103
+MDS,Normal,100
+MDS,Date/Time-Related Software Problem,96
+MDS,Use of Incorrect Control/Treatment Settings,92
+MDS,Calibration Error,91
+MDS,Electrical /Electronic Property Problem,90
+MDS,Premature End-of-Life Indicator,88
+MDS,Incorrect Measurement,86
+MDS,Output Problem,85
+MDS,Application Network Problem,84
+MDS,Human-Device Interface Problem,83
+MDS,Premature Discharge of Battery,82
+MDS,Retraction Problem,80
+MDS,Failure to Read Input Signal,78
+MDS,Therapeutic or Diagnostic Output Failure,78
+MDS,Defective Device,76
+MDS,Infusion or Flow Problem,72
+MDS,Moisture or Humidity Problem,70
+MDS,Improper Device Output,69
+MDS,Component Falling,68
+MDS,Low Readings,64
+MDS,Difficult to Insert,63
+MDS,Device Issue,61
+MDS,Operating System Version or Upgrade Problem,56
+MDS,Occlusion Within Device,54
+MDS,Vibration,53
+MDS,Erratic or Intermittent Display,51
+MDS,Low Test Results,51
+MDS,Device Dislodged or Dislocated,48
+MDS,Failure to Charge,48
+MDS,Improper Flow or Infusion,47
+MDS,Inappropriate Audible Prompt/Feedback,46
+MDS,Failure To Adhere Or Bond,45
+MDS,Patient Device Interaction Problem,44
+MDS,Low Audible Alarm,42
+MDS,Air Leak,39
+MDS,Material Integrity Problem,39
+MDS,Device Slipped,38
+MDS,Failure to Sense,38
+MDS,Insufficient Flow or Under Infusion,38
+MDS,Material Fragmentation,38
+MDS,Leak/Splash,37
+MDS,Programming Issue,37
+MDS,Scratched Material,37
+MDS,Temperature Problem,37
+MDS,Unintended Application Program Shut Down,37
+MDS,Kinked,36
+MDS,Defective Component,35
+MDS,Improper Alarm,33
+MDS,High Readings,32
+MDS,Device Expiration Issue,31
+MDS,Inadequate or Insufficient Training,30
+MDS,Corroded,28
+MDS,"Manufacturing, Packaging or Shipping Problem",28
+MDS,Material Discolored,28
+MDS,Charging Problem,26
+MDS,Disconnection,26
+MDS,Failure to Calibrate,26
+MDS,Material Twisted/Bent,26
+MDS,Activation Failure,25
+MDS,Loss of Data,25
+MDS,Unauthorized Access to Computer System,25
+MDS,Problem with Software Installation,24
+MDS,Electromagnetic Interference,23
+MDS,Intermittent Continuity,23
+MDS,Packaging Problem,23
+MDS,Malposition of Device,22
+MDS,Device Or Device Fragments Location Unknown,19
+MDS,No Flow,18
+MDS,"Component(s), broken",17
+MDS,Device Markings/Labelling Problem,17
+MDS,Failure to Shut Off,17
+MDS,Mechanical Jam,17
+MDS,Shelf Life Exceeded,17
+MDS,Radio Signal Problem,16
+MDS,Application Program Problem: Dose Calculation Error,15
+MDS,Positioning Problem,15
+MDS,"Activation, Positioning or Separation Problem",14
+MDS,Computer Operating System Problem,14
+MDS,Split,14
+MDS,Device Handling Problem,13
+MDS,Entrapment of Device,13
+MDS,Failure to Advance,13
+MDS,Separation Failure,13
+MDS,Visual Prompts will not Clear,13
+MDS,Device Emits Odor,12
+MDS,Device Ingredient or Reagent Problem,12
+MDS,Loose or Intermittent Connection,12
+MDS,Loss of Threshold,12
+MDS,Material Protrusion/Extrusion,12
+MDS,Material Separation,12
+MDS,Nonstandard Device,12
+MDS,Device Contamination with Body Fluid,11
+MDS,Device Remains Activated,11
+MDS,Activation Problem,10
+MDS,Device Difficult to Setup or Prepare,10
+MDS,Device Fell,10
+MDS,False Alarm,10
+MDS,"Noise, Audible",10
+MDS,Partial Blockage,10
+MDS,Application Program Problem,9
+MDS,Device Difficult to Program or Calibrate,9
+MDS,Device Operational Issue,9
+MDS,Fitting Problem,9
+MDS,No Audible Prompt/Feedback,9
+MDS,Electromagnetic Compatibility Problem,8
+MDS,Power Problem,8
+MDS,Sensing Intermittently,8
+MDS,Volume Accuracy Problem,8
+MDS,Contamination,7
+MDS,Delivered as Unsterile Product,7
+MDS,Fogging,7
+MDS,Obstruction of Flow,7
+MDS,Device Contamination with Chemical or Other Material,6
+MDS,Filling Problem,6
+MDS,Inadequacy of Device Shape and/or Size,6
+MDS,Inappropriate/Inadequate Shock/Stimulation,6
+MDS,Peeled/Delaminated,6
+MDS,Alarm Not Visible,5
+MDS,Component or Accessory Incompatibility,5
+MDS,Data Back-Up Problem,5
+MDS,Difficult to Open or Close,5
+MDS,Hole In Material,5
+MDS,Incomplete or Inadequate Connection,5
+MDS,Material Deformation,5
+MDS,Mechanics Altered,5
+MDS,Naturally Worn,5
+MDS,Circuit Failure,4
+MDS,Failure to Fire,4
+MDS,Failure to Recalibrate,4
+MDS,Fire,4
+MDS,Human Factors Issue,4
+MDS,Inadequate Instructions for Non-Healthcare Professional,4
+MDS,Issue With Displayed Error Message,4
+MDS,Off-Label Use,4
+MDS,Positioning Failure,4
+MDS,Pressure Problem,4
+MDS,Reset Problem,4
+MDS,Torn Material,4
+MDS,Accessory Incompatible,3
+MDS,Ambient Temperature Problem,3
+MDS,Application Program Problem: Medication Error,3
+MDS,Application Program Version or Upgrade Problem,3
+MDS,Decreased Sensitivity,3
+MDS,Delivery System Failure,3
+MDS,Device Damaged Prior to Use,3
+MDS,Device-Device Incompatibility,3
+MDS,Environmental Particulates,3
+MDS,Failure to Back-Up,3
+MDS,Failure to Transmit Record,3
+MDS,Inaccurate Flow Rate,3
+MDS,Incomplete or Missing Packaging,3
+MDS,Incorrect Device Or Component Shipped,3
+MDS,Intermittent Infusion,3
+MDS,Looping,3
+MDS,Low Sensing Threshold,3
+MDS,Maintenance Does Not Comply To Manufacturers Recommendations,3
+MDS,Out-Of-Box Failure,3
+MDS,Power Conditioning Problem,3
+MDS,Unintended Collision,3
+MDS,Application Program Freezes or Fails to Launch,2
+MDS,Burst Container or Vessel,2
+MDS,Collapse,2
+MDS,Compatibility Problem,2
+MDS,Complete Blockage,2
+MDS,Degraded,2
+MDS,Delayed Alarm,2
+MDS,Device Damaged Prior to Receipt by User,2
+MDS,Device Damaged by Another Device,2
+MDS,Device Packaging Compromised,2
+MDS,Difficult or Delayed Positioning,2
+MDS,Display Difficult to Read,2
+MDS,Expiration Date Error,2
+MDS,Failure to Auto Stop,2
+MDS,Failure to Disconnect,2
+MDS,Inaccurate Synchronization,2
+MDS,Inadequate Instructions for Healthcare Professional,2
+MDS,Inadequate User Interface,2
+MDS,Inaudible or Unclear Audible Prompt/Feedback,2
+MDS,Incorrect Software Programming Calculations,2
+MDS,"Labelling, Instructions for Use or Training Problem",2
+MDS,Material Distortion,2
+MDS,Melted,2
+MDS,Migration or Expulsion of Device,2
+MDS,Misconnection,2
+MDS,Operating System Becomes Nonfunctional,2
+MDS,Patient Data Problem,2
+MDS,Physical Resistance,2
+MDS,Protective Measures Problem,2
+MDS,Pumping Problem,2
+MDS,Pumping Stopped,2
+MDS,Radiation Overexposure,2
+MDS,"Sediment, Precipitate Or Deposit In Device Or Device Ingredient",2
+MDS,Stretched,2
+MDS,Unintended Ejection,2
+MDS,Unknown (for use when the device problem is not known),2
+MDS,Unstable,2
+MDS,"Alarm, audible",1
+MDS,Ambient Noise Problem,1
+MDS,Application Program Problem: Power Calculation Error,1
+MDS,Audible Prompt/Feedback Problem,1
+MDS,Backflow,1
+MDS,Biological Environmental Factor,1
+MDS,"Cannula Guide, Needle Insertion Difficult",1
+MDS,Chemical Problem,1
+MDS,Chemical Spillage,1
+MDS,Coiled,1
+MDS,Component Incompatible,1
+MDS,Contamination of Device Ingredient or Reagent,1
+MDS,Device Appears to Trigger Rejection,1
+MDS,Device Contamination With Biological Material,1
+MDS,Device Reprocessing Problem,1
+MDS,Difficult or Delayed Separation,1
+MDS,Dislodged,1
+MDS,Environmental Compatibility Problem,1
+MDS,Failure to Analyze Signal,1
+MDS,Failure to Cycle,1
+MDS,Failure to Deliver Energy,1
+MDS,Failure to Discharge,1
+MDS,Failure to Reset,1
+MDS,False Device Output,1
+MDS,Firing Problem,1
+MDS,Flare or Flash,1
+MDS,Folded,1
+MDS,Fumes or Vapors,1
+MDS,Gel Leak,1
+MDS,Imprecise or Erratic Results,1
+MDS,Inadequate Service,1
+MDS,Incorrect Error Code,1
+MDS,Installation-Related Problem,1
+MDS,Knotted,1
+MDS,Material Frayed,1
+MDS,Material Rupture,1
+MDS,Measurement System Incompatibility,1
+MDS,Metal Shedding Debris,1
+MDS,Misassembly by Users,1
+MDS,Missing Test Results,1
+MDS,Optical Problem,1
+MDS,Output below Specifications,1
+MDS,Precipitate in Device or Device Ingredient,1
+MDS,Program or Algorithm Execution Problem,1
+MDS,Reflux within Device,1
+MDS,Reservoir,1
+MDS,Sensor problems,1
+MDS,Separation Problem,1
+MDS,Smoking,1
+MDS,Sparking,1
+MDS,System fails to activate,1
+MDS,Thermal Decomposition of Device,1
+MDS,Under-Sensing,1
+MDS,Unintended Movement,1
+MDS,Unintended System Motion,1
+MDS,Unsealed Device Packaging,1
+QLG,"Incorrect, Inadequate or Imprecise Result or Readings",196195
+QLG,Unable to Obtain Readings,18417
+QLG,Device Displays Incorrect Message,18078
+QLG,Device Alarm System,13279
+QLG,Detachment of Device or Device Component,10743
+QLG,Low Readings,6249
+QLG,High Readings,5335
+QLG,Product Quality Problem,4541
+QLG,Adverse Event Without Identified Device or Use Problem,3002
+QLG,Failure to Power Up,977
+QLG,Application Program Problem,525
+QLG,Delivered as Unsterile Product,454
+QLG,Premature Discharge of Battery,251
+QLG,"Activation, Positioning or Separation Problem",157
+QLG,Failure to Fire,157
+QLG,Material Twisted/Bent,140
+QLG,No Device Output,133
+QLG,No Audible Alarm,130
+QLG,Unintended Electrical Shock,116
+QLG,Power Problem,99
+QLG,Difficult to Insert,67
+QLG,Appropriate Device Problem Term/Code Not Available,65
+QLG,Display or Visual Feedback Problem,58
+QLG,Key or Button Unresponsive/not Working,54
+QLG,Application Program Freezes or Fails to Launch,42
+QLG,Battery Problem,41
+QLG,Insufficient Device Problem Information,39
+QLG,No Display/Image,26
+QLG,Component Missing,20
+QLG,Break,19
+QLG,Defective Device,19
+QLG,Therapeutic or Diagnostic Output Failure,17
+QLG,Data Problem,16
+QLG,No Apparent Adverse Event,16
+QLG,Device Damaged Prior to Use,14
+QLG,Failure to Charge,14
+QLG,Packaging Problem,13
+QLG,Compatibility Problem,12
+QLG,Audible Prompt/Feedback Problem,11
+QLG,Charging Problem,10
+QLG,Use of Device Problem,10
+QLG,Computer Software Problem,9
+QLG,Difficult or Delayed Activation,9
+QLG,Erratic or Intermittent Display,9
+QLG,Crack,8
+QLG,Device Damaged Prior to Receipt by User,8
+QLG,Communication or Transmission Problem,7
+QLG,Device Sensing Problem,7
+QLG,No Audible Prompt/Feedback,7
+QLG,Output Problem,7
+QLG,Image Display Error/Artifact,6
+QLG,Wireless Communication Problem,6
+QLG,Application Program Version or Upgrade Problem,5
+QLG,Device-Device Incompatibility,5
+QLG,Firing Problem,5
+QLG,Loss of or Failure to Bond,5
+QLG,"Manufacturing, Packaging or Shipping Problem",5
+QLG,Nonstandard Device,5
+QLG,Patient Device Interaction Problem,5
+QLG,Protective Measures Problem,5
+QLG,Defective Alarm,4
+QLG,Defective Component,4
+QLG,Explosion,4
+QLG,Failure to Run on Battery,4
+QLG,False Alarm,4
+QLG,Material Separation,4
+QLG,Mechanical Problem,4
+QLG,Activation Failure,3
+QLG,Connection Problem,3
+QLG,Device Difficult to Setup or Prepare,3
+QLG,Difficult to Open or Remove Packaging Material,3
+QLG,Display Difficult to Read,3
+QLG,Failure to Deliver,3
+QLG,Failure to Obtain Sample,3
+QLG,Incomplete or Inadequate Connection,3
+QLG,Loss of Data,3
+QLG,Self-Activation or Keying,3
+QLG,Activation Problem,2
+QLG,Component or Accessory Incompatibility,2
+QLG,Date/Time-Related Software Problem,2
+QLG,Delayed Alarm,2
+QLG,Inaccurate Information,2
+QLG,Inaudible or Unclear Audible Prompt/Feedback,2
+QLG,Low Test Results,2
+QLG,Material Deformation,2
+QLG,Material Protrusion/Extrusion,2
+QLG,No Visual Prompts/Feedback,2
+QLG,Operating System Version or Upgrade Problem,2
+QLG,Unexpected Shutdown,2
+QLG,Accessory Incompatible,1
+QLG,Computer Operating System Problem,1
+QLG,Device Fell,1
+QLG,Device Markings/Labelling Problem,1
+QLG,Device Slipped,1
+QLG,Electromagnetic Interference,1
+QLG,Failure to Discharge,1
+QLG,Failure to Read Input Signal,1
+QLG,Failure to Sense,1
+QLG,Fire,1
+QLG,High Test Results,1
+QLG,Incomplete or Missing Packaging,1
+QLG,Intermittent Infusion,1
+QLG,Intermittent Loss of Power,1
+QLG,"Labelling, Instructions for Use or Training Problem",1
+QLG,Loose or Intermittent Connection,1
+QLG,Material Integrity Problem,1
+QLG,Missing Information,1
+QLG,Missing Test Results,1
+QLG,Off-Label Use,1
+QLG,Overheating of Device,1
+QLG,Premature End-of-Life Indicator,1
+QLG,Premature Separation,1
+QLG,Problem with Software Installation,1
+QLG,Retraction Problem,1
+QLG,Sensing Intermittently,1
+QLG,Sharp Edges,1
+QLG,Smoking,1
+QLG,Unintended Power Up,1
+QLG,Unsealed Device Packaging,1
+PZE,"Incorrect, Inadequate or Imprecise Result or Readings",114526
+PZE,Device Alarm System,8208
+PZE,Device Displays Incorrect Message,4099
+PZE,Appropriate Device Problem Term/Code Not Available,4085
+PZE,Unable to Obtain Readings,3850
+PZE,High Readings,3266
+PZE,Low Readings,2805
+PZE,Detachment of Device or Device Component,2512
+PZE,Application Program Problem,1444
+PZE,Adverse Event Without Identified Device or Use Problem,1111
+PZE,Product Quality Problem,1083
+PZE,Failure to Power Up,311
+PZE,No Device Output,125
+PZE,Delivered as Unsterile Product,88
+PZE,Material Twisted/Bent,54
+PZE,Failure to Fire,52
+PZE,Difficult to Insert,42
+PZE,Premature Discharge of Battery,42
+PZE,Insufficient Device Problem Information,41
+PZE,Computer Software Problem,38
+PZE,No Display/Image,30
+PZE,Data Problem,27
+PZE,Power Problem,27
+PZE,Battery Problem,24
+PZE,Display or Visual Feedback Problem,22
+PZE,Unintended Electrical Shock,20
+PZE,"Activation, Positioning or Separation Problem",19
+PZE,Defective Device,19
+PZE,Key or Button Unresponsive/not Working,16
+PZE,Application Program Version or Upgrade Problem,15
+PZE,Component Missing,15
+PZE,Patient-Device Incompatibility,15
+PZE,Therapeutic or Diagnostic Output Failure,15
+PZE,Output Problem,11
+PZE,Communication or Transmission Problem,10
+PZE,No Audible Alarm,10
+PZE,Application Program Freezes or Fails to Launch,9
+PZE,Break,9
+PZE,Failure to Charge,9
+PZE,Packaging Problem,9
+PZE,Crack,8
+PZE,No Apparent Adverse Event,7
+PZE,Patient Device Interaction Problem,7
+PZE,Activation Failure,6
+PZE,Device Fell,6
+PZE,"Manufacturing, Packaging or Shipping Problem",6
+PZE,Compatibility Problem,5
+PZE,Connection Problem,5
+PZE,Device Damaged Prior to Use,5
+PZE,Device Sensing Problem,5
+PZE,Display Difficult to Read,5
+PZE,Erratic or Intermittent Display,5
+PZE,Failure to Discharge,5
+PZE,Fire,5
+PZE,Firing Problem,5
+PZE,Loss of Data,5
+PZE,Misfire,5
+PZE,Defective Component,4
+PZE,Failure to Deliver,4
+PZE,Failure to Run on Battery,4
+PZE,Image Display Error/Artifact,4
+PZE,Material Separation,4
+PZE,Mechanical Problem,4
+PZE,Missing Test Results,4
+PZE,Protective Measures Problem,4
+PZE,Use of Device Problem,4
+PZE,Activation Problem,3
+PZE,Device Slipped,3
+PZE,Device-Device Incompatibility,3
+PZE,Difficult or Delayed Activation,3
+PZE,Failure to Sense,3
+PZE,"Labelling, Instructions for Use or Training Problem",3
+PZE,Loss of or Failure to Bond,3
+PZE,Low Test Results,3
+PZE,Audible Prompt/Feedback Problem,2
+PZE,Charging Problem,2
+PZE,Explosion,2
+PZE,Imprecision,2
+PZE,Material Protrusion/Extrusion,2
+PZE,Nonstandard Device,2
+PZE,Premature End-of-Life Indicator,2
+PZE,Accessory Incompatible,1
+PZE,Bent,1
+PZE,Burst Container or Vessel,1
+PZE,Calibration Problem,1
+PZE,Complete Loss of Power,1
+PZE,Delayed Alarm,1
+PZE,Detachment Of Device Component,1
+PZE,Device Contamination with Body Fluid,1
+PZE,Device Markings/Labelling Problem,1
+PZE,Device Operates Differently Than Expected,1
+PZE,Difficult to Open or Close,1
+PZE,Excessive Heating,1
+PZE,Failure to Calibrate,1
+PZE,Failure to Disconnect,1
+PZE,Failure to Interrogate,1
+PZE,Failure to Read Input Signal,1
+PZE,Inadequacy of Device Shape and/or Size,1
+PZE,Inappropriate/Inadequate Shock/Stimulation,1
+PZE,Incorrect Measurement,1
+PZE,Incorrect Or Inadequate Test Results,1
+PZE,Material Deformation,1
+PZE,Melted,1
+PZE,Off-Label Use,1
+PZE,Physical Resistance/Sticking,1
+PZE,Problem with Software Installation,1
+PZE,Retraction Problem,1
+PZE,Separation Failure,1
+PZE,Sharp Edges,1
+PZE,Smoking,1
+PZE,Sparking,1
+PZE,Structural Problem,1
+PZE,Thermal Decomposition of Device,1
+PZE,Under-Sensing,1
+PZE,Unintended Power Up,1
+PZE,Unsealed Device Packaging,1
+PZE,Use of Incorrect Control/Treatment Settings,1
+SFI,Wireless Communication Problem,3245
+SFI,"Incorrect, Inadequate or Imprecise Result or Readings",1567
+SFI,Calibration Problem,468
+SFI,Retraction Problem,182
+SFI,Activation Problem,76
+SFI,Break,72
+SFI,Unexpected Therapeutic Results,54
+SFI,Delivered as Unsterile Product,38
+SFI,Loss of or Failure to Bond,34
+SFI,Material Twisted/Bent,32
+SFI,Material Integrity Problem,13
+SFI,Packaging Problem,13
+SFI,"Manufacturing, Packaging or Shipping Problem",11
+SFI,Failure to Calibrate,10
+SFI,Failure to Sense,10
+SFI,Output below Specifications,10
+SFI,Difficult to Remove,8
+SFI,"Activation, Positioning or Separation Problem",7
+SFI,Adverse Event Without Identified Device or Use Problem,6
+SFI,Product Quality Problem,5
+SFI,Failure to Fire,4
+SFI,Physical Resistance/Sticking,3
+SFI,Appropriate Device Problem Term/Code Not Available,2
+SFI,Firing Problem,2
+SFI,Computer Software Problem,1
+SFI,Data Problem,1
+SFI,Device Difficult to Program or Calibrate,1
+SFI,Misfire,1
+SFI,Moisture or Humidity Problem,1
+SBA,Imprecision,2649
+SBA,Adverse Event Without Identified Device or Use Problem,506
+SBA,Output Problem,272
+SBA,Communication or Transmission Problem,156
+SBA,Premature End-of-Life Indicator,76
+SBA,Difficult to Remove,63
+SBA,Unable to Obtain Readings,31
+SBA,Connection Problem,22
+SBA,Insufficient Device Problem Information,21
+SBA,Material Separation,19
+SBA,Failure to Sense,13
+SBA,Calibration Problem,9
+SBA,Battery Problem,8
+SBA,Temperature Problem,5
+SBA,Wireless Communication Problem,4
+SBA,Device Dislodged or Dislocated,3
+SBA,"Incorrect, Inadequate or Imprecise Result or Readings",3
+SBA,Installation-Related Problem,3
+SBA,No Device Output,3
+SBA,Overheating of Device,3
+SBA,Use of Device Problem,3
+SBA,Device Sensing Problem,2
+SBA,Environmental Compatibility Problem,2
+SBA,Failure to Select Signal,2
+SBA,Image Orientation Incorrect,2
+SBA,No Apparent Adverse Event,2
+SBA,Patient Device Interaction Problem,2
+SBA,Appropriate Device Problem Term/Code Not Available,1
+SBA,Component Missing,1
+SBA,Device Alarm System,1
+SBA,Electrical /Electronic Property Problem,1
+SBA,Excessive Heating,1
+SBA,Expiration Date Error,1
+SBA,Failure to Calibrate,1
+SBA,Improper or Incorrect Procedure or Method,1
+SBA,Inadequate Instructions for Non-Healthcare Professional,1
+SBA,Material Integrity Problem,1
+SBA,No Audible Alarm,1
+SAF,Detachment of Device or Device Component,1638
+SAF,Break,478
+SAF,Appropriate Device Problem Term/Code Not Available,351
+SAF,Adverse Event Without Identified Device or Use Problem,140
+SAF,"Incorrect, Inadequate or Imprecise Result or Readings",59
+SAF,Defective Device,33
+SAF,Wireless Communication Problem,26
+SAF,High Readings,18
+SAF,Unintended Electrical Shock,18
+SAF,Low Readings,16
+SAF,Device Sensing Problem,11
+SAF,Therapeutic or Diagnostic Output Failure,9
+SAF,Product Quality Problem,8
+SAF,Unexpected Shutdown,7
+SAF,Activation Failure,6
+SAF,"Activation, Positioning or Separation Problem",5
+SAF,Delivered as Unsterile Product,5
+SAF,Overheating of Device,5
+SAF,Unable to Obtain Readings,5
+SAF,Computer Software Problem,4
+SAF,Display or Visual Feedback Problem,4
+SAF,No Device Output,4
+SAF,Premature End-of-Life Indicator,4
+SAF,Device Displays Incorrect Message,3
+SAF,Failure to Transmit Record,3
+SAF,False Alarm,3
+SAF,Patient Device Interaction Problem,3
+SAF,Activation Problem,2
+SAF,Application Program Freezes or Fails to Launch,2
+SAF,Component Missing,2
+SAF,Connection Problem,2
+SAF,No Audible Alarm,2
+SAF,Unauthorized Access to Computer System,2
+SAF,Defective Alarm,1
+SAF,Difficult to Remove,1
+SAF,Ejection Problem,1
+SAF,Failure to Analyze Signal,1
+SAF,Failure to Power Up,1
+SAF,Inadequate Instructions for Non-Healthcare Professional,1
+SAF,Insufficient Device Problem Information,1
+SAF,Material Twisted/Bent,1
+SAF,No Apparent Adverse Event,1
+SAF,Output below Specifications,1
+SAF,Packaging Problem,1
+SAF,Unintended Application Program Shut Down,1
+SAF,Unsealed Device Packaging,1
+QHJ,Imprecision,753
+QHJ,Failure to Sense,475
+QHJ,Adverse Event Without Identified Device or Use Problem,412
+QHJ,Difficult to Remove,290
+QHJ,Premature End-of-Life Indicator,285
+QHJ,Material Separation,97
+QHJ,Communication or Transmission Problem,58
+QHJ,Output Problem,42
+QHJ,Connection Problem,30
+QHJ,Device Sensing Problem,28
+QHJ,Installation-Related Problem,18
+QHJ,No Apparent Adverse Event,18
+QHJ,Optical Problem,16
+QHJ,Insufficient Device Problem Information,15
+QHJ,Battery Problem,9
+QHJ,Calibration Problem,9
+QHJ,Improper or Incorrect Procedure or Method,6
+QHJ,Chemical Problem,4
+QHJ,Device Ingredient or Reagent Problem,4
+QHJ,Environmental Compatibility Problem,4
+QHJ,No Device Output,4
+QHJ,Device Alarm System,3
+QHJ,Display or Visual Feedback Problem,3
+QHJ,Excessive Heating,3
+QHJ,Failure to Analyze Signal,3
+QHJ,Positioning Failure,3
+QHJ,Temperature Problem,3
+QHJ,Electrical /Electronic Property Problem,2
+QHJ,"Incorrect, Inadequate or Imprecise Result or Readings",2
+QHJ,No Audible Prompt/Feedback,2
+QHJ,Overheating of Device,2
+QHJ,Positioning Problem,2
+QHJ,Use of Device Problem,2
+QHJ,Ambient Temperature Problem,1
+QHJ,Break,1
+QHJ,Contamination /Decontamination Problem,1
+QHJ,Crack,1
+QHJ,Expiration Date Error,1
+QHJ,Failure to Charge,1
+QHJ,Failure to Select Signal,1
+QHJ,Fire,1
+QHJ,Increased Sensitivity,1
+QHJ,Malposition of Device,1
+QHJ,Material Deformation,1
+QHJ,Mechanical Problem,1
+QHJ,No Audible Alarm,1
+QHJ,Operating System Becomes Nonfunctional,1
+QHJ,Unable to Obtain Readings,1
+QHJ,Unintended Electrical Shock,1
+QHJ,Wireless Communication Problem,1
+QCD,Imprecision,450
+QCD,Failure to Sense,411
+QCD,Adverse Event Without Identified Device or Use Problem,329
+QCD,Difficult to Remove,157
+QCD,Device Sensing Problem,34
+QCD,Device Alarm System,28
+QCD,Material Separation,28
+QCD,Insufficient Device Problem Information,14
+QCD,Electrical /Electronic Property Problem,11
+QCD,Communication or Transmission Problem,10
+QCD,Connection Problem,10
+QCD,Overheating of Device,9
+QCD,Intermittent Communication Failure,5
+QCD,Calibration Problem,4
+QCD,Device Appears to Trigger Rejection,4
+QCD,Temperature Problem,3
+QCD,Appropriate Device Problem Term/Code Not Available,2
+QCD,Inaccurate Information,2
+QCD,Installation-Related Problem,2
+QCD,Malposition of Device,2
+QCD,No Apparent Adverse Event,2
+QCD,Use of Device Problem,2
+QCD,"Activation, Positioning or Separation Problem",1
+QCD,Battery Problem,1
+QCD,Charging Problem,1
+QCD,Device Fell,1
+QCD,Device Handling Problem,1
+QCD,Excessive Heating,1
+QCD,Failure to Charge,1
+QCD,Improper or Incorrect Procedure or Method,1
+QCD,"Incorrect, Inadequate or Imprecise Result or Readings",1
+QCD,Low Audible Alarm,1
+QCD,Off-Label Use,1
+QCD,Output Problem,1
+QCD,Patient-Device Incompatibility,1
+QCD,Power Problem,1
+QCD,Premature Discharge of Battery,1
+QCD,Product Quality Problem,1
+QCD,Protective Measures Problem,1
+QDK,Wireless Communication Problem,385
+QDK,Imprecision,83
+QDK,No Device Output,40
+QDK,Unable to Obtain Readings,27
+QDK,Unexpected Shutdown,12
+QDK,Appropriate Device Problem Term/Code Not Available,9
+QDK,Unintended Application Program Shut Down,8
+QDK,No Audible Alarm,6
+QDK,Operating System Version or Upgrade Problem,6
+QDK,Defective Alarm,5
+QDK,Detachment of Device or Device Component,4
+QDK,Display or Visual Feedback Problem,4
+QDK,Premature End-of-Life Indicator,4
+QDK,Adverse Event Without Identified Device or Use Problem,3
+QDK,Inappropriate or Unexpected Reset,3
+QDK,"Incorrect, Inadequate or Imprecise Result or Readings",3
+QDK,Output Problem,2
+QDK,Physical Resistance/Sticking,2
+QDK,Product Quality Problem,2
+QDK,Application Program Freezes or Fails to Launch,1
+QDK,Break,1
+QDK,Computer Software Problem,1
+QDK,Connection Problem,1
+QDK,Defective Component,1
+QDK,Defective Device,1
+QDK,Device Damaged Prior to Receipt by User,1
+QDK,High Test Results,1
+QDK,Loss of Data,1
+QDK,Low Audible Alarm,1
+QDK,Low Readings,1
+QDK,Material Integrity Problem,1
+QDK,Overheating of Device,1
+QDK,Patient-Device Incompatibility,1
+QDK,Protective Measures Problem,1
+QDK,Retraction Problem,1
+QDK,Therapeutic or Diagnostic Output Failure,1
+QDK,Unintended Electrical Shock,1
+QII,Wireless Communication Problem,108
+QII,No Device Output,92
+QII,Premature End-of-Life Indicator,14
+QII,Imprecision,7
+QII,Appropriate Device Problem Term/Code Not Available,5
+QII,Adverse Event Without Identified Device or Use Problem,3
+QII,Break,2
+QII,Detachment of Device or Device Component,2
+QII,Battery Problem: Low Impedance,1
+QII,Inappropriate or Unexpected Reset,1
+QII,Unable to Obtain Readings,1
+QII,Unintended Ejection,1

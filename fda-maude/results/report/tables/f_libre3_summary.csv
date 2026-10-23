@@ -1,0 +1,15 @@
+Item,Value
+Libre 3 / 3 Plus serious reports (all time),18292
+    deaths (all time),94
+    injuries (all time),18198
+"  of these, received on or after Nov 24 2025",6785
+    deaths (received on or after Nov 24 2025),71
+    injuries (received on or after Nov 24 2025),6714
+"  of these, with problem term 'Low Readings'",5347
+"    deaths ('Low Readings', all time)",32
+"    injuries ('Low Readings', all time)",5315
+  received on or after Nov 24 2025 AND 'Low Readings',2638
+    deaths (on or after Nov 24 2025 AND 'Low Readings'),21
+    injuries (on or after Nov 24 2025 AND 'Low Readings'),2617
+Peak month by date received,2026-07 (762)
+Peak month by date of event,2025-12 (779)

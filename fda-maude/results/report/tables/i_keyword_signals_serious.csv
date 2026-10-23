@@ -1,0 +1,10 @@
+Keyword group,Serious reports,% of serious,Dexcom %,Abbott %,Medtronic %
+"Low reading words (e.g. 'low reading', 'falsely low', 'lower than')",15002,12.1,6.1,16.5,1.0
+"High reading words (e.g. 'high reading', 'falsely high')",10104,8.2,3.4,11.4,0.7
+Fingerstick / meter mentioned,13043,10.6,29.2,3.7,1.4
+"Inaccuracy words ('inaccura', 'discrepan', 'did not match')",16593,13.4,44.9,0.9,3.9
+Hypoglycemia / low blood sugar,21502,17.4,16.6,18.8,6.6
+"Emergency care (ambulance, emergency room, 911)",24242,19.6,43.7,9.9,17.2
+"Skin reaction (skin reaction, rash, itch, allergy, infection)",19753,16.0,23.4,14.0,4.5
+Sensor fell off / adhesive,10022,8.1,9.3,8.6,0.8
+Low reading words AND fingerstick/meter,2530,2.0,3.3,1.8,0.1
