@@ -1,0 +1,6 @@
+group,n_reports,age_field_blank_n,age_in_text_when_blank_n,age_in_text_when_blank_pct,age_in_text_under_18_when_blank_n,pediatric_word_when_blank_pct,field_and_text_both_n,field_and_text_agree_within_1yr_pct
+all serious,123607,68809,24,0.0,20,0.6,311,71.7
+Abbott,77868,64046,8,0.0,6,0.4,94,96.8
+Dexcom,33783,2456,15,0.6,13,6.0,216,61.1
+Medtronic,8721,762,1,0.1,1,1.2,1,0.0
+Other,3235,1545,0,0.0,0,0.3,0,

@@ -1,0 +1,144 @@
+tier,fault_type,n_reports,family,pct_of_fault_type_reports
+serious,reads_low,18933,Wrong readings (accuracy),95.515766122643
+serious,reads_low,18933,Unclear / other,2.9419532034014684
+serious,reads_low,18933,Alarms,1.9225690593144245
+serious,reads_low,18933,(no code),0.8186763851476259
+serious,reads_low,18933,No readings / sensor stopped,0.6602228912480853
+serious,reads_low,18933,"App, software, display",0.5017693973485449
+serious,reads_low,18933,Falls off / insertion / applicator,0.14788992763957112
+serious,reads_low,18933,"Hardware, battery, packaging",0.13732636137960175
+serious,reads_low,18933,Signal loss / connection,0.10035387946970897
+serious,reads_high,13754,Wrong readings (accuracy),97.2662498182347
+serious,reads_high,13754,Unclear / other,2.4647375309001016
+serious,reads_high,13754,(no code),1.1196742765740875
+serious,reads_high,13754,No readings / sensor stopped,0.625272647956958
+serious,reads_high,13754,Alarms,0.3417187727206631
+serious,reads_high,13754,"App, software, display",0.33444816053511706
+serious,reads_high,13754,Falls off / insertion / applicator,0.1526828558964665
+serious,reads_high,13754,Signal loss / connection,0.07997673404100625
+serious,reads_high,13754,"Hardware, battery, packaging",0.07270612185546023
+serious,erratic,885,Wrong readings (accuracy),88.8135593220339
+serious,erratic,885,Unclear / other,7.68361581920904
+serious,erratic,885,(no code),6.327683615819209
+serious,erratic,885,No readings / sensor stopped,4.858757062146893
+serious,erratic,885,"App, software, display",2.824858757062147
+serious,erratic,885,Falls off / insertion / applicator,1.807909604519774
+serious,erratic,885,"Hardware, battery, packaging",1.694915254237288
+serious,erratic,885,Alarms,1.3559322033898304
+serious,erratic,885,Signal loss / connection,1.2429378531073447
+serious,stuck,82,Wrong readings (accuracy),43.90243902439025
+serious,stuck,82,Falls off / insertion / applicator,31.70731707317073
+serious,stuck,82,Unclear / other,20.73170731707317
+serious,stuck,82,No readings / sensor stopped,17.073170731707318
+serious,stuck,82,"App, software, display",9.75609756097561
+serious,stuck,82,"Hardware, battery, packaging",3.658536585365854
+serious,stuck,82,(no code),3.658536585365854
+serious,stuck,82,Alarms,1.2195121951219512
+serious,signal_loss,9425,"App, software, display",52.61538461538461
+serious,signal_loss,9425,No readings / sensor stopped,47.39522546419098
+serious,signal_loss,9425,Alarms,25.40053050397878
+serious,signal_loss,9425,Signal loss / connection,12.010610079575597
+serious,signal_loss,9425,Unclear / other,10.525198938992043
+serious,signal_loss,9425,Wrong readings (accuracy),3.0875331564986737
+serious,signal_loss,9425,(no code),0.9655172413793104
+serious,signal_loss,9425,Falls off / insertion / applicator,0.4562334217506631
+serious,signal_loss,9425,"Hardware, battery, packaging",0.4350132625994695
+serious,sensor_error_or_early_end,21409,"App, software, display",88.79443224811995
+serious,sensor_error_or_early_end,21409,No readings / sensor stopped,82.0589471717502
+serious,sensor_error_or_early_end,21409,Unclear / other,6.8896258582839
+serious,sensor_error_or_early_end,21409,Wrong readings (accuracy),2.8586108645896586
+serious,sensor_error_or_early_end,21409,(no code),1.022934279975711
+serious,sensor_error_or_early_end,21409,Falls off / insertion / applicator,0.6539305899388108
+serious,sensor_error_or_early_end,21409,"Hardware, battery, packaging",0.2615722359755243
+serious,sensor_error_or_early_end,21409,Alarms,0.21953384090802933
+serious,sensor_error_or_early_end,21409,Signal loss / connection,0.15881171469942548
+serious,adhesive_or_detachment,6965,Falls off / insertion / applicator,92.64895908111988
+serious,adhesive_or_detachment,6965,No readings / sensor stopped,10.638908829863604
+serious,adhesive_or_detachment,6965,Unclear / other,6.24551328068916
+serious,adhesive_or_detachment,6965,Wrong readings (accuracy),0.9188801148600143
+serious,adhesive_or_detachment,6965,"App, software, display",0.8040201005025126
+serious,adhesive_or_detachment,6965,"Hardware, battery, packaging",0.7896625987078248
+serious,adhesive_or_detachment,6965,(no code),0.7753050969131371
+serious,adhesive_or_detachment,6965,Alarms,0.2440775305096913
+serious,adhesive_or_detachment,6965,Signal loss / connection,0.10050251256281408
+serious,insertion_or_skin_injury,19116,Unclear / other,90.62565390249006
+serious,insertion_or_skin_injury,19116,Falls off / insertion / applicator,8.103159656831973
+serious,insertion_or_skin_injury,19116,"Hardware, battery, packaging",1.3078049801213643
+serious,insertion_or_skin_injury,19116,(no code),0.5963590709353421
+serious,insertion_or_skin_injury,19116,Wrong readings (accuracy),0.48127223268466207
+serious,insertion_or_skin_injury,19116,No readings / sensor stopped,0.25109855618330196
+serious,insertion_or_skin_injury,19116,"App, software, display",0.08369951872776732
+serious,insertion_or_skin_injury,19116,Alarms,0.047080979284369114
+serious,insertion_or_skin_injury,19116,Signal loss / connection,0.02092487968194183
+serious,other_device,21964,Unclear / other,42.10071025314151
+serious,other_device,21964,Alarms,19.914405390639228
+serious,other_device,21964,No readings / sensor stopped,18.011291203788016
+serious,other_device,21964,"App, software, display",16.818430158441085
+serious,other_device,21964,"Hardware, battery, packaging",9.770533600437078
+serious,other_device,21964,Wrong readings (accuracy),5.049171371334912
+serious,other_device,21964,Falls off / insertion / applicator,4.989983609542889
+serious,other_device,21964,Signal loss / connection,1.2247313786195593
+serious,other_device,21964,(no code),1.2201784738663266
+serious,unclear,5929,Wrong readings (accuracy),64.85073368190251
+serious,unclear,5929,Unclear / other,27.812447292966773
+serious,unclear,5929,Falls off / insertion / applicator,3.811772642941474
+serious,unclear,5929,Alarms,2.3106763366503627
+serious,unclear,5929,No readings / sensor stopped,1.9396188227357058
+serious,unclear,5929,"App, software, display",1.8552875695732838
+serious,unclear,5929,(no code),0.9445100354191264
+serious,unclear,5929,"Hardware, battery, packaging",0.38792376454714117
+serious,unclear,5929,Signal loss / connection,0.16866250632484397
+sample (weighted),reads_low,375,Wrong readings (accuracy),99.7211443894136
+sample (weighted),reads_low,375,Falls off / insertion / applicator,0.697272068266166
+sample (weighted),reads_low,375,No readings / sensor stopped,0.32577972935936805
+sample (weighted),reads_low,375,Unclear / other,0.27885561058688874
+sample (weighted),reads_low,375,"Hardware, battery, packaging",0.07155431419878261
+sample (weighted),reads_high,90,Wrong readings (accuracy),96.22190250740303
+sample (weighted),reads_high,90,Unclear / other,3.7751267452173733
+sample (weighted),reads_high,90,(no code),0.0029707473797057214
+sample (weighted),erratic,88,Wrong readings (accuracy),99.99999999999996
+sample (weighted),erratic,88,Unclear / other,0.0033498898239023114
+sample (weighted),stuck,10,"App, software, display",81.97097146315522
+sample (weighted),stuck,10,Unclear / other,16.97612814623955
+sample (weighted),stuck,10,No readings / sensor stopped,1.4399825043017935
+sample (weighted),signal_loss,2443,Signal loss / connection,82.45677246921916
+sample (weighted),signal_loss,2443,No readings / sensor stopped,11.572080873299122
+sample (weighted),signal_loss,2443,Unclear / other,3.9320925444365087
+sample (weighted),signal_loss,2443,"App, software, display",2.850506153938788
+sample (weighted),signal_loss,2443,Alarms,0.5776835020754186
+sample (weighted),signal_loss,2443,"Hardware, battery, packaging",0.4866032507542335
+sample (weighted),signal_loss,2443,Wrong readings (accuracy),0.1018081836661286
+sample (weighted),signal_loss,2443,(no code),0.09351511078245468
+sample (weighted),sensor_error_or_early_end,1064,No readings / sensor stopped,59.01092552909545
+sample (weighted),sensor_error_or_early_end,1064,"App, software, display",16.078015148384974
+sample (weighted),sensor_error_or_early_end,1064,Wrong readings (accuracy),12.207367481802493
+sample (weighted),sensor_error_or_early_end,1064,Unclear / other,6.0955289715236045
+sample (weighted),sensor_error_or_early_end,1064,"Hardware, battery, packaging",4.129669791629429
+sample (weighted),sensor_error_or_early_end,1064,Falls off / insertion / applicator,4.119255889039592
+sample (weighted),sensor_error_or_early_end,1064,Signal loss / connection,0.9474156663962923
+sample (weighted),sensor_error_or_early_end,1064,Alarms,0.6543665309193745
+sample (weighted),sensor_error_or_early_end,1064,(no code),0.13310374595469104
+sample (weighted),adhesive_or_detachment,214,Falls off / insertion / applicator,98.75176381964587
+sample (weighted),adhesive_or_detachment,214,"Hardware, battery, packaging",1.7512107454851518
+sample (weighted),adhesive_or_detachment,214,Unclear / other,1.2088773093799814
+sample (weighted),insertion_or_skin_injury,54,Falls off / insertion / applicator,69.95260658719529
+sample (weighted),insertion_or_skin_injury,54,"Hardware, battery, packaging",19.447855968237235
+sample (weighted),insertion_or_skin_injury,54,Unclear / other,15.382558908773246
+sample (weighted),insertion_or_skin_injury,54,Wrong readings (accuracy),5.173618387751668
+sample (weighted),other_device,948,Unclear / other,26.61773072964053
+sample (weighted),other_device,948,"App, software, display",26.328016218596435
+sample (weighted),other_device,948,No readings / sensor stopped,26.016794977485972
+sample (weighted),other_device,948,Alarms,9.269859772095796
+sample (weighted),other_device,948,Falls off / insertion / applicator,7.064006729146431
+sample (weighted),other_device,948,Signal loss / connection,4.919459068803702
+sample (weighted),other_device,948,"Hardware, battery, packaging",3.7839931256126125
+sample (weighted),other_device,948,Wrong readings (accuracy),3.5930836939425235
+sample (weighted),other_device,948,(no code),0.00023469082075344496
+sample (weighted),unclear,851,Wrong readings (accuracy),94.63917530752033
+sample (weighted),unclear,851,Unclear / other,6.835657129690835
+sample (weighted),unclear,851,"App, software, display",0.2688522040242315
+sample (weighted),unclear,851,Falls off / insertion / applicator,0.2546633333620406
+sample (weighted),unclear,851,Alarms,0.15949491365189167
+sample (weighted),unclear,851,Signal loss / connection,0.15100350016682135
+sample (weighted),unclear,851,"Hardware, battery, packaging",0.13468558461752975
+sample (weighted),unclear,851,No readings / sensor stopped,0.0007873825874217326

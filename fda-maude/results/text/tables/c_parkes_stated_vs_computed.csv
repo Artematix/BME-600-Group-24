@@ -1,0 +1,126 @@
+maker,zone_stated,zone_computed,n
+Abbott,A,A,1
+Abbott,A,B,0
+Abbott,A,C,0
+Abbott,A,D,0
+Abbott,A,E,0
+Abbott,B,A,0
+Abbott,B,B,5
+Abbott,B,C,0
+Abbott,B,D,0
+Abbott,B,E,0
+Abbott,C,A,17
+Abbott,C,B,148
+Abbott,C,C,1821
+Abbott,C,D,63
+Abbott,C,E,9
+Abbott,D,A,11
+Abbott,D,B,28
+Abbott,D,C,138
+Abbott,D,D,1656
+Abbott,D,E,63
+Abbott,E,A,1
+Abbott,E,B,3
+Abbott,E,C,8
+Abbott,E,D,13
+Abbott,E,E,149
+Dexcom,A,A,178
+Dexcom,A,B,34
+Dexcom,A,C,22
+Dexcom,A,D,11
+Dexcom,A,E,4
+Dexcom,B,A,78
+Dexcom,B,B,1293
+Dexcom,B,C,154
+Dexcom,B,D,58
+Dexcom,B,E,12
+Dexcom,C,A,36
+Dexcom,C,B,159
+Dexcom,C,C,1927
+Dexcom,C,D,67
+Dexcom,C,E,12
+Dexcom,D,A,35
+Dexcom,D,B,43
+Dexcom,D,C,89
+Dexcom,D,D,1868
+Dexcom,D,E,19
+Dexcom,E,A,15
+Dexcom,E,B,8
+Dexcom,E,C,8
+Dexcom,E,D,14
+Dexcom,E,E,387
+Medtronic (undercounted; weakest validation),A,A,0
+Medtronic (undercounted; weakest validation),A,B,0
+Medtronic (undercounted; weakest validation),A,C,0
+Medtronic (undercounted; weakest validation),A,D,0
+Medtronic (undercounted; weakest validation),A,E,0
+Medtronic (undercounted; weakest validation),B,A,0
+Medtronic (undercounted; weakest validation),B,B,0
+Medtronic (undercounted; weakest validation),B,C,0
+Medtronic (undercounted; weakest validation),B,D,0
+Medtronic (undercounted; weakest validation),B,E,0
+Medtronic (undercounted; weakest validation),C,A,0
+Medtronic (undercounted; weakest validation),C,B,0
+Medtronic (undercounted; weakest validation),C,C,0
+Medtronic (undercounted; weakest validation),C,D,0
+Medtronic (undercounted; weakest validation),C,E,0
+Medtronic (undercounted; weakest validation),D,A,0
+Medtronic (undercounted; weakest validation),D,B,0
+Medtronic (undercounted; weakest validation),D,C,0
+Medtronic (undercounted; weakest validation),D,D,1
+Medtronic (undercounted; weakest validation),D,E,0
+Medtronic (undercounted; weakest validation),E,A,0
+Medtronic (undercounted; weakest validation),E,B,0
+Medtronic (undercounted; weakest validation),E,C,0
+Medtronic (undercounted; weakest validation),E,D,0
+Medtronic (undercounted; weakest validation),E,E,0
+Other,A,A,0
+Other,A,B,0
+Other,A,C,0
+Other,A,D,0
+Other,A,E,0
+Other,B,A,0
+Other,B,B,1
+Other,B,C,0
+Other,B,D,0
+Other,B,E,0
+Other,C,A,0
+Other,C,B,0
+Other,C,C,0
+Other,C,D,0
+Other,C,E,0
+Other,D,A,0
+Other,D,B,0
+Other,D,C,0
+Other,D,D,0
+Other,D,E,0
+Other,E,A,0
+Other,E,B,0
+Other,E,C,0
+Other,E,D,0
+Other,E,E,0
+All,A,A,179
+All,A,B,34
+All,A,C,22
+All,A,D,11
+All,A,E,4
+All,B,A,78
+All,B,B,1299
+All,B,C,154
+All,B,D,58
+All,B,E,12
+All,C,A,53
+All,C,B,307
+All,C,C,3748
+All,C,D,130
+All,C,E,21
+All,D,A,46
+All,D,B,71
+All,D,C,227
+All,D,D,3525
+All,D,E,82
+All,E,A,16
+All,E,B,11
+All,E,C,16
+All,E,D,27
+All,E,E,536

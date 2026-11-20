@@ -1,0 +1,417 @@
+table,group,n_reports,weighted_n,theme,theme_label,hits_n,hit_pct
+"serious (death + injury), unweighted",all,122657,122657,eval_device_returned,Device was returned to the maker and looked at,24665,20.1
+"serious (death + injury), unweighted",all,122657,122657,eval_not_returned,"Device was NOT returned, discarded or not provided",81608,66.5
+"serious (death + injury), unweighted",all,122657,122657,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",36035,29.4
+"serious (death + injury), unweighted",all,122657,122657,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,79463,64.8
+"serious (death + injury), unweighted",all,122657,122657,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),9817,8.0
+"serious (death + injury), unweighted",all,122657,122657,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,25889,21.1
+"serious (death + injury), unweighted",all,122657,122657,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),54935,44.8
+"serious (death + injury), unweighted",all,122657,122657,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",44887,36.6
+"serious (death + injury), unweighted",all,122657,122657,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),2169,1.8
+"serious (death + injury), unweighted",all,122657,122657,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",9185,7.5
+"serious (death + injury), unweighted",all,122657,122657,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),1449,1.2
+"serious (death + injury), unweighted",all,122657,122657,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",1493,1.2
+"serious (death + injury), unweighted",all,122657,122657,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",34673,28.3
+"serious (death + injury), unweighted",all,122657,122657,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",10224,8.3
+"serious (death + injury), unweighted",all,122657,122657,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",22236,18.1
+"serious (death + injury), unweighted",all,122657,122657,bleeding_or_bruise,"Bleeding, blood at the site or bruising",8031,6.5
+"serious (death + injury), unweighted",all,122657,122657,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",3304,2.7
+"serious (death + injury), unweighted",all,122657,122657,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",6171,5.0
+"serious (death + injury), unweighted",all,122657,122657,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",417,0.3
+"serious (death + injury), unweighted",all,122657,122657,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",318,0.3
+"serious (death + injury), unweighted",all,122657,122657,night_or_sleep,"Event at night, during sleep, or on waking",8361,6.8
+"serious (death + injury), unweighted",all,122657,122657,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",1126,0.9
+"serious (death + injury), unweighted",all,122657,122657,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",2390,1.9
+"serious (death + injury), unweighted",all,122657,122657,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",5727,4.7
+"serious (death + injury), unweighted",all,122657,122657,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",11512,9.4
+"serious (death + injury), unweighted",all,122657,122657,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",6075,5.0
+"serious (death + injury), unweighted",all,122657,122657,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",7433,6.1
+"serious (death + injury), unweighted",all,122657,122657,alarm_any_mention,Any mention of an alarm or alert (reference row),15751,12.8
+"serious (death + injury), unweighted",all,122657,122657,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",2601,2.1
+"serious (death + injury), unweighted",all,122657,122657,pump_any_mention,Any mention of an insulin pump (reference row),14025,11.4
+"serious (death + injury), unweighted",all,122657,122657,voice_first_person,Written in the first person (patient or carer wrote it),3750,3.1
+"serious (death + injury), unweighted",all,122657,122657,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",39795,32.4
+"serious (death + injury), unweighted",all,122657,122657,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",48325,39.4
+"serious (death + injury), unweighted",all,122657,122657,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",90122,73.5
+"serious (death + injury), unweighted",all,122657,122657,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",46103,37.6
+"serious (death + injury), unweighted",all,122657,122657,glucagon_given,Glucagon (any brand) was used,7539,6.1
+"serious (death + injury), unweighted",all,122657,122657,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",42459,34.6
+"serious (death + injury), unweighted",all,122657,122657,dka_or_ketones,DKA or ketones named,7517,6.1
+"serious (death + injury), unweighted",all,122657,122657,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",3621,3.0
+"serious (death + injury), unweighted",all,122657,122657,pregnancy,"Pregnancy, fetus or breastfeeding",191,0.2
+"serious (death + injury), unweighted",all,122657,122657,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,692,0.6
+"serious (death + injury), unweighted",all,122657,122657,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",9231,7.5
+"serious (death + injury), unweighted",all,122657,122657,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",6650,5.4
+"serious (death + injury), unweighted",all,122657,122657,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",6767,5.5
+"serious (death + injury), unweighted",all,122657,122657,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),4692,3.8
+"serious (death + injury), unweighted",all,122657,122657,libre_scan,Scanning (Libre reader or phone scan) named,24386,19.9
+"serious (death + injury), unweighted",all,122657,122657,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",4997,4.1
+"serious (death + injury), unweighted",all,122657,122657,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",782,0.6
+"serious (death + injury), unweighted",all,122657,122657,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",4813,3.9
+"serious (death + injury), unweighted",all,122657,122657,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",17093,13.9
+"serious (death + injury), unweighted",all,122657,122657,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",6398,5.2
+"serious (death + injury), unweighted",all,122657,122657,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,337,0.3
+"serious (death + injury), unweighted",Abbott,77300,77300,eval_device_returned,Device was returned to the maker and looked at,19093,24.7
+"serious (death + injury), unweighted",Abbott,77300,77300,eval_not_returned,"Device was NOT returned, discarded or not provided",66375,85.9
+"serious (death + injury), unweighted",Abbott,77300,77300,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",13808,17.9
+"serious (death + injury), unweighted",Abbott,77300,77300,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,71695,92.7
+"serious (death + injury), unweighted",Abbott,77300,77300,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),4405,5.7
+"serious (death + injury), unweighted",Abbott,77300,77300,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,2346,3.0
+"serious (death + injury), unweighted",Abbott,77300,77300,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),49248,63.7
+"serious (death + injury), unweighted",Abbott,77300,77300,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",30973,40.1
+"serious (death + injury), unweighted",Abbott,77300,77300,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),1276,1.7
+"serious (death + injury), unweighted",Abbott,77300,77300,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",6831,8.8
+"serious (death + injury), unweighted",Abbott,77300,77300,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),416,0.5
+"serious (death + injury), unweighted",Abbott,77300,77300,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",188,0.2
+"serious (death + injury), unweighted",Abbott,77300,77300,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",30861,39.9
+"serious (death + injury), unweighted",Abbott,77300,77300,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",7857,10.2
+"serious (death + injury), unweighted",Abbott,77300,77300,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",11674,15.1
+"serious (death + injury), unweighted",Abbott,77300,77300,bleeding_or_bruise,"Bleeding, blood at the site or bruising",1545,2.0
+"serious (death + injury), unweighted",Abbott,77300,77300,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",1119,1.4
+"serious (death + injury), unweighted",Abbott,77300,77300,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",2790,3.6
+"serious (death + injury), unweighted",Abbott,77300,77300,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",335,0.4
+"serious (death + injury), unweighted",Abbott,77300,77300,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",155,0.2
+"serious (death + injury), unweighted",Abbott,77300,77300,night_or_sleep,"Event at night, during sleep, or on waking",1451,1.9
+"serious (death + injury), unweighted",Abbott,77300,77300,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",360,0.5
+"serious (death + injury), unweighted",Abbott,77300,77300,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",790,1.0
+"serious (death + injury), unweighted",Abbott,77300,77300,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",2571,3.3
+"serious (death + injury), unweighted",Abbott,77300,77300,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",7080,9.2
+"serious (death + injury), unweighted",Abbott,77300,77300,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",3521,4.6
+"serious (death + injury), unweighted",Abbott,77300,77300,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",4145,5.4
+"serious (death + injury), unweighted",Abbott,77300,77300,alarm_any_mention,Any mention of an alarm or alert (reference row),6529,8.4
+"serious (death + injury), unweighted",Abbott,77300,77300,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",162,0.2
+"serious (death + injury), unweighted",Abbott,77300,77300,pump_any_mention,Any mention of an insulin pump (reference row),520,0.7
+"serious (death + injury), unweighted",Abbott,77300,77300,voice_first_person,Written in the first person (patient or carer wrote it),1275,1.6
+"serious (death + injury), unweighted",Abbott,77300,77300,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",27853,36.0
+"serious (death + injury), unweighted",Abbott,77300,77300,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",35742,46.2
+"serious (death + injury), unweighted",Abbott,77300,77300,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",49159,63.6
+"serious (death + injury), unweighted",Abbott,77300,77300,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",17496,22.6
+"serious (death + injury), unweighted",Abbott,77300,77300,glucagon_given,Glucagon (any brand) was used,5044,6.5
+"serious (death + injury), unweighted",Abbott,77300,77300,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",31850,41.2
+"serious (death + injury), unweighted",Abbott,77300,77300,dka_or_ketones,DKA or ketones named,1507,1.9
+"serious (death + injury), unweighted",Abbott,77300,77300,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",812,1.1
+"serious (death + injury), unweighted",Abbott,77300,77300,pregnancy,"Pregnancy, fetus or breastfeeding",42,0.1
+"serious (death + injury), unweighted",Abbott,77300,77300,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,71,0.1
+"serious (death + injury), unweighted",Abbott,77300,77300,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",3620,4.7
+"serious (death + injury), unweighted",Abbott,77300,77300,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",3440,4.5
+"serious (death + injury), unweighted",Abbott,77300,77300,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",2295,3.0
+"serious (death + injury), unweighted",Abbott,77300,77300,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),1714,2.2
+"serious (death + injury), unweighted",Abbott,77300,77300,libre_scan,Scanning (Libre reader or phone scan) named,24106,31.2
+"serious (death + injury), unweighted",Abbott,77300,77300,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",1867,2.4
+"serious (death + injury), unweighted",Abbott,77300,77300,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",210,0.3
+"serious (death + injury), unweighted",Abbott,77300,77300,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",4348,5.6
+"serious (death + injury), unweighted",Abbott,77300,77300,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",10826,14.0
+"serious (death + injury), unweighted",Abbott,77300,77300,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",4969,6.4
+"serious (death + injury), unweighted",Abbott,77300,77300,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,113,0.1
+"serious (death + injury), unweighted",Dexcom,33462,33462,eval_device_returned,Device was returned to the maker and looked at,4041,12.1
+"serious (death + injury), unweighted",Dexcom,33462,33462,eval_not_returned,"Device was NOT returned, discarded or not provided",7748,23.2
+"serious (death + injury), unweighted",Dexcom,33462,33462,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",21340,63.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,5198,15.5
+"serious (death + injury), unweighted",Dexcom,33462,33462,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),4791,14.3
+"serious (death + injury), unweighted",Dexcom,33462,33462,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,23433,70.0
+"serious (death + injury), unweighted",Dexcom,33462,33462,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),2146,6.4
+"serious (death + injury), unweighted",Dexcom,33462,33462,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",11822,35.3
+"serious (death + injury), unweighted",Dexcom,33462,33462,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),737,2.2
+"serious (death + injury), unweighted",Dexcom,33462,33462,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",2233,6.7
+"serious (death + injury), unweighted",Dexcom,33462,33462,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),706,2.1
+"serious (death + injury), unweighted",Dexcom,33462,33462,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",1272,3.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",3542,10.6
+"serious (death + injury), unweighted",Dexcom,33462,33462,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",2060,6.2
+"serious (death + injury), unweighted",Dexcom,33462,33462,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",9135,27.3
+"serious (death + injury), unweighted",Dexcom,33462,33462,bleeding_or_bruise,"Bleeding, blood at the site or bruising",6195,18.5
+"serious (death + injury), unweighted",Dexcom,33462,33462,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",1526,4.6
+"serious (death + injury), unweighted",Dexcom,33462,33462,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",2931,8.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",66,0.2
+"serious (death + injury), unweighted",Dexcom,33462,33462,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",142,0.4
+"serious (death + injury), unweighted",Dexcom,33462,33462,night_or_sleep,"Event at night, during sleep, or on waking",5996,17.9
+"serious (death + injury), unweighted",Dexcom,33462,33462,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",704,2.1
+"serious (death + injury), unweighted",Dexcom,33462,33462,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",1260,3.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",3131,9.4
+"serious (death + injury), unweighted",Dexcom,33462,33462,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",3621,10.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",1926,5.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",2779,8.3
+"serious (death + injury), unweighted",Dexcom,33462,33462,alarm_any_mention,Any mention of an alarm or alert (reference row),5827,17.4
+"serious (death + injury), unweighted",Dexcom,33462,33462,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",1859,5.6
+"serious (death + injury), unweighted",Dexcom,33462,33462,pump_any_mention,Any mention of an insulin pump (reference row),6563,19.6
+"serious (death + injury), unweighted",Dexcom,33462,33462,voice_first_person,Written in the first person (patient or carer wrote it),2360,7.1
+"serious (death + injury), unweighted",Dexcom,33462,33462,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",11122,33.2
+"serious (death + injury), unweighted",Dexcom,33462,33462,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",9523,28.5
+"serious (death + injury), unweighted",Dexcom,33462,33462,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",29580,88.4
+"serious (death + injury), unweighted",Dexcom,33462,33462,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",20896,62.4
+"serious (death + injury), unweighted",Dexcom,33462,33462,glucagon_given,Glucagon (any brand) was used,2366,7.1
+"serious (death + injury), unweighted",Dexcom,33462,33462,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",9712,29.0
+"serious (death + injury), unweighted",Dexcom,33462,33462,dka_or_ketones,DKA or ketones named,3623,10.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",2343,7.0
+"serious (death + injury), unweighted",Dexcom,33462,33462,pregnancy,"Pregnancy, fetus or breastfeeding",111,0.3
+"serious (death + injury), unweighted",Dexcom,33462,33462,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,298,0.9
+"serious (death + injury), unweighted",Dexcom,33462,33462,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",4844,14.5
+"serious (death + injury), unweighted",Dexcom,33462,33462,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",2937,8.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",2205,6.6
+"serious (death + injury), unweighted",Dexcom,33462,33462,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),2390,7.1
+"serious (death + injury), unweighted",Dexcom,33462,33462,libre_scan,Scanning (Libre reader or phone scan) named,256,0.8
+"serious (death + injury), unweighted",Dexcom,33462,33462,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",3017,9.0
+"serious (death + injury), unweighted",Dexcom,33462,33462,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",450,1.3
+"serious (death + injury), unweighted",Dexcom,33462,33462,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",394,1.2
+"serious (death + injury), unweighted",Dexcom,33462,33462,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",4846,14.5
+"serious (death + injury), unweighted",Dexcom,33462,33462,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",1138,3.4
+"serious (death + injury), unweighted",Dexcom,33462,33462,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,185,0.6
+"serious (death + injury), unweighted",Medtronic,8721,8721,eval_device_returned,Device was returned to the maker and looked at,1195,13.7
+"serious (death + injury), unweighted",Medtronic,8721,8721,eval_not_returned,"Device was NOT returned, discarded or not provided",7268,83.3
+"serious (death + injury), unweighted",Medtronic,8721,8721,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",12,0.1
+"serious (death + injury), unweighted",Medtronic,8721,8721,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1082,12.4
+"serious (death + injury), unweighted",Medtronic,8721,8721,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),264,3.0
+"serious (death + injury), unweighted",Medtronic,8721,8721,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,13,0.1
+"serious (death + injury), unweighted",Medtronic,8721,8721,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),2350,26.9
+"serious (death + injury), unweighted",Medtronic,8721,8721,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",1503,17.2
+"serious (death + injury), unweighted",Medtronic,8721,8721,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),98,1.1
+"serious (death + injury), unweighted",Medtronic,8721,8721,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",34,0.4
+"serious (death + injury), unweighted",Medtronic,8721,8721,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),16,0.2
+"serious (death + injury), unweighted",Medtronic,8721,8721,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",24,0.3
+"serious (death + injury), unweighted",Medtronic,8721,8721,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",162,1.9
+"serious (death + injury), unweighted",Medtronic,8721,8721,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",160,1.8
+"serious (death + injury), unweighted",Medtronic,8721,8721,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",575,6.6
+"serious (death + injury), unweighted",Medtronic,8721,8721,bleeding_or_bruise,"Bleeding, blood at the site or bruising",134,1.5
+"serious (death + injury), unweighted",Medtronic,8721,8721,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",494,5.7
+"serious (death + injury), unweighted",Medtronic,8721,8721,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",49,0.6
+"serious (death + injury), unweighted",Medtronic,8721,8721,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",13,0.1
+"serious (death + injury), unweighted",Medtronic,8721,8721,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",2,0.0
+"serious (death + injury), unweighted",Medtronic,8721,8721,night_or_sleep,"Event at night, during sleep, or on waking",570,6.5
+"serious (death + injury), unweighted",Medtronic,8721,8721,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",25,0.3
+"serious (death + injury), unweighted",Medtronic,8721,8721,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",264,3.0
+"serious (death + injury), unweighted",Medtronic,8721,8721,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",6,0.1
+"serious (death + injury), unweighted",Medtronic,8721,8721,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",487,5.6
+"serious (death + injury), unweighted",Medtronic,8721,8721,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",553,6.3
+"serious (death + injury), unweighted",Medtronic,8721,8721,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",303,3.5
+"serious (death + injury), unweighted",Medtronic,8721,8721,alarm_any_mention,Any mention of an alarm or alert (reference row),2265,26.0
+"serious (death + injury), unweighted",Medtronic,8721,8721,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",575,6.6
+"serious (death + injury), unweighted",Medtronic,8721,8721,pump_any_mention,Any mention of an insulin pump (reference row),6793,77.9
+"serious (death + injury), unweighted",Medtronic,8721,8721,voice_first_person,Written in the first person (patient or carer wrote it),94,1.1
+"serious (death + injury), unweighted",Medtronic,8721,8721,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",711,8.2
+"serious (death + injury), unweighted",Medtronic,8721,8721,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",1249,14.3
+"serious (death + injury), unweighted",Medtronic,8721,8721,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",8274,94.9
+"serious (death + injury), unweighted",Medtronic,8721,8721,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",7022,80.5
+"serious (death + injury), unweighted",Medtronic,8721,8721,glucagon_given,Glucagon (any brand) was used,101,1.2
+"serious (death + injury), unweighted",Medtronic,8721,8721,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",659,7.6
+"serious (death + injury), unweighted",Medtronic,8721,8721,dka_or_ketones,DKA or ketones named,2303,26.4
+"serious (death + injury), unweighted",Medtronic,8721,8721,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",320,3.7
+"serious (death + injury), unweighted",Medtronic,8721,8721,pregnancy,"Pregnancy, fetus or breastfeeding",36,0.4
+"serious (death + injury), unweighted",Medtronic,8721,8721,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,177,2.0
+"serious (death + injury), unweighted",Medtronic,8721,8721,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",6,0.1
+"serious (death + injury), unweighted",Medtronic,8721,8721,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",146,1.7
+"serious (death + injury), unweighted",Medtronic,8721,8721,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",1773,20.3
+"serious (death + injury), unweighted",Medtronic,8721,8721,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),502,5.8
+"serious (death + injury), unweighted",Medtronic,8721,8721,libre_scan,Scanning (Libre reader or phone scan) named,21,0.2
+"serious (death + injury), unweighted",Medtronic,8721,8721,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",72,0.8
+"serious (death + injury), unweighted",Medtronic,8721,8721,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",117,1.3
+"serious (death + injury), unweighted",Medtronic,8721,8721,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",68,0.8
+"serious (death + injury), unweighted",Medtronic,8721,8721,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",736,8.4
+"serious (death + injury), unweighted",Medtronic,8721,8721,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",227,2.6
+"serious (death + injury), unweighted",Medtronic,8721,8721,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,38,0.4
+"serious (death + injury), unweighted",Other,3174,3174,eval_device_returned,Device was returned to the maker and looked at,336,10.6
+"serious (death + injury), unweighted",Other,3174,3174,eval_not_returned,"Device was NOT returned, discarded or not provided",217,6.8
+"serious (death + injury), unweighted",Other,3174,3174,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",875,27.6
+"serious (death + injury), unweighted",Other,3174,3174,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1488,46.9
+"serious (death + injury), unweighted",Other,3174,3174,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),357,11.2
+"serious (death + injury), unweighted",Other,3174,3174,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,97,3.1
+"serious (death + injury), unweighted",Other,3174,3174,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),1191,37.5
+"serious (death + injury), unweighted",Other,3174,3174,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",589,18.6
+"serious (death + injury), unweighted",Other,3174,3174,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),58,1.8
+"serious (death + injury), unweighted",Other,3174,3174,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",87,2.7
+"serious (death + injury), unweighted",Other,3174,3174,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),311,9.8
+"serious (death + injury), unweighted",Other,3174,3174,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",9,0.3
+"serious (death + injury), unweighted",Other,3174,3174,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",108,3.4
+"serious (death + injury), unweighted",Other,3174,3174,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",147,4.6
+"serious (death + injury), unweighted",Other,3174,3174,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",852,26.8
+"serious (death + injury), unweighted",Other,3174,3174,bleeding_or_bruise,"Bleeding, blood at the site or bruising",157,4.9
+"serious (death + injury), unweighted",Other,3174,3174,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",165,5.2
+"serious (death + injury), unweighted",Other,3174,3174,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",401,12.6
+"serious (death + injury), unweighted",Other,3174,3174,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",3,0.1
+"serious (death + injury), unweighted",Other,3174,3174,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",19,0.6
+"serious (death + injury), unweighted",Other,3174,3174,night_or_sleep,"Event at night, during sleep, or on waking",344,10.8
+"serious (death + injury), unweighted",Other,3174,3174,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",37,1.2
+"serious (death + injury), unweighted",Other,3174,3174,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",76,2.4
+"serious (death + injury), unweighted",Other,3174,3174,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",19,0.6
+"serious (death + injury), unweighted",Other,3174,3174,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",324,10.2
+"serious (death + injury), unweighted",Other,3174,3174,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",75,2.4
+"serious (death + injury), unweighted",Other,3174,3174,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",206,6.5
+"serious (death + injury), unweighted",Other,3174,3174,alarm_any_mention,Any mention of an alarm or alert (reference row),1130,35.6
+"serious (death + injury), unweighted",Other,3174,3174,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",5,0.2
+"serious (death + injury), unweighted",Other,3174,3174,pump_any_mention,Any mention of an insulin pump (reference row),149,4.7
+"serious (death + injury), unweighted",Other,3174,3174,voice_first_person,Written in the first person (patient or carer wrote it),21,0.7
+"serious (death + injury), unweighted",Other,3174,3174,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",109,3.4
+"serious (death + injury), unweighted",Other,3174,3174,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",1811,57.1
+"serious (death + injury), unweighted",Other,3174,3174,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",3109,98.0
+"serious (death + injury), unweighted",Other,3174,3174,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",689,21.7
+"serious (death + injury), unweighted",Other,3174,3174,glucagon_given,Glucagon (any brand) was used,28,0.9
+"serious (death + injury), unweighted",Other,3174,3174,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",238,7.5
+"serious (death + injury), unweighted",Other,3174,3174,dka_or_ketones,DKA or ketones named,84,2.6
+"serious (death + injury), unweighted",Other,3174,3174,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",146,4.6
+"serious (death + injury), unweighted",Other,3174,3174,pregnancy,"Pregnancy, fetus or breastfeeding",2,0.1
+"serious (death + injury), unweighted",Other,3174,3174,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,146,4.6
+"serious (death + injury), unweighted",Other,3174,3174,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",761,24.0
+"serious (death + injury), unweighted",Other,3174,3174,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",127,4.0
+"serious (death + injury), unweighted",Other,3174,3174,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",494,15.6
+"serious (death + injury), unweighted",Other,3174,3174,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),86,2.7
+"serious (death + injury), unweighted",Other,3174,3174,libre_scan,Scanning (Libre reader or phone scan) named,3,0.1
+"serious (death + injury), unweighted",Other,3174,3174,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",41,1.3
+"serious (death + injury), unweighted",Other,3174,3174,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",5,0.2
+"serious (death + injury), unweighted",Other,3174,3174,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",3,0.1
+"serious (death + injury), unweighted",Other,3174,3174,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",685,21.6
+"serious (death + injury), unweighted",Other,3174,3174,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",64,2.0
+"serious (death + injury), unweighted",Other,3174,3174,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,1,0.0
+serious by event type,all,122657,122657,eval_device_returned,Device was returned to the maker and looked at,24665,20.1
+serious by event type,all,122657,122657,eval_not_returned,"Device was NOT returned, discarded or not provided",81608,66.5
+serious by event type,all,122657,122657,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",36035,29.4
+serious by event type,all,122657,122657,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,79463,64.8
+serious by event type,all,122657,122657,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),9817,8.0
+serious by event type,all,122657,122657,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,25889,21.1
+serious by event type,all,122657,122657,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),54935,44.8
+serious by event type,all,122657,122657,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",44887,36.6
+serious by event type,all,122657,122657,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),2169,1.8
+serious by event type,all,122657,122657,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",9185,7.5
+serious by event type,all,122657,122657,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),1449,1.2
+serious by event type,all,122657,122657,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",1493,1.2
+serious by event type,all,122657,122657,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",34673,28.3
+serious by event type,all,122657,122657,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",10224,8.3
+serious by event type,all,122657,122657,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",22236,18.1
+serious by event type,all,122657,122657,bleeding_or_bruise,"Bleeding, blood at the site or bruising",8031,6.5
+serious by event type,all,122657,122657,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",3304,2.7
+serious by event type,all,122657,122657,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",6171,5.0
+serious by event type,all,122657,122657,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",417,0.3
+serious by event type,all,122657,122657,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",318,0.3
+serious by event type,all,122657,122657,night_or_sleep,"Event at night, during sleep, or on waking",8361,6.8
+serious by event type,all,122657,122657,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",1126,0.9
+serious by event type,all,122657,122657,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",2390,1.9
+serious by event type,all,122657,122657,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",5727,4.7
+serious by event type,all,122657,122657,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",11512,9.4
+serious by event type,all,122657,122657,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",6075,5.0
+serious by event type,all,122657,122657,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",7433,6.1
+serious by event type,all,122657,122657,alarm_any_mention,Any mention of an alarm or alert (reference row),15751,12.8
+serious by event type,all,122657,122657,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",2601,2.1
+serious by event type,all,122657,122657,pump_any_mention,Any mention of an insulin pump (reference row),14025,11.4
+serious by event type,all,122657,122657,voice_first_person,Written in the first person (patient or carer wrote it),3750,3.1
+serious by event type,all,122657,122657,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",39795,32.4
+serious by event type,all,122657,122657,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",48325,39.4
+serious by event type,all,122657,122657,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",90122,73.5
+serious by event type,all,122657,122657,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",46103,37.6
+serious by event type,all,122657,122657,glucagon_given,Glucagon (any brand) was used,7539,6.1
+serious by event type,all,122657,122657,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",42459,34.6
+serious by event type,all,122657,122657,dka_or_ketones,DKA or ketones named,7517,6.1
+serious by event type,all,122657,122657,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",3621,3.0
+serious by event type,all,122657,122657,pregnancy,"Pregnancy, fetus or breastfeeding",191,0.2
+serious by event type,all,122657,122657,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,692,0.6
+serious by event type,all,122657,122657,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",9231,7.5
+serious by event type,all,122657,122657,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",6650,5.4
+serious by event type,all,122657,122657,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",6767,5.5
+serious by event type,all,122657,122657,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),4692,3.8
+serious by event type,all,122657,122657,libre_scan,Scanning (Libre reader or phone scan) named,24386,19.9
+serious by event type,all,122657,122657,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",4997,4.1
+serious by event type,all,122657,122657,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",782,0.6
+serious by event type,all,122657,122657,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",4813,3.9
+serious by event type,all,122657,122657,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",17093,13.9
+serious by event type,all,122657,122657,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",6398,5.2
+serious by event type,all,122657,122657,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,337,0.3
+serious by event type,Death,622,622,eval_device_returned,Device was returned to the maker and looked at,94,15.1
+serious by event type,Death,622,622,eval_not_returned,"Device was NOT returned, discarded or not provided",260,41.8
+serious by event type,Death,622,622,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",168,27.0
+serious by event type,Death,622,622,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,319,51.3
+serious by event type,Death,622,622,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),53,8.5
+serious by event type,Death,622,622,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,225,36.2
+serious by event type,Death,622,622,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),148,23.8
+serious by event type,Death,622,622,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",66,10.6
+serious by event type,Death,622,622,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),7,1.1
+serious by event type,Death,622,622,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",25,4.0
+serious by event type,Death,622,622,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),22,3.5
+serious by event type,Death,622,622,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",9,1.4
+serious by event type,Death,622,622,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",50,8.0
+serious by event type,Death,622,622,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",6,1.0
+serious by event type,Death,622,622,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",39,6.3
+serious by event type,Death,622,622,bleeding_or_bruise,"Bleeding, blood at the site or bruising",14,2.3
+serious by event type,Death,622,622,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",5,0.8
+serious by event type,Death,622,622,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",4,0.6
+serious by event type,Death,622,622,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",0,0.0
+serious by event type,Death,622,622,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",3,0.5
+serious by event type,Death,622,622,night_or_sleep,"Event at night, during sleep, or on waking",91,14.6
+serious by event type,Death,622,622,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",16,2.6
+serious by event type,Death,622,622,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",12,1.9
+serious by event type,Death,622,622,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",2,0.3
+serious by event type,Death,622,622,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",96,15.4
+serious by event type,Death,622,622,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",36,5.8
+serious by event type,Death,622,622,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",57,9.2
+serious by event type,Death,622,622,alarm_any_mention,Any mention of an alarm or alert (reference row),137,22.0
+serious by event type,Death,622,622,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",29,4.7
+serious by event type,Death,622,622,pump_any_mention,Any mention of an insulin pump (reference row),164,26.4
+serious by event type,Death,622,622,voice_first_person,Written in the first person (patient or carer wrote it),24,3.9
+serious by event type,Death,622,622,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",345,55.5
+serious by event type,Death,622,622,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",169,27.2
+serious by event type,Death,622,622,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",377,60.6
+serious by event type,Death,622,622,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",270,43.4
+serious by event type,Death,622,622,glucagon_given,Glucagon (any brand) was used,8,1.3
+serious by event type,Death,622,622,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",129,20.7
+serious by event type,Death,622,622,dka_or_ketones,DKA or ketones named,61,9.8
+serious by event type,Death,622,622,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",29,4.7
+serious by event type,Death,622,622,pregnancy,"Pregnancy, fetus or breastfeeding",10,1.6
+serious by event type,Death,622,622,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,1,0.2
+serious by event type,Death,622,622,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",6,1.0
+serious by event type,Death,622,622,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",23,3.7
+serious by event type,Death,622,622,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",19,3.1
+serious by event type,Death,622,622,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),35,5.6
+serious by event type,Death,622,622,libre_scan,Scanning (Libre reader or phone scan) named,26,4.2
+serious by event type,Death,622,622,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",27,4.3
+serious by event type,Death,622,622,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",564,90.7
+serious by event type,Death,622,622,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",59,9.5
+serious by event type,Death,622,622,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",187,30.1
+serious by event type,Death,622,622,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",86,13.8
+serious by event type,Death,622,622,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,6,1.0
+serious by event type,Injury,122035,122035,eval_device_returned,Device was returned to the maker and looked at,24571,20.1
+serious by event type,Injury,122035,122035,eval_not_returned,"Device was NOT returned, discarded or not provided",81348,66.7
+serious by event type,Injury,122035,122035,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",35867,29.4
+serious by event type,Injury,122035,122035,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,79144,64.9
+serious by event type,Injury,122035,122035,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),9764,8.0
+serious by event type,Injury,122035,122035,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,25664,21.0
+serious by event type,Injury,122035,122035,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),54787,44.9
+serious by event type,Injury,122035,122035,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",44821,36.7
+serious by event type,Injury,122035,122035,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),2162,1.8
+serious by event type,Injury,122035,122035,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",9160,7.5
+serious by event type,Injury,122035,122035,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),1427,1.2
+serious by event type,Injury,122035,122035,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",1484,1.2
+serious by event type,Injury,122035,122035,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",34623,28.4
+serious by event type,Injury,122035,122035,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",10218,8.4
+serious by event type,Injury,122035,122035,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",22197,18.2
+serious by event type,Injury,122035,122035,bleeding_or_bruise,"Bleeding, blood at the site or bruising",8017,6.6
+serious by event type,Injury,122035,122035,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",3299,2.7
+serious by event type,Injury,122035,122035,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",6167,5.1
+serious by event type,Injury,122035,122035,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",417,0.3
+serious by event type,Injury,122035,122035,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",315,0.3
+serious by event type,Injury,122035,122035,night_or_sleep,"Event at night, during sleep, or on waking",8270,6.8
+serious by event type,Injury,122035,122035,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",1110,0.9
+serious by event type,Injury,122035,122035,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",2378,1.9
+serious by event type,Injury,122035,122035,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",5725,4.7
+serious by event type,Injury,122035,122035,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",11416,9.4
+serious by event type,Injury,122035,122035,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",6039,4.9
+serious by event type,Injury,122035,122035,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",7376,6.0
+serious by event type,Injury,122035,122035,alarm_any_mention,Any mention of an alarm or alert (reference row),15614,12.8
+serious by event type,Injury,122035,122035,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",2572,2.1
+serious by event type,Injury,122035,122035,pump_any_mention,Any mention of an insulin pump (reference row),13861,11.4
+serious by event type,Injury,122035,122035,voice_first_person,Written in the first person (patient or carer wrote it),3726,3.1
+serious by event type,Injury,122035,122035,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",39450,32.3
+serious by event type,Injury,122035,122035,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",48156,39.5
+serious by event type,Injury,122035,122035,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",89745,73.5
+serious by event type,Injury,122035,122035,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",45833,37.6
+serious by event type,Injury,122035,122035,glucagon_given,Glucagon (any brand) was used,7531,6.2
+serious by event type,Injury,122035,122035,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",42330,34.7
+serious by event type,Injury,122035,122035,dka_or_ketones,DKA or ketones named,7456,6.1
+serious by event type,Injury,122035,122035,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",3592,2.9
+serious by event type,Injury,122035,122035,pregnancy,"Pregnancy, fetus or breastfeeding",181,0.1
+serious by event type,Injury,122035,122035,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,691,0.6
+serious by event type,Injury,122035,122035,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",9225,7.6
+serious by event type,Injury,122035,122035,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",6627,5.4
+serious by event type,Injury,122035,122035,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",6748,5.5
+serious by event type,Injury,122035,122035,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),4657,3.8
+serious by event type,Injury,122035,122035,libre_scan,Scanning (Libre reader or phone scan) named,24360,20.0
+serious by event type,Injury,122035,122035,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",4970,4.1
+serious by event type,Injury,122035,122035,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",218,0.2
+serious by event type,Injury,122035,122035,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",4754,3.9
+serious by event type,Injury,122035,122035,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",16906,13.9
+serious by event type,Injury,122035,122035,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",6312,5.2
+serious by event type,Injury,122035,122035,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,331,0.3

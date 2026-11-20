@@ -30,7 +30,7 @@
       "bias_pct": 0,
       "n_readings": 13705193,
       "baseline_low_alerts": 511984,
-      "baseline_high_alerts": 3302421,
+      "baseline_high_alerts": 3302420,
       "false_low_alerts": {
         "n": 0,
         "pct_of_readings": 0.0,
@@ -59,11 +59,11 @@
           "pct_changed_category": 0.0
         },
         "70_to_200": {
-          "n_readings": 9890788,
+          "n_readings": 9890789,
           "pct_changed_category": 0.0
         },
         "above_200": {
-          "n_readings": 3302421,
+          "n_readings": 3302420,
           "pct_changed_category": 0.0
         }
       },
@@ -74,7 +74,7 @@
       "bias_pct": 10,
       "n_readings": 13705193,
       "baseline_low_alerts": 511984,
-      "baseline_high_alerts": 3302421,
+      "baseline_high_alerts": 3302420,
       "false_low_alerts": {
         "n": 352233,
         "pct_of_readings": 2.5700696079216105,
@@ -87,13 +87,13 @@
         }
       },
       "missed_high_alerts": {
-        "n": 1046169,
-        "pct_of_readings": 7.633376633222166,
+        "n": 1046168,
+        "pct_of_readings": 7.63336933671784,
         "per_person_per_day": {
           "median": 20.674444444444443,
           "q1": 17.431493889199082,
           "q3": 24.351807092839394,
-          "mean": 20.528088567030558,
+          "mean": 20.528070053311893,
           "n_people": 226
         }
       },
@@ -103,12 +103,12 @@
           "pct_changed_category": 0.0
         },
         "70_to_200": {
-          "n_readings": 9890788,
-          "pct_changed_category": 3.561222826735342
+          "n_readings": 9890789,
+          "pct_changed_category": 3.561222466680868
         },
         "above_200": {
-          "n_readings": 3302421,
-          "pct_changed_category": 31.678850152660733
+          "n_readings": 3302420,
+          "pct_changed_category": 31.67882946445334
         }
       },
       "flip_band_rule_L_mgdl": [
@@ -124,15 +124,15 @@
       "bias_pct": 20,
       "n_readings": 13705193,
       "baseline_low_alerts": 511984,
-      "baseline_high_alerts": 3302421,
+      "baseline_high_alerts": 3302420,
       "false_low_alerts": {
-        "n": 943253,
-        "pct_of_readings": 6.882449594106409,
+        "n": 943244,
+        "pct_of_readings": 6.882383925567484,
         "per_person_per_day": {
           "median": 17.20089776187337,
           "q1": 12.950509770603228,
           "q3": 22.62310246679317,
-          "mean": 18.567719968257034,
+          "mean": 18.567560676221635,
           "n_people": 226
         }
       },
@@ -143,7 +143,7 @@
           "median": 39.83943577430972,
           "q1": 31.603221349621872,
           "q3": 48.14249569707401,
-          "mean": 38.85133587120175,
+          "mean": 38.8513539259026,
           "n_people": 226
         }
       },
@@ -153,12 +153,12 @@
           "pct_changed_category": 0.0
         },
         "70_to_200": {
-          "n_readings": 9890788,
-          "pct_changed_category": 9.53668201158492
+          "n_readings": 9890789,
+          "pct_changed_category": 9.53659005363475
         },
         "above_200": {
-          "n_readings": 3302421,
-          "pct_changed_category": 60.06036177701147
+          "n_readings": 3302420,
+          "pct_changed_category": 60.060379963784136
         }
       },
       "flip_band_rule_L_mgdl": [
@@ -174,26 +174,26 @@
       "bias_pct": 30,
       "n_readings": 13705193,
       "baseline_low_alerts": 511984,
-      "baseline_high_alerts": 3302421,
+      "baseline_high_alerts": 3302420,
       "false_low_alerts": {
-        "n": 1829900,
-        "pct_of_readings": 13.351873264389639,
+        "n": 1829890,
+        "pct_of_readings": 13.351800299346387,
         "per_person_per_day": {
           "median": 33.27844979919679,
           "q1": 26.110435153252993,
           "q3": 42.4678125,
-          "mean": 36.019064016555795,
+          "mean": 36.018887025405355,
           "n_people": 226
         }
       },
       "missed_high_alerts": {
-        "n": 2672692,
-        "pct_of_readings": 19.50130873749826,
+        "n": 2672691,
+        "pct_of_readings": 19.501301440993934,
         "per_person_per_day": {
           "median": 53.14915966386555,
           "q1": 39.79449838187702,
           "q3": 66.92925104468016,
-          "mean": 52.29656004718174,
+          "mean": 52.29654153346308,
           "n_people": 226
         }
       },
@@ -203,12 +203,12 @@
           "pct_changed_category": 0.0
         },
         "70_to_200": {
-          "n_readings": 9890788,
-          "pct_changed_category": 18.501053707753112
+          "n_readings": 9890789,
+          "pct_changed_category": 18.50095073305072
         },
         "above_200": {
-          "n_readings": 3302421,
-          "pct_changed_category": 80.93129252751238
+          "n_readings": 3302420,
+          "pct_changed_category": 80.93128675335058
         }
       },
       "flip_band_rule_L_mgdl": [
@@ -275,5 +275,5 @@
       }
     }
   ],
-  "runtime_s": 24.6
+  "runtime_s": 4.2
 }

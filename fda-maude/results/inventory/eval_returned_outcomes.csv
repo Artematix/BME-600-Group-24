@@ -1,0 +1,6 @@
+maker,n,returned_only_pct,not_returned_only_pct,both_mentioned_pct,neither_pct,of_returned_no_defect_pct,of_returned_defect_confirmed_pct,of_returned_cause_not_determined_pct
+all,122657,6.0,52.4,14.1,27.5,80.9,13.7,18.2
+Abbott,77300,5.9,67.1,18.8,8.2,98.3,8.6,3.4
+Dexcom,33462,4.3,15.4,7.7,72.5,75.3,28.5,79.6
+Medtronic,8721,12.2,81.9,1.5,4.4,16.7,7.5,0.0
+Other,3174,8.3,4.5,2.3,84.9,70.0,46.4,11.0

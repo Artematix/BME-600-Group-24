@@ -1,5 +1,9 @@
 # Decision-flip simulation, version 1 (2026-10-09)
 
+> **Note (2026-10-30): these are the first-pass results from October 7-9, kept as history.**
+> Their pair set includes calibration fingersticks and pump-typed "BG" values (many are CGM values typed into the pump), so the sensor looks better here than it is.
+> For the paper use ACCURACY_V2.md, ERROR_DRIVERS.md, SUBGROUPS.md and SIMULATION_V2.md.
+
 Key terms:
 - CGM = continuous glucose monitor. A skin sensor that reads blood sugar every 5 minutes.
 - Bias = the sensor reads too low (or too high) by a fixed amount. Here: too low by a percent.

@@ -1,0 +1,6 @@
+Manufacturer: {maker}. Brand: {brand}. FDA event type: {event_type}.
+
+REPORT TEXT:
+{text}
+
+Fill the form for this report. Answer with JSON only.

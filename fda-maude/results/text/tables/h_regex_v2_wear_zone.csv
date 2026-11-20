@@ -1,0 +1,11 @@
+version,brand,reports,model_wear,regex_wear,wear_both,wear_recall_pct,wear_agree_pct,model_zone,regex_zone,zone_both,zone_recall_pct,zone_agree_pct
+v1 baseline,Abbott,75500,6238,5582,4976,79.8,99.6,4379,4806,4379,100.0,99.7
+v1 baseline,Dexcom,36619,908,380,140,15.4,94.3,8679,8697,8667,99.9,98.7
+v1 baseline,Medtronic,9067,12,5,2,16.7,100.0,2,2,2,100.0,100.0
+v1 baseline,Other,3413,28,31,8,28.6,100.0,1,1,1,100.0,100.0
+v1 baseline,All,124599,7186,5998,5126,71.3,99.5,13061,13506,13049,99.9,99.1
+v2 tuned,Abbott,75500,6238,7509,6079,97.5,99.6,4379,4806,4379,100.0,99.7
+v2 tuned,Dexcom,36619,908,2469,726,80.0,97.1,8679,8697,8667,99.9,98.7
+v2 tuned,Medtronic,9067,12,23,7,58.3,100.0,2,2,2,100.0,100.0
+v2 tuned,Other,3413,28,72,25,89.3,100.0,1,1,1,100.0,100.0
+v2 tuned,All,124599,7186,10073,6837,95.1,99.3,13061,13506,13049,99.9,99.1

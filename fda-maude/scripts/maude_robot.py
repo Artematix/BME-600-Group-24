@@ -14,7 +14,9 @@ How to run (from the fda-maude folder):
     py -3.11 scripts/maude_robot.py serious    (tier 2: all death + injury reports)
     py -3.11 scripts/maude_robot.py sample     (tier 3: random sample of malfunction reports)
     py -3.11 scripts/maude_robot.py full       (tier 5: every CGM report; add --workers 4)
+    py -3.11 scripts/maude_robot.py bulk       (tier 5 by another road: openFDA bulk files. No key needed; add --workers 6)
     py -3.11 scripts/maude_robot.py clean      (one tidy table per tier)
+    py -3.11 scripts/maude_robot.py clean --tiers bulk   (tidy tables from the bulk files: full.csv.gz, full.parquet, serious.csv.gz)
     py -3.11 scripts/maude_robot.py tables     (rebuild results/counts/*.csv from raw/counts/, no calls)
 Add --codes SBH,QCD to run only some product codes (for testing).
 
@@ -29,6 +31,7 @@ import bisect
 import csv
 import datetime as dt
 import gzip
+import io
 import json
 import math
 import os
@@ -37,8 +40,9 @@ import re
 import sys
 import threading
 import time
+import zipfile
 from collections import Counter, defaultdict
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.parse import quote
 
@@ -776,6 +780,210 @@ def cmd_full(cfg, api, state, codes, workers):
         print("  full: all slices done.", flush=True)
 
 
+# ---------------------------------------------------------------- bulk files (tier 5 by another road)
+# openFDA also publishes all of MAUDE as plain zip files (one per quarter received, cut into parts of
+# at most 95,000 reports). Downloading them is not an API call, so no key and no daily limit.
+# The robot reads each zip in a stream and keeps only reports with a CGM product code.
+# Added 2026-10-26, when the full API pull was not possible (no API key on this computer).
+
+BULK_MANIFEST = API + "/download.json"
+
+
+def bulk_partition_key(url):
+    """.../device/event/2025q1/device-event-0008-of-0008.json.zip -> 2025q1_0008-of-0008"""
+    m = re.search(r"/device/event/([^/]+)/device-event-(\d+-of-\d+)\.json\.zip$", url)
+    if not m:
+        raise ValueError(f"unexpected bulk file address: {url}")
+    return f"{m.group(1)}_{m.group(2)}"
+
+
+def iter_bulk_records(stream, chunk_chars=4_000_000):
+    """Yields one report (dict) at a time from an openFDA bulk JSON file
+    ({"meta": {...}, "results": [ {...}, ... ]}) without loading the whole file into memory.
+    A 95,000-report file is about 800 MB of text; this keeps only a few MB in memory."""
+    dec = json.JSONDecoder()
+    skip = re.compile(r"[\s,]*")
+    buf = ""
+    pos = None
+    while pos is None:  # 1) find where the results list starts
+        chunk = stream.read(chunk_chars)
+        if not chunk:
+            raise ValueError("no results list found in bulk file")
+        buf += chunk
+        m = re.search(r'"results"\s*:\s*\[', buf)
+        if m:
+            pos = m.end()
+    while True:  # 2) one report at a time
+        while True:  # skip spaces and commas; read more if the buffer is used up
+            pos = skip.match(buf, pos).end()
+            if pos < len(buf):
+                break
+            chunk = stream.read(chunk_chars)
+            if not chunk:
+                return
+            buf, pos = buf[pos:] + chunk, 0
+        if buf[pos] == "]":
+            return
+        try:
+            obj, end = dec.raw_decode(buf, pos)
+        except json.JSONDecodeError:  # the report is cut off: read more and try again
+            chunk = stream.read(chunk_chars)
+            if not chunk:
+                raise
+            buf, pos = buf[pos:] + chunk, 0
+            continue
+        pos = end
+        yield obj
+
+
+def download_to_file(session, url, dest, expected_mb=None):
+    """Streams one web file to disk, with retries. The real file appears only when complete.
+    Returns the size in bytes."""
+    dest = Path(dest)
+    tmp = dest.with_suffix(dest.suffix + ".part")
+    wait = 10
+    for attempt in range(5):
+        try:
+            with session.get(url, stream=True, timeout=(30, 300)) as r:
+                r.raise_for_status()
+                with open(tmp, "wb") as f:
+                    for chunk in r.iter_content(chunk_size=1 << 20):
+                        f.write(chunk)
+            size = tmp.stat().st_size
+            if expected_mb and expected_mb >= 1 and size < expected_mb * 1024 * 1024 * 0.9:  # tiny files: manifest size is rounded
+                raise OSError(f"file too small: {size:,} bytes, manifest says about {expected_mb} MB")
+            replace_retry(tmp, dest)
+            return size
+        except OSError as e:  # requests errors are OSErrors too
+            tmp.unlink(missing_ok=True)
+            if attempt == 4:
+                raise
+            print(f"  download retry {attempt + 1} for {dest.name}: {repr(e)[:200]}; wait {wait}s", flush=True)
+            time.sleep(wait)
+            wait *= 3
+
+
+def bulk_worker(job):
+    """Runs in its own process. Downloads one bulk zip (unless already on disk), reads it in a
+    stream, keeps only reports that list a wanted product code, and writes them to one gzipped
+    JSON-lines file (whole reports, nothing trimmed). Returns a small dict of numbers."""
+    key, url, size_mb, zip_path, out_path, codes, keep_zip = job
+    codes = set(codes)
+    zip_path, out_path = Path(zip_path), Path(out_path)
+    t0 = time.time()
+    s = requests.Session()
+    s.headers["User-Agent"] = "bmen600-group24-maude-robot"
+    tmp = out_path.with_suffix(out_path.suffix + ".tmp")
+    for attempt in range(3):
+        if not zip_path.exists():
+            download_to_file(s, url, zip_path, size_mb)
+        zip_bytes = zip_path.stat().st_size
+        try:
+            n_all = n_keep = 0
+            by_code = Counter()
+            with zipfile.ZipFile(zip_path) as zf:
+                name = zf.namelist()[0]
+                with zf.open(name) as rawf, io.TextIOWrapper(rawf, encoding="utf-8") as txt, \
+                        gzip.open(tmp, "wt", encoding="utf-8", compresslevel=6) as out:
+                    for rec in iter_bulk_records(txt):
+                        n_all += 1
+                        hit = {d.get("device_report_product_code") for d in (rec.get("device") or [])} & codes
+                        if hit:
+                            n_keep += 1
+                            for c in hit:
+                                by_code[c] += 1
+                            out.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            replace_retry(tmp, out_path)
+            break
+        except (zipfile.BadZipFile, ValueError, EOFError, OSError) as e:
+            # a broken download: throw the zip away and fetch it again
+            tmp.unlink(missing_ok=True)
+            zip_path.unlink(missing_ok=True)
+            if attempt == 2:
+                raise
+            print(f"  bulk retry {attempt + 1} for {key}: {repr(e)[:200]}", flush=True)
+    if not keep_zip:
+        zip_path.unlink(missing_ok=True)
+    return {"records_in_file": n_all, "kept": n_keep, "by_code": dict(by_code),
+            "zip_bytes": zip_bytes, "secs": round(time.time() - t0, 1)}
+
+
+def cmd_bulk(cfg, api, state, codes, workers, keep_zips, parts, refresh_manifest):
+    """Tier 5 by another road: openFDA's bulk files (all of MAUDE, about 19 GB zipped, 375 files).
+    Not API calls, so no key and no daily limit. One output file per zip (raw/bulk/<key>.jsonl.gz),
+    so a stopped run picks up where it left off. The file list (manifest) is saved once and reused,
+    so a resumed run keeps working from the same FDA export."""
+    raw = cfg["paths"]["raw"]
+    folder, zips = raw / "bulk", raw / "bulk_zips"
+    folder.mkdir(parents=True, exist_ok=True)
+    zips.mkdir(parents=True, exist_ok=True)
+    mpath = folder / "manifest.json"
+    if refresh_manifest or not mpath.exists():
+        status, data, _ = api.get(url=BULK_MANIFEST)  # the only API call in this command
+        ev = data["results"]["device"]["event"]
+        write_json_atomic(mpath, ev)
+        print(f"  bulk: manifest saved. FDA export {ev.get('export_date')}, {len(ev['partitions'])} files, "
+              f"{sum(float(p['size_mb']) for p in ev['partitions']):,.0f} MB zipped, "
+              f"{int(ev.get('total_records', 0)):,} reports in all of MAUDE", flush=True)
+    ev = read_json_retry(mpath)
+    export = ev.get("export_date")
+    plist = []
+    for p in ev["partitions"]:
+        key = bulk_partition_key(p["file"])
+        if parts and not any(key.startswith(x) for x in parts):
+            continue
+        plist.append((key, p))
+    plist.sort(key=lambda kp: -float(kp[1]["size_mb"]))  # big files first: keeps all workers busy
+    todo = [(k, p) for k, p in plist if not (state.is_done("bulk", k) and (folder / f"{k}.jsonl.gz").exists())]
+    print(f"  bulk: {len(plist)} files in plan, {len(plist) - len(todo)} done before, {len(todo)} to do, "
+          f"{workers} workers, keep zips: {keep_zips}, codes: {','.join(codes)}", flush=True)
+    jobs = [(k, p["file"], float(p["size_mb"]), str(zips / f"{k}.zip"), str(folder / f"{k}.jsonl.gz"),
+             list(codes), keep_zips) for k, p in todo]
+    expected = {k: int(p["records"]) for k, p in plist}
+    log = folder / "download_log.jsonl"
+    t0 = time.time()
+    n_done, kept, mb, failed = 0, 0, 0.0, []
+    with ProcessPoolExecutor(max_workers=workers) as ex:
+        futs = {ex.submit(bulk_worker, j): j for j in jobs}
+        for fu in as_completed(futs):
+            j = futs[fu]
+            key = j[0]
+            try:
+                info = fu.result()
+            except Exception as e:  # one bad file must not stop the others
+                failed.append(key)
+                print(f"  FAILED {key}: {repr(e)[:300]}", flush=True)
+                continue
+            info["expected"] = expected[key]
+            info["export_date"] = export
+            info["fetched"] = dt.datetime.now().isoformat(timespec="seconds")
+            state.mark_done("bulk", key, info)
+            with open(log, "a", encoding="utf-8") as f:
+                f.write(json.dumps({"key": key, "url": j[1], **info}) + "\n")
+            n_done += 1
+            kept += info["kept"]
+            mb += info["zip_bytes"] / 1e6
+            flag = "" if info["records_in_file"] == expected[key] else f"  (manifest says {expected[key]:,})"
+            print(f"  [{dt.datetime.now():%H:%M:%S}] bulk {key}: {info['records_in_file']:,} reports in file, "
+                  f"{info['kept']:,} CGM kept, {info['secs']:.0f}s{flag} | {n_done}/{len(jobs)} files, "
+                  f"{kept:,} kept, {mb:,.0f} MB, {(time.time() - t0) / 60:.0f} min", flush=True)
+    done = state.d["done"].get("bulk", {})
+    tot = Counter()
+    for k, _ in plist:
+        for c, n in done.get(k, {}).get("by_code", {}).items():
+            tot[c] += n
+    n_ok = sum(1 for k, _ in plist if k in done)
+    print(f"  bulk: {n_ok} of {len(plist)} files done, {sum(i['kept'] for k, i in done.items()):,} CGM reports kept "
+          f"in all, {sum(i['zip_bytes'] for i in done.values()) / 1e9:.2f} GB downloaded in all, "
+          f"this run {(time.time() - t0) / 60:.0f} min", flush=True)
+    print(f"  bulk: reports per code (a report with two codes counts in both): "
+          f"{dict(sorted(tot.items(), key=lambda kv: -kv[1]))}", flush=True)
+    if failed:
+        print(f"  bulk: {len(failed)} files failed: {failed[:5]}... Run 'bulk' again to retry them.", flush=True)
+    elif n_ok == len(plist):
+        print("  bulk: all files done. Next: clean --tiers bulk", flush=True)
+
+
 # ---------------------------------------------------------------- tier 4: recalls
 
 def cmd_recalls(cfg, api, state):
@@ -890,13 +1098,66 @@ def join_unique(vals):
     return "; ".join(seen) if seen else None
 
 
+# Extra columns added 2026-10-26 (appended after the original ones, so old readers still work).
+# Lists are joined with "; " like the original columns (report_results.py splits on ";").
+EXTRA_TOP = ["date_report", "date_manufacturer_received", "date_report_to_fda", "date_report_to_manufacturer",
+             "date_facility_aware", "date_added", "date_changed", "source_type", "type_of_report", "mfr_report_type",
+             "adverse_event_flag", "product_problem_flag", "remedial_action", "health_professional",
+             "reporter_occupation_code", "reporter_state_code", "event_location", "initial_report_to_fda",
+             "report_to_fda", "report_to_manufacturer", "summary_report_flag", "noe_summarized", "single_use_flag",
+             "previous_use_code", "reprocessed_and_reused_flag", "manufacturer_link_flag",
+             "number_devices_in_event", "number_patients_in_event", "pma_pmn_number", "exemption_number",
+             "removal_correction_number", "event_key", "suppl_dates_fda_received", "suppl_dates_mfr_received",
+             "manufacturer_name", "manufacturer_country", "distributor_name"]
+EXTRA_DEV = ["catalog_number", "udi_di", "udi_public", "device_operator", "device_availability",
+             "device_evaluated_by_manufacturer", "expiration_date_of_device", "implant_flag", "date_removed_flag",
+             "device_age_text", "device_sequence_number", "device_event_key", "manufacturer_d_country",
+             "other_id_number"]
+EXTRA_OPENFDA = ["device_name", "device_class", "regulation_number"]
+
+
+def parse_age(s):
+    """'62 YR' -> (62.0, 'YR'). '8 MO' -> (8.0, 'MO'). Blank or odd -> (None, None)."""
+    if not s:
+        return None, None
+    m = re.match(r"^\s*(\d+(?:\.\d+)?)\s*([A-Za-z]*)", str(s))
+    if not m:
+        return None, None
+    return float(m.group(1)), (m.group(2).upper() or None)
+
+
+def _flat(v):
+    return join_unique(v) if isinstance(v, list) else miss(v)
+
+
+def clean_extras(r, dev, pats, texts, row):
+    """Extra columns. dev = the CGM device of the report, pats = patient list, texts = mdr_text list,
+    row = the original columns (already built)."""
+    o = {}
+    of = dev.get("openfda") or {}
+    for k in EXTRA_OPENFDA:
+        o["openfda_" + k] = _flat(of.get(k))
+    o["patient_age_value"], o["patient_age_unit"] = parse_age(row["patient_age"])
+    o["patient_sequence_number"] = miss((pats[0] if pats else {}).get("patient_sequence_number"))
+    o["patient_treatment"] = join_unique(t for p in pats for t in (p.get("sequence_number_treatment") or []))
+    o["all_product_codes"] = join_unique(d.get("device_report_product_code") for d in (r.get("device") or []))
+    o["n_mdr_text"] = len(texts)
+    o["event_text_len"] = len(row["event_text"] or "")
+    o["mfr_narrative_len"] = len(row["mfr_narrative"] or "")
+    for k in EXTRA_TOP:
+        o[k] = _flat(r.get(k))
+    for k in EXTRA_DEV:
+        o[k] = _flat(dev.get(k))
+    return o
+
+
 def clean_row(r, codes):
     devs = r.get("device") or [{}]
     dev = next((d for d in devs if d.get("device_report_product_code") in codes), devs[0])
     pats = r.get("patient") or []
     p0 = pats[0] if pats else {}
     texts = r.get("mdr_text") or []
-    return {
+    row = {
         "mdr_report_key": r.get("mdr_report_key"),
         "report_number": miss(r.get("report_number")),
         "date_received": miss(r.get("date_received")),
@@ -925,6 +1186,8 @@ def clean_row(r, codes):
         "mfr_narrative": " | ".join(t["text"] for t in texts
                                     if t.get("text_type_code") == "Additional Manufacturer Narrative" and t.get("text")) or None,
     }
+    row.update(clean_extras(r, dev, pats, texts, row))
+    return row
 
 
 def cmd_clean(cfg, state, tiers):
@@ -957,18 +1220,68 @@ def cmd_clean(cfg, state, tiers):
               f"{int(df['repeated_report_number'].sum())} rows share a report_number)", flush=True)
     if "full" in tiers:
         clean_full(cfg, state, codes)
+    if "bulk" in tiers:
+        clean_full(cfg, state, codes, source="bulk")
 
 
-def clean_full(cfg, state, codes):
+PARQUET_INT_COLS = {"n_devices", "n_patients", "n_mdr_text", "event_text_len", "mfr_narrative_len"}
+PARQUET_FLOAT_COLS = {"patient_age_value"}
+PARQUET_BOOL_COLS = {"repeated_report_number"}
+
+
+def parquet_type(col, pa):
+    if col in PARQUET_INT_COLS:
+        return pa.int64()
+    if col in PARQUET_FLOAT_COLS:
+        return pa.float64()
+    if col in PARQUET_BOOL_COLS:
+        return pa.bool_()
+    return pa.string()
+
+
+def _to_int(v):
+    v = v.strip() if isinstance(v, str) else v
+    return int(v) if isinstance(v, str) and v.lstrip("-").isdigit() else (v if isinstance(v, int) else None)
+
+
+def _to_float(v):
+    try:
+        return float(v) if v not in ("", None) else None
+    except ValueError:
+        return None
+
+
+def write_parquet_batch(writer, schema, cols, batch, pa):
+    arrays = {}
+    for c in cols:
+        vals = batch[c]
+        if c in PARQUET_INT_COLS:
+            vals = [_to_int(v) for v in vals]
+        elif c in PARQUET_FLOAT_COLS:
+            vals = [_to_float(v) for v in vals]
+        elif c in PARQUET_BOOL_COLS:
+            vals = [v == "True" if isinstance(v, str) else bool(v) for v in vals]
+        else:
+            vals = [v if v != "" else None for v in vals]
+        arrays[c] = pa.array(vals, type=schema.field(c).type)
+    writer.write_table(pa.table(arrays, schema=schema))
+
+
+def clean_full(cfg, state, codes, source="full"):
     """Tier 5 is too big for memory (3.4 million reports with stories).
     So it is cleaned in a stream, one report at a time, in two passes:
     pass 1 writes rows (duplicate keys skipped) and notes repeated report numbers,
-    pass 2 adds the repeated_report_number column.
-    Rows are in slice order (product code, then month received), not sorted by date."""
+    pass 2 adds the repeated_report_number column and writes the final files.
+    source = "full" (API slices in raw/full/) or "bulk" (openFDA bulk files in raw/bulk/).
+    Writes clean/full.csv.gz and clean/full.parquet (same rows and columns; parquet needs pyarrow).
+    For source "bulk" it also writes clean/serious.csv.gz (death + injury rows only), the file
+    report_results.py needs.
+    Rows are in file order (API: product code then month received; bulk: quarter received), not sorted."""
     raw, out = cfg["paths"]["raw"], cfg["paths"]["clean"]
-    files = sorted(p for p in (raw / "full").glob("*.jsonl.gz") if state.is_done("full", p.name[:-len(".jsonl.gz")]))
+    out.mkdir(parents=True, exist_ok=True)
+    files = sorted(p for p in (raw / source).glob("*.jsonl.gz") if state.is_done(source, p.name[:-len(".jsonl.gz")]))
     if not files:
-        print("  clean full: nothing finished yet", flush=True)
+        print(f"  clean {source}: nothing finished yet", flush=True)
         return
     csv.field_size_limit(2 ** 31 - 1)  # some stories are very long
     cols = list(clean_row({}, codes).keys())
@@ -997,28 +1310,67 @@ def clean_full(cfg, state, codes):
                         (dup_rn if rn in seen_rn else seen_rn).add(rn)
                     w.writerow(row)
                     n_out += 1
-            if (i + 1) % 200 == 0:
-                print(f"  clean full pass 1: {i + 1} of {len(files)} files, {n_out:,} reports, "
+            if (i + 1) % 50 == 0 or i + 1 == len(files):
+                print(f"  clean {source} pass 1: {i + 1} of {len(files)} files, {n_out:,} reports, "
                       f"{time.time() - t0:.0f}s", flush=True)
     del seen_keys, seen_rn
-    final = out / "full.csv.gz"
-    tmp = out / "full.csv.gz.tmp"
-    n_flag = 0
+    try:
+        import pyarrow as pa
+        import pyarrow.parquet as pq
+    except ImportError:
+        pa = pq = None
+        print("  clean: pyarrow is not installed, so no full.parquet (pip install pyarrow)", flush=True)
+    header_out = cols + ["repeated_report_number"]
+    final, tmp = out / "full.csv.gz", out / "full.csv.gz.tmp"
+    ser_final, ser_tmp = out / "serious.csv.gz", out / "serious.csv.gz.tmp"
+    pq_final, pq_tmp = out / "full.parquet", out / "full.parquet.tmp"
+    write_serious = source == "bulk"
+    writer = schema = None
+    if pa:
+        schema = pa.schema([(c, parquet_type(c, pa)) for c in header_out])
+        writer = pq.ParquetWriter(str(pq_tmp), schema, compression="zstd")
+    batch = {c: [] for c in header_out}
+    n_batch = n_flag = n_ser = 0
     with gzip.open(part1, "rt", encoding="utf-8", newline="") as fin, \
-            gzip.open(tmp, "wt", encoding="utf-8", newline="") as fout:
+            gzip.open(tmp, "wt", encoding="utf-8", newline="") as fout, \
+            (gzip.open(ser_tmp, "wt", encoding="utf-8", newline="") if write_serious else open(os.devnull, "w")) as fser:
         rd = csv.reader(fin)
         wr = csv.writer(fout, lineterminator="\n")
+        ws = csv.writer(fser, lineterminator="\n")
         header = next(rd)
-        rn_i = header.index("report_number")
+        rn_i, et_i = header.index("report_number"), header.index("event_type")
         wr.writerow(header + ["repeated_report_number"])
+        if write_serious:
+            ws.writerow(header + ["repeated_report_number"])
         for row in rd:
             flag = bool(row[rn_i]) and row[rn_i] in dup_rn
             n_flag += flag
-            wr.writerow(row + [flag])
+            out_row = row + [flag]
+            wr.writerow(out_row)
+            if write_serious and row[et_i] in ("Death", "Injury"):
+                ws.writerow(out_row)
+                n_ser += 1
+            if writer:
+                for c, v in zip(header_out, out_row):
+                    batch[c].append(v)
+                n_batch += 1
+                if n_batch >= 50_000:
+                    write_parquet_batch(writer, schema, header_out, batch, pa)
+                    batch = {c: [] for c in header_out}
+                    n_batch = 0
+        if writer and n_batch:
+            write_parquet_batch(writer, schema, header_out, batch, pa)
+    if writer:
+        writer.close()
+        replace_retry(pq_tmp, pq_final)
     replace_retry(tmp, final)
+    if write_serious:
+        replace_retry(ser_tmp, ser_final)
     part1.unlink()
-    print(f"  clean full: {n_out:,} reports from {len(files)} files ({n_in - n_out:,} duplicate keys removed, "
-          f"{n_flag} rows share a report_number), {time.time() - t0:.0f}s -> {final}", flush=True)
+    print(f"  clean {source}: {n_out:,} reports from {len(files)} files ({n_in - n_out:,} duplicate keys removed, "
+          f"{n_flag} rows share a report_number), {time.time() - t0:.0f}s -> {final}"
+          + (f", {pq_final}" if writer else "")
+          + (f", {ser_final} ({n_ser:,} death + injury rows)" if write_serious else ""), flush=True)
 
 
 # ---------------------------------------------------------------- status
@@ -1073,6 +1425,12 @@ def cmd_status(cfg, api, state):
                   f"(normal if FDA updated its data). First: {mism[:3]}")
     except SystemExit as e:
         print(f"Tier 5 full   : cannot plan yet ({e})")
+    bd = done.get("bulk", {})
+    if bd:
+        print(f"Bulk files    : {len(bd)} files done, {sum(i.get('kept', 0) for i in bd.values()):,} CGM reports kept, "
+              f"FDA export {next(iter(bd.values())).get('export_date')} (run 'bulk' to see what is left)")
+    else:
+        print("Bulk files    : not started")
     lock = cfg["paths"]["raw"] / "robot.lock"
     if lock.exists():
         pid = lock.read_text().strip()
@@ -1086,12 +1444,15 @@ def cmd_status(cfg, api, state):
 
 def main():
     ap = argparse.ArgumentParser(description="FDA MAUDE + recall robot for CGM sensors")
-    ap.add_argument("command", choices=["counts", "serious", "sample", "full", "recalls", "clean", "status", "tables"])
+    ap.add_argument("command", choices=["counts", "serious", "sample", "full", "bulk", "recalls", "clean", "status", "tables"])
     ap.add_argument("--codes", help="comma list of product codes to run (default: all in config)")
     ap.add_argument("--workers", type=int, default=None,
-                    help="full only: how many slices to fetch at the same time (default in config)")
+                    help="full/bulk only: how many slices or files to fetch at the same time (default in config)")
     ap.add_argument("--tiers", default="serious,sample,full",
-                    help="clean only: which tables to build (default: serious,sample,full)")
+                    help="clean only: which tables to build (default: serious,sample,full; add bulk for the bulk-file road)")
+    ap.add_argument("--keep-zips", action="store_true", help="bulk only: keep the downloaded zips in raw/bulk_zips/ (about 19 GB)")
+    ap.add_argument("--parts", default=None, help="bulk only: comma list of file-key prefixes to run, e.g. 2025q1,2026 (for tests)")
+    ap.add_argument("--refresh-manifest", action="store_true", help="bulk only: fetch a fresh file list instead of the saved one")
     args = ap.parse_args()
 
     load_key_into_env()
@@ -1104,7 +1465,7 @@ def main():
     codes = args.codes.split(",") if args.codes else cfg["product_codes"]
 
     lock = cfg["paths"]["raw"] / "robot.lock"
-    if args.command in ("counts", "serious", "sample", "full", "recalls"):
+    if args.command in ("counts", "serious", "sample", "full", "bulk", "recalls"):
         if lock.exists():
             old = lock.read_text().strip()
             if pid_alive(old):
@@ -1128,6 +1489,12 @@ def main():
             if w < 1 or w > 8:
                 raise SystemExit("--workers must be 1 to 8 (FDA allows 240 calls per minute; stay far below)")
             cmd_full(cfg, api, state, codes, w)
+        elif args.command == "bulk":
+            w = args.workers or cfg.get("bulk_workers", 4)
+            if w < 1 or w > 12:
+                raise SystemExit("--workers must be 1 to 12")
+            parts = [x.strip() for x in args.parts.split(",") if x.strip()] if args.parts else None
+            cmd_bulk(cfg, api, state, codes, w, args.keep_zips, parts, args.refresh_manifest)
         elif args.command == "clean":
             cmd_clean(cfg, state, set(args.tiers.split(",")))
         elif args.command == "status":

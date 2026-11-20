@@ -26,3 +26,21 @@ docs/rubrics/
 
 # Change-notes version of the midterm plan (quotes team comments). Keep local.
 docs/plans/2026-10-14_midterm-research-plan_change-notes.docx
+
+# MAUDE flattened tables (large, re-creatable with the robot). Keep local.
+fda-maude/data/*.parquet
+fda-maude/data/*.jsonl
+
+# Preprocessed parquet cache (rebuilt by analysis/preprocess.py)
+analysis/cache/
+
+# Keep the small pilot sample (287 reports) as a test fixture
+!fda-maude/data/sample_narratives.jsonl
+
+# Pilot model outputs on the sample (re-creatable; the validation rests on the gold v2/v3 runs, which stay)
+fda-maude/results/text/llm_sample_*.jsonl
+fda-maude/results/text/llm_serious500_*
+
+# One row per trial participant. Keep local (rebuilt by subgroups.py and simulation_v2.py).
+analysis/participant_metrics.csv
+analysis/simulation_v2_participants.csv

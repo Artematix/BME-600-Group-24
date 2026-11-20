@@ -1,0 +1,261 @@
+table,group,n_reports,weighted_n,theme,theme_label,hits_n,hit_pct
+malfunction sample (weighted),all,6137,2922501,eval_device_returned,Device was returned to the maker and looked at,1820,30.1
+malfunction sample (weighted),all,6137,2922501,eval_not_returned,"Device was NOT returned, discarded or not provided",2545,40.3
+malfunction sample (weighted),all,6137,2922501,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",4038,70.9
+malfunction sample (weighted),all,6137,2922501,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1523,23.9
+malfunction sample (weighted),all,6137,2922501,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),2011,35.1
+malfunction sample (weighted),all,6137,2922501,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,3397,60.7
+malfunction sample (weighted),all,6137,2922501,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),909,10.2
+malfunction sample (weighted),all,6137,2922501,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",69,0.9
+malfunction sample (weighted),all,6137,2922501,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),53,0.9
+malfunction sample (weighted),all,6137,2922501,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",55,0.1
+malfunction sample (weighted),all,6137,2922501,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),15,0.0
+malfunction sample (weighted),all,6137,2922501,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",12,0.1
+malfunction sample (weighted),all,6137,2922501,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",585,7.2
+malfunction sample (weighted),all,6137,2922501,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",45,0.5
+malfunction sample (weighted),all,6137,2922501,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",164,2.6
+malfunction sample (weighted),all,6137,2922501,bleeding_or_bruise,"Bleeding, blood at the site or bruising",17,0.1
+malfunction sample (weighted),all,6137,2922501,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",374,5.7
+malfunction sample (weighted),all,6137,2922501,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",12,0.0
+malfunction sample (weighted),all,6137,2922501,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",9,0.2
+malfunction sample (weighted),all,6137,2922501,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",7,0.1
+malfunction sample (weighted),all,6137,2922501,night_or_sleep,"Event at night, during sleep, or on waking",18,0.1
+malfunction sample (weighted),all,6137,2922501,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",14,0.2
+malfunction sample (weighted),all,6137,2922501,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",12,0.2
+malfunction sample (weighted),all,6137,2922501,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",165,2.9
+malfunction sample (weighted),all,6137,2922501,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",1087,19.2
+malfunction sample (weighted),all,6137,2922501,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",1100,18.8
+malfunction sample (weighted),all,6137,2922501,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",168,3.1
+malfunction sample (weighted),all,6137,2922501,alarm_any_mention,Any mention of an alarm or alert (reference row),570,6.7
+malfunction sample (weighted),all,6137,2922501,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",11,0.1
+malfunction sample (weighted),all,6137,2922501,pump_any_mention,Any mention of an insulin pump (reference row),455,5.3
+malfunction sample (weighted),all,6137,2922501,voice_first_person,Written in the first person (patient or carer wrote it),70,1.0
+malfunction sample (weighted),all,6137,2922501,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",82,1.3
+malfunction sample (weighted),all,6137,2922501,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",32,0.1
+malfunction sample (weighted),all,6137,2922501,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",5938,97.7
+malfunction sample (weighted),all,6137,2922501,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",12,0.0
+malfunction sample (weighted),all,6137,2922501,glucagon_given,Glucagon (any brand) was used,3,0.0
+malfunction sample (weighted),all,6137,2922501,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",37,0.3
+malfunction sample (weighted),all,6137,2922501,dka_or_ketones,DKA or ketones named,3,0.0
+malfunction sample (weighted),all,6137,2922501,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",30,0.1
+malfunction sample (weighted),all,6137,2922501,pregnancy,"Pregnancy, fetus or breastfeeding",5,0.1
+malfunction sample (weighted),all,6137,2922501,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,58,0.2
+malfunction sample (weighted),all,6137,2922501,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",109,2.0
+malfunction sample (weighted),all,6137,2922501,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",294,5.1
+malfunction sample (weighted),all,6137,2922501,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",398,3.1
+malfunction sample (weighted),all,6137,2922501,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),31,0.3
+malfunction sample (weighted),all,6137,2922501,libre_scan,Scanning (Libre reader or phone scan) named,233,3.7
+malfunction sample (weighted),all,6137,2922501,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",184,3.6
+malfunction sample (weighted),all,6137,2922501,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",0,0.0
+malfunction sample (weighted),all,6137,2922501,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",19,0.3
+malfunction sample (weighted),all,6137,2922501,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",367,5.8
+malfunction sample (weighted),all,6137,2922501,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",177,1.9
+malfunction sample (weighted),all,6137,2922501,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,154,2.7
+malfunction sample (weighted),Abbott,843,386438,eval_device_returned,Device was returned to the maker and looked at,312,33.8
+malfunction sample (weighted),Abbott,843,386438,eval_not_returned,"Device was NOT returned, discarded or not provided",482,51.3
+malfunction sample (weighted),Abbott,843,386438,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",55,5.4
+malfunction sample (weighted),Abbott,843,386438,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,571,62.3
+malfunction sample (weighted),Abbott,843,386438,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),203,29.6
+malfunction sample (weighted),Abbott,843,386438,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,3,0.5
+malfunction sample (weighted),Abbott,843,386438,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),336,31.6
+malfunction sample (weighted),Abbott,843,386438,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",1,0.0
+malfunction sample (weighted),Abbott,843,386438,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),1,0.0
+malfunction sample (weighted),Abbott,843,386438,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",24,0.5
+malfunction sample (weighted),Abbott,843,386438,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),0,0.0
+malfunction sample (weighted),Abbott,843,386438,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",1,0.0
+malfunction sample (weighted),Abbott,843,386438,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",17,2.3
+malfunction sample (weighted),Abbott,843,386438,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",4,0.5
+malfunction sample (weighted),Abbott,843,386438,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",5,0.2
+malfunction sample (weighted),Abbott,843,386438,bleeding_or_bruise,"Bleeding, blood at the site or bruising",0,0.0
+malfunction sample (weighted),Abbott,843,386438,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",0,0.0
+malfunction sample (weighted),Abbott,843,386438,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",1,0.0
+malfunction sample (weighted),Abbott,843,386438,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",0,0.0
+malfunction sample (weighted),Abbott,843,386438,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",0,0.0
+malfunction sample (weighted),Abbott,843,386438,night_or_sleep,"Event at night, during sleep, or on waking",4,0.2
+malfunction sample (weighted),Abbott,843,386438,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",0,0.0
+malfunction sample (weighted),Abbott,843,386438,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",4,0.6
+malfunction sample (weighted),Abbott,843,386438,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",0,0.0
+malfunction sample (weighted),Abbott,843,386438,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",6,0.7
+malfunction sample (weighted),Abbott,843,386438,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",52,3.1
+malfunction sample (weighted),Abbott,843,386438,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",0,0.0
+malfunction sample (weighted),Abbott,843,386438,alarm_any_mention,Any mention of an alarm or alert (reference row),1,0.1
+malfunction sample (weighted),Abbott,843,386438,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",0,0.0
+malfunction sample (weighted),Abbott,843,386438,pump_any_mention,Any mention of an insulin pump (reference row),0,0.0
+malfunction sample (weighted),Abbott,843,386438,voice_first_person,Written in the first person (patient or carer wrote it),4,0.3
+malfunction sample (weighted),Abbott,843,386438,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",0,0.0
+malfunction sample (weighted),Abbott,843,386438,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",5,0.3
+malfunction sample (weighted),Abbott,843,386438,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",831,99.4
+malfunction sample (weighted),Abbott,843,386438,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",1,0.0
+malfunction sample (weighted),Abbott,843,386438,glucagon_given,Glucagon (any brand) was used,0,0.0
+malfunction sample (weighted),Abbott,843,386438,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",18,1.8
+malfunction sample (weighted),Abbott,843,386438,dka_or_ketones,DKA or ketones named,0,0.0
+malfunction sample (weighted),Abbott,843,386438,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",17,0.2
+malfunction sample (weighted),Abbott,843,386438,pregnancy,"Pregnancy, fetus or breastfeeding",0,0.0
+malfunction sample (weighted),Abbott,843,386438,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,0,0.0
+malfunction sample (weighted),Abbott,843,386438,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",1,0.2
+malfunction sample (weighted),Abbott,843,386438,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",0,0.0
+malfunction sample (weighted),Abbott,843,386438,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",7,0.6
+malfunction sample (weighted),Abbott,843,386438,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),1,0.2
+malfunction sample (weighted),Abbott,843,386438,libre_scan,Scanning (Libre reader or phone scan) named,233,28.0
+malfunction sample (weighted),Abbott,843,386438,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",180,27.0
+malfunction sample (weighted),Abbott,843,386438,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",0,0.0
+malfunction sample (weighted),Abbott,843,386438,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",17,2.2
+malfunction sample (weighted),Abbott,843,386438,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",155,23.1
+malfunction sample (weighted),Abbott,843,386438,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",1,0.2
+malfunction sample (weighted),Abbott,843,386438,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,0,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,eval_device_returned,Device was returned to the maker and looked at,1330,30.4
+malfunction sample (weighted),Dexcom,4574,2405435,eval_not_returned,"Device was NOT returned, discarded or not provided",1631,35.8
+malfunction sample (weighted),Dexcom,4574,2405435,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",3903,85.3
+malfunction sample (weighted),Dexcom,4574,2405435,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,814,18.4
+malfunction sample (weighted),Dexcom,4574,2405435,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),1675,37.4
+malfunction sample (weighted),Dexcom,4574,2405435,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,3368,73.6
+malfunction sample (weighted),Dexcom,4574,2405435,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),278,6.5
+malfunction sample (weighted),Dexcom,4574,2405435,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",59,1.1
+malfunction sample (weighted),Dexcom,4574,2405435,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),51,1.1
+malfunction sample (weighted),Dexcom,4574,2405435,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",1,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),0,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",6,0.1
+malfunction sample (weighted),Dexcom,4574,2405435,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",358,8.3
+malfunction sample (weighted),Dexcom,4574,2405435,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",37,0.5
+malfunction sample (weighted),Dexcom,4574,2405435,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",137,3.1
+malfunction sample (weighted),Dexcom,4574,2405435,bleeding_or_bruise,"Bleeding, blood at the site or bruising",3,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",372,7.0
+malfunction sample (weighted),Dexcom,4574,2405435,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",10,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",8,0.2
+malfunction sample (weighted),Dexcom,4574,2405435,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",6,0.1
+malfunction sample (weighted),Dexcom,4574,2405435,night_or_sleep,"Event at night, during sleep, or on waking",3,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",12,0.3
+malfunction sample (weighted),Dexcom,4574,2405435,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",0,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",165,3.5
+malfunction sample (weighted),Dexcom,4574,2405435,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",995,22.5
+malfunction sample (weighted),Dexcom,4574,2405435,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",977,21.4
+malfunction sample (weighted),Dexcom,4574,2405435,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",163,3.8
+malfunction sample (weighted),Dexcom,4574,2405435,alarm_any_mention,Any mention of an alarm or alert (reference row),279,6.5
+malfunction sample (weighted),Dexcom,4574,2405435,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",1,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,pump_any_mention,Any mention of an insulin pump (reference row),89,1.9
+malfunction sample (weighted),Dexcom,4574,2405435,voice_first_person,Written in the first person (patient or carer wrote it),56,1.0
+malfunction sample (weighted),Dexcom,4574,2405435,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",75,1.6
+malfunction sample (weighted),Dexcom,4574,2405435,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",6,0.1
+malfunction sample (weighted),Dexcom,4574,2405435,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",4450,97.8
+malfunction sample (weighted),Dexcom,4574,2405435,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",3,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,glucagon_given,Glucagon (any brand) was used,1,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",3,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,dka_or_ketones,DKA or ketones named,1,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",1,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,pregnancy,"Pregnancy, fetus or breastfeeding",5,0.1
+malfunction sample (weighted),Dexcom,4574,2405435,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,1,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",102,2.4
+malfunction sample (weighted),Dexcom,4574,2405435,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",289,6.2
+malfunction sample (weighted),Dexcom,4574,2405435,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",136,3.1
+malfunction sample (weighted),Dexcom,4574,2405435,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),21,0.3
+malfunction sample (weighted),Dexcom,4574,2405435,libre_scan,Scanning (Libre reader or phone scan) named,0,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",2,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",0,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",1,0.0
+malfunction sample (weighted),Dexcom,4574,2405435,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",167,3.2
+malfunction sample (weighted),Dexcom,4574,2405435,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",5,0.1
+malfunction sample (weighted),Dexcom,4574,2405435,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,152,3.2
+malfunction sample (weighted),Medtronic,407,120676,eval_device_returned,Device was returned to the maker and looked at,42,9.6
+malfunction sample (weighted),Medtronic,407,120676,eval_not_returned,"Device was NOT returned, discarded or not provided",350,92.7
+malfunction sample (weighted),Medtronic,407,120676,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,34,8.6
+malfunction sample (weighted),Medtronic,407,120676,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),39,6.8
+malfunction sample (weighted),Medtronic,407,120676,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,15,1.6
+malfunction sample (weighted),Medtronic,407,120676,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),64,11.7
+malfunction sample (weighted),Medtronic,407,120676,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",3,0.2
+malfunction sample (weighted),Medtronic,407,120676,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),1,0.1
+malfunction sample (weighted),Medtronic,407,120676,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),1,0.1
+malfunction sample (weighted),Medtronic,407,120676,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",4,0.6
+malfunction sample (weighted),Medtronic,407,120676,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",4,0.4
+malfunction sample (weighted),Medtronic,407,120676,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",4,0.7
+malfunction sample (weighted),Medtronic,407,120676,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",6,0.6
+malfunction sample (weighted),Medtronic,407,120676,bleeding_or_bruise,"Bleeding, blood at the site or bruising",8,2.5
+malfunction sample (weighted),Medtronic,407,120676,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",2,0.1
+malfunction sample (weighted),Medtronic,407,120676,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",1,0.5
+malfunction sample (weighted),Medtronic,407,120676,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,night_or_sleep,"Event at night, during sleep, or on waking",2,0.6
+malfunction sample (weighted),Medtronic,407,120676,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",2,0.2
+malfunction sample (weighted),Medtronic,407,120676,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",4,1.0
+malfunction sample (weighted),Medtronic,407,120676,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",64,14.8
+malfunction sample (weighted),Medtronic,407,120676,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",48,14.7
+malfunction sample (weighted),Medtronic,407,120676,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",4,0.3
+malfunction sample (weighted),Medtronic,407,120676,alarm_any_mention,Any mention of an alarm or alert (reference row),121,28.8
+malfunction sample (weighted),Medtronic,407,120676,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",10,1.6
+malfunction sample (weighted),Medtronic,407,120676,pump_any_mention,Any mention of an insulin pump (reference row),358,86.2
+malfunction sample (weighted),Medtronic,407,120676,voice_first_person,Written in the first person (patient or carer wrote it),8,2.0
+malfunction sample (weighted),Medtronic,407,120676,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",5,0.3
+malfunction sample (weighted),Medtronic,407,120676,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",7,1.2
+malfunction sample (weighted),Medtronic,407,120676,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",375,89.7
+malfunction sample (weighted),Medtronic,407,120676,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",4,0.2
+malfunction sample (weighted),Medtronic,407,120676,glucagon_given,Glucagon (any brand) was used,1,0.1
+malfunction sample (weighted),Medtronic,407,120676,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",7,0.4
+malfunction sample (weighted),Medtronic,407,120676,dka_or_ketones,DKA or ketones named,2,0.1
+malfunction sample (weighted),Medtronic,407,120676,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",9,0.3
+malfunction sample (weighted),Medtronic,407,120676,pregnancy,"Pregnancy, fetus or breastfeeding",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,22,4.0
+malfunction sample (weighted),Medtronic,407,120676,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",1,0.0
+malfunction sample (weighted),Medtronic,407,120676,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",42,5.9
+malfunction sample (weighted),Medtronic,407,120676,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),6,0.5
+malfunction sample (weighted),Medtronic,407,120676,libre_scan,Scanning (Libre reader or phone scan) named,0,0.0
+malfunction sample (weighted),Medtronic,407,120676,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",0,0.0
+malfunction sample (weighted),Medtronic,407,120676,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",1,0.0
+malfunction sample (weighted),Medtronic,407,120676,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",9,1.7
+malfunction sample (weighted),Medtronic,407,120676,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",168,43.2
+malfunction sample (weighted),Medtronic,407,120676,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,2,0.6
+malfunction sample (weighted),Other,313,9953,eval_device_returned,Device was returned to the maker and looked at,136,64.3
+malfunction sample (weighted),Other,313,9953,eval_not_returned,"Device was NOT returned, discarded or not provided",82,50.3
+malfunction sample (weighted),Other,313,9953,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",80,15.9
+malfunction sample (weighted),Other,313,9953,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,104,48.7
+malfunction sample (weighted),Other,313,9953,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),94,22.7
+malfunction sample (weighted),Other,313,9953,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,11,0.7
+malfunction sample (weighted),Other,313,9953,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),231,70.5
+malfunction sample (weighted),Other,313,9953,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",6,0.7
+malfunction sample (weighted),Other,313,9953,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),0,0.0
+malfunction sample (weighted),Other,313,9953,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",30,3.9
+malfunction sample (weighted),Other,313,9953,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),14,2.4
+malfunction sample (weighted),Other,313,9953,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",1,0.3
+malfunction sample (weighted),Other,313,9953,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",206,21.0
+malfunction sample (weighted),Other,313,9953,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",0,0.0
+malfunction sample (weighted),Other,313,9953,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",16,3.0
+malfunction sample (weighted),Other,313,9953,bleeding_or_bruise,"Bleeding, blood at the site or bruising",6,0.8
+malfunction sample (weighted),Other,313,9953,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",0,0.0
+malfunction sample (weighted),Other,313,9953,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",1,0.3
+malfunction sample (weighted),Other,313,9953,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",0,0.0
+malfunction sample (weighted),Other,313,9953,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",1,0.0
+malfunction sample (weighted),Other,313,9953,night_or_sleep,"Event at night, during sleep, or on waking",9,0.9
+malfunction sample (weighted),Other,313,9953,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",0,0.0
+malfunction sample (weighted),Other,313,9953,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",4,17.9
+malfunction sample (weighted),Other,313,9953,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",0,0.0
+malfunction sample (weighted),Other,313,9953,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",22,4.6
+malfunction sample (weighted),Other,313,9953,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",23,34.0
+malfunction sample (weighted),Other,313,9953,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",1,5.9
+malfunction sample (weighted),Other,313,9953,alarm_any_mention,Any mention of an alarm or alert (reference row),169,41.9
+malfunction sample (weighted),Other,313,9953,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",0,0.0
+malfunction sample (weighted),Other,313,9953,pump_any_mention,Any mention of an insulin pump (reference row),8,41.5
+malfunction sample (weighted),Other,313,9953,voice_first_person,Written in the first person (patient or carer wrote it),2,0.1
+malfunction sample (weighted),Other,313,9953,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",2,0.3
+malfunction sample (weighted),Other,313,9953,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",14,3.9
+malfunction sample (weighted),Other,313,9953,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",282,98.0
+malfunction sample (weighted),Other,313,9953,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",4,1.9
+malfunction sample (weighted),Other,313,9953,glucagon_given,Glucagon (any brand) was used,1,0.6
+malfunction sample (weighted),Other,313,9953,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",9,5.3
+malfunction sample (weighted),Other,313,9953,dka_or_ketones,DKA or ketones named,0,0.0
+malfunction sample (weighted),Other,313,9953,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",3,6.1
+malfunction sample (weighted),Other,313,9953,pregnancy,"Pregnancy, fetus or breastfeeding",0,0.0
+malfunction sample (weighted),Other,313,9953,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,35,14.1
+malfunction sample (weighted),Other,313,9953,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",6,4.4
+malfunction sample (weighted),Other,313,9953,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",4,1.0
+malfunction sample (weighted),Other,313,9953,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",213,51.3
+malfunction sample (weighted),Other,313,9953,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),3,0.5
+malfunction sample (weighted),Other,313,9953,libre_scan,Scanning (Libre reader or phone scan) named,0,0.0
+malfunction sample (weighted),Other,313,9953,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",2,1.3
+malfunction sample (weighted),Other,313,9953,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",0,0.0
+malfunction sample (weighted),Other,313,9953,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",0,0.0
+malfunction sample (weighted),Other,313,9953,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",36,4.5
+malfunction sample (weighted),Other,313,9953,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",3,6.6
+malfunction sample (weighted),Other,313,9953,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,0,0.0

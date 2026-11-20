@@ -1,0 +1,4544 @@
+{
+ "run": {
+  "date": "2026-11-06",
+  "seed": 600,
+  "n_boot": 2000,
+  "min_low_pairs": 20,
+  "min_group": 10,
+  "min_stratum_pairs": 5,
+  "lag_shift_s": 300,
+  "cache_version": "2026-10-30.1",
+  "maude_skipped": false,
+  "pairs": {
+   "verified": 168990,
+   "verified_low_avg_lt_70": 10022,
+   "calibration_in_window": 116244,
+   "verified_low_by_sex": {
+    "F": 5198,
+    "M": 4824
+   }
+  },
+  "meter_models_in_verified_pairs": {
+   "Contour Next": 168781,
+   "FreeStyle Precision Xtra": 148,
+   "Precision Xtra": 61
+  },
+  "runtime_s": 23.2
+ },
+ "preregistration": {
+  "written_before_tests_ran": true,
+  "unit": "participant (per-person mean bias on 20+ pairs), Mann-Whitney, bootstrap CI of the difference in medians, men minus women; pooled-pair checks use a participant bootstrap",
+  "fallback_rule": "a split is testable per person when 10+ people of each sex have 20+ pairs in it; otherwise the registered p comes from a mixed model (random intercept per person) on the pooled pairs of that split, and the estimate shown is the pooled men-minus-women gap with a participant-bootstrap CI. Both versions are reported for every split.",
+  "families": {
+   "replace_bg": "blocks A (splits), B (low profile and matching), C (body and physiology), F (decision thresholds); one BH family",
+   "shanghai": "block D",
+   "maude": "block E"
+  },
+  "A_splits": [
+   {
+    "id": "anchor_low",
+    "label": "Verified pairs, average below 70 (the original test; anchor, not counted)",
+    "group": "The pre-registered result from DEMOGRAPHICS_DEEP.md"
+   },
+   {
+    "id": "band_lt54",
+    "label": "Average below 54",
+    "group": "glucose band"
+   },
+   {
+    "id": "band_54_69",
+    "label": "Average 54-69",
+    "group": "glucose band"
+   },
+   {
+    "id": "wear1",
+    "label": "Sensor wear day 1 (confirmed sessions)",
+    "group": "wear day"
+   },
+   {
+    "id": "wear2_7",
+    "label": "Sensor wear days 2-7 (confirmed sessions)",
+    "group": "wear day"
+   },
+   {
+    "id": "night",
+    "label": "Night pairs (00:00-06:00)",
+    "group": "time of day"
+   },
+   {
+    "id": "daytime",
+    "label": "Daytime pairs (06:00-24:00)",
+    "group": "time of day"
+   },
+   {
+    "id": "falling",
+    "label": "Glucose falling (ROC < -1 mg/dL/min)",
+    "group": "trend"
+   },
+   {
+    "id": "flat",
+    "label": "Glucose flat (ROC -1 to 1)",
+    "group": "trend"
+   },
+   {
+    "id": "rising",
+    "label": "Glucose rising (ROC > 1)",
+    "group": "trend"
+   },
+   {
+    "id": "lag",
+    "label": "Lag-corrected pairs (CGM 5 min later), average below 70",
+    "group": "lag"
+   },
+   {
+    "id": "meter_contour",
+    "label": "Contour Next meter pairs",
+    "group": "meter type"
+   },
+   {
+    "id": "meter_precision",
+    "label": "Precision Xtra meter pairs",
+    "group": "meter type"
+   },
+   {
+    "id": "arm_cgm_only",
+    "label": "CGM-only arm (all days)",
+    "group": "arm"
+   },
+   {
+    "id": "arm_cgm_bgm",
+    "label": "CGM+BGM arm (all days)",
+    "group": "arm"
+   },
+   {
+    "id": "phase_runin",
+    "label": "Run-in phase, both arms",
+    "group": "phase"
+   },
+   {
+    "id": "phase_rand_cgm_only",
+    "label": "Randomised phase, CGM-only arm",
+    "group": "phase"
+   },
+   {
+    "id": "phase_rand_cgm_bgm",
+    "label": "Randomised phase, CGM+BGM arm (the check set)",
+    "group": "phase"
+   },
+   {
+    "id": "cal_low",
+    "label": "Calibration pairs, average below 70 (other pair source)",
+    "group": "pair source"
+   },
+   {
+    "id": "low_by_ref",
+    "label": "Low by fingerstick (fingerstick below 70)",
+    "group": "which device defines low"
+   },
+   {
+    "id": "low_by_cgm",
+    "label": "Low by sensor (CGM below 70)",
+    "group": "which device defines low"
+   },
+   {
+    "id": "mid",
+    "label": "Mid range: average 70-180",
+    "group": "other ranges"
+   },
+   {
+    "id": "high",
+    "label": "High range: average above 180",
+    "group": "other ranges"
+   },
+   {
+    "id": "all",
+    "label": "All verified pairs",
+    "group": "other ranges"
+   },
+   {
+    "id": "sex_x_arm",
+    "label": "Sex x arm interaction on low-range bias (OLS, HC3)",
+    "group": "arm"
+   }
+  ],
+  "B_profile": [
+   {
+    "id": "pct_below_70",
+    "label": "% of CGM time below 70 mg/dL",
+    "source": "CGM trace"
+   },
+   {
+    "id": "episodes_per_day",
+    "label": "CGM low episodes per day (3+ readings below 70)",
+    "source": "CGM trace"
+   },
+   {
+    "id": "episode_nadir",
+    "label": "Mean lowest CGM value of the episodes (mg/dL)",
+    "source": "CGM trace"
+   },
+   {
+    "id": "episode_minutes",
+    "label": "Mean episode length (min)",
+    "source": "CGM trace"
+   },
+   {
+    "id": "episode_pct_lt54",
+    "label": "% of episodes reaching below 54",
+    "source": "CGM trace"
+   },
+   {
+    "id": "episode_pct_night",
+    "label": "% of episodes starting at night (00-06)",
+    "source": "CGM trace"
+   },
+   {
+    "id": "episode_slope",
+    "label": "Mean CGM slope in the 15 min before the episode (mg/dL/min)",
+    "source": "CGM trace"
+   },
+   {
+    "id": "episode_pct_fast",
+    "label": "% of episodes entered fast (slope < -1)",
+    "source": "CGM trace"
+   },
+   {
+    "id": "low_n",
+    "label": "Number of low pairs (average below 70)",
+    "source": "pairs"
+   },
+   {
+    "id": "low_ref_mean",
+    "label": "Mean fingerstick of the low pairs (mg/dL)",
+    "source": "pairs"
+   },
+   {
+    "id": "low_pct_ref_lt54",
+    "label": "% of low pairs with fingerstick below 54",
+    "source": "pairs"
+   },
+   {
+    "id": "low_pct_night",
+    "label": "% of low pairs at night",
+    "source": "pairs"
+   },
+   {
+    "id": "low_roc_mean",
+    "label": "Mean ROC at the low pairs (mg/dL/min)",
+    "source": "pairs"
+   },
+   {
+    "id": "low_pct_falling",
+    "label": "% of low pairs with glucose falling",
+    "source": "pairs"
+   },
+   {
+    "id": "low_pct_wear1",
+    "label": "% of low pairs on wear day 1",
+    "source": "pairs"
+   },
+   {
+    "id": "low_pct_clipped",
+    "label": "% of low pairs with the CGM at its 39 mg/dL floor",
+    "source": "pairs"
+   }
+  ],
+  "B_matching": [
+   {
+    "id": "pooled",
+    "label": "Pooled low pairs, no matching (mixed model, male only)"
+   },
+   {
+    "id": "matched_avg_roc",
+    "label": "Matched on glucose bin (5 mg/dL of the average) and trend"
+   },
+   {
+    "id": "matched_full",
+    "label": "Matched on glucose bin and trend, plus night, wear day 1 and arm"
+   },
+   {
+    "id": "matched_ref_roc",
+    "label": "Sensitivity: matched on fingerstick bin (5 mg/dL) and trend"
+   }
+  ],
+  "C_adjusted": [
+   {
+    "id": "male_only",
+    "label": "Sex alone",
+    "covariates": []
+   },
+   {
+    "id": "weight",
+    "label": "+ weight",
+    "covariates": [
+     "weight_kg"
+    ]
+   },
+   {
+    "id": "bmi",
+    "label": "+ BMI",
+    "covariates": [
+     "bmi"
+    ]
+   },
+   {
+    "id": "height",
+    "label": "+ height",
+    "covariates": [
+     "height_cm"
+    ]
+   },
+   {
+    "id": "hba1c",
+    "label": "+ HbA1c",
+    "covariates": [
+     "hba1c_screening"
+    ]
+   },
+   {
+    "id": "age",
+    "label": "+ age",
+    "covariates": [
+     "age"
+    ]
+   },
+   {
+    "id": "tdd_per_kg",
+    "label": "+ insulin dose per kg (TDD / weight)",
+    "covariates": [
+     "tdd_per_kg"
+    ]
+   },
+   {
+    "id": "all_body",
+    "label": "+ weight, BMI, height, HbA1c, age, dose per kg",
+    "covariates": [
+     "weight_kg",
+     "bmi",
+     "height_cm",
+     "hba1c_screening",
+     "age",
+     "tdd_per_kg"
+    ]
+   },
+   {
+    "id": "all_body_glucose",
+    "label": "+ the six above + CV + % time below 70",
+    "covariates": [
+     "weight_kg",
+     "bmi",
+     "height_cm",
+     "hba1c_screening",
+     "age",
+     "tdd_per_kg",
+     "cv_pct",
+     "pct_below_70"
+    ]
+   }
+  ],
+  "C_within_sex": [
+   "weight vs low-range bias, within women",
+   "weight vs low-range bias, within men",
+   "BMI vs low-range bias, within women",
+   "BMI vs low-range bias, within men",
+   "height vs low-range bias, within women",
+   "height vs low-range bias, within men",
+   "HbA1c vs low-range bias, within women",
+   "HbA1c vs low-range bias, within men",
+   "age vs low-range bias, within women",
+   "age vs low-range bias, within men",
+   "insulin dose per kg vs low-range bias, within women",
+   "insulin dose per kg vs low-range bias, within men"
+  ],
+  "D_shanghai": [
+   {
+    "id": "sh_low_avg",
+    "label": "Shanghai: pairs with average below 70, pooled bias by sex"
+   },
+   {
+    "id": "sh_low_ref",
+    "label": "Shanghai: pairs with fingerstick below 70"
+   },
+   {
+    "id": "sh_mid",
+    "label": "Shanghai: pairs with average 70-180 (context)"
+   }
+  ],
+  "E_maude": [
+   {
+    "id": "m_reads_low_share",
+    "label": "Share of pairs where the sensor read below the meter"
+   },
+   {
+    "id": "m_reads_low_depth",
+    "label": "Depth of reads-low pairs: median error, % of meter"
+   },
+   {
+    "id": "m_hidden_low",
+    "label": "Hidden low: meter below 70 and sensor 70 or more"
+   },
+   {
+    "id": "m_meter_lt70",
+    "label": "Meter below 70 (any sensor value)"
+   },
+   {
+    "id": "m_false_low",
+    "label": "False low: sensor below 70 and meter 70 or more"
+   }
+  ],
+  "F_decision": [
+   {
+    "id": "near_false_low",
+    "label": "Pairs with fingerstick 70-79: % with CGM below 70 (false low near the line)"
+   },
+   {
+    "id": "near_missed_low",
+    "label": "Pairs with fingerstick 60-69: % with CGM 70 or more (missed low near the line)"
+   }
+  ],
+  "not_counted": [
+   "anchor_low (the original result)",
+   "mg/dL versions of each split (reported next to the % version)",
+   "missed-low and false-low rates by sex (already in the DEMOGRAPHICS_DEEP family)",
+   "descriptive rows (pooled bias by glucose bin, lookup-table numbers)"
+  ]
+ },
+ "A_splits": {
+  "anchor_low": {
+   "label": "Verified pairs, average below 70 (the original test; anchor, not counted)",
+   "outcome": "anchor_low_bias",
+   "testable": true,
+   "n_F": 76,
+   "n_M": 74,
+   "median_F": -6.4056,
+   "median_M": -2.2417,
+   "mean_F": -5.8778,
+   "mean_M": -1.669,
+   "diff_median_M_minus_F": 4.1638,
+   "ci_low": 2.0456,
+   "ci_high": 6.2714,
+   "p": 0.0,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 2.7387,
+   "median_mgdl_F": -5.166,
+   "median_mgdl_M": -2.425,
+   "group": "The pre-registered result from DEMOGRAPHICS_DEEP.md",
+   "pairs_F": 5198,
+   "pairs_M": 4824,
+   "pooled": {
+    "pairs_F": 5198,
+    "pairs_M": 4824,
+    "people_F": 111,
+    "people_M": 111,
+    "bias_F": -4.9586,
+    "bias_M": -1.3552,
+    "gap_M_minus_F": 3.6034,
+    "ci_low": 1.8479,
+    "ci_high": 5.4947,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 10022,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "anchor": true
+  },
+  "band_lt54": {
+   "label": "Average below 54",
+   "outcome": "band_lt54_bias",
+   "testable": true,
+   "n_F": 18,
+   "n_M": 13,
+   "median_F": -5.844,
+   "median_M": -0.4545,
+   "mean_F": -5.4555,
+   "mean_M": -1.2313,
+   "diff_median_M_minus_F": 5.3895,
+   "ci_low": -4.4239,
+   "ci_high": 12.042,
+   "p": 0.0627,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 6.5387,
+   "median_mgdl_F": -4.2612,
+   "median_mgdl_M": -1.6296,
+   "group": "glucose band",
+   "pairs_F": 1189,
+   "pairs_M": 967,
+   "pooled": {
+    "pairs_F": 1189,
+    "pairs_M": 967,
+    "people_F": 102,
+    "people_M": 95,
+    "bias_F": -6.9235,
+    "bias_M": -3.029,
+    "gap_M_minus_F": 3.8945,
+    "ci_low": 0.7509,
+    "ci_high": 6.8574,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 2156,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.1254,
+   "p_bh_block": 0.0901,
+   "bh_significant": false
+  },
+  "band_54_69": {
+   "label": "Average 54-69",
+   "outcome": "band_54_69_bias",
+   "testable": true,
+   "n_F": 70,
+   "n_M": 65,
+   "median_F": -5.5689,
+   "median_M": -1.3542,
+   "mean_F": -5.3468,
+   "mean_M": -1.3671,
+   "diff_median_M_minus_F": 4.2147,
+   "ci_low": 2.6864,
+   "ci_high": 6.149,
+   "p": 0.0003,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 2.8372,
+   "median_mgdl_F": -4.8924,
+   "median_mgdl_M": -2.2625,
+   "group": "glucose band",
+   "pairs_F": 4009,
+   "pairs_M": 3857,
+   "pooled": {
+    "pairs_F": 4009,
+    "pairs_M": 3857,
+    "people_F": 111,
+    "people_M": 111,
+    "bias_F": -4.3758,
+    "bias_M": -0.9356,
+    "gap_M_minus_F": 3.4402,
+    "ci_low": 1.5964,
+    "ci_high": 5.4073,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 7866,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0012,
+   "p_bh_block": 0.0008,
+   "bh_significant": true
+  },
+  "wear1": {
+   "label": "Sensor wear day 1 (confirmed sessions)",
+   "outcome": "wear1_bias",
+   "testable": true,
+   "n_F": 10,
+   "n_M": 15,
+   "median_F": -11.1211,
+   "median_M": -6.8487,
+   "mean_F": -9.2457,
+   "mean_M": -7.5659,
+   "diff_median_M_minus_F": 4.2724,
+   "ci_low": -8.1347,
+   "ci_high": 11.1041,
+   "p": 0.5603,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 9.2627,
+   "median_mgdl_F": -8.0056,
+   "median_mgdl_M": -5.3824,
+   "group": "wear day",
+   "pairs_F": 1069,
+   "pairs_M": 966,
+   "pooled": {
+    "pairs_F": 1069,
+    "pairs_M": 966,
+    "people_F": 107,
+    "people_M": 100,
+    "bias_F": -11.5495,
+    "bias_M": -7.8994,
+    "gap_M_minus_F": 3.6501,
+    "ci_low": 0.4879,
+    "ci_high": 6.4017,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 2035,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.692,
+   "p_bh_block": 0.6136,
+   "bh_significant": false
+  },
+  "wear2_7": {
+   "label": "Sensor wear days 2-7 (confirmed sessions)",
+   "outcome": "wear2_7_bias",
+   "testable": true,
+   "n_F": 66,
+   "n_M": 58,
+   "median_F": -3.5507,
+   "median_M": -0.1922,
+   "mean_F": -3.8465,
+   "mean_M": 0.5332,
+   "diff_median_M_minus_F": 3.3585,
+   "ci_low": 1.4216,
+   "ci_high": 5.3761,
+   "p": 0.0002,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 3.0974,
+   "median_mgdl_F": -3.3284,
+   "median_mgdl_M": -1.2417,
+   "group": "wear day",
+   "pairs_F": 3524,
+   "pairs_M": 3396,
+   "pooled": {
+    "pairs_F": 3524,
+    "pairs_M": 3396,
+    "people_F": 110,
+    "people_M": 109,
+    "bias_F": -2.9087,
+    "bias_M": 0.5852,
+    "gap_M_minus_F": 3.4938,
+    "ci_low": 1.564,
+    "ci_high": 5.4639,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 6920,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0011,
+   "p_bh_block": 0.0007,
+   "bh_significant": true
+  },
+  "night": {
+   "label": "Night pairs (00:00-06:00)",
+   "outcome": "night_bias",
+   "testable": false,
+   "n_F": 7,
+   "n_M": 5,
+   "median_F": -5.1301,
+   "median_M": 0.7377,
+   "mean_F": -3.7316,
+   "mean_M": -1.042,
+   "diff_median_M_minus_F": null,
+   "ci_low": null,
+   "ci_high": null,
+   "p": 0.0626,
+   "test": null,
+   "reason": "fewer than 2 groups with at least 10 people",
+   "median_mgdl_F": -4.4615,
+   "median_mgdl_M": 0.0,
+   "group": "time of day",
+   "pairs_F": 747,
+   "pairs_M": 607,
+   "pooled": {
+    "pairs_F": 747,
+    "pairs_M": 607,
+    "people_F": 97,
+    "people_M": 94,
+    "bias_F": -6.0687,
+    "bias_M": -2.3026,
+    "gap_M_minus_F": 3.7661,
+    "ci_low": 0.1769,
+    "ci_high": 7.0147,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 1354,
+    "weights": "none (plain pooled difference)",
+    "mixed": {
+     "formula": "rel_err_pct ~ male",
+     "pairs": 1354,
+     "people": 191,
+     "coef_male": 3.3168,
+     "ci_low": -0.1744,
+     "ci_high": 6.808,
+     "p": 0.0626,
+     "converged": false
+    }
+   },
+   "p_from": "mixed model on pooled pairs (fallback: fewer than 10 people per sex with 20+ pairs)",
+   "p_bh": 0.1254,
+   "p_bh_block": 0.0901,
+   "bh_significant": false
+  },
+  "daytime": {
+   "label": "Daytime pairs (06:00-24:00)",
+   "outcome": "daytime_bias",
+   "testable": true,
+   "n_F": 73,
+   "n_M": 69,
+   "median_F": -6.2043,
+   "median_M": -1.6002,
+   "mean_F": -5.6521,
+   "mean_M": -1.2335,
+   "diff_median_M_minus_F": 4.6041,
+   "ci_low": 2.429,
+   "ci_high": 6.0552,
+   "p": 0.0,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 2.9558,
+   "median_mgdl_F": -5.1667,
+   "median_mgdl_M": -2.7308,
+   "group": "time of day",
+   "pairs_F": 4451,
+   "pairs_M": 4217,
+   "pooled": {
+    "pairs_F": 4451,
+    "pairs_M": 4217,
+    "people_F": 111,
+    "people_M": 110,
+    "bias_F": -4.7723,
+    "bias_M": -1.2188,
+    "gap_M_minus_F": 3.5534,
+    "ci_low": 1.7113,
+    "ci_high": 5.634,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 8668,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0003,
+   "p_bh_block": 0.0003,
+   "bh_significant": true
+  },
+  "falling": {
+   "label": "Glucose falling (ROC < -1 mg/dL/min)",
+   "outcome": "falling_bias",
+   "testable": false,
+   "n_F": 9,
+   "n_M": 6,
+   "median_F": 6.9566,
+   "median_M": 7.6135,
+   "mean_F": 7.2778,
+   "mean_M": 7.954,
+   "diff_median_M_minus_F": null,
+   "ci_low": null,
+   "ci_high": null,
+   "p": 0.0283,
+   "test": null,
+   "reason": "fewer than 2 groups with at least 10 people",
+   "median_mgdl_F": 3.0,
+   "median_mgdl_M": 3.1857,
+   "group": "trend",
+   "pairs_F": 843,
+   "pairs_M": 755,
+   "pooled": {
+    "pairs_F": 843,
+    "pairs_M": 755,
+    "people_F": 104,
+    "people_M": 101,
+    "bias_F": 6.9624,
+    "bias_M": 11.7475,
+    "gap_M_minus_F": 4.7851,
+    "ci_low": 1.4677,
+    "ci_high": 8.3521,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 1598,
+    "weights": "none (plain pooled difference)",
+    "mixed": {
+     "formula": "rel_err_pct ~ male",
+     "pairs": 1598,
+     "people": 205,
+     "coef_male": 5.3861,
+     "ci_low": 0.5736,
+     "ci_high": 10.1987,
+     "p": 0.0283,
+     "converged": true
+    }
+   },
+   "p_from": "mixed model on pooled pairs (fallback: fewer than 10 people per sex with 20+ pairs)",
+   "p_bh": 0.0643,
+   "p_bh_block": 0.0464,
+   "bh_significant": false
+  },
+  "flat": {
+   "label": "Glucose flat (ROC -1 to 1)",
+   "outcome": "flat_bias",
+   "testable": true,
+   "n_F": 69,
+   "n_M": 62,
+   "median_F": -7.4551,
+   "median_M": -3.1931,
+   "mean_F": -7.4456,
+   "mean_M": -3.3141,
+   "diff_median_M_minus_F": 4.2621,
+   "ci_low": 1.6393,
+   "ci_high": 6.5715,
+   "p": 0.0002,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 2.9651,
+   "median_mgdl_F": -5.6071,
+   "median_mgdl_M": -3.0429,
+   "group": "trend",
+   "pairs_F": 3756,
+   "pairs_M": 3576,
+   "pooled": {
+    "pairs_F": 3756,
+    "pairs_M": 3576,
+    "people_F": 110,
+    "people_M": 109,
+    "bias_F": -6.8099,
+    "bias_M": -2.8729,
+    "gap_M_minus_F": 3.937,
+    "ci_low": 2.0086,
+    "ci_high": 5.7809,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 7332,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0011,
+   "p_bh_block": 0.0007,
+   "bh_significant": true
+  },
+  "rising": {
+   "label": "Glucose rising (ROC > 1)",
+   "outcome": "rising_bias",
+   "testable": false,
+   "n_F": 0,
+   "n_M": 0,
+   "median_F": null,
+   "median_M": null,
+   "mean_F": null,
+   "mean_M": null,
+   "diff_median_M_minus_F": null,
+   "ci_low": null,
+   "ci_high": null,
+   "p": 0.4147,
+   "test": null,
+   "reason": "fewer than 2 groups with at least 10 people",
+   "median_mgdl_F": null,
+   "median_mgdl_M": null,
+   "group": "trend",
+   "pairs_F": 264,
+   "pairs_M": 266,
+   "pooled": {
+    "pairs_F": 264,
+    "pairs_M": 266,
+    "people_F": 77,
+    "people_M": 71,
+    "bias_F": -19.2758,
+    "bias_M": -17.6595,
+    "gap_M_minus_F": 1.6163,
+    "ci_low": -3.179,
+    "ci_high": 6.5673,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 530,
+    "weights": "none (plain pooled difference)",
+    "mixed": {
+     "formula": "rel_err_pct ~ male",
+     "pairs": 530,
+     "people": 148,
+     "coef_male": 2.0309,
+     "ci_low": -2.8492,
+     "ci_high": 6.9111,
+     "p": 0.4147,
+     "converged": true
+    }
+   },
+   "p_from": "mixed model on pooled pairs (fallback: fewer than 10 people per sex with 20+ pairs)",
+   "p_bh": 0.5586,
+   "p_bh_block": 0.4769,
+   "bh_significant": false
+  },
+  "lag": {
+   "label": "Lag-corrected pairs (CGM 5 min later), average below 70",
+   "outcome": "lag_bias",
+   "testable": true,
+   "n_F": 79,
+   "n_M": 75,
+   "median_F": -7.3012,
+   "median_M": -4.011,
+   "mean_F": -6.9442,
+   "mean_M": -3.4336,
+   "diff_median_M_minus_F": 3.2902,
+   "ci_low": 1.844,
+   "ci_high": 5.2658,
+   "p": 0.0001,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 2.5754,
+   "median_mgdl_F": -5.425,
+   "median_mgdl_M": -3.1579,
+   "group": "lag",
+   "pairs_F": 5342,
+   "pairs_M": 4984,
+   "pooled": {
+    "pairs_F": 5342,
+    "pairs_M": 4984,
+    "people_F": 111,
+    "people_M": 111,
+    "bias_F": -6.3333,
+    "bias_M": -2.8617,
+    "gap_M_minus_F": 3.4716,
+    "ci_low": 1.8829,
+    "ci_high": 5.1354,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 10326,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0008,
+   "p_bh_block": 0.0005,
+   "bh_significant": true
+  },
+  "meter_contour": {
+   "label": "Contour Next meter pairs",
+   "outcome": "meter_contour_bias",
+   "testable": true,
+   "n_F": 76,
+   "n_M": 74,
+   "median_F": -6.4056,
+   "median_M": -2.2417,
+   "mean_F": -5.8778,
+   "mean_M": -1.6833,
+   "diff_median_M_minus_F": 4.1638,
+   "ci_low": 2.0218,
+   "ci_high": 6.2826,
+   "p": 0.0,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 2.74,
+   "median_mgdl_F": -5.166,
+   "median_mgdl_M": -2.425,
+   "group": "meter type",
+   "pairs_F": 5198,
+   "pairs_M": 4820,
+   "pooled": {
+    "pairs_F": 5198,
+    "pairs_M": 4820,
+    "people_F": 111,
+    "people_M": 111,
+    "bias_F": -4.9586,
+    "bias_M": -1.3657,
+    "gap_M_minus_F": 3.5929,
+    "ci_low": 1.7589,
+    "ci_high": 5.5615,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 10018,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0003,
+   "p_bh_block": 0.0003,
+   "bh_significant": true
+  },
+  "meter_precision": {
+   "label": "Precision Xtra meter pairs",
+   "outcome": "meter_precision_bias",
+   "testable": false,
+   "n_F": 0,
+   "n_M": 0,
+   "median_F": null,
+   "median_M": null,
+   "mean_F": null,
+   "mean_M": null,
+   "diff_median_M_minus_F": null,
+   "ci_low": null,
+   "ci_high": null,
+   "p": null,
+   "test": null,
+   "reason": "fewer than 2 groups with at least 10 people",
+   "median_mgdl_F": null,
+   "median_mgdl_M": null,
+   "group": "meter type",
+   "pairs_F": 0,
+   "pairs_M": 4,
+   "pooled": {
+    "pairs_F": 0,
+    "pairs_M": 4,
+    "people_F": 0,
+    "people_M": 2,
+    "gap_M_minus_F": null,
+    "ci_low": null,
+    "ci_high": null,
+    "note": "a sex has no pairs",
+    "mixed": {
+     "formula": "rel_err_pct ~ male",
+     "pairs": 4,
+     "people": 2,
+     "coef_male": null,
+     "ci_low": null,
+     "ci_high": null,
+     "p": null,
+     "error": "too few pairs or one sex only"
+    }
+   },
+   "p_from": "mixed model on pooled pairs (fallback: fewer than 10 people per sex with 20+ pairs)",
+   "p_bh": null,
+   "p_bh_block": null,
+   "bh_significant": false
+  },
+  "arm_cgm_only": {
+   "label": "CGM-only arm (all days)",
+   "outcome": "arm_cgm_only_bias",
+   "testable": true,
+   "n_F": 45,
+   "n_M": 56,
+   "median_F": -7.1448,
+   "median_M": -0.9888,
+   "mean_F": -6.623,
+   "mean_M": -1.0551,
+   "diff_median_M_minus_F": 6.156,
+   "ci_low": 3.1859,
+   "ci_high": 8.6497,
+   "p": 0.0,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 3.5162,
+   "median_mgdl_F": -5.6087,
+   "median_mgdl_M": -1.9317,
+   "group": "arm",
+   "pairs_F": 3083,
+   "pairs_M": 3732,
+   "pooled": {
+    "pairs_F": 3083,
+    "pairs_M": 3732,
+    "people_F": 70,
+    "people_M": 77,
+    "bias_F": -5.7149,
+    "bias_M": -0.6717,
+    "gap_M_minus_F": 5.0432,
+    "ci_low": 2.8287,
+    "ci_high": 7.311,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 6815,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0003,
+   "p_bh_block": 0.0003,
+   "bh_significant": true
+  },
+  "arm_cgm_bgm": {
+   "label": "CGM+BGM arm (all days)",
+   "outcome": "arm_cgm_bgm_bias",
+   "testable": true,
+   "n_F": 31,
+   "n_M": 18,
+   "median_F": -5.3506,
+   "median_M": -3.5456,
+   "mean_F": -4.796,
+   "mean_M": -3.5789,
+   "diff_median_M_minus_F": 1.805,
+   "ci_low": -1.5117,
+   "ci_high": 3.4395,
+   "p": 0.2672,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 4.3054,
+   "median_mgdl_F": -4.3902,
+   "median_mgdl_M": -4.0937,
+   "group": "arm",
+   "pairs_F": 2115,
+   "pairs_M": 1092,
+   "pooled": {
+    "pairs_F": 2115,
+    "pairs_M": 1092,
+    "people_F": 41,
+    "people_M": 34,
+    "bias_F": -3.8561,
+    "bias_M": -3.6913,
+    "gap_M_minus_F": 0.1649,
+    "ci_low": -2.0064,
+    "ci_high": 2.3803,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 3207,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.4008,
+   "p_bh_block": 0.3414,
+   "bh_significant": false
+  },
+  "phase_runin": {
+   "label": "Run-in phase, both arms",
+   "outcome": "phase_runin_bias",
+   "testable": true,
+   "n_F": 24,
+   "n_M": 19,
+   "median_F": -4.378,
+   "median_M": -1.0922,
+   "mean_F": -5.3356,
+   "mean_M": -0.3715,
+   "diff_median_M_minus_F": 3.2858,
+   "ci_low": -1.2701,
+   "ci_high": 6.8403,
+   "p": 0.0892,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 6.7508,
+   "median_mgdl_F": -4.0699,
+   "median_mgdl_M": -1.7273,
+   "group": "phase",
+   "pairs_F": 1209,
+   "pairs_M": 1028,
+   "pooled": {
+    "pairs_F": 1209,
+    "pairs_M": 1028,
+    "people_F": 101,
+    "people_M": 94,
+    "bias_F": -5.3717,
+    "bias_M": -0.0448,
+    "gap_M_minus_F": 5.3269,
+    "ci_low": 2.1878,
+    "ci_high": 8.8184,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 2237,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.1682,
+   "p_bh_block": 0.1207,
+   "bh_significant": false
+  },
+  "phase_rand_cgm_only": {
+   "label": "Randomised phase, CGM-only arm",
+   "outcome": "phase_rand_cgm_only_bias",
+   "testable": true,
+   "n_F": 42,
+   "n_M": 49,
+   "median_F": -7.4852,
+   "median_M": -1.3721,
+   "mean_F": -6.8211,
+   "mean_M": -0.933,
+   "diff_median_M_minus_F": 6.1131,
+   "ci_low": 3.2852,
+   "ci_high": 8.8251,
+   "p": 0.0,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 3.7992,
+   "median_mgdl_F": -5.7437,
+   "median_mgdl_M": -2.1222,
+   "group": "phase",
+   "pairs_F": 2357,
+   "pairs_M": 3005,
+   "pooled": {
+    "pairs_F": 2357,
+    "pairs_M": 3005,
+    "people_F": 69,
+    "people_M": 76,
+    "bias_F": -6.0235,
+    "bias_M": -1.2273,
+    "gap_M_minus_F": 4.7962,
+    "ci_low": 2.4059,
+    "ci_high": 7.1602,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 5362,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0003,
+   "p_bh_block": 0.0003,
+   "bh_significant": true
+  },
+  "phase_rand_cgm_bgm": {
+   "label": "Randomised phase, CGM+BGM arm (the check set)",
+   "outcome": "phase_rand_cgm_bgm_bias",
+   "testable": true,
+   "n_F": 24,
+   "n_M": 12,
+   "median_F": -4.8246,
+   "median_M": -4.2736,
+   "mean_F": -3.4363,
+   "mean_M": -3.6795,
+   "diff_median_M_minus_F": 0.551,
+   "ci_low": -2.5466,
+   "ci_high": 3.4828,
+   "p": 0.6505,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 5.223,
+   "median_mgdl_F": -4.5423,
+   "median_mgdl_M": -3.7308,
+   "group": "phase",
+   "pairs_F": 1632,
+   "pairs_M": 791,
+   "pooled": {
+    "pairs_F": 1632,
+    "pairs_M": 791,
+    "people_F": 41,
+    "people_M": 33,
+    "bias_F": -3.1145,
+    "bias_M": -3.5441,
+    "gap_M_minus_F": -0.4295,
+    "ci_low": -3.2227,
+    "ci_high": 2.1193,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 2423,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.7532,
+   "p_bh_block": 0.6801,
+   "bh_significant": false
+  },
+  "cal_low": {
+   "label": "Calibration pairs, average below 70 (other pair source)",
+   "outcome": "cal_low_bias",
+   "testable": true,
+   "n_F": 68,
+   "n_M": 67,
+   "median_F": -11.9185,
+   "median_M": -7.6201,
+   "mean_F": -13.2823,
+   "mean_M": -7.1733,
+   "diff_median_M_minus_F": 4.2983,
+   "ci_low": 1.7867,
+   "ci_high": 9.7662,
+   "p": 0.0001,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 3.9524,
+   "median_mgdl_F": -9.6016,
+   "median_mgdl_M": -6.3462,
+   "group": "pair source",
+   "pairs_F": 3768,
+   "pairs_M": 3934,
+   "pooled": {
+    "pairs_F": 3768,
+    "pairs_M": 3934,
+    "people_F": 109,
+    "people_M": 114,
+    "bias_F": -12.4235,
+    "bias_M": -7.2138,
+    "gap_M_minus_F": 5.2096,
+    "ci_low": 1.7863,
+    "ci_high": 8.4444,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 7702,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0003,
+   "p_bh_block": 0.0003,
+   "bh_significant": true
+  },
+  "low_by_ref": {
+   "label": "Low by fingerstick (fingerstick below 70)",
+   "outcome": "low_by_ref_bias",
+   "testable": true,
+   "n_F": 75,
+   "n_M": 81,
+   "median_F": 6.9356,
+   "median_M": 12.4435,
+   "mean_F": 10.9642,
+   "mean_M": 16.7002,
+   "diff_median_M_minus_F": 5.508,
+   "ci_low": 1.969,
+   "ci_high": 9.1559,
+   "p": 0.0015,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 7.5794,
+   "median_mgdl_F": 3.5556,
+   "median_mgdl_M": 6.4113,
+   "group": "which device defines low",
+   "pairs_F": 5080,
+   "pairs_M": 5024,
+   "pooled": {
+    "pairs_F": 5080,
+    "pairs_M": 5024,
+    "people_F": 112,
+    "people_M": 113,
+    "bias_F": 12.4692,
+    "bias_M": 16.1588,
+    "gap_M_minus_F": 3.6896,
+    "ci_low": -2.3052,
+    "ci_high": 9.0829,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 10104,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0048,
+   "p_bh_block": 0.0035,
+   "bh_significant": true
+  },
+  "low_by_cgm": {
+   "label": "Low by sensor (CGM below 70)",
+   "outcome": "low_by_cgm_bias",
+   "testable": true,
+   "n_F": 90,
+   "n_M": 84,
+   "median_F": -14.9514,
+   "median_M": -12.5728,
+   "mean_F": -15.1027,
+   "mean_M": -12.8622,
+   "diff_median_M_minus_F": 2.3787,
+   "ci_low": 0.3825,
+   "ci_high": 4.7234,
+   "p": 0.0176,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 2.7747,
+   "median_mgdl_F": -12.9651,
+   "median_mgdl_M": -12.1825,
+   "group": "which device defines low",
+   "pairs_F": 6234,
+   "pairs_M": 5490,
+   "pooled": {
+    "pairs_F": 6234,
+    "pairs_M": 5490,
+    "people_F": 111,
+    "people_M": 112,
+    "bias_F": -14.2899,
+    "bias_M": -12.0626,
+    "gap_M_minus_F": 2.2273,
+    "ci_low": 0.5073,
+    "ci_high": 3.9692,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 11724,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0429,
+   "p_bh_block": 0.0337,
+   "bh_significant": true
+  },
+  "mid": {
+   "label": "Mid range: average 70-180",
+   "outcome": "mid_bias",
+   "testable": true,
+   "n_F": 112,
+   "n_M": 114,
+   "median_F": -1.8003,
+   "median_M": -1.8341,
+   "mean_F": -1.2493,
+   "mean_M": -0.6651,
+   "diff_median_M_minus_F": -0.0338,
+   "ci_low": -0.8421,
+   "ci_high": 1.0789,
+   "p": 0.3037,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 1.6081,
+   "median_mgdl_F": -4.649,
+   "median_mgdl_M": -4.6828,
+   "group": "other ranges",
+   "pairs_F": 48744,
+   "pairs_M": 50800,
+   "pooled": {
+    "pairs_F": 48744,
+    "pairs_M": 50800,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -1.2346,
+    "bias_M": -1.0471,
+    "gap_M_minus_F": 0.1875,
+    "ci_low": -1.0106,
+    "ci_high": 1.2687,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 99544,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.4454,
+   "p_bh_block": 0.3676,
+   "bh_significant": false
+  },
+  "high": {
+   "label": "High range: average above 180",
+   "outcome": "high_bias",
+   "testable": true,
+   "n_F": 111,
+   "n_M": 112,
+   "median_F": -0.8568,
+   "median_M": -1.8048,
+   "mean_F": -0.8039,
+   "mean_M": -1.9655,
+   "diff_median_M_minus_F": -0.9481,
+   "ci_low": -1.8763,
+   "ci_high": -0.2665,
+   "p": 0.002,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 1.0195,
+   "median_mgdl_F": -5.2679,
+   "median_mgdl_M": -7.8164,
+   "group": "other ranges",
+   "pairs_F": 33081,
+   "pairs_M": 26343,
+   "pooled": {
+    "pairs_F": 33081,
+    "pairs_M": 26343,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -0.7646,
+    "bias_M": -1.6893,
+    "gap_M_minus_F": -0.9247,
+    "ci_low": -1.656,
+    "ci_high": -0.239,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 59424,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.0059,
+   "p_bh_block": 0.0043,
+   "bh_significant": true
+  },
+  "all": {
+   "label": "All verified pairs",
+   "outcome": "all_bias",
+   "testable": true,
+   "n_F": 112,
+   "n_M": 114,
+   "median_F": -1.5745,
+   "median_M": -1.8537,
+   "mean_F": -1.2563,
+   "mean_M": -1.2362,
+   "diff_median_M_minus_F": -0.2792,
+   "ci_low": -0.8279,
+   "ci_high": 0.4376,
+   "p": 0.9667,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 1.1009,
+   "median_mgdl_F": -4.7407,
+   "median_mgdl_M": -5.0059,
+   "group": "other ranges",
+   "pairs_F": 87023,
+   "pairs_M": 81967,
+   "pooled": {
+    "pairs_F": 87023,
+    "pairs_M": 81967,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -1.2784,
+    "bias_M": -1.2716,
+    "gap_M_minus_F": 0.0068,
+    "ci_low": -0.8165,
+    "ci_high": 0.7542,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 168990,
+    "weights": "none (plain pooled difference)"
+   },
+   "p_from": "per-person Mann-Whitney",
+   "p_bh": 0.97,
+   "p_bh_block": 0.9667,
+   "bh_significant": false
+  },
+  "sex_x_arm": {
+   "all_days": {
+    "n": 150,
+    "interaction_coef": -4.3508,
+    "ci_low": -8.0186,
+    "ci_high": -0.683,
+    "p": 0.0201,
+    "gap_cgm_only": 5.5679,
+    "gap_cgm_bgm": 1.2171,
+    "p_bh": 0.0473,
+    "p_bh_block": 0.0355,
+    "bh_significant": true
+   },
+   "randomised_phase": {
+    "n": 127,
+    "interaction_coef": -6.1313,
+    "ci_low": -10.2011,
+    "ci_high": -2.0614,
+    "p": 0.0031,
+    "gap_cgm_only": 5.888,
+    "gap_cgm_bgm": -0.2432
+   }
+  },
+  "lag_check": {
+   "t0_repairing_matches_cache_share": 1.0,
+   "lag_corrected_pairs": 167847
+  },
+  "note_meter_type": "Precision Xtra pairs are 209 of 168,990 verified pairs; not testable"
+ },
+ "B_profile_and_matching": {
+  "profile": {
+   "pct_below_70": {
+    "label": "% of CGM time below 70 mg/dL",
+    "outcome": "pct_below_70",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 3.3717,
+    "median_M": 3.5565,
+    "mean_F": 3.6547,
+    "mean_M": 3.8613,
+    "diff_median_M_minus_F": 0.1848,
+    "ci_low": -0.7176,
+    "ci_high": 0.7317,
+    "p": 0.8411,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 0.9321,
+    "source": "CGM trace",
+    "p_bh": 0.8961,
+    "p_bh_block": 0.9123,
+    "bh_significant": false
+   },
+   "episodes_per_day": {
+    "label": "CGM low episodes per day (3+ readings below 70)",
+    "outcome": "episodes_per_day",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 0.93,
+    "median_M": 0.9804,
+    "mean_F": 0.9476,
+    "mean_M": 0.9928,
+    "diff_median_M_minus_F": 0.0504,
+    "ci_low": -0.1463,
+    "ci_high": 0.2319,
+    "p": 0.5744,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 0.2045,
+    "source": "CGM trace",
+    "p_bh": 0.692,
+    "p_bh_block": 0.7098,
+    "bh_significant": false
+   },
+   "episode_nadir": {
+    "label": "Mean lowest CGM value of the episodes (mg/dL)",
+    "outcome": "episode_nadir",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 54.9343,
+    "median_M": 55.6966,
+    "mean_F": 55.2213,
+    "mean_M": 55.6064,
+    "diff_median_M_minus_F": 0.7624,
+    "ci_low": 0.0051,
+    "ci_high": 1.3978,
+    "p": 0.0534,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 0.8659,
+    "source": "CGM trace",
+    "p_bh": 0.1142,
+    "p_bh_block": 0.326,
+    "bh_significant": false
+   },
+   "episode_minutes": {
+    "label": "Mean episode length (min)",
+    "outcome": "episode_minutes",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 45.4956,
+    "median_M": 45.2889,
+    "mean_F": 46.4414,
+    "mean_M": 47.6533,
+    "diff_median_M_minus_F": -0.2067,
+    "ci_low": -3.4962,
+    "ci_high": 2.3062,
+    "p": 0.97,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 4.5561,
+    "source": "CGM trace",
+    "p_bh": 0.97,
+    "p_bh_block": 0.97,
+    "bh_significant": false
+   },
+   "episode_pct_lt54": {
+    "label": "% of episodes reaching below 54",
+    "outcome": "episode_pct_lt54",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 39.6043,
+    "median_M": 35.9174,
+    "mean_F": 38.1629,
+    "mean_M": 36.151,
+    "diff_median_M_minus_F": -3.6869,
+    "ci_low": -7.8232,
+    "ci_high": 0.7899,
+    "p": 0.0977,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 4.1668,
+    "source": "CGM trace",
+    "p_bh": 0.1758,
+    "p_bh_block": 0.326,
+    "bh_significant": false
+   },
+   "episode_pct_night": {
+    "label": "% of episodes starting at night (00-06)",
+    "outcome": "episode_pct_night",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 19.98,
+    "median_M": 18.1937,
+    "mean_F": 20.606,
+    "mean_M": 18.9423,
+    "diff_median_M_minus_F": -1.7863,
+    "ci_low": -4.3181,
+    "ci_high": 0.775,
+    "p": 0.1222,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 3.1261,
+    "source": "CGM trace",
+    "p_bh": 0.2017,
+    "p_bh_block": 0.326,
+    "bh_significant": false
+   },
+   "episode_slope": {
+    "label": "Mean CGM slope in the 15 min before the episode (mg/dL/min)",
+    "outcome": "episode_slope",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": -1.0114,
+    "median_M": -0.9932,
+    "mean_F": -1.0306,
+    "mean_M": -1.0016,
+    "diff_median_M_minus_F": 0.0182,
+    "ci_low": -0.0329,
+    "ci_high": 0.0838,
+    "p": 0.3262,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 0.0719,
+    "source": "CGM trace",
+    "p_bh": 0.4581,
+    "p_bh_block": 0.6524,
+    "bh_significant": false
+   },
+   "episode_pct_fast": {
+    "label": "% of episodes entered fast (slope < -1)",
+    "outcome": "episode_pct_fast",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 40.605,
+    "median_M": 39.4394,
+    "mean_F": 40.6478,
+    "mean_M": 39.3835,
+    "diff_median_M_minus_F": -1.1655,
+    "ci_low": -4.0892,
+    "ci_high": 2.4552,
+    "p": 0.467,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 4.024,
+    "source": "CGM trace",
+    "p_bh": 0.6164,
+    "p_bh_block": 0.7098,
+    "bh_significant": false
+   },
+   "low_n": {
+    "label": "Number of low pairs (average below 70)",
+    "outcome": "low_n",
+    "testable": true,
+    "n_F": 112,
+    "n_M": 114,
+    "median_F": 39.0,
+    "median_M": 29.0,
+    "mean_F": 46.4107,
+    "mean_M": 42.3158,
+    "diff_median_M_minus_F": -10.0,
+    "ci_low": -18.5,
+    "ci_high": 0.5,
+    "p": 0.2461,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 15.072,
+    "source": "pairs",
+    "p_bh": 0.3777,
+    "p_bh_block": 0.5624,
+    "bh_significant": false
+   },
+   "low_ref_mean": {
+    "label": "Mean fingerstick of the low pairs (mg/dL)",
+    "outcome": "low_ref_mean",
+    "testable": true,
+    "n_F": 76,
+    "n_M": 74,
+    "median_F": 62.2886,
+    "median_M": 61.4729,
+    "mean_F": 62.0687,
+    "mean_M": 61.1544,
+    "diff_median_M_minus_F": -0.8157,
+    "ci_low": -1.6889,
+    "ci_high": 0.4709,
+    "p": 0.0666,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 1.346,
+    "source": "pairs",
+    "p_bh": 0.1293,
+    "p_bh_block": 0.326,
+    "bh_significant": false
+   },
+   "low_pct_ref_lt54": {
+    "label": "% of low pairs with fingerstick below 54",
+    "outcome": "low_pct_ref_lt54",
+    "testable": true,
+    "n_F": 76,
+    "n_M": 74,
+    "median_F": 17.419,
+    "median_M": 18.0195,
+    "mean_F": 19.5051,
+    "mean_M": 20.255,
+    "diff_median_M_minus_F": 0.6005,
+    "ci_low": -3.6449,
+    "ci_high": 5.0316,
+    "p": 0.5106,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 4.9698,
+    "source": "pairs",
+    "p_bh": 0.6608,
+    "p_bh_block": 0.7098,
+    "bh_significant": false
+   },
+   "low_pct_night": {
+    "label": "% of low pairs at night",
+    "outcome": "low_pct_night",
+    "testable": true,
+    "n_F": 76,
+    "n_M": 74,
+    "median_F": 13.4641,
+    "median_M": 10.7445,
+    "mean_F": 14.4818,
+    "mean_M": 12.7011,
+    "diff_median_M_minus_F": -2.7196,
+    "ci_low": -5.7396,
+    "ci_high": 1.1334,
+    "p": 0.102,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 3.8193,
+    "source": "pairs",
+    "p_bh": 0.1771,
+    "p_bh_block": 0.326,
+    "bh_significant": false
+   },
+   "low_roc_mean": {
+    "label": "Mean ROC at the low pairs (mg/dL/min)",
+    "outcome": "low_roc_mean",
+    "testable": true,
+    "n_F": 76,
+    "n_M": 74,
+    "median_F": -0.3305,
+    "median_M": -0.3329,
+    "mean_F": -0.3072,
+    "mean_M": -0.3376,
+    "diff_median_M_minus_F": -0.0024,
+    "ci_low": -0.0859,
+    "ci_high": 0.0887,
+    "p": 0.5438,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 0.1005,
+    "source": "pairs",
+    "p_bh": 0.6902,
+    "p_bh_block": 0.7098,
+    "bh_significant": false
+   },
+   "low_pct_falling": {
+    "label": "% of low pairs with glucose falling",
+    "outcome": "low_pct_falling",
+    "testable": true,
+    "n_F": 76,
+    "n_M": 74,
+    "median_F": 14.0527,
+    "median_M": 15.5048,
+    "mean_F": 15.2859,
+    "mean_M": 15.9901,
+    "diff_median_M_minus_F": 1.4521,
+    "ci_low": -2.0326,
+    "ci_high": 3.9409,
+    "p": 0.5767,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 3.4303,
+    "source": "pairs",
+    "p_bh": 0.692,
+    "p_bh_block": 0.7098,
+    "bh_significant": false
+   },
+   "low_pct_wear1": {
+    "label": "% of low pairs on wear day 1",
+    "outcome": "low_pct_wear1",
+    "testable": true,
+    "n_F": 76,
+    "n_M": 74,
+    "median_F": 20.8099,
+    "median_M": 19.4906,
+    "mean_F": 20.2126,
+    "mean_M": 20.1498,
+    "diff_median_M_minus_F": -1.3193,
+    "ci_low": -3.8333,
+    "ci_high": 2.11,
+    "p": 0.8553,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 3.6028,
+    "source": "pairs",
+    "p_bh": 0.8961,
+    "p_bh_block": 0.9123,
+    "bh_significant": false
+   },
+   "low_pct_clipped": {
+    "label": "% of low pairs with the CGM at its 39 mg/dL floor",
+    "outcome": "low_pct_clipped",
+    "testable": true,
+    "n_F": 76,
+    "n_M": 74,
+    "median_F": 6.7232,
+    "median_M": 4.7065,
+    "mean_F": 7.5297,
+    "mean_M": 6.3778,
+    "diff_median_M_minus_F": -2.0166,
+    "ci_low": -3.413,
+    "ci_high": -0.1052,
+    "p": 0.0537,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 2.7055,
+    "source": "pairs",
+    "p_bh": 0.1142,
+    "p_bh_block": 0.326,
+    "bh_significant": false
+   }
+  },
+  "matching": {
+   "pooled": {
+    "standardised": {
+     "pairs_F": 5198,
+     "pairs_M": 4824,
+     "people_F": 111,
+     "people_M": 111,
+     "bias_F": -4.9586,
+     "bias_M": -1.3552,
+     "gap_M_minus_F": 3.6034,
+     "ci_low": 1.8706,
+     "ci_high": 5.4879,
+     "strata_used": 1,
+     "strata_total": 1,
+     "pairs_used": 10022,
+     "weights": "none (plain pooled difference)"
+    },
+    "mixed": {
+     "formula": "rel_err_pct ~ male",
+     "pairs": 10022,
+     "people": 222,
+     "coef_male": 3.5573,
+     "ci_low": 1.6379,
+     "ci_high": 5.4768,
+     "p": 0.0003,
+     "converged": true,
+     "p_bh": 0.0012,
+     "p_bh_block": 0.0004,
+     "bh_significant": true
+    }
+   },
+   "matched_avg_roc": {
+    "standardised": {
+     "pairs_F": 5198,
+     "pairs_M": 4824,
+     "people_F": 111,
+     "people_M": 111,
+     "bias_F": -5.0336,
+     "bias_M": -1.3568,
+     "gap_M_minus_F": 3.6768,
+     "ci_low": 1.9289,
+     "ci_high": 5.5724,
+     "strata_used": 24,
+     "strata_total": 28,
+     "pairs_used": 10004,
+     "weights": "pooled share of pairs per stratum"
+    },
+    "mixed": {
+     "formula": "rel_err_pct ~ male + C(avg_bin) + C(roc3)",
+     "pairs": 10022,
+     "people": 222,
+     "coef_male": 3.5683,
+     "ci_low": 1.9234,
+     "ci_high": 5.2131,
+     "p": 0.0,
+     "converged": false,
+     "p_bh": 0.0003,
+     "p_bh_block": 0.0001,
+     "bh_significant": true
+    }
+   },
+   "matched_full": {
+    "standardised": null,
+    "mixed": {
+     "formula": "rel_err_pct ~ male + C(avg_bin) + C(roc3) + night + wear1 + arm_cgm_bgm",
+     "pairs": 10022,
+     "people": 222,
+     "coef_male": 3.3702,
+     "ci_low": 1.6167,
+     "ci_high": 5.1237,
+     "p": 0.0002,
+     "converged": true,
+     "p_bh": 0.0008,
+     "p_bh_block": 0.0003,
+     "bh_significant": true
+    }
+   },
+   "matched_ref_roc": {
+    "standardised": {
+     "pairs_F": 5198,
+     "pairs_M": 4824,
+     "people_F": 111,
+     "people_M": 111,
+     "bias_F": -4.4454,
+     "bias_M": -2.0307,
+     "gap_M_minus_F": 2.4147,
+     "ci_low": 1.1173,
+     "ci_high": 3.8143,
+     "strata_used": 36,
+     "strata_total": 40,
+     "pairs_used": 9987,
+     "weights": "pooled share of pairs per stratum"
+    },
+    "mixed": {
+     "formula": "rel_err_pct ~ male + C(ref_bin) + C(roc3)",
+     "pairs": 10022,
+     "people": 222,
+     "coef_male": 2.4639,
+     "ci_low": 1.0945,
+     "ci_high": 3.8333,
+     "p": 0.0004,
+     "converged": false,
+     "p_bh": 0.0015,
+     "p_bh_block": 0.0004,
+     "bh_significant": true
+    }
+   },
+   "low_pair_mix_by_avg_bin_pct": {
+    "F": {
+     "40-44": 3.1,
+     "45-49": 8.6,
+     "50-54": 13.4,
+     "55-59": 18.8,
+     "60-64": 25.2,
+     "65-69": 30.0,
+     "<40": 0.9
+    },
+    "M": {
+     "40-44": 3.4,
+     "45-49": 6.9,
+     "50-54": 12.3,
+     "55-59": 19.7,
+     "60-64": 25.9,
+     "65-69": 31.1,
+     "<40": 0.8
+    }
+   },
+   "low_pair_mix_by_trend_pct": {
+    "F": {
+     "falling": 16.2,
+     "flat": 72.3,
+     "rising": 5.1,
+     "unknown": 6.4
+    },
+    "M": {
+     "falling": 15.7,
+     "flat": 74.1,
+     "rising": 5.5,
+     "unknown": 4.7
+    }
+   },
+   "bias_by_stratum": {
+    "40-44|falling": {
+     "pairs_F": 16,
+     "pairs_M": 29,
+     "bias_F": 11.1934,
+     "bias_M": 8.8152
+    },
+    "40-44|flat": {
+     "pairs_F": 133,
+     "pairs_M": 117,
+     "bias_F": -7.5489,
+     "bias_M": -2.3382
+    },
+    "40-44|rising": {
+     "pairs_F": 2,
+     "pairs_M": 0,
+     "bias_F": -16.7924,
+     "bias_M": null
+    },
+    "40-44|unknown": {
+     "pairs_F": 11,
+     "pairs_M": 16,
+     "bias_F": -7.6262,
+     "bias_M": -7.0809
+    },
+    "45-49|falling": {
+     "pairs_F": 63,
+     "pairs_M": 59,
+     "bias_F": 5.7403,
+     "bias_M": 18.7343
+    },
+    "45-49|flat": {
+     "pairs_F": 353,
+     "pairs_M": 249,
+     "bias_F": -12.0894,
+     "bias_M": -7.9177
+    },
+    "45-49|rising": {
+     "pairs_F": 12,
+     "pairs_M": 9,
+     "bias_F": -17.8742,
+     "bias_M": -24.0652
+    },
+    "45-49|unknown": {
+     "pairs_F": 21,
+     "pairs_M": 16,
+     "bias_F": -8.4048,
+     "bias_M": -9.6479
+    },
+    "50-54|falling": {
+     "pairs_F": 118,
+     "pairs_M": 99,
+     "bias_F": 5.3723,
+     "bias_M": 9.072
+    },
+    "50-54|flat": {
+     "pairs_F": 496,
+     "pairs_M": 428,
+     "bias_F": -9.0616,
+     "bias_M": -6.2183
+    },
+    "50-54|rising": {
+     "pairs_F": 24,
+     "pairs_M": 29,
+     "bias_F": -9.2782,
+     "bias_M": -21.7102
+    },
+    "50-54|unknown": {
+     "pairs_F": 56,
+     "pairs_M": 37,
+     "bias_F": -11.2485,
+     "bias_M": -14.1731
+    },
+    "55-59|falling": {
+     "pairs_F": 155,
+     "pairs_M": 144,
+     "bias_F": 4.489,
+     "bias_M": 9.8168
+    },
+    "55-59|flat": {
+     "pairs_F": 710,
+     "pairs_M": 699,
+     "bias_F": -8.5922,
+     "bias_M": -3.9271
+    },
+    "55-59|rising": {
+     "pairs_F": 44,
+     "pairs_M": 59,
+     "bias_F": -17.2706,
+     "bias_M": -17.3992
+    },
+    "55-59|unknown": {
+     "pairs_F": 68,
+     "pairs_M": 47,
+     "bias_F": -6.7001,
+     "bias_M": -0.4811
+    },
+    "60-64|falling": {
+     "pairs_F": 206,
+     "pairs_M": 193,
+     "bias_F": 8.0454,
+     "bias_M": 10.9435
+    },
+    "60-64|flat": {
+     "pairs_F": 935,
+     "pairs_M": 925,
+     "bias_F": -5.8654,
+     "bias_M": -2.7335
+    },
+    "60-64|rising": {
+     "pairs_F": 81,
+     "pairs_M": 78,
+     "bias_F": -20.2011,
+     "bias_M": -16.965
+    },
+    "60-64|unknown": {
+     "pairs_F": 89,
+     "pairs_M": 52,
+     "bias_F": 1.6441,
+     "bias_M": 9.7942
+    },
+    "65-69|falling": {
+     "pairs_F": 277,
+     "pairs_M": 229,
+     "bias_F": 7.3932,
+     "bias_M": 12.9832
+    },
+    "65-69|flat": {
+     "pairs_F": 1093,
+     "pairs_M": 1121,
+     "bias_F": -4.4606,
+     "bias_M": -0.4231
+    },
+    "65-69|rising": {
+     "pairs_F": 99,
+     "pairs_M": 91,
+     "bias_F": -22.6132,
+     "bias_M": -16.4992
+    },
+    "65-69|unknown": {
+     "pairs_F": 88,
+     "pairs_M": 57,
+     "bias_F": 2.4341,
+     "bias_M": -2.5834
+    },
+    "<40|falling": {
+     "pairs_F": 8,
+     "pairs_M": 2,
+     "bias_F": 36.6948,
+     "bias_M": 55.7143
+    },
+    "<40|flat": {
+     "pairs_F": 36,
+     "pairs_M": 37,
+     "bias_F": 18.0008,
+     "bias_M": 10.2938
+    },
+    "<40|rising": {
+     "pairs_F": 2,
+     "pairs_M": 0,
+     "bias_F": 8.417,
+     "bias_M": null
+    },
+    "<40|unknown": {
+     "pairs_F": 2,
+     "pairs_M": 2,
+     "bias_F": 4.1667,
+     "bias_M": 8.3333
+    }
+   }
+  },
+  "pooled_bias_by_glucose_bin": {
+   "<45": {
+    "pairs_F": 210,
+    "pairs_M": 203,
+    "people_F": 62,
+    "people_M": 56,
+    "bias_F": 0.1161,
+    "bias_M": 1.8608,
+    "gap_M_minus_F": 1.7447,
+    "ci_low": -2.6127,
+    "ci_high": 6.2144,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 413,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -3.1978,
+     3.2844
+    ],
+    "ci_M": [
+     -0.9392,
+     4.8139
+    ]
+   },
+   "45-49": {
+    "pairs_F": 449,
+    "pairs_M": 333,
+    "people_F": 85,
+    "people_M": 79,
+    "bias_F": -9.57,
+    "bias_M": -3.7151,
+    "gap_M_minus_F": 5.8548,
+    "ci_low": 1.6507,
+    "ci_high": 10.453,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 782,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -11.9827,
+     -7.1423
+    ],
+    "ci_M": [
+     -6.9773,
+     0.3396
+    ]
+   },
+   "50-54": {
+    "pairs_F": 694,
+    "pairs_M": 593,
+    "people_F": 96,
+    "people_M": 98,
+    "bias_F": -6.7913,
+    "bias_M": -4.9196,
+    "gap_M_minus_F": 1.8717,
+    "ci_low": -1.2261,
+    "ci_high": 5.4297,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 1287,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -9.4188,
+     -4.3998
+    ],
+    "ci_M": [
+     -7.133,
+     -2.4801
+    ]
+   },
+   "55-59": {
+    "pairs_F": 977,
+    "pairs_M": 949,
+    "people_F": 105,
+    "people_M": 103,
+    "bias_F": -6.776,
+    "bias_M": -2.5085,
+    "gap_M_minus_F": 4.2675,
+    "ci_low": 1.174,
+    "ci_high": 7.2766,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 1926,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -8.5422,
+     -4.9167
+    ],
+    "ci_M": [
+     -4.6659,
+     -0.2224
+    ]
+   },
+   "60-64": {
+    "pairs_F": 1311,
+    "pairs_M": 1248,
+    "people_F": 109,
+    "people_M": 105,
+    "bias_F": -4.0555,
+    "bias_M": -0.9859,
+    "gap_M_minus_F": 3.0696,
+    "ci_low": 0.9403,
+    "ci_high": 5.1232,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 2559,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -5.7402,
+     -2.4354
+    ],
+    "ci_M": [
+     -2.3783,
+     0.3948
+    ]
+   },
+   "65-69": {
+    "pairs_F": 1557,
+    "pairs_M": 1498,
+    "people_F": 107,
+    "people_M": 107,
+    "bias_F": -3.1163,
+    "bias_M": 0.5675,
+    "gap_M_minus_F": 3.6838,
+    "ci_low": 1.2449,
+    "ci_high": 6.264,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 3055,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -4.5579,
+     -1.7362
+    ],
+    "ci_M": [
+     -1.332,
+     2.6869
+    ]
+   },
+   "70-99": {
+    "pairs_F": 11734,
+    "pairs_M": 11994,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -1.6668,
+    "bias_M": -0.2356,
+    "gap_M_minus_F": 1.4312,
+    "ci_low": 0.0731,
+    "ci_high": 2.7945,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 23728,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -2.6989,
+     -0.667
+    ],
+    "ci_M": [
+     -1.1812,
+     0.7102
+    ]
+   },
+   "100-139": {
+    "pairs_F": 18750,
+    "pairs_M": 20593,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -1.0126,
+    "bias_M": -1.3004,
+    "gap_M_minus_F": -0.2878,
+    "ci_low": -1.7861,
+    "ci_high": 1.0265,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 39343,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -2.0773,
+     0.4006
+    ],
+    "ci_M": [
+     -2.0322,
+     -0.4041
+    ]
+   },
+   "140-180": {
+    "pairs_F": 18460,
+    "pairs_M": 18397,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -1.1987,
+    "bias_M": -1.313,
+    "gap_M_minus_F": -0.1142,
+    "ci_low": -1.3177,
+    "ci_high": 1.0572,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 36857,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -1.9723,
+     -0.3316
+    ],
+    "ci_M": [
+     -2.0614,
+     -0.5242
+    ]
+   },
+   "181-250": {
+    "pairs_F": 21691,
+    "pairs_M": 18360,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -0.8179,
+    "bias_M": -1.6423,
+    "gap_M_minus_F": -0.8244,
+    "ci_low": -1.6761,
+    "ci_high": -0.1055,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 40051,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -1.327,
+     -0.2177
+    ],
+    "ci_M": [
+     -2.1778,
+     -1.0739
+    ]
+   },
+   ">250": {
+    "pairs_F": 11190,
+    "pairs_M": 7799,
+    "people_F": 112,
+    "people_M": 114,
+    "bias_F": -0.631,
+    "bias_M": -1.7671,
+    "gap_M_minus_F": -1.1361,
+    "ci_low": -2.0169,
+    "ci_high": -0.296,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 18989,
+    "weights": "none (plain pooled difference)",
+    "ci_F": [
+     -1.2101,
+     -0.0405
+    ],
+    "ci_M": [
+     -2.3698,
+     -1.1922
+    ]
+   }
+  }
+ },
+ "C_body_physiology": {
+  "by_sex": {
+   "weight_kg": {
+    "label": "weight",
+    "F": {
+     "n": 112,
+     "median": 72.1,
+     "q1": 63.775,
+     "q3": 81.275,
+     "mean": 73.8491
+    },
+    "M": {
+     "n": 114,
+     "median": 86.0,
+     "q1": 78.775,
+     "q3": 97.7,
+     "mean": 88.4596
+    }
+   },
+   "bmi": {
+    "label": "BMI",
+    "F": {
+     "n": 112,
+     "median": 26.2893,
+     "q1": 23.1283,
+     "q3": 29.314,
+     "mean": 26.9745
+    },
+    "M": {
+     "n": 114,
+     "median": 27.2905,
+     "q1": 24.6992,
+     "q3": 30.2468,
+     "mean": 27.5587
+    }
+   },
+   "height_cm": {
+    "label": "height",
+    "F": {
+     "n": 112,
+     "median": 165.05,
+     "q1": 161.225,
+     "q3": 170.0,
+     "mean": 165.5196
+    },
+    "M": {
+     "n": 114,
+     "median": 180.0,
+     "q1": 175.0,
+     "q3": 184.675,
+     "mean": 179.2
+    }
+   },
+   "hba1c_screening": {
+    "label": "HbA1c",
+    "F": {
+     "n": 112,
+     "median": 7.35,
+     "q1": 6.9,
+     "q3": 7.8,
+     "mean": 7.3161
+    },
+    "M": {
+     "n": 114,
+     "median": 7.25,
+     "q1": 6.8,
+     "q3": 7.8,
+     "mean": 7.2202
+    }
+   },
+   "age": {
+    "label": "age",
+    "F": {
+     "n": 112,
+     "median": 38.5,
+     "q1": 30.0,
+     "q3": 52.25,
+     "mean": 41.7679
+    },
+    "M": {
+     "n": 114,
+     "median": 47.0,
+     "q1": 35.25,
+     "q3": 55.0,
+     "mean": 46.2018
+    }
+   },
+   "tdd_per_kg": {
+    "label": "insulin dose per kg",
+    "F": {
+     "n": 105,
+     "median": 0.5104,
+     "q1": 0.4256,
+     "q3": 0.5866,
+     "mean": 0.5228
+    },
+    "M": {
+     "n": 103,
+     "median": 0.5573,
+     "q1": 0.4647,
+     "q3": 0.6699,
+     "mean": 0.5828
+    }
+   },
+   "cv_pct": {
+    "label": "glucose CV (%)",
+    "F": {
+     "n": 112,
+     "median": 37.7953,
+     "q1": 35.3222,
+     "q3": 40.8005,
+     "mean": 37.5805
+    },
+    "M": {
+     "n": 114,
+     "median": 36.8547,
+     "q1": 34.2318,
+     "q3": 40.6142,
+     "mean": 37.2368
+    }
+   },
+   "pct_below_70": {
+    "label": "% CGM time below 70",
+    "F": {
+     "n": 112,
+     "median": 3.3717,
+     "q1": 1.9504,
+     "q3": 4.9459,
+     "mean": 3.6547
+    },
+    "M": {
+     "n": 114,
+     "median": 3.5565,
+     "q1": 1.6392,
+     "q3": 4.9728,
+     "mean": 3.8613
+    }
+   },
+   "tdd_u": {
+    "label": "TDD (U/day)",
+    "F": {
+     "n": 105,
+     "median": 35.1,
+     "q1": 28.575,
+     "q3": 46.3978,
+     "mean": 39.0531
+    },
+    "M": {
+     "n": 103,
+     "median": 47.05,
+     "q1": 38.0025,
+     "q3": 60.0375,
+     "mean": 52.189
+    }
+   },
+   "basal_u": {
+    "label": "basal (U/day)",
+    "F": {
+     "n": 105,
+     "median": 18.25,
+     "q1": 14.4,
+     "q3": 26.5407,
+     "mean": 20.9436
+    },
+    "M": {
+     "n": 103,
+     "median": 25.0,
+     "q1": 18.927,
+     "q3": 31.3773,
+     "mean": 25.9927
+    }
+   },
+   "bolus_u": {
+    "label": "bolus (U/day)",
+    "F": {
+     "n": 105,
+     "median": 16.325,
+     "q1": 11.6,
+     "q3": 22.38,
+     "mean": 18.2067
+    },
+    "M": {
+     "n": 103,
+     "median": 23.0,
+     "q1": 17.35,
+     "q3": 30.4,
+     "mean": 26.3608
+    }
+   }
+  },
+  "adjusted": {
+   "male_only": {
+    "label": "Sex alone",
+    "n": 150,
+    "r2": 0.1112,
+    "coef_male": 4.2088,
+    "ci_low": 2.2776,
+    "ci_high": 6.14,
+    "p": 0.0,
+    "covariate_terms": [],
+    "p_bh": 0.0003,
+    "p_bh_block": 0.0001,
+    "bh_significant": true
+   },
+   "weight": {
+    "label": "+ weight",
+    "n": 150,
+    "r2": 0.1136,
+    "coef_male": 3.7801,
+    "ci_low": 1.3806,
+    "ci_high": 6.1795,
+    "p": 0.002,
+    "covariate_terms": [
+     {
+      "term": "weight_kg",
+      "label": "weight_kg",
+      "coef": 0.0266,
+      "ci_low": -0.0567,
+      "ci_high": 0.1099,
+      "p": 0.5319
+     }
+    ],
+    "p_bh": 0.0059,
+    "p_bh_block": 0.0026,
+    "bh_significant": true
+   },
+   "bmi": {
+    "label": "+ BMI",
+    "n": 150,
+    "r2": 0.1151,
+    "coef_male": 4.0854,
+    "ci_low": 2.1278,
+    "ci_high": 6.043,
+    "p": 0.0,
+    "covariate_terms": [
+     {
+      "term": "bmi",
+      "label": "bmi",
+      "coef": 0.1028,
+      "ci_low": -0.1473,
+      "ci_high": 0.3528,
+      "p": 0.4205
+     }
+    ],
+    "p_bh": 0.0003,
+    "p_bh_block": 0.0001,
+    "bh_significant": true
+   },
+   "height": {
+    "label": "+ height",
+    "n": 150,
+    "r2": 0.112,
+    "coef_male": 4.5149,
+    "ci_low": 1.9263,
+    "ci_high": 7.1035,
+    "p": 0.0006,
+    "covariate_terms": [
+     {
+      "term": "height_cm",
+      "label": "height_cm",
+      "coef": -0.0222,
+      "ci_low": -0.1385,
+      "ci_high": 0.094,
+      "p": 0.7078
+     }
+    ],
+    "p_bh": 0.0022,
+    "p_bh_block": 0.0009,
+    "bh_significant": true
+   },
+   "hba1c": {
+    "label": "+ HbA1c",
+    "n": 150,
+    "r2": 0.1202,
+    "coef_male": 4.1362,
+    "ci_low": 2.209,
+    "ci_high": 6.0635,
+    "p": 0.0,
+    "covariate_terms": [
+     {
+      "term": "hba1c_screening",
+      "label": "hba1c_screening",
+      "coef": -0.8711,
+      "ci_low": -2.078,
+      "ci_high": 0.3358,
+      "p": 0.1572
+     }
+    ],
+    "p_bh": 0.0003,
+    "p_bh_block": 0.0001,
+    "bh_significant": true
+   },
+   "age": {
+    "label": "+ age",
+    "n": 150,
+    "r2": 0.1126,
+    "coef_male": 4.1499,
+    "ci_low": 2.1934,
+    "ci_high": 6.1065,
+    "p": 0.0,
+    "covariate_terms": [
+     {
+      "term": "age",
+      "label": "age",
+      "coef": 0.0171,
+      "ci_low": -0.0619,
+      "ci_high": 0.096,
+      "p": 0.6715
+     }
+    ],
+    "p_bh": 0.0003,
+    "p_bh_block": 0.0001,
+    "bh_significant": true
+   },
+   "tdd_per_kg": {
+    "label": "+ insulin dose per kg (TDD / weight)",
+    "n": 141,
+    "r2": 0.1153,
+    "coef_male": 4.3284,
+    "ci_low": 2.2636,
+    "ci_high": 6.3932,
+    "p": 0.0,
+    "covariate_terms": [
+     {
+      "term": "tdd_per_kg",
+      "label": "tdd_per_kg",
+      "coef": 0.7324,
+      "ci_low": -6.4002,
+      "ci_high": 7.8651,
+      "p": 0.8405
+     }
+    ],
+    "p_bh": 0.0003,
+    "p_bh_block": 0.0001,
+    "bh_significant": true
+   },
+   "all_body": {
+    "label": "+ weight, BMI, height, HbA1c, age, dose per kg",
+    "n": 141,
+    "r2": 0.1364,
+    "coef_male": 3.9608,
+    "ci_low": 0.9016,
+    "ci_high": 7.0201,
+    "p": 0.0112,
+    "covariate_terms": [
+     {
+      "term": "weight_kg",
+      "label": "weight_kg",
+      "coef": 0.1809,
+      "ci_low": -0.5787,
+      "ci_high": 0.9404,
+      "p": 0.6407
+     },
+     {
+      "term": "bmi",
+      "label": "bmi",
+      "coef": -0.3908,
+      "ci_low": -2.5812,
+      "ci_high": 1.7997,
+      "p": 0.7266
+     },
+     {
+      "term": "height_cm",
+      "label": "height_cm",
+      "coef": -0.1625,
+      "ci_low": -0.9213,
+      "ci_high": 0.5962,
+      "p": 0.6746
+     },
+     {
+      "term": "hba1c_screening",
+      "label": "hba1c_screening",
+      "coef": -1.087,
+      "ci_low": -2.513,
+      "ci_high": 0.3391,
+      "p": 0.1352
+     },
+     {
+      "term": "age",
+      "label": "age",
+      "coef": 0.0262,
+      "ci_low": -0.0691,
+      "ci_high": 0.1216,
+      "p": 0.5898
+     },
+     {
+      "term": "tdd_per_kg",
+      "label": "tdd_per_kg",
+      "coef": 1.5255,
+      "ci_low": -7.0713,
+      "ci_high": 10.1223,
+      "p": 0.728
+     }
+    ],
+    "p_bh": 0.0283,
+    "p_bh_block": 0.0112,
+    "bh_significant": true
+   },
+   "all_body_glucose": {
+    "label": "+ the six above + CV + % time below 70",
+    "n": 141,
+    "r2": 0.1537,
+    "coef_male": 4.0475,
+    "ci_low": 0.9845,
+    "ci_high": 7.1105,
+    "p": 0.0096,
+    "covariate_terms": [
+     {
+      "term": "weight_kg",
+      "label": "weight_kg",
+      "coef": 0.2552,
+      "ci_low": -0.5054,
+      "ci_high": 1.0158,
+      "p": 0.5109
+     },
+     {
+      "term": "bmi",
+      "label": "bmi",
+      "coef": -0.5739,
+      "ci_low": -2.7676,
+      "ci_high": 1.6198,
+      "p": 0.6081
+     },
+     {
+      "term": "height_cm",
+      "label": "height_cm",
+      "coef": -0.238,
+      "ci_low": -1.0018,
+      "ci_high": 0.5258,
+      "p": 0.5414
+     },
+     {
+      "term": "hba1c_screening",
+      "label": "hba1c_screening",
+      "coef": -0.5886,
+      "ci_low": -2.1514,
+      "ci_high": 0.9742,
+      "p": 0.4604
+     },
+     {
+      "term": "age",
+      "label": "age",
+      "coef": 0.0059,
+      "ci_low": -0.0862,
+      "ci_high": 0.098,
+      "p": 0.8999
+     },
+     {
+      "term": "tdd_per_kg",
+      "label": "tdd_per_kg",
+      "coef": 2.7358,
+      "ci_low": -6.0149,
+      "ci_high": 11.4865,
+      "p": 0.54
+     },
+     {
+      "term": "cv_pct",
+      "label": "cv_pct",
+      "coef": -0.292,
+      "ci_low": -0.6078,
+      "ci_high": 0.0238,
+      "p": 0.0699
+     },
+     {
+      "term": "pct_below_70",
+      "label": "pct_below_70",
+      "coef": 0.1355,
+      "ci_low": -0.3958,
+      "ci_high": 0.6667,
+      "p": 0.6172
+     }
+    ],
+    "p_bh": 0.0253,
+    "p_bh_block": 0.0108,
+    "bh_significant": true
+   }
+  },
+  "within_sex": {
+   "weight_kg_F": {
+    "n": 76,
+    "rho": -0.0401,
+    "ci_low": -0.2659,
+    "ci_high": 0.1899,
+    "p": 0.7306,
+    "label": "weight vs low-range bias, within women",
+    "p_bh": 0.8173,
+    "p_bh_block": 0.9229,
+    "bh_significant": false
+   },
+   "weight_kg_M": {
+    "n": 74,
+    "rho": 0.1445,
+    "ci_low": -0.0824,
+    "ci_high": 0.3816,
+    "p": 0.2193,
+    "label": "weight vs low-range bias, within men",
+    "p_bh": 0.3446,
+    "p_bh_block": 0.6579,
+    "bh_significant": false
+   },
+   "bmi_F": {
+    "n": 76,
+    "rho": -0.0068,
+    "ci_low": -0.2007,
+    "ci_high": 0.2016,
+    "p": 0.9533,
+    "label": "BMI vs low-range bias, within women",
+    "p_bh": 0.97,
+    "p_bh_block": 0.9533,
+    "bh_significant": false
+   },
+   "bmi_M": {
+    "n": 74,
+    "rho": 0.1173,
+    "ci_low": -0.1612,
+    "ci_high": 0.3604,
+    "p": 0.3196,
+    "label": "BMI vs low-range bias, within men",
+    "p_bh": 0.4581,
+    "p_bh_block": 0.767,
+    "bh_significant": false
+   },
+   "height_cm_F": {
+    "n": 76,
+    "rho": -0.0342,
+    "ci_low": -0.2576,
+    "ci_high": 0.2037,
+    "p": 0.7691,
+    "label": "height vs low-range bias, within women",
+    "p_bh": 0.846,
+    "p_bh_block": 0.9229,
+    "bh_significant": false
+   },
+   "height_cm_M": {
+    "n": 74,
+    "rho": 0.0999,
+    "ci_low": -0.139,
+    "ci_high": 0.3389,
+    "p": 0.397,
+    "label": "height vs low-range bias, within men",
+    "p_bh": 0.5459,
+    "p_bh_block": 0.794,
+    "bh_significant": false
+   },
+   "hba1c_screening_F": {
+    "n": 76,
+    "rho": -0.049,
+    "ci_low": -0.2721,
+    "ci_high": 0.1922,
+    "p": 0.674,
+    "label": "HbA1c vs low-range bias, within women",
+    "p_bh": 0.767,
+    "p_bh_block": 0.9229,
+    "bh_significant": false
+   },
+   "hba1c_screening_M": {
+    "n": 74,
+    "rho": -0.1488,
+    "ci_low": -0.3505,
+    "ci_high": 0.0583,
+    "p": 0.2057,
+    "label": "HbA1c vs low-range bias, within men",
+    "p_bh": 0.3311,
+    "p_bh_block": 0.6579,
+    "bh_significant": false
+   },
+   "age_F": {
+    "n": 76,
+    "rho": -0.1909,
+    "ci_low": -0.4187,
+    "ci_high": 0.0592,
+    "p": 0.0986,
+    "label": "age vs low-range bias, within women",
+    "p_bh": 0.1758,
+    "p_bh_block": 0.6335,
+    "bh_significant": false
+   },
+   "age_M": {
+    "n": 74,
+    "rho": 0.1896,
+    "ci_low": -0.045,
+    "ci_high": 0.4278,
+    "p": 0.1056,
+    "label": "age vs low-range bias, within men",
+    "p_bh": 0.1787,
+    "p_bh_block": 0.6335,
+    "bh_significant": false
+   },
+   "tdd_per_kg_F": {
+    "n": 71,
+    "rho": 0.0231,
+    "ci_low": -0.2353,
+    "ci_high": 0.2855,
+    "p": 0.8481,
+    "label": "insulin dose per kg vs low-range bias, within women",
+    "p_bh": 0.8961,
+    "p_bh_block": 0.9252,
+    "bh_significant": false
+   },
+   "tdd_per_kg_M": {
+    "n": 70,
+    "rho": -0.0618,
+    "ci_low": -0.3134,
+    "ci_high": 0.1896,
+    "p": 0.6112,
+    "label": "insulin dose per kg vs low-range bias, within men",
+    "p_bh": 0.7204,
+    "p_bh_block": 0.9229,
+    "bh_significant": false
+   }
+  },
+  "lab_values_available": {
+   "replace_bg_central_lab_analytes": [
+    "HBA1C"
+   ],
+   "replace_bg_screening_measurements": [
+    "weight",
+    "height",
+    "HbA1c (local and central lab)"
+   ],
+   "shanghai_lab_columns": [
+    "Fasting Plasma Glucose (mg/dl)",
+    "2-hour Postprandial Plasma Glucose (mg/dl)",
+    "Fasting C-peptide (nmol/L)",
+    "2-hour Postprandial C-peptide (nmol/L)",
+    "Fasting Insulin (pmol/L)",
+    "2-hour Postprandial Insulin (pmol/L)",
+    "HbA1c (mmol/mol)",
+    "Glycated Albumin (%)",
+    "Total Cholesterol (mmol/L)",
+    "Triglyceride (mmol/L)",
+    "High-Density Lipoprotein Cholesterol (mmol/L)",
+    "Low-Density Lipoprotein Cholesterol (mmol/L)",
+    "Creatinine (umol/L)",
+    "Estimated Glomerular Filtration Rate (ml/min/1.73m2)",
+    "Uric Acid (mmol/L)",
+    "Blood Urea Nitrogen (mmol/L)"
+   ],
+   "haematocrit_or_haemoglobin": "not present in either dataset"
+  }
+ },
+ "D_shanghai": {
+  "pairs": 4012,
+  "patients": 98,
+  "patients_by_sex": {
+   "M": 53,
+   "F": 45
+  },
+  "patients_with_20plus_low_pairs": 0,
+  "sh_low_avg": {
+   "label": "Shanghai: pairs with average below 70, pooled bias by sex",
+   "standardised": {
+    "pairs_F": 11,
+    "pairs_M": 39,
+    "people_F": 8,
+    "people_M": 10,
+    "bias_F": 1.2051,
+    "bias_M": -17.1724,
+    "gap_M_minus_F": -18.3775,
+    "ci_low": -38.3147,
+    "ci_high": 9.5548,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 50,
+    "weights": "none (plain pooled difference)"
+   },
+   "mixed": {
+    "formula": "rel_err_pct ~ male",
+    "pairs": 50,
+    "people": 18,
+    "coef_male": -10.265,
+    "ci_low": -33.5432,
+    "ci_high": 13.0133,
+    "p": 0.3874,
+    "converged": true
+   },
+   "p": 0.3874,
+   "p_bh": 0.9416,
+   "p_bh_block": 0.9416,
+   "bh_significant": false
+  },
+  "sh_low_ref": {
+   "label": "Shanghai: pairs with fingerstick below 70",
+   "standardised": {
+    "pairs_F": 11,
+    "pairs_M": 26,
+    "people_F": 6,
+    "people_M": 9,
+    "bias_F": 15.4381,
+    "bias_M": 14.6693,
+    "gap_M_minus_F": -0.7688,
+    "ci_low": -13.4856,
+    "ci_high": 16.7442,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 37,
+    "weights": "none (plain pooled difference)"
+   },
+   "mixed": {
+    "formula": "rel_err_pct ~ male",
+    "pairs": 37,
+    "people": 15,
+    "coef_male": -0.6879,
+    "ci_low": -19.0987,
+    "ci_high": 17.723,
+    "p": 0.9416,
+    "converged": false
+   },
+   "p": 0.9416,
+   "p_bh": 0.9416,
+   "p_bh_block": 0.9416,
+   "bh_significant": false
+  },
+  "sh_mid": {
+   "label": "Shanghai: pairs with average 70-180 (context)",
+   "standardised": {
+    "pairs_F": 1230,
+    "pairs_M": 1467,
+    "people_F": 45,
+    "people_M": 50,
+    "bias_F": -5.2856,
+    "bias_M": -8.3117,
+    "gap_M_minus_F": -3.0261,
+    "ci_low": -9.7546,
+    "ci_high": 3.7896,
+    "strata_used": 1,
+    "strata_total": 1,
+    "pairs_used": 2697,
+    "weights": "none (plain pooled difference)"
+   },
+   "mixed": {
+    "formula": "rel_err_pct ~ male",
+    "pairs": 2697,
+    "people": 95,
+    "coef_male": -0.3788,
+    "ci_low": -4.9666,
+    "ci_high": 4.209,
+    "p": 0.8715,
+    "converged": true
+   },
+   "p": 0.8715,
+   "p_bh": 0.9416,
+   "p_bh_block": 0.9416,
+   "bh_significant": false
+  }
+ },
+ "E_maude": {
+  "skipped": false,
+  "set": {
+   "what": "serious wrong-reading reports (model fault type reads_low/high/erratic/stuck, or FDA code in the wrong-readings family) that state a sensor and a meter value",
+   "pairs_all_brands": 17573,
+   "pairs_with_sex_all_brands": 8556,
+   "pairs_dexcom": 9189,
+   "pairs_dexcom_with_sex": 7030,
+   "share_of_sexed_pairs_that_are_dexcom": 0.8216
+  },
+  "dexcom": {
+   "pairs_F": 3736,
+   "pairs_M": 3294,
+   "m_reads_low_share": {
+    "n_a": 3736,
+    "n_b": 3294,
+    "share_a_pct": 49.0096,
+    "share_b_pct": 44.5659,
+    "risk_diff_points": 4.4438,
+    "risk_diff_ci_low": 2.0153,
+    "risk_diff_ci_high": 6.842,
+    "chi_square_p": 0.0002,
+    "p_text": "< 0.001",
+    "label": "Share of pairs where the sensor read below the meter",
+    "p": 0.0002,
+    "p_bh": 0.001,
+    "p_bh_block": 0.001,
+    "bh_significant": true
+   },
+   "m_reads_low_depth": {
+    "n_a": 1831,
+    "n_b": 1468,
+    "median_a": -69.6203,
+    "median_b": -72.7977,
+    "iqr_a": "-85 to -47",
+    "iqr_b": "-86 to -52",
+    "median_diff_a_minus_b": 3.1774,
+    "median_diff_ci_low": 0.3754,
+    "median_diff_ci_high": 5.5467,
+    "cliffs_delta": 0.0616,
+    "cliffs_delta_ci_low": 0.0225,
+    "cliffs_delta_ci_high": 0.0987,
+    "effect_size_word": "negligible",
+    "mann_whitney_p": 0.0023,
+    "p_text": "0.002",
+    "median_meter_F": 445.0,
+    "median_meter_M": 433.0,
+    "median_err_mgdl_F": -270.0,
+    "median_err_mgdl_M": -300.0,
+    "label": "Depth of reads-low pairs: median error, % of meter",
+    "p": 0.0023,
+    "p_bh": 0.0058,
+    "p_bh_block": 0.0058,
+    "bh_significant": true
+   },
+   "m_hidden_low": {
+    "n_a": 3736,
+    "n_b": 3294,
+    "share_a_pct": 35.4925,
+    "share_b_pct": 38.1299,
+    "risk_diff_points": -2.6374,
+    "risk_diff_ci_low": -4.8425,
+    "risk_diff_ci_high": -0.4831,
+    "chi_square_p": 0.0221,
+    "p_text": "0.022",
+    "label": "Hidden low: meter below 70 and sensor 70 or more",
+    "p": 0.0221,
+    "p_bh": 0.0368,
+    "p_bh_block": 0.0368,
+    "bh_significant": true
+   },
+   "m_meter_lt70": {
+    "n_a": 3736,
+    "n_b": 3294,
+    "share_a_pct": 41.9968,
+    "share_b_pct": 44.5355,
+    "risk_diff_points": -2.5387,
+    "risk_diff_ci_low": -4.9412,
+    "risk_diff_ci_high": -0.1415,
+    "chi_square_p": 0.032,
+    "p_text": "0.032",
+    "label": "Meter below 70 (any sensor value)",
+    "p": 0.032,
+    "p_bh": 0.04,
+    "p_bh_block": 0.04,
+    "bh_significant": true
+   },
+   "m_false_low": {
+    "n_a": 3736,
+    "n_b": 3294,
+    "share_a_pct": 18.2816,
+    "share_b_pct": 18.1846,
+    "risk_diff_points": 0.097,
+    "risk_diff_ci_low": -1.7057,
+    "risk_diff_ci_high": 1.8382,
+    "chi_square_p": 0.9163,
+    "p_text": "0.916",
+    "label": "False low: sensor below 70 and meter 70 or more",
+    "p": 0.9163,
+    "p_bh": 0.9163,
+    "p_bh_block": 0.9163,
+    "bh_significant": false
+   }
+  },
+  "all_brands_context": {
+   "pairs_F": 4433,
+   "pairs_M": 4123,
+   "m_reads_low_share": {
+    "n_a": 4433,
+    "n_b": 4123,
+    "share_a_pct": 51.6129,
+    "share_b_pct": 48.2658,
+    "risk_diff_points": 3.3471,
+    "risk_diff_ci_low": 1.2845,
+    "risk_diff_ci_high": 5.5066,
+    "chi_square_p": 0.002,
+    "p_text": "0.002"
+   },
+   "m_reads_low_depth": {
+    "n_a": 2288,
+    "n_b": 1990,
+    "median_a": -68.4105,
+    "median_b": -70.0,
+    "iqr_a": "-84 to -47",
+    "iqr_b": "-85 to -50",
+    "median_diff_a_minus_b": 1.5895,
+    "median_diff_ci_low": -0.8743,
+    "median_diff_ci_high": 3.3974,
+    "cliffs_delta": 0.0316,
+    "cliffs_delta_ci_low": -0.001,
+    "cliffs_delta_ci_high": 0.064,
+    "effect_size_word": "negligible",
+    "mann_whitney_p": 0.0738,
+    "p_text": "0.074",
+    "median_meter_F": 400.0,
+    "median_meter_M": 399.5,
+    "median_err_mgdl_F": -240.0,
+    "median_err_mgdl_M": -247.5
+   },
+   "m_hidden_low": {
+    "n_a": 4433,
+    "n_b": 4123,
+    "share_a_pct": 33.025,
+    "share_b_pct": 34.7805,
+    "risk_diff_points": -1.7555,
+    "risk_diff_ci_low": -3.7985,
+    "risk_diff_ci_high": 0.1559,
+    "chi_square_p": 0.0865,
+    "p_text": "0.086"
+   },
+   "m_meter_lt70": {
+    "n_a": 4433,
+    "n_b": 4123,
+    "share_a_pct": 39.0932,
+    "share_b_pct": 40.5772,
+    "risk_diff_points": -1.4841,
+    "risk_diff_ci_low": -3.6822,
+    "risk_diff_ci_high": 0.5696,
+    "chi_square_p": 0.1611,
+    "p_text": "0.161"
+   },
+   "m_false_low": {
+    "n_a": 4433,
+    "n_b": 4123,
+    "share_a_pct": 21.8137,
+    "share_b_pct": 22.4594,
+    "risk_diff_points": -0.6457,
+    "risk_diff_ci_low": -2.4422,
+    "risk_diff_ci_high": 1.1165,
+    "chi_square_p": 0.4722,
+    "p_text": "0.472"
+   }
+  },
+  "abbott_context": {
+   "pairs_F": 544,
+   "pairs_M": 681,
+   "m_reads_low_share": {
+    "n_a": 544,
+    "n_b": 681,
+    "share_a_pct": 69.3015,
+    "share_b_pct": 63.4361,
+    "risk_diff_points": 5.8653,
+    "risk_diff_ci_low": 0.641,
+    "risk_diff_ci_high": 11.1927,
+    "chi_square_p": 0.0313,
+    "p_text": "0.031"
+   },
+   "m_reads_low_depth": {
+    "n_a": 377,
+    "n_b": 432,
+    "median_a": -66.3212,
+    "median_b": -66.1237,
+    "iqr_a": "-80 to -50",
+    "iqr_b": "-82 to -47",
+    "median_diff_a_minus_b": -0.1975,
+    "median_diff_ci_low": -5.8158,
+    "median_diff_ci_high": 2.381,
+    "cliffs_delta": -0.0282,
+    "cliffs_delta_ci_low": -0.1104,
+    "cliffs_delta_ci_high": 0.0538,
+    "effect_size_word": "negligible",
+    "mann_whitney_p": 0.4883,
+    "p_text": "0.488",
+    "median_meter_F": 207.0,
+    "median_meter_M": 207.0,
+    "median_err_mgdl_F": -135.0,
+    "median_err_mgdl_M": -119.5
+   },
+   "m_hidden_low": {
+    "n_a": 544,
+    "n_b": 681,
+    "share_a_pct": 15.2574,
+    "share_b_pct": 19.6769,
+    "risk_diff_points": -4.4196,
+    "risk_diff_ci_low": -8.4255,
+    "risk_diff_ci_high": -0.3019,
+    "chi_square_p": 0.0441,
+    "p_text": "0.044"
+   },
+   "m_meter_lt70": {
+    "n_a": 544,
+    "n_b": 681,
+    "share_a_pct": 18.3824,
+    "share_b_pct": 22.7606,
+    "risk_diff_points": -4.3783,
+    "risk_diff_ci_low": -9.0435,
+    "risk_diff_ci_high": -0.004,
+    "chi_square_p": 0.0607,
+    "p_text": "0.061"
+   },
+   "m_false_low": {
+    "n_a": 544,
+    "n_b": 681,
+    "share_a_pct": 46.875,
+    "share_b_pct": 41.5565,
+    "risk_diff_points": 5.3185,
+    "risk_diff_ci_low": -0.048,
+    "risk_diff_ci_high": 10.9027,
+    "chi_square_p": 0.0624,
+    "p_text": "0.062"
+   }
+  }
+ },
+ "F_decision": {
+  "near_false_low": {
+   "share_F": 36.0033,
+   "share_M": 31.1085,
+   "diff_M_minus_F": -4.8947,
+   "ci_low": -8.3954,
+   "ci_high": -1.3707,
+   "pairs_F": 3683,
+   "pairs_M": 3446,
+   "people_F": 111,
+   "people_M": 113,
+   "label": "Pairs with fingerstick 70-79: % with CGM below 70 (false low near the line)",
+   "mixed": {
+    "formula": "rel_err_pct ~ male",
+    "pairs": 7129,
+    "people": 224,
+    "coef_male": -5.6254,
+    "ci_low": -9.0421,
+    "ci_high": -2.2088,
+    "p": 0.0013,
+    "converged": true
+   },
+   "p": 0.0013,
+   "p_bh": 0.0041,
+   "p_bh_block": 0.0025,
+   "bh_significant": true
+  },
+  "near_missed_low": {
+   "share_F": 36.4964,
+   "share_M": 41.8021,
+   "diff_M_minus_F": 5.3058,
+   "ci_low": 0.9894,
+   "ci_high": 9.6472,
+   "pairs_F": 2877,
+   "pairs_M": 2830,
+   "people_F": 110,
+   "people_M": 112,
+   "label": "Pairs with fingerstick 60-69: % with CGM 70 or more (missed low near the line)",
+   "mixed": {
+    "formula": "rel_err_pct ~ male",
+    "pairs": 5707,
+    "people": 222,
+    "coef_male": 6.6065,
+    "ci_low": 2.2044,
+    "ci_high": 11.0085,
+    "p": 0.0033,
+    "converged": true
+   },
+   "p": 0.0033,
+   "p_bh": 0.009,
+   "p_bh_block": 0.0033,
+   "bh_significant": true
+  },
+  "missed_low_rate_by_sex": {
+   "label": "Per-person missed-low rate (fingerstick below 70, CGM 70 or more), %",
+   "outcome": "missed_low_rate",
+   "testable": true,
+   "n_F": 75,
+   "n_M": 81,
+   "median_F": 27.5,
+   "median_M": 33.9286,
+   "mean_F": 28.5884,
+   "mean_M": 35.0149,
+   "diff_median_M_minus_F": 6.4286,
+   "ci_low": 2.2765,
+   "ci_high": 12.9265,
+   "p": 0.0016,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 6.1415,
+   "anchor": true
+  },
+  "false_low_rate_by_sex": {
+   "label": "Per-person false-low rate (CGM below 70, fingerstick 70 or more), %",
+   "outcome": "false_low_rate",
+   "testable": true,
+   "n_F": 90,
+   "n_M": 84,
+   "median_F": 42.6249,
+   "median_M": 38.9,
+   "mean_F": 44.1949,
+   "mean_M": 41.1679,
+   "diff_median_M_minus_F": -3.725,
+   "ci_low": -9.9621,
+   "ci_high": 2.4273,
+   "p": 0.1816,
+   "test": "Mann-Whitney U",
+   "detectable_diff_means": 6.1446,
+   "anchor": true
+  },
+  "lookup": {
+   "source": "analysis\\simulation_v2_lookup.csv",
+   "note": "the lookup applies one constant bias to the whole CGM trace all day; the sex gap exists only below 70 mg/dL, so these are upper bounds for what the gap alone could do",
+   "at": {
+    "women_median_low_bias": {
+     "corrections skipped (% of all corrections)": 0.0,
+     "corrections skipped (% of needed)": 0.0,
+     "doses changed by 1 U or more (%)": 0.0,
+     "false low alerts per day": 0.2794,
+     "true lows missed (%)": 0.0,
+     "time in range shown (%)": 67.726,
+     "time below 70 shown (%)": 5.1214,
+     "LBGI (low blood glucose index)": 1.2501
+    },
+    "men_median_low_bias": {
+     "corrections skipped (% of all corrections)": 0.0,
+     "corrections skipped (% of needed)": 0.0,
+     "doses changed by 1 U or more (%)": 0.0,
+     "false low alerts per day": 0.1092,
+     "true lows missed (%)": 0.0,
+     "time in range shown (%)": 64.5413,
+     "time below 70 shown (%)": 4.0971,
+     "LBGI (low blood glucose index)": 1.043
+    },
+    "zero": {
+     "corrections skipped (% of all corrections)": 0.0,
+     "corrections skipped (% of needed)": 0.0,
+     "doses changed by 1 U or more (%)": 0.0,
+     "false low alerts per day": 0.0,
+     "true lows missed (%)": 0.0,
+     "time in range shown (%)": 63.2541,
+     "time below 70 shown (%)": 3.5019,
+     "LBGI (low blood glucose index)": 0.9455
+    },
+    "minus_4_2": {
+     "corrections skipped (% of all corrections)": 0.0,
+     "corrections skipped (% of needed)": 0.0,
+     "doses changed by 1 U or more (%)": 0.0,
+     "false low alerts per day": 0.1697,
+     "true lows missed (%)": 0.0,
+     "time in range shown (%)": 66.2398,
+     "time below 70 shown (%)": 4.4387,
+     "LBGI (low blood glucose index)": 1.135
+    },
+    "plus_4_2": {
+     "corrections skipped (% of all corrections)": 0.0,
+     "corrections skipped (% of needed)": 0.0,
+     "doses changed by 1 U or more (%)": 0.0,
+     "false low alerts per day": 0.0,
+     "true lows missed (%)": 11.8426,
+     "time in range shown (%)": 59.3557,
+     "time below 70 shown (%)": 2.9502,
+     "LBGI (low blood glucose index)": 0.7826
+    }
+   },
+   "women_minus_men": {
+    "corrections skipped (% of all corrections)": 0.0,
+    "corrections skipped (% of needed)": 0.0,
+    "doses changed by 1 U or more (%)": 0.0,
+    "false low alerts per day": 0.1701,
+    "true lows missed (%)": 0.0,
+    "time in range shown (%)": 3.1847,
+    "time below 70 shown (%)": 1.0243,
+    "LBGI (low blood glucose index)": 0.2071
+   },
+   "gap_in_mgdl_at_60": 2.4983
+  }
+ },
+ "G_posthoc": {
+  "note": "post hoc, after seeing the arm result; not pre-registered and not counted in the BH families",
+  "splits": {
+   "runin_blinded": {
+    "label": "Run-in, blinded CGM (person could not see the sensor), average below 70",
+    "outcome": "runin_blinded_bias",
+    "testable": true,
+    "n_F": 22,
+    "n_M": 18,
+    "median_F": -4.7956,
+    "median_M": -0.88,
+    "mean_F": -5.6784,
+    "mean_M": -0.2748,
+    "diff_median_M_minus_F": 3.9157,
+    "ci_low": -1.5632,
+    "ci_high": 7.5437,
+    "p": 0.0893,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 7.2078,
+    "median_mgdl_F": -4.3397,
+    "median_mgdl_M": -2.2407,
+    "pairs_F": 938,
+    "pairs_M": 835,
+    "pooled": {
+     "pairs_F": 938,
+     "pairs_M": 835,
+     "people_F": 60,
+     "people_M": 60,
+     "bias_F": -5.4579,
+     "bias_M": 0.3028,
+     "gap_M_minus_F": 5.7606,
+     "ci_low": 2.0052,
+     "ci_high": 9.9379,
+     "strata_used": 1,
+     "strata_total": 1,
+     "pairs_used": 1773,
+     "weights": "none (plain pooled difference)",
+     "mixed": {
+      "formula": "rel_err_pct ~ male",
+      "pairs": 1773,
+      "people": 120,
+      "coef_male": 6.1815,
+      "ci_low": 2.7419,
+      "ci_high": 9.6211,
+      "p": 0.0004,
+      "converged": true
+     }
+    }
+   },
+   "runin_standard": {
+    "label": "Run-in, standard (visible) CGM, average below 70",
+    "outcome": "runin_standard_bias",
+    "testable": false,
+    "n_F": 2,
+    "n_M": 1,
+    "median_F": -1.5644,
+    "median_M": -2.1131,
+    "mean_F": -1.5644,
+    "mean_M": -2.1131,
+    "diff_median_M_minus_F": null,
+    "ci_low": null,
+    "ci_high": null,
+    "p": null,
+    "test": null,
+    "reason": "fewer than 2 groups with at least 10 people",
+    "median_mgdl_F": -2.429,
+    "median_mgdl_M": -1.7273,
+    "pairs_F": 271,
+    "pairs_M": 193,
+    "pooled": {
+     "pairs_F": 271,
+     "pairs_M": 193,
+     "people_F": 41,
+     "people_M": 34,
+     "bias_F": -5.0736,
+     "bias_M": -1.5487,
+     "gap_M_minus_F": 3.5249,
+     "ci_low": -0.4259,
+     "ci_high": 8.1692,
+     "strata_used": 1,
+     "strata_total": 1,
+     "pairs_used": 464,
+     "weights": "none (plain pooled difference)",
+     "mixed": {
+      "formula": "rel_err_pct ~ male",
+      "pairs": 464,
+      "people": 75,
+      "coef_male": 5.7761,
+      "ci_low": -0.5326,
+      "ci_high": 12.0848,
+      "p": 0.0727,
+      "converged": false
+     }
+    }
+   },
+   "runin_blinded_cal": {
+    "label": "Run-in, blinded CGM, calibration pairs below 70",
+    "outcome": "runin_blinded_cal_bias",
+    "testable": true,
+    "n_F": 18,
+    "n_M": 19,
+    "median_F": -12.8145,
+    "median_M": -3.7528,
+    "mean_F": -12.2,
+    "mean_M": -4.1084,
+    "diff_median_M_minus_F": 9.0616,
+    "ci_low": 1.7624,
+    "ci_high": 13.9837,
+    "p": 0.0028,
+    "test": "Mann-Whitney U",
+    "detectable_diff_means": 7.6819,
+    "median_mgdl_F": -9.6948,
+    "median_mgdl_M": -4.7931,
+    "pairs_F": 940,
+    "pairs_M": 957,
+    "pooled": {
+     "pairs_F": 940,
+     "pairs_M": 957,
+     "people_F": 61,
+     "people_M": 64,
+     "bias_F": -12.2137,
+     "bias_M": -5.8046,
+     "gap_M_minus_F": 6.409,
+     "ci_low": 2.4631,
+     "ci_high": 10.3641,
+     "strata_used": 1,
+     "strata_total": 1,
+     "pairs_used": 1897,
+     "weights": "none (plain pooled difference)",
+     "mixed": {
+      "formula": "rel_err_pct ~ male",
+      "pairs": 1897,
+      "people": 125,
+      "coef_male": 7.0339,
+      "ci_low": 3.4065,
+      "ci_high": 10.6614,
+      "p": 0.0001,
+      "converged": true
+     }
+    }
+   }
+  },
+  "testing_behaviour": {
+   "all_days": {
+    "pairs_per_day": {
+     "label": "pairs_per_day",
+     "outcome": "pairs_per_day",
+     "testable": true,
+     "n_F": 112,
+     "n_M": 114,
+     "median_F": 3.2987,
+     "median_M": 3.1984,
+     "mean_F": 3.4604,
+     "mean_M": 3.2021,
+     "diff_median_M_minus_F": -0.1003,
+     "ci_low": -0.5262,
+     "ci_high": 0.3722,
+     "p": 0.29,
+     "test": "Mann-Whitney U",
+     "detectable_diff_means": 0.5578
+    },
+    "pct_pairs_low": {
+     "label": "pct_pairs_low",
+     "outcome": "pct_pairs_low",
+     "testable": true,
+     "n_F": 112,
+     "n_M": 114,
+     "median_F": 5.239,
+     "median_M": 4.5756,
+     "mean_F": 6.5453,
+     "mean_M": 5.846,
+     "diff_median_M_minus_F": -0.6634,
+     "ci_low": -1.9434,
+     "ci_high": 0.7263,
+     "p": 0.3425,
+     "test": "Mann-Whitney U",
+     "detectable_diff_means": 2.002
+    }
+   },
+   "randomised_phase_by_arm": {
+    "CGM-only": {
+     "r_pairs_per_day": {
+      "label": "r_pairs_per_day",
+      "outcome": "r_pairs_per_day",
+      "testable": true,
+      "n_F": 71,
+      "n_M": 77,
+      "median_F": 4.0947,
+      "median_M": 3.8852,
+      "mean_F": 4.3075,
+      "mean_M": 4.0711,
+      "diff_median_M_minus_F": -0.2095,
+      "ci_low": -0.6461,
+      "ci_high": 0.1115,
+      "p": 0.2053,
+      "test": "Mann-Whitney U",
+      "detectable_diff_means": 0.6
+     },
+     "r_pct_pairs_low": {
+      "label": "r_pct_pairs_low",
+      "outcome": "r_pct_pairs_low",
+      "testable": true,
+      "n_F": 71,
+      "n_M": 77,
+      "median_F": 3.75,
+      "median_M": 4.7187,
+      "mean_F": 4.4414,
+      "mean_M": 5.474,
+      "diff_median_M_minus_F": 0.9687,
+      "ci_low": -0.8099,
+      "ci_high": 2.0106,
+      "p": 0.1985,
+      "test": "Mann-Whitney U",
+      "detectable_diff_means": 1.762
+     }
+    },
+    "CGM+BGM": {
+     "r_pairs_per_day": {
+      "label": "r_pairs_per_day",
+      "outcome": "r_pairs_per_day",
+      "testable": true,
+      "n_F": 41,
+      "n_M": 36,
+      "median_F": 2.7339,
+      "median_M": 2.4016,
+      "mean_F": 3.0896,
+      "mean_M": 2.6597,
+      "diff_median_M_minus_F": -0.3322,
+      "ci_low": -0.8754,
+      "ci_high": 0.3114,
+      "p": 0.1429,
+      "test": "Mann-Whitney U",
+      "detectable_diff_means": 0.8482
+     },
+     "r_pct_pairs_low": {
+      "label": "r_pct_pairs_low",
+      "outcome": "r_pct_pairs_low",
+      "testable": true,
+      "n_F": 41,
+      "n_M": 36,
+      "median_F": 6.3119,
+      "median_M": 2.9117,
+      "mean_F": 9.0526,
+      "mean_M": 5.3165,
+      "diff_median_M_minus_F": -3.4002,
+      "ci_low": -6.1941,
+      "ci_high": -0.2539,
+      "p": 0.0053,
+      "test": "Mann-Whitney U",
+      "detectable_diff_means": 4.4378
+     }
+    }
+   }
+  }
+ },
+ "bh_summary": {
+  "replace_bg": {
+   "n_tests": 66,
+   "n_raw_p_below_0_05": 29,
+   "expected_by_chance": 3.3,
+   "n_pass_bh": 28,
+   "smallest_p_bh": 0.0003,
+   "passed": [
+    {
+     "block": "A_splits",
+     "id": "band_54_69",
+     "label": "Average 54-69",
+     "p": 0.0003,
+     "p_bh": 0.0012
+    },
+    {
+     "block": "A_splits",
+     "id": "wear2_7",
+     "label": "Sensor wear days 2-7 (confirmed sessions)",
+     "p": 0.0002,
+     "p_bh": 0.0011
+    },
+    {
+     "block": "A_splits",
+     "id": "daytime",
+     "label": "Daytime pairs (06:00-24:00)",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "flat",
+     "label": "Glucose flat (ROC -1 to 1)",
+     "p": 0.0002,
+     "p_bh": 0.0011
+    },
+    {
+     "block": "A_splits",
+     "id": "lag",
+     "label": "Lag-corrected pairs (CGM 5 min later), average below 70",
+     "p": 0.0001,
+     "p_bh": 0.0008
+    },
+    {
+     "block": "A_splits",
+     "id": "meter_contour",
+     "label": "Contour Next meter pairs",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "arm_cgm_only",
+     "label": "CGM-only arm (all days)",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "phase_rand_cgm_only",
+     "label": "Randomised phase, CGM-only arm",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "cal_low",
+     "label": "Calibration pairs, average below 70 (other pair source)",
+     "p": 0.0001,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "low_by_ref",
+     "label": "Low by fingerstick (fingerstick below 70)",
+     "p": 0.0015,
+     "p_bh": 0.0048
+    },
+    {
+     "block": "A_splits",
+     "id": "low_by_cgm",
+     "label": "Low by sensor (CGM below 70)",
+     "p": 0.0176,
+     "p_bh": 0.0429
+    },
+    {
+     "block": "A_splits",
+     "id": "high",
+     "label": "High range: average above 180",
+     "p": 0.002,
+     "p_bh": 0.0059
+    },
+    {
+     "block": "A_splits",
+     "id": "sex_x_arm",
+     "label": "Sex x arm interaction on low-range bias (OLS, HC3)",
+     "p": 0.0201,
+     "p_bh": 0.0473
+    },
+    {
+     "block": "B_matching",
+     "id": "pooled",
+     "label": "Pooled low pairs, no matching (mixed model, male only)",
+     "p": 0.0003,
+     "p_bh": 0.0012
+    },
+    {
+     "block": "B_matching",
+     "id": "matched_avg_roc",
+     "label": "Matched on glucose bin (5 mg/dL of the average) and trend",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "B_matching",
+     "id": "matched_full",
+     "label": "Matched on glucose bin and trend, plus night, wear day 1 and arm",
+     "p": 0.0002,
+     "p_bh": 0.0008
+    },
+    {
+     "block": "B_matching",
+     "id": "matched_ref_roc",
+     "label": "Sensitivity: matched on fingerstick bin (5 mg/dL) and trend",
+     "p": 0.0004,
+     "p_bh": 0.0015
+    },
+    {
+     "block": "C_adjusted",
+     "id": "male_only",
+     "label": "Low-range bias by sex, Sex alone",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "weight",
+     "label": "Low-range bias by sex, + weight",
+     "p": 0.002,
+     "p_bh": 0.0059
+    },
+    {
+     "block": "C_adjusted",
+     "id": "bmi",
+     "label": "Low-range bias by sex, + BMI",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "height",
+     "label": "Low-range bias by sex, + height",
+     "p": 0.0006,
+     "p_bh": 0.0022
+    },
+    {
+     "block": "C_adjusted",
+     "id": "hba1c",
+     "label": "Low-range bias by sex, + HbA1c",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "age",
+     "label": "Low-range bias by sex, + age",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "tdd_per_kg",
+     "label": "Low-range bias by sex, + insulin dose per kg (TDD / weight)",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "all_body",
+     "label": "Low-range bias by sex, + weight, BMI, height, HbA1c, age, dose per kg",
+     "p": 0.0112,
+     "p_bh": 0.0283
+    },
+    {
+     "block": "C_adjusted",
+     "id": "all_body_glucose",
+     "label": "Low-range bias by sex, + the six above + CV + % time below 70",
+     "p": 0.0096,
+     "p_bh": 0.0253
+    },
+    {
+     "block": "F_decision",
+     "id": "near_false_low",
+     "label": "Pairs with fingerstick 70-79: % with CGM below 70 (false low near the line)",
+     "p": 0.0013,
+     "p_bh": 0.0041
+    },
+    {
+     "block": "F_decision",
+     "id": "near_missed_low",
+     "label": "Pairs with fingerstick 60-69: % with CGM 70 or more (missed low near the line)",
+     "p": 0.0033,
+     "p_bh": 0.009
+    }
+   ],
+   "tests": [
+    {
+     "block": "A_splits",
+     "id": "band_lt54",
+     "label": "Average below 54",
+     "p": 0.0627,
+     "p_bh": 0.1254
+    },
+    {
+     "block": "A_splits",
+     "id": "band_54_69",
+     "label": "Average 54-69",
+     "p": 0.0003,
+     "p_bh": 0.0012
+    },
+    {
+     "block": "A_splits",
+     "id": "wear1",
+     "label": "Sensor wear day 1 (confirmed sessions)",
+     "p": 0.5603,
+     "p_bh": 0.692
+    },
+    {
+     "block": "A_splits",
+     "id": "wear2_7",
+     "label": "Sensor wear days 2-7 (confirmed sessions)",
+     "p": 0.0002,
+     "p_bh": 0.0011
+    },
+    {
+     "block": "A_splits",
+     "id": "night",
+     "label": "Night pairs (00:00-06:00)",
+     "p": 0.0626,
+     "p_bh": 0.1254
+    },
+    {
+     "block": "A_splits",
+     "id": "daytime",
+     "label": "Daytime pairs (06:00-24:00)",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "falling",
+     "label": "Glucose falling (ROC < -1 mg/dL/min)",
+     "p": 0.0283,
+     "p_bh": 0.0643
+    },
+    {
+     "block": "A_splits",
+     "id": "flat",
+     "label": "Glucose flat (ROC -1 to 1)",
+     "p": 0.0002,
+     "p_bh": 0.0011
+    },
+    {
+     "block": "A_splits",
+     "id": "rising",
+     "label": "Glucose rising (ROC > 1)",
+     "p": 0.4147,
+     "p_bh": 0.5586
+    },
+    {
+     "block": "A_splits",
+     "id": "lag",
+     "label": "Lag-corrected pairs (CGM 5 min later), average below 70",
+     "p": 0.0001,
+     "p_bh": 0.0008
+    },
+    {
+     "block": "A_splits",
+     "id": "meter_contour",
+     "label": "Contour Next meter pairs",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "meter_precision",
+     "label": "Precision Xtra meter pairs",
+     "p": null,
+     "p_bh": null
+    },
+    {
+     "block": "A_splits",
+     "id": "arm_cgm_only",
+     "label": "CGM-only arm (all days)",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "arm_cgm_bgm",
+     "label": "CGM+BGM arm (all days)",
+     "p": 0.2672,
+     "p_bh": 0.4008
+    },
+    {
+     "block": "A_splits",
+     "id": "phase_runin",
+     "label": "Run-in phase, both arms",
+     "p": 0.0892,
+     "p_bh": 0.1682
+    },
+    {
+     "block": "A_splits",
+     "id": "phase_rand_cgm_only",
+     "label": "Randomised phase, CGM-only arm",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "phase_rand_cgm_bgm",
+     "label": "Randomised phase, CGM+BGM arm (the check set)",
+     "p": 0.6505,
+     "p_bh": 0.7532
+    },
+    {
+     "block": "A_splits",
+     "id": "cal_low",
+     "label": "Calibration pairs, average below 70 (other pair source)",
+     "p": 0.0001,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "A_splits",
+     "id": "low_by_ref",
+     "label": "Low by fingerstick (fingerstick below 70)",
+     "p": 0.0015,
+     "p_bh": 0.0048
+    },
+    {
+     "block": "A_splits",
+     "id": "low_by_cgm",
+     "label": "Low by sensor (CGM below 70)",
+     "p": 0.0176,
+     "p_bh": 0.0429
+    },
+    {
+     "block": "A_splits",
+     "id": "mid",
+     "label": "Mid range: average 70-180",
+     "p": 0.3037,
+     "p_bh": 0.4454
+    },
+    {
+     "block": "A_splits",
+     "id": "high",
+     "label": "High range: average above 180",
+     "p": 0.002,
+     "p_bh": 0.0059
+    },
+    {
+     "block": "A_splits",
+     "id": "all",
+     "label": "All verified pairs",
+     "p": 0.9667,
+     "p_bh": 0.97
+    },
+    {
+     "block": "A_splits",
+     "id": "sex_x_arm",
+     "label": "Sex x arm interaction on low-range bias (OLS, HC3)",
+     "p": 0.0201,
+     "p_bh": 0.0473
+    },
+    {
+     "block": "B_profile",
+     "id": "pct_below_70",
+     "label": "% of CGM time below 70 mg/dL",
+     "p": 0.8411,
+     "p_bh": 0.8961
+    },
+    {
+     "block": "B_profile",
+     "id": "episodes_per_day",
+     "label": "CGM low episodes per day (3+ readings below 70)",
+     "p": 0.5744,
+     "p_bh": 0.692
+    },
+    {
+     "block": "B_profile",
+     "id": "episode_nadir",
+     "label": "Mean lowest CGM value of the episodes (mg/dL)",
+     "p": 0.0534,
+     "p_bh": 0.1142
+    },
+    {
+     "block": "B_profile",
+     "id": "episode_minutes",
+     "label": "Mean episode length (min)",
+     "p": 0.97,
+     "p_bh": 0.97
+    },
+    {
+     "block": "B_profile",
+     "id": "episode_pct_lt54",
+     "label": "% of episodes reaching below 54",
+     "p": 0.0977,
+     "p_bh": 0.1758
+    },
+    {
+     "block": "B_profile",
+     "id": "episode_pct_night",
+     "label": "% of episodes starting at night (00-06)",
+     "p": 0.1222,
+     "p_bh": 0.2017
+    },
+    {
+     "block": "B_profile",
+     "id": "episode_slope",
+     "label": "Mean CGM slope in the 15 min before the episode (mg/dL/min)",
+     "p": 0.3262,
+     "p_bh": 0.4581
+    },
+    {
+     "block": "B_profile",
+     "id": "episode_pct_fast",
+     "label": "% of episodes entered fast (slope < -1)",
+     "p": 0.467,
+     "p_bh": 0.6164
+    },
+    {
+     "block": "B_profile",
+     "id": "low_n",
+     "label": "Number of low pairs (average below 70)",
+     "p": 0.2461,
+     "p_bh": 0.3777
+    },
+    {
+     "block": "B_profile",
+     "id": "low_ref_mean",
+     "label": "Mean fingerstick of the low pairs (mg/dL)",
+     "p": 0.0666,
+     "p_bh": 0.1293
+    },
+    {
+     "block": "B_profile",
+     "id": "low_pct_ref_lt54",
+     "label": "% of low pairs with fingerstick below 54",
+     "p": 0.5106,
+     "p_bh": 0.6608
+    },
+    {
+     "block": "B_profile",
+     "id": "low_pct_night",
+     "label": "% of low pairs at night",
+     "p": 0.102,
+     "p_bh": 0.1771
+    },
+    {
+     "block": "B_profile",
+     "id": "low_roc_mean",
+     "label": "Mean ROC at the low pairs (mg/dL/min)",
+     "p": 0.5438,
+     "p_bh": 0.6902
+    },
+    {
+     "block": "B_profile",
+     "id": "low_pct_falling",
+     "label": "% of low pairs with glucose falling",
+     "p": 0.5767,
+     "p_bh": 0.692
+    },
+    {
+     "block": "B_profile",
+     "id": "low_pct_wear1",
+     "label": "% of low pairs on wear day 1",
+     "p": 0.8553,
+     "p_bh": 0.8961
+    },
+    {
+     "block": "B_profile",
+     "id": "low_pct_clipped",
+     "label": "% of low pairs with the CGM at its 39 mg/dL floor",
+     "p": 0.0537,
+     "p_bh": 0.1142
+    },
+    {
+     "block": "B_matching",
+     "id": "pooled",
+     "label": "Pooled low pairs, no matching (mixed model, male only)",
+     "p": 0.0003,
+     "p_bh": 0.0012
+    },
+    {
+     "block": "B_matching",
+     "id": "matched_avg_roc",
+     "label": "Matched on glucose bin (5 mg/dL of the average) and trend",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "B_matching",
+     "id": "matched_full",
+     "label": "Matched on glucose bin and trend, plus night, wear day 1 and arm",
+     "p": 0.0002,
+     "p_bh": 0.0008
+    },
+    {
+     "block": "B_matching",
+     "id": "matched_ref_roc",
+     "label": "Sensitivity: matched on fingerstick bin (5 mg/dL) and trend",
+     "p": 0.0004,
+     "p_bh": 0.0015
+    },
+    {
+     "block": "C_adjusted",
+     "id": "male_only",
+     "label": "Low-range bias by sex, Sex alone",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "weight",
+     "label": "Low-range bias by sex, + weight",
+     "p": 0.002,
+     "p_bh": 0.0059
+    },
+    {
+     "block": "C_adjusted",
+     "id": "bmi",
+     "label": "Low-range bias by sex, + BMI",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "height",
+     "label": "Low-range bias by sex, + height",
+     "p": 0.0006,
+     "p_bh": 0.0022
+    },
+    {
+     "block": "C_adjusted",
+     "id": "hba1c",
+     "label": "Low-range bias by sex, + HbA1c",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "age",
+     "label": "Low-range bias by sex, + age",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "tdd_per_kg",
+     "label": "Low-range bias by sex, + insulin dose per kg (TDD / weight)",
+     "p": 0.0,
+     "p_bh": 0.0003
+    },
+    {
+     "block": "C_adjusted",
+     "id": "all_body",
+     "label": "Low-range bias by sex, + weight, BMI, height, HbA1c, age, dose per kg",
+     "p": 0.0112,
+     "p_bh": 0.0283
+    },
+    {
+     "block": "C_adjusted",
+     "id": "all_body_glucose",
+     "label": "Low-range bias by sex, + the six above + CV + % time below 70",
+     "p": 0.0096,
+     "p_bh": 0.0253
+    },
+    {
+     "block": "C_within_sex",
+     "id": "weight_kg_F",
+     "label": "weight vs low-range bias, within women",
+     "p": 0.7306,
+     "p_bh": 0.8173
+    },
+    {
+     "block": "C_within_sex",
+     "id": "weight_kg_M",
+     "label": "weight vs low-range bias, within men",
+     "p": 0.2193,
+     "p_bh": 0.3446
+    },
+    {
+     "block": "C_within_sex",
+     "id": "bmi_F",
+     "label": "BMI vs low-range bias, within women",
+     "p": 0.9533,
+     "p_bh": 0.97
+    },
+    {
+     "block": "C_within_sex",
+     "id": "bmi_M",
+     "label": "BMI vs low-range bias, within men",
+     "p": 0.3196,
+     "p_bh": 0.4581
+    },
+    {
+     "block": "C_within_sex",
+     "id": "height_cm_F",
+     "label": "height vs low-range bias, within women",
+     "p": 0.7691,
+     "p_bh": 0.846
+    },
+    {
+     "block": "C_within_sex",
+     "id": "height_cm_M",
+     "label": "height vs low-range bias, within men",
+     "p": 0.397,
+     "p_bh": 0.5459
+    },
+    {
+     "block": "C_within_sex",
+     "id": "hba1c_screening_F",
+     "label": "HbA1c vs low-range bias, within women",
+     "p": 0.674,
+     "p_bh": 0.767
+    },
+    {
+     "block": "C_within_sex",
+     "id": "hba1c_screening_M",
+     "label": "HbA1c vs low-range bias, within men",
+     "p": 0.2057,
+     "p_bh": 0.3311
+    },
+    {
+     "block": "C_within_sex",
+     "id": "age_F",
+     "label": "age vs low-range bias, within women",
+     "p": 0.0986,
+     "p_bh": 0.1758
+    },
+    {
+     "block": "C_within_sex",
+     "id": "age_M",
+     "label": "age vs low-range bias, within men",
+     "p": 0.1056,
+     "p_bh": 0.1787
+    },
+    {
+     "block": "C_within_sex",
+     "id": "tdd_per_kg_F",
+     "label": "insulin dose per kg vs low-range bias, within women",
+     "p": 0.8481,
+     "p_bh": 0.8961
+    },
+    {
+     "block": "C_within_sex",
+     "id": "tdd_per_kg_M",
+     "label": "insulin dose per kg vs low-range bias, within men",
+     "p": 0.6112,
+     "p_bh": 0.7204
+    },
+    {
+     "block": "F_decision",
+     "id": "near_false_low",
+     "label": "Pairs with fingerstick 70-79: % with CGM below 70 (false low near the line)",
+     "p": 0.0013,
+     "p_bh": 0.0041
+    },
+    {
+     "block": "F_decision",
+     "id": "near_missed_low",
+     "label": "Pairs with fingerstick 60-69: % with CGM 70 or more (missed low near the line)",
+     "p": 0.0033,
+     "p_bh": 0.009
+    }
+   ]
+  },
+  "shanghai": {
+   "n_tests": 3,
+   "n_raw_p_below_0_05": 0,
+   "expected_by_chance": 0.15,
+   "n_pass_bh": 0,
+   "smallest_p_bh": 0.9416,
+   "passed": [],
+   "tests": [
+    {
+     "block": "D_shanghai",
+     "id": "sh_low_avg",
+     "label": "Shanghai: pairs with average below 70, pooled bias by sex",
+     "p": 0.3874,
+     "p_bh": 0.9416
+    },
+    {
+     "block": "D_shanghai",
+     "id": "sh_low_ref",
+     "label": "Shanghai: pairs with fingerstick below 70",
+     "p": 0.9416,
+     "p_bh": 0.9416
+    },
+    {
+     "block": "D_shanghai",
+     "id": "sh_mid",
+     "label": "Shanghai: pairs with average 70-180 (context)",
+     "p": 0.8715,
+     "p_bh": 0.9416
+    }
+   ]
+  },
+  "maude": {
+   "n_tests": 5,
+   "n_raw_p_below_0_05": 4,
+   "expected_by_chance": 0.25,
+   "n_pass_bh": 4,
+   "smallest_p_bh": 0.001,
+   "passed": [
+    {
+     "block": "E_maude",
+     "id": "m_reads_low_share",
+     "label": "Share of pairs where the sensor read below the meter",
+     "p": 0.0002,
+     "p_bh": 0.001
+    },
+    {
+     "block": "E_maude",
+     "id": "m_reads_low_depth",
+     "label": "Depth of reads-low pairs: median error, % of meter",
+     "p": 0.0023,
+     "p_bh": 0.0058
+    },
+    {
+     "block": "E_maude",
+     "id": "m_hidden_low",
+     "label": "Hidden low: meter below 70 and sensor 70 or more",
+     "p": 0.0221,
+     "p_bh": 0.0368
+    },
+    {
+     "block": "E_maude",
+     "id": "m_meter_lt70",
+     "label": "Meter below 70 (any sensor value)",
+     "p": 0.032,
+     "p_bh": 0.04
+    }
+   ],
+   "tests": [
+    {
+     "block": "E_maude",
+     "id": "m_reads_low_share",
+     "label": "Share of pairs where the sensor read below the meter",
+     "p": 0.0002,
+     "p_bh": 0.001
+    },
+    {
+     "block": "E_maude",
+     "id": "m_reads_low_depth",
+     "label": "Depth of reads-low pairs: median error, % of meter",
+     "p": 0.0023,
+     "p_bh": 0.0058
+    },
+    {
+     "block": "E_maude",
+     "id": "m_hidden_low",
+     "label": "Hidden low: meter below 70 and sensor 70 or more",
+     "p": 0.0221,
+     "p_bh": 0.0368
+    },
+    {
+     "block": "E_maude",
+     "id": "m_meter_lt70",
+     "label": "Meter below 70 (any sensor value)",
+     "p": 0.032,
+     "p_bh": 0.04
+    },
+    {
+     "block": "E_maude",
+     "id": "m_false_low",
+     "label": "False low: sensor below 70 and meter 70 or more",
+     "p": 0.9163,
+     "p_bh": 0.9163
+    }
+   ]
+  }
+ }
+}

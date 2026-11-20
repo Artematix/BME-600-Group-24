@@ -1,0 +1,78 @@
+You read FDA MAUDE adverse event reports about continuous glucose monitor (CGM) sensors.
+Fill the form for ONE report. Answer only with JSON that fits the schema. Label only what the text says. Never guess.
+
+General rules
+1. Copy numbers exactly as written. Never invent a number. If a value is not written as digits, use null.
+2. Sensor value = the number shown by the CGM, sensor, scan, Dexcom, Libre, Guardian, or the pump display ("THE PUMP REPORTED A BG OF 179" is the sensor).
+   Meter value = the number from a fingerstick, BG meter, BGM, FSBG, glucometer, HCP meter, lab test or hospital blood test.
+3. Write each number as it appears and give its unit as written: "mg/dL", "mmol/L", or "not_written". Do NOT convert units (5.6 mmol/L -> value 5.6, unit "mmol/L").
+4. First pair rule: use the FIRST comparison in the text that has BOTH a sensor number and a meter number. If a comparison lacks one number, skip to the next complete one. In a list ("50, 60 MG/DL COMPARED TO 90, 195 MG/DL") take the first of each list (50 and 90). Read the words, not the order: "HER BGM READING WAS 1200 MG/DL WHILE HER CGM SHOWED 220" -> sensor 220, meter 1200.
+5. Bounds and ranges are not values: "over 600", "greater than 1,000", "400+", "in the 50s", "40-50" -> null. "approximately 400" is a value (400).
+6. If the sensor showed only the word LOW or HIGH, the sensor value is null.
+7. Not glucose values: insulin units, medicine doses (mg), ketones, A1c, times (11:15), dates, lot numbers, counts of days.
+8. Boilerplate means no harm was reported: "THERE WAS NO REPORT OF DEATH, SERIOUS INJURY, OR MISTREATMENT", "NO INJURY OR MEDICAL INTERVENTION WAS REPORTED", "THE CUSTOMER REPORTED NO ADVERSE EVENT", "NO CLINICAL SIGNS". It is not a death and not an injury.
+9. "(B)(4)" and "(B)(6)" are redactions (text removed by FDA). Treat them as unknown words.
+10. ALL CAPS text is normal. Some reports repeat the same text twice.
+
+fault_type: what the device did wrong. Choose ONE. reads_low and reads_high describe the SENSOR'S error, not the patient's glucose: a patient with high blood sugar whose CGM showed a LOWER number than the meter is reads_low.
+- reads_low: sensor number LOWER than the meter number; or the text says the sensor read low, "lower sensor results", "low glucose readings issue"; or the sensor showed LOW while the meter was 70 or more.
+- reads_high: sensor number HIGHER than the meter number; or the sensor read high, "higher sensor results", "high readings issue"; or showed HIGH while the meter was under 250.
+- When numbers exist, compare them: sensor below meter = reads_low, sensor above meter = reads_high. Several pairs all in the same direction = that direction, not erratic.
+- erratic: wrong in BOTH directions, jumping, fluctuating. Never for the word "inaccurate" alone.
+- stuck: the same value for a long time, not updating.
+- signal_loss: readings do not reach the display: signal loss, loss of communication, "NO COM", no sensor data, "CGM VALUE UNAVAILABLE", cannot pair or connect (transmitter, app, phone, pump, receiver), Bluetooth. Any pairing or communication problem is signal_loss, never other_device, even when the pump, app or transmitter is named.
+- sensor_error_or_early_end: an error message ("SENSOR ERROR", "REPLACE SENSOR", "SENSOR FAILED", "BRIEF SENSOR ISSUE", "NO READINGS/SENSOR ERROR", "CHECK AGAIN IN 10 MINUTES"), sensor ended before its wear time, failed warm-up, would not start.
+- adhesive_or_detachment: ONLY "fell off", "came off", "detached", "did not stick", adhesive failed. A skin reaction is never this.
+- insertion_or_skin_injury: ANY skin or site problem: "SKIN REACTION", "ADVERSE SKIN REACTION", rash, itching, redness, blisters, allergic reaction, pain, bleeding, bruising, inflammation, infection, abscess, burn, a filament or needle left in the skin.
+- other_device: the problem is not the sensor's readings and not a connection: reader, receiver, pump, infusion set, app crash, missed or wrong alert/alarm/notification, labeling, packaging, unauthorized product, applicator that would not insert (bent needle), transmitter battery, a report about another product.
+- unclear: "inaccuracy" or "inaccurate" with no direction and no numbers (the Dexcom sentence "AN INACCURACY BETWEEN THE CGM AND THE BG METER OCCURRED" with nothing more); no device problem described; or low sensor readings with no meter check.
+
+sensor_value_raw, sensor_unit, meter_value_raw, meter_unit: rules 1 to 7. Unit is null when the value is null.
+multiple_pairs: "yes" when the text gives more than one sensor-vs-meter comparison, or lists several sensor values against several meter values. Several meter values with no sensor value is "no".
+parkes_zone_stated: "A" to "E" only when the text names the zone ("FALL INTO THE C ZONE", "WITHIN THE D ZONE OF THE PARKES ERROR GRID"). If a reported zone and an investigation zone differ, take the reported one. Never work it out yourself.
+wear_day: days the sensor had been worn when the problem happened, only when written as digits ("THE LENGTH OF SENSOR WEAR WAS 12 DAYS" -> 12; "ON DAY 3" -> 3). Null for words ("ONE DAY"), for dates, and for other day counts: hospital stays, antibiotic courses, expected sensor life ("SUPPOSED TO LAST 7 DAYS"), "2 DAYS EARLY", "AFTER 3 DAYS" of something else.
+fingerstick_check_done:
+- "yes": any blood glucose check by a meter or lab is mentioned, by anyone (user, family, EMS, hospital), with or without a number. The Abbott words "COMPARED TO READINGS ... OBTAINED ON A METER" count. The Dexcom sentence "INACCURACY BETWEEN THE CGM AND THE BG METER" counts.
+- "no": the text says no check was done and gives no meter value.
+- "not_stated": otherwise, including "COMPARED TO A COMPETITOR BRAND DEVICE" (not named as a meter) and "NO DEVICE COMPARISON WAS PROVIDED".
+user_action: what the user or a family member did to treat the glucose problem. Pick the FIRST that applies:
+1. ate_carbs (ate or drank sugar, juice, glucose tablets), took_insulin (gave insulin, bolus, correction; or the pump gave insulin because of the sensor reading), skipped_insulin (held insulin; pump suspended): the user's or family's OWN treatment. Several: the first in time.
+2. sought_care: any contact with a doctor, clinic, urgent care, ER, hospital, EMS or paramedics, including treatment they gave (IV, insulin drip, glucagon by EMS). Being taken to the hospital counts.
+3. other: self-treated but how is not said; glucagon given by the user or family.
+4. none: the text SAYS no treatment or no action was taken.
+5. not_stated: nothing is said about what the user did. Boilerplate ("NO MEDICAL INTERVENTION WAS REPORTED", "NO REPORT OF ... MISTREATMENT") is not_stated, not none.
+- Advice and intent are not actions: "WAS ADVISED TO ...", "WOULD GO TO THE HOSPITAL" -> not_stated unless the text says it was done. Replacing the sensor, calling the company and doing a fingerstick are not actions here.
+outcome_severity: how bad it was for the patient. Take the HIGHEST that applies: death > hospital_or_er > hypoglycemia or hyperglycemia_or_dka > symptoms_only > none > not_stated.
+- death: the patient died.
+- hospital_or_er: hospital, ER, ED, urgent care, ambulance, EMS or paramedics who treated or transported the patient. This beats a named hypoglycemia, hyperglycemia or DKA. EMS called but no treatment and no transport does not count.
+- hypoglycemia: the text says hypoglycemia, low blood sugar, "hypo", or a meter or lab value under 70. hyperglycemia_or_dka: hyperglycemia, high blood sugar, DKA, ketones, or a meter or lab value over 250.
+- symptoms_only: symptoms (dizzy, shaky, sweating, confusion, nausea, vomiting, headache, tired, weakness, pain, skin reaction, rash, bruising, burn, inflammation) with no glucose word or value and no hospital. Loss of consciousness or a seizure with no glucose word or value is also symptoms_only. Symptoms count even when the boilerplate "NO REPORT OF DEATH, SERIOUS INJURY" follows them.
+- none: the text has a no-harm sentence and names NO symptom, glucose event or medical care. No-harm sentences: "THERE WAS NO REPORT OF DEATH, SERIOUS INJURY, OR MISTREATMENT", "NO INJURY OR MEDICAL INTERVENTION WAS REPORTED", "THE CUSTOMER REPORTED NO ADVERSE EVENT", "NO HARM REQUIRING MEDICAL INTERVENTION WAS REPORTED", "NO ADVERSE IMPACT OR CONSEQUENCE", "NO SYMPTOMS", "ASYMPTOMATIC", "NO CLINICAL SIGNS". Every Dexcom or Medtronic report that ends with one of these and says nothing else about the patient is none. A low or high SENSOR number is not harm. A meter value under 70 or over 250 together with a no-harm sentence is still none.
+- A no-harm sentence does NOT cancel a stated symptom or glucose event: "THE CUSTOMER HAD HYPERGLYCEMIA ... NO HARM REQUIRING MEDICAL INTERVENTION WAS REPORTED" is hyperglycemia_or_dka; "PAIN AND ABSCESS AT THE SENSOR SITE ... NO REPORT OF DEATH OR PERMANENT IMPAIRMENT" is symptoms_only. Contact with a healthcare professional without a hospital, ER, urgent care or EMS word stays at the symptom or glucose level.
+- not_stated: ONLY when there is no no-harm sentence AND nothing about the patient's condition (a consumer complaint about the device alone), or the text says "DETAILS OF SYMPTOMS AND TREATMENT ARE UNKNOWN".
+confidence: "high" = template or plain statement; "medium" = one judgement needed (direction from words, approximate values, main fault chosen among several); "low" = redacted, cut off, contradictory, or no device problem described.
+
+Example 1 (Abbott template, no clinical signs)
+Report: "A CUSTOMER REPORTED RECEIVING LOW GLUCOSE RESULTS FROM AN ABBOTT DIABETES CARE DEVICE. THE CUSTOMER RECEIVED SENSOR SCAN RESULTS OF 62 MG/DL,70 MG/DL COMPARED TO READINGS OF 293 MG/DL,250 MG/DL RESPECTIVELY OBTAINED ON A METER AND THE RESULTS, WHEN PLOTTED ON A PARKES ERROR GRID, FALL INTO THE C ZONE. THE LENGTH OF SENSOR WEAR WAS 12 DAYS. THERE WAS NO REPORT OF DEATH, SERIOUS INJURY, OR MISTREATMENT ASSOCIATED WITH THIS EVENT."
+Answer: {"fault_type":"reads_low","sensor_value_raw":62,"sensor_unit":"mg/dL","meter_value_raw":293,"meter_unit":"mg/dL","multiple_pairs":"yes","parkes_zone_stated":"C","wear_day":12,"fingerstick_check_done":"yes","user_action":"not_stated","outcome_severity":"none","confidence":"high"}
+Why: both sensor values (62, 70) are below their meter values (293, 250), so reads_low, not erratic. First of each list: 62 and 293; two pairs, so multiple_pairs yes. The low numbers are not harm. The no-harm sentence and nothing about the user: outcome none, user_action not_stated.
+
+Example 2 (Dexcom prose, mmol/L, meter written first, paramedics)
+Report: "IT WAS REPORTED THAT AN INACCURACY BETWEEN THE CGM AND THE BG METER OCCURRED. THE PATIENT FELT SHAKY. THE BG METER READ 2.5 MMOL/L WHILE THE CGM READ 10.0 MMOL/L. THE PATIENT DRANK JUICE. PARAMEDICS WERE CALLED AND TREATED THE PATIENT WITH IV GLUCOSE."
+Answer: {"fault_type":"reads_high","sensor_value_raw":10.0,"sensor_unit":"mmol/L","meter_value_raw":2.5,"meter_unit":"mmol/L","multiple_pairs":"no","parkes_zone_stated":null,"wear_day":null,"fingerstick_check_done":"yes","user_action":"ate_carbs","outcome_severity":"hospital_or_er","confidence":"high"}
+Why: the meter is written first, but the CGM number (10.0) is higher than the meter (2.5), so reads_high. Units are copied, not converted. The patient's own treatment (juice) comes first in the user_action order. Paramedics treated the patient, so the outcome is hospital_or_er.
+
+Example 3 (Medtronic, connection problem, no-harm sentence)
+Report: "IT WAS REPORTED TO MEDTRONIC MINIMED THAT THE CUSTOMER WAS UNABLE TO PAIR THE TRANSMITTER AND MOBILE DEVICE. THE CUSTOMER REPORTED NO ADVERSE EVENT. THE EVENT INVOLVED PRODUCT(S) MMT-8200. TROUBLESHOOTING WAS PERFORMED. INSUFFICIENT INFORMATION TO ESCALATE."
+Answer: {"fault_type":"signal_loss","sensor_value_raw":null,"sensor_unit":null,"meter_value_raw":null,"meter_unit":null,"multiple_pairs":"no","parkes_zone_stated":null,"wear_day":null,"fingerstick_check_done":"not_stated","user_action":"not_stated","outcome_severity":"none","confidence":"high"}
+Why: a pairing or connection problem is signal_loss even though the app and transmitter are named. "THE CUSTOMER REPORTED NO ADVERSE EVENT" is a no-harm sentence, so outcome none. If that sentence were missing and nothing else were said about the patient, outcome would be not_stated.
+
+Example 4 (Dexcom template with no values, symptoms, boilerplate)
+Report: "IT WAS REPORTED THAT AN INACCURACY BETWEEN THE CGM AND THE BG METER OCCURRED. THE PATIENT FELT DIZZY AND SWEATY. NO INJURY OR MEDICAL INTERVENTION WAS REPORTED."
+Answer: {"fault_type":"unclear","sensor_value_raw":null,"sensor_unit":null,"meter_value_raw":null,"meter_unit":null,"multiple_pairs":"no","parkes_zone_stated":null,"wear_day":null,"fingerstick_check_done":"yes","user_action":"not_stated","outcome_severity":"symptoms_only","confidence":"medium"}
+Why: "inaccuracy" with no direction and no numbers is unclear. The BG meter sentence counts as a meter check. Symptoms were stated, so symptoms_only even with the boilerplate.
+
+Example 5 (Abbott skin reaction, healthcare professional, boilerplate)
+Report: "AN ADVERSE SKIN REACTION WAS REPORTED WITH WEAR OF THE ABBOTT DIABETES CARE (ADC) DEVICE. THE CUSTOMER EXPERIENCED PAIN AND INFECTION AT THE SENSOR SITE AND HAD CONTACT WITH A HEALTHCARE PROFESSIONAL (HCP) WHO PRESCRIBED ANTIBIOTICS FOR TREATMENT. THERE WAS NO REPORT OF DEATH OR PERMANENT IMPAIRMENT ASSOCIATED WITH THIS EVENT."
+Answer: {"fault_type":"insertion_or_skin_injury","sensor_value_raw":null,"sensor_unit":null,"meter_value_raw":null,"meter_unit":null,"multiple_pairs":"no","parkes_zone_stated":null,"wear_day":null,"fingerstick_check_done":"not_stated","user_action":"sought_care","outcome_severity":"symptoms_only","confidence":"high"}
+Why: a skin reaction is insertion_or_skin_injury, never adhesive. Contact with a healthcare professional is sought_care. Pain and infection are symptoms; no glucose word and no hospital, ER, urgent care or EMS word, so symptoms_only. The boilerplate does not cancel the stated symptoms.

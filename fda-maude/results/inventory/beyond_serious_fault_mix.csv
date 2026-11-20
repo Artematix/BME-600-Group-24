@@ -1,0 +1,11 @@
+group,n_reports,weighted_reports,wrong_reading_pct,reads_low_pct,reads_high_pct,signal_loss_pct,sensor_error_early_end_pct,unclear_pct,both_values_pct,pairs_n,err_pct_p10,err_pct_median,err_pct_p90,err_mgdl_median,sensor_below_meter_pct,beyond_20pct_pct,outcome_none_pct
+"Malfunction sample (weighted), all",6137,2922501,8.5,6.2,1.2,42.7,15.3,14.9,4.3,327,-79.7,-63.6,151.5,-106.0,73.1,99.0,97.7
+"Malfunction sample (weighted), Abbott",843,386438,58.1,43.7,7.1,0.1,10.2,29.1,27.7,255,-80.1,-65.0,160.7,-110.0,73.3,100.0,100.0
+"Malfunction sample (weighted), Dexcom",4574,2405435,0.8,0.3,0.2,47.9,16.8,13.3,0.6,32,-73.2,-44.8,97.5,-61.0,68.5,92.4,97.3
+"Malfunction sample (weighted), Medtronic",407,120676,2.9,2.4,0.3,78.1,1.8,2.0,2.4,24,-75.0,-66.7,-34.4,-144.0,91.6,100.0,98.2
+"Malfunction sample (weighted), Other",313,9953,2.9,0.7,1.0,3.2,17.8,20.3,2.3,16,-66.7,-30.4,125.5,-69.0,64.3,100.0,93.7
+"Serious (death + injury), all",118462,118462,28.4,16.0,11.6,8.0,18.1,5.0,15.3,18118,-87.2,-0.3,384.6,-0.4,50.0,96.2,10.7
+"Serious, Abbott",74657,74657,27.7,15.9,11.4,9.5,26.1,1.8,10.1,7556,-88.7,-46.7,410.0,-65.0,57.6,97.2,11.1
+"Serious, Dexcom",32045,32045,37.0,20.2,15.0,6.0,5.1,11.5,29.7,9518,-85.7,42.1,380.0,27.0,43.7,96.0,8.4
+"Serious, Medtronic",8660,8660,5.4,2.6,2.6,3.7,1.6,5.9,5.8,500,-83.7,-14.7,287.5,-25.0,51.4,89.8,7.2
+"Serious, Other",3100,3100,20.8,11.6,7.5,3.7,3.9,11.7,17.5,544,-69.7,-18.8,225.0,-20.0,53.5,92.3,33.3

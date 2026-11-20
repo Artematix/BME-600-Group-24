@@ -1,0 +1,31 @@
+brand,measure,n_malfunction,n_serious,median_malfunction,median_serious,cliffs_delta_malf_minus_serious,effect,p_mann_whitney
+All,absolute error %,191112,18237,72.4,84.8,-0.17,small,0.0
+All,signed error %,191112,18237,-65.7,-7.0,-0.231,small,0.0
+All,"reads low (share, points: malfunction minus serious)",191112,18237,74.7,50.4,24.4,CI 23.6 to 25.1,0.0
+All,"meter under 70 (hidden low) (share, points: malfunction minus serious)",191112,18237,4.7,37.5,-32.9,CI -33.6 to -32.1,0.0
+All,"absolute error 40 % or more (share, points: malfunction minus serious)",191112,18237,95.8,88.1,7.8,CI 7.3 to 8.2,0.0
+All,"false low (sensor under 70, meter not) (share, points: malfunction minus serious)",191112,18237,57.6,24.3,33.3,CI 32.7 to 34.0,0.0
+Abbott,absolute error %,162072,7466,73.7,85.6,-0.195,small,3.7489581263895715e-179
+Abbott,signed error %,162072,7466,-66.7,-48.8,-0.093,negligible,2.2313015628462623e-42
+Abbott,"reads low (share, points: malfunction minus serious)",162072,7466,73.9,58.3,15.6,CI 14.4 to 16.7,6.357044822349008e-194
+Abbott,"meter under 70 (hidden low) (share, points: malfunction minus serious)",162072,7466,4.4,28.1,-23.6,CI -24.7 to -22.6,0.0
+Abbott,"absolute error 40 % or more (share, points: malfunction minus serious)",162072,7466,98.2,92.5,5.7,CI 5.1 to 6.3,2.4463196062815205e-256
+Abbott,"false low (sensor under 70, meter not) (share, points: malfunction minus serious)",162072,7466,58.5,35.6,22.9,CI 21.8 to 24.0,0.0
+Dexcom,absolute error %,25273,9818,58.8,84.6,-0.393,medium,0.0
+Dexcom,signed error %,25273,9818,-52.2,40.0,-0.335,medium,0.0
+Dexcom,"reads low (share, points: malfunction minus serious)",25273,9818,79.8,44.1,35.6,CI 34.5 to 36.7,0.0
+Dexcom,"meter under 70 (hidden low) (share, points: malfunction minus serious)",25273,9818,5.2,44.3,-39.1,CI -40.1 to -38.1,0.0
+Dexcom,"absolute error 40 % or more (share, points: malfunction minus serious)",25273,9818,81.2,85.2,-4.0,CI -4.9 to -3.2,7.010179092325864e-19
+Dexcom,"false low (sensor under 70, meter not) (share, points: malfunction minus serious)",25273,9818,53.5,16.1,37.5,CI 36.5 to 38.4,0.0
+Medtronic,absolute error %,3651,397,67.7,85.0,-0.28,small,4.835318440189612e-20
+Medtronic,signed error %,3651,397,-59.8,13.3,-0.292,small,9.97290589178981e-22
+Medtronic,"reads low (share, points: malfunction minus serious)",3651,397,77.9,49.4,28.5,CI 23.4 to 33.6,2.0028541277165488e-35
+Medtronic,"meter under 70 (hidden low) (share, points: malfunction minus serious)",3651,397,9.5,43.8,-34.3,CI -39.3 to -29.4,3.886110496118134e-83
+Medtronic,"absolute error 40 % or more (share, points: malfunction minus serious)",3651,397,92.8,88.7,4.1,CI 0.9 to 7.4,0.004386239439239347
+Medtronic,"false low (sensor under 70, meter not) (share, points: malfunction minus serious)",3651,397,48.0,16.1,31.8,CI 27.9 to 35.8,1.6971818969316677e-33
+Senseonics,absolute error %,74,552,56.8,66.3,-0.139,negligible,0.05160964408250575
+Senseonics,signed error %,74,552,-16.1,-22.1,0.029,negligible,0.6870750315177734
+Senseonics,"reads low (share, points: malfunction minus serious)",74,552,51.4,54.7,-3.4,CI -15.5 to 8.8,0.6741843978731801
+Senseonics,"meter under 70 (hidden low) (share, points: malfunction minus serious)",74,552,20.3,40.0,-19.8,CI -29.8 to -9.7,0.0015408566791851252
+Senseonics,"absolute error 40 % or more (share, points: malfunction minus serious)",74,552,74.3,79.5,-5.2,CI -15.7 to 5.3,0.37944488981752056
+Senseonics,"false low (sensor under 70, meter not) (share, points: malfunction minus serious)",74,552,20.3,23.7,-3.5,CI -13.3 to 6.4,0.6066484616541998

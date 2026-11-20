@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-10-27T03:18:29",
+  "run_tag": "p8_ownserver",
+  "model": "qwen2.5:7b-instruct",
+  "model_info": {
+    "model": "qwen2.5:7b-instruct",
+    "host": "http://127.0.0.1:11434",
+    "ollama_version": "0.34.3",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M"
+    },
+    "modified_at": "2026-10-26 23:53:15.836549-06:00",
+    "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+    "size_bytes": 4683087332
+  },
+  "prompt_version": "v1",
+  "system_sha256": "e64c50faf7d93fab",
+  "schema_sha256": "3f30f22acfd238d9",
+  "settings": {
+    "parallel": 8,
+    "num_ctx": 4096,
+    "num_predict": 350,
+    "temperature": 0.0,
+    "seed": 42,
+    "max_text_chars": 6000,
+    "input": "fda-maude/data/sample_narratives.jsonl",
+    "output": "fda-maude/results/text/llm_sample_p8.jsonl"
+  },
+  "n_requested": 287,
+  "n_ok": 287,
+  "n_errors": 0,
+  "warmup_s": 2.8,
+  "wall_s": 58.8,
+  "reports_per_min": 292.8,
+  "latency_mean_s": 1.61,
+  "latency_p50_s": 1.573,
+  "latency_p90_s": 1.864,
+  "prompt_tokens_total": 497484,
+  "output_tokens_total": 19945,
+  "output_tokens_mean": 69.5,
+  "output_tok_per_s_aggregate": 339.2,
+  "output_tok_per_s_per_request": 48.8,
+  "guard_drop_reports": 5,
+  "guard_drop_rate": 0.017,
+  "guard_drops_by_field": {
+    "sensor_value_mgdl": 3,
+    "meter_value_mgdl": 4
+  },
+  "schema_fixed_reports": 0,
+  "retries": 0,
+  "cmp_sensor_value_mgdl": {
+    "agree": 65,
+    "regex_only": 13,
+    "both_null": 205,
+    "disagree": 4
+  },
+  "cmp_meter_value_mgdl": {
+    "agree": 82,
+    "regex_only": 17,
+    "both_null": 183,
+    "disagree": 4,
+    "llm_only": 1
+  },
+  "cmp_parkes_zone_stated": {
+    "agree": 84,
+    "both_null": 203
+  },
+  "cmp_wear_day": {
+    "agree": 52,
+    "both_null": 231,
+    "llm_only": 4
+  },
+  "role_swap_reports": 0,
+  "fault_type_counts": {
+    "reads_low": 55,
+    "reads_high": 31,
+    "erratic": 24,
+    "insertion_or_skin_injury": 13,
+    "signal_loss": 61,
+    "adhesive_or_detachment": 15,
+    "unclear": 41,
+    "sensor_error_or_early_end": 17,
+    "other_device": 30
+  },
+  "outcome_severity_counts": {
+    "none": 189,
+    "hypoglycemia": 26,
+    "symptoms_only": 13,
+    "hyperglycemia_or_dka": 8,
+    "hospital_or_er": 46,
+    "death": 3,
+    "not_stated": 2
+  },
+  "user_action_counts": {
+    "not_stated": 159,
+    "ate_carbs": 42,
+    "none": 62,
+    "took_insulin": 10,
+    "skipped_insulin": 4,
+    "sought_care": 10
+  },
+  "confidence_counts": {
+    "high": 89,
+    "medium": 111,
+    "low": 87
+  }
+}

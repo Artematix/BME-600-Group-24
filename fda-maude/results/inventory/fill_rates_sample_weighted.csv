@@ -1,0 +1,96 @@
+table,column,n_reports,n_filled,fill_pct,n_unique_values,star_or_unknown_n,top_values,example,weighted_fill_pct
+"sample_local.parquet (malfunction, weighted)",mdr_report_key,6168,6168,100.0,6168,0,,54,100.0
+"sample_local.parquet (malfunction, weighted)",report_number,6168,6168,100.0,6168,0,,54,100.0
+"sample_local.parquet (malfunction, weighted)",date_received,6168,6168,100.0,2487,0,,19920320,100.0
+"sample_local.parquet (malfunction, weighted)",date_of_event,6168,6140,99.5,2956,0,,19920305,99.7
+"sample_local.parquet (malfunction, weighted)",event_type,6168,6168,100.0,1,0,"Malfunction (6,168)",Malfunction,100.0
+"sample_local.parquet (malfunction, weighted)",product_code,6168,6168,100.0,13,0,"QBJ (3,606) | MDS (730) | PQF (613) | PZE (314) | QLG (227) | QDK (162)",MDS,100.0
+"sample_local.parquet (malfunction, weighted)",brand_name,6168,6147,99.7,165,0,,DIASCAN,100.0
+"sample_local.parquet (malfunction, weighted)",generic_name,6168,6164,99.9,52,0,"CONTINUOUS GLUCOSE MONITOR (4,311) | FLASH GLUCOSE MONITORING SYSTEM (547) | CONTINUOUS GLUCOSE MONITORING SYSTEM (285) | MDS (238) | EVERSENSE CONTINUOUS GLUCOSE MONITOR SYSTEM (191) | SENSOR, GLUCOSE, INVASIVE (139)",GLUCOSE SENSOR,100.0
+"sample_local.parquet (malfunction, weighted)",manufacturer,6168,6165,100.0,24,0,"DEXCOM, INC. (4,535) | ABBOTT DIABETES CARE INC (659) | MEDTRONIC MINIMED (367) | SENSEONICS INC. (254) | ABBOTT DIABETES CARE LTD (155) | DEXCOM INC. (41)","HOME DIAGNOSTICS, INC.",100.0
+"sample_local.parquet (malfunction, weighted)",model_number,6168,4787,77.6,214,2,,MMT-7102W,77.2
+"sample_local.parquet (malfunction, weighted)",lot_number,6168,4462,72.3,3341,0,,F133,75.1
+"sample_local.parquet (malfunction, weighted)",product_problems,6168,6162,99.9,182,0,,Disconnection,99.9
+"sample_local.parquet (malfunction, weighted)",patient_outcome,6168,83,1.3,7,0,Other (69) | Required Intervention (8) | Hospitalization (2) | Hospitalization; O (1) | Disability (1) | Congenital Anomaly (1),Other,0.7
+"sample_local.parquet (malfunction, weighted)",patient_problems,6168,6165,100.0,63,0,,"Foreign body, removal of",100.0
+"sample_local.parquet (malfunction, weighted)",patient_age,6168,4735,76.8,118,0,,75 YR,80.4
+"sample_local.parquet (malfunction, weighted)",patient_sex,6168,2909,47.2,3,0,"Male (1,435) | Female (1,430) | Prefer Not To Disclose (44)",Male,49.6
+"sample_local.parquet (malfunction, weighted)",patient_weight,6168,2282,37.0,289,0,,68,41.4
+"sample_local.parquet (malfunction, weighted)",patient_race,6168,8,0.1,1,0,White (8),White,0.1
+"sample_local.parquet (malfunction, weighted)",patient_ethnicity,6168,12,0.2,1,0,Non Hispanic (12),Non Hispanic,0.2
+"sample_local.parquet (malfunction, weighted)",report_source_code,6168,6168,100.0,3,0,"Manufacturer report (6,139) | Voluntary report (27) | User Facility report (2)",User Facility report,100.0
+"sample_local.parquet (malfunction, weighted)",reporter_country_code,6168,5615,91.0,64,0,"US (4,018) | GM (299) | CA (146) | DE (146) | FR (117) | IT (94)",US,91.7
+"sample_local.parquet (malfunction, weighted)",n_devices,6168,6168,100.0,6,0,"1 (6,149) | 2 (14) | 4 (2) | 12 (1) | 5 (1) | 3 (1)",1,100.0
+"sample_local.parquet (malfunction, weighted)",n_patients,6168,6168,100.0,2,0,"1 (6,167) | 0 (1)",1,100.0
+"sample_local.parquet (malfunction, weighted)",event_text,6168,6137,99.5,3374,0,,"ON MARCH 5, 1992 SUGAR LEVEL WAS TAKEN BY DIASCAN AND READ AT 370, LAB TEST TAKE",99.5
+"sample_local.parquet (malfunction, weighted)",mfr_narrative,6168,6076,98.5,1181,0,,THE MONITOR WAS RECEIVED WITH A BLANK DISPLAY AND CONSTANT TONE DUE TO A FAULTY ,98.8
+"sample_local.parquet (malfunction, weighted)",openfda_device_name,6168,6168,100.0,13,0,"Integrated Continuous Glucose Monitoring System, Factory Cal (3,606) | Sensor, Glucose, Invasive (730) | Sensor, Glucose, Invasive, Non-Adjunctive (613) | Sensor, Glucose, Invasive, Non-Adjunctive, Factory-Calibrate (314) | Integrated Continuous Glucose Monitoring System, Factory Cal (227) | Integrated Continuous Glucose Monitoring System For Non-Inte (162)","Sensor, Glucose, Invasive",100.0
+"sample_local.parquet (malfunction, weighted)",openfda_device_class,6168,6168,100.0,2,0,"2 (4,228) | 3 (1,940)",3,100.0
+"sample_local.parquet (malfunction, weighted)",openfda_regulation_number,6168,4228,68.5,2,0,"862.1355 (4,169) | 862.1357 (59)",862.1355,76.4
+"sample_local.parquet (malfunction, weighted)",patient_age_value,6168,4729,76.7,99,0,,75.0,80.4
+"sample_local.parquet (malfunction, weighted)",patient_age_unit,6168,4729,76.7,3,0,"YR (4,697) | MO (31) | DA (1)",YR,80.4
+"sample_local.parquet (malfunction, weighted)",patient_sequence_number,6168,6167,100.0,1,0,"1 (6,167)",1,100.0
+"sample_local.parquet (malfunction, weighted)",patient_treatment,6168,469,7.6,142,0,,UNOMEDICAL INFUSION SET,9.0
+"sample_local.parquet (malfunction, weighted)",all_product_codes,6168,6168,100.0,15,0,"QBJ (3,606) | MDS (728) | PQF (613) | PZE (314) | QLG (227) | QDK (162)",MDS,100.0
+"sample_local.parquet (malfunction, weighted)",n_mdr_text,6168,6168,100.0,8,0,"2 (4,364) | 4 (1,340) | 3 (269) | 6 (91) | 1 (61) | 0 (31)",1,100.0
+"sample_local.parquet (malfunction, weighted)",event_text_len,6168,6168,100.0,901,0,,893,100.0
+"sample_local.parquet (malfunction, weighted)",mfr_narrative_len,6168,6168,100.0,817,0,,0,100.0
+"sample_local.parquet (malfunction, weighted)",date_report,6168,6168,100.0,2555,0,,19920312,100.0
+"sample_local.parquet (malfunction, weighted)",date_manufacturer_received,6168,6091,98.8,2874,0,,20100602,99.1
+"sample_local.parquet (malfunction, weighted)",date_report_to_fda,6168,1,0.0,1,0,19920312 (1),19920312,0.0
+"sample_local.parquet (malfunction, weighted)",date_report_to_manufacturer,6168,1,0.0,1,0,19920312 (1),19920312,0.0
+"sample_local.parquet (malfunction, weighted)",date_facility_aware,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",date_added,6168,6164,99.9,2486,0,,19920324,99.9
+"sample_local.parquet (malfunction, weighted)",date_changed,6168,6168,100.0,209,0,,20250810,100.0
+"sample_local.parquet (malfunction, weighted)",source_type,6168,6123,99.3,37,0,"Consumer (3,157) | CONSUMER (1,655) | Foreign; Consumer (616) | Foreign; Distributor (228) | CONSUMER; FOREIGN (194) | DISTRIBUTOR; FOREIGN (105)",Foreign; Company representation,99.7
+"sample_local.parquet (malfunction, weighted)",type_of_report,6168,6155,99.8,3,0,"Initial submission (4,317) | Initial submission; Followup (1,833) | Followup (5)",Initial submission,99.7
+"sample_local.parquet (malfunction, weighted)",mfr_report_type,6168,5571,90.3,5,0,"Thirty-Day (2,858) | Initial (2,377) | Follow-Up (212) | FDA Requested (122) | Fifteen-Day (2)",Thirty-Day,91.8
+"sample_local.parquet (malfunction, weighted)",adverse_event_flag,6168,6167,100.0,2,0,"N (6,146) | Y (21)",N,100.0
+"sample_local.parquet (malfunction, weighted)",product_problem_flag,6168,6168,100.0,2,0,"Y (6,140) | N (28)",Y,100.0
+"sample_local.parquet (malfunction, weighted)",remedial_action,6168,379,6.1,8,0,Recall (194) | Recall; Notification (48) | Notification; Recall (45) | Notification (34) | Replace (33) | Recall; Other (14),Notification,6.4
+"sample_local.parquet (malfunction, weighted)",health_professional,6168,886,14.4,2,5,N (855) | Y (31),N,11.8
+"sample_local.parquet (malfunction, weighted)",reporter_occupation_code,6168,6140,99.5,13,0,"OTHER (4,797) | 003 (1,145) | PATIENT (75) | NOT APPLICABLE (42) | NURSE (24) | OTHER HEALTH CARE PROFESSIONAL (18)",RISK MANAGER,99.8
+"sample_local.parquet (malfunction, weighted)",reporter_state_code,6168,3542,57.4,52,0,CA (310) | TX (263) | FL (239) | NY (168) | IL (153) | MI (141),IN,62.2
+"sample_local.parquet (malfunction, weighted)",event_location,6168,2061,33.4,5,0,"I (2,023) | HOME (20) | NO INFORMATION (16) | NURSING HOME (1) | HOSPITAL (1)",NURSING HOME,34.8
+"sample_local.parquet (malfunction, weighted)",initial_report_to_fda,6168,1115,18.1,2,0,"No (1,104) | Yes (11)",No,16.9
+"sample_local.parquet (malfunction, weighted)",report_to_fda,6168,1559,25.3,3,742,"N (1,367) | Y (176) | I (16)",Y,26.7
+"sample_local.parquet (malfunction, weighted)",report_to_manufacturer,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",summary_report_flag,6168,6168,100.0,1,0,"N (6,168)",N,100.0
+"sample_local.parquet (malfunction, weighted)",noe_summarized,6168,6168,100.0,1,0,"1 (6,168)",1,100.0
+"sample_local.parquet (malfunction, weighted)",single_use_flag,6168,3885,63.0,2,0,"Y (2,056) | N (1,829)",N,63.0
+"sample_local.parquet (malfunction, weighted)",previous_use_code,6168,3315,53.7,5,0,"I (2,947) | A (284) | U (48) | N (31) | R (5)",U,52.9
+"sample_local.parquet (malfunction, weighted)",reprocessed_and_reused_flag,6168,6159,99.9,3,0,"N (5,856) | Y (283) | I (20)",N,99.9
+"sample_local.parquet (malfunction, weighted)",manufacturer_link_flag,6168,6168,100.0,2,0,"Y (6,139) | N (29)",N,100.0
+"sample_local.parquet (malfunction, weighted)",number_devices_in_event,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",number_patients_in_event,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",pma_pmn_number,6168,5889,95.5,31,0,,P980022,98.0
+"sample_local.parquet (malfunction, weighted)",exemption_number,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",removal_correction_number,6168,220,3.6,8,0,2954323-11/22/25-001-C (155) | 3004753838-02/29/16-001C (20) | QUALITY RECORD QR1081093 (16) | 2954323-04/14/2009-002-C (15) | QUALITY RECORD QR869779 (8) | QUALITY RECORD QR864898 (3),2954323-04/14/2009-002-C,4.1
+"sample_local.parquet (malfunction, weighted)",event_key,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",suppl_dates_fda_received,6168,1838,29.8,1304,0,,06/24/2010;07/13/2011,26.6
+"sample_local.parquet (malfunction, weighted)",suppl_dates_mfr_received,6168,1702,27.6,1231,136,,*;*,24.2
+"sample_local.parquet (malfunction, weighted)",manufacturer_name,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",manufacturer_country,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",distributor_name,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",catalog_number,6168,5314,86.2,311,1,,MMT 7002,86.9
+"sample_local.parquet (malfunction, weighted)",udi_di,6168,3370,54.6,200,0,,00386270000040,59.1
+"sample_local.parquet (malfunction, weighted)",udi_public,6168,3368,54.6,984,0,,00386270000040,59.1
+"sample_local.parquet (malfunction, weighted)",device_operator,6168,6151,99.7,6,0,"LAY USER/PATIENT (6,071) | I (55) | HEALTH PROFESSIONAL (17) | OTHER (5) | 0 (2) | OTHER HEALTH CARE PROFESSIONAL (1)",OTHER HEALTH CARE PROFESSIONAL,99.8
+"sample_local.parquet (malfunction, weighted)",device_availability,6168,6167,100.0,4,0,"No (3,838) | Device was returned to manufacturer (1,601) | Yes (711) | No answer provided (17)",No,100.0
+"sample_local.parquet (malfunction, weighted)",device_evaluated_by_manufacturer,6168,3719,60.3,3,276,"N (1,437) | Y (1,253) | R (1,029)",Y,60.0
+"sample_local.parquet (malfunction, weighted)",expiration_date_of_device,6168,2746,44.5,1060,0,,20101128,44.0
+"sample_local.parquet (malfunction, weighted)",implant_flag,6168,1,0.0,1,0,N (1),N,0.0
+"sample_local.parquet (malfunction, weighted)",date_removed_flag,6168,0,0.0,0,0,,,0.0
+"sample_local.parquet (malfunction, weighted)",device_age_text,6168,1851,30.0,6,2,"DA (1,836) | DAY (9) | 5 MO (2) | 11 MO (2) | 01-JUN-91 (1) | 16 MO (1)",01-JUN-91,26.2
+"sample_local.parquet (malfunction, weighted)",device_sequence_number,6168,6168,100.0,6058,0,,1,100.0
+"sample_local.parquet (malfunction, weighted)",device_event_key,6168,1,0.0,1,0,52 (1),52,0.0
+"sample_local.parquet (malfunction, weighted)",manufacturer_d_country,6168,6127,99.3,2,4,"US (5,972) | UK (155)",US,99.8
+"sample_local.parquet (malfunction, weighted)",other_id_number,6168,82,1.3,30,2,,NI,1.0
+"sample_local.parquet (malfunction, weighted)",repeated_report_number,6168,6168,100.0,1,0,"False (6,168)",False,100.0
+"sample_local.parquet (malfunction, weighted)",stratum,6168,6168,100.0,95,0,,MDS_1992,100.0
+"sample_local.parquet (malfunction, weighted)",stratum_size,6168,6168,100.0,84,0,,1,100.0
+"sample_local.parquet (malfunction, weighted)",stratum_sample,6168,6168,100.0,36,0,,1,100.0
+"sample_local.parquet (malfunction, weighted)",sel_prob,6168,6168,100.0,74,0,,1.0,100.0
+"sample_local.parquet (malfunction, weighted)",weight,6168,6168,100.0,74,0,,1.0,100.0
+"sample_local.parquet (malfunction, weighted)",weight_norm,6168,6168,100.0,74,0,,1.0,100.0
+"sample_local.parquet (malfunction, weighted)",maker,6168,6168,100.0,5,0,"Dexcom (4,585) | Abbott (861) | Medtronic (407) | Senseonics (292) | Other (23)",Other,100.0

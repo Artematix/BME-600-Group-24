@@ -1,0 +1,5 @@
+group,n_reports,death_pct,injury_pct,malfunction_pct,abbott_pct,dexcom_pct,medtronic_pct,median_year_received,foreign_source_pct,accuracy_code_pct,median_text_chars,serious_with_sensor_meter_pair_pct,device_returned_pct,not_us_pct
+age filled,2479918,0.0,2.2,97.8,2.0,93.9,3.8,2023.0,16.1,14.8,417.0,20.4,22.9,15.3
+age blank,902153,0.0,7.6,92.3,74.9,19.9,4.4,2025.0,21.9,67.2,802.0,10.1,22.6,66.6
+sex filled,1544007,0.0,2.3,97.7,3.4,93.2,3.1,2024.0,20.7,16.8,404.0,24.5,19.2,19.3
+sex blank,1838064,0.0,4.7,95.2,36.6,58.1,4.7,2021.0,15.0,38.9,501.0,10.6,25.9,37.1

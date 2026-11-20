@@ -1,0 +1,11 @@
+tier,maker,reports,too_recent_for_text,no_text,in_run_set
+serious,Abbott,77868,3209,2,74657
+serious,Dexcom,33783,1736,2,32045
+serious,Medtronic,8721,61,0,8660
+serious,Other,3235,129,6,3100
+serious,All,123607,5135,10,118462
+sample,Abbott,861,0,18,843
+sample,Dexcom,4585,0,11,4574
+sample,Medtronic,407,0,0,407
+sample,Other,315,0,2,313
+sample,All,6168,0,31,6137

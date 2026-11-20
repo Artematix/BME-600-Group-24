@@ -1,0 +1,28 @@
+{
+  "reports": 3382071,
+  "reports_with_text": 3144535,
+  "pairs": 209388,
+  "pairs_by_group": {
+    "malfunction": 191112,
+    "serious": 18237,
+    "other": 39
+  },
+  "pairs_by_brand_group": {
+    "Abbott serious": 7466,
+    "Abbott malfunction": 162072,
+    "Dexcom serious": 9818,
+    "Dexcom malfunction": 25273,
+    "Medtronic serious": 397,
+    "Medtronic malfunction": 3651,
+    "Senseonics serious": 552,
+    "Senseonics malfunction": 74,
+    "Other serious": 4,
+    "Other malfunction": 42
+  },
+  "bound_pairs": 6433,
+  "display_word_reports": 7347,
+  "two_sensor_readings_reports": 1387,
+  "wear_day_reports": 159080,
+  "zone_reports": 564607,
+  "same_sentence_share_of_pairs_pct": 98.2
+}

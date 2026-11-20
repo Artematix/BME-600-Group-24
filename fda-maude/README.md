@@ -5,7 +5,7 @@
 - We collected every FDA problem report and every recall for CGM sensors.
 - We counted what goes wrong, how often, how bad, for which brand, and when.
 - The results tell Phase 2 which sensor faults are worth simulating.
-- LLM labelling of the free-text stories is a later, separate step. Not started.
+- Text extraction (patterns + a local language model) is validated against a 287-report gold set; the full run is in progress. See the section "Text extraction" below and `results/text/VALIDATION.md`.
 
 Main results: `results/report/report_results.md` and `results/report/country_spread.md`.
 Pull numbers and checks: `results/PULL_SUMMARY.md`.
@@ -236,12 +236,12 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{Comman
 - Device fields come from the device with a CGM product code (a report can list more than one device).
 - `event_text` = "Description of Event or Problem". `mfr_narrative` = "Additional Manufacturer Narrative". Both are ALL CAPS in the API.
 
-### Country per report (not stored yet)
+### Country per report
 
 - `reporter_country_code` = country of the person who reported the problem.
-- The robot keeps this field since 2026-10-20. Our raw files were pulled before that, so the clean tables have no country per report.
-- To get it per report: re-pull tier 5 `full` (about 4,100 calls, about 2 hours with the key), then run `clean --tiers full`. Not done. Only needed if the LLM step needs it.
-- Country counts for the report come from `scripts/country_spread.py` (one API search per country code). See `results/report/country_spread.md`.
+- It IS in the clean tables. Checked 2026-11-08: filled in 94.9 % of serious reports (top codes US, GM = Germany, FR = France). An earlier note here said it was missing and needed a re-pull. That was wrong.
+- The per-report field agrees with the API country counts (`results/inventory/country_per_report.csv`, from `scripts/field_inventory.py`).
+- Country counts in the report came from `scripts/country_spread.py` (one API search per country code). See `results/report/country_spread.md`.
 
 ## Known risks
 
@@ -251,3 +251,57 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{Comman
 - Brand names are messy ("FREESTYLE LIBRE 3" vs "FreeStyle Libre 3").
 - A few sensors are filed under insulin-pump codes (OZP, OZO). The 13 codes miss those.
 - LLM labels (later) need a human spot check.
+
+## Text extraction (validated; full run started 2026-10-30)
+
+Three layers read the report texts: FDA codes (done), patterns (regex), and a local language model that fills a fixed form. Method and decisions: `METHODOLOGY.md`. Pilot: `results/text/PILOT.md`. Validation against the 287-report gold set: `results/text/VALIDATION.md` (summary) and `validation_v1.md`, `validation_v2.md`, `validation_v3.md` (all tables). Prompt history: `prompts/CHANGELOG.md`. Run set: `results/text/RUN_SET.md`.
+
+| File | What it is |
+|---|---|
+| `scripts/extract_regex.py` | pattern layer (regex). Reads the maker templates. Free, exact, auditable. |
+| `scripts/llm_extract.py` | model layer. A local open model (Ollama, qwen2.5:7b-instruct) fills the form. `--prompt-version v1`, `v2` or `v3`. Guards every number against the text. Combines with the regex into `final`. Resumable. |
+| `scripts/score_against_gold.py` | scores regex, model and combined output against `gold/gold_labels_v1.csv`: accuracy, kappa, exact match, confusion tables, run-to-run agreement. |
+| `scripts/build_run_set.py` | builds the run set: serious reports with text (3+ months old) plus a local weighted malfunction sample. Writes `results/text/RUN_SET.md`. |
+| `scripts/start_ollama_server.ps1` | stops the Ollama tray app and stray `llama-server.exe`, starts `ollama serve` with 8 slots. |
+| `scripts/run_full_extract.ps1` | starts or resumes the full model run as a detached process. |
+| `prompts/v1_*`, `v2_*`, `v3_*` | the exact prompt and form of each version. Never edit a scored version; make a new one. v3 is used for the full run. |
+| `results/text/` | pilot outputs, gold-set runs (`llm_gold_v2_run1.jsonl`, ...), validation reports, `RUN_SET.md`, `regex_run_set_hitrates.md` |
+| `clean/run_set.csv.gz`, `clean/regex_run_set.csv`, `clean/text_extract_v3.jsonl`, `clean/logs/` | run set, regex output, model output and logs. Not in git; rebuilt by the scripts. |
+
+Validation result (v3, combined system, 287 gold reports): fault_type kappa 0.77, outcome_severity 0.75 (exact 0.745), user_action 0.77, numbers 96 % exact, 91 % of forms identical between two runs. Medtronic is the weakest maker (kappa about 0.6).
+
+How to run (from the repo root; Windows: plain `python`, not `python -I`):
+
+1. Patterns: `python fda-maude/scripts/extract_regex.py INPUT OUTPUT.csv` (INPUT = `fda-maude/data/sample_narratives.jsonl`, `fda-maude/clean/serious.csv.gz` or `fda-maude/clean/run_set.csv.gz`). Writes `*_hitrates.md` next to the output. About 1,300 reports per second.
+2. Server for parallel runs: `powershell -ExecutionPolicy Bypass -File fda-maude/scripts/start_ollama_server.ps1 -Parallel 8`. This quits the tray app. When all runs are done, start Ollama from the Start menu again.
+3. Model on the gold set: `python fda-maude/scripts/llm_extract.py fda-maude/data/sample_narratives.jsonl OUT.jsonl --prompt-version v3 --parallel 8 --num-ctx 6144 --regex-csv fda-maude/results/text/regex_sample.csv --tag mytag`
+4. Score: `python fda-maude/scripts/score_against_gold.py --gold fda-maude/gold/gold_labels_v1.csv --regex fda-maude/results/text/regex_sample.csv --llm OUT.jsonl --llm2 OUT2.jsonl --version v3 --out fda-maude/results/text/validation_v3.md --compare fda-maude/results/text/validation_v1_metrics.json`
+5. Run set: `python fda-maude/scripts/build_run_set.py`, then `python fda-maude/scripts/extract_regex.py fda-maude/clean/run_set.csv.gz fda-maude/clean/regex_run_set.csv`
+6. Full run, start or resume (it skips reports already in the output file): `powershell -ExecutionPolicy Bypass -File fda-maude/scripts/run_full_extract.ps1`
+   - progress: `Get-Content fda-maude/clean/logs/text_extract_v3.log -Tail 3`
+   - rows done: `(Get-Content fda-maude/clean/text_extract_v3.jsonl | Measure-Object -Line).Lines`
+   - stop: `Stop-Process -Id <pid>` (the pid is printed at start). Run the script again to resume.
+7. Output rows (JSONL): `llm` = the model's form (v2+: raw values and units, converted to mg/dL in code), `regex` = the pattern layer, `final` = the combined answer to use, `final_source` = where each value came from, `guard_dropped`, `disagree_fields`, `role_swap`, latency and tokens. `OUT_summary.json` has throughput and counts.
+
+Settings used for validation and the full run: temperature 0, seed 42, 8 parallel requests, num_ctx 6144 (v3; the v3 prompt is about 2,900 tokens and the longest report texts reach 2,000), model digest 845dbda0ea48. Before any long run check `ollama ps` says "100% GPU" and that only one `llama-server.exe` is alive.
+
+Results of the full run (2026-10-30: 124,599 reports in 9.55 h, 0 errors): `python fda-maude/scripts/text_results.py` (about 10 s; all paths are options, see `--help`; `--max-rows N` for a quick test).
+- Reads `clean/text_extract_v3.jsonl`, `clean/run_set.csv.gz`, `clean/regex_run_set.csv`, `clean/serious.csv.gz`, `clean/sample_local.parquet`, `analysis/simulation_v2_lookup.csv` and the problem-family mapping.
+- Writes tables to `results/text/tables/` (`a_*` coverage, `b_*` fault types vs codes, `c_*` error sizes and Parkes zones, `d_*` wear day, `e_*` actions and outcomes, `f_*` the join to the Phase 2 lookup table; `key_tables.md` = markdown copies; `text_results_stats.json` = the key numbers).
+- Writes figures `results/text/figures/t1_coverage.png` to `t6_join.png`.
+- Write-up: `results/text/TEXT_RESULTS.md`. The bridge numbers are also in `analysis/FINDINGS.md` section 6.1.
+
+Brand comparison and demographics (2026-11-06): `python fda-maude/scripts/brand_comparison.py` (about 70 s; `--n-boot 200` for a quick test; all paths are options, see `--help`; seed 20261106, deterministic).
+- Reads the same files as `text_results.py` (it imports that script's loading code) plus age, sex and reporter from `clean/serious.csv.gz` and `clean/sample_local.parquet`.
+- Compares Abbott, Dexcom, Medtronic (caution) and Senseonics on the wrong-reading complaints: error size, direction, where the true glucose was, Parkes zone, wear day, fingerstick, actions, outcomes, FDA codes, year and the two Libre 3 recall windows; tests with effect sizes and bootstrap CIs; confound checks (Abbott template, serious vs sample, year); the same cuts by patient age group and sex.
+- Writes tables `results/text/tables/g_*.csv` (`g_key_tables.md` = markdown copies; `g_brand_comparison_stats.json` = the key numbers) and figures `results/text/figures/t7_brand_error_sizes.png` to `t10_demographics.png`. Does not touch the `a_` to `f_` tables.
+- Write-up: `results/text/BRAND_COMPARISON.md`.
+
+Wider pattern layer over every report (2026-11-06): `scripts/extract_regex_v2.py` (imports the v1 patterns from `extract_regex.py`, which is not changed) and `scripts/report_regex_v2.py` (tables and figures).
+- Why: the model read only the 124,599 run-set reports. The 3.26 million malfunction-only reports were never read. Patterns are fast enough for all of them.
+- `python fda-maude/scripts/extract_regex_v2.py tune` (about 1 min with 20 workers): runs v1 and v2 on the run set and compares both with the model's numbers. Writes `results/text/tables/h_regex_v2_recall_by_brand.csv`, `h_regex_v2_by_pattern.csv`, `h_regex_v2_wear_zone.csv`, `h_regex_v2_spotcheck_50.csv` (50 random pairs the model did not find, for the eye check), `h_regex_v2_disagreements_sample.csv`.
+- `python fda-maude/scripts/extract_regex_v2.py mine [--stages v1|v2]` prints the sentences around the model's values for 400 random reports the patterns missed (seed 20261106; the file goes to the TEMP folder, not the repo).
+- `python fda-maude/scripts/extract_regex_v2.py full` (about 8 min with 20 workers; `--max-groups 2` for a quick test): every report in `clean/full.parquet`, one row per report -> `clean/regex_v2_full.csv.gz` (39 MB, not in git), then the report step.
+- `python fda-maude/scripts/extract_regex_v2.py report` (about 1 min): tables `results/text/tables/h_*.csv`, `h_regex_v2_stats.json`, figures `results/text/figures/t11_regex_v2_recall.png`, `t12_malfunction_vs_serious_errors.png`, `t13_harm_gradient.png`.
+- Options: `--workers N` (default: CPUs minus 2, at most 20), `--out`, `--tables-dir`, `--figures-dir`. Deterministic: seed 20261106.
+- Write-up: `results/text/REGEX_V2_FULL_CORPUS.md`.

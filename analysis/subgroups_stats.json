@@ -1,0 +1,7242 @@
+{
+ "run": {
+  "seed": 600,
+  "n_boot": 2000,
+  "min_group": 10,
+  "min_low_pairs": 20,
+  "min_block_pairs": 20,
+  "cache_version": "2026-10-30.1",
+  "runtime_s": 6.3
+ },
+ "definitions": {
+  "unit": "participant",
+  "pairs": "verified fingerstick pairs: independent meter pairs (not used for calibration) in the study window (day 0-329) whose reference came from a glucose-meter upload (source == meter). Pump-entered BG values are excluded because many are CGM values typed into the pump (see data_quality)",
+  "allpairs_mard": "the same but on ALL independent pairs including pump-entered BG values (the older definition; shown as a sensitivity check)",
+  "pump_mard": "MARD on pump-entered BG pairs only (pump copies of meter readings dropped; at least 20 pairs)",
+  "pct_pairs_low / fast / night": "share of the person's verified pairs with average < 70 mg/dL / |rate of change| > 1 mg/dL per min / between 00:00 and 06:00",
+  "mid_mard": "MARD on pairs with average 70-180 mg/dL (at least 20 pairs)",
+  "mard": "mean of |CGM - reference| / reference x 100 over the person's pairs",
+  "bias_pct": "mean of (CGM - reference) / reference x 100; negative = sensor reads low",
+  "pct_within_20_20": "percent of pairs within 20 mg/dL when reference < 100 mg/dL, else within 20 %",
+  "low_mard": "MARD on pairs whose average of CGM and reference is below 70 mg/dL; NaN when fewer than 20 such pairs",
+  "cgm_metrics": "CGM readings in the window, duplicates dropped: % time < 70, % time > 180, mean, SD, CV = SD / mean x 100, median readings per day",
+  "duration_tertile_years": [
+   {
+    "group": "shortest third",
+    "min": 2,
+    "max": 17
+   },
+   {
+    "group": "middle third",
+    "min": 17,
+    "max": 27
+   },
+   {
+    "group": "longest third",
+    "min": 28,
+    "max": 64
+   }
+  ]
+ },
+ "device_family": {
+  "note": "per-participant MARD on each device's pairs (at least 20 pairs); pump copies of meter readings dropped",
+  "pairs_by_family": {
+   "Contour Next": 168781,
+   "Medtronic pump entry": 88898,
+   "Other pump entry": 25566,
+   "OmniPod (built-in FreeStyle strips)": 23399,
+   "Precision Xtra": 209
+  },
+  "per_participant": {
+   "Contour Next": {
+    "n": 226,
+    "median": 12.2888,
+    "q1": 10.7252,
+    "q3": 14.2585,
+    "mean": 13.1796
+   },
+   "Medtronic pump entry": {
+    "n": 149,
+    "median": 5.0115,
+    "q1": 3.0397,
+    "q3": 9.8776,
+    "mean": 8.176
+   },
+   "OmniPod (built-in FreeStyle strips)": {
+    "n": 29,
+    "median": 4.2835,
+    "q1": 2.6377,
+    "q3": 7.882,
+    "mean": 6.3404
+   },
+   "Other pump entry": {
+    "n": 44,
+    "median": 7.6291,
+    "q1": 3.5478,
+    "q3": 11.9269,
+    "mean": 9.8919
+   },
+   "Precision Xtra": {
+    "n": 3,
+    "median": 17.1123,
+    "q1": 17.053,
+    "q3": 21.8896,
+    "mean": 20.2576
+   }
+  }
+ },
+ "participant_summary": {
+  "n_pairs": {
+   "n": 226,
+   "median": 719.0,
+   "q1": 516.5,
+   "q3": 969.5,
+   "mean": 747.7434
+  },
+  "pairs_per_day": {
+   "n": 226,
+   "median": 3.2518,
+   "q1": 2.3962,
+   "q3": 4.1694,
+   "mean": 3.3301
+  },
+  "mard": {
+   "n": 226,
+   "median": 12.3068,
+   "q1": 10.7464,
+   "q3": 14.2585,
+   "mean": 13.1996
+  },
+  "median_ard": {
+   "n": 226,
+   "median": 9.0221,
+   "q1": 7.8511,
+   "q3": 10.0677,
+   "mean": 9.2012
+  },
+  "bias_pct": {
+   "n": 226,
+   "median": -1.7288,
+   "q1": -2.9003,
+   "q3": -0.2153,
+   "mean": -1.2462
+  },
+  "pct_within_20_20": {
+   "n": 226,
+   "median": 85.0569,
+   "q1": 80.9963,
+   "q3": 88.9799,
+   "mean": 84.0129
+  },
+  "low_n_pairs": {
+   "n": 226,
+   "median": 36.0,
+   "q1": 17.0,
+   "q3": 59.0,
+   "mean": 44.3451
+  },
+  "low_mard": {
+   "n": 150,
+   "median": 17.5769,
+   "q1": 15.4852,
+   "q3": 19.4374,
+   "mean": 17.544
+  },
+  "low_bias_pct": {
+   "n": 150,
+   "median": -3.9937,
+   "q1": -7.6093,
+   "q3": -0.1306,
+   "mean": -3.8014
+  },
+  "mid_mard": {
+   "n": 226,
+   "median": 12.8129,
+   "q1": 11.2967,
+   "q3": 15.7116,
+   "mean": 14.1286
+  },
+  "high_mard": {
+   "n": 223,
+   "median": 10.1784,
+   "q1": 8.9107,
+   "q3": 12.2631,
+   "mean": 11.1667
+  },
+  "cal_mard": {
+   "n": 226,
+   "median": 13.9184,
+   "q1": 12.3751,
+   "q3": 15.6995,
+   "mean": 14.2131
+  },
+  "allpairs_n_pairs": {
+   "n": 226,
+   "median": 1327.0,
+   "q1": 859.0,
+   "q3": 1841.0,
+   "mean": 1357.7566
+  },
+  "allpairs_mard": {
+   "n": 226,
+   "median": 9.8844,
+   "q1": 8.0117,
+   "q3": 12.4496,
+   "mean": 10.9799
+  },
+  "pump_n_pairs": {
+   "n": 204,
+   "median": 533.5,
+   "q1": 208.5,
+   "q3": 775.5,
+   "mean": 528.3088
+  },
+  "pump_mard": {
+   "n": 198,
+   "median": 5.1889,
+   "q1": 3.0942,
+   "q3": 9.9376,
+   "mean": 8.1642
+  },
+  "pump_pct_err_zero": {
+   "n": 198,
+   "median": 27.3636,
+   "q1": 12.4973,
+   "q3": 39.8888,
+   "mean": 26.7048
+  },
+  "pct_pairs_low": {
+   "n": 226,
+   "median": 4.8957,
+   "q1": 2.5502,
+   "q3": 8.5861,
+   "mean": 6.1926
+  },
+  "pct_pairs_high": {
+   "n": 226,
+   "median": 35.401,
+   "q1": 26.9654,
+   "q3": 45.5143,
+   "mean": 36.2999
+  },
+  "pct_pairs_fast": {
+   "n": 226,
+   "median": 30.301,
+   "q1": 23.8668,
+   "q3": 36.1361,
+   "mean": 30.2065
+  },
+  "pct_pairs_night": {
+   "n": 226,
+   "median": 6.9165,
+   "q1": 4.4719,
+   "q3": 11.2515,
+   "mean": 8.3514
+  },
+  "mean_abs_roc": {
+   "n": 226,
+   "median": 0.9297,
+   "q1": 0.7771,
+   "q3": 1.0786,
+   "mean": 0.9446
+  },
+  "pct_below_70": {
+   "n": 226,
+   "median": 3.5021,
+   "q1": 1.7942,
+   "q3": 4.9728,
+   "mean": 3.7589
+  },
+  "pct_above_180": {
+   "n": 226,
+   "median": 33.2632,
+   "q1": 24.6929,
+   "q3": 41.0903,
+   "mean": 33.0844
+  },
+  "mean_glucose": {
+   "n": 226,
+   "median": 159.9427,
+   "q1": 148.3895,
+   "q3": 172.5371,
+   "mean": 160.6394
+  },
+  "sd_glucose": {
+   "n": 226,
+   "median": 59.0997,
+   "q1": 52.4575,
+   "q3": 67.1266,
+   "mean": 60.2448
+  },
+  "cv_pct": {
+   "n": 226,
+   "median": 37.4237,
+   "q1": 34.6041,
+   "q3": 40.7424,
+   "mean": 37.4071
+  },
+  "median_readings_per_day": {
+   "n": 226,
+   "median": 286.0,
+   "q1": 282.0,
+   "q3": 287.0,
+   "mean": 283.4978
+  },
+  "n_with_low_mard": 150,
+  "n_low_pairs_below_min": 76,
+  "spearman_mard_vs_low_mard": {
+   "n": 150,
+   "rho": 0.3365,
+   "ci_low": 0.1714,
+   "ci_high": 0.4733,
+   "p": 0.0
+  },
+  "spearman_mard_vs_cal_mard": {
+   "n": 226,
+   "rho": 0.414,
+   "ci_low": 0.2865,
+   "ci_high": 0.526,
+   "p": 0.0
+  },
+  "spearman_mard_vs_allpairs_mard": {
+   "n": 226,
+   "rho": 0.6593,
+   "ci_low": 0.5679,
+   "ci_high": 0.7304,
+   "p": 0.0
+  }
+ },
+ "data_quality": {
+  "pump_entries_by_arm": [
+   {
+    "arm": "CGM Only",
+    "entry": "meter upload (Contour Next / Precision Xtra)",
+    "pairs": 125735,
+    "people": 149,
+    "mard_pooled": 13.0896,
+    "median_abs_err_mgdl": 13.0,
+    "pct_err_exactly_zero": 2.1879,
+    "pct_within_1_mgdl": 6.5073,
+    "pct_flagged_pump_copy_of_meter": 0.0
+   },
+   {
+    "arm": "CGM Only",
+    "entry": "pump entry, subtype (blank)",
+    "pairs": 8517,
+    "people": 52,
+    "mard_pooled": 8.2125,
+    "median_abs_err_mgdl": 7.0,
+    "pct_err_exactly_zero": 18.7507,
+    "pct_within_1_mgdl": 25.9246,
+    "pct_flagged_pump_copy_of_meter": 34.0143
+   },
+   {
+    "arm": "CGM Only",
+    "entry": "pump entry, subtype linked",
+    "pairs": 495,
+    "people": 37,
+    "mard_pooled": 18.5531,
+    "median_abs_err_mgdl": 13.0,
+    "pct_err_exactly_zero": 1.0101,
+    "pct_within_1_mgdl": 6.2626,
+    "pct_flagged_pump_copy_of_meter": 0.0
+   },
+   {
+    "arm": "CGM Only",
+    "entry": "pump entry, subtype manual",
+    "pairs": 92072,
+    "people": 135,
+    "mard_pooled": 5.8616,
+    "median_abs_err_mgdl": 3.0,
+    "pct_err_exactly_zero": 31.5362,
+    "pct_within_1_mgdl": 40.906,
+    "pct_flagged_pump_copy_of_meter": 12.0786
+   },
+   {
+    "arm": "CGM+BGM",
+    "entry": "meter upload (Contour Next / Precision Xtra)",
+    "pairs": 43255,
+    "people": 77,
+    "mard_pooled": 13.7232,
+    "median_abs_err_mgdl": 13.0,
+    "pct_err_exactly_zero": 2.1339,
+    "pct_within_1_mgdl": 6.5172,
+    "pct_flagged_pump_copy_of_meter": 0.0
+   },
+   {
+    "arm": "CGM+BGM",
+    "entry": "pump entry, subtype (blank)",
+    "pairs": 3732,
+    "people": 23,
+    "mard_pooled": 11.6238,
+    "median_abs_err_mgdl": 11.0,
+    "pct_err_exactly_zero": 6.9132,
+    "pct_within_1_mgdl": 11.9775,
+    "pct_flagged_pump_copy_of_meter": 49.1158
+   },
+   {
+    "arm": "CGM+BGM",
+    "entry": "pump entry, subtype linked",
+    "pairs": 124,
+    "people": 25,
+    "mard_pooled": 13.8514,
+    "median_abs_err_mgdl": 13.5,
+    "pct_err_exactly_zero": 2.4194,
+    "pct_within_1_mgdl": 5.6452,
+    "pct_flagged_pump_copy_of_meter": 0.0
+   },
+   {
+    "arm": "CGM+BGM",
+    "entry": "pump entry, subtype manual",
+    "pairs": 32923,
+    "people": 69,
+    "mard_pooled": 10.3696,
+    "median_abs_err_mgdl": 10.0,
+    "pct_err_exactly_zero": 9.3552,
+    "pct_within_1_mgdl": 15.4968,
+    "pct_flagged_pump_copy_of_meter": 43.2433
+   }
+  ],
+  "pump_vs_meter_within_person": {
+   "label": "Pump-entered BG pairs vs meter-upload pairs (same person)",
+   "outcome": "mard",
+   "n": 198,
+   "testable": true,
+   "test": "Wilcoxon signed-rank",
+   "median_x": 12.3068,
+   "median_y": 5.1889,
+   "diff_median": -6.7132,
+   "ci_low": -7.1694,
+   "ci_high": -5.4532,
+   "p": 0.0
+  },
+  "arm_on_verified_pairs": {
+   "variable": "arm",
+   "label": "Study arm",
+   "outcome": "mard",
+   "groups": [
+    {
+     "group": "CGM Only",
+     "n": 149,
+     "median": 12.3566,
+     "q1": 10.8803,
+     "q3": 14.369,
+     "mean": 13.0765
+    },
+    {
+     "group": "CGM+BGM",
+     "n": 77,
+     "median": 12.2739,
+     "q1": 10.0755,
+     "q3": 14.1185,
+     "mean": 13.4378
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Mann-Whitney U",
+   "p": 0.535,
+   "reference": "CGM Only",
+   "contrasts": [
+    {
+     "group": "CGM+BGM",
+     "vs": "CGM Only",
+     "n": 77,
+     "n_ref": 149,
+     "diff_median": -0.0827,
+     "ci_low": -0.8729,
+     "ci_high": 0.7354,
+     "detectable_diff_means": 1.7363
+    }
+   ]
+  },
+  "arm_on_all_independent_pairs": {
+   "variable": "arm",
+   "label": "Study arm",
+   "outcome": "allpairs_mard",
+   "groups": [
+    {
+     "group": "CGM Only",
+     "n": 149,
+     "median": 9.3829,
+     "q1": 7.7353,
+     "q3": 11.9786,
+     "mean": 10.3222
+    },
+    {
+     "group": "CGM+BGM",
+     "n": 77,
+     "median": 11.297,
+     "q1": 9.3243,
+     "q3": 12.8499,
+     "mean": 12.2527
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Mann-Whitney U",
+   "p": 0.0004,
+   "reference": "CGM Only",
+   "contrasts": [
+    {
+     "group": "CGM+BGM",
+     "vs": "CGM Only",
+     "n": 77,
+     "n_ref": 149,
+     "diff_median": 1.9141,
+     "ci_low": 0.5169,
+     "ci_high": 2.8727,
+     "detectable_diff_means": 1.8433
+    }
+   ]
+  },
+  "arm_on_pump_entries": {
+   "variable": "arm",
+   "label": "Study arm",
+   "outcome": "pump_mard",
+   "groups": [
+    {
+     "group": "CGM Only",
+     "n": 133,
+     "median": 4.1417,
+     "q1": 2.8436,
+     "q3": 6.4517,
+     "mean": 6.7133
+    },
+    {
+     "group": "CGM+BGM",
+     "n": 65,
+     "median": 9.7823,
+     "q1": 7.3333,
+     "q3": 12.7254,
+     "mean": 11.133
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Mann-Whitney U",
+   "p": 0.0,
+   "reference": "CGM Only",
+   "contrasts": [
+    {
+     "group": "CGM+BGM",
+     "vs": "CGM Only",
+     "n": 65,
+     "n_ref": 133,
+     "diff_median": 5.6406,
+     "ci_low": 4.5989,
+     "ci_high": 6.9716,
+     "detectable_diff_means": 4.1368
+    }
+   ]
+  },
+  "arm_on_calibration_pairs": {
+   "variable": "arm",
+   "label": "Study arm",
+   "outcome": "cal_mard",
+   "groups": [
+    {
+     "group": "CGM Only",
+     "n": 149,
+     "median": 13.8002,
+     "q1": 12.4423,
+     "q3": 15.6065,
+     "mean": 14.1436
+    },
+    {
+     "group": "CGM+BGM",
+     "n": 77,
+     "median": 14.1104,
+     "q1": 12.2793,
+     "q3": 15.9215,
+     "mean": 14.3475
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Mann-Whitney U",
+   "p": 0.7556,
+   "reference": "CGM Only",
+   "contrasts": [
+    {
+     "group": "CGM+BGM",
+     "vs": "CGM Only",
+     "n": 77,
+     "n_ref": 149,
+     "diff_median": 0.3102,
+     "ci_low": -0.9944,
+     "ci_high": 1.2686,
+     "detectable_diff_means": 1.0253
+    }
+   ]
+  },
+  "note": "In the CGM-only arm people dosed from the CGM and typed its value into the pump bolus calculator. Those entries are not fingersticks. They make the old all-pairs MARD too low and create a false arm difference."
+ },
+ "prespecified": {
+  "continuous": [
+   {
+    "variable": "age",
+    "label": "Age (years)",
+    "outcome": "mard",
+    "n": 226,
+    "rho": -0.1617,
+    "ci_low": -0.2854,
+    "ci_high": -0.0242,
+    "p": 0.015,
+    "p_bh_within_prespecified": 0.1497
+   },
+   {
+    "variable": "bmi",
+    "label": "BMI (kg/m2)",
+    "outcome": "mard",
+    "n": 226,
+    "rho": 0.1331,
+    "ci_low": 0.0088,
+    "ci_high": 0.2571,
+    "p": 0.0456,
+    "p_bh_within_prespecified": 0.1993
+   },
+   {
+    "variable": "hba1c_screening",
+    "label": "HbA1c at screening (%)",
+    "outcome": "mard",
+    "n": 226,
+    "rho": -0.0812,
+    "ci_low": -0.2098,
+    "ci_high": 0.0474,
+    "p": 0.2238,
+    "p_bh_within_prespecified": 0.3731
+   },
+   {
+    "variable": "diabetes_duration_yrs",
+    "label": "Diabetes duration (years)",
+    "outcome": "mard",
+    "n": 226,
+    "rho": -0.0854,
+    "ci_low": -0.2209,
+    "ci_high": 0.0417,
+    "p": 0.2007,
+    "p_bh_within_prespecified": 0.3731
+   }
+  ],
+  "groups": [
+   {
+    "variable": "age_group",
+    "label": "Age group",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "<35",
+      "n": 69,
+      "median": 12.8156,
+      "q1": 11.6382,
+      "q3": 14.1242,
+      "mean": 13.2792
+     },
+     {
+      "group": "35-50",
+      "n": 78,
+      "median": 12.3249,
+      "q1": 10.9059,
+      "q3": 14.0879,
+      "mean": 13.3321
+     },
+     {
+      "group": ">50",
+      "n": 79,
+      "median": 11.5711,
+      "q1": 10.1088,
+      "q3": 14.4793,
+      "mean": 12.9993
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.0797,
+    "reference": "<35",
+    "contrasts": [
+     {
+      "group": "35-50",
+      "vs": "<35",
+      "n": 78,
+      "n_ref": 69,
+      "diff_median": -0.4907,
+      "ci_low": -1.2445,
+      "ci_high": 0.3044,
+      "detectable_diff_means": 1.9248
+     },
+     {
+      "group": ">50",
+      "vs": "<35",
+      "n": 79,
+      "n_ref": 69,
+      "diff_median": -1.2444,
+      "ci_low": -1.8342,
+      "ci_high": -0.322,
+      "detectable_diff_means": 1.9071
+     }
+    ],
+    "p_bh_within_prespecified": 0.1993
+   },
+   {
+    "variable": "sex",
+    "label": "Sex",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "F",
+      "n": 112,
+      "median": 12.2888,
+      "q1": 10.6987,
+      "q3": 13.825,
+      "mean": 13.2274
+     },
+     {
+      "group": "M",
+      "n": 114,
+      "median": 12.3253,
+      "q1": 10.885,
+      "q3": 14.6077,
+      "mean": 13.1723
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.9246,
+    "reference": "F",
+    "contrasts": [
+     {
+      "group": "M",
+      "vs": "F",
+      "n": 114,
+      "n_ref": 112,
+      "diff_median": 0.0365,
+      "ci_low": -0.7557,
+      "ci_high": 0.8238,
+      "detectable_diff_means": 1.6471
+     }
+    ],
+    "p_bh_within_prespecified": 0.9246
+   },
+   {
+    "variable": "bmi_group",
+    "label": "BMI group",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "<25",
+      "n": 77,
+      "median": 11.9857,
+      "q1": 10.2921,
+      "q3": 13.3632,
+      "mean": 13.0279
+     },
+     {
+      "group": "25-30",
+      "n": 92,
+      "median": 12.2874,
+      "q1": 10.4294,
+      "q3": 14.3697,
+      "mean": 13.0339
+     },
+     {
+      "group": "30+",
+      "n": 57,
+      "median": 12.7867,
+      "q1": 11.6341,
+      "q3": 14.832,
+      "mean": 13.6991
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.0724,
+    "reference": "<25",
+    "contrasts": [
+     {
+      "group": "25-30",
+      "vs": "<25",
+      "n": 92,
+      "n_ref": 77,
+      "diff_median": 0.3018,
+      "ci_low": -0.6169,
+      "ci_high": 1.3477,
+      "detectable_diff_means": 2.0014
+     },
+     {
+      "group": "30+",
+      "vs": "<25",
+      "n": 57,
+      "n_ref": 77,
+      "diff_median": 0.801,
+      "ci_low": -0.152,
+      "ci_high": 1.6158,
+      "detectable_diff_means": 2.1731
+     }
+    ],
+    "p_bh_within_prespecified": 0.1993
+   },
+   {
+    "variable": "hba1c_group",
+    "label": "HbA1c group",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "<7",
+      "n": 77,
+      "median": 12.7429,
+      "q1": 11.2612,
+      "q3": 15.021,
+      "mean": 14.0449
+     },
+     {
+      "group": "7-8",
+      "n": 118,
+      "median": 12.0849,
+      "q1": 10.3966,
+      "q3": 13.899,
+      "mean": 12.7743
+     },
+     {
+      "group": ">8",
+      "n": 31,
+      "median": 12.3351,
+      "q1": 11.0443,
+      "q3": 13.9396,
+      "mean": 12.719
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.322,
+    "reference": "<7",
+    "contrasts": [
+     {
+      "group": "7-8",
+      "vs": "<7",
+      "n": 118,
+      "n_ref": 77,
+      "diff_median": -0.658,
+      "ci_low": -1.2613,
+      "ci_high": 0.4235,
+      "detectable_diff_means": 1.8584
+     },
+     {
+      "group": ">8",
+      "vs": "<7",
+      "n": 31,
+      "n_ref": 77,
+      "diff_median": -0.4077,
+      "ci_low": -1.3109,
+      "ci_high": 0.81,
+      "detectable_diff_means": 3.0846
+     }
+    ],
+    "p_bh_within_prespecified": 0.46
+   },
+   {
+    "variable": "duration_group",
+    "label": "Diabetes duration tertile",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "shortest third",
+      "n": 75,
+      "median": 12.3758,
+      "q1": 11.101,
+      "q3": 14.011,
+      "mean": 13.2079
+     },
+     {
+      "group": "middle third",
+      "n": 75,
+      "median": 12.2981,
+      "q1": 10.9875,
+      "q3": 14.6107,
+      "mean": 13.343
+     },
+     {
+      "group": "longest third",
+      "n": 76,
+      "median": 12.0419,
+      "q1": 10.381,
+      "q3": 14.2629,
+      "mean": 13.05
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.5514,
+    "reference": "shortest third",
+    "contrasts": [
+     {
+      "group": "middle third",
+      "vs": "shortest third",
+      "n": 75,
+      "n_ref": 75,
+      "diff_median": -0.0777,
+      "ci_low": -0.8705,
+      "ci_high": 0.938,
+      "detectable_diff_means": 1.9058
+     },
+     {
+      "group": "longest third",
+      "vs": "shortest third",
+      "n": 76,
+      "n_ref": 75,
+      "diff_median": -0.3339,
+      "ci_low": -1.2083,
+      "ci_high": 0.6686,
+      "detectable_diff_means": 2.0067
+     }
+    ],
+    "p_bh_within_prespecified": 0.6126
+   },
+   {
+    "variable": "arm",
+    "label": "Study arm",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "CGM Only",
+      "n": 149,
+      "median": 12.3566,
+      "q1": 10.8803,
+      "q3": 14.369,
+      "mean": 13.0765
+     },
+     {
+      "group": "CGM+BGM",
+      "n": 77,
+      "median": 12.2739,
+      "q1": 10.0755,
+      "q3": 14.1185,
+      "mean": 13.4378
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.535,
+    "reference": "CGM Only",
+    "contrasts": [
+     {
+      "group": "CGM+BGM",
+      "vs": "CGM Only",
+      "n": 77,
+      "n_ref": 149,
+      "diff_median": -0.0827,
+      "ci_low": -0.848,
+      "ci_high": 0.7313,
+      "detectable_diff_means": 1.7363
+     }
+    ],
+    "p_bh_within_prespecified": 0.6126
+   }
+  ],
+  "continuous_low": [
+   {
+    "variable": "age",
+    "label": "Age (years)",
+    "outcome": "low_mard",
+    "n": 150,
+    "rho": -0.0457,
+    "ci_low": -0.2005,
+    "ci_high": 0.1188,
+    "p": 0.5785
+   },
+   {
+    "variable": "bmi",
+    "label": "BMI (kg/m2)",
+    "outcome": "low_mard",
+    "n": 150,
+    "rho": 0.0935,
+    "ci_low": -0.0683,
+    "ci_high": 0.2506,
+    "p": 0.2552
+   },
+   {
+    "variable": "hba1c_screening",
+    "label": "HbA1c at screening (%)",
+    "outcome": "low_mard",
+    "n": 150,
+    "rho": 0.0746,
+    "ci_low": -0.085,
+    "ci_high": 0.2387,
+    "p": 0.364
+   },
+   {
+    "variable": "diabetes_duration_yrs",
+    "label": "Diabetes duration (years)",
+    "outcome": "low_mard",
+    "n": 150,
+    "rho": 0.1826,
+    "ci_low": 0.0202,
+    "ci_high": 0.354,
+    "p": 0.0253
+   }
+  ],
+  "groups_low": [
+   {
+    "variable": "age_group",
+    "label": "Age group",
+    "outcome": "low_mard",
+    "groups": [
+     {
+      "group": "<35",
+      "n": 51,
+      "median": 17.8504,
+      "q1": 15.5069,
+      "q3": 19.416,
+      "mean": 18.1643
+     },
+     {
+      "group": "35-50",
+      "n": 46,
+      "median": 17.2853,
+      "q1": 15.4902,
+      "q3": 19.061,
+      "mean": 17.0222
+     },
+     {
+      "group": ">50",
+      "n": 53,
+      "median": 16.8198,
+      "q1": 15.7147,
+      "q3": 19.6954,
+      "mean": 17.4
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.5136,
+    "reference": "<35",
+    "contrasts": [
+     {
+      "group": "35-50",
+      "vs": "<35",
+      "n": 46,
+      "n_ref": 51,
+      "diff_median": -0.5651,
+      "ci_low": -2.1784,
+      "ci_high": 0.7322,
+      "detectable_diff_means": 1.9266
+     },
+     {
+      "group": ">50",
+      "vs": "<35",
+      "n": 53,
+      "n_ref": 51,
+      "diff_median": -1.0306,
+      "ci_low": -1.9124,
+      "ci_high": 0.988,
+      "detectable_diff_means": 1.9843
+     }
+    ]
+   },
+   {
+    "variable": "sex",
+    "label": "Sex",
+    "outcome": "low_mard",
+    "groups": [
+     {
+      "group": "F",
+      "n": 76,
+      "median": 17.5111,
+      "q1": 15.7674,
+      "q3": 19.0408,
+      "mean": 17.5051
+     },
+     {
+      "group": "M",
+      "n": 74,
+      "median": 17.5806,
+      "q1": 15.2606,
+      "q3": 19.6886,
+      "mean": 17.5839
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.9685,
+    "reference": "F",
+    "contrasts": [
+     {
+      "group": "M",
+      "vs": "F",
+      "n": 74,
+      "n_ref": 76,
+      "diff_median": 0.0694,
+      "ci_low": -1.4559,
+      "ci_high": 1.6236,
+      "detectable_diff_means": 1.616
+     }
+    ]
+   },
+   {
+    "variable": "bmi_group",
+    "label": "BMI group",
+    "outcome": "low_mard",
+    "groups": [
+     {
+      "group": "<25",
+      "n": 58,
+      "median": 17.5769,
+      "q1": 15.2953,
+      "q3": 19.0834,
+      "mean": 17.3173
+     },
+     {
+      "group": "25-30",
+      "n": 61,
+      "median": 17.2626,
+      "q1": 15.3224,
+      "q3": 19.2539,
+      "mean": 17.3773
+     },
+     {
+      "group": "30+",
+      "n": 31,
+      "median": 18.7033,
+      "q1": 16.0433,
+      "q3": 19.7639,
+      "mean": 18.2961
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.3248,
+    "reference": "<25",
+    "contrasts": [
+     {
+      "group": "25-30",
+      "vs": "<25",
+      "n": 61,
+      "n_ref": 58,
+      "diff_median": -0.3143,
+      "ci_low": -1.4663,
+      "ci_high": 1.658,
+      "detectable_diff_means": 1.8054
+     },
+     {
+      "group": "30+",
+      "vs": "<25",
+      "n": 31,
+      "n_ref": 58,
+      "diff_median": 1.1264,
+      "ci_low": -1.0368,
+      "ci_high": 3.074,
+      "detectable_diff_means": 2.2369
+     }
+    ]
+   },
+   {
+    "variable": "hba1c_group",
+    "label": "HbA1c group",
+    "outcome": "low_mard",
+    "groups": [
+     {
+      "group": "<7",
+      "n": 56,
+      "median": 17.0425,
+      "q1": 15.2008,
+      "q3": 19.0974,
+      "mean": 17.289
+     },
+     {
+      "group": "7-8",
+      "n": 79,
+      "median": 17.7328,
+      "q1": 15.7615,
+      "q3": 19.4233,
+      "mean": 17.7103
+     },
+     {
+      "group": ">8",
+      "n": 15,
+      "median": 17.2626,
+      "q1": 16.0972,
+      "q3": 20.4076,
+      "mean": 17.62
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.5841,
+    "reference": "<7",
+    "contrasts": [
+     {
+      "group": "7-8",
+      "vs": "<7",
+      "n": 79,
+      "n_ref": 56,
+      "diff_median": 0.6902,
+      "ci_low": -0.8023,
+      "ci_high": 2.1169,
+      "detectable_diff_means": 1.7575
+     },
+     {
+      "group": ">8",
+      "vs": "<7",
+      "n": 15,
+      "n_ref": 56,
+      "diff_median": 0.2201,
+      "ci_low": -1.6489,
+      "ci_high": 3.762,
+      "detectable_diff_means": 2.8838
+     }
+    ]
+   },
+   {
+    "variable": "duration_group",
+    "label": "Diabetes duration tertile",
+    "outcome": "low_mard",
+    "groups": [
+     {
+      "group": "shortest third",
+      "n": 50,
+      "median": 16.7193,
+      "q1": 14.0531,
+      "q3": 18.2851,
+      "mean": 16.5181
+     },
+     {
+      "group": "middle third",
+      "n": 50,
+      "median": 17.6485,
+      "q1": 15.7783,
+      "q3": 19.1635,
+      "mean": 17.9901
+     },
+     {
+      "group": "longest third",
+      "n": 50,
+      "median": 18.7482,
+      "q1": 15.7245,
+      "q3": 20.7907,
+      "mean": 18.1238
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.0424,
+    "reference": "shortest third",
+    "contrasts": [
+     {
+      "group": "middle third",
+      "vs": "shortest third",
+      "n": 50,
+      "n_ref": 50,
+      "diff_median": 0.9292,
+      "ci_low": -0.6409,
+      "ci_high": 2.1012,
+      "detectable_diff_means": 1.7853
+     },
+     {
+      "group": "longest third",
+      "vs": "shortest third",
+      "n": 50,
+      "n_ref": 50,
+      "diff_median": 2.0289,
+      "ci_low": -0.2479,
+      "ci_high": 3.1874,
+      "detectable_diff_means": 2.0436
+     }
+    ]
+   },
+   {
+    "variable": "arm",
+    "label": "Study arm",
+    "outcome": "low_mard",
+    "groups": [
+     {
+      "group": "CGM Only",
+      "n": 101,
+      "median": 17.4623,
+      "q1": 15.5783,
+      "q3": 19.5915,
+      "mean": 17.5691
+     },
+     {
+      "group": "CGM+BGM",
+      "n": 49,
+      "median": 17.6228,
+      "q1": 15.2399,
+      "q3": 19.1999,
+      "mean": 17.4923
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.8506,
+    "reference": "CGM Only",
+    "contrasts": [
+     {
+      "group": "CGM+BGM",
+      "vs": "CGM Only",
+      "n": 49,
+      "n_ref": 101,
+      "diff_median": 0.1605,
+      "ci_low": -1.4357,
+      "ci_high": 1.3451,
+      "detectable_diff_means": 1.7227
+     }
+    ]
+   }
+  ],
+  "groups_cal": [
+   {
+    "variable": "age_group",
+    "label": "Age group",
+    "outcome": "cal_mard",
+    "groups": [
+     {
+      "group": "<35",
+      "n": 69,
+      "median": 15.6468,
+      "q1": 13.0573,
+      "q3": 17.6366,
+      "mean": 15.5473
+     },
+     {
+      "group": "35-50",
+      "n": 78,
+      "median": 13.7069,
+      "q1": 12.2885,
+      "q3": 14.952,
+      "mean": 13.8944
+     },
+     {
+      "group": ">50",
+      "n": 79,
+      "median": 13.1041,
+      "q1": 12.2003,
+      "q3": 14.7626,
+      "mean": 13.3624
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.0,
+    "reference": "<35",
+    "contrasts": [
+     {
+      "group": "35-50",
+      "vs": "<35",
+      "n": 78,
+      "n_ref": 69,
+      "diff_median": -1.9399,
+      "ci_low": -2.7679,
+      "ci_high": -1.029,
+      "detectable_diff_means": 1.1889
+     },
+     {
+      "group": ">50",
+      "vs": "<35",
+      "n": 79,
+      "n_ref": 69,
+      "diff_median": -2.5427,
+      "ci_low": -3.2447,
+      "ci_high": -1.4184,
+      "detectable_diff_means": 1.1514
+     }
+    ]
+   },
+   {
+    "variable": "sex",
+    "label": "Sex",
+    "outcome": "cal_mard",
+    "groups": [
+     {
+      "group": "F",
+      "n": 112,
+      "median": 14.1168,
+      "q1": 12.3434,
+      "q3": 15.8809,
+      "mean": 14.4295
+     },
+     {
+      "group": "M",
+      "n": 114,
+      "median": 13.7692,
+      "q1": 12.3782,
+      "q3": 15.5239,
+      "mean": 14.0005
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.2661,
+    "reference": "F",
+    "contrasts": [
+     {
+      "group": "M",
+      "vs": "F",
+      "n": 114,
+      "n_ref": 112,
+      "diff_median": -0.3476,
+      "ci_low": -1.2708,
+      "ci_high": 0.4738,
+      "detectable_diff_means": 0.9692
+     }
+    ]
+   },
+   {
+    "variable": "bmi_group",
+    "label": "BMI group",
+    "outcome": "cal_mard",
+    "groups": [
+     {
+      "group": "<25",
+      "n": 77,
+      "median": 13.7048,
+      "q1": 12.3745,
+      "q3": 15.268,
+      "mean": 13.877
+     },
+     {
+      "group": "25-30",
+      "n": 92,
+      "median": 13.6872,
+      "q1": 12.2308,
+      "q3": 15.7146,
+      "mean": 14.1736
+     },
+     {
+      "group": "30+",
+      "n": 57,
+      "median": 14.5309,
+      "q1": 13.0643,
+      "q3": 15.932,
+      "mean": 14.7308
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.1652,
+    "reference": "<25",
+    "contrasts": [
+     {
+      "group": "25-30",
+      "vs": "<25",
+      "n": 92,
+      "n_ref": 77,
+      "diff_median": -0.0176,
+      "ci_low": -0.8258,
+      "ci_high": 1.143,
+      "detectable_diff_means": 1.1402
+     },
+     {
+      "group": "30+",
+      "vs": "<25",
+      "n": 57,
+      "n_ref": 77,
+      "diff_median": 0.8261,
+      "ci_low": -0.1653,
+      "ci_high": 1.978,
+      "detectable_diff_means": 1.1954
+     }
+    ]
+   },
+   {
+    "variable": "hba1c_group",
+    "label": "HbA1c group",
+    "outcome": "cal_mard",
+    "groups": [
+     {
+      "group": "<7",
+      "n": 77,
+      "median": 14.3574,
+      "q1": 12.7557,
+      "q3": 15.7036,
+      "mean": 14.5262
+     },
+     {
+      "group": "7-8",
+      "n": 118,
+      "median": 13.6591,
+      "q1": 11.983,
+      "q3": 15.7732,
+      "mean": 14.0252
+     },
+     {
+      "group": ">8",
+      "n": 31,
+      "median": 13.6814,
+      "q1": 12.8302,
+      "q3": 15.0224,
+      "mean": 14.1505
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.3093,
+    "reference": "<7",
+    "contrasts": [
+     {
+      "group": "7-8",
+      "vs": "<7",
+      "n": 118,
+      "n_ref": 77,
+      "diff_median": -0.6984,
+      "ci_low": -1.5097,
+      "ci_high": 0.3183,
+      "detectable_diff_means": 1.0901
+     },
+     {
+      "group": ">8",
+      "vs": "<7",
+      "n": 31,
+      "n_ref": 77,
+      "diff_median": -0.6761,
+      "ci_low": -1.6769,
+      "ci_high": 0.6738,
+      "detectable_diff_means": 1.4725
+     }
+    ]
+   },
+   {
+    "variable": "duration_group",
+    "label": "Diabetes duration tertile",
+    "outcome": "cal_mard",
+    "groups": [
+     {
+      "group": "shortest third",
+      "n": 75,
+      "median": 14.345,
+      "q1": 12.4958,
+      "q3": 15.9268,
+      "mean": 14.4439
+     },
+     {
+      "group": "middle third",
+      "n": 75,
+      "median": 14.2832,
+      "q1": 12.7348,
+      "q3": 15.8893,
+      "mean": 14.6179
+     },
+     {
+      "group": "longest third",
+      "n": 76,
+      "median": 13.1,
+      "q1": 12.1165,
+      "q3": 14.8303,
+      "mean": 13.5858
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.0166,
+    "reference": "shortest third",
+    "contrasts": [
+     {
+      "group": "middle third",
+      "vs": "shortest third",
+      "n": 75,
+      "n_ref": 75,
+      "diff_median": -0.0618,
+      "ci_low": -0.9281,
+      "ci_high": 1.1461,
+      "detectable_diff_means": 1.2111
+     },
+     {
+      "group": "longest third",
+      "vs": "shortest third",
+      "n": 76,
+      "n_ref": 75,
+      "diff_median": -1.245,
+      "ci_low": -2.1768,
+      "ci_high": -0.1438,
+      "detectable_diff_means": 1.1659
+     }
+    ]
+   },
+   {
+    "variable": "arm",
+    "label": "Study arm",
+    "outcome": "cal_mard",
+    "groups": [
+     {
+      "group": "CGM Only",
+      "n": 149,
+      "median": 13.8002,
+      "q1": 12.4423,
+      "q3": 15.6065,
+      "mean": 14.1436
+     },
+     {
+      "group": "CGM+BGM",
+      "n": 77,
+      "median": 14.1104,
+      "q1": 12.2793,
+      "q3": 15.9215,
+      "mean": 14.3475
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.7556,
+    "reference": "CGM Only",
+    "contrasts": [
+     {
+      "group": "CGM+BGM",
+      "vs": "CGM Only",
+      "n": 77,
+      "n_ref": 149,
+      "diff_median": 0.3102,
+      "ci_low": -0.9823,
+      "ci_high": 1.3227,
+      "detectable_diff_means": 1.0253
+     }
+    ]
+   }
+  ]
+ },
+ "models": {
+  "mard_step1": {
+   "outcome": "mard",
+   "n": 226,
+   "r2": 0.0197,
+   "r2_adj": -0.0071,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": -0.0046,
+     "ci_low": -0.0478,
+     "ci_high": 0.0387,
+     "p": 0.8362,
+     "p_bh": 0.8761,
+     "sd": 13.7919,
+     "coef_per_sd": -0.0629,
+     "ci_low_per_sd": -0.6594,
+     "ci_high_per_sd": 0.5335
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": -0.1019,
+     "ci_low": -1.3832,
+     "ci_high": 1.1793,
+     "p": 0.8761,
+     "p_bh": 0.8761,
+     "sd": null,
+     "coef_per_sd": -0.1019,
+     "ci_low_per_sd": -1.3832,
+     "ci_high_per_sd": 1.1793
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0847,
+     "ci_low": -0.0431,
+     "ci_high": 0.2126,
+     "p": 0.1939,
+     "p_bh": 0.5816,
+     "sd": 4.4283,
+     "coef_per_sd": 0.3753,
+     "ci_low_per_sd": -0.1909,
+     "ci_high_per_sd": 0.9414
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": -0.6622,
+     "ci_low": -1.41,
+     "ci_high": 0.0856,
+     "p": 0.0827,
+     "p_bh": 0.4959,
+     "sd": 0.6993,
+     "coef_per_sd": -0.463,
+     "ci_low_per_sd": -0.986,
+     "ci_high_per_sd": 0.0599
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": -0.0154,
+     "ci_low": -0.0782,
+     "ci_high": 0.0475,
+     "p": 0.6312,
+     "p_bh": 0.8761,
+     "sd": 12.2066,
+     "coef_per_sd": -0.1879,
+     "ci_low_per_sd": -0.9549,
+     "ci_high_per_sd": 0.5792
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.469,
+     "ci_low": -0.9276,
+     "ci_high": 1.8657,
+     "p": 0.5104,
+     "p_bh": 0.8761,
+     "sd": null,
+     "coef_per_sd": 0.469,
+     "ci_low_per_sd": -0.9276,
+     "ci_high_per_sd": 1.8657
+    }
+   ]
+  },
+  "log_mard_step1": {
+   "outcome": "log mard",
+   "n": 226,
+   "r2": 0.029,
+   "r2_adj": 0.0024,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": -0.0011,
+     "ci_low": -0.0039,
+     "ci_high": 0.0018,
+     "p": 0.4739,
+     "p_bh": 0.8285,
+     "sd": 13.7919,
+     "coef_per_sd": -0.0145,
+     "ci_low_per_sd": -0.0541,
+     "ci_high_per_sd": 0.0252,
+     "pct_change_per_unit": -0.105,
+     "pct_change_ci": [
+      -0.3918,
+      0.1826
+     ]
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": -0.0082,
+     "ci_low": -0.0838,
+     "ci_high": 0.0674,
+     "p": 0.8315,
+     "p_bh": 0.8696,
+     "sd": null,
+     "coef_per_sd": -0.0082,
+     "ci_low_per_sd": -0.0838,
+     "ci_high_per_sd": 0.0674,
+     "pct_change_per_unit": -0.8172,
+     "pct_change_ci": [
+      -8.0386,
+      6.9714
+     ]
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0066,
+     "ci_low": -0.001,
+     "ci_high": 0.0141,
+     "p": 0.0882,
+     "p_bh": 0.2645,
+     "sd": 4.4283,
+     "coef_per_sd": 0.0291,
+     "ci_low_per_sd": -0.0043,
+     "ci_high_per_sd": 0.0625,
+     "pct_change_per_unit": 0.6592,
+     "pct_change_ci": [
+      -0.0981,
+      1.4222
+     ]
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": -0.0427,
+     "ci_low": -0.0895,
+     "ci_high": 0.0041,
+     "p": 0.0735,
+     "p_bh": 0.2645,
+     "sd": 0.6993,
+     "coef_per_sd": -0.0299,
+     "ci_low_per_sd": -0.0626,
+     "ci_high_per_sd": 0.0028,
+     "pct_change_per_unit": -4.1831,
+     "pct_change_ci": [
+      -8.5642,
+      0.408
+     ]
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": -0.0011,
+     "ci_low": -0.0049,
+     "ci_high": 0.0026,
+     "p": 0.5523,
+     "p_bh": 0.8285,
+     "sd": 12.2066,
+     "coef_per_sd": -0.0138,
+     "ci_low_per_sd": -0.0592,
+     "ci_high_per_sd": 0.0317,
+     "pct_change_per_unit": -0.1128,
+     "pct_change_ci": [
+      -0.484,
+      0.2597
+     ]
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.0068,
+     "ci_low": -0.074,
+     "ci_high": 0.0875,
+     "p": 0.8696,
+     "p_bh": 0.8696,
+     "sd": null,
+     "coef_per_sd": 0.0068,
+     "ci_low_per_sd": -0.074,
+     "ci_high_per_sd": 0.0875,
+     "pct_change_per_unit": 0.6786,
+     "pct_change_ci": [
+      -7.1317,
+      9.1458
+     ]
+    }
+   ]
+  },
+  "mard_step2": {
+   "outcome": "mard",
+   "n": 226,
+   "r2": 0.0854,
+   "r2_adj": 0.0516,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": 0.0248,
+     "ci_low": -0.0199,
+     "ci_high": 0.0696,
+     "p": 0.2769,
+     "p_bh": 0.5538,
+     "sd": 13.7919,
+     "coef_per_sd": 0.3423,
+     "ci_low_per_sd": -0.2747,
+     "ci_high_per_sd": 0.9593
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": -0.1805,
+     "ci_low": -1.4974,
+     "ci_high": 1.1363,
+     "p": 0.7881,
+     "p_bh": 0.7881,
+     "sd": null,
+     "coef_per_sd": -0.1805,
+     "ci_low_per_sd": -1.4974,
+     "ci_high_per_sd": 1.1363
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0898,
+     "ci_low": -0.0233,
+     "ci_high": 0.2028,
+     "p": 0.1196,
+     "p_bh": 0.3588,
+     "sd": 4.4283,
+     "coef_per_sd": 0.3975,
+     "ci_low_per_sd": -0.103,
+     "ci_high_per_sd": 0.898
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": -0.8486,
+     "ci_low": -1.8838,
+     "ci_high": 0.1866,
+     "p": 0.1081,
+     "p_bh": 0.3588,
+     "sd": 0.6993,
+     "coef_per_sd": -0.5934,
+     "ci_low_per_sd": -1.3173,
+     "ci_high_per_sd": 0.1305
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": -0.0266,
+     "ci_low": -0.0854,
+     "ci_high": 0.0323,
+     "p": 0.376,
+     "p_bh": 0.564,
+     "sd": 12.2066,
+     "coef_per_sd": -0.3243,
+     "ci_low_per_sd": -1.0423,
+     "ci_high_per_sd": 0.3937
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.3745,
+     "ci_low": -0.9929,
+     "ci_high": 1.7419,
+     "p": 0.5914,
+     "p_bh": 0.7097,
+     "sd": null,
+     "coef_per_sd": 0.3745,
+     "ci_low_per_sd": -0.9929,
+     "ci_high_per_sd": 1.7419
+    },
+    {
+     "term": "cv_pct",
+     "label": "Glucose CV (per 1 %)",
+     "coef": 0.2248,
+     "ci_low": 0.0065,
+     "ci_high": 0.443,
+     "p": 0.0435,
+     "p_bh": null,
+     "sd": 4.7202,
+     "coef_per_sd": 1.061,
+     "ci_low_per_sd": 0.0308,
+     "ci_high_per_sd": 2.0911
+    },
+    {
+     "term": "pct_below_70",
+     "label": "% time below 70 (per 1 %)",
+     "coef": 0.0785,
+     "ci_low": -0.3741,
+     "ci_high": 0.531,
+     "p": 0.7339,
+     "p_bh": null,
+     "sd": 2.4986,
+     "coef_per_sd": 0.1961,
+     "ci_low_per_sd": -0.9347,
+     "ci_high_per_sd": 1.3269
+    }
+   ]
+  },
+  "log_mard_step2": {
+   "outcome": "log mard",
+   "n": 226,
+   "r2": 0.1239,
+   "r2_adj": 0.0916,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": 0.0011,
+     "ci_low": -0.0018,
+     "ci_high": 0.0041,
+     "p": 0.4467,
+     "p_bh": 0.6701,
+     "sd": 13.7919,
+     "coef_per_sd": 0.0156,
+     "ci_low_per_sd": -0.0247,
+     "ci_high_per_sd": 0.0559,
+     "pct_change_per_unit": 0.1135,
+     "pct_change_ci": [
+      -0.1786,
+      0.4065
+     ]
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": -0.0152,
+     "ci_low": -0.0903,
+     "ci_high": 0.06,
+     "p": 0.692,
+     "p_bh": 0.8304,
+     "sd": null,
+     "coef_per_sd": -0.0152,
+     "ci_low_per_sd": -0.0903,
+     "ci_high_per_sd": 0.06,
+     "pct_change_per_unit": -1.5074,
+     "pct_change_ci": [
+      -8.6373,
+      6.179
+     ]
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0072,
+     "ci_low": 0.0005,
+     "ci_high": 0.0139,
+     "p": 0.0354,
+     "p_bh": 0.2124,
+     "sd": 4.4283,
+     "coef_per_sd": 0.0319,
+     "ci_low_per_sd": 0.0022,
+     "ci_high_per_sd": 0.0616,
+     "pct_change_per_unit": 0.7232,
+     "pct_change_ci": [
+      0.0493,
+      1.4016
+     ]
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": -0.0512,
+     "ci_low": -0.1076,
+     "ci_high": 0.0053,
+     "p": 0.0755,
+     "p_bh": 0.2265,
+     "sd": 0.6993,
+     "coef_per_sd": -0.0358,
+     "ci_low_per_sd": -0.0752,
+     "ci_high_per_sd": 0.0037,
+     "pct_change_per_unit": -4.9882,
+     "pct_change_ci": [
+      -10.2006,
+      0.5268
+     ]
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": -0.002,
+     "ci_low": -0.0055,
+     "ci_high": 0.0015,
+     "p": 0.2568,
+     "p_bh": 0.5135,
+     "sd": 12.2066,
+     "coef_per_sd": -0.0244,
+     "ci_low_per_sd": -0.0666,
+     "ci_high_per_sd": 0.0178,
+     "pct_change_per_unit": -0.1998,
+     "pct_change_ci": [
+      -0.5442,
+      0.1458
+     ]
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": -0.0003,
+     "ci_low": -0.0777,
+     "ci_high": 0.077,
+     "p": 0.9935,
+     "p_bh": 0.9935,
+     "sd": null,
+     "coef_per_sd": -0.0003,
+     "ci_low_per_sd": -0.0777,
+     "ci_high_per_sd": 0.077,
+     "pct_change_per_unit": -0.0323,
+     "pct_change_ci": [
+      -7.4737,
+      8.0075
+     ]
+    },
+    {
+     "term": "cv_pct",
+     "label": "Glucose CV (per 1 %)",
+     "coef": 0.0146,
+     "ci_low": 0.003,
+     "ci_high": 0.0263,
+     "p": 0.0138,
+     "p_bh": null,
+     "sd": 4.7202,
+     "coef_per_sd": 0.0691,
+     "ci_low_per_sd": 0.0141,
+     "ci_high_per_sd": 0.1241,
+     "pct_change_per_unit": 1.475,
+     "pct_change_ci": [
+      0.2997,
+      2.6642
+     ]
+    },
+    {
+     "term": "pct_below_70",
+     "label": "% time below 70 (per 1 %)",
+     "coef": 0.0099,
+     "ci_low": -0.0132,
+     "ci_high": 0.0331,
+     "p": 0.3999,
+     "p_bh": null,
+     "sd": 2.4986,
+     "coef_per_sd": 0.0248,
+     "ci_low_per_sd": -0.033,
+     "ci_high_per_sd": 0.0826,
+     "pct_change_per_unit": 0.9987,
+     "pct_change_ci": [
+      -1.3115,
+      3.363
+     ]
+    }
+   ]
+  },
+  "mard_step3_pair_mix": {
+   "outcome": "mard",
+   "n": 226,
+   "r2": 0.1022,
+   "r2_adj": 0.0604,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": 0.0302,
+     "ci_low": -0.0156,
+     "ci_high": 0.076,
+     "p": 0.1956,
+     "p_bh": 0.3913,
+     "sd": 13.7919,
+     "coef_per_sd": 0.4171,
+     "ci_low_per_sd": -0.2146,
+     "ci_high_per_sd": 1.0489
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": -0.232,
+     "ci_low": -1.5935,
+     "ci_high": 1.1295,
+     "p": 0.7384,
+     "p_bh": 0.7384,
+     "sd": null,
+     "coef_per_sd": -0.232,
+     "ci_low_per_sd": -1.5935,
+     "ci_high_per_sd": 1.1295
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0863,
+     "ci_low": -0.0263,
+     "ci_high": 0.1988,
+     "p": 0.1331,
+     "p_bh": 0.3913,
+     "sd": 4.4283,
+     "coef_per_sd": 0.382,
+     "ci_low_per_sd": -0.1165,
+     "ci_high_per_sd": 0.8804
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": -0.8972,
+     "ci_low": -1.9714,
+     "ci_high": 0.177,
+     "p": 0.1016,
+     "p_bh": 0.3913,
+     "sd": 0.6993,
+     "coef_per_sd": -0.6274,
+     "ci_low_per_sd": -1.3785,
+     "ci_high_per_sd": 0.1237
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": -0.0287,
+     "ci_low": -0.0879,
+     "ci_high": 0.0305,
+     "p": 0.3424,
+     "p_bh": 0.4332,
+     "sd": 12.2066,
+     "coef_per_sd": -0.3503,
+     "ci_low_per_sd": -1.0735,
+     "ci_high_per_sd": 0.3729
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.7911,
+     "ci_low": -0.9063,
+     "ci_high": 2.4886,
+     "p": 0.361,
+     "p_bh": 0.4332,
+     "sd": null,
+     "coef_per_sd": 0.7911,
+     "ci_low_per_sd": -0.9063,
+     "ci_high_per_sd": 2.4886
+    },
+    {
+     "term": "cv_pct",
+     "label": "Glucose CV (per 1 %)",
+     "coef": 0.1822,
+     "ci_low": -0.0165,
+     "ci_high": 0.3808,
+     "p": 0.0722,
+     "p_bh": null,
+     "sd": 4.7202,
+     "coef_per_sd": 0.8599,
+     "ci_low_per_sd": -0.0777,
+     "ci_high_per_sd": 1.7975
+    },
+    {
+     "term": "pct_below_70",
+     "label": "% time below 70 (per 1 %)",
+     "coef": 0.2892,
+     "ci_low": -0.2415,
+     "ci_high": 0.8199,
+     "p": 0.2854,
+     "p_bh": null,
+     "sd": 2.4986,
+     "coef_per_sd": 0.7227,
+     "ci_low_per_sd": -0.6033,
+     "ci_high_per_sd": 2.0487
+    },
+    {
+     "term": "pct_pairs_low",
+     "label": "% of own pairs below 70 (per 1 %)",
+     "coef": -0.1305,
+     "ci_low": -0.3558,
+     "ci_high": 0.0948,
+     "p": 0.2564,
+     "p_bh": null,
+     "sd": 5.3736,
+     "coef_per_sd": -0.7011,
+     "ci_low_per_sd": -1.9118,
+     "ci_high_per_sd": 0.5097
+    },
+    {
+     "term": "pct_pairs_fast",
+     "label": "% of own pairs fast-changing (per 1 %)",
+     "coef": 0.0446,
+     "ci_low": -0.0416,
+     "ci_high": 0.1309,
+     "p": 0.3106,
+     "p_bh": null,
+     "sd": 8.4605,
+     "coef_per_sd": 0.3777,
+     "ci_low_per_sd": -0.3523,
+     "ci_high_per_sd": 1.1077
+    }
+   ]
+  },
+  "low_mard_step1": {
+   "outcome": "low_mard",
+   "n": 150,
+   "r2": 0.0706,
+   "r2_adj": 0.0316,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": -0.0511,
+     "ci_low": -0.095,
+     "ci_high": -0.0072,
+     "p": 0.0226,
+     "p_bh": 0.0678,
+     "sd": 13.9725,
+     "coef_per_sd": -0.7139,
+     "ci_low_per_sd": -1.3276,
+     "ci_high_per_sd": -0.1002
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": 0.2111,
+     "ci_low": -0.9382,
+     "ci_high": 1.3604,
+     "p": 0.7188,
+     "p_bh": 0.8626,
+     "sd": null,
+     "coef_per_sd": 0.2111,
+     "ci_low_per_sd": -0.9382,
+     "ci_high_per_sd": 1.3604
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0517,
+     "ci_low": -0.095,
+     "ci_high": 0.1984,
+     "p": 0.4897,
+     "p_bh": 0.7345,
+     "sd": 3.8767,
+     "coef_per_sd": 0.2005,
+     "ci_low_per_sd": -0.3683,
+     "ci_high_per_sd": 0.7692
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": 0.3243,
+     "ci_low": -0.4539,
+     "ci_high": 1.1025,
+     "p": 0.414,
+     "p_bh": 0.7345,
+     "sd": 0.6914,
+     "coef_per_sd": 0.2242,
+     "ci_low_per_sd": -0.3138,
+     "ci_high_per_sd": 0.7623
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": 0.0793,
+     "ci_low": 0.02,
+     "ci_high": 0.1387,
+     "p": 0.0088,
+     "p_bh": 0.0529,
+     "sd": 11.7941,
+     "coef_per_sd": 0.9354,
+     "ci_low_per_sd": 0.2354,
+     "ci_high_per_sd": 1.6354
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.0298,
+     "ci_low": -1.1917,
+     "ci_high": 1.2514,
+     "p": 0.9618,
+     "p_bh": 0.9618,
+     "sd": null,
+     "coef_per_sd": 0.0298,
+     "ci_low_per_sd": -1.1917,
+     "ci_high_per_sd": 1.2514
+    }
+   ]
+  },
+  "log_low_mard_step1": {
+   "outcome": "log low_mard",
+   "n": 150,
+   "r2": 0.0685,
+   "r2_adj": 0.0294,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": -0.0031,
+     "ci_low": -0.0058,
+     "ci_high": -0.0004,
+     "p": 0.0259,
+     "p_bh": 0.0776,
+     "sd": 13.9725,
+     "coef_per_sd": -0.0432,
+     "ci_low_per_sd": -0.0812,
+     "ci_high_per_sd": -0.0052,
+     "pct_change_per_unit": -0.3087,
+     "pct_change_ci": [
+      -0.5795,
+      -0.0372
+     ]
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": 0.0087,
+     "ci_low": -0.0596,
+     "ci_high": 0.077,
+     "p": 0.8022,
+     "p_bh": 0.9594,
+     "sd": null,
+     "coef_per_sd": 0.0087,
+     "ci_low_per_sd": -0.0596,
+     "ci_high_per_sd": 0.077,
+     "pct_change_per_unit": 0.8767,
+     "pct_change_ci": [
+      -5.7836,
+      8.0078
+     ]
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0031,
+     "ci_low": -0.0054,
+     "ci_high": 0.0116,
+     "p": 0.4785,
+     "p_bh": 0.7177,
+     "sd": 3.8767,
+     "coef_per_sd": 0.0119,
+     "ci_low_per_sd": -0.0211,
+     "ci_high_per_sd": 0.0449,
+     "pct_change_per_unit": 0.3081,
+     "pct_change_ci": [
+      -0.5417,
+      1.1652
+     ]
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": 0.0195,
+     "ci_low": -0.0279,
+     "ci_high": 0.0669,
+     "p": 0.4196,
+     "p_bh": 0.7177,
+     "sd": 0.6914,
+     "coef_per_sd": 0.0135,
+     "ci_low_per_sd": -0.0193,
+     "ci_high_per_sd": 0.0463,
+     "pct_change_per_unit": 1.972,
+     "pct_change_ci": [
+      -2.7506,
+      6.9239
+     ]
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": 0.0045,
+     "ci_low": 0.0008,
+     "ci_high": 0.0082,
+     "p": 0.0166,
+     "p_bh": 0.0776,
+     "sd": 11.7941,
+     "coef_per_sd": 0.053,
+     "ci_low_per_sd": 0.0096,
+     "ci_high_per_sd": 0.0963,
+     "pct_change_per_unit": 0.4503,
+     "pct_change_ci": [
+      0.0817,
+      0.8202
+     ]
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.0019,
+     "ci_low": -0.07,
+     "ci_high": 0.0737,
+     "p": 0.9594,
+     "p_bh": 0.9594,
+     "sd": null,
+     "coef_per_sd": 0.0019,
+     "ci_low_per_sd": -0.07,
+     "ci_high_per_sd": 0.0737,
+     "pct_change_per_unit": 0.1867,
+     "pct_change_ci": [
+      -6.762,
+      7.6531
+     ]
+    }
+   ]
+  },
+  "low_mard_step2": {
+   "outcome": "low_mard",
+   "n": 150,
+   "r2": 0.0727,
+   "r2_adj": 0.0201,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": -0.0529,
+     "ci_low": -0.0966,
+     "ci_high": -0.0092,
+     "p": 0.0176,
+     "p_bh": 0.0528,
+     "sd": 13.9725,
+     "coef_per_sd": -0.7395,
+     "ci_low_per_sd": -1.35,
+     "ci_high_per_sd": -0.129
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": 0.2554,
+     "ci_low": -0.8971,
+     "ci_high": 1.4079,
+     "p": 0.664,
+     "p_bh": 0.7968,
+     "sd": null,
+     "coef_per_sd": 0.2554,
+     "ci_low_per_sd": -0.8971,
+     "ci_high_per_sd": 1.4079
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0504,
+     "ci_low": -0.1022,
+     "ci_high": 0.203,
+     "p": 0.5171,
+     "p_bh": 0.7968,
+     "sd": 3.8767,
+     "coef_per_sd": 0.1955,
+     "ci_low_per_sd": -0.396,
+     "ci_high_per_sd": 0.7871
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": 0.222,
+     "ci_low": -0.6072,
+     "ci_high": 1.0511,
+     "p": 0.5998,
+     "p_bh": 0.7968,
+     "sd": 0.6914,
+     "coef_per_sd": 0.1535,
+     "ci_low_per_sd": -0.4198,
+     "ci_high_per_sd": 0.7268
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": 0.0809,
+     "ci_low": 0.0209,
+     "ci_high": 0.141,
+     "p": 0.0082,
+     "p_bh": 0.0492,
+     "sd": 11.7941,
+     "coef_per_sd": 0.9547,
+     "ci_low_per_sd": 0.2469,
+     "ci_high_per_sd": 1.6624
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.0601,
+     "ci_low": -1.1705,
+     "ci_high": 1.2907,
+     "p": 0.9238,
+     "p_bh": 0.9238,
+     "sd": null,
+     "coef_per_sd": 0.0601,
+     "ci_low_per_sd": -1.1705,
+     "ci_high_per_sd": 1.2907
+    },
+    {
+     "term": "cv_pct",
+     "label": "Glucose CV (per 1 %)",
+     "coef": 0.0264,
+     "ci_low": -0.1518,
+     "ci_high": 0.2045,
+     "p": 0.7716,
+     "p_bh": null,
+     "sd": 4.1299,
+     "coef_per_sd": 0.109,
+     "ci_low_per_sd": -0.6268,
+     "ci_high_per_sd": 0.8447
+    },
+    {
+     "term": "pct_below_70",
+     "label": "% time below 70 (per 1 %)",
+     "coef": -0.0861,
+     "ci_low": -0.3318,
+     "ci_high": 0.1596,
+     "p": 0.4923,
+     "p_bh": null,
+     "sd": 2.4194,
+     "coef_per_sd": -0.2083,
+     "ci_low_per_sd": -0.8027,
+     "ci_high_per_sd": 0.3862
+    }
+   ]
+  },
+  "allpairs_mard_step1_old_definition": {
+   "outcome": "allpairs_mard",
+   "n": 226,
+   "r2": 0.0897,
+   "r2_adj": 0.0648,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": -0.0456,
+     "ci_low": -0.0853,
+     "ci_high": -0.0059,
+     "p": 0.0242,
+     "p_bh": 0.0675,
+     "sd": 13.7919,
+     "coef_per_sd": -0.629,
+     "ci_low_per_sd": -1.1762,
+     "ci_high_per_sd": -0.0819
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": 0.1093,
+     "ci_low": -1.1673,
+     "ci_high": 1.3858,
+     "p": 0.8668,
+     "p_bh": 0.8668,
+     "sd": null,
+     "coef_per_sd": 0.1093,
+     "ci_low_per_sd": -1.1673,
+     "ci_high_per_sd": 1.3858
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.0565,
+     "ci_low": -0.0599,
+     "ci_high": 0.1729,
+     "p": 0.3411,
+     "p_bh": 0.4093,
+     "sd": 4.4283,
+     "coef_per_sd": 0.2504,
+     "ci_low_per_sd": -0.2651,
+     "ci_high_per_sd": 0.7658
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": -1.3102,
+     "ci_low": -2.5197,
+     "ci_high": -0.1006,
+     "p": 0.0338,
+     "p_bh": 0.0675,
+     "sd": 0.6993,
+     "coef_per_sd": -0.9161,
+     "ci_low_per_sd": -1.7619,
+     "ci_high_per_sd": -0.0703
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": 0.0543,
+     "ci_low": -0.0164,
+     "ci_high": 0.125,
+     "p": 0.1322,
+     "p_bh": 0.1983,
+     "sd": 12.2066,
+     "coef_per_sd": 0.6627,
+     "ci_low_per_sd": -0.2001,
+     "ci_high_per_sd": 1.5255
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 1.938,
+     "ci_low": 0.5178,
+     "ci_high": 3.3583,
+     "p": 0.0075,
+     "p_bh": 0.0449,
+     "sd": null,
+     "coef_per_sd": 1.938,
+     "ci_low_per_sd": 0.5178,
+     "ci_high_per_sd": 3.3583
+    }
+   ]
+  },
+  "mid_mard_step1": {
+   "outcome": "mid_mard",
+   "n": 226,
+   "r2": 0.0152,
+   "r2_adj": -0.0118,
+   "se": "HC3 robust",
+   "terms": [
+    {
+     "term": "age",
+     "label": "Age (per year)",
+     "coef": 0.0012,
+     "ci_low": -0.0555,
+     "ci_high": 0.0579,
+     "p": 0.9659,
+     "p_bh": 0.9659,
+     "sd": 13.7919,
+     "coef_per_sd": 0.0171,
+     "ci_low_per_sd": -0.7648,
+     "ci_high_per_sd": 0.799
+    },
+    {
+     "term": "male",
+     "label": "Male vs female",
+     "coef": 0.038,
+     "ci_low": -1.4737,
+     "ci_high": 1.5497,
+     "p": 0.9607,
+     "p_bh": 0.9659,
+     "sd": null,
+     "coef_per_sd": 0.038,
+     "ci_low_per_sd": -1.4737,
+     "ci_high_per_sd": 1.5497
+    },
+    {
+     "term": "bmi",
+     "label": "BMI (per kg/m2)",
+     "coef": 0.1035,
+     "ci_low": -0.037,
+     "ci_high": 0.2441,
+     "p": 0.1486,
+     "p_bh": 0.7586,
+     "sd": 4.4283,
+     "coef_per_sd": 0.4585,
+     "ci_low_per_sd": -0.1637,
+     "ci_high_per_sd": 1.0808
+    },
+    {
+     "term": "hba1c_screening",
+     "label": "HbA1c (per 1 %)",
+     "coef": -0.4193,
+     "ci_low": -1.3123,
+     "ci_high": 0.4737,
+     "p": 0.3574,
+     "p_bh": 0.7586,
+     "sd": 0.6993,
+     "coef_per_sd": -0.2932,
+     "ci_low_per_sd": -0.9176,
+     "ci_high_per_sd": 0.3312
+    },
+    {
+     "term": "diabetes_duration_yrs",
+     "label": "Diabetes duration (per year)",
+     "coef": -0.0265,
+     "ci_low": -0.1044,
+     "ci_high": 0.0515,
+     "p": 0.5057,
+     "p_bh": 0.7586,
+     "sd": 12.2066,
+     "coef_per_sd": -0.3229,
+     "ci_low_per_sd": -1.274,
+     "ci_high_per_sd": 0.6281
+    },
+    {
+     "term": "arm_cgm_bgm",
+     "label": "CGM+BGM arm vs CGM-only",
+     "coef": 0.7214,
+     "ci_low": -1.0221,
+     "ci_high": 2.4649,
+     "p": 0.4174,
+     "p_bh": 0.7586,
+     "sd": null,
+     "coef_per_sd": 0.7214,
+     "ci_low_per_sd": -1.0221,
+     "ci_high_per_sd": 2.4649
+    }
+   ]
+  },
+  "univariable": {
+   "age": {
+    "term": "age",
+    "label": "Age (per year)",
+    "coef": -0.0108,
+    "ci_low": -0.0522,
+    "ci_high": 0.0306,
+    "p": 0.6088,
+    "p_bh": 0.6088,
+    "sd": 13.7919,
+    "coef_per_sd": -0.149,
+    "ci_low_per_sd": -0.7197,
+    "ci_high_per_sd": 0.4217
+   },
+   "male": {
+    "term": "male",
+    "label": "Male vs female",
+    "coef": -0.055,
+    "ci_low": -1.2133,
+    "ci_high": 1.1033,
+    "p": 0.9258,
+    "p_bh": 0.9258,
+    "sd": null,
+    "coef_per_sd": -0.055,
+    "ci_low_per_sd": -1.2133,
+    "ci_high_per_sd": 1.1033
+   },
+   "bmi": {
+    "term": "bmi",
+    "label": "BMI (per kg/m2)",
+    "coef": 0.0621,
+    "ci_low": -0.0694,
+    "ci_high": 0.1935,
+    "p": 0.355,
+    "p_bh": 0.355,
+    "sd": 4.4283,
+    "coef_per_sd": 0.2748,
+    "ci_low_per_sd": -0.3075,
+    "ci_high_per_sd": 0.8571
+   },
+   "hba1c_screening": {
+    "term": "hba1c_screening",
+    "label": "HbA1c (per 1 %)",
+    "coef": -0.5886,
+    "ci_low": -1.366,
+    "ci_high": 0.1887,
+    "p": 0.1378,
+    "p_bh": 0.1378,
+    "sd": 0.6993,
+    "coef_per_sd": -0.4116,
+    "ci_low_per_sd": -0.9552,
+    "ci_high_per_sd": 0.1319
+   },
+   "diabetes_duration_yrs": {
+    "term": "diabetes_duration_yrs",
+    "label": "Diabetes duration (per year)",
+    "coef": -0.0178,
+    "ci_low": -0.0766,
+    "ci_high": 0.0409,
+    "p": 0.5519,
+    "p_bh": 0.5519,
+    "sd": 12.2066,
+    "coef_per_sd": -0.2177,
+    "ci_low_per_sd": -0.9349,
+    "ci_high_per_sd": 0.4995
+   },
+   "arm_cgm_bgm": {
+    "term": "arm_cgm_bgm",
+    "label": "CGM+BGM arm vs CGM-only",
+    "coef": 0.3613,
+    "ci_low": -1.0618,
+    "ci_high": 1.7843,
+    "p": 0.6188,
+    "p_bh": 0.6188,
+    "sd": null,
+    "coef_per_sd": 0.3613,
+    "ci_low_per_sd": -1.0618,
+    "ci_high_per_sd": 1.7843
+   }
+  }
+ },
+ "confounders": {
+  "mard": [
+   {
+    "variable": "cv_pct",
+    "label": "Glucose CV (%)",
+    "n": 226,
+    "rho": 0.3263,
+    "ci_low": 0.2,
+    "ci_high": 0.441,
+    "p": 0.0
+   },
+   {
+    "variable": "pct_below_70",
+    "label": "% time below 70 mg/dL",
+    "n": 226,
+    "rho": 0.3277,
+    "ci_low": 0.2005,
+    "ci_high": 0.4429,
+    "p": 0.0
+   },
+   {
+    "variable": "pct_above_180",
+    "label": "% time above 180 mg/dL",
+    "n": 226,
+    "rho": -0.0722,
+    "ci_low": -0.2043,
+    "ci_high": 0.0563,
+    "p": 0.2796
+   },
+   {
+    "variable": "mean_glucose",
+    "label": "Mean CGM glucose (mg/dL)",
+    "n": 226,
+    "rho": -0.099,
+    "ci_low": -0.2274,
+    "ci_high": 0.0296,
+    "p": 0.138
+   },
+   {
+    "variable": "sd_glucose",
+    "label": "Glucose SD (mg/dL)",
+    "n": 226,
+    "rho": 0.1698,
+    "ci_low": 0.0413,
+    "ci_high": 0.2989,
+    "p": 0.0106
+   },
+   {
+    "variable": "pct_pairs_low",
+    "label": "% of own pairs below 70 mg/dL",
+    "n": 226,
+    "rho": 0.2657,
+    "ci_low": 0.1324,
+    "ci_high": 0.3859,
+    "p": 0.0001
+   },
+   {
+    "variable": "pct_pairs_fast",
+    "label": "% of own pairs fast-changing",
+    "n": 226,
+    "rho": 0.2183,
+    "ci_low": 0.0844,
+    "ci_high": 0.3377,
+    "p": 0.001
+   },
+   {
+    "variable": "pct_pairs_night",
+    "label": "% of own pairs at night",
+    "n": 226,
+    "rho": 0.1515,
+    "ci_low": 0.0307,
+    "ci_high": 0.2778,
+    "p": 0.0227
+   },
+   {
+    "variable": "mean_abs_roc",
+    "label": "Mean |rate of change| at pairs (mg/dL/min)",
+    "n": 226,
+    "rho": 0.2283,
+    "ci_low": 0.0931,
+    "ci_high": 0.3559,
+    "p": 0.0005
+   },
+   {
+    "variable": "median_readings_per_day",
+    "label": "CGM readings per day",
+    "n": 226,
+    "rho": -0.0869,
+    "ci_low": -0.2264,
+    "ci_high": 0.0453,
+    "p": 0.1933
+   },
+   {
+    "variable": "pairs_per_day",
+    "label": "Meter pairs per day",
+    "n": 226,
+    "rho": -0.0014,
+    "ci_low": -0.1441,
+    "ci_high": 0.1391,
+    "p": 0.9834
+   },
+   {
+    "variable": "n_pairs",
+    "label": "Number of meter pairs",
+    "n": 226,
+    "rho": 0.0391,
+    "ci_low": -0.1019,
+    "ci_high": 0.1726,
+    "p": 0.5588
+   },
+   {
+    "variable": "fingersticks_per_day",
+    "label": "Fingersticks per day at screening",
+    "n": 226,
+    "rho": -0.0939,
+    "ci_low": -0.2203,
+    "ci_high": 0.0393,
+    "p": 0.1593
+   }
+  ],
+  "low_mard": [
+   {
+    "variable": "cv_pct",
+    "label": "Glucose CV (%)",
+    "n": 150,
+    "rho": 0.0041,
+    "ci_low": -0.1552,
+    "ci_high": 0.1676,
+    "p": 0.9608
+   },
+   {
+    "variable": "pct_below_70",
+    "label": "% time below 70 mg/dL",
+    "n": 150,
+    "rho": -0.0473,
+    "ci_low": -0.2124,
+    "ci_high": 0.1182,
+    "p": 0.5659
+   },
+   {
+    "variable": "pct_above_180",
+    "label": "% time above 180 mg/dL",
+    "n": 150,
+    "rho": 0.1105,
+    "ci_low": -0.0473,
+    "ci_high": 0.2563,
+    "p": 0.1781
+   },
+   {
+    "variable": "mean_glucose",
+    "label": "Mean CGM glucose (mg/dL)",
+    "n": 150,
+    "rho": 0.1084,
+    "ci_low": -0.0456,
+    "ci_high": 0.2605,
+    "p": 0.1867
+   },
+   {
+    "variable": "sd_glucose",
+    "label": "Glucose SD (mg/dL)",
+    "n": 150,
+    "rho": 0.1062,
+    "ci_low": -0.0488,
+    "ci_high": 0.255,
+    "p": 0.1959
+   },
+   {
+    "variable": "pct_pairs_low",
+    "label": "% of own pairs below 70 mg/dL",
+    "n": 150,
+    "rho": -0.1242,
+    "ci_low": -0.2892,
+    "ci_high": 0.041,
+    "p": 0.13
+   },
+   {
+    "variable": "pct_pairs_fast",
+    "label": "% of own pairs fast-changing",
+    "n": 150,
+    "rho": 0.0842,
+    "ci_low": -0.0722,
+    "ci_high": 0.2382,
+    "p": 0.3054
+   },
+   {
+    "variable": "pct_pairs_night",
+    "label": "% of own pairs at night",
+    "n": 150,
+    "rho": 0.063,
+    "ci_low": -0.1011,
+    "ci_high": 0.2295,
+    "p": 0.444
+   },
+   {
+    "variable": "mean_abs_roc",
+    "label": "Mean |rate of change| at pairs (mg/dL/min)",
+    "n": 150,
+    "rho": 0.0837,
+    "ci_low": -0.0694,
+    "ci_high": 0.2393,
+    "p": 0.3087
+   },
+   {
+    "variable": "median_readings_per_day",
+    "label": "CGM readings per day",
+    "n": 150,
+    "rho": -0.1351,
+    "ci_low": -0.2968,
+    "ci_high": 0.0316,
+    "p": 0.0992
+   },
+   {
+    "variable": "pairs_per_day",
+    "label": "Meter pairs per day",
+    "n": 150,
+    "rho": 0.0437,
+    "ci_low": -0.1182,
+    "ci_high": 0.2137,
+    "p": 0.5952
+   },
+   {
+    "variable": "n_pairs",
+    "label": "Number of meter pairs",
+    "n": 150,
+    "rho": 0.0611,
+    "ci_low": -0.0975,
+    "ci_high": 0.2181,
+    "p": 0.4573
+   },
+   {
+    "variable": "fingersticks_per_day",
+    "label": "Fingersticks per day at screening",
+    "n": 150,
+    "rho": -0.0386,
+    "ci_low": -0.1939,
+    "ci_high": 0.1205,
+    "p": 0.6391
+   }
+  ],
+  "covariates_vs_cv": [
+   {
+    "variable": "age",
+    "label": "Age (years)",
+    "n": 226,
+    "rho": -0.3012,
+    "ci_low": -0.4125,
+    "ci_high": -0.1792,
+    "p": 0.0
+   },
+   {
+    "variable": "bmi",
+    "label": "BMI (kg/m2)",
+    "n": 226,
+    "rho": 0.0963,
+    "ci_low": -0.0322,
+    "ci_high": 0.2297,
+    "p": 0.1492
+   },
+   {
+    "variable": "hba1c_screening",
+    "label": "HbA1c at screening (%)",
+    "n": 226,
+    "rho": 0.1746,
+    "ci_low": 0.0451,
+    "ci_high": 0.2987,
+    "p": 0.0085
+   },
+   {
+    "variable": "diabetes_duration_yrs",
+    "label": "Diabetes duration (years)",
+    "n": 226,
+    "rho": -0.0647,
+    "ci_low": -0.1995,
+    "ci_high": 0.0746,
+    "p": 0.3329
+   }
+  ],
+  "covariates_vs_pct_below_70": [
+   {
+    "variable": "age",
+    "label": "Age (years)",
+    "n": 226,
+    "rho": -0.2096,
+    "ci_low": -0.3259,
+    "ci_high": -0.0839,
+    "p": 0.0015
+   },
+   {
+    "variable": "bmi",
+    "label": "BMI (kg/m2)",
+    "n": 226,
+    "rho": -0.1271,
+    "ci_low": -0.2536,
+    "ci_high": 0.0107,
+    "p": 0.0564
+   },
+   {
+    "variable": "hba1c_screening",
+    "label": "HbA1c at screening (%)",
+    "n": 226,
+    "rho": -0.1943,
+    "ci_low": -0.3213,
+    "ci_high": -0.0585,
+    "p": 0.0034
+   },
+   {
+    "variable": "diabetes_duration_yrs",
+    "label": "Diabetes duration (years)",
+    "n": 226,
+    "rho": 0.0246,
+    "ci_low": -0.1049,
+    "ci_high": 0.1474,
+    "p": 0.7133
+   }
+  ],
+  "cv_by_arm": {
+   "variable": "arm",
+   "label": "Study arm",
+   "outcome": "cv_pct",
+   "groups": [
+    {
+     "group": "CGM Only",
+     "n": 149,
+     "median": 37.2696,
+     "q1": 34.5834,
+     "q3": 40.7326,
+     "mean": 37.3374
+    },
+    {
+     "group": "CGM+BGM",
+     "n": 77,
+     "median": 37.5459,
+     "q1": 34.6495,
+     "q3": 40.7457,
+     "mean": 37.5421
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Mann-Whitney U",
+   "p": 0.8755,
+   "reference": "CGM Only",
+   "contrasts": [
+    {
+     "group": "CGM+BGM",
+     "vs": "CGM Only",
+     "n": 77,
+     "n_ref": 149,
+     "diff_median": 0.2763,
+     "ci_low": -1.6152,
+     "ci_high": 1.8186,
+     "detectable_diff_means": 1.8587
+    }
+   ]
+  },
+  "pct_below_70_by_arm": {
+   "variable": "arm",
+   "label": "Study arm",
+   "outcome": "pct_below_70",
+   "groups": [
+    {
+     "group": "CGM Only",
+     "n": 149,
+     "median": 3.2044,
+     "q1": 1.689,
+     "q3": 5.0879,
+     "mean": 3.6768
+    },
+    {
+     "group": "CGM+BGM",
+     "n": 77,
+     "median": 3.8812,
+     "q1": 1.875,
+     "q3": 4.8825,
+     "mean": 3.9176
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Mann-Whitney U",
+   "p": 0.2909,
+   "reference": "CGM Only",
+   "contrasts": [
+    {
+     "group": "CGM+BGM",
+     "vs": "CGM Only",
+     "n": 77,
+     "n_ref": 149,
+     "diff_median": 0.6768,
+     "ci_low": -0.0335,
+     "ci_high": 1.3774,
+     "detectable_diff_means": 0.9831
+    }
+   ]
+  },
+  "pct_below_70_by_hba1c": {
+   "variable": "hba1c_group",
+   "label": "HbA1c group",
+   "outcome": "pct_below_70",
+   "groups": [
+    {
+     "group": "<7",
+     "n": 77,
+     "median": 4.1096,
+     "q1": 2.5292,
+     "q3": 6.0708,
+     "mean": 4.4984
+    },
+    {
+     "group": "7-8",
+     "n": 118,
+     "median": 3.1901,
+     "q1": 1.526,
+     "q3": 4.5759,
+     "mean": 3.4129
+    },
+    {
+     "group": ">8",
+     "n": 31,
+     "median": 2.8373,
+     "q1": 1.556,
+     "q3": 4.3014,
+     "mean": 3.2392
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Kruskal-Wallis",
+   "p": 0.0058,
+   "reference": "<7",
+   "contrasts": [
+    {
+     "group": "7-8",
+     "vs": "<7",
+     "n": 118,
+     "n_ref": 77,
+     "diff_median": -0.9196,
+     "ci_low": -1.9654,
+     "ci_high": -0.1351,
+     "detectable_diff_means": 1.0058
+    },
+    {
+     "group": ">8",
+     "vs": "<7",
+     "n": 31,
+     "n_ref": 77,
+     "diff_median": -1.2723,
+     "ci_low": -2.4434,
+     "ci_high": -0.1431,
+     "detectable_diff_means": 1.5641
+    }
+   ]
+  },
+  "cv_by_hba1c": {
+   "variable": "hba1c_group",
+   "label": "HbA1c group",
+   "outcome": "cv_pct",
+   "groups": [
+    {
+     "group": "<7",
+     "n": 77,
+     "median": 37.2852,
+     "q1": 34.2543,
+     "q3": 40.7501,
+     "mean": 36.8117
+    },
+    {
+     "group": "7-8",
+     "n": 118,
+     "median": 37.2645,
+     "q1": 34.7067,
+     "q3": 40.361,
+     "mean": 37.5102
+    },
+    {
+     "group": ">8",
+     "n": 31,
+     "median": 37.8915,
+     "q1": 35.7079,
+     "q3": 42.5388,
+     "mean": 38.4935
+    }
+   ],
+   "excluded_small_groups": [],
+   "testable": true,
+   "test": "Kruskal-Wallis",
+   "p": 0.1936,
+   "reference": "<7",
+   "contrasts": [
+    {
+     "group": "7-8",
+     "vs": "<7",
+     "n": 118,
+     "n_ref": 77,
+     "diff_median": -0.0207,
+     "ci_low": -1.3254,
+     "ci_high": 2.3468,
+     "detectable_diff_means": 1.898
+    },
+    {
+     "group": ">8",
+     "vs": "<7",
+     "n": 31,
+     "n_ref": 77,
+     "diff_median": 0.6063,
+     "ci_low": -1.2346,
+     "ci_high": 4.8189,
+     "detectable_diff_means": 2.9948
+    }
+   ]
+  }
+ },
+ "exploratory": {
+  "n_tests_in_bh_family": 22,
+  "tests": [
+   {
+    "kind": "group",
+    "variable": "education_group",
+    "label": "Education",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "No bachelor's",
+      "n": 47,
+      "median": 12.7867,
+      "q1": 11.5437,
+      "q3": 14.8869,
+      "mean": 13.422
+     },
+     {
+      "group": "Bachelor's",
+      "n": 110,
+      "median": 12.286,
+      "q1": 10.7464,
+      "q3": 13.6547,
+      "mean": 12.8905
+     },
+     {
+      "group": "Graduate degree",
+      "n": 64,
+      "median": 12.1865,
+      "q1": 10.2616,
+      "q3": 14.1199,
+      "mean": 13.6733
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.2463,
+    "reference": "No bachelor's",
+    "contrasts": [
+     {
+      "group": "Bachelor's",
+      "vs": "No bachelor's",
+      "n": 110,
+      "n_ref": 47,
+      "diff_median": -0.5007,
+      "ci_low": -2.2573,
+      "ci_high": 0.7503,
+      "detectable_diff_means": 1.8385
+     },
+     {
+      "group": "Graduate degree",
+      "vs": "No bachelor's",
+      "n": 64,
+      "n_ref": 47,
+      "diff_median": -0.6002,
+      "ci_low": -2.4214,
+      "ci_high": 0.7872,
+      "detectable_diff_means": 2.5467
+     }
+    ],
+    "p_bh": 0.4925,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "income_group",
+    "label": "Income (answered only)",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "<$50k",
+      "n": 25,
+      "median": 11.5534,
+      "q1": 9.9188,
+      "q3": 13.7784,
+      "mean": 13.6174
+     },
+     {
+      "group": "$50k-<$100k",
+      "n": 56,
+      "median": 12.5666,
+      "q1": 11.5489,
+      "q3": 14.3741,
+      "mean": 13.0443
+     },
+     {
+      "group": "$100k-<$200k",
+      "n": 55,
+      "median": 12.4347,
+      "q1": 10.7971,
+      "q3": 14.6007,
+      "mean": 13.2712
+     },
+     {
+      "group": "$200k+",
+      "n": 32,
+      "median": 12.5983,
+      "q1": 11.2814,
+      "q3": 14.026,
+      "mean": 14.0306
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.586,
+    "reference": "<$50k",
+    "contrasts": [
+     {
+      "group": "$50k-<$100k",
+      "vs": "<$50k",
+      "n": 56,
+      "n_ref": 25,
+      "diff_median": 1.0133,
+      "ci_low": -1.0369,
+      "ci_high": 2.5459,
+      "detectable_diff_means": 3.0856
+     },
+     {
+      "group": "$100k-<$200k",
+      "vs": "<$50k",
+      "n": 55,
+      "n_ref": 25,
+      "diff_median": 0.8813,
+      "ci_low": -1.2664,
+      "ci_high": 2.5019,
+      "detectable_diff_means": 3.3302
+     },
+     {
+      "group": "$200k+",
+      "vs": "<$50k",
+      "n": 32,
+      "n_ref": 25,
+      "diff_median": 1.0449,
+      "ci_low": -1.0562,
+      "ci_high": 2.6481,
+      "detectable_diff_means": 4.8991
+     }
+    ],
+    "p_bh": 0.7589,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "insurance_private_yn",
+    "label": "Private insurance",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 28,
+      "median": 12.4973,
+      "q1": 10.0194,
+      "q3": 14.3642,
+      "mean": 13.546
+     },
+     {
+      "group": "yes",
+      "n": 198,
+      "median": 12.2888,
+      "q1": 10.8686,
+      "q3": 14.2017,
+      "mean": 13.1506
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.6554,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 198,
+      "n_ref": 28,
+      "diff_median": -0.2085,
+      "ci_low": -1.1617,
+      "ci_high": 1.7779,
+      "detectable_diff_means": 2.4985
+     }
+    ],
+    "p_bh": 0.7589,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "insurance_medicare_yn",
+    "label": "Medicare",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 210,
+      "median": 12.3068,
+      "q1": 10.885,
+      "q3": 14.1228,
+      "mean": 13.1927
+     },
+     {
+      "group": "yes",
+      "n": 16,
+      "median": 11.7206,
+      "q1": 10.0743,
+      "q3": 14.7702,
+      "mean": 13.29
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.613,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 16,
+      "n_ref": 210,
+      "diff_median": -0.5862,
+      "ci_low": -2.3494,
+      "ci_high": 2.5325,
+      "detectable_diff_means": 3.2108
+     }
+    ],
+    "p_bh": 0.7589,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "insurance_medicaid_yn",
+    "label": "Medicaid",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 218,
+      "median": 12.2888,
+      "q1": 10.7464,
+      "q3": 14.2017,
+      "mean": 13.1529
+     },
+     {
+      "group": "yes",
+      "n": 8,
+      "median": 12.8834,
+      "q1": 11.3198,
+      "q3": 16.4325,
+      "mean": 14.4717
+     }
+    ],
+    "excluded_small_groups": [
+     {
+      "group": "yes",
+      "n": 8
+     }
+    ],
+    "testable": false,
+    "test": null,
+    "p": null,
+    "reference": null,
+    "contrasts": [],
+    "reason": "fewer than 2 groups with at least 10 people",
+    "p_bh": null,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "insurance_other_yn",
+    "label": "Other insurance",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 212,
+      "median": 12.3459,
+      "q1": 10.7284,
+      "q3": 14.3461,
+      "mean": 13.1495
+     },
+     {
+      "group": "yes",
+      "n": 14,
+      "median": 11.8697,
+      "q1": 10.8551,
+      "q3": 12.7655,
+      "mean": 13.9592
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.5144,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 14,
+      "n_ref": 212,
+      "diff_median": -0.4762,
+      "ci_low": -1.6943,
+      "ci_high": 0.5589,
+      "detectable_diff_means": 3.4129
+     }
+    ],
+    "p_bh": 0.7544,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "insurance_none_yn",
+    "label": "No insurance",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 222,
+      "median": 12.2888,
+      "q1": 10.7464,
+      "q3": 14.2017,
+      "mean": 13.1653
+     },
+     {
+      "group": "yes",
+      "n": 4,
+      "median": 13.3019,
+      "q1": 11.6007,
+      "q3": 16.8036,
+      "mean": 15.1023
+     }
+    ],
+    "excluded_small_groups": [
+     {
+      "group": "yes",
+      "n": 4
+     }
+    ],
+    "testable": false,
+    "test": null,
+    "p": null,
+    "reference": null,
+    "contrasts": [],
+    "reason": "fewer than 2 groups with at least 10 people",
+    "p_bh": null,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "site_str",
+    "label": "Clinic site",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "1",
+      "n": 15,
+      "median": 12.2981,
+      "q1": 9.6597,
+      "q3": 13.6106,
+      "mean": 11.9571
+     },
+     {
+      "group": "2",
+      "n": 16,
+      "median": 11.8697,
+      "q1": 10.3529,
+      "q3": 13.2887,
+      "mean": 13.7737
+     },
+     {
+      "group": "3",
+      "n": 17,
+      "median": 12.5505,
+      "q1": 11.177,
+      "q3": 13.1443,
+      "mean": 12.6844
+     },
+     {
+      "group": "5",
+      "n": 19,
+      "median": 12.646,
+      "q1": 12.2439,
+      "q3": 13.9563,
+      "mean": 13.2536
+     },
+     {
+      "group": "6",
+      "n": 27,
+      "median": 12.9619,
+      "q1": 11.6234,
+      "q3": 15.4262,
+      "mean": 13.8294
+     },
+     {
+      "group": "7",
+      "n": 14,
+      "median": 11.2749,
+      "q1": 10.3385,
+      "q3": 12.1667,
+      "mean": 11.3504
+     },
+     {
+      "group": "8",
+      "n": 8,
+      "median": 14.9077,
+      "q1": 12.6138,
+      "q3": 18.4938,
+      "mean": 15.3326
+     },
+     {
+      "group": "9",
+      "n": 14,
+      "median": 13.2007,
+      "q1": 10.3571,
+      "q3": 16.0307,
+      "mean": 13.9407
+     },
+     {
+      "group": "10",
+      "n": 15,
+      "median": 11.6341,
+      "q1": 10.4213,
+      "q3": 14.3878,
+      "mean": 14.254
+     },
+     {
+      "group": "11",
+      "n": 18,
+      "median": 11.7316,
+      "q1": 9.8029,
+      "q3": 12.7696,
+      "mean": 11.5422
+     },
+     {
+      "group": "12",
+      "n": 13,
+      "median": 13.7784,
+      "q1": 11.9311,
+      "q3": 16.5017,
+      "mean": 16.0377
+     },
+     {
+      "group": "13",
+      "n": 12,
+      "median": 12.1515,
+      "q1": 11.1967,
+      "q3": 14.3512,
+      "mean": 12.5714
+     },
+     {
+      "group": "14",
+      "n": 15,
+      "median": 10.3823,
+      "q1": 9.7705,
+      "q3": 12.1865,
+      "mean": 11.1152
+     },
+     {
+      "group": "15",
+      "n": 23,
+      "median": 12.7429,
+      "q1": 11.3147,
+      "q3": 14.2751,
+      "mean": 13.8326
+     }
+    ],
+    "excluded_small_groups": [
+     {
+      "group": "8",
+      "n": 8
+     }
+    ],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.0309,
+    "reference": "1",
+    "contrasts": [
+     {
+      "group": "2",
+      "vs": "1",
+      "n": 16,
+      "n_ref": 15,
+      "diff_median": -0.4284,
+      "ci_low": -2.3986,
+      "ci_high": 2.7234,
+      "detectable_diff_means": 5.7928
+     },
+     {
+      "group": "3",
+      "vs": "1",
+      "n": 17,
+      "n_ref": 15,
+      "diff_median": 0.2524,
+      "ci_low": -1.743,
+      "ci_high": 3.2422,
+      "detectable_diff_means": 2.4438
+     },
+     {
+      "group": "5",
+      "vs": "1",
+      "n": 19,
+      "n_ref": 15,
+      "diff_median": 0.3479,
+      "ci_low": -0.9513,
+      "ci_high": 3.4687,
+      "detectable_diff_means": 2.1805
+     },
+     {
+      "group": "6",
+      "vs": "1",
+      "n": 27,
+      "n_ref": 15,
+      "diff_median": 0.6638,
+      "ci_low": -1.034,
+      "ci_high": 3.9942,
+      "detectable_diff_means": 3.1794
+     },
+     {
+      "group": "7",
+      "vs": "1",
+      "n": 14,
+      "n_ref": 15,
+      "diff_median": -1.0232,
+      "ci_low": -2.7082,
+      "ci_high": 1.827,
+      "detectable_diff_means": 2.2248
+     },
+     {
+      "group": "9",
+      "vs": "1",
+      "n": 14,
+      "n_ref": 15,
+      "diff_median": 0.9026,
+      "ci_low": -2.3578,
+      "ci_high": 4.8722,
+      "detectable_diff_means": 4.1565
+     },
+     {
+      "group": "10",
+      "vs": "1",
+      "n": 15,
+      "n_ref": 15,
+      "diff_median": -0.6641,
+      "ci_low": -2.4532,
+      "ci_high": 3.3411,
+      "detectable_diff_means": 6.0599
+     },
+     {
+      "group": "11",
+      "vs": "1",
+      "n": 18,
+      "n_ref": 15,
+      "diff_median": -0.5665,
+      "ci_low": -2.516,
+      "ci_high": 2.2512,
+      "detectable_diff_means": 2.1106
+     },
+     {
+      "group": "12",
+      "vs": "1",
+      "n": 13,
+      "n_ref": 15,
+      "diff_median": 1.4803,
+      "ci_low": -0.8901,
+      "ci_high": 6.5004,
+      "detectable_diff_means": 4.7642
+     },
+     {
+      "group": "13",
+      "vs": "1",
+      "n": 12,
+      "n_ref": 15,
+      "diff_median": -0.1467,
+      "ci_low": -1.8338,
+      "ci_high": 3.2305,
+      "detectable_diff_means": 2.7006
+     },
+     {
+      "group": "14",
+      "vs": "1",
+      "n": 15,
+      "n_ref": 15,
+      "diff_median": -1.9158,
+      "ci_low": -3.2239,
+      "ci_high": 1.6758,
+      "detectable_diff_means": 2.4618
+     },
+     {
+      "group": "15",
+      "vs": "1",
+      "n": 23,
+      "n_ref": 15,
+      "diff_median": 0.4447,
+      "ci_low": -1.196,
+      "ci_high": 3.2708,
+      "detectable_diff_means": 3.3034
+     }
+    ],
+    "p_bh": 0.1699,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "cgm_use_status",
+    "label": "Prior CGM use",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "Never",
+      "n": 40,
+      "median": 12.8102,
+      "q1": 10.6987,
+      "q3": 14.8669,
+      "mean": 13.465
+     },
+     {
+      "group": "In past, but not current",
+      "n": 79,
+      "median": 12.3351,
+      "q1": 10.5279,
+      "q3": 14.4635,
+      "mean": 13.1707
+     },
+     {
+      "group": "Current",
+      "n": 107,
+      "median": 12.1779,
+      "q1": 10.8897,
+      "q3": 13.6909,
+      "mean": 13.1217
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.6496,
+    "reference": "Never",
+    "contrasts": [
+     {
+      "group": "In past, but not current",
+      "vs": "Never",
+      "n": 79,
+      "n_ref": 40,
+      "diff_median": -0.4751,
+      "ci_low": -1.0454,
+      "ci_high": 1.3487,
+      "detectable_diff_means": 2.0854
+     },
+     {
+      "group": "Current",
+      "vs": "Never",
+      "n": 107,
+      "n_ref": 40,
+      "diff_median": -0.6323,
+      "ci_low": -1.4065,
+      "ci_high": 0.973,
+      "detectable_diff_means": 2.4514
+     }
+    ],
+    "p_bh": 0.7589,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "cgm_use_device",
+    "label": "Prior CGM brand",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "Dexcom",
+      "n": 77,
+      "median": 12.0227,
+      "q1": 10.8125,
+      "q3": 13.7784,
+      "mean": 13.4058
+     },
+     {
+      "group": "Medtronic",
+      "n": 30,
+      "median": 12.3664,
+      "q1": 11.3503,
+      "q3": 13.0871,
+      "mean": 12.3927
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.9475,
+    "reference": "Dexcom",
+    "contrasts": [
+     {
+      "group": "Medtronic",
+      "vs": "Dexcom",
+      "n": 30,
+      "n_ref": 77,
+      "diff_median": 0.3437,
+      "ci_low": -0.848,
+      "ci_high": 1.0778,
+      "detectable_diff_means": 3.0161
+     }
+    ],
+    "p_bh": 0.9476,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "pump_family",
+    "label": "Pump family",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "Medtronic",
+      "n": 126,
+      "median": 12.4787,
+      "q1": 10.6839,
+      "q3": 14.6345,
+      "mean": 13.5167
+     },
+     {
+      "group": "OmniPod",
+      "n": 28,
+      "median": 11.8753,
+      "q1": 11.2021,
+      "q3": 13.552,
+      "mean": 12.8834
+     },
+     {
+      "group": "Animas",
+      "n": 15,
+      "median": 11.888,
+      "q1": 10.3042,
+      "q3": 14.5336,
+      "mean": 12.9507
+     },
+     {
+      "group": "Tandem",
+      "n": 1,
+      "median": 18.0787,
+      "q1": 18.0787,
+      "q3": 18.0787,
+      "mean": 18.0787
+     },
+     {
+      "group": "Unknown code",
+      "n": 18,
+      "median": 12.7375,
+      "q1": 11.4794,
+      "q3": 13.6007,
+      "mean": 12.9209
+     },
+     {
+      "group": "Multiple pumps",
+      "n": 36,
+      "median": 11.6036,
+      "q1": 10.4757,
+      "q3": 13.304,
+      "mean": 12.5056
+     }
+    ],
+    "excluded_small_groups": [
+     {
+      "group": "Tandem",
+      "n": 1
+     }
+    ],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.8727,
+    "reference": "Medtronic",
+    "contrasts": [
+     {
+      "group": "OmniPod",
+      "vs": "Medtronic",
+      "n": 28,
+      "n_ref": 126,
+      "diff_median": -0.6034,
+      "ci_low": -1.2249,
+      "ci_high": 0.6965,
+      "detectable_diff_means": 2.8586
+     },
+     {
+      "group": "Animas",
+      "vs": "Medtronic",
+      "n": 15,
+      "n_ref": 126,
+      "diff_median": -0.5908,
+      "ci_low": -2.3231,
+      "ci_high": 2.0973,
+      "detectable_diff_means": 3.869
+     },
+     {
+      "group": "Unknown code",
+      "vs": "Medtronic",
+      "n": 18,
+      "n_ref": 126,
+      "diff_median": 0.2588,
+      "ci_low": -0.8674,
+      "ci_high": 1.0486,
+      "detectable_diff_means": 3.5145
+     },
+     {
+      "group": "Multiple pumps",
+      "vs": "Medtronic",
+      "n": 36,
+      "n_ref": 126,
+      "diff_median": -0.8752,
+      "ci_low": -1.5092,
+      "ci_high": 0.6632,
+      "detectable_diff_means": 2.5463
+     }
+    ],
+    "p_bh": 0.9476,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "comorb_hyperlipidemia_yn",
+    "label": "Hyperlipidaemia",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 126,
+      "median": 12.6161,
+      "q1": 11.2758,
+      "q3": 14.5092,
+      "mean": 13.6644
+     },
+     {
+      "group": "yes",
+      "n": 100,
+      "median": 11.9528,
+      "q1": 10.1619,
+      "q3": 13.3348,
+      "mean": 12.614
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.0221,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 100,
+      "n_ref": 126,
+      "diff_median": -0.6633,
+      "ci_low": -1.3725,
+      "ci_high": 0.1535,
+      "detectable_diff_means": 1.6464
+     }
+    ],
+    "p_bh": 0.1619,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "comorb_hypertension_yn",
+    "label": "Hypertension",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 163,
+      "median": 12.5228,
+      "q1": 10.8464,
+      "q3": 14.1965,
+      "mean": 13.165
+     },
+     {
+      "group": "yes",
+      "n": 63,
+      "median": 11.9679,
+      "q1": 10.2931,
+      "q3": 14.2997,
+      "mean": 13.2891
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.3534,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 63,
+      "n_ref": 163,
+      "diff_median": -0.5549,
+      "ci_low": -1.2163,
+      "ci_high": 0.3613,
+      "detectable_diff_means": 1.8365
+     }
+    ],
+    "p_bh": 0.5554,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "comorb_hypothyroidism_yn",
+    "label": "Hypothyroidism",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 175,
+      "median": 12.2593,
+      "q1": 10.7971,
+      "q3": 14.3704,
+      "mean": 13.3248
+     },
+     {
+      "group": "yes",
+      "n": 51,
+      "median": 12.5861,
+      "q1": 10.7095,
+      "q3": 13.3907,
+      "mean": 12.7699
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.9476,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 51,
+      "n_ref": 175,
+      "diff_median": 0.3268,
+      "ci_low": -0.7164,
+      "ci_high": 0.9738,
+      "detectable_diff_means": 1.9673
+     }
+    ],
+    "p_bh": 0.9476,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "comorb_depression_yn",
+    "label": "Depression",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 186,
+      "median": 12.4493,
+      "q1": 11.0378,
+      "q3": 14.3614,
+      "mean": 13.4063
+     },
+     {
+      "group": "yes",
+      "n": 40,
+      "median": 11.6431,
+      "q1": 10.0866,
+      "q3": 13.4293,
+      "mean": 12.2387
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.1199,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 40,
+      "n_ref": 186,
+      "diff_median": -0.8062,
+      "ci_low": -1.9837,
+      "ci_high": 0.4314,
+      "detectable_diff_means": 2.1467
+     }
+    ],
+    "p_bh": 0.3296,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "comorb_retinopathy_yn",
+    "label": "Retinopathy",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 177,
+      "median": 12.5861,
+      "q1": 11.232,
+      "q3": 14.3719,
+      "mean": 13.4334
+     },
+     {
+      "group": "yes",
+      "n": 49,
+      "median": 11.317,
+      "q1": 10.0705,
+      "q3": 13.2252,
+      "mean": 12.3552
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.0092,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 49,
+      "n_ref": 177,
+      "diff_median": -1.2691,
+      "ci_low": -2.1384,
+      "ci_high": -0.2489,
+      "detectable_diff_means": 1.9883
+     }
+    ],
+    "p_bh": 0.1012,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "comorb_obesity_yn",
+    "label": "Obesity listed as a condition",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "no",
+      "n": 210,
+      "median": 12.2694,
+      "q1": 10.6775,
+      "q3": 14.1228,
+      "mean": 12.9368
+     },
+     {
+      "group": "yes",
+      "n": 16,
+      "median": 12.9595,
+      "q1": 11.9815,
+      "q3": 18.1956,
+      "mean": 16.6495
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.0425,
+    "reference": "no",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "no",
+      "n": 16,
+      "n_ref": 210,
+      "diff_median": 0.6901,
+      "ci_low": -0.3887,
+      "ci_high": 5.6492,
+      "detectable_diff_means": 3.1348
+     }
+    ],
+    "p_bh": 0.1869,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "status",
+    "label": "Completion status",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "Completed",
+      "n": 217,
+      "median": 12.2981,
+      "q1": 10.7346,
+      "q3": 14.2688,
+      "mean": 13.1789
+     },
+     {
+      "group": "Dropped",
+      "n": 9,
+      "median": 12.3351,
+      "q1": 11.3074,
+      "q3": 13.0112,
+      "mean": 13.699
+     }
+    ],
+    "excluded_small_groups": [
+     {
+      "group": "Dropped",
+      "n": 9
+     }
+    ],
+    "testable": false,
+    "test": null,
+    "p": null,
+    "reference": null,
+    "contrasts": [],
+    "reason": "fewer than 2 groups with at least 10 people",
+    "p_bh": null,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "severe_hypo_history",
+    "label": "Severe hypo history (>12 months ago)",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "never",
+      "n": 146,
+      "median": 12.6161,
+      "q1": 10.9059,
+      "q3": 14.6416,
+      "mean": 13.4051
+     },
+     {
+      "group": "yes",
+      "n": 80,
+      "median": 11.9344,
+      "q1": 10.5399,
+      "q3": 13.9727,
+      "mean": 12.8246
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.1118,
+    "reference": "never",
+    "contrasts": [
+     {
+      "group": "yes",
+      "vs": "never",
+      "n": 80,
+      "n_ref": 146,
+      "diff_median": -0.6817,
+      "ci_low": -1.3089,
+      "ci_high": 0.0477,
+      "detectable_diff_means": 1.7187
+     }
+    ],
+    "p_bh": 0.3296,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "dka_history",
+    "label": "DKA history",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "never",
+      "n": 166,
+      "median": 12.535,
+      "q1": 10.9306,
+      "q3": 14.5998,
+      "mean": 13.4502
+     },
+     {
+      "group": "yes (ever)",
+      "n": 60,
+      "median": 11.7676,
+      "q1": 10.5399,
+      "q3": 13.5618,
+      "mean": 12.5064
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.1589,
+    "reference": "never",
+    "contrasts": [
+     {
+      "group": "yes (ever)",
+      "vs": "never",
+      "n": 60,
+      "n_ref": 166,
+      "diff_median": -0.7674,
+      "ci_low": -1.3889,
+      "ci_high": 0.4353,
+      "detectable_diff_means": 1.8565
+     }
+    ],
+    "p_bh": 0.3504,
+    "bh_significant": false
+   },
+   {
+    "kind": "continuous",
+    "variable": "diagnosis_age",
+    "label": "Age at diagnosis (years)",
+    "outcome": "mard",
+    "testable": true,
+    "test": "Spearman",
+    "n": 226,
+    "rho": -0.0667,
+    "ci_low": -0.1968,
+    "ci_high": 0.0759,
+    "p": 0.3182,
+    "top_vs_bottom_tertile": {
+     "diff_median": -0.705,
+     "ci_low": -1.6146,
+     "ci_high": 0.2485,
+     "cut_points": [
+      12.0,
+      25.0
+     ]
+    },
+    "p_bh": 0.5554,
+    "bh_significant": false
+   },
+   {
+    "kind": "continuous",
+    "variable": "fingersticks_per_day",
+    "label": "Fingersticks per day at screening",
+    "outcome": "mard",
+    "testable": true,
+    "test": "Spearman",
+    "n": 226,
+    "rho": -0.0939,
+    "ci_low": -0.2219,
+    "ci_high": 0.038,
+    "p": 0.1593,
+    "top_vs_bottom_tertile": {
+     "diff_median": -0.7001,
+     "ci_low": -1.6313,
+     "ci_high": 0.4641,
+     "cut_points": [
+      4.0,
+      6.0
+     ]
+    },
+    "p_bh": 0.3504,
+    "bh_significant": false
+   },
+   {
+    "kind": "continuous",
+    "variable": "n_comorbidities",
+    "label": "Number of listed conditions",
+    "outcome": "mard",
+    "testable": true,
+    "test": "Spearman",
+    "n": 226,
+    "rho": -0.2105,
+    "ci_low": -0.3477,
+    "ci_high": -0.0637,
+    "p": 0.0015,
+    "top_vs_bottom_tertile": {
+     "diff_median": -1.2092,
+     "ci_low": -1.9238,
+     "ci_high": -0.1519,
+     "cut_points": [
+      2.0,
+      5.0
+     ]
+    },
+    "p_bh": 0.0322,
+    "bh_significant": true
+   },
+   {
+    "kind": "paired",
+    "variable": "half",
+    "label": "Second vs first half of each person's study days",
+    "outcome": "mard",
+    "n": 224,
+    "testable": true,
+    "test": "Wilcoxon signed-rank",
+    "median_x": 12.207,
+    "median_y": 11.9696,
+    "diff_median": -0.1101,
+    "ci_low": -0.5501,
+    "ci_high": 0.1455,
+    "p": 0.0629,
+    "p_bh": 0.2306,
+    "bh_significant": false
+   },
+   {
+    "kind": "group",
+    "variable": "initial_study_cgm",
+    "label": "Run-in CGM type",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "Blinded",
+      "n": 128,
+      "median": 12.3662,
+      "q1": 10.6987,
+      "q3": 14.5937,
+      "mean": 13.2292
+     },
+     {
+      "group": "Standard",
+      "n": 98,
+      "median": 12.0849,
+      "q1": 10.8294,
+      "q3": 13.5595,
+      "mean": 13.161
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.331,
+    "reference": "Blinded",
+    "contrasts": [
+     {
+      "group": "Standard",
+      "vs": "Blinded",
+      "n": 98,
+      "n_ref": 128,
+      "diff_median": -0.2813,
+      "ci_low": -1.1055,
+      "ci_high": 0.4363,
+      "detectable_diff_means": 1.6617
+     }
+    ],
+    "p_bh": 0.5554,
+    "bh_significant": false
+   }
+  ],
+  "robustness": {
+   "cal_mard": [
+    {
+     "variable": "education_group",
+     "label": "Education",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "No bachelor's",
+       "n": 47,
+       "median": 14.3574,
+       "q1": 12.0656,
+       "q3": 15.7542,
+       "mean": 14.418
+      },
+      {
+       "group": "Bachelor's",
+       "n": 110,
+       "median": 14.411,
+       "q1": 12.7636,
+       "q3": 15.9138,
+       "mean": 14.4759
+      },
+      {
+       "group": "Graduate degree",
+       "n": 64,
+       "median": 13.0682,
+       "q1": 12.2939,
+       "q3": 14.4818,
+       "mean": 13.6488
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.0415,
+     "reference": "No bachelor's",
+     "contrasts": [
+      {
+       "group": "Bachelor's",
+       "vs": "No bachelor's",
+       "n": 110,
+       "n_ref": 47,
+       "diff_median": 0.0536,
+       "ci_low": -0.8882,
+       "ci_high": 1.2672,
+       "detectable_diff_means": 1.2671
+      },
+      {
+       "group": "Graduate degree",
+       "vs": "No bachelor's",
+       "n": 64,
+       "n_ref": 47,
+       "diff_median": -1.2892,
+       "ci_low": -2.1537,
+       "ci_high": -0.0488,
+       "detectable_diff_means": 1.466
+      }
+     ]
+    },
+    {
+     "variable": "income_group",
+     "label": "Income (answered only)",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "<$50k",
+       "n": 25,
+       "median": 13.4926,
+       "q1": 11.7675,
+       "q3": 15.7972,
+       "mean": 13.7169
+      },
+      {
+       "group": "$50k-<$100k",
+       "n": 56,
+       "median": 14.6724,
+       "q1": 12.3367,
+       "q3": 16.1544,
+       "mean": 14.6458
+      },
+      {
+       "group": "$100k-<$200k",
+       "n": 55,
+       "median": 13.0959,
+       "q1": 12.0046,
+       "q3": 14.709,
+       "mean": 13.4975
+      },
+      {
+       "group": "$200k+",
+       "n": 32,
+       "median": 15.2622,
+       "q1": 13.3808,
+       "q3": 16.7933,
+       "mean": 15.2233
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.0095,
+     "reference": "<$50k",
+     "contrasts": [
+      {
+       "group": "$50k-<$100k",
+       "vs": "<$50k",
+       "n": 56,
+       "n_ref": 25,
+       "diff_median": 1.1798,
+       "ci_low": -0.9019,
+       "ci_high": 2.9519,
+       "detectable_diff_means": 1.8439
+      },
+      {
+       "group": "$100k-<$200k",
+       "vs": "<$50k",
+       "n": 55,
+       "n_ref": 25,
+       "diff_median": -0.3967,
+       "ci_low": -1.9775,
+       "ci_high": 1.6631,
+       "detectable_diff_means": 1.8063
+      },
+      {
+       "group": "$200k+",
+       "vs": "<$50k",
+       "n": 32,
+       "n_ref": 25,
+       "diff_median": 1.7696,
+       "ci_low": -0.4911,
+       "ci_high": 3.805,
+       "detectable_diff_means": 2.0177
+      }
+     ]
+    },
+    {
+     "variable": "insurance_private_yn",
+     "label": "Private insurance",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 28,
+       "median": 13.394,
+       "q1": 12.3857,
+       "q3": 15.8732,
+       "mean": 14.2592
+      },
+      {
+       "group": "yes",
+       "n": 198,
+       "median": 14.0868,
+       "q1": 12.3751,
+       "q3": 15.677,
+       "mean": 14.2066
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.8277,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 198,
+       "n_ref": 28,
+       "diff_median": 0.6928,
+       "ci_low": -1.4447,
+       "ci_high": 1.5458,
+       "detectable_diff_means": 1.4759
+      }
+     ]
+    },
+    {
+     "variable": "insurance_medicare_yn",
+     "label": "Medicare",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 210,
+       "median": 14.0868,
+       "q1": 12.3751,
+       "q3": 15.8153,
+       "mean": 14.2612
+      },
+      {
+       "group": "yes",
+       "n": 16,
+       "median": 12.9867,
+       "q1": 12.3857,
+       "q3": 14.7476,
+       "mean": 13.5815
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.2396,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 16,
+       "n_ref": 210,
+       "diff_median": -1.1001,
+       "ci_low": -1.7109,
+       "ci_high": 0.7018,
+       "detectable_diff_means": 1.8916
+      }
+     ]
+    },
+    {
+     "variable": "insurance_medicaid_yn",
+     "label": "Medicaid",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 218,
+       "median": 13.977,
+       "q1": 12.3516,
+       "q3": 15.677,
+       "mean": 14.2004
+      },
+      {
+       "group": "yes",
+       "n": 8,
+       "median": 13.0012,
+       "q1": 12.5734,
+       "q3": 16.2769,
+       "mean": 14.5588
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "yes",
+       "n": 8
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "insurance_other_yn",
+     "label": "Other insurance",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 212,
+       "median": 13.9311,
+       "q1": 12.3762,
+       "q3": 15.7129,
+       "mean": 14.2031
+      },
+      {
+       "group": "yes",
+       "n": 14,
+       "median": 13.8847,
+       "q1": 12.346,
+       "q3": 15.4569,
+       "mean": 14.3636
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.9546,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 14,
+       "n_ref": 212,
+       "diff_median": -0.0463,
+       "ci_low": -1.5973,
+       "ci_high": 1.697,
+       "detectable_diff_means": 2.0169
+      }
+     ]
+    },
+    {
+     "variable": "insurance_none_yn",
+     "label": "No insurance",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 222,
+       "median": 13.863,
+       "q1": 12.3751,
+       "q3": 15.677,
+       "mean": 14.1976
+      },
+      {
+       "group": "yes",
+       "n": 4,
+       "median": 14.9665,
+       "q1": 13.6715,
+       "q3": 16.3683,
+       "mean": 15.0734
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "yes",
+       "n": 4
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "site_str",
+     "label": "Clinic site",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "1",
+       "n": 15,
+       "median": 14.1017,
+       "q1": 13.0136,
+       "q3": 15.2083,
+       "mean": 14.5628
+      },
+      {
+       "group": "2",
+       "n": 16,
+       "median": 14.2688,
+       "q1": 12.6509,
+       "q3": 15.9316,
+       "mean": 14.6637
+      },
+      {
+       "group": "3",
+       "n": 17,
+       "median": 14.6254,
+       "q1": 12.7298,
+       "q3": 16.9316,
+       "mean": 14.9919
+      },
+      {
+       "group": "5",
+       "n": 19,
+       "median": 14.2832,
+       "q1": 13.0912,
+       "q3": 16.3509,
+       "mean": 15.0035
+      },
+      {
+       "group": "6",
+       "n": 27,
+       "median": 13.4226,
+       "q1": 12.2141,
+       "q3": 15.0514,
+       "mean": 13.4925
+      },
+      {
+       "group": "7",
+       "n": 14,
+       "median": 13.3756,
+       "q1": 12.3639,
+       "q3": 15.6413,
+       "mean": 13.7659
+      },
+      {
+       "group": "8",
+       "n": 8,
+       "median": 12.2849,
+       "q1": 11.7311,
+       "q3": 13.2191,
+       "mean": 12.5318
+      },
+      {
+       "group": "9",
+       "n": 14,
+       "median": 13.8848,
+       "q1": 13.0384,
+       "q3": 14.9179,
+       "mean": 14.3151
+      },
+      {
+       "group": "10",
+       "n": 15,
+       "median": 14.1654,
+       "q1": 12.6948,
+       "q3": 17.7285,
+       "mean": 15.1793
+      },
+      {
+       "group": "11",
+       "n": 18,
+       "median": 12.7691,
+       "q1": 11.4221,
+       "q3": 15.2041,
+       "mean": 13.2032
+      },
+      {
+       "group": "12",
+       "n": 13,
+       "median": 15.687,
+       "q1": 13.6959,
+       "q3": 18.2509,
+       "mean": 15.7886
+      },
+      {
+       "group": "13",
+       "n": 12,
+       "median": 13.016,
+       "q1": 11.8492,
+       "q3": 15.1301,
+       "mean": 13.1149
+      },
+      {
+       "group": "14",
+       "n": 15,
+       "median": 13.4926,
+       "q1": 12.1998,
+       "q3": 14.5978,
+       "mean": 13.7066
+      },
+      {
+       "group": "15",
+       "n": 23,
+       "median": 14.6212,
+       "q1": 12.3592,
+       "q3": 16.0849,
+       "mean": 14.2566
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "8",
+       "n": 8
+      }
+     ],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.2283,
+     "reference": "1",
+     "contrasts": [
+      {
+       "group": "2",
+       "vs": "1",
+       "n": 16,
+       "n_ref": 15,
+       "diff_median": 0.1672,
+       "ci_low": -1.702,
+       "ci_high": 2.0081,
+       "detectable_diff_means": 2.7982
+      },
+      {
+       "group": "3",
+       "vs": "1",
+       "n": 17,
+       "n_ref": 15,
+       "diff_median": 0.5237,
+       "ci_low": -1.3718,
+       "ci_high": 2.9521,
+       "detectable_diff_means": 2.795
+      },
+      {
+       "group": "5",
+       "vs": "1",
+       "n": 19,
+       "n_ref": 15,
+       "diff_median": 0.1816,
+       "ci_low": -1.0867,
+       "ci_high": 2.306,
+       "detectable_diff_means": 2.7665
+      },
+      {
+       "group": "6",
+       "vs": "1",
+       "n": 27,
+       "n_ref": 15,
+       "diff_median": -0.6791,
+       "ci_low": -2.1973,
+       "ci_high": 0.7429,
+       "detectable_diff_means": 2.3205
+      },
+      {
+       "group": "7",
+       "vs": "1",
+       "n": 14,
+       "n_ref": 15,
+       "diff_median": -0.7261,
+       "ci_low": -2.3986,
+       "ci_high": 1.8119,
+       "detectable_diff_means": 2.8201
+      },
+      {
+       "group": "9",
+       "vs": "1",
+       "n": 14,
+       "n_ref": 15,
+       "diff_median": -0.2168,
+       "ci_low": -1.5816,
+       "ci_high": 1.4595,
+       "detectable_diff_means": 2.5785
+      },
+      {
+       "group": "10",
+       "vs": "1",
+       "n": 15,
+       "n_ref": 15,
+       "diff_median": 0.0637,
+       "ci_low": -1.8228,
+       "ci_high": 3.979,
+       "detectable_diff_means": 3.1499
+      },
+      {
+       "group": "11",
+       "vs": "1",
+       "n": 18,
+       "n_ref": 15,
+       "diff_median": -1.3326,
+       "ci_low": -2.8902,
+       "ci_high": 1.1025,
+       "detectable_diff_means": 2.6355
+      },
+      {
+       "group": "12",
+       "vs": "1",
+       "n": 13,
+       "n_ref": 15,
+       "diff_median": 1.5854,
+       "ci_low": -0.7019,
+       "ci_high": 4.2865,
+       "detectable_diff_means": 3.0842
+      },
+      {
+       "group": "13",
+       "vs": "1",
+       "n": 12,
+       "n_ref": 15,
+       "diff_median": -1.0856,
+       "ci_low": -2.9197,
+       "ci_high": 1.3624,
+       "detectable_diff_means": 2.9341
+      },
+      {
+       "group": "14",
+       "vs": "1",
+       "n": 15,
+       "n_ref": 15,
+       "diff_median": -0.6091,
+       "ci_low": -2.3398,
+       "ci_high": 1.0531,
+       "detectable_diff_means": 2.5378
+      },
+      {
+       "group": "15",
+       "vs": "1",
+       "n": 23,
+       "n_ref": 15,
+       "diff_median": 0.5195,
+       "ci_low": -1.8171,
+       "ci_high": 2.1454,
+       "detectable_diff_means": 2.6412
+      }
+     ]
+    },
+    {
+     "variable": "cgm_use_status",
+     "label": "Prior CGM use",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "Never",
+       "n": 40,
+       "median": 12.7989,
+       "q1": 12.3216,
+       "q3": 15.2254,
+       "mean": 13.6574
+      },
+      {
+       "group": "In past, but not current",
+       "n": 79,
+       "median": 13.5591,
+       "q1": 12.4327,
+       "q3": 15.0593,
+       "mean": 13.9504
+      },
+      {
+       "group": "Current",
+       "n": 107,
+       "median": 14.2197,
+       "q1": 12.5806,
+       "q3": 15.9558,
+       "mean": 14.6148
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.0993,
+     "reference": "Never",
+     "contrasts": [
+      {
+       "group": "In past, but not current",
+       "vs": "Never",
+       "n": 79,
+       "n_ref": 40,
+       "diff_median": 0.7601,
+       "ci_low": -0.9752,
+       "ci_high": 1.8111,
+       "detectable_diff_means": 1.2575
+      },
+      {
+       "group": "Current",
+       "vs": "Never",
+       "n": 107,
+       "n_ref": 40,
+       "diff_median": 1.4208,
+       "ci_low": -0.2029,
+       "ci_high": 2.549,
+       "detectable_diff_means": 1.4389
+      }
+     ]
+    },
+    {
+     "variable": "cgm_use_device",
+     "label": "Prior CGM brand",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "Dexcom",
+       "n": 77,
+       "median": 14.5309,
+       "q1": 12.7735,
+       "q3": 16.1319,
+       "mean": 14.8953
+      },
+      {
+       "group": "Medtronic",
+       "n": 30,
+       "median": 13.8969,
+       "q1": 11.9047,
+       "q3": 15.5972,
+       "mean": 13.8947
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.1665,
+     "reference": "Dexcom",
+     "contrasts": [
+      {
+       "group": "Medtronic",
+       "vs": "Dexcom",
+       "n": 30,
+       "n_ref": 77,
+       "diff_median": -0.634,
+       "ci_low": -2.1155,
+       "ci_high": 0.4513,
+       "detectable_diff_means": 1.7079
+      }
+     ]
+    },
+    {
+     "variable": "pump_family",
+     "label": "Pump family",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "Medtronic",
+       "n": 126,
+       "median": 13.977,
+       "q1": 12.3789,
+       "q3": 15.6408,
+       "mean": 14.2004
+      },
+      {
+       "group": "OmniPod",
+       "n": 28,
+       "median": 13.7747,
+       "q1": 12.4192,
+       "q3": 15.6166,
+       "mean": 14.4053
+      },
+      {
+       "group": "Animas",
+       "n": 15,
+       "median": 13.8002,
+       "q1": 12.1414,
+       "q3": 14.9163,
+       "mean": 13.6976
+      },
+      {
+       "group": "Tandem",
+       "n": 1,
+       "median": 13.1503,
+       "q1": 13.1503,
+       "q3": 13.1503,
+       "mean": 13.1503
+      },
+      {
+       "group": "Unknown code",
+       "n": 18,
+       "median": 15.1478,
+       "q1": 13.2186,
+       "q3": 15.934,
+       "mean": 15.1107
+      },
+      {
+       "group": "Multiple pumps",
+       "n": 36,
+       "median": 13.7192,
+       "q1": 12.2345,
+       "q3": 15.7607,
+       "mean": 13.9445
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "Tandem",
+       "n": 1
+      }
+     ],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.5265,
+     "reference": "Medtronic",
+     "contrasts": [
+      {
+       "group": "OmniPod",
+       "vs": "Medtronic",
+       "n": 28,
+       "n_ref": 126,
+       "diff_median": -0.2023,
+       "ci_low": -1.036,
+       "ci_high": 1.4069,
+       "detectable_diff_means": 1.5232
+      },
+      {
+       "group": "Animas",
+       "vs": "Medtronic",
+       "n": 15,
+       "n_ref": 126,
+       "diff_median": -0.1768,
+       "ci_low": -1.9439,
+       "ci_high": 1.3154,
+       "detectable_diff_means": 1.9888
+      },
+      {
+       "group": "Unknown code",
+       "vs": "Medtronic",
+       "n": 18,
+       "n_ref": 126,
+       "diff_median": 1.1708,
+       "ci_low": -0.5228,
+       "ci_high": 2.1765,
+       "detectable_diff_means": 1.8328
+      },
+      {
+       "group": "Multiple pumps",
+       "vs": "Medtronic",
+       "n": 36,
+       "n_ref": 126,
+       "diff_median": -0.2578,
+       "ci_low": -1.566,
+       "ci_high": 0.8013,
+       "detectable_diff_means": 1.3819
+      }
+     ]
+    },
+    {
+     "variable": "comorb_hyperlipidemia_yn",
+     "label": "Hyperlipidaemia",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 126,
+       "median": 14.2083,
+       "q1": 12.4691,
+       "q3": 15.9677,
+       "mean": 14.5231
+      },
+      {
+       "group": "yes",
+       "n": 100,
+       "median": 13.6887,
+       "q1": 11.8122,
+       "q3": 15.2878,
+       "mean": 13.8225
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.0346,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 100,
+       "n_ref": 126,
+       "diff_median": -0.5196,
+       "ci_low": -1.5318,
+       "ci_high": 0.2035,
+       "detectable_diff_means": 0.9702
+      }
+     ]
+    },
+    {
+     "variable": "comorb_hypertension_yn",
+     "label": "Hypertension",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 163,
+       "median": 14.0719,
+       "q1": 12.3302,
+       "q3": 15.9268,
+       "mean": 14.3315
+      },
+      {
+       "group": "yes",
+       "n": 63,
+       "median": 13.8002,
+       "q1": 12.3882,
+       "q3": 15.0509,
+       "mean": 13.9068
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.3961,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 63,
+       "n_ref": 163,
+       "diff_median": -0.2716,
+       "ci_low": -1.1987,
+       "ci_high": 0.5741,
+       "detectable_diff_means": 1.0815
+      }
+     ]
+    },
+    {
+     "variable": "comorb_hypothyroidism_yn",
+     "label": "Hypothyroidism",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 175,
+       "median": 14.0719,
+       "q1": 12.384,
+       "q3": 15.8714,
+       "mean": 14.2869
+      },
+      {
+       "group": "yes",
+       "n": 51,
+       "median": 13.6814,
+       "q1": 12.3213,
+       "q3": 15.2345,
+       "mean": 13.9597
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.4038,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 51,
+       "n_ref": 175,
+       "diff_median": -0.3905,
+       "ci_low": -1.3093,
+       "ci_high": 0.6541,
+       "detectable_diff_means": 1.1616
+      }
+     ]
+    },
+    {
+     "variable": "comorb_depression_yn",
+     "label": "Depression",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 186,
+       "median": 14.0307,
+       "q1": 12.3782,
+       "q3": 15.7315,
+       "mean": 14.2189
+      },
+      {
+       "group": "yes",
+       "n": 40,
+       "median": 13.6273,
+       "q1": 12.3056,
+       "q3": 15.4132,
+       "mean": 14.186
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.7239,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 40,
+       "n_ref": 186,
+       "diff_median": -0.4034,
+       "ci_low": -1.3304,
+       "ci_high": 0.9697,
+       "detectable_diff_means": 1.274
+      }
+     ]
+    },
+    {
+     "variable": "comorb_retinopathy_yn",
+     "label": "Retinopathy",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 177,
+       "median": 14.1104,
+       "q1": 12.3996,
+       "q3": 15.687,
+       "mean": 14.2505
+      },
+      {
+       "group": "yes",
+       "n": 49,
+       "median": 13.5521,
+       "q1": 12.1928,
+       "q3": 15.8908,
+       "mean": 14.078
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.4138,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 49,
+       "n_ref": 177,
+       "diff_median": -0.5583,
+       "ci_low": -1.5582,
+       "ci_high": 0.7682,
+       "detectable_diff_means": 1.1796
+      }
+     ]
+    },
+    {
+     "variable": "comorb_obesity_yn",
+     "label": "Obesity listed as a condition",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 210,
+       "median": 13.977,
+       "q1": 12.3751,
+       "q3": 15.6995,
+       "mean": 14.1805
+      },
+      {
+       "group": "yes",
+       "n": 16,
+       "median": 13.6821,
+       "q1": 12.4922,
+       "q3": 15.5129,
+       "mean": 14.6409
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.7676,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 16,
+       "n_ref": 210,
+       "diff_median": -0.295,
+       "ci_low": -1.4497,
+       "ci_high": 1.5821,
+       "detectable_diff_means": 1.8939
+      }
+     ]
+    },
+    {
+     "variable": "status",
+     "label": "Completion status",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "Completed",
+       "n": 217,
+       "median": 13.8725,
+       "q1": 12.3745,
+       "q3": 15.6468,
+       "mean": 14.2165
+      },
+      {
+       "group": "Dropped",
+       "n": 9,
+       "median": 14.1922,
+       "q1": 12.9698,
+       "q3": 15.9215,
+       "mean": 14.1299
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "Dropped",
+       "n": 9
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "severe_hypo_history",
+     "label": "Severe hypo history (>12 months ago)",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "never",
+       "n": 146,
+       "median": 13.8148,
+       "q1": 12.3235,
+       "q3": 15.6995,
+       "mean": 14.1627
+      },
+      {
+       "group": "yes",
+       "n": 80,
+       "median": 14.106,
+       "q1": 12.7104,
+       "q3": 15.6569,
+       "mean": 14.3049
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.524,
+     "reference": "never",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "never",
+       "n": 80,
+       "n_ref": 146,
+       "diff_median": 0.2912,
+       "ci_low": -0.586,
+       "ci_high": 1.127,
+       "detectable_diff_means": 1.0165
+      }
+     ]
+    },
+    {
+     "variable": "dka_history",
+     "label": "DKA history",
+     "outcome": "cal_mard",
+     "groups": [
+      {
+       "group": "never",
+       "n": 166,
+       "median": 13.8172,
+       "q1": 12.3424,
+       "q3": 15.3922,
+       "mean": 14.0115
+      },
+      {
+       "group": "yes (ever)",
+       "n": 60,
+       "median": 14.1487,
+       "q1": 12.5734,
+       "q3": 16.8899,
+       "mean": 14.7708
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.1364,
+     "reference": "never",
+     "contrasts": [
+      {
+       "group": "yes (ever)",
+       "vs": "never",
+       "n": 60,
+       "n_ref": 166,
+       "diff_median": 0.3315,
+       "ci_low": -0.7203,
+       "ci_high": 1.6657,
+       "detectable_diff_means": 1.0919
+      }
+     ]
+    }
+   ],
+   "low_mard": [
+    {
+     "variable": "education_group",
+     "label": "Education",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "No bachelor's",
+       "n": 30,
+       "median": 17.1025,
+       "q1": 15.6697,
+       "q3": 19.6315,
+       "mean": 17.5481
+      },
+      {
+       "group": "Bachelor's",
+       "n": 79,
+       "median": 17.4623,
+       "q1": 15.0714,
+       "q3": 19.0587,
+       "mean": 17.3121
+      },
+      {
+       "group": "Graduate degree",
+       "n": 39,
+       "median": 17.7328,
+       "q1": 16.2646,
+       "q3": 19.5732,
+       "mean": 17.7641
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.5369,
+     "reference": "No bachelor's",
+     "contrasts": [
+      {
+       "group": "Bachelor's",
+       "vs": "No bachelor's",
+       "n": 79,
+       "n_ref": 30,
+       "diff_median": 0.3598,
+       "ci_low": -2.3602,
+       "ci_high": 1.889,
+       "detectable_diff_means": 2.0815
+      },
+      {
+       "group": "Graduate degree",
+       "vs": "No bachelor's",
+       "n": 39,
+       "n_ref": 30,
+       "diff_median": 0.6303,
+       "ci_low": -1.646,
+       "ci_high": 2.4473,
+       "detectable_diff_means": 2.3022
+      }
+     ]
+    },
+    {
+     "variable": "income_group",
+     "label": "Income (answered only)",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "<$50k",
+       "n": 20,
+       "median": 16.4123,
+       "q1": 15.3385,
+       "q3": 18.866,
+       "mean": 17.2466
+      },
+      {
+       "group": "$50k-<$100k",
+       "n": 38,
+       "median": 17.7446,
+       "q1": 15.6599,
+       "q3": 19.2748,
+       "mean": 17.5226
+      },
+      {
+       "group": "$100k-<$200k",
+       "n": 38,
+       "median": 18.2978,
+       "q1": 16.0103,
+       "q3": 19.4021,
+       "mean": 18.0054
+      },
+      {
+       "group": "$200k+",
+       "n": 20,
+       "median": 18.1493,
+       "q1": 16.0153,
+       "q3": 20.4436,
+       "mean": 18.3188
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.6076,
+     "reference": "<$50k",
+     "contrasts": [
+      {
+       "group": "$50k-<$100k",
+       "vs": "<$50k",
+       "n": 38,
+       "n_ref": 20,
+       "diff_median": 1.3323,
+       "ci_low": -1.8208,
+       "ci_high": 2.8687,
+       "detectable_diff_means": 2.6122
+      },
+      {
+       "group": "$100k-<$200k",
+       "vs": "<$50k",
+       "n": 38,
+       "n_ref": 20,
+       "diff_median": 1.8855,
+       "ci_low": -0.9361,
+       "ci_high": 3.2901,
+       "detectable_diff_means": 2.9367
+      },
+      {
+       "group": "$200k+",
+       "vs": "<$50k",
+       "n": 20,
+       "n_ref": 20,
+       "diff_median": 1.737,
+       "ci_low": -1.5011,
+       "ci_high": 3.9766,
+       "detectable_diff_means": 3.0755
+      }
+     ]
+    },
+    {
+     "variable": "insurance_private_yn",
+     "label": "Private insurance",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 18,
+       "median": 16.3264,
+       "q1": 14.6907,
+       "q3": 18.4108,
+       "mean": 16.6526
+      },
+      {
+       "group": "yes",
+       "n": 132,
+       "median": 17.6485,
+       "q1": 15.5287,
+       "q3": 19.4626,
+       "mean": 17.6655
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.2808,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 132,
+       "n_ref": 18,
+       "diff_median": 1.3221,
+       "ci_low": -0.5754,
+       "ci_high": 2.6278,
+       "detectable_diff_means": 2.4755
+      }
+     ]
+    },
+    {
+     "variable": "insurance_medicare_yn",
+     "label": "Medicare",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 142,
+       "median": 17.5007,
+       "q1": 15.4456,
+       "q3": 19.3803,
+       "mean": 17.4839
+      },
+      {
+       "group": "yes",
+       "n": 8,
+       "median": 18.8458,
+       "q1": 16.3129,
+       "q3": 19.9375,
+       "mean": 18.6099
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "yes",
+       "n": 8
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "insurance_medicaid_yn",
+     "label": "Medicaid",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 145,
+       "median": 17.6228,
+       "q1": 15.5505,
+       "q3": 19.4959,
+       "mean": 17.651
+      },
+      {
+       "group": "yes",
+       "n": 5,
+       "median": 15.769,
+       "q1": 13.5419,
+       "q3": 15.903,
+       "mean": 14.4405
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "yes",
+       "n": 5
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "insurance_other_yn",
+     "label": "Other insurance",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 138,
+       "median": 17.371,
+       "q1": 15.4189,
+       "q3": 19.2763,
+       "mean": 17.429
+      },
+      {
+       "group": "yes",
+       "n": 12,
+       "median": 19.275,
+       "q1": 17.6459,
+       "q3": 21.133,
+       "mean": 18.8663
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.0554,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 12,
+       "n_ref": 138,
+       "diff_median": 1.9041,
+       "ci_low": -0.1323,
+       "ci_high": 4.2519,
+       "detectable_diff_means": 2.9599
+      }
+     ]
+    },
+    {
+     "variable": "insurance_none_yn",
+     "label": "No insurance",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 147,
+       "median": 17.6148,
+       "q1": 15.5644,
+       "q3": 19.4233,
+       "mean": 17.5786
+      },
+      {
+       "group": "yes",
+       "n": 3,
+       "median": 14.3312,
+       "q1": 13.7689,
+       "q3": 17.1714,
+       "mean": 15.8498
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "yes",
+       "n": 3
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "site_str",
+     "label": "Clinic site",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "1",
+       "n": 11,
+       "median": 17.622,
+       "q1": 14.2576,
+       "q3": 18.2822,
+       "mean": 16.8207
+      },
+      {
+       "group": "2",
+       "n": 13,
+       "median": 19.0541,
+       "q1": 17.8358,
+       "q3": 20.7957,
+       "mean": 18.4627
+      },
+      {
+       "group": "3",
+       "n": 11,
+       "median": 18.0314,
+       "q1": 16.4158,
+       "q3": 18.7926,
+       "mean": 17.5368
+      },
+      {
+       "group": "5",
+       "n": 14,
+       "median": 19.0914,
+       "q1": 15.9048,
+       "q3": 21.8069,
+       "mean": 18.9047
+      },
+      {
+       "group": "6",
+       "n": 18,
+       "median": 17.1411,
+       "q1": 15.3577,
+       "q3": 19.9909,
+       "mean": 17.5252
+      },
+      {
+       "group": "7",
+       "n": 8,
+       "median": 18.3775,
+       "q1": 16.6242,
+       "q3": 20.0612,
+       "mean": 18.8332
+      },
+      {
+       "group": "8",
+       "n": 3,
+       "median": 16.6881,
+       "q1": 14.3579,
+       "q3": 16.9256,
+       "mean": 15.2929
+      },
+      {
+       "group": "9",
+       "n": 7,
+       "median": 13.033,
+       "q1": 12.2937,
+       "q3": 17.9162,
+       "mean": 15.0094
+      },
+      {
+       "group": "10",
+       "n": 7,
+       "median": 15.4397,
+       "q1": 14.5391,
+       "q3": 15.6597,
+       "mean": 15.6941
+      },
+      {
+       "group": "11",
+       "n": 12,
+       "median": 18.2922,
+       "q1": 16.18,
+       "q3": 19.2175,
+       "mean": 18.9996
+      },
+      {
+       "group": "12",
+       "n": 10,
+       "median": 16.5337,
+       "q1": 15.2072,
+       "q3": 17.5507,
+       "mean": 16.1127
+      },
+      {
+       "group": "13",
+       "n": 7,
+       "median": 17.5391,
+       "q1": 16.8663,
+       "q3": 18.9187,
+       "mean": 17.8015
+      },
+      {
+       "group": "14",
+       "n": 11,
+       "median": 13.7828,
+       "q1": 13.4807,
+       "q3": 17.3241,
+       "mean": 14.9634
+      },
+      {
+       "group": "15",
+       "n": 18,
+       "median": 18.9673,
+       "q1": 16.9168,
+       "q3": 20.6603,
+       "mean": 19.0962
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "7",
+       "n": 8
+      },
+      {
+       "group": "8",
+       "n": 3
+      },
+      {
+       "group": "9",
+       "n": 7
+      },
+      {
+       "group": "10",
+       "n": 7
+      },
+      {
+       "group": "13",
+       "n": 7
+      }
+     ],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.0284,
+     "reference": "1",
+     "contrasts": [
+      {
+       "group": "2",
+       "vs": "1",
+       "n": 13,
+       "n_ref": 11,
+       "diff_median": 1.4321,
+       "ci_low": -0.4438,
+       "ci_high": 5.9605,
+       "detectable_diff_means": 4.596
+      },
+      {
+       "group": "3",
+       "vs": "1",
+       "n": 11,
+       "n_ref": 11,
+       "diff_median": 0.4094,
+       "ci_low": -1.8156,
+       "ci_high": 4.4004,
+       "detectable_diff_means": 3.4172
+      },
+      {
+       "group": "5",
+       "vs": "1",
+       "n": 14,
+       "n_ref": 11,
+       "diff_median": 1.4694,
+       "ci_low": -2.1377,
+       "ci_high": 6.9498,
+       "detectable_diff_means": 4.1939
+      },
+      {
+       "group": "6",
+       "vs": "1",
+       "n": 18,
+       "n_ref": 11,
+       "diff_median": -0.4809,
+       "ci_low": -2.4674,
+       "ci_high": 4.21,
+       "detectable_diff_means": 3.9918
+      },
+      {
+       "group": "11",
+       "vs": "1",
+       "n": 12,
+       "n_ref": 11,
+       "diff_median": 0.6702,
+       "ci_low": -1.6543,
+       "ci_high": 4.9018,
+       "detectable_diff_means": 4.7167
+      },
+      {
+       "group": "12",
+       "vs": "1",
+       "n": 10,
+       "n_ref": 11,
+       "diff_median": -1.0883,
+       "ci_low": -2.9423,
+       "ci_high": 2.7889,
+       "detectable_diff_means": 3.7571
+      },
+      {
+       "group": "14",
+       "vs": "1",
+       "n": 11,
+       "n_ref": 11,
+       "diff_median": -3.8392,
+       "ci_low": -4.5955,
+       "ci_high": 1.7499,
+       "detectable_diff_means": 3.9238
+      },
+      {
+       "group": "15",
+       "vs": "1",
+       "n": 18,
+       "n_ref": 11,
+       "diff_median": 1.3453,
+       "ci_low": -0.3124,
+       "ci_high": 5.5105,
+       "detectable_diff_means": 3.2909
+      }
+     ]
+    },
+    {
+     "variable": "cgm_use_status",
+     "label": "Prior CGM use",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "Never",
+       "n": 25,
+       "median": 17.8358,
+       "q1": 15.769,
+       "q3": 20.1708,
+       "mean": 18.7939
+      },
+      {
+       "group": "In past, but not current",
+       "n": 54,
+       "median": 17.5809,
+       "q1": 15.2441,
+       "q3": 19.2091,
+       "mean": 17.189
+      },
+      {
+       "group": "Current",
+       "n": 71,
+       "median": 17.3345,
+       "q1": 15.5644,
+       "q3": 19.3898,
+       "mean": 17.3739
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.5551,
+     "reference": "Never",
+     "contrasts": [
+      {
+       "group": "In past, but not current",
+       "vs": "Never",
+       "n": 54,
+       "n_ref": 25,
+       "diff_median": -0.2549,
+       "ci_low": -2.6975,
+       "ci_high": 2.1896,
+       "detectable_diff_means": 2.3213
+      },
+      {
+       "group": "Current",
+       "vs": "Never",
+       "n": 71,
+       "n_ref": 25,
+       "diff_median": -0.5014,
+       "ci_low": -2.7155,
+       "ci_high": 1.9443,
+       "detectable_diff_means": 2.4486
+      }
+     ]
+    },
+    {
+     "variable": "cgm_use_device",
+     "label": "Prior CGM brand",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "Dexcom",
+       "n": 52,
+       "median": 17.4746,
+       "q1": 15.6806,
+       "q3": 19.539,
+       "mean": 17.419
+      },
+      {
+       "group": "Medtronic",
+       "n": 19,
+       "median": 17.042,
+       "q1": 15.4951,
+       "q3": 18.4972,
+       "mean": 17.2505
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.6079,
+     "reference": "Dexcom",
+     "contrasts": [
+      {
+       "group": "Medtronic",
+       "vs": "Dexcom",
+       "n": 19,
+       "n_ref": 52,
+       "diff_median": -0.4327,
+       "ci_low": -2.4307,
+       "ci_high": 1.6134,
+       "detectable_diff_means": 2.7048
+      }
+     ]
+    },
+    {
+     "variable": "pump_family",
+     "label": "Pump family",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "Medtronic",
+       "n": 88,
+       "median": 17.7153,
+       "q1": 15.7604,
+       "q3": 19.675,
+       "mean": 17.9032
+      },
+      {
+       "group": "OmniPod",
+       "n": 16,
+       "median": 16.3822,
+       "q1": 14.9375,
+       "q3": 18.5026,
+       "mean": 16.6856
+      },
+      {
+       "group": "Animas",
+       "n": 8,
+       "median": 15.5827,
+       "q1": 14.2048,
+       "q3": 19.3081,
+       "mean": 17.0291
+      },
+      {
+       "group": "Tandem",
+       "n": 1,
+       "median": 12.0276,
+       "q1": 12.0276,
+       "q3": 12.0276,
+       "mean": 12.0276
+      },
+      {
+       "group": "Unknown code",
+       "n": 15,
+       "median": 17.622,
+       "q1": 15.0766,
+       "q3": 18.8175,
+       "mean": 17.2302
+      },
+      {
+       "group": "Multiple pumps",
+       "n": 22,
+       "median": 17.4479,
+       "q1": 15.9048,
+       "q3": 18.9433,
+       "mean": 17.3834
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "Animas",
+       "n": 8
+      },
+      {
+       "group": "Tandem",
+       "n": 1
+      }
+     ],
+     "testable": true,
+     "test": "Kruskal-Wallis",
+     "p": 0.5617,
+     "reference": "Medtronic",
+     "contrasts": [
+      {
+       "group": "OmniPod",
+       "vs": "Medtronic",
+       "n": 16,
+       "n_ref": 88,
+       "diff_median": -1.3331,
+       "ci_low": -3.0384,
+       "ci_high": 0.8403,
+       "detectable_diff_means": 2.6533
+      },
+      {
+       "group": "Unknown code",
+       "vs": "Medtronic",
+       "n": 15,
+       "n_ref": 88,
+       "diff_median": -0.0933,
+       "ci_low": -2.9292,
+       "ci_high": 1.4976,
+       "detectable_diff_means": 2.8096
+      },
+      {
+       "group": "Multiple pumps",
+       "vs": "Medtronic",
+       "n": 22,
+       "n_ref": 88,
+       "diff_median": -0.2674,
+       "ci_low": -1.8893,
+       "ci_high": 1.2843,
+       "detectable_diff_means": 2.3217
+      }
+     ]
+    },
+    {
+     "variable": "comorb_hyperlipidemia_yn",
+     "label": "Hyperlipidaemia",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 94,
+       "median": 17.5806,
+       "q1": 15.4456,
+       "q3": 19.2359,
+       "mean": 17.5402
+      },
+      {
+       "group": "yes",
+       "n": 56,
+       "median": 17.3889,
+       "q1": 15.6965,
+       "q3": 19.9375,
+       "mean": 17.5504
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.8505,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 56,
+       "n_ref": 94,
+       "diff_median": -0.1916,
+       "ci_low": -1.3606,
+       "ci_high": 1.5116,
+       "detectable_diff_means": 1.6705
+      }
+     ]
+    },
+    {
+     "variable": "comorb_hypertension_yn",
+     "label": "Hypertension",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 112,
+       "median": 17.5007,
+       "q1": 15.4327,
+       "q3": 19.2614,
+       "mean": 17.4835
+      },
+      {
+       "group": "yes",
+       "n": 38,
+       "median": 17.9755,
+       "q1": 15.8343,
+       "q3": 19.7345,
+       "mean": 17.7224
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.4178,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 38,
+       "n_ref": 112,
+       "diff_median": 0.4748,
+       "ci_low": -1.0996,
+       "ci_high": 2.2017,
+       "detectable_diff_means": 1.857
+      }
+     ]
+    },
+    {
+     "variable": "comorb_hypothyroidism_yn",
+     "label": "Hypothyroidism",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 118,
+       "median": 17.5007,
+       "q1": 15.3448,
+       "q3": 19.4707,
+       "mean": 17.5381
+      },
+      {
+       "group": "yes",
+       "n": 32,
+       "median": 17.6774,
+       "q1": 15.7604,
+       "q3": 19.1535,
+       "mean": 17.5657
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.8239,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 32,
+       "n_ref": 118,
+       "diff_median": 0.1767,
+       "ci_low": -1.2191,
+       "ci_high": 1.5622,
+       "detectable_diff_means": 1.9723
+      }
+     ]
+    },
+    {
+     "variable": "comorb_depression_yn",
+     "label": "Depression",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 125,
+       "median": 17.4623,
+       "q1": 15.412,
+       "q3": 19.4515,
+       "mean": 17.5099
+      },
+      {
+       "group": "yes",
+       "n": 25,
+       "median": 17.7993,
+       "q1": 16.1932,
+       "q3": 19.2837,
+       "mean": 17.7147
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.5552,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 25,
+       "n_ref": 125,
+       "diff_median": 0.337,
+       "ci_low": -1.2697,
+       "ci_high": 2.3127,
+       "detectable_diff_means": 2.1675
+      }
+     ]
+    },
+    {
+     "variable": "comorb_retinopathy_yn",
+     "label": "Retinopathy",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 122,
+       "median": 17.5007,
+       "q1": 15.4189,
+       "q3": 19.3803,
+       "mean": 17.582
+      },
+      {
+       "group": "yes",
+       "n": 28,
+       "median": 17.6738,
+       "q1": 15.7554,
+       "q3": 19.564,
+       "mean": 17.3785
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.8983,
+     "reference": "no",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "no",
+       "n": 28,
+       "n_ref": 122,
+       "diff_median": 0.1731,
+       "ci_low": -1.8096,
+       "ci_high": 1.8611,
+       "detectable_diff_means": 2.0731
+      }
+     ]
+    },
+    {
+     "variable": "comorb_obesity_yn",
+     "label": "Obesity listed as a condition",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "no",
+       "n": 142,
+       "median": 17.6184,
+       "q1": 15.4456,
+       "q3": 19.4848,
+       "mean": 17.5534
+      },
+      {
+       "group": "yes",
+       "n": 8,
+       "median": 16.7496,
+       "q1": 15.7144,
+       "q3": 18.7221,
+       "mean": 17.3764
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "yes",
+       "n": 8
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "status",
+     "label": "Completion status",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "Completed",
+       "n": 147,
+       "median": 17.4623,
+       "q1": 15.4515,
+       "q3": 19.4233,
+       "mean": 17.5189
+      },
+      {
+       "group": "Dropped",
+       "n": 3,
+       "median": 18.2732,
+       "q1": 18.1523,
+       "q3": 19.1424,
+       "mean": 18.7721
+      }
+     ],
+     "excluded_small_groups": [
+      {
+       "group": "Dropped",
+       "n": 3
+      }
+     ],
+     "testable": false,
+     "test": null,
+     "p": null,
+     "reference": null,
+     "contrasts": [],
+     "reason": "fewer than 2 groups with at least 10 people"
+    },
+    {
+     "variable": "severe_hypo_history",
+     "label": "Severe hypo history (>12 months ago)",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "never",
+       "n": 99,
+       "median": 17.5391,
+       "q1": 15.4515,
+       "q3": 20.0911,
+       "mean": 17.696
+      },
+      {
+       "group": "yes",
+       "n": 51,
+       "median": 17.6148,
+       "q1": 15.6978,
+       "q3": 19.0915,
+       "mean": 17.249
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.5571,
+     "reference": "never",
+     "contrasts": [
+      {
+       "group": "yes",
+       "vs": "never",
+       "n": 51,
+       "n_ref": 99,
+       "diff_median": 0.0757,
+       "ci_low": -1.5832,
+       "ci_high": 1.2659,
+       "detectable_diff_means": 1.7026
+      }
+     ]
+    },
+    {
+     "variable": "dka_history",
+     "label": "DKA history",
+     "outcome": "low_mard",
+     "groups": [
+      {
+       "group": "never",
+       "n": 107,
+       "median": 17.7564,
+       "q1": 15.9018,
+       "q3": 19.7215,
+       "mean": 18.0007
+      },
+      {
+       "group": "yes (ever)",
+       "n": 43,
+       "median": 15.903,
+       "q1": 14.4581,
+       "q3": 19.1704,
+       "mean": 16.4077
+      }
+     ],
+     "excluded_small_groups": [],
+     "testable": true,
+     "test": "Mann-Whitney U",
+     "p": 0.0243,
+     "reference": "never",
+     "contrasts": [
+      {
+       "group": "yes (ever)",
+       "vs": "never",
+       "n": 43,
+       "n_ref": 107,
+       "diff_median": -1.8534,
+       "ci_low": -2.7295,
+       "ci_high": 0.4919,
+       "detectable_diff_means": 1.7488
+      }
+     ]
+    }
+   ]
+  },
+  "meter_model": {
+   "contour_next_pairs": 168781,
+   "precision_xtra_pairs": 209,
+   "precision_xtra_people_with_20_pairs": 3,
+   "note": "Precision Xtra is mostly a ketone meter here; ketone rows are excluded, so very few glucose pairs remain. Not testable. Pump-entered BG values are not a meter and are compared in data_quality instead."
+  },
+  "race_ethnicity": {
+   "race": [
+    {
+     "group": "Asian",
+     "n": 4,
+     "median": 11.183,
+     "q1": 9.9641,
+     "q3": 12.086,
+     "mean": 10.8671
+    },
+    {
+     "group": "Black/African American",
+     "n": 5,
+     "median": 13.996,
+     "q1": 12.8048,
+     "q3": 14.7609,
+     "mean": 13.7654
+    },
+    {
+     "group": "More than one race",
+     "n": 3,
+     "median": 13.0721,
+     "q1": 12.3216,
+     "q3": 14.6923,
+     "mean": 13.6519
+    },
+    {
+     "group": "Unknown/not reported",
+     "n": 2,
+     "median": 13.0075,
+     "q1": 10.5088,
+     "q3": 15.5061,
+     "mean": 13.0075
+    },
+    {
+     "group": "White",
+     "n": 212,
+     "median": 12.2888,
+     "q1": 10.7284,
+     "q3": 14.2378,
+     "mean": 13.2257
+    }
+   ],
+   "ethnicity": [
+    {
+     "group": "Hispanic or Latino",
+     "n": 9,
+     "median": 13.0721,
+     "q1": 11.5162,
+     "q3": 15.6721,
+     "mean": 13.6231
+    },
+    {
+     "group": "Not Hispanic or Latino",
+     "n": 216,
+     "median": 12.3068,
+     "q1": 10.7284,
+     "q3": 14.15,
+     "mean": 13.1962
+    },
+    {
+     "group": "Unknown/not reported",
+     "n": 1,
+     "median": 10.1274,
+     "q1": 10.1274,
+     "q3": 10.1274,
+     "mean": 10.1274
+    }
+   ],
+   "non_white_n": 14,
+   "note": "described, not tested: only 14 non-White participants"
+  },
+  "income_not_answered": {
+   "n": 58,
+   "median": 11.8836,
+   "q1": 10.4314,
+   "q3": 13.8798,
+   "mean": 12.6431,
+   "note": "people who did not answer the income question"
+  },
+  "dropped": {
+   "n": 9,
+   "median": 12.3351,
+   "q1": 11.3074,
+   "q3": 13.0112,
+   "mean": 13.699,
+   "note": "not testable (9 people)"
+  }
+ },
+ "shanghai": {
+  "patients_with_pairs": 98,
+  "patients_with_min_pairs": 76,
+  "min_pairs": 10,
+  "pairs_used": 3926,
+  "mard": {
+   "n": 76,
+   "median": 11.9098,
+   "q1": 9.5332,
+   "q3": 17.3323,
+   "mean": 14.6432
+  },
+  "bias_pct": {
+   "n": 76,
+   "median": -7.9592,
+   "q1": -14.7805,
+   "q3": -1.7202,
+   "mean": -9.3952
+  },
+  "by_type_all_patients": [
+   {
+    "group": "T1DM",
+    "n": 10,
+    "median": 15.7263,
+    "q1": 11.3023,
+    "q3": 18.7107,
+    "mean": 16.4684
+   },
+   {
+    "group": "T2DM",
+    "n": 88,
+    "median": 11.5759,
+    "q1": 8.7768,
+    "q3": 17.1669,
+    "mean": 13.9304
+   }
+  ],
+  "tests": [
+   {
+    "variable": "type",
+    "label": "Diabetes type",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "T1DM",
+      "n": 10,
+      "median": 15.7263,
+      "q1": 11.3023,
+      "q3": 18.7107,
+      "mean": 16.4684
+     },
+     {
+      "group": "T2DM",
+      "n": 66,
+      "median": 11.8368,
+      "q1": 9.3819,
+      "q3": 17.2099,
+      "mean": 14.3667
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.2523,
+    "reference": "T1DM",
+    "contrasts": [
+     {
+      "group": "T2DM",
+      "vs": "T1DM",
+      "n": 66,
+      "n_ref": 10,
+      "diff_median": -3.8895,
+      "ci_low": -8.8485,
+      "ci_high": 1.8937,
+      "detectable_diff_means": 7.3064
+     }
+    ]
+   },
+   {
+    "variable": "sex",
+    "label": "Sex",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "F",
+      "n": 32,
+      "median": 11.9126,
+      "q1": 9.5545,
+      "q3": 17.8834,
+      "mean": 14.566
+     },
+     {
+      "group": "M",
+      "n": 44,
+      "median": 11.9098,
+      "q1": 9.3344,
+      "q3": 17.0342,
+      "mean": 14.6993
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Mann-Whitney U",
+    "p": 0.9706,
+    "reference": "F",
+    "contrasts": [
+     {
+      "group": "M",
+      "vs": "F",
+      "n": 44,
+      "n_ref": 32,
+      "diff_median": -0.0027,
+      "ci_low": -3.8722,
+      "ci_high": 3.8373,
+      "detectable_diff_means": 5.0241
+     }
+    ]
+   },
+   {
+    "variable": "age_group",
+    "label": "Age tertile (years)",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "<=57",
+      "n": 27,
+      "median": 10.9409,
+      "q1": 8.3699,
+      "q3": 15.4946,
+      "mean": 13.7216
+     },
+     {
+      "group": "57-66",
+      "n": 26,
+      "median": 14.885,
+      "q1": 11.1757,
+      "q3": 17.7284,
+      "mean": 15.3677
+     },
+     {
+      "group": ">66",
+      "n": 23,
+      "median": 13.3515,
+      "q1": 9.6545,
+      "q3": 17.8874,
+      "mean": 14.9061
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.2689,
+    "reference": "<=57",
+    "contrasts": [
+     {
+      "group": "57-66",
+      "vs": "<=57",
+      "n": 26,
+      "n_ref": 27,
+      "diff_median": 3.9441,
+      "ci_low": -0.1582,
+      "ci_high": 6.9616,
+      "detectable_diff_means": 6.1907
+     },
+     {
+      "group": ">66",
+      "vs": "<=57",
+      "n": 23,
+      "n_ref": 27,
+      "diff_median": 2.4105,
+      "ci_low": -1.1585,
+      "ci_high": 5.7255,
+      "detectable_diff_means": 6.2604
+     }
+    ]
+   },
+   {
+    "variable": "hba1c_group",
+    "label": "HbA1c tertile (%)",
+    "outcome": "mard",
+    "groups": [
+     {
+      "group": "<=8.1",
+      "n": 25,
+      "median": 12.1501,
+      "q1": 10.6925,
+      "q3": 17.8259,
+      "mean": 15.857
+     },
+     {
+      "group": "8.1-10.8",
+      "n": 24,
+      "median": 13.3223,
+      "q1": 9.6207,
+      "q3": 17.8642,
+      "mean": 15.7141
+     },
+     {
+      "group": ">10.8",
+      "n": 23,
+      "median": 10.8156,
+      "q1": 8.7184,
+      "q3": 15.6202,
+      "mean": 12.339
+     }
+    ],
+    "excluded_small_groups": [],
+    "testable": true,
+    "test": "Kruskal-Wallis",
+    "p": 0.3112,
+    "reference": "<=8.1",
+    "contrasts": [
+     {
+      "group": "8.1-10.8",
+      "vs": "<=8.1",
+      "n": 24,
+      "n_ref": 25,
+      "diff_median": 1.1722,
+      "ci_low": -5.3492,
+      "ci_high": 3.9956,
+      "detectable_diff_means": 7.0652
+     },
+     {
+      "group": ">10.8",
+      "vs": "<=8.1",
+      "n": 23,
+      "n_ref": 25,
+      "diff_median": -1.3345,
+      "ci_low": -6.8537,
+      "ci_high": 2.6294,
+      "detectable_diff_means": 5.9135
+     }
+    ]
+   }
+  ],
+  "spearman": {
+   "age": {
+    "n": 76,
+    "rho": 0.15,
+    "ci_low": -0.0875,
+    "ci_high": 0.3685,
+    "p": 0.1959
+   },
+   "hba1c": {
+    "n": 72,
+    "rho": -0.2056,
+    "ci_low": -0.4228,
+    "ci_high": 0.0418,
+    "p": 0.0831
+   },
+   "n_pairs": {
+    "n": 76,
+    "rho": -0.1895,
+    "ci_low": -0.4123,
+    "ci_high": 0.0639,
+    "p": 0.101
+   }
+  },
+  "caveat": "small comparator: 3-14 days per patient, 15-min rows, fingerstick timing slack up to 7.5 min, in-patients"
+ },
+ "figure_23_choice": {
+  "column": "pct_below_70",
+  "xlabel": "% time below 70 mg/dL",
+  "family": "confounder",
+  "spearman": {
+   "n": 226,
+   "rho": 0.3277,
+   "ci_low": 0.2056,
+   "ci_high": 0.4369,
+   "p": 0.0
+  },
+  "title": "Strongest correlate of per-participant MARD: % time below 70 mg/dL"
+ }
+}

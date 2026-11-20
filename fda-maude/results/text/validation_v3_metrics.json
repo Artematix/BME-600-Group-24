@@ -1,0 +1,2069 @@
+{
+ "version": "v3",
+ "date": "2026-10-30",
+ "gold": "fda-maude/gold/gold_labels_v1.csv",
+ "regex": "fda-maude/results/text/regex_sample.csv",
+ "llm": "fda-maude/results/text/llm_gold_v3_run1.jsonl",
+ "llm2": "fda-maude/results/text/llm_gold_v3_run2.jsonl",
+ "combine_rule": "template",
+ "n_joined": 287,
+ "metrics": {
+  "regex": {
+   "All": {
+    "fault_type": {
+     "n": 287,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "outcome_severity": {
+     "n": 287,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "user_action": {
+     "n": 287,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "fingerstick_check_done": {
+     "n": 287,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "multiple_pairs": {
+     "n": 287,
+     "accuracy": 0.9930313588850174,
+     "kappa": 0.9436481445120755
+    },
+    "sensor_value_mgdl": {
+     "n": 287,
+     "gold_present": 83,
+     "sys_present": 82,
+     "both_present": 81,
+     "exact": 81,
+     "exact_among_gold": 0.9759036144578314,
+     "exact_among_sys": 0.9878048780487805,
+     "presence_precision": 0.9878048780487805,
+     "presence_recall": 0.9759036144578314,
+     "row_agreement": 0.9895470383275261,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 287,
+     "gold_present": 100,
+     "sys_present": 104,
+     "both_present": 98,
+     "exact": 96,
+     "exact_among_gold": 0.96,
+     "exact_among_sys": 0.9230769230769231,
+     "presence_precision": 0.9423076923076923,
+     "presence_recall": 0.98,
+     "row_agreement": 0.9651567944250871,
+     "wrong_value": 2,
+     "invented": 6,
+     "missed": 2
+    },
+    "wear_day": {
+     "n": 287,
+     "gold_present": 51,
+     "sys_present": 52,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9807692307692307,
+     "presence_precision": 0.9807692307692307,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9965156794425087,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 287,
+     "gold_present": 84,
+     "sys_present": 84,
+     "both_present": 84,
+     "exact": 83,
+     "exact_among_gold": 0.9880952380952381,
+     "exact_among_sys": 0.9880952380952381,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9965156794425087,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Abbott": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.99,
+     "kappa": 0.9596774193548387
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 59,
+     "sys_present": 59,
+     "both_present": 59,
+     "exact": 59,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 60,
+     "sys_present": 60,
+     "both_present": 59,
+     "exact": 59,
+     "exact_among_gold": 0.9833333333333333,
+     "exact_among_sys": 0.9833333333333333,
+     "presence_precision": 0.9833333333333333,
+     "presence_recall": 0.9833333333333333,
+     "row_agreement": 0.98,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 1
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 51,
+     "sys_present": 52,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9807692307692307,
+     "presence_precision": 0.9807692307692307,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 57,
+     "sys_present": 57,
+     "both_present": 57,
+     "exact": 57,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Dexcom": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 1.0,
+     "kappa": 1.0
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 19,
+     "sys_present": 19,
+     "both_present": 19,
+     "exact": 19,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 28,
+     "sys_present": 30,
+     "both_present": 28,
+     "exact": 27,
+     "exact_among_gold": 0.9642857142857143,
+     "exact_among_sys": 0.9,
+     "presence_precision": 0.9333333333333333,
+     "presence_recall": 1.0,
+     "row_agreement": 0.97,
+     "wrong_value": 1,
+     "invented": 2,
+     "missed": 0
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 27,
+     "sys_present": 27,
+     "both_present": 27,
+     "exact": 26,
+     "exact_among_gold": 0.9629629629629629,
+     "exact_among_sys": 0.9629629629629629,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Medtronic": {
+    "fault_type": {
+     "n": 87,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "outcome_severity": {
+     "n": 87,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "user_action": {
+     "n": 87,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "fingerstick_check_done": {
+     "n": 87,
+     "accuracy": 0.0,
+     "kappa": 0.0
+    },
+    "multiple_pairs": {
+     "n": 87,
+     "accuracy": 0.9885057471264368,
+     "kappa": 0.0
+    },
+    "sensor_value_mgdl": {
+     "n": 87,
+     "gold_present": 5,
+     "sys_present": 4,
+     "both_present": 3,
+     "exact": 3,
+     "exact_among_gold": 0.6,
+     "exact_among_sys": 0.75,
+     "presence_precision": 0.75,
+     "presence_recall": 0.6,
+     "row_agreement": 0.9655172413793104,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 87,
+     "gold_present": 12,
+     "sys_present": 14,
+     "both_present": 11,
+     "exact": 10,
+     "exact_among_gold": 0.8333333333333334,
+     "exact_among_sys": 0.7142857142857143,
+     "presence_precision": 0.7857142857142857,
+     "presence_recall": 0.9166666666666666,
+     "row_agreement": 0.9425287356321839,
+     "wrong_value": 1,
+     "invented": 3,
+     "missed": 1
+    },
+    "wear_day": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   }
+  },
+  "llm": {
+   "All": {
+    "fault_type": {
+     "n": 287,
+     "accuracy": 0.8083623693379791,
+     "kappa": 0.7702462738705169
+    },
+    "outcome_severity": {
+     "n": 287,
+     "accuracy": 0.8432055749128919,
+     "kappa": 0.7450097731445833
+    },
+    "user_action": {
+     "n": 287,
+     "accuracy": 0.8745644599303136,
+     "kappa": 0.7719557684243052
+    },
+    "fingerstick_check_done": {
+     "n": 287,
+     "accuracy": 0.867595818815331,
+     "kappa": 0.7406667617824703
+    },
+    "multiple_pairs": {
+     "n": 287,
+     "accuracy": 0.8397212543554007,
+     "kappa": 0.38732132912567296
+    },
+    "sensor_value_mgdl": {
+     "n": 287,
+     "gold_present": 83,
+     "sys_present": 82,
+     "both_present": 81,
+     "exact": 77,
+     "exact_among_gold": 0.927710843373494,
+     "exact_among_sys": 0.9390243902439024,
+     "presence_precision": 0.9878048780487805,
+     "presence_recall": 0.9759036144578314,
+     "row_agreement": 0.975609756097561,
+     "wrong_value": 4,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 287,
+     "gold_present": 100,
+     "sys_present": 99,
+     "both_present": 94,
+     "exact": 92,
+     "exact_among_gold": 0.92,
+     "exact_among_sys": 0.9292929292929293,
+     "presence_precision": 0.9494949494949495,
+     "presence_recall": 0.94,
+     "row_agreement": 0.9547038327526133,
+     "wrong_value": 2,
+     "invented": 5,
+     "missed": 6
+    },
+    "wear_day": {
+     "n": 287,
+     "gold_present": 51,
+     "sys_present": 53,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9622641509433962,
+     "presence_precision": 0.9622641509433962,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9930313588850174,
+     "wrong_value": 0,
+     "invented": 2,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 287,
+     "gold_present": 84,
+     "sys_present": 84,
+     "both_present": 84,
+     "exact": 83,
+     "exact_among_gold": 0.9880952380952381,
+     "exact_among_sys": 0.9880952380952381,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9965156794425087,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Abbott": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8836025025461952
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.82,
+     "kappa": 0.707981829980532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.91,
+     "kappa": 0.8428222144603563
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.87,
+     "kappa": 0.7166521360069746
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.69,
+     "kappa": 0.34322033898305093
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 59,
+     "sys_present": 59,
+     "both_present": 59,
+     "exact": 55,
+     "exact_among_gold": 0.9322033898305084,
+     "exact_among_sys": 0.9322033898305084,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.96,
+     "wrong_value": 4,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 60,
+     "sys_present": 60,
+     "both_present": 60,
+     "exact": 59,
+     "exact_among_gold": 0.9833333333333333,
+     "exact_among_sys": 0.9833333333333333,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 51,
+     "sys_present": 51,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 57,
+     "sys_present": 57,
+     "both_present": 57,
+     "exact": 57,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Dexcom": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.76,
+     "kappa": 0.706959706959707
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8685075608152532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.89,
+     "kappa": 0.8103775211170487
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.8,
+     "kappa": 0.607304142941292
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.88,
+     "kappa": 0.2890995260663507
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 19,
+     "sys_present": 19,
+     "both_present": 19,
+     "exact": 19,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 28,
+     "sys_present": 25,
+     "both_present": 24,
+     "exact": 24,
+     "exact_among_gold": 0.8571428571428571,
+     "exact_among_sys": 0.96,
+     "presence_precision": 0.96,
+     "presence_recall": 0.8571428571428571,
+     "row_agreement": 0.95,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 4
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 27,
+     "sys_present": 27,
+     "both_present": 27,
+     "exact": 26,
+     "exact_among_gold": 0.9629629629629629,
+     "exact_among_sys": 0.9629629629629629,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Medtronic": {
+    "fault_type": {
+     "n": 87,
+     "accuracy": 0.735632183908046,
+     "kappa": 0.6299241723691511
+    },
+    "outcome_severity": {
+     "n": 87,
+     "accuracy": 0.7816091954022989,
+     "kappa": 0.6170952050034746
+    },
+    "user_action": {
+     "n": 87,
+     "accuracy": 0.8160919540229885,
+     "kappa": 0.5749618320610688
+    },
+    "fingerstick_check_done": {
+     "n": 87,
+     "accuracy": 0.9425287356321839,
+     "kappa": 0.8300117233294255
+    },
+    "multiple_pairs": {
+     "n": 87,
+     "accuracy": 0.9655172413793104,
+     "kappa": 0.38875878220140514
+    },
+    "sensor_value_mgdl": {
+     "n": 87,
+     "gold_present": 5,
+     "sys_present": 4,
+     "both_present": 3,
+     "exact": 3,
+     "exact_among_gold": 0.6,
+     "exact_among_sys": 0.75,
+     "presence_precision": 0.75,
+     "presence_recall": 0.6,
+     "row_agreement": 0.9655172413793104,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 87,
+     "gold_present": 12,
+     "sys_present": 14,
+     "both_present": 10,
+     "exact": 9,
+     "exact_among_gold": 0.75,
+     "exact_among_sys": 0.6428571428571429,
+     "presence_precision": 0.7142857142857143,
+     "presence_recall": 0.8333333333333334,
+     "row_agreement": 0.9195402298850575,
+     "wrong_value": 1,
+     "invented": 4,
+     "missed": 2
+    },
+    "wear_day": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.9885057471264368,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   }
+  },
+  "combined": {
+   "All": {
+    "fault_type": {
+     "n": 287,
+     "accuracy": 0.8083623693379791,
+     "kappa": 0.7702462738705169
+    },
+    "outcome_severity": {
+     "n": 287,
+     "accuracy": 0.8432055749128919,
+     "kappa": 0.7450097731445833
+    },
+    "user_action": {
+     "n": 287,
+     "accuracy": 0.8745644599303136,
+     "kappa": 0.7719557684243052
+    },
+    "fingerstick_check_done": {
+     "n": 287,
+     "accuracy": 0.867595818815331,
+     "kappa": 0.7406667617824703
+    },
+    "multiple_pairs": {
+     "n": 287,
+     "accuracy": 0.9477351916376306,
+     "kappa": 0.6900871067597725
+    },
+    "sensor_value_mgdl": {
+     "n": 287,
+     "gold_present": 83,
+     "sys_present": 82,
+     "both_present": 81,
+     "exact": 80,
+     "exact_among_gold": 0.963855421686747,
+     "exact_among_sys": 0.975609756097561,
+     "presence_precision": 0.9878048780487805,
+     "presence_recall": 0.9759036144578314,
+     "row_agreement": 0.9860627177700348,
+     "wrong_value": 1,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 287,
+     "gold_present": 100,
+     "sys_present": 99,
+     "both_present": 94,
+     "exact": 93,
+     "exact_among_gold": 0.93,
+     "exact_among_sys": 0.9393939393939394,
+     "presence_precision": 0.9494949494949495,
+     "presence_recall": 0.94,
+     "row_agreement": 0.9581881533101045,
+     "wrong_value": 1,
+     "invented": 5,
+     "missed": 6
+    },
+    "wear_day": {
+     "n": 287,
+     "gold_present": 51,
+     "sys_present": 54,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9444444444444444,
+     "presence_precision": 0.9444444444444444,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9895470383275261,
+     "wrong_value": 0,
+     "invented": 3,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 287,
+     "gold_present": 84,
+     "sys_present": 84,
+     "both_present": 84,
+     "exact": 83,
+     "exact_among_gold": 0.9880952380952381,
+     "exact_among_sys": 0.9880952380952381,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9965156794425087,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Abbott": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8836025025461952
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.82,
+     "kappa": 0.707981829980532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.91,
+     "kappa": 0.8428222144603563
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.87,
+     "kappa": 0.7166521360069746
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 1.0,
+     "kappa": 1.0
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 59,
+     "sys_present": 59,
+     "both_present": 59,
+     "exact": 58,
+     "exact_among_gold": 0.9830508474576272,
+     "exact_among_sys": 0.9830508474576272,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 60,
+     "sys_present": 60,
+     "both_present": 60,
+     "exact": 60,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 51,
+     "sys_present": 52,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9807692307692307,
+     "presence_precision": 0.9807692307692307,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 57,
+     "sys_present": 57,
+     "both_present": 57,
+     "exact": 57,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Dexcom": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.76,
+     "kappa": 0.706959706959707
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8685075608152532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.89,
+     "kappa": 0.8103775211170487
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.8,
+     "kappa": 0.607304142941292
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.88,
+     "kappa": 0.2890995260663507
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 19,
+     "sys_present": 19,
+     "both_present": 19,
+     "exact": 19,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 28,
+     "sys_present": 25,
+     "both_present": 24,
+     "exact": 24,
+     "exact_among_gold": 0.8571428571428571,
+     "exact_among_sys": 0.96,
+     "presence_precision": 0.96,
+     "presence_recall": 0.8571428571428571,
+     "row_agreement": 0.95,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 4
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 27,
+     "sys_present": 27,
+     "both_present": 27,
+     "exact": 26,
+     "exact_among_gold": 0.9629629629629629,
+     "exact_among_sys": 0.9629629629629629,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Medtronic": {
+    "fault_type": {
+     "n": 87,
+     "accuracy": 0.735632183908046,
+     "kappa": 0.6299241723691511
+    },
+    "outcome_severity": {
+     "n": 87,
+     "accuracy": 0.7816091954022989,
+     "kappa": 0.6170952050034746
+    },
+    "user_action": {
+     "n": 87,
+     "accuracy": 0.8160919540229885,
+     "kappa": 0.5749618320610688
+    },
+    "fingerstick_check_done": {
+     "n": 87,
+     "accuracy": 0.9425287356321839,
+     "kappa": 0.8300117233294255
+    },
+    "multiple_pairs": {
+     "n": 87,
+     "accuracy": 0.9655172413793104,
+     "kappa": 0.38875878220140514
+    },
+    "sensor_value_mgdl": {
+     "n": 87,
+     "gold_present": 5,
+     "sys_present": 4,
+     "both_present": 3,
+     "exact": 3,
+     "exact_among_gold": 0.6,
+     "exact_among_sys": 0.75,
+     "presence_precision": 0.75,
+     "presence_recall": 0.6,
+     "row_agreement": 0.9655172413793104,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 87,
+     "gold_present": 12,
+     "sys_present": 14,
+     "both_present": 10,
+     "exact": 9,
+     "exact_among_gold": 0.75,
+     "exact_among_sys": 0.6428571428571429,
+     "presence_precision": 0.7142857142857143,
+     "presence_recall": 0.8333333333333334,
+     "row_agreement": 0.9195402298850575,
+     "wrong_value": 1,
+     "invented": 4,
+     "missed": 2
+    },
+    "wear_day": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.9885057471264368,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   }
+  },
+  "combined_alt": {
+   "All": {
+    "sensor_value_mgdl": {
+     "n": 287,
+     "gold_present": 83,
+     "sys_present": 82,
+     "both_present": 81,
+     "exact": 81,
+     "exact_among_gold": 0.9759036144578314,
+     "exact_among_sys": 0.9878048780487805,
+     "presence_precision": 0.9878048780487805,
+     "presence_recall": 0.9759036144578314,
+     "row_agreement": 0.9895470383275261,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 287,
+     "gold_present": 100,
+     "sys_present": 99,
+     "both_present": 94,
+     "exact": 93,
+     "exact_among_gold": 0.93,
+     "exact_among_sys": 0.9393939393939394,
+     "presence_precision": 0.9494949494949495,
+     "presence_recall": 0.94,
+     "row_agreement": 0.9581881533101045,
+     "wrong_value": 1,
+     "invented": 5,
+     "missed": 6
+    },
+    "wear_day": {
+     "n": 287,
+     "gold_present": 51,
+     "sys_present": 54,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9444444444444444,
+     "presence_precision": 0.9444444444444444,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9895470383275261,
+     "wrong_value": 0,
+     "invented": 3,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 287,
+     "gold_present": 84,
+     "sys_present": 84,
+     "both_present": 84,
+     "exact": 83,
+     "exact_among_gold": 0.9880952380952381,
+     "exact_among_sys": 0.9880952380952381,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9965156794425087,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    },
+    "multiple_pairs": {
+     "n": 287,
+     "accuracy": 0.975609756097561,
+     "kappa": 0.824095963575869
+    }
+   },
+   "Abbott": {
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 59,
+     "sys_present": 59,
+     "both_present": 59,
+     "exact": 59,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 60,
+     "sys_present": 60,
+     "both_present": 60,
+     "exact": 60,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 51,
+     "sys_present": 52,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9807692307692307,
+     "presence_precision": 0.9807692307692307,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 57,
+     "sys_present": 57,
+     "both_present": 57,
+     "exact": 57,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 1.0,
+     "kappa": 1.0
+    }
+   },
+   "Dexcom": {
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 19,
+     "sys_present": 19,
+     "both_present": 19,
+     "exact": 19,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 28,
+     "sys_present": 25,
+     "both_present": 24,
+     "exact": 24,
+     "exact_among_gold": 0.8571428571428571,
+     "exact_among_sys": 0.96,
+     "presence_precision": 0.96,
+     "presence_recall": 0.8571428571428571,
+     "row_agreement": 0.95,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 4
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 27,
+     "sys_present": 27,
+     "both_present": 27,
+     "exact": 26,
+     "exact_among_gold": 0.9629629629629629,
+     "exact_among_sys": 0.9629629629629629,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.97,
+     "kappa": 0.6511627906976745
+    }
+   },
+   "Medtronic": {
+    "sensor_value_mgdl": {
+     "n": 87,
+     "gold_present": 5,
+     "sys_present": 4,
+     "both_present": 3,
+     "exact": 3,
+     "exact_among_gold": 0.6,
+     "exact_among_sys": 0.75,
+     "presence_precision": 0.75,
+     "presence_recall": 0.6,
+     "row_agreement": 0.9655172413793104,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 87,
+     "gold_present": 12,
+     "sys_present": 14,
+     "both_present": 10,
+     "exact": 9,
+     "exact_among_gold": 0.75,
+     "exact_among_sys": 0.6428571428571429,
+     "presence_precision": 0.7142857142857143,
+     "presence_recall": 0.8333333333333334,
+     "row_agreement": 0.9195402298850575,
+     "wrong_value": 1,
+     "invented": 4,
+     "missed": 2
+    },
+    "wear_day": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.9885057471264368,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "multiple_pairs": {
+     "n": 87,
+     "accuracy": 0.9540229885057471,
+     "kappa": -0.01754385964912264
+    }
+   }
+  }
+ },
+ "metrics_run2": {
+  "llm": {
+   "All": {
+    "fault_type": {
+     "n": 287,
+     "accuracy": 0.8153310104529616,
+     "kappa": 0.7779416058394161
+    },
+    "outcome_severity": {
+     "n": 287,
+     "accuracy": 0.8432055749128919,
+     "kappa": 0.7450097731445833
+    },
+    "user_action": {
+     "n": 287,
+     "accuracy": 0.8850174216027874,
+     "kappa": 0.7898462289480107
+    },
+    "fingerstick_check_done": {
+     "n": 287,
+     "accuracy": 0.8710801393728222,
+     "kappa": 0.745792736935341
+    },
+    "multiple_pairs": {
+     "n": 287,
+     "accuracy": 0.8362369337979094,
+     "kappa": 0.3810965817848131
+    },
+    "sensor_value_mgdl": {
+     "n": 287,
+     "gold_present": 83,
+     "sys_present": 82,
+     "both_present": 81,
+     "exact": 77,
+     "exact_among_gold": 0.927710843373494,
+     "exact_among_sys": 0.9390243902439024,
+     "presence_precision": 0.9878048780487805,
+     "presence_recall": 0.9759036144578314,
+     "row_agreement": 0.975609756097561,
+     "wrong_value": 4,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 287,
+     "gold_present": 100,
+     "sys_present": 98,
+     "both_present": 93,
+     "exact": 91,
+     "exact_among_gold": 0.91,
+     "exact_among_sys": 0.9285714285714286,
+     "presence_precision": 0.9489795918367347,
+     "presence_recall": 0.93,
+     "row_agreement": 0.9512195121951219,
+     "wrong_value": 2,
+     "invented": 5,
+     "missed": 7
+    },
+    "wear_day": {
+     "n": 287,
+     "gold_present": 51,
+     "sys_present": 53,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9622641509433962,
+     "presence_precision": 0.9622641509433962,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9930313588850174,
+     "wrong_value": 0,
+     "invented": 2,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 287,
+     "gold_present": 84,
+     "sys_present": 84,
+     "both_present": 84,
+     "exact": 83,
+     "exact_among_gold": 0.9880952380952381,
+     "exact_among_sys": 0.9880952380952381,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9965156794425087,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Abbott": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.93,
+     "kappa": 0.8973907944884199
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.82,
+     "kappa": 0.707981829980532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8618307426597582
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.88,
+     "kappa": 0.732620320855615
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.69,
+     "kappa": 0.34322033898305093
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 59,
+     "sys_present": 59,
+     "both_present": 59,
+     "exact": 55,
+     "exact_among_gold": 0.9322033898305084,
+     "exact_among_sys": 0.9322033898305084,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.96,
+     "wrong_value": 4,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 60,
+     "sys_present": 60,
+     "both_present": 60,
+     "exact": 59,
+     "exact_among_gold": 0.9833333333333333,
+     "exact_among_sys": 0.9833333333333333,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 51,
+     "sys_present": 51,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 57,
+     "sys_present": 57,
+     "both_present": 57,
+     "exact": 57,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Dexcom": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.78,
+     "kappa": 0.7304912409653314
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8685075608152532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.89,
+     "kappa": 0.8105734458412261
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.8,
+     "kappa": 0.607304142941292
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.87,
+     "kappa": 0.2696629213483146
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 19,
+     "sys_present": 19,
+     "both_present": 19,
+     "exact": 19,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 28,
+     "sys_present": 24,
+     "both_present": 23,
+     "exact": 23,
+     "exact_among_gold": 0.8214285714285714,
+     "exact_among_sys": 0.9583333333333334,
+     "presence_precision": 0.9583333333333334,
+     "presence_recall": 0.8214285714285714,
+     "row_agreement": 0.94,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 5
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 27,
+     "sys_present": 27,
+     "both_present": 27,
+     "exact": 26,
+     "exact_among_gold": 0.9629629629629629,
+     "exact_among_sys": 0.9629629629629629,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Medtronic": {
+    "fault_type": {
+     "n": 87,
+     "accuracy": 0.7241379310344828,
+     "kappa": 0.6118237590630229
+    },
+    "outcome_severity": {
+     "n": 87,
+     "accuracy": 0.7816091954022989,
+     "kappa": 0.6170952050034746
+    },
+    "user_action": {
+     "n": 87,
+     "accuracy": 0.8390804597701149,
+     "kappa": 0.612225405921681
+    },
+    "fingerstick_check_done": {
+     "n": 87,
+     "accuracy": 0.9425287356321839,
+     "kappa": 0.8300117233294255
+    },
+    "multiple_pairs": {
+     "n": 87,
+     "accuracy": 0.9655172413793104,
+     "kappa": 0.38875878220140514
+    },
+    "sensor_value_mgdl": {
+     "n": 87,
+     "gold_present": 5,
+     "sys_present": 4,
+     "both_present": 3,
+     "exact": 3,
+     "exact_among_gold": 0.6,
+     "exact_among_sys": 0.75,
+     "presence_precision": 0.75,
+     "presence_recall": 0.6,
+     "row_agreement": 0.9655172413793104,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 87,
+     "gold_present": 12,
+     "sys_present": 14,
+     "both_present": 10,
+     "exact": 9,
+     "exact_among_gold": 0.75,
+     "exact_among_sys": 0.6428571428571429,
+     "presence_precision": 0.7142857142857143,
+     "presence_recall": 0.8333333333333334,
+     "row_agreement": 0.9195402298850575,
+     "wrong_value": 1,
+     "invented": 4,
+     "missed": 2
+    },
+    "wear_day": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.9885057471264368,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   }
+  },
+  "combined": {
+   "All": {
+    "fault_type": {
+     "n": 287,
+     "accuracy": 0.8153310104529616,
+     "kappa": 0.7779416058394161
+    },
+    "outcome_severity": {
+     "n": 287,
+     "accuracy": 0.8432055749128919,
+     "kappa": 0.7450097731445833
+    },
+    "user_action": {
+     "n": 287,
+     "accuracy": 0.8850174216027874,
+     "kappa": 0.7898462289480107
+    },
+    "fingerstick_check_done": {
+     "n": 287,
+     "accuracy": 0.8710801393728222,
+     "kappa": 0.745792736935341
+    },
+    "multiple_pairs": {
+     "n": 287,
+     "accuracy": 0.9442508710801394,
+     "kappa": 0.6752015843825152
+    },
+    "sensor_value_mgdl": {
+     "n": 287,
+     "gold_present": 83,
+     "sys_present": 82,
+     "both_present": 81,
+     "exact": 80,
+     "exact_among_gold": 0.963855421686747,
+     "exact_among_sys": 0.975609756097561,
+     "presence_precision": 0.9878048780487805,
+     "presence_recall": 0.9759036144578314,
+     "row_agreement": 0.9860627177700348,
+     "wrong_value": 1,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 287,
+     "gold_present": 100,
+     "sys_present": 98,
+     "both_present": 93,
+     "exact": 92,
+     "exact_among_gold": 0.92,
+     "exact_among_sys": 0.9387755102040817,
+     "presence_precision": 0.9489795918367347,
+     "presence_recall": 0.93,
+     "row_agreement": 0.9547038327526133,
+     "wrong_value": 1,
+     "invented": 5,
+     "missed": 7
+    },
+    "wear_day": {
+     "n": 287,
+     "gold_present": 51,
+     "sys_present": 54,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9444444444444444,
+     "presence_precision": 0.9444444444444444,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9895470383275261,
+     "wrong_value": 0,
+     "invented": 3,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 287,
+     "gold_present": 84,
+     "sys_present": 84,
+     "both_present": 84,
+     "exact": 83,
+     "exact_among_gold": 0.9880952380952381,
+     "exact_among_sys": 0.9880952380952381,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.9965156794425087,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Abbott": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.93,
+     "kappa": 0.8973907944884199
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.82,
+     "kappa": 0.707981829980532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8618307426597582
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.88,
+     "kappa": 0.732620320855615
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 1.0,
+     "kappa": 1.0
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 59,
+     "sys_present": 59,
+     "both_present": 59,
+     "exact": 58,
+     "exact_among_gold": 0.9830508474576272,
+     "exact_among_sys": 0.9830508474576272,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 60,
+     "sys_present": 60,
+     "both_present": 60,
+     "exact": 60,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 51,
+     "sys_present": 52,
+     "both_present": 51,
+     "exact": 51,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 0.9807692307692307,
+     "presence_precision": 0.9807692307692307,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 57,
+     "sys_present": 57,
+     "both_present": 57,
+     "exact": 57,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Dexcom": {
+    "fault_type": {
+     "n": 100,
+     "accuracy": 0.78,
+     "kappa": 0.7304912409653314
+    },
+    "outcome_severity": {
+     "n": 100,
+     "accuracy": 0.92,
+     "kappa": 0.8685075608152532
+    },
+    "user_action": {
+     "n": 100,
+     "accuracy": 0.89,
+     "kappa": 0.8105734458412261
+    },
+    "fingerstick_check_done": {
+     "n": 100,
+     "accuracy": 0.8,
+     "kappa": 0.607304142941292
+    },
+    "multiple_pairs": {
+     "n": 100,
+     "accuracy": 0.87,
+     "kappa": 0.2696629213483146
+    },
+    "sensor_value_mgdl": {
+     "n": 100,
+     "gold_present": 19,
+     "sys_present": 19,
+     "both_present": 19,
+     "exact": 19,
+     "exact_among_gold": 1.0,
+     "exact_among_sys": 1.0,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    },
+    "meter_value_mgdl": {
+     "n": 100,
+     "gold_present": 28,
+     "sys_present": 24,
+     "both_present": 23,
+     "exact": 23,
+     "exact_among_gold": 0.8214285714285714,
+     "exact_among_sys": 0.9583333333333334,
+     "presence_precision": 0.9583333333333334,
+     "presence_recall": 0.8214285714285714,
+     "row_agreement": 0.94,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 5
+    },
+    "wear_day": {
+     "n": 100,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.99,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 100,
+     "gold_present": 27,
+     "sys_present": 27,
+     "both_present": 27,
+     "exact": 26,
+     "exact_among_gold": 0.9629629629629629,
+     "exact_among_sys": 0.9629629629629629,
+     "presence_precision": 1.0,
+     "presence_recall": 1.0,
+     "row_agreement": 0.99,
+     "wrong_value": 1,
+     "invented": 0,
+     "missed": 0
+    }
+   },
+   "Medtronic": {
+    "fault_type": {
+     "n": 87,
+     "accuracy": 0.7241379310344828,
+     "kappa": 0.6118237590630229
+    },
+    "outcome_severity": {
+     "n": 87,
+     "accuracy": 0.7816091954022989,
+     "kappa": 0.6170952050034746
+    },
+    "user_action": {
+     "n": 87,
+     "accuracy": 0.8390804597701149,
+     "kappa": 0.612225405921681
+    },
+    "fingerstick_check_done": {
+     "n": 87,
+     "accuracy": 0.9425287356321839,
+     "kappa": 0.8300117233294255
+    },
+    "multiple_pairs": {
+     "n": 87,
+     "accuracy": 0.9655172413793104,
+     "kappa": 0.38875878220140514
+    },
+    "sensor_value_mgdl": {
+     "n": 87,
+     "gold_present": 5,
+     "sys_present": 4,
+     "both_present": 3,
+     "exact": 3,
+     "exact_among_gold": 0.6,
+     "exact_among_sys": 0.75,
+     "presence_precision": 0.75,
+     "presence_recall": 0.6,
+     "row_agreement": 0.9655172413793104,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 2
+    },
+    "meter_value_mgdl": {
+     "n": 87,
+     "gold_present": 12,
+     "sys_present": 14,
+     "both_present": 10,
+     "exact": 9,
+     "exact_among_gold": 0.75,
+     "exact_among_sys": 0.6428571428571429,
+     "presence_precision": 0.7142857142857143,
+     "presence_recall": 0.8333333333333334,
+     "row_agreement": 0.9195402298850575,
+     "wrong_value": 1,
+     "invented": 4,
+     "missed": 2
+    },
+    "wear_day": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 1,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": 0.0,
+     "presence_precision": 0.0,
+     "presence_recall": null,
+     "row_agreement": 0.9885057471264368,
+     "wrong_value": 0,
+     "invented": 1,
+     "missed": 0
+    },
+    "parkes_zone_stated": {
+     "n": 87,
+     "gold_present": 0,
+     "sys_present": 0,
+     "both_present": 0,
+     "exact": 0,
+     "exact_among_gold": null,
+     "exact_among_sys": null,
+     "presence_precision": null,
+     "presence_recall": null,
+     "row_agreement": 1.0,
+     "wrong_value": 0,
+     "invented": 0,
+     "missed": 0
+    }
+   }
+  }
+ },
+ "reproducibility": {
+  "fault_type": 0.9686411149825784,
+  "outcome_severity": 1.0,
+  "user_action": 0.975609756097561,
+  "fingerstick_check_done": 0.9860627177700348,
+  "multiple_pairs": 0.9686411149825784,
+  "sensor_value_mgdl": 0.9930313588850174,
+  "meter_value_mgdl": 0.9895470383275261,
+  "wear_day": 1.0,
+  "parkes_zone_stated": 1.0,
+  "all_fields_identical": 0.9059233449477352
+ },
+ "pooled_numbers": {
+  "regex": {
+   "exact": 311,
+   "sys_present": 322,
+   "gold_present": 318,
+   "exact_among_sys": 0.9658385093167702,
+   "exact_among_gold": 0.9779874213836478
+  },
+  "llm": {
+   "exact": 303,
+   "sys_present": 318,
+   "gold_present": 318,
+   "exact_among_sys": 0.9528301886792453,
+   "exact_among_gold": 0.9528301886792453
+  },
+  "combined": {
+   "exact": 307,
+   "sys_present": 319,
+   "gold_present": 318,
+   "exact_among_sys": 0.9623824451410659,
+   "exact_among_gold": 0.9654088050314465
+  }
+ }
+}

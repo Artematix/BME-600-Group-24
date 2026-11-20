@@ -1,0 +1,7 @@
+maker,malfunction_reports,distinct_texts,template_text_pct,n_templates,short_text_under_120_chars_pct,unique_story_pct,unique_story_n,accuracy_code_pct,accuracy_code_n,accuracy_code_and_unique_story_n,accuracy_code_and_unique_story_pct_of_malfunction,median_text_chars
+all makers,3257570,808899,45.5,241,7.4,54.3,1770310,28.7,933365,481095,14.8,425.0
+Abbott,646461,196528,59.6,20,29.2,40.3,260752,92.0,594933,244190,37.8,1089.0
+Dexcom,2473325,508176,44.0,220,2.0,55.8,1379864,13.3,330027,229328,9.3,390.0
+Medtronic,126518,95146,6.0,3,2.6,94.0,118977,4.4,5531,5149,4.1,1560.0
+Other,6511,5554,0.0,3,0.0,99.9,6505,0.1,7,7,0.1,958.0
+Senseonics,4755,3508,11.4,1,11.4,88.6,4212,60.3,2867,2421,50.9,791.0

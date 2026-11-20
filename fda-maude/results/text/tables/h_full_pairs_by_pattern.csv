@@ -1,0 +1,9 @@
+pattern,malfunction,other,serious,all,share_of_pairs_pct
+abbott_template,161052,13,3395,164460,78.5
+v1_prose_same_sentence,26732,5,8141,34878,16.7
+v2_same_sentence,2245,18,3096,5359,2.6
+v1_prose_adjacent_sentence,257,2,2494,2753,1.3
+v2_comparison_one_side,729,0,133,862,0.4
+v2_adjacent_sentence,79,0,762,841,0.4
+v2_text_unique,17,1,213,231,0.1
+v2_comparison_implicit,1,0,3,4,0.0

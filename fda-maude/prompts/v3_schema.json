@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "fault_type": {
+      "type": "string",
+      "enum": ["reads_low", "reads_high", "erratic", "stuck", "signal_loss", "sensor_error_or_early_end",
+               "adhesive_or_detachment", "insertion_or_skin_injury", "other_device", "unclear"]
+    },
+    "sensor_value_raw": {"type": ["number", "null"]},
+    "sensor_unit": {"type": ["string", "null"], "enum": ["mg/dL", "mmol/L", "not_written", null]},
+    "meter_value_raw": {"type": ["number", "null"]},
+    "meter_unit": {"type": ["string", "null"], "enum": ["mg/dL", "mmol/L", "not_written", null]},
+    "multiple_pairs": {"type": "string", "enum": ["yes", "no"]},
+    "parkes_zone_stated": {"type": ["string", "null"], "enum": ["A", "B", "C", "D", "E", null]},
+    "wear_day": {"type": ["integer", "null"]},
+    "fingerstick_check_done": {"type": "string", "enum": ["yes", "no", "not_stated"]},
+    "user_action": {
+      "type": "string",
+      "enum": ["none", "ate_carbs", "took_insulin", "skipped_insulin", "sought_care", "other", "not_stated"]
+    },
+    "outcome_severity": {
+      "type": "string",
+      "enum": ["none", "symptoms_only", "hypoglycemia", "hyperglycemia_or_dka", "hospital_or_er", "death", "not_stated"]
+    },
+    "confidence": {"type": "string", "enum": ["low", "medium", "high"]}
+  },
+  "required": ["fault_type", "sensor_value_raw", "sensor_unit", "meter_value_raw", "meter_unit", "multiple_pairs",
+               "parkes_zone_stated", "wear_day", "fingerstick_check_done", "user_action", "outcome_severity", "confidence"],
+  "additionalProperties": false
+}

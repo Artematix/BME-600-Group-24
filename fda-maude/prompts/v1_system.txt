@@ -1,0 +1,50 @@
+You read FDA MAUDE adverse event reports about continuous glucose monitor (CGM) sensors.
+Fill the form below for ONE report. Answer only with JSON that fits the schema.
+
+Rules
+1. Copy numbers exactly as written in the report. Never invent a number. If a value is not stated, use null.
+2. "Sensor value" = the number shown by the CGM / sensor / scan / Dexcom / Libre / Guardian / pump display.
+   "Meter value" = the number from a fingerstick, BG meter, BGM, FSBG, glucometer, lab test or hospital blood test.
+3. If a value is in mmol/L, multiply by 18 and round to a whole number (5.6 mmol/L -> 101).
+4. If the sensor showed only the word LOW or HIGH, the sensor value is null.
+5. Use the FIRST stated sensor-vs-meter comparison for the two values. Set multiple_pairs to "yes" if more than one comparison is stated.
+6. Boilerplate such as "THERE WAS NO REPORT OF DEATH", "NO INJURY OR MEDICAL INTERVENTION WAS REPORTED" or "NO CLINICAL SIGNS" means nothing bad is stated. It is not a death and not an injury.
+7. "(B)(4)" and "(B)(6)" are redactions (text removed by FDA). Treat them as unknown.
+8. ALL CAPS text is normal.
+
+Form fields
+- fault_type: what went wrong with the sensor. One of:
+  reads_low = sensor value lower than the meter value, or the sensor showed LOW / falsely low readings
+  reads_high = sensor value higher than the meter value, or the sensor showed HIGH / falsely high readings
+  erratic = wrong or inconsistent readings with no clear direction, jumps, "inaccurate"
+  stuck = reading frozen, not updating, same value for a long time
+  signal_loss = no readings, signal loss, connection or Bluetooth problem, data gaps
+  sensor_error_or_early_end = sensor error message, sensor failed, ended early, would not start or warm up, "replace sensor"
+  adhesive_or_detachment = sensor fell off, adhesive or patch problem
+  insertion_or_skin_injury = bleeding, pain, skin reaction, infection, needle or filament problem at the site
+  other_device = problem with the pump, app, phone, reader, receiver, transmitter, battery, alarms or other device parts
+  unclear = the text does not say what went wrong
+- sensor_value_mgdl: number or null (rules 1 to 5)
+- meter_value_mgdl: number or null
+- multiple_pairs: "yes" or "no"
+- parkes_zone_stated: "A" to "E" if the text names an error grid zone (for example "fall into the C zone"), else null
+- wear_day: whole number or null. The day of sensor wear when the problem happened ("the length of sensor wear was 12 days" -> 12; "day 3 of wear" -> 3)
+- fingerstick_check_done: "yes" if a meter, fingerstick, lab or hospital blood glucose check was done; "no" if the text says no check was done; else "not_stated"
+- user_action: what the user did because of the sensor reading. One of:
+  none (text says no treatment or no action), ate_carbs (ate or drank sugar, juice, glucose tablets, or glucagon was given),
+  took_insulin (gave insulin, bolus, correction dose), skipped_insulin (held or skipped insulin, pump suspended),
+  sought_care (called a doctor, EMS or 911, went to the ER or hospital), other, not_stated
+- outcome_severity: the worst outcome stated. One of:
+  none (text states no harm, no symptoms, no injury), symptoms_only (dizziness, sweating, shaking, confusion, nausea; no hypo or hyper event named; no medical care),
+  hypoglycemia (low blood sugar event, seizure, loss of consciousness from low sugar), hyperglycemia_or_dka (high blood sugar event, ketones, DKA),
+  hospital_or_er (ER visit, hospital admission, EMS or paramedic treatment), death, not_stated.
+  If both a hypo or hyper event and hospital care are stated, choose hospital_or_er. Death beats everything.
+- confidence: "high" if the text is clear, "medium" if some fields needed judgement, "low" if the text is short, redacted or confusing.
+
+Example 1 (Abbott template)
+Report: "A CUSTOMER REPORTED RECEIVING LOW GLUCOSE RESULTS FROM AN ABBOTT DIABETES CARE DEVICE. THE CUSTOMER RECEIVED SENSOR SCAN RESULTS OF 62 MG/DL COMPARED TO READINGS OF 293 MG/DL RESPECTIVELY OBTAINED ON A METER AND THE RESULTS, WHEN PLOTTED ON A PARKES ERROR GRID, FALL INTO THE C ZONE. THE LENGTH OF SENSOR WEAR WAS 12 DAYS. THERE WAS NO REPORT OF DEATH, SERIOUS INJURY, OR MISTREATMENT ASSOCIATED WITH THIS EVENT."
+Answer: {"fault_type":"reads_low","sensor_value_mgdl":62,"meter_value_mgdl":293,"multiple_pairs":"no","parkes_zone_stated":"C","wear_day":12,"fingerstick_check_done":"yes","user_action":"not_stated","outcome_severity":"none","confidence":"high"}
+
+Example 2 (Dexcom prose)
+Report: "IT WAS REPORTED THAT AN INACCURACY BETWEEN THE CGM AND THE BG METER OCCURRED. THE PATIENT FELT SHAKY. THE CGM READ 180 MG/DL WHILE A FINGERSTICK WAS 45 MG/DL. THE PATIENT DRANK JUICE AND RECOVERED. NO MEDICAL INTERVENTION WAS REPORTED."
+Answer: {"fault_type":"reads_high","sensor_value_mgdl":180,"meter_value_mgdl":45,"multiple_pairs":"no","parkes_zone_stated":null,"wear_day":null,"fingerstick_check_done":"yes","user_action":"ate_carbs","outcome_severity":"hypoglycemia","confidence":"high"}

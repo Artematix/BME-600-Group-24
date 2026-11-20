@@ -2,10 +2,16 @@
 # Use Python 3.11. Install from the repo root:
 #   Windows:     py -3.11 -m pip install -r requirements.txt
 #   Mac / Linux: python3 -m pip install -r requirements.txt
-# Versions are the ones that made the committed figures and tables.
-pandas==3.0.6       # tables: load, pair and count the data (all scripts)
-numpy==2.4.6        # number crunching (all scripts)
-matplotlib==3.11.2  # draws every figure (all scripts)
-openpyxl==3.1.5     # lets pandas read the Shanghai .xlsx files (explore_raw_data.py)
-xlrd==2.0.2         # lets pandas read the Shanghai old .xls files (explore_raw_data.py)
-requests==2.34.2    # downloads from the FDA openFDA API (fda-maude/scripts/)
+# Versions are the ones installed on the machine that made the committed figures and tables (checked 2026-10-30).
+# pandas was pinned at 3.0.6 before, but every committed output was made with pandas 2.3.3, so the pin now says 2.3.3.
+pandas==2.3.3        # tables: load, pair and count the data (all scripts)
+numpy==2.3.5         # number crunching (all scripts)
+matplotlib==3.10.7   # draws every figure (analysis/ scripts, report_results.py, country_spread.py)
+pyarrow==22.0.0      # reads and writes the parquet cache made by analysis/preprocess.py; parquet copies of MAUDE tables (fda-maude/scripts/)
+openpyxl==3.1.5      # lets pandas read the Shanghai .xlsx files (analysis/preprocess.py)
+xlrd==2.0.2          # lets pandas read the Shanghai old .xls files (analysis/preprocess.py)
+scipy==1.16.3        # statistics helpers: Spearman correlation, noise filter (subgroups.py, simulation_v2.py)
+statsmodels==0.14.6  # mixed-effects model and multiple-test correction (error_drivers.py, subgroups.py)
+requests==2.32.5     # downloads from the FDA openFDA API (fda-maude/scripts/)
+scikit-learn==1.8.0  # Cohen's kappa, the agreement score for the gold-set check (fda-maude/scripts/score_against_gold.py)
+ollama==0.6.3        # talks to the local Ollama language model that reads the report texts (fda-maude/scripts/llm_extract.py)

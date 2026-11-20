@@ -1,0 +1,16 @@
+brand,measure,sample_reports,sample_pairs,weighted_estimate,bootstrap_ci_low,bootstrap_ci_high,full_corpus_value,full_corpus_reports,full_corpus_pairs,inside_ci
+All,pair_rate_pct,6168,289,4.15,3.63,4.66,4.44,2936278,130460,yes
+All,median_error_pct,6168,289,-63.85,-65.4,-60.0,-65.0,2936278,130460,yes
+All,pct_reads_low,6168,289,72.88,67.08,78.69,75.12,2936278,130460,yes
+All,pct_meter_under_70,6168,289,5.59,2.83,8.98,5.01,2936278,130460,yes
+All,pct_abs_over_40,6168,289,95.13,92.0,97.88,94.69,2936278,130460,yes
+Abbott,pair_rate_pct,861,227,26.55,23.24,29.6,25.98,391356,101672,yes
+Abbott,median_error_pct,861,227,-65.0,-66.83,-62.61,-66.7,391356,101672,yes
+Abbott,pct_reads_low,861,227,73.39,67.15,79.54,73.9,391356,101672,yes
+Abbott,pct_meter_under_70,861,227,5.85,3.01,9.29,4.8,391356,101672,yes
+Abbott,pct_abs_over_40,861,227,97.63,95.25,99.39,98.16,391356,101672,yes
+Dexcom,pair_rate_pct,4585,27,0.57,0.34,0.81,1.05,2412775,25256,no
+Dexcom,median_error_pct,4585,27,-45.08,-55.5,23.59,-52.2,2412775,25256,yes
+Dexcom,pct_reads_low,4585,27,64.8,43.96,82.72,79.79,2412775,25256,yes
+Dexcom,pct_meter_under_70,4585,27,4.43,0.0,13.66,5.19,2412775,25256,yes
+Dexcom,pct_abs_over_40,4585,27,78.46,60.89,94.48,81.15,2412775,25256,yes

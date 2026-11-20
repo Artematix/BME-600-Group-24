@@ -1,0 +1,12 @@
+version,pattern,regex_pairs,also_model,regex_only,agree_exact_pct,agree_within5_pct,swapped_pct
+v1 baseline,v1_prose_same_sentence,7970,7727,243,90.4,91.3,0.2
+v1 baseline,abbott_template,3204,3184,20,90.7,91.4,0.2
+v1 baseline,v1_prose_adjacent_sentence,2934,2558,376,83.5,84.8,0.1
+v2 tuned,v1_prose_same_sentence,7844,7612,232,90.6,91.5,0.1
+v2 tuned,abbott_template,3204,3184,20,90.7,91.4,0.2
+v2 tuned,v2_same_sentence,2936,2681,255,79.0,80.7,0.4
+v2 tuned,v1_prose_adjacent_sentence,2372,2090,282,90.8,91.9,0.0
+v2 tuned,v2_adjacent_sentence,740,634,106,83.0,84.2,0.5
+v2 tuned,v2_text_unique,205,115,90,92.2,93.0,0.0
+v2 tuned,v2_comparison_one_side,125,115,10,83.5,86.1,4.3
+v2 tuned,v2_comparison_implicit,3,3,0,100.0,100.0,0.0

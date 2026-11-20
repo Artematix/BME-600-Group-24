@@ -1,0 +1,101 @@
+tier,maker,fault_type,n,pct
+serious,Abbott,reads_low,11880,15.912774421688523
+serious,Abbott,reads_high,8481,11.35995285103875
+serious,Abbott,erratic,300,0.40183773792142735
+serious,Abbott,stuck,33,0.04420215117135701
+serious,Abbott,signal_loss,7079,9.48203115581928
+serious,Abbott,sensor_error_or_early_end,19505,26.1261502605248
+serious,Abbott,adhesive_or_detachment,6141,8.225618495251618
+serious,Abbott,insertion_or_skin_injury,10797,14.46214018779217
+serious,Abbott,other_device,9078,12.159609949502391
+serious,Abbott,unclear,1363,1.8256827892896847
+serious,Dexcom,reads_low,6470,20.190357310032766
+serious,Dexcom,reads_high,4817,15.031986269308785
+serious,Dexcom,erratic,529,1.6508035574972695
+serious,Dexcom,stuck,29,0.09049773755656108
+serious,Dexcom,signal_loss,1908,5.954127008893743
+serious,Dexcom,sensor_error_or_early_end,1647,5.139647370884694
+serious,Dexcom,adhesive_or_detachment,781,2.4371976907473867
+serious,Dexcom,insertion_or_skin_injury,7300,22.780464971134343
+serious,Dexcom,other_device,4871,15.20049929786238
+serious,Dexcom,unclear,3693,11.524418786082071
+serious,Medtronic (undercounted; weakest validation),reads_low,224,2.5866050808314087
+serious,Medtronic (undercounted; weakest validation),reads_high,222,2.5635103926097
+serious,Medtronic (undercounted; weakest validation),erratic,10,0.11547344110854503
+serious,Medtronic (undercounted; weakest validation),stuck,14,0.16166281755196305
+serious,Medtronic (undercounted; weakest validation),signal_loss,322,3.7182448036951503
+serious,Medtronic (undercounted; weakest validation),sensor_error_or_early_end,135,1.5588914549653579
+serious,Medtronic (undercounted; weakest validation),adhesive_or_detachment,20,0.23094688221709006
+serious,Medtronic (undercounted; weakest validation),insertion_or_skin_injury,197,2.274826789838337
+serious,Medtronic (undercounted; weakest validation),other_device,7006,80.90069284064666
+serious,Medtronic (undercounted; weakest validation),unclear,510,5.8891454965357966
+serious,Other,reads_low,359,11.580645161290322
+serious,Other,reads_high,234,7.548387096774194
+serious,Other,erratic,46,1.4838709677419355
+serious,Other,stuck,6,0.1935483870967742
+serious,Other,signal_loss,116,3.7419354838709675
+serious,Other,sensor_error_or_early_end,122,3.935483870967742
+serious,Other,adhesive_or_detachment,23,0.7419354838709677
+serious,Other,insertion_or_skin_injury,822,26.516129032258064
+serious,Other,other_device,1009,32.54838709677419
+serious,Other,unclear,363,11.709677419354838
+serious,All,reads_low,18933,15.982340328544174
+serious,All,reads_high,13754,11.61047424490554
+serious,All,erratic,885,0.7470750113960595
+serious,All,stuck,82,0.06922050953048235
+serious,All,signal_loss,9425,7.956137833229221
+serious,All,sensor_error_or_early_end,21409,18.07246205534264
+serious,All,adhesive_or_detachment,6965,5.8795225473147505
+serious,All,insertion_or_skin_injury,19116,16.136820246154887
+serious,All,other_device,21964,18.540966723506273
+serious,All,unclear,5929,5.004980500075974
+sample (weighted),Abbott,reads_low,334,43.74881896468454
+sample (weighted),Abbott,reads_high,66,7.1048813811047085
+sample (weighted),Abbott,erratic,78,7.252248122794519
+sample (weighted),Abbott,stuck,0,0.0
+sample (weighted),Abbott,signal_loss,1,0.1498300653091144
+sample (weighted),Abbott,sensor_error_or_early_end,78,10.196697569961428
+sample (weighted),Abbott,adhesive_or_detachment,1,0.1520347828471538
+sample (weighted),Abbott,insertion_or_skin_injury,0,0.0
+sample (weighted),Abbott,other_device,46,2.290592957747436
+sample (weighted),Abbott,unclear,239,29.104896155551113
+sample (weighted),Dexcom,reads_low,18,0.34690940925688113
+sample (weighted),Dexcom,reads_high,11,0.23773067823816613
+sample (weighted),Dexcom,erratic,4,0.07324498948259156
+sample (weighted),Dexcom,stuck,7,0.17085049316759923
+sample (weighted),Dexcom,signal_loss,2184,47.8796489574252
+sample (weighted),Dexcom,sensor_error_or_early_end,779,16.841550554777054
+sample (weighted),Dexcom,adhesive_or_detachment,212,4.275380426792915
+sample (weighted),Dexcom,insertion_or_skin_injury,44,0.5121673070835003
+sample (weighted),Dexcom,other_device,741,16.36029775858124
+sample (weighted),Dexcom,unclear,574,13.30221942519485
+sample (weighted),Medtronic (undercounted; weakest validation),reads_low,19,2.421848865401707
+sample (weighted),Medtronic (undercounted; weakest validation),reads_high,5,0.32188744286789306
+sample (weighted),Medtronic (undercounted; weakest validation),erratic,0,0.0
+sample (weighted),Medtronic (undercounted; weakest validation),stuck,2,0.12231126188678047
+sample (weighted),Medtronic (undercounted; weakest validation),signal_loss,243,78.08191759613621
+sample (weighted),Medtronic (undercounted; weakest validation),sensor_error_or_early_end,9,1.8089570935377042
+sample (weighted),Medtronic (undercounted; weakest validation),adhesive_or_detachment,1,0.10845594820963299
+sample (weighted),Medtronic (undercounted; weakest validation),insertion_or_skin_injury,3,0.019324516444442552
+sample (weighted),Medtronic (undercounted; weakest validation),other_device,119,15.10919370047181
+sample (weighted),Medtronic (undercounted; weakest validation),unclear,6,2.0061035750438285
+sample (weighted),Other,reads_low,4,0.6550856582013822
+sample (weighted),Other,reads_high,8,0.9918720272644241
+sample (weighted),Other,erratic,6,0.6474496904063968
+sample (weighted),Other,stuck,1,0.6249436800632818
+sample (weighted),Other,signal_loss,15,3.217555692981758
+sample (weighted),Other,sensor_error_or_early_end,198,17.77613113368426
+sample (weighted),Other,adhesive_or_detachment,0,0.0
+sample (weighted),Other,insertion_or_skin_injury,7,0.8070012280174081
+sample (weighted),Other,other_device,42,54.972868631561084
+sample (weighted),Other,unclear,32,20.307092257820017
+sample (weighted),All,reads_low,375,6.172604601092809
+sample (weighted),All,reads_high,90,1.15180670514963
+sample (weighted),All,erratic,88,1.0214445641871137
+sample (weighted),All,stuck,10,0.14780138181678265
+sample (weighted),All,signal_loss,2443,42.66341727183355
+sample (weighted),All,sensor_error_or_early_end,1064,15.34536986106495
+sample (weighted),All,adhesive_or_detachment,214,3.5435361566428445
+sample (weighted),All,insertion_or_skin_injury,54,0.4250978725525035
+sample (weighted),All,other_device,948,14.579721270161848
+sample (weighted),All,unclear,851,14.94920031549795

@@ -10,7 +10,13 @@ Datasets
 Usage (from the repo root; use Python 3.11, on Windows `py -3.11`)
   python analysis/explore_raw_data.py "Uncommitted Data/Raw Data Dump" analysis
   Argument 1 = data folder, argument 2 = output folder (these are the defaults).
+  Argument 3 (optional) = cache folder, default analysis/cache.
   Packages: pip install -r requirements.txt (repo root).
+
+Data loading
+  All heavy tables come from analysis/preprocess.py, which parses the raw files once
+  and caches them as parquet in analysis/cache/ (built on first use, about 1-2 min;
+  later runs load in seconds). Cleaning rules: analysis/PREPROCESSING.md.
 
 Outputs
   analysis/figures/*.png         figures referenced by RESULTS.md
@@ -30,6 +36,9 @@ matplotlib.use("Agg")
 import matplotlib.patches
 import matplotlib.pyplot as plt
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import preprocess as pp          # shared loaders + parquet cache (analysis/preprocess.py)
+
 if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help"):
     print(__doc__.strip())
     sys.exit(0)
@@ -37,20 +46,10 @@ if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help"):
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "Uncommitted Data/Raw Data Dump"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "analysis"
 FIG = os.path.join(OUT, "figures")
-
-RB = os.path.join(ROOT, "Replace-BG Dataset", "Data Tables")
-SH = os.path.join(ROOT, "Shanghai")
+CACHE = sys.argv[3] if len(sys.argv) > 3 else pp.DEFAULT_CACHE
 
 # Stop early with one plain line if the raw data is not where the script expects it.
-for _f in ["HPtRoster.txt", "HScreening.txt", "HLocalHbA1c.txt", "HDeviceUploads.txt",
-           "HMedicalCondition.txt", "HDeviceCGM.txt", "HDeviceBGM.txt"]:
-    if not os.path.isfile(os.path.join(RB, _f)):
-        sys.exit(f"Data not found: expected {os.path.join(RB, _f)}. "
-                 f"Pass the data folder as the first argument (see analysis/REPRODUCIBILITY.md).")
-for _pat in ["Shanghai_T1DM_Summary.xlsx", "Shanghai_T2DM_Summary.xlsx", "Shanghai_T1DM", "Shanghai_T2DM"]:
-    if not glob.glob(os.path.join(SH, "*", _pat)):
-        sys.exit(f"Data not found: expected {os.path.join(SH, '<one sub-folder>', _pat)}. "
-                 f"See analysis/REPRODUCIBILITY.md for the folder layout.")
+pp.check_raw_data(ROOT)
 
 os.makedirs(FIG, exist_ok=True)
 
@@ -231,39 +230,40 @@ def rounded(dct):
 # ==========================================================================
 # 1. REPLACE-BG participant-level tables
 # ==========================================================================
+# Heavy tables come from the shared cache (analysis/preprocess.py). A few small raw
+# tables are still read here because some statistics need their raw layout.
 log("Loading REPLACE-BG participant tables")
-roster = pd.read_csv(os.path.join(RB, "HPtRoster.txt"), sep="|")
-screen = pd.read_csv(os.path.join(RB, "HScreening.txt"), sep="|")
-hba1c = pd.read_csv(os.path.join(RB, "HLocalHbA1c.txt"), sep="|")
-uploads = pd.read_csv(os.path.join(RB, "HDeviceUploads.txt"), sep="|")
-medcond = pd.read_csv(os.path.join(RB, "HMedicalCondition.txt"), sep="|")
-
-ppl = roster.merge(screen, on=["PtID", "SiteID"], how="left")
-ppl["BMI"] = ppl.Weight / (ppl.Height / 100) ** 2
-ppl["DiabDurationYrs"] = ppl.AgeAsOfEnrollDt - ppl.DiagAge
+ppl = pp.load_participants(ROOT, CACHE)
+for _c in ppl.columns:                       # plain strings, so fillna() with new labels works as before
+    if isinstance(ppl[_c].dtype, pd.CategoricalDtype):
+        ppl[_c] = ppl[_c].astype(object)
+screen = pp._read_table(ROOT, "HScreening.txt")
+hba1c = pp._read_table(ROOT, "HLocalHbA1c.txt")
+uploads = pp._read_table(ROOT, "HDeviceUploads.txt")
+medcond = pp._read_table(ROOT, "HMedicalCondition.txt")
 
 rb = STATS["replace_bg"] = {}
-rb["n_participants"] = int(len(roster))
-rb["n_sites"] = int(roster.SiteID.nunique())
-rb["status"] = roster.PtStatus.value_counts().to_dict()
-rb["treatment_group"] = roster.TrtGroup.value_counts().to_dict()
-rb["age"] = ppl.AgeAsOfEnrollDt.describe().round(1).to_dict()
-rb["age_bands"] = pd.cut(ppl.AgeAsOfEnrollDt, [18, 25, 35, 45, 55, 65, 80], right=False).value_counts().sort_index().astype(int).rename(str).to_dict()
-rb["sex"] = ppl.Gender.value_counts().to_dict()
-rb["race"] = ppl.Race.value_counts().to_dict()
-rb["ethnicity"] = ppl.Ethnicity.value_counts().to_dict()
-rb["education"] = ppl.EduLevel.fillna("Not answered").value_counts().to_dict()
-rb["income"] = ppl.AnnualInc.fillna("Not answered/unknown").value_counts().to_dict()
-rb["insurance_private_pct"] = float(ppl.InsPrivate.notna().mean() * 100)
-rb["diag_age"] = ppl.DiagAge.describe().round(1).to_dict()
-rb["diab_duration_yrs"] = ppl.DiabDurationYrs.describe().round(1).to_dict()
-rb["bmi"] = ppl.BMI.describe().round(1).to_dict()
-rb["bmi_ge_30_pct"] = float((ppl.BMI >= 30).mean() * 100)
-rb["cgm_use_status"] = ppl.CGMUseStatus.value_counts().to_dict()
-rb["cgm_use_device"] = ppl.CGMUseDevice.fillna("n/a (never used)").value_counts().to_dict()
-rb["severe_hypo_history"] = ppl.SHMostRec.value_counts().to_dict()
-rb["dka_history"] = ppl.DKAMostRec.value_counts().to_dict()
-rb["fingersticks_per_day"] = ppl.Fingerstick7DayAve.describe().round(1).to_dict()
+rb["n_participants"] = int(len(ppl))
+rb["n_sites"] = int(ppl.site.nunique())
+rb["status"] = ppl.status.value_counts().to_dict()
+rb["treatment_group"] = ppl.arm.value_counts().to_dict()
+rb["age"] = ppl.age.describe().round(1).to_dict()
+rb["age_bands"] = pd.cut(ppl.age, [18, 25, 35, 45, 55, 65, 80], right=False).value_counts().sort_index().astype(int).rename(str).to_dict()
+rb["sex"] = ppl.sex.value_counts().to_dict()
+rb["race"] = ppl.race.value_counts().to_dict()
+rb["ethnicity"] = ppl.ethnicity.value_counts().to_dict()
+rb["education"] = ppl.education.fillna("Not answered").value_counts().to_dict()
+rb["income"] = ppl.income.fillna("Not answered/unknown").value_counts().to_dict()
+rb["insurance_private_pct"] = float(ppl.insurance_private.mean() * 100)
+rb["diag_age"] = ppl.diagnosis_age.describe().round(1).to_dict()
+rb["diab_duration_yrs"] = ppl.diabetes_duration_yrs.describe().round(1).to_dict()
+rb["bmi"] = ppl.bmi.describe().round(1).to_dict()
+rb["bmi_ge_30_pct"] = float((ppl.bmi >= 30).mean() * 100)
+rb["cgm_use_status"] = ppl.cgm_use_status.value_counts().to_dict()
+rb["cgm_use_device"] = ppl.cgm_use_device.fillna("n/a (never used)").value_counts().to_dict()
+rb["severe_hypo_history"] = ppl.severe_hypo_most_recent.value_counts().to_dict()
+rb["dka_history"] = ppl.dka_most_recent.value_counts().to_dict()
+rb["fingersticks_per_day"] = ppl.fingersticks_per_day.describe().round(1).to_dict()
 rb["screening_missing_counts"] = {c: int(v) for c, v in screen.isna().sum().items() if v > 0}
 
 rb["hba1c_by_visit"] = hba1c.groupby("Visit").HbA1cTestRes.describe().round(2).loc[
@@ -281,40 +281,30 @@ log("REPLACE-BG participants:", rb["n_participants"], rb["sex"], rb["race"])
 # ==========================================================================
 # 2. REPLACE-BG device data (CGM, calibrations, BGM)
 # ==========================================================================
-log("Loading HDeviceCGM.txt (837 MB) ...")
-cgm_all = pd.read_csv(
-    os.path.join(RB, "HDeviceCGM.txt"), sep="|",
-    usecols=["PtID", "DeviceDtTmDaysFromEnroll", "DeviceTm", "RecordType", "GlucoseValue"],
-    dtype={"PtID": "int32", "DeviceDtTmDaysFromEnroll": "int32", "RecordType": "category", "GlucoseValue": "float32"},
-)
-tm = cgm_all.DeviceTm.str.split(":", expand=True).astype("int32")
-cgm_all["t"] = (cgm_all.DeviceDtTmDaysFromEnroll.astype("int64") * 86400
-                + tm[0] * 3600 + tm[1] * 60 + tm[2])
-cgm_all.drop(columns=["DeviceTm"], inplace=True)
-del tm
-log("rows:", len(cgm_all), cgm_all.RecordType.value_counts().to_dict())
-
-cgm = cgm_all[cgm_all.RecordType == "CGM"].drop(columns="RecordType").copy()
-cal = cgm_all[cgm_all.RecordType == "Calibration"].drop(columns="RecordType").copy()
-del cgm_all
+# This section describes the RAW device data, so it loads every CGM row (pre-enrolment
+# rows and duplicate rows included). The pairs come from the cache and use the
+# de-duplicated CGM table (see analysis/PREPROCESSING.md).
+log("Loading CGM table from cache ...")
+cgm = pp.load_cgm(ROOT, CACHE, drop_duplicates=False)
+cal = pp.load_calibrations(ROOT, CACHE)
+log("rows:", len(cgm) + len(cal), {"CGM": len(cgm), "Calibration": len(cal)})
 
 d = rb["cgm_device_data"] = {}
 d["n_cgm_readings"] = int(len(cgm))
 d["n_calibration_records"] = int(len(cal))
-d["cgm_glucose_missing"] = int(cgm.GlucoseValue.isna().sum())
-d["cgm_min"] = float(cgm.GlucoseValue.min())
-d["cgm_max"] = float(cgm.GlucoseValue.max())
-d["cgm_pct_at_floor_39"] = float((cgm.GlucoseValue <= 39).mean() * 100)
-d["cgm_pct_at_ceiling_401"] = float((cgm.GlucoseValue >= 401).mean() * 100)
-d["cgm_glucose_describe"] = cgm.GlucoseValue.describe().round(1).to_dict()
-rng = glucose_range(cgm.GlucoseValue).value_counts(normalize=True).sort_index() * 100
+d["cgm_glucose_missing"] = int(cgm.glucose.isna().sum())
+d["cgm_min"] = float(cgm.glucose.min())
+d["cgm_max"] = float(cgm.glucose.max())
+d["cgm_pct_at_floor_39"] = float((cgm.glucose <= 39).mean() * 100)
+d["cgm_pct_at_ceiling_401"] = float((cgm.glucose >= 401).mean() * 100)
+d["cgm_glucose_describe"] = cgm.glucose.describe().round(1).to_dict()
+rng = glucose_range(cgm.glucose).value_counts(normalize=True).sort_index() * 100
 d["cgm_pct_by_range"] = rng.round(2).to_dict()
 d["time_in_range"] = {"<70": float(rng["<54"] + rng["54-69"]), "70-180": float(rng["70-180"]),
                       ">180": float(rng["181-250"] + rng[">250"])}
 
-cgm["day"] = cgm.t // 86400
-per_pt = cgm.groupby("PtID").agg(n=("GlucoseValue", "size"), days=("day", "nunique"),
-                                 first_day=("day", "min"), last_day=("day", "max"))
+per_pt = cgm.groupby("PtID").agg(n=("glucose", "size"), days=("day", "nunique"),
+                                 first_day=("day", "min"), last_day=("day", "max")).astype("int64")   # int64: day is int16 in the cache
 per_pt["span_days"] = per_pt.last_day - per_pt.first_day + 1
 per_pt["readings_per_day"] = per_pt.n / per_pt.days
 per_pt["coverage_pct"] = per_pt.n / (per_pt.span_days * 288) * 100
@@ -323,30 +313,24 @@ d["days_with_cgm_per_pt"] = per_pt.days.describe().round(1).to_dict()
 d["span_days_per_pt"] = per_pt.span_days.describe().round(1).to_dict()
 d["readings_per_day_per_pt"] = per_pt.readings_per_day.describe().round(1).to_dict()
 d["coverage_pct_of_288_per_day"] = per_pt.coverage_pct.describe().round(1).to_dict()
-d["days_before_enrollment_min"] = int(cgm.DeviceDtTmDaysFromEnroll.min())
-d["days_after_enrollment_max"] = int(cgm.DeviceDtTmDaysFromEnroll.max())
-d["pct_readings_pre_enrollment"] = float((cgm.DeviceDtTmDaysFromEnroll < 0).mean() * 100)
-d["participants_with_readings_before_day_minus_30"] = int(cgm[cgm.DeviceDtTmDaysFromEnroll < -30].PtID.nunique())
-d["pct_readings_before_day_minus_30"] = float((cgm.DeviceDtTmDaysFromEnroll < -30).mean() * 100)
-d["duplicate_pt_timestamp_rows"] = int(cgm.duplicated(["PtID", "t"]).sum())
-cgm.sort_values(["PtID", "t"], inplace=True)
-dt = cgm.groupby("PtID").t.diff()
-d["interval_median_s"] = float(dt.median())
-d["pct_intervals_gt_10min"] = float((dt > 600).mean() * 100)
-d["pct_intervals_gt_1h"] = float((dt > 3600).mean() * 100)
-del dt
+d["days_before_enrollment_min"] = int(cgm.day.min())
+d["days_after_enrollment_max"] = int(cgm.day.max())
+d["pct_readings_pre_enrollment"] = float((cgm.day < 0).mean() * 100)
+d["participants_with_readings_before_day_minus_30"] = int(cgm[cgm.day < -30].PtID.nunique())
+d["pct_readings_before_day_minus_30"] = float((cgm.day < -30).mean() * 100)
+d["duplicate_pt_timestamp_rows"] = int(cgm.is_duplicate.sum())
+# gap_s = seconds since the previous reading of the same person (rows sorted by person and time; duplicates give 0)
+d["interval_median_s"] = float(cgm.gap_s.median())
+d["pct_intervals_gt_10min"] = float((cgm.gap_s > 600).mean() * 100)
+d["pct_intervals_gt_1h"] = float((cgm.gap_s > 3600).mean() * 100)
 log("CGM per-participant coverage done")
 
 # --- pair calibrations (fingerstick entered in receiver) with preceding CGM
-REF_MIN, REF_MAX = 20, 600          # outside this the reference value is a meter code or unit error, not a glucose
-cal = cal.dropna(subset=["GlucoseValue"])
-p_pre = {"n_calibrations_with_value": int(len(cal)),
-         "n_calibrations_outside_20_600": int(((cal.GlucoseValue < REF_MIN) | (cal.GlucoseValue >= REF_MAX)).sum())}
-cal = cal[(cal.GlucoseValue >= REF_MIN) & (cal.GlucoseValue < REF_MAX)].sort_values("t")
-cgm_sorted = cgm[["PtID", "t", "GlucoseValue"]].sort_values("t").rename(columns={"GlucoseValue": "cgm"})
-pairs_cal = pd.merge_asof(cal.rename(columns={"GlucoseValue": "ref"}), cgm_sorted,
-                          on="t", by="PtID", direction="backward", tolerance=600)
-pairs_cal = pairs_cal.dropna(subset=["cgm"])
+REF_MIN, REF_MAX = pp.REF_MIN, pp.REF_MAX    # outside 20-600 the reference value is a meter code or unit error, not a glucose
+pairs = pp.build_pairs(ROOT, CACHE)
+p_pre = {"n_calibrations_with_value": int(cal.value.notna().sum()),
+         "n_calibrations_outside_20_600": int(cal.value_out_of_range.sum())}
+pairs_cal = pairs["calibration"]
 tab_cal, ov_cal, df_cal = accuracy_table(pairs_cal.cgm, pairs_cal.ref)
 p = rb["pairs_calibration_vs_cgm"] = {}
 p["method"] = "Calibration record matched to most recent CGM reading of same participant within 10 min before it"
@@ -364,30 +348,25 @@ p["per_participant_mard"] = pt_mard.describe().round(2).to_dict()
 log("calibration pairs:", p["n_pairs"], "MARD", round(ov_cal["mard_pct"], 2))
 
 # --- pair meter (BGM) readings with nearest CGM reading (±5 min)
-log("Loading HDeviceBGM.txt")
-bgm = pd.read_csv(os.path.join(RB, "HDeviceBGM.txt"), sep="|",
-                  usecols=["PtID", "DeviceDtTmDaysFromEnroll", "DeviceTm", "RecordType", "RecordSubType", "GlucoseValue"])
+log("Loading BGM table from cache")
+bgm = pp.load_bgm(ROOT, CACHE)
+bgm_info = pp.read_manifest(CACHE)["info"]["bgm"]
 b = rb["bgm_device_data"] = {}
-b["n_rows"] = int(len(bgm))
-b["record_types"] = bgm.RecordType.value_counts().to_dict()
-b["bgm_subtypes"] = bgm[bgm.RecordType == "BGM"].RecordSubType.fillna("(blank)").value_counts().to_dict()
-bgm = bgm[bgm.RecordType == "BGM"].copy()
-bgm["PtID"] = bgm.PtID.astype("int32")
-tm = bgm.DeviceTm.str.split(":", expand=True).astype(int)
-bgm["t"] = bgm.DeviceDtTmDaysFromEnroll.astype("int64") * 86400 + tm[0] * 3600 + tm[1] * 60 + tm[2]
-b["bgm_glucose_describe"] = bgm.GlucoseValue.describe().round(1).to_dict()
-b["bgm_n_below_20_mgdl"] = int((bgm.GlucoseValue < 20).sum())        # implausible; likely mmol/L entries or LO codes
-b["bgm_n_ge_600_mgdl"] = int((bgm.GlucoseValue >= 600).sum())        # meter HI code
-b["bgm_pct_by_range"] = (glucose_range(bgm.GlucoseValue).value_counts(normalize=True).sort_index() * 100).round(2).to_dict()
+b["n_rows"] = int(bgm_info["rows_in_file"])
+b["record_types"] = bgm_info["record_types"]
+b["bgm_subtypes"] = bgm.subtype.value_counts().to_dict()
+b["bgm_glucose_describe"] = bgm.value.describe().round(1).to_dict()
+b["bgm_n_below_20_mgdl"] = int(bgm.value_below_20.sum())        # implausible; likely mmol/L entries or LO codes
+b["bgm_n_ge_600_mgdl"] = int(bgm.value_ge_600.sum())            # meter HI code
+b["bgm_pct_by_range"] = (glucose_range(bgm.value).value_counts(normalize=True).sort_index() * 100).round(2).to_dict()
 b["bgm_per_pt_per_cgm_day"] = (bgm.groupby("PtID").size() / per_pt.days.reindex(bgm.PtID.unique())).describe().round(1).to_dict()
-bgm = bgm[(bgm.GlucoseValue >= REF_MIN) & (bgm.GlucoseValue < REF_MAX)].sort_values("t")
-pairs_bgm = pd.merge_asof(bgm.rename(columns={"GlucoseValue": "ref"})[["PtID", "t", "ref"]], cgm_sorted,
-                          on="t", by="PtID", direction="nearest", tolerance=300).dropna(subset=["cgm"])
+n_bgm_in_range = int((~bgm.value_out_of_range).sum())
+pairs_bgm = pairs["meter"]
 tab_bgm, ov_bgm, df_bgm = accuracy_table(pairs_bgm.cgm, pairs_bgm.ref)
 p = rb["pairs_bgm_vs_cgm"] = {}
 p["method"] = "Meter reading matched to nearest CGM reading of same participant within ±5 min (separate device clocks)"
 p["n_pairs"] = int(len(pairs_bgm))
-p["pct_of_bgm_matched"] = float(len(pairs_bgm) / len(bgm) * 100)
+p["pct_of_bgm_matched"] = float(len(pairs_bgm) / n_bgm_in_range * 100)
 p["by_range"] = tab_bgm.round(2).to_dict("records")
 p["overall"] = rounded(ov_bgm)
 p["clarke_pct"] = clarke_zones(df_bgm.ref, df_bgm.cgm)
@@ -399,22 +378,10 @@ log("BGM pairs:", p["n_pairs"], "MARD", round(ov_bgm["mard_pct"], 2))
 # ==========================================================================
 # 3. Shanghai summary workbooks
 # ==========================================================================
-log("Loading Shanghai summary workbooks")
+log("Loading Shanghai tables from cache")
 MISSING_TOKENS = {"/", "", "nan", "NaN", "none", "None", "NA"}
-
-
-def load_summary(name):
-    path = glob.glob(os.path.join(SH, "*", name))[0]
-    df = pd.read_excel(path)
-    df.columns = [" ".join(c.split()) for c in df.columns]      # collapse double spaces / trailing spaces
-    df = df.rename(columns={"Duration of diabetes (years)": "Duration of Diabetes (years)",
-                            "2-hour Postprandial insulin (pmol/L)": "2-hour Postprandial Insulin (pmol/L)"})
-    df["pid"] = df["Patient Number"].astype(str).str.split("_").str[0]
-    df["sex"] = df["Gender (Female=1, Male=2)"].map({1: "F", 2: "M"})
-    df["hba1c_pct"] = pd.to_numeric(df["HbA1c (mmol/mol)"], errors="coerce") / 10.929 + 2.15   # IFCC -> NGSP
-    df["on_insulin"] = df["Hypoglycemic Agents"].astype(str).str.contains(
-        "insulin|humulin|novolin|gansulin|lantus|degludec|glargine|aspart|lispro|detemir", case=False)
-    return df
+shanghai = pp.load_shanghai(ROOT, CACHE)
+ADDED_COLS = ["group", "pid", "visit", "sex", "hba1c_pct", "on_insulin"]     # columns preprocess.py adds to the workbook columns
 
 
 def summary_stats(df):
@@ -434,13 +401,14 @@ def summary_stats(df):
     s["hypoglycemia_flag"] = df["Hypoglycemia (yes/no)"].astype(str).str.strip().str.lower().value_counts().to_dict()
     s["acute_complications"] = df["Acute Diabetic Complications"].astype(str).str.strip().value_counts().to_dict()
     s["alcohol"] = first["Alcohol Drinking History (drinker/non-drinker)"].astype(str).str.strip().value_counts().to_dict()
-    miss = df.drop(columns=["pid", "sex", "hba1c_pct", "on_insulin"]).astype(str).apply(lambda c: c.str.strip().isin(MISSING_TOKENS)).sum()
+    # '/' in the workbook is a missing lab value; preprocess.py turns it into NaN in numeric columns, text columns keep their words
+    miss = df.drop(columns=ADDED_COLS).astype(str).apply(lambda c: c.str.strip().isin(MISSING_TOKENS)).sum()
     s["missing_counts"] = {k: int(v) for k, v in miss.items() if v > 0}
     return s
 
 
-t1 = load_summary("Shanghai_T1DM_Summary.xlsx")
-t2 = load_summary("Shanghai_T2DM_Summary.xlsx")
+t1 = shanghai["patients"][shanghai["patients"].group == "T1DM"].reset_index(drop=True)
+t2 = shanghai["patients"][shanghai["patients"].group == "T2DM"].reset_index(drop=True)
 STATS["shanghai_t1dm"] = summary_stats(t1)
 STATS["shanghai_t2dm"] = summary_stats(t2)
 log("Shanghai T1DM", STATS["shanghai_t1dm"]["n_patients"], "patients; T2DM", STATS["shanghai_t2dm"]["n_patients"])
@@ -448,51 +416,9 @@ log("Shanghai T1DM", STATS["shanghai_t1dm"]["n_patients"], "patients; T2DM", STA
 # ==========================================================================
 # 4. Shanghai per-patient CGM files
 # ==========================================================================
-log("Loading Shanghai per-patient CGM files")
-STANDARD_COLS = {"Date", "CGM (mg / dl)", "CBG (mg / dl)", "Blood Ketone (mmol / L)", "Dietary intake", "饮食",
-                 "Insulin dose - s.c.", "Non-insulin hypoglycemic agents", "CSII - bolus insulin (Novolin R, IU)",
-                 "CSII - basal insulin (Novolin R, IU / H)", "Insulin dose - i.v."}
-
-
-def find_col(cols, prefix):
-    for c in cols:
-        if str(c).strip().lower().startswith(prefix):
-            return c
-    return None
-
-
-sh_files = []
-for grp in ["Shanghai_T1DM", "Shanghai_T2DM"]:
-    for f in sorted(glob.glob(os.path.join(SH, "*", grp, "*.xls*"))):
-        if os.path.basename(f).startswith("~$"):
-            continue
-        df = pd.read_excel(f)
-        cols = list(df.columns)
-        c_date, c_cgm, c_cbg = find_col(cols, "date"), find_col(cols, "cgm"), find_col(cols, "cbg")
-        odd = [c for c in cols if c not in STANDARD_COLS]
-        ts = pd.to_datetime(df[c_date], errors="coerce")
-        g = pd.to_numeric(df[c_cgm], errors="coerce")
-        cbg = pd.to_numeric(df[c_cbg], errors="coerce") if c_cbg else pd.Series(np.nan, index=df.index)
-        unit_fix = False
-        if g.max() < 35:                      # file reported in mmol/L
-            g = g * 18.0
-            unit_fix = True
-        if c_cbg and cbg.notna().any() and cbg.max() < 35:
-            cbg = cbg * 18.0
-        interval = ts.diff().dt.total_seconds().median()
-        sh_files.append({
-            "group": grp.replace("Shanghai_", ""), "file": os.path.basename(f),
-            "pid": os.path.basename(f).split("_")[0],
-            "rows": len(df), "n_cgm": int(g.notna().sum()), "n_cbg": int(cbg.notna().sum()),
-            "n_cbg_lt70": int((cbg < 70).sum()), "n_cbg_lt54": int((cbg < 54).sum()),
-            "days": float((ts.max() - ts.min()).total_seconds() / 86400) if ts.notna().any() else np.nan,
-            "interval_min": interval / 60 if pd.notna(interval) else np.nan,
-            "cgm_mean": float(g.mean()), "pct_lt70": float((g < 70).mean() * 100),
-            "pct_in_range": float(((g >= 70) & (g <= 180)).mean() * 100), "pct_gt180": float((g > 180).mean() * 100),
-            "nonstandard_columns": odd, "unit_converted": unit_fix,
-            "cgm_values": g.dropna().to_numpy(), "pairs": pd.DataFrame({"cgm": g, "ref": cbg}).dropna(),
-        })
-shf = pd.DataFrame(sh_files)
+shf = shanghai["files"]
+sh_cgm = shanghai["cgm"]
+cgm_vals = {grp: sh_cgm[sh_cgm.group == grp].cgm.dropna().to_numpy(dtype="float64") for grp in ["T1DM", "T2DM"]}
 sh = STATS["shanghai_cgm_files"] = {}
 sh["n_files"] = int(len(shf))
 sh["files_by_group"] = shf.group.value_counts().to_dict()
@@ -503,17 +429,17 @@ sh["files_with_zero_cbg"] = int((shf.n_cbg == 0).sum())
 sh["cbg_per_file"] = shf.n_cbg.describe().round(1).to_dict()
 sh["days_per_file"] = shf.days.describe().round(1).to_dict()
 sh["interval_min_mode"] = float(shf.interval_min.mode().iloc[0])
-sh["files_with_nonstandard_columns"] = {r.file: r.nonstandard_columns for r in shf.itertuples() if r.nonstandard_columns}
+sh["files_with_nonstandard_columns"] = {r.file: json.loads(r.nonstandard_columns) for r in shf.itertuples() if json.loads(r.nonstandard_columns)}
 sh["files_unit_converted_from_mmol"] = shf[shf.unit_converted].file.tolist()
 for grp in ["T1DM", "T2DM"]:
-    vals = np.concatenate(shf[shf.group == grp].cgm_values.tolist())
+    vals = cgm_vals[grp]
     rng = glucose_range(pd.Series(vals)).value_counts(normalize=True).sort_index() * 100
     sh[f"{grp}_cgm_describe"] = pd.Series(vals).describe().round(1).to_dict()
     sh[f"{grp}_cgm_pct_by_range"] = rng.round(2).to_dict()
     sh[f"{grp}_time_in_range"] = {"<70": float(rng["<54"] + rng["54-69"]), "70-180": float(rng["70-180"]), ">180": float(rng["181-250"] + rng[">250"])}
     sh[f"{grp}_cgm_min"] = float(vals.min())
     sh[f"{grp}_cgm_max"] = float(vals.max())
-sh_pairs = pd.concat([r.pairs.assign(group=r.group, pid=r.pid) for r in shf.itertuples()], ignore_index=True)
+sh_pairs = pairs["shanghai"]
 tab_sh, ov_sh, df_sh = accuracy_table(sh_pairs.cgm, sh_pairs.ref)
 p = sh["pairs_cbg_vs_cgm"] = {}
 p["method"] = "Capillary blood glucose (CBG) recorded on the same 15-min CGM row"
@@ -541,7 +467,7 @@ t1_first, t2_first = t1.drop_duplicates("pid"), t2.drop_duplicates("pid")
 fig, axes = plt.subplots(1, 3, figsize=(11, 3.4), sharex=True)
 bins = np.arange(15, 100, 5)
 for ax, (lab, vals, col) in zip(axes, [
-        (f"REPLACE-BG (n={len(ppl)})", ppl.AgeAsOfEnrollDt, C_BLUE),
+        (f"REPLACE-BG (n={len(ppl)})", ppl.age, C_BLUE),
         (f"Shanghai T1DM (n={len(t1_first)})", pd.to_numeric(t1_first["Age (years)"]), C_ORANGE),
         (f"Shanghai T2DM (n={len(t2_first)})", pd.to_numeric(t2_first["Age (years)"]), C_AQUA)]):
     ax.hist(vals, bins=bins, color=col, rwidth=0.9)
@@ -556,19 +482,19 @@ save(fig, "01_age_distribution.png")
 
 # F2 REPLACE-BG demographics
 fig, axes = plt.subplots(2, 2, figsize=(11, 7))
-sx = ppl.Gender.map({"M": "Male", "F": "Female"}).value_counts()
+sx = ppl.sex.map({"M": "Male", "F": "Female"}).value_counts()
 hbar(axes[0, 0], sx.index, sx.values, title="Sex")
-rc = ppl.Race.value_counts()
+rc = ppl.race.value_counts()
 hbar(axes[0, 1], rc.index, rc.values, title="Race")
 ed_order = ["High school graduate/diploma/GED", "Some college but no degree", "Associate Degree", "Bachelor's Degree", "Master's Degree", "Professional Degree", "Doctorate Degree"]
-ed = ppl.EduLevel.value_counts().reindex(ed_order).fillna(0)
+ed = ppl.education.value_counts().reindex(ed_order).fillna(0)
 hbar(axes[1, 0], [e.replace("graduate/diploma/GED", "grad / GED") for e in ed.index], ed.values,
-     title=f"Highest education ({int(ppl.EduLevel.isna().sum())} not answered)")
+     title=f"Highest education ({int(ppl.education.isna().sum())} not answered)")
 inc_order = ["Less than $25,000", "$25,000 - $35,000", "$35,000 - less than $50,000", "$50,000 - less than $75,000",
              "$75,000 - less than $100,000", "$100,000 - less than $200,000", "$200,000 or more"]
-inc = ppl.AnnualInc.value_counts().reindex(inc_order).fillna(0)
+inc = ppl.income.value_counts().reindex(inc_order).fillna(0)
 hbar(axes[1, 1], [i.replace(" - less than ", " to <").replace(",000", "k").replace("$", r"\$") for i in inc.index], inc.values,
-     title=f"Annual household income ({int(ppl.AnnualInc.isna().sum())} not answered)")
+     title=f"Annual household income ({int(ppl.income.isna().sum())} not answered)")
 fig.suptitle("REPLACE-BG participants (n=226): sex-balanced, overwhelmingly White, highly educated and affluent", x=0.01, ha="left", fontsize=12, fontweight="semibold", color=INK)
 fig.tight_layout()
 save(fig, "02_replacebg_demographics.png")
@@ -615,9 +541,9 @@ save(fig, "04_shanghai_missing_labs.png")
 # F5 CGM glucose distributions
 fig, ax = plt.subplots(figsize=(10, 4))
 bins = np.arange(36, 410, 9)          # 9 mg/dL = 5 x 1.8, avoids aliasing on the Shanghai mmol/L-derived values
-vals_t1 = np.concatenate(shf[shf.group == "T1DM"].cgm_values.tolist())
-vals_t2 = np.concatenate(shf[shf.group == "T2DM"].cgm_values.tolist())
-for v, c, lab in [(cgm.GlucoseValue.to_numpy(), C_BLUE, f"REPLACE-BG, Dexcom G4 ({len(cgm)/1e6:.1f} M readings)"),
+vals_t1 = cgm_vals["T1DM"]
+vals_t2 = cgm_vals["T2DM"]
+for v, c, lab in [(cgm.glucose.to_numpy(), C_BLUE, f"REPLACE-BG, Dexcom G4 ({len(cgm)/1e6:.1f} M readings)"),
                   (vals_t1, C_ORANGE, f"Shanghai T1DM ({len(vals_t1):,} readings)"),
                   (vals_t2, C_AQUA, f"Shanghai T2DM ({len(vals_t2):,} readings)")]:
     hist, edges = np.histogram(v, bins=bins, density=True)

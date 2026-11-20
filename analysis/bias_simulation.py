@@ -5,9 +5,10 @@ Question: how big does a CGM sensor error need to be before it changes a
 treatment decision?
 
 Method (kept simple on purpose)
-  1. Load every REPLACE-BG CGM reading (Dexcom G4, one reading per 5 min).
-     Drop calibration rows, readings outside each person's study window
-     (day 0 to day 329), and duplicate person+timestamp rows.
+  1. Load every REPLACE-BG CGM reading (Dexcom G4, one reading per 5 min)
+     from the shared cache (analysis/preprocess.py). Drop calibration rows,
+     readings outside each person's study window (day 0 to day 329), and
+     duplicate person+timestamp rows.
   2. Apply two simple decision rules to each reading:
        Rule L ("treat low sugar"): CGM < 70 mg/dL  -> eat fast carbs.
        Rule H ("correction dose"): CGM > 200 mg/dL -> take correction insulin.
@@ -22,6 +23,8 @@ Method (kept simple on purpose)
 Usage (from the repo root; use Python 3.11, on Windows `py -3.11`)
   python analysis/bias_simulation.py "Uncommitted Data/Raw Data Dump" analysis
   Argument 1 = data folder, argument 2 = output folder (these are the defaults).
+  Argument 3 (optional) = cache folder, default analysis/cache (see analysis/preprocess.py;
+  the cache is built on first use, about 1-2 min, and loads in seconds after that).
   Packages: pip install -r requirements.txt (repo root).
 
 Outputs
@@ -40,6 +43,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import preprocess as pp          # shared loaders + parquet cache (analysis/preprocess.py)
+
 if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help"):
     print(__doc__.strip())
     sys.exit(0)
@@ -47,13 +53,10 @@ if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help"):
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "Uncommitted Data/Raw Data Dump"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "analysis"
 FIG = os.path.join(OUT, "figures")
-RB = os.path.join(ROOT, "Replace-BG Dataset", "Data Tables")
+CACHE = sys.argv[3] if len(sys.argv) > 3 else pp.DEFAULT_CACHE
 
 # Stop early with one plain line if the raw data is not where the script expects it.
-for _f in ["HDeviceCGM.txt", "HDeviceBGM.txt"]:
-    if not os.path.isfile(os.path.join(RB, _f)):
-        sys.exit(f"Data not found: expected {os.path.join(RB, _f)}. "
-                 f"Pass the data folder as the first argument (see analysis/REPRODUCIBILITY.md).")
+pp.check_raw_data(ROOT)
 
 # --- first, simple choices (state them clearly; change later if the team decides) ---
 LOW_T = 70            # mg/dL. Rule L fires when CGM < LOW_T.
@@ -74,48 +77,31 @@ def log(*a):
 # --------------------------------------------------------------------------
 # Loading
 # --------------------------------------------------------------------------
-def seconds_from_enrol(days, tm):
-    """Convert day-from-enrolment + 'HH:MM:SS' to seconds from enrolment."""
-    parts = tm.str.split(":", expand=True).astype("int32")
-    return days.astype("int64") * 86400 + parts[0] * 3600 + parts[1] * 60 + parts[2]
-
-
 def load_cgm():
-    """Load CGM readings (not calibrations) inside the study window, no duplicates."""
-    log("Loading HDeviceCGM.txt (837 MB) ...")
-    df = pd.read_csv(
-        os.path.join(RB, "HDeviceCGM.txt"), sep="|",
-        usecols=["PtID", "DeviceDtTmDaysFromEnroll", "DeviceTm", "RecordType", "GlucoseValue"],
-        dtype={"PtID": "int32", "DeviceDtTmDaysFromEnroll": "int32", "RecordType": "category",
-               "GlucoseValue": "float32"},
-    )
-    n_all = len(df)
-    df = df[df.RecordType == "CGM"].drop(columns="RecordType")
-    n_cgm = len(df)
-    df["t"] = seconds_from_enrol(df.DeviceDtTmDaysFromEnroll, df.DeviceTm)
-    df = df.drop(columns="DeviceTm").rename(columns={"DeviceDtTmDaysFromEnroll": "day", "GlucoseValue": "g"})
-    df = df[(df.day >= WINDOW_FIRST_DAY) & (df.day <= WINDOW_LAST_DAY)]
-    n_window = len(df)
-    df = df.drop_duplicates(["PtID", "t"]).reset_index(drop=True)
-    info = {"rows_in_file": int(n_all), "cgm_readings": int(n_cgm),
-            "in_study_window": int(n_window), "after_dropping_duplicates": int(len(df)),
+    """Load CGM readings (not calibrations) inside the study window, no duplicates.
+
+    The shared cache (analysis/preprocess.py) already holds every CGM row with
+    `in_study_window` and `is_duplicate` flags; duplicates (same person and
+    timestamp) are dropped by pp.load_cgm, keeping the row with the lowest RecID.
+    """
+    log("Loading CGM table from the cache (analysis/preprocess.py) ...")
+    df = pp.load_cgm(ROOT, CACHE)
+    counts = pp.read_manifest(CACHE)["info"]["cgm"]
+    df = df[df.in_study_window][["PtID", "day", "t", "glucose"]].rename(columns={"glucose": "g"}).reset_index(drop=True)
+    info = {"rows_in_file": int(counts["rows_in_file"]), "cgm_readings": int(counts["cgm_rows"]),
+            "in_study_window": int(counts["rows_in_window_before_dedup"]), "after_dropping_duplicates": int(len(df)),
             "participants": int(df.PtID.nunique())}
     log("CGM readings kept:", info)
     return df, info
 
 
 def load_meter_pairs(cgm):
-    """Pair each meter (fingerstick) reading with the nearest CGM reading within 5 min."""
-    log("Loading HDeviceBGM.txt ...")
-    bgm = pd.read_csv(os.path.join(RB, "HDeviceBGM.txt"), sep="|",
-                      usecols=["PtID", "DeviceDtTmDaysFromEnroll", "DeviceTm", "RecordType", "GlucoseValue"])
-    bgm = bgm[bgm.RecordType == "BGM"].copy()
-    bgm["PtID"] = bgm.PtID.astype("int32")
-    bgm["t"] = seconds_from_enrol(bgm.DeviceDtTmDaysFromEnroll, bgm.DeviceTm)
-    bgm = bgm[(bgm.GlucoseValue >= REF_MIN) & (bgm.GlucoseValue < REF_MAX)]
-    bgm = bgm[(bgm.DeviceDtTmDaysFromEnroll >= WINDOW_FIRST_DAY) & (bgm.DeviceDtTmDaysFromEnroll <= WINDOW_LAST_DAY)]
-    bgm = bgm[["PtID", "t", "GlucoseValue"]].rename(columns={"GlucoseValue": "ref"}).sort_values("t")
-    cgm_sorted = cgm[["PtID", "t", "g"]].sort_values("t")
+    """Pair each meter (fingerstick) reading in the study window with the nearest CGM reading within 5 min."""
+    log("Loading meter readings from the cache ...")
+    bgm = pp.load_bgm(ROOT, CACHE)
+    bgm = bgm[~bgm.value_out_of_range & bgm.in_study_window]          # 20 <= value < 600, day 0..329
+    bgm = bgm[["PtID", "t", "value"]].rename(columns={"value": "ref"}).sort_values("t", kind="stable")
+    cgm_sorted = cgm[["PtID", "t", "g"]].sort_values("t", kind="stable")
     pairs = pd.merge_asof(bgm, cgm_sorted, on="t", by="PtID", direction="nearest", tolerance=PAIR_TOL_S)
     pairs = pairs.dropna(subset=["g"]).reset_index(drop=True)
     log("meter pairs:", len(pairs), "from", len(bgm), "meter readings")

@@ -1,0 +1,91 @@
+table,column,n_reports,n_filled,fill_pct,n_unique_values,star_or_unknown_n,top_values,example
+serious.csv.gz,mdr_report_key,123607,123607,100.0,123607,0,,792942
+serious.csv.gz,report_number,123607,123607,100.0,123604,0,,MW1041312
+serious.csv.gz,date_received,123607,123607,100.0,4429,0,,20061208
+serious.csv.gz,date_of_event,123607,122918,99.4,5884,0,,20061122
+serious.csv.gz,event_type,123607,123607,100.0,2,0,"Injury (122,984) | Death (623)",Injury
+serious.csv.gz,product_code,123607,123607,100.0,13,0,"QBJ (44,119) | QLG (42,337) | PZE (17,524) | MDS (13,919) | PQF (2,338) | QHJ (1,238)",MDS
+serious.csv.gz,brand_name,123607,123528,99.9,1277,0,,MEDTRONIC CONTINUOUS GLUCOSE MONITORING SYSTEM
+serious.csv.gz,generic_name,123607,123151,99.6,272,0,"FLASH GLUCOSE MONITORING SYSTEM (53,030) | CONTINUOUS GLUCOSE MONITOR (26,173) | CONTINUOUS GLUCOSE MONITORING SYSTEM (14,928) | INSULIN INFUSION PUMP (4,034) | MDS (2,736) | INTEGRATED CONTINUOUS GLUCOSE MONITORING SYSTEM, FACTORY CAL (2,618)",CGMS
+serious.csv.gz,manufacturer,123607,123514,99.9,126,0,"ABBOTT DIABETES CARE INC (60,299) | DEXCOM, INC. (31,620) | ABBOTT DIABETES CARE LTD (11,497) | MEDTRONIC MINIMED (5,249) | Abbott Diabetes Care Inc (2,918) | SENSEONICS INC. (2,685)",MEDTRONIC DIABETES
+serious.csv.gz,model_number,123607,112040,90.6,823,0,,MMT-7002
+serious.csv.gz,lot_number,123607,33203,26.9,11283,0,,E246
+serious.csv.gz,product_problems,123607,122435,99.1,1929,0,,Unknown (for use when the device problem is not known)
+serious.csv.gz,patient_outcome,123607,115854,93.7,165,0,"Required Intervention (61,098) | Other (34,619) | Hospitalization (7,206) | Hospitalization; O (3,783) | Other; H (2,995) | Hospitalization; R (1,777)",Hospitalization
+serious.csv.gz,patient_problems,123607,123587,100.0,13964,0,,Abdominal Pain; Abscess; Fever; Pleural Effusion; Infiltrates; Chills; Shaking/T
+serious.csv.gz,patient_age,123607,55039,44.5,171,0,,59 YR
+serious.csv.gz,patient_sex,123607,36110,29.2,3,0,"Female (18,768) | Male (17,222) | Prefer Not To Disclose (120)",Female
+serious.csv.gz,patient_weight,123607,40441,32.7,672,0,,104
+serious.csv.gz,patient_race,123607,3658,3.0,20,0,"White (3,064) | Black Or African American (276) | Asian (177) | American Indian Or Alaskan Native (60) | Black Or African American, White (17) | Asian, White (16)",White
+serious.csv.gz,patient_ethnicity,123607,2424,2.0,2,0,"Non Hispanic (2,136) | Hispanic (288)",Non Hispanic
+serious.csv.gz,report_source_code,123607,123607,100.0,3,0,"Manufacturer report (119,827) | Voluntary report (3,779) | User Facility report (1)",Voluntary report
+serious.csv.gz,reporter_country_code,123607,117292,94.9,97,0,"US (54,811) | GM (11,861) | FR (8,835) | UK (7,686) | SP (5,599) | IT (3,947)",US
+serious.csv.gz,n_devices,123607,123607,100.0,14,0,"1 (123,047) | 2 (393) | 3 (68) | 4 (45) | 5 (22) | 6 (14)",1
+serious.csv.gz,n_patients,123607,123607,100.0,3,0,"1 (123,592) | 0 (13) | 2 (2)",1
+serious.csv.gz,event_text,123607,122655,99.2,119399,0,,THE PATIENT UNDERWENT A WHIPPLE PROCEDURE IN 2006 BY THE M.D. PMH IS SIGNIFIANT 
+serious.csv.gz,mfr_narrative,123607,118305,95.7,54313,0,,"CURRENTLY, IT IS UNKNOWN WHETHER OR NOT THE DEVICE MAY HAVE CAUSED OR CONTRIBUTE"
+serious.csv.gz,openfda_device_name,123607,123607,100.0,13,0,"Integrated Continuous Glucose Monitoring System, Factory Cal (44,119) | Integrated Continuous Glucose Monitoring System, Factory Cal (42,337) | Sensor, Glucose, Invasive, Non-Adjunctive, Factory-Calibrate (17,524) | Sensor, Glucose, Invasive (13,919) | Sensor, Glucose, Invasive, Non-Adjunctive (2,338) | Sensor, Glucose, Implanted, Non-Adjunctive Use (1,238)","Sensor, Glucose, Invasive"
+serious.csv.gz,openfda_device_class,123607,123607,100.0,2,0,"2 (87,528) | 3 (36,079)",3
+serious.csv.gz,openfda_regulation_number,123607,87528,70.8,2,0,"862.1355 (86,707) | 862.1357 (821)",862.1355
+serious.csv.gz,patient_age_value,123607,55037,44.5,122,0,,59.0
+serious.csv.gz,patient_age_unit,123607,55037,44.5,4,0,"YR (54,710) | MO (312) | DA (14) | WK (1)",YR
+serious.csv.gz,patient_sequence_number,123607,123594,100.0,2,0,"1 (123,592) | 0 (2)",1
+serious.csv.gz,patient_treatment,123607,11884,9.6,3615,0,,MMT-7700C TGMS - TELEMETRY GLUCOSE MONITORING; SYSTEM- TRANSMITTERS. CONTROL TOO
+serious.csv.gz,all_product_codes,123607,123607,100.0,37,0,"QBJ (44,069) | QLG (42,336) | PZE (17,522) | MDS (13,880) | PQF (2,338) | QHJ (1,238)",MDS
+serious.csv.gz,n_mdr_text,123607,123607,100.0,19,0,"2 (69,364) | 4 (40,851) | 6 (5,173) | 1 (4,223) | 3 (2,155) | 0 (950)",1
+serious.csv.gz,event_text_len,123607,123607,100.0,3719,0,,2108
+serious.csv.gz,mfr_narrative_len,123607,123607,100.0,5414,0,,0
+serious.csv.gz,date_report,123607,123555,100.0,5411,0,,20061208
+serious.csv.gz,date_manufacturer_received,123607,117201,94.8,5545,0,,20100602
+serious.csv.gz,date_report_to_fda,123607,2,0.0,2,0,20110602 (1) | 20130903 (1),20110602
+serious.csv.gz,date_report_to_manufacturer,123607,1,0.0,1,0,20110602 (1),20110602
+serious.csv.gz,date_facility_aware,123607,18,0.0,17,0,20140715 (2) | 20101005 (1) | 20101105 (1) | 20110116 (1) | 20110313 (1) | 20110606 (1),20101005
+serious.csv.gz,date_added,123607,123589,100.0,4377,0,,20061213
+serious.csv.gz,date_changed,123607,123607,100.0,315,0,,20250805
+serious.csv.gz,source_type,123607,119627,96.8,78,0,"Consumer (87,150) | CONSUMER (18,518) | Other (3,428) | Foreign; Consumer (2,882) | Health Professional (1,242) | Foreign; Distributor (1,054)",Consumer
+serious.csv.gz,type_of_report,123607,123367,99.8,3,0,"Initial submission (72,220) | Initial submission; Followup (51,102) | Followup (45)",Initial submission
+serious.csv.gz,mfr_report_type,123607,109533,88.6,6,0,"Thirty-Day (88,980) | Initial (17,034) | Follow-Up (2,241) | FDA Requested (1,263) | Fifteen-Day (14) | Periodic (1)",Thirty-Day
+serious.csv.gz,adverse_event_flag,123607,123418,99.8,2,0,"Y (119,572) | N (3,846)",Y
+serious.csv.gz,product_problem_flag,123607,123311,99.8,2,0,"N (99,924) | Y (23,387)",N
+serious.csv.gz,remedial_action,123607,1948,1.6,11,0,Other; Recall (483) | Recall; Other (430) | Notification (390) | Recall (316) | Replace (230) | Other (93),Other
+serious.csv.gz,health_professional,123607,14999,12.1,2,2432,"N (13,838) | Y (1,161)",N
+serious.csv.gz,reporter_occupation_code,123607,121112,98.0,25,0,"003 (76,312) | OTHER (31,742) | PATIENT (5,577) | NOT APPLICABLE (4,146) | OTHER HEALTH CARE PROFESSIONAL (785) | NURSE (759)",PHYSICIAN
+serious.csv.gz,reporter_state_code,123607,50484,40.8,56,0,"CA (5,113) | TX (3,785) | FL (3,652) | NY (2,490) | PA (2,287) | OH (2,055)",PA
+serious.csv.gz,event_location,123607,23282,18.8,8,0,"I (21,882) | NO INFORMATION (827) | HOME (471) | OTHER (82) | HOSPITAL (12) | OUTPATIENT TREATMENT FACILITY (5)",HOSPITAL
+serious.csv.gz,initial_report_to_fda,123607,65912,53.3,2,0,"No (63,029) | Yes (2,883)",No
+serious.csv.gz,report_to_fda,123607,9898,8.0,3,17455,"N (8,330) | I (827) | Y (741)",N
+serious.csv.gz,report_to_manufacturer,123607,0,0.0,0,0,,
+serious.csv.gz,summary_report_flag,123607,123607,100.0,1,0,"N (123,607)",N
+serious.csv.gz,noe_summarized,123607,123607,100.0,1,0,"1 (123,607)",1
+serious.csv.gz,single_use_flag,123607,88245,71.4,2,0,"Y (80,008) | N (8,237)",N
+serious.csv.gz,previous_use_code,123607,27438,22.2,5,0,"I (23,717) | N (2,889) | A (627) | R (117) | U (88)",U
+serious.csv.gz,reprocessed_and_reused_flag,123607,120797,97.7,3,0,"N (119,907) | I (760) | Y (130)",N
+serious.csv.gz,manufacturer_link_flag,123607,123607,100.0,2,0,"Y (119,827) | N (3,780)",N
+serious.csv.gz,number_devices_in_event,123607,0,0.0,0,0,,
+serious.csv.gz,number_patients_in_event,123607,0,0.0,0,0,,
+serious.csv.gz,pma_pmn_number,123607,117230,94.8,73,0,,P980022
+serious.csv.gz,exemption_number,123607,1,0.0,1,0,00506 (1),00506
+serious.csv.gz,removal_correction_number,123607,1550,1.3,24,0,2954323-11/22/25-001-C (721) | QUALITY RECORD QR1081093 (244) | 3004753838-02/29/16-001C (236) | QUALITY RECORD QR869957 (170) | QUALITY RECORD QR864898 (43) | QR908720 (25),3004753838-02/29/16-001C
+serious.csv.gz,event_key,123607,0,0.0,0,0,,
+serious.csv.gz,suppl_dates_fda_received,123607,51147,41.4,8911,0,,07/13/2010;07/22/2010;07/17/2011
+serious.csv.gz,suppl_dates_mfr_received,123607,49168,39.8,8599,1979,,*;*;*
+serious.csv.gz,manufacturer_name,123607,0,0.0,0,0,,
+serious.csv.gz,manufacturer_country,123607,0,0.0,0,0,,
+serious.csv.gz,distributor_name,123607,0,0.0,0,0,,
+serious.csv.gz,catalog_number,123607,45450,36.8,778,1,,MMT-522LNAL
+serious.csv.gz,udi_di,123607,42029,34.0,502,0,,00386270000019
+serious.csv.gz,udi_public,123607,42016,34.0,13302,0,,00386270000019
+serious.csv.gz,device_operator,123607,122343,99.0,8,0,"LAY USER/PATIENT (121,307) | I (629) | HEALTH PROFESSIONAL (211) | OTHER (129) | 0 (63) | MEDICAL ASSISTANT (2)",HEALTH PROFESSIONAL
+serious.csv.gz,device_availability,123607,123252,99.7,4,0,"No (96,786) | Device was returned to manufacturer (20,392) | Yes (5,343) | No answer provided (731)",No
+serious.csv.gz,device_evaluated_by_manufacturer,123607,95057,76.9,3,642,"Y (40,684) | R (33,585) | N (20,788)",R
+serious.csv.gz,expiration_date_of_device,123607,55123,44.6,2448,0,,20061120
+serious.csv.gz,implant_flag,123607,0,0.0,0,0,,
+serious.csv.gz,date_removed_flag,123607,0,0.0,0,0,,
+serious.csv.gz,device_age_text,123607,53406,43.2,26,1,"DA (51,812) | DAY (1,532) | 5 MO (8) | 1 MO (7) | 8 MO (5) | 10 MO (4)",DA
+serious.csv.gz,device_sequence_number,123607,123607,100.0,114266,0,,1
+serious.csv.gz,device_event_key,123607,0,0.0,0,0,,
+serious.csv.gz,manufacturer_d_country,123607,119771,96.9,6,40,"US (108,007) | UK (11,753) | PR (8) | NL (1) | SZ (1) | IT (1)",US
+serious.csv.gz,other_id_number,123607,579,0.5,164,1,,NI
+serious.csv.gz,repeated_report_number,123607,123607,100.0,2,0,"False (123,601) | True (6)",False
+serious.csv.gz,maker,123607,123607,100.0,5,0,"Abbott (77,868) | Dexcom (33,783) | Medtronic (8,721) | Senseonics (3,007) | Other (228)",Medtronic
+serious.csv.gz,family,123607,123607,100.0,12,0,"Abbott Libre 2 / 2 Plus (41,488) | Abbott Libre 3 / 3 Plus (18,292) | Abbott Libre 14-day / other (18,088) | Dexcom G7 (13,452) | Dexcom G6 (13,113) | Medtronic Guardian / other (8,721)",Medtronic Guardian / other

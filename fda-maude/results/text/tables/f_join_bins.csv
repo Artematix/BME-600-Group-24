@@ -1,0 +1,383 @@
+group,bias_bin_pct,weighted_share_pct
+Serious / Abbott,-90,15.877757352941178
+Serious / Abbott,-88,7.03125
+Serious / Abbott,-86,6.4797794117647065
+Serious / Abbott,-84,5.88235294117647
+Serious / Abbott,-82,5.238970588235294
+Serious / Abbott,-80,4.595588235294118
+Serious / Abbott,-78,4.342830882352941
+Serious / Abbott,-76,4.136029411764706
+Serious / Abbott,-74,3.010110294117647
+Serious / Abbott,-72,3.125
+Serious / Abbott,-70,2.780330882352941
+Serious / Abbott,-68,3.308823529411765
+Serious / Abbott,-66,2.7113970588235294
+Serious / Abbott,-64,2.389705882352941
+Serious / Abbott,-62,2.527573529411765
+Serious / Abbott,-60,2.3207720588235294
+Serious / Abbott,-58,1.9990808823529411
+Serious / Abbott,-56,2.1139705882352944
+Serious / Abbott,-54,1.7463235294117647
+Serious / Abbott,-52,1.631433823529412
+Serious / Abbott,-50,1.9071691176470589
+Serious / Abbott,-48,1.4476102941176472
+Serious / Abbott,-46,1.4016544117647058
+Serious / Abbott,-44,1.3327205882352942
+Serious / Abbott,-42,1.3327205882352942
+Serious / Abbott,-40,1.1488970588235294
+Serious / Abbott,-38,0.8731617647058824
+Serious / Abbott,-36,0.8272058823529412
+Serious / Abbott,-34,0.8501838235294117
+Serious / Abbott,-32,0.5974264705882353
+Serious / Abbott,-30,0.7123161764705882
+Serious / Abbott,-28,0.7582720588235294
+Serious / Abbott,-26,0.390625
+Serious / Abbott,-24,0.5514705882352942
+Serious / Abbott,-22,0.390625
+Serious / Abbott,-20,0.4365808823529412
+Serious / Abbott,-18,0.3676470588235294
+Serious / Abbott,-16,0.2757352941176471
+Serious / Abbott,-14,0.25275735294117646
+Serious / Abbott,-12,0.25275735294117646
+Serious / Abbott,-10,0.11488970588235295
+Serious / Abbott,-8,0.11488970588235295
+Serious / Abbott,-6,0.022977941176470586
+Serious / Abbott,-4,0.09191176470588235
+Serious / Abbott,-2,0.2297794117647059
+Serious / Abbott,0,0.06893382352941177
+Serious / Dexcom,-90,15.16826923076923
+Serious / Dexcom,-88,4.807692307692308
+Serious / Dexcom,-86,3.990384615384615
+Serious / Dexcom,-84,3.75
+Serious / Dexcom,-82,3.1009615384615383
+Serious / Dexcom,-80,3.8461538461538463
+Serious / Dexcom,-78,2.9326923076923075
+Serious / Dexcom,-76,3.918269230769231
+Serious / Dexcom,-74,2.4759615384615383
+Serious / Dexcom,-72,2.6923076923076925
+Serious / Dexcom,-70,2.548076923076923
+Serious / Dexcom,-68,2.8365384615384617
+Serious / Dexcom,-66,2.620192307692308
+Serious / Dexcom,-64,2.2596153846153846
+Serious / Dexcom,-62,2.355769230769231
+Serious / Dexcom,-60,2.8125
+Serious / Dexcom,-58,2.548076923076923
+Serious / Dexcom,-56,1.8990384615384615
+Serious / Dexcom,-54,2.067307692307692
+Serious / Dexcom,-52,1.6346153846153848
+Serious / Dexcom,-50,2.7884615384615388
+Serious / Dexcom,-48,1.8509615384615385
+Serious / Dexcom,-46,1.7307692307692308
+Serious / Dexcom,-44,1.8509615384615385
+Serious / Dexcom,-42,1.9951923076923075
+Serious / Dexcom,-40,2.2596153846153846
+Serious / Dexcom,-38,1.4423076923076923
+Serious / Dexcom,-36,1.5144230769230769
+Serious / Dexcom,-34,1.971153846153846
+Serious / Dexcom,-32,1.1778846153846154
+Serious / Dexcom,-30,1.2980769230769231
+Serious / Dexcom,-28,1.3701923076923077
+Serious / Dexcom,-26,1.25
+Serious / Dexcom,-24,1.8509615384615385
+Serious / Dexcom,-22,1.2980769230769231
+Serious / Dexcom,-20,0.9615384615384616
+Serious / Dexcom,-18,0.576923076923077
+Serious / Dexcom,-16,0.5528846153846154
+Serious / Dexcom,-14,0.2403846153846154
+Serious / Dexcom,-12,0.2884615384615385
+Serious / Dexcom,-10,0.3125
+Serious / Dexcom,-8,0.2644230769230769
+Serious / Dexcom,-6,0.4567307692307693
+Serious / Dexcom,-4,0.19230769230769232
+Serious / Dexcom,-2,0.19230769230769232
+Serious / Dexcom,0,0.04807692307692308
+Serious / Medtronic (undercounted; weakest validation),-90,10.505836575875486
+Serious / Medtronic (undercounted; weakest validation),-88,2.3346303501945527
+Serious / Medtronic (undercounted; weakest validation),-86,2.3346303501945527
+Serious / Medtronic (undercounted; weakest validation),-84,4.280155642023346
+Serious / Medtronic (undercounted; weakest validation),-82,1.556420233463035
+Serious / Medtronic (undercounted; weakest validation),-80,7.003891050583658
+Serious / Medtronic (undercounted; weakest validation),-78,3.8910505836575875
+Serious / Medtronic (undercounted; weakest validation),-76,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-74,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-72,3.501945525291829
+Serious / Medtronic (undercounted; weakest validation),-70,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-68,2.7237354085603114
+Serious / Medtronic (undercounted; weakest validation),-66,4.280155642023346
+Serious / Medtronic (undercounted; weakest validation),-64,5.058365758754864
+Serious / Medtronic (undercounted; weakest validation),-62,2.7237354085603114
+Serious / Medtronic (undercounted; weakest validation),-60,1.556420233463035
+Serious / Medtronic (undercounted; weakest validation),-58,4.280155642023346
+Serious / Medtronic (undercounted; weakest validation),-56,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-54,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-52,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-50,3.11284046692607
+Serious / Medtronic (undercounted; weakest validation),-48,0.7782101167315175
+Serious / Medtronic (undercounted; weakest validation),-46,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-44,2.7237354085603114
+Serious / Medtronic (undercounted; weakest validation),-42,1.556420233463035
+Serious / Medtronic (undercounted; weakest validation),-40,1.556420233463035
+Serious / Medtronic (undercounted; weakest validation),-38,1.1673151750972763
+Serious / Medtronic (undercounted; weakest validation),-36,1.1673151750972763
+Serious / Medtronic (undercounted; weakest validation),-34,1.556420233463035
+Serious / Medtronic (undercounted; weakest validation),-32,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-30,3.501945525291829
+Serious / Medtronic (undercounted; weakest validation),-28,1.1673151750972763
+Serious / Medtronic (undercounted; weakest validation),-26,0.7782101167315175
+Serious / Medtronic (undercounted; weakest validation),-24,0.7782101167315175
+Serious / Medtronic (undercounted; weakest validation),-22,0.7782101167315175
+Serious / Medtronic (undercounted; weakest validation),-20,2.7237354085603114
+Serious / Medtronic (undercounted; weakest validation),-18,1.9455252918287937
+Serious / Medtronic (undercounted; weakest validation),-14,0.7782101167315175
+Serious / Medtronic (undercounted; weakest validation),-10,0.38910505836575876
+Serious / Medtronic (undercounted; weakest validation),-8,0.7782101167315175
+Serious / Medtronic (undercounted; weakest validation),-6,0.7782101167315175
+Serious / Medtronic (undercounted; weakest validation),-2,0.38910505836575876
+Serious / all makers,-90,14.91169977924945
+Serious / all makers,-88,5.6843267108167765
+Serious / all makers,-86,5.044150110375275
+Serious / all makers,-84,4.690949227373068
+Serious / all makers,-82,4.028697571743929
+Serious / all makers,-80,4.271523178807947
+Serious / all makers,-78,3.609271523178808
+Serious / all makers,-76,3.9293598233995586
+Serious / all makers,-74,2.7373068432671084
+Serious / all makers,-72,2.8587196467991167
+Serious / all makers,-70,2.693156732891832
+Serious / all makers,-68,3.068432671081678
+Serious / all makers,-66,2.704194260485651
+Serious / all makers,-64,2.384105960264901
+Serious / all makers,-62,2.461368653421634
+Serious / all makers,-60,2.6269315673289184
+Serious / all makers,-58,2.3620309050772628
+Serious / all makers,-56,2.06401766004415
+Serious / all makers,-54,1.9426048565121412
+Serious / all makers,-52,1.7549668874172186
+Serious / all makers,-50,2.384105960264901
+Serious / all makers,-48,1.6445916114790287
+Serious / all makers,-46,1.6556291390728477
+Serious / all makers,-44,1.6666666666666667
+Serious / all makers,-42,1.7770419426048563
+Serious / all makers,-40,1.7218543046357615
+Serious / all makers,-38,1.2030905077262692
+Serious / all makers,-36,1.2030905077262692
+Serious / all makers,-34,1.423841059602649
+Serious / all makers,-32,0.9492273730684326
+Serious / all makers,-30,1.0816777041942605
+Serious / all makers,-28,1.1037527593818985
+Serious / all makers,-26,0.8498896247240617
+Serious / all makers,-24,1.1920529801324504
+Serious / all makers,-22,0.8388520971302429
+Serious / all makers,-20,0.7947019867549668
+Serious / all makers,-18,0.5518763796909493
+Serious / all makers,-16,0.41942604856512145
+Serious / all makers,-14,0.2980132450331126
+Serious / all makers,-12,0.27593818984547464
+Serious / all makers,-10,0.20971302428256072
+Serious / all makers,-8,0.20971302428256072
+Serious / all makers,-6,0.26490066225165565
+Serious / all makers,-4,0.16556291390728478
+Serious / all makers,-2,0.2317880794701987
+Serious / all makers,0,0.05518763796909492
+Malfunction sample (weighted) / all makers,-90,1.298462775341693
+Malfunction sample (weighted) / all makers,-88,0.6960440369295127
+Malfunction sample (weighted) / all makers,-86,3.1825138785969833
+Malfunction sample (weighted) / all makers,-84,3.9174344039536715
+Malfunction sample (weighted) / all makers,-82,1.038524644832585
+Malfunction sample (weighted) / all makers,-80,4.18830785371645
+Malfunction sample (weighted) / all makers,-78,5.28411263841693
+Malfunction sample (weighted) / all makers,-76,4.625078830459638
+Malfunction sample (weighted) / all makers,-74,5.292430843840919
+Malfunction sample (weighted) / all makers,-72,5.284938796320237
+Malfunction sample (weighted) / all makers,-70,10.272482580670498
+Malfunction sample (weighted) / all makers,-68,7.616614412511409
+Malfunction sample (weighted) / all makers,-66,10.273005570975258
+Malfunction sample (weighted) / all makers,-64,6.609161662887764
+Malfunction sample (weighted) / all makers,-62,5.24832463039676
+Malfunction sample (weighted) / all makers,-60,3.8659092555295724
+Malfunction sample (weighted) / all makers,-58,1.4187065090594095
+Malfunction sample (weighted) / all makers,-56,3.191893292803124
+Malfunction sample (weighted) / all makers,-54,2.189704734229402
+Malfunction sample (weighted) / all makers,-52,2.037527842727659
+Malfunction sample (weighted) / all makers,-50,2.0114917518098596
+Malfunction sample (weighted) / all makers,-48,0.0010880984083154366
+Malfunction sample (weighted) / all makers,-46,2.5567078124843268
+Malfunction sample (weighted) / all makers,-44,0.7116227596171679
+Malfunction sample (weighted) / all makers,-42,1.330178241513957
+Malfunction sample (weighted) / all makers,-40,0.6921704065959097
+Malfunction sample (weighted) / all makers,-38,0.6875021781363637
+Malfunction sample (weighted) / all makers,-36,1.2781578601462933
+Malfunction sample (weighted) / all makers,-34,1.1126986794416596
+Malfunction sample (weighted) / all makers,-30,0.11929910948770446
+Malfunction sample (weighted) / all makers,-28,0.6392794265117363
+Malfunction sample (weighted) / all makers,-18,0.6385025465783705
+Malfunction sample (weighted) / all makers,-16,0.6901219350688549
+Malfunction sample (weighted) / Abbott,-90,1.5204474002990767
+Malfunction sample (weighted) / Abbott,-88,0.8150394193354206
+Malfunction sample (weighted) / Abbott,-86,2.9785956315040933
+Malfunction sample (weighted) / Abbott,-84,4.5871572666117615
+Malfunction sample (weighted) / Abbott,-82,1.216070361329152
+Malfunction sample (weighted) / Abbott,-80,4.834823176819282
+Malfunction sample (weighted) / Abbott,-78,6.187482210919984
+Malfunction sample (weighted) / Abbott,-76,3.924207723022594
+Malfunction sample (weighted) / Abbott,-74,5.310344076637845
+Malfunction sample (weighted) / Abbott,-72,6.181263575937488
+Malfunction sample (weighted) / Abbott,-70,11.281001023316936
+Malfunction sample (weighted) / Abbott,-68,7.093589823847371
+Malfunction sample (weighted) / Abbott,-66,11.246200403938758
+Malfunction sample (weighted) / Abbott,-64,7.574597723130934
+Malfunction sample (weighted) / Abbott,-62,5.981112590114953
+Malfunction sample (weighted) / Abbott,-60,4.519637368998293
+Malfunction sample (weighted) / Abbott,-58,0.7487852191875686
+Malfunction sample (weighted) / Abbott,-56,2.23507061153716
+Malfunction sample (weighted) / Abbott,-54,1.5117786049999935
+Malfunction sample (weighted) / Abbott,-52,1.6144194926540005
+Malfunction sample (weighted) / Abbott,-50,1.5736703699410481
+Malfunction sample (weighted) / Abbott,-46,2.2461407944630682
+Malfunction sample (weighted) / Abbott,-44,0.08562081249876265
+Malfunction sample (weighted) / Abbott,-42,1.5575849286184407
+Malfunction sample (weighted) / Abbott,-40,0.06044421644257887
+Malfunction sample (weighted) / Abbott,-36,1.4966711657327725
+Malfunction sample (weighted) / Abbott,-34,0.7487852191875686
+Malfunction sample (weighted) / Abbott,-30,0.06044421644257887
+Malfunction sample (weighted) / Abbott,-28,0.7485703560879309
+Malfunction sample (weighted) / Abbott,-16,0.06044421644257887
+Serious / Libre 3 received on/after 2025-11-24,-90,11.379800853485063
+Serious / Libre 3 received on/after 2025-11-24,-88,6.827880512091039
+Serious / Libre 3 received on/after 2025-11-24,-86,4.551920341394026
+Serious / Libre 3 received on/after 2025-11-24,-84,5.405405405405405
+Serious / Libre 3 received on/after 2025-11-24,-82,4.267425320056899
+Serious / Libre 3 received on/after 2025-11-24,-80,5.405405405405405
+Serious / Libre 3 received on/after 2025-11-24,-78,4.267425320056899
+Serious / Libre 3 received on/after 2025-11-24,-76,3.556187766714083
+Serious / Libre 3 received on/after 2025-11-24,-74,4.409672830725462
+Serious / Libre 3 received on/after 2025-11-24,-72,3.982930298719772
+Serious / Libre 3 received on/after 2025-11-24,-70,2.844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-68,4.836415362731152
+Serious / Libre 3 received on/after 2025-11-24,-66,3.8406827880512093
+Serious / Libre 3 received on/after 2025-11-24,-64,2.844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-62,3.556187766714083
+Serious / Libre 3 received on/after 2025-11-24,-60,2.1337126600284493
+Serious / Libre 3 received on/after 2025-11-24,-58,1.5647226173541962
+Serious / Libre 3 received on/after 2025-11-24,-56,1.7069701280227598
+Serious / Libre 3 received on/after 2025-11-24,-54,1.7069701280227598
+Serious / Libre 3 received on/after 2025-11-24,-52,0.42674253200568996
+Serious / Libre 3 received on/after 2025-11-24,-50,2.987197724039829
+Serious / Libre 3 received on/after 2025-11-24,-48,2.275960170697013
+Serious / Libre 3 received on/after 2025-11-24,-46,1.2802275960170697
+Serious / Libre 3 received on/after 2025-11-24,-44,1.1379800853485065
+Serious / Libre 3 received on/after 2025-11-24,-42,2.7027027027027026
+Serious / Libre 3 received on/after 2025-11-24,-40,1.422475106685633
+Serious / Libre 3 received on/after 2025-11-24,-38,1.991465149359886
+Serious / Libre 3 received on/after 2025-11-24,-36,0.7112375533428165
+Serious / Libre 3 received on/after 2025-11-24,-34,0.42674253200568996
+Serious / Libre 3 received on/after 2025-11-24,-32,0.2844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-30,0.2844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-28,0.7112375533428165
+Serious / Libre 3 received on/after 2025-11-24,-26,0.8534850640113799
+Serious / Libre 3 received on/after 2025-11-24,-24,0.5689900426742532
+Serious / Libre 3 received on/after 2025-11-24,-20,0.8534850640113799
+Serious / Libre 3 received on/after 2025-11-24,-18,0.2844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-16,0.2844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-14,0.42674253200568996
+Serious / Libre 3 received on/after 2025-11-24,-12,0.2844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-10,0.1422475106685633
+Serious / Libre 3 received on/after 2025-11-24,-8,0.2844950213371266
+Serious / Libre 3 received on/after 2025-11-24,-6,0.1422475106685633
+Serious / Libre 3 received on/after 2025-11-24,0,0.1422475106685633
+Serious / Libre 3 received before 2025-11-24,-90,28.012684989429175
+Serious / Libre 3 received before 2025-11-24,-88,9.090909090909092
+Serious / Libre 3 received before 2025-11-24,-86,8.456659619450317
+Serious / Libre 3 received before 2025-11-24,-84,5.496828752642706
+Serious / Libre 3 received before 2025-11-24,-82,6.13107822410148
+Serious / Libre 3 received before 2025-11-24,-80,4.0169133192389
+Serious / Libre 3 received before 2025-11-24,-78,2.748414376321353
+Serious / Libre 3 received before 2025-11-24,-76,2.748414376321353
+Serious / Libre 3 received before 2025-11-24,-74,1.4799154334038054
+Serious / Libre 3 received before 2025-11-24,-72,2.854122621564482
+Serious / Libre 3 received before 2025-11-24,-70,1.9027484143763214
+Serious / Libre 3 received before 2025-11-24,-68,1.7970401691331923
+Serious / Libre 3 received before 2025-11-24,-66,2.748414376321353
+Serious / Libre 3 received before 2025-11-24,-64,2.2198731501057085
+Serious / Libre 3 received before 2025-11-24,-62,1.5856236786469344
+Serious / Libre 3 received before 2025-11-24,-60,1.5856236786469344
+Serious / Libre 3 received before 2025-11-24,-58,0.9513742071881607
+Serious / Libre 3 received before 2025-11-24,-56,1.7970401691331923
+Serious / Libre 3 received before 2025-11-24,-54,0.9513742071881607
+Serious / Libre 3 received before 2025-11-24,-52,1.0570824524312896
+Serious / Libre 3 received before 2025-11-24,-50,1.3742071881606766
+Serious / Libre 3 received before 2025-11-24,-48,0.9513742071881607
+Serious / Libre 3 received before 2025-11-24,-46,1.4799154334038054
+Serious / Libre 3 received before 2025-11-24,-44,1.1627906976744187
+Serious / Libre 3 received before 2025-11-24,-42,1.6913319238900635
+Serious / Libre 3 received before 2025-11-24,-40,0.7399577167019027
+Serious / Libre 3 received before 2025-11-24,-38,0.21141649048625794
+Serious / Libre 3 received before 2025-11-24,-36,0.7399577167019027
+Serious / Libre 3 received before 2025-11-24,-34,0.3171247357293869
+Serious / Libre 3 received before 2025-11-24,-32,0.6342494714587738
+Serious / Libre 3 received before 2025-11-24,-30,0.42283298097251587
+Serious / Libre 3 received before 2025-11-24,-28,0.5285412262156448
+Serious / Libre 3 received before 2025-11-24,-26,0.3171247357293869
+Serious / Libre 3 received before 2025-11-24,-24,0.10570824524312897
+Serious / Libre 3 received before 2025-11-24,-22,0.10570824524312897
+Serious / Libre 3 received before 2025-11-24,-20,0.42283298097251587
+Serious / Libre 3 received before 2025-11-24,-18,0.10570824524312897
+Serious / Libre 3 received before 2025-11-24,-14,0.3171247357293869
+Serious / Libre 3 received before 2025-11-24,-12,0.10570824524312897
+Serious / Libre 3 received before 2025-11-24,-10,0.21141649048625794
+Serious / Libre 3 received before 2025-11-24,-2,0.42283298097251587
+Serious / Injury,-90,14.824648744330124
+Serious / Injury,-88,5.686469742228122
+Serious / Injury,-86,5.044805841354132
+Serious / Injury,-84,4.701847549507689
+Serious / Injury,-82,4.015930965814802
+Serious / Injury,-80,4.281447062728178
+Serious / Injury,-78,3.5955304790352915
+Serious / Injury,-76,3.9274256001770107
+Serious / Injury,-74,2.7436663347715453
+Serious / Injury,-72,2.865361212523509
+Serious / Injury,-70,2.6994136519526495
+Serious / Injury,-68,3.075561455913265
+Serious / Injury,-66,2.6994136519526495
+Serious / Injury,-64,2.3896448722203782
+Serious / Injury,-62,2.467087067153446
+Serious / Injury,-60,2.6330346277243057
+Serious / Injury,-58,2.3675185308109303
+Serious / Injury,-56,2.057749751078659
+Serious / Injury,-54,1.9471180440314193
+Serious / Injury,-52,1.7590441420511118
+Serious / Injury,-50,2.3896448722203782
+Serious / Injury,-48,1.6373492642991483
+Serious / Injury,-46,1.659475605708596
+Serious / Injury,-44,1.67053877641332
+Serious / Injury,-42,1.7811704834605597
+Serious / Injury,-40,1.72585462993694
+Serious / Injury,-38,1.2058856068149133
+Serious / Injury,-36,1.2058856068149133
+Serious / Injury,-34,1.4271490209093927
+Serious / Injury,-32,0.9514326806062617
+Serious / Injury,-30,1.0841907290629493
+Serious / Injury,-28,1.1063170704723975
+Serious / Injury,-26,0.851864144263746
+Serious / Injury,-24,1.1948224361101891
+Serious / Injury,-22,0.840800973559022
+Serious / Injury,-20,0.7965482907401261
+Serious / Injury,-18,0.5531585352361987
+Serious / Injury,-16,0.420400486779511
+Serious / Injury,-14,0.2987056090275473
+Serious / Injury,-12,0.27657926761809937
+Serious / Injury,-10,0.2102002433897555
+Serious / Injury,-8,0.2102002433897555
+Serious / Injury,-6,0.2655160969133754
+Serious / Injury,-4,0.1659475605708596
+Serious / Injury,-2,0.23232658479920343
+Serious / Injury,0,0.05531585352361987
+Serious / Death,-90,52.38095238095239
+Serious / Death,-88,4.761904761904762
+Serious / Death,-86,4.761904761904762
+Serious / Death,-82,9.523809523809524
+Serious / Death,-78,9.523809523809524
+Serious / Death,-76,4.761904761904762
+Serious / Death,-66,4.761904761904762
+Serious / Death,-56,4.761904761904762
+Serious / Death,-48,4.761904761904762

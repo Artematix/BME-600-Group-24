@@ -61,8 +61,8 @@
       "$200,000 or more": 32,
       "$75,000 - less than $100,000": 21,
       "$35,000 - less than $50,000": 13,
-      "$25,000 - $35,000": 6,
-      "Less than $25,000": 6
+      "Less than $25,000": 6,
+      "$25,000 - $35,000": 6
     },
     "insurance_private_pct": 87.611,
     "diag_age": {
@@ -368,14 +368,14 @@
           },
           {
             "cgm_range": "70-180",
-            "n": 71732,
+            "n": 71733,
             "mean_rel_bias_pct": -3.18,
             "mard_pct": 13.2,
             "pct_cgm_reads_low": 60.95
           },
           {
             "cgm_range": "181-250",
-            "n": 25001,
+            "n": 25000,
             "mean_rel_bias_pct": 1.25,
             "mard_pct": 11.59,
             "pct_cgm_reads_low": 50.94
@@ -416,7 +416,7 @@
           {
             "avg_range": "181-250",
             "n": 26570,
-            "mean_bias_mgdl": -4.27,
+            "mean_bias_mgdl": -4.28,
             "mean_rel_bias_pct": -0.69,
             "mard_pct": 12.1,
             "pct_cgm_reads_low": 55.65
@@ -523,10 +523,10 @@
         {
           "range": "54-69",
           "n": 15944,
-          "mean_bias_mgdl": 3.49,
-          "mean_rel_bias_pct": 5.75,
-          "mard_pct": 18.73,
-          "within_20pct_or_20mgdl": 87.82,
+          "mean_bias_mgdl": 3.5,
+          "mean_rel_bias_pct": 5.76,
+          "mard_pct": 18.74,
+          "within_20pct_or_20mgdl": 87.81,
           "pct_cgm_reads_low": 47.49
         },
         {
@@ -535,7 +535,7 @@
           "mean_bias_mgdl": -1.73,
           "mean_rel_bias_pct": -0.92,
           "mard_pct": 11.03,
-          "within_20pct_or_20mgdl": 86.69,
+          "within_20pct_or_20mgdl": 86.7,
           "pct_cgm_reads_low": 55.0
         },
         {
@@ -568,8 +568,8 @@
           },
           {
             "cgm_range": "54-69",
-            "n": 18609,
-            "mean_rel_bias_pct": -10.42,
+            "n": 18608,
+            "mean_rel_bias_pct": -10.41,
             "mard_pct": 15.97,
             "pct_cgm_reads_low": 73.82
           },
@@ -582,7 +582,7 @@
           },
           {
             "cgm_range": "181-250",
-            "n": 121531,
+            "n": 121532,
             "mean_rel_bias_pct": 1.12,
             "mard_pct": 8.61,
             "pct_cgm_reads_low": 49.57
@@ -614,7 +614,7 @@
           },
           {
             "avg_range": "70-180",
-            "n": 266221,
+            "n": 266222,
             "mean_bias_mgdl": -3.86,
             "mean_rel_bias_pct": -1.32,
             "mard_pct": 11.44,
@@ -622,7 +622,7 @@
           },
           {
             "avg_range": "181-250",
-            "n": 125761,
+            "n": 125760,
             "mean_bias_mgdl": -4.2,
             "mean_rel_bias_pct": -0.95,
             "mard_pct": 8.41,
@@ -640,7 +640,7 @@
         "range": "all",
         "n": 475502,
         "mean_bias_mgdl": -4.0,
-        "mean_rel_bias_pct": -1.29,
+        "mean_rel_bias_pct": -1.28,
         "mard_pct": 10.37,
         "within_20pct_or_20mgdl": 88.23,
         "pct_cgm_reads_low": 55.21

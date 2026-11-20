@@ -1,0 +1,7 @@
+option,reports,gpu_hours,gpu_days_8h,calendar_days_24h
+A. Every malfunction report,3257570,250.2,31.3,10.4
+"B. Malfunction reports with a real story (not a template text, 120+ characters)",1770310,136.0,17.0,5.7
+C. Malfunction reports with a wrong-readings code,933365,71.7,9.0,3.0
+D. Wrong-readings code AND a real story,481095,37.0,4.6,1.5
+"E. Option D, Abbott only",244190,18.8,2.3,0.8
+"F. Option D, 10 % random sample (weighted)",48110,3.7,0.5,0.2

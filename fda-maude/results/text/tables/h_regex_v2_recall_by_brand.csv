@@ -1,0 +1,11 @@
+version,brand,reports,model_pairs,regex_pairs,both,recall_pct,regex_pair_rate_pct,model_pair_rate_pct,agree_exact_pct,agree_within5_pct,swapped_pct,one_value_matches_pct,regex_only_pairs,regex_only_pct_of_regex
+v1 baseline,Abbott,75500,7802,4957,4883,62.6,6.6,10.3,88.3,89.5,0.3,4.0,74,1.5
+v1 baseline,Dexcom,36619,9550,8288,7760,81.3,22.6,26.1,89.5,90.2,0.1,6.3,528,6.4
+v1 baseline,Medtronic,9067,524,368,349,66.6,4.1,5.8,95.7,95.7,0.6,2.6,19,5.2
+v1 baseline,Other,3413,560,495,477,85.2,14.5,16.4,87.0,90.8,0.2,7.1,18,3.6
+v1 baseline,All,124599,18436,14108,13469,73.1,11.3,14.8,89.1,90.1,0.2,5.4,639,4.5
+v2 tuned,Abbott,75500,7802,7115,6901,88.5,9.4,10.3,88.8,89.9,0.2,4.3,214,3.0
+v2 tuned,Dexcom,36619,9550,9381,8640,90.5,25.6,26.1,88.0,88.9,0.1,6.6,741,7.9
+v2 tuned,Medtronic,9067,524,380,367,70.0,4.2,5.8,95.1,95.1,0.5,2.7,13,3.4
+v2 tuned,Other,3413,560,553,526,93.9,16.2,16.4,86.5,89.9,0.4,7.4,27,4.9
+v2 tuned,All,124599,18436,17429,16434,89.1,14.0,14.8,88.4,89.5,0.2,5.6,995,5.7

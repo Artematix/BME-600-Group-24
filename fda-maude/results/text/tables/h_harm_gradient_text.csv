@@ -1,0 +1,73 @@
+brand,group,abs_error_band,pairs,harm_words_pct,ci_low,ci_high,action_words_pct
+All,malfunction,0 to 10,195,4.1,2.1,7.9,1.5
+All,malfunction,10 to 20,647,2.8,1.8,4.4,1.1
+All,malfunction,20 to 30,2606,0.9,0.6,1.3,0.7
+All,malfunction,30 to 40,4514,0.8,0.6,1.1,0.3
+All,malfunction,40 to 50,6660,1.8,1.5,2.2,0.4
+All,malfunction,50 to 60,15241,1.0,0.9,1.2,0.1
+All,malfunction,60 to 70,50283,0.7,0.6,0.8,0.1
+All,malfunction,70 to 80,48446,0.6,0.5,0.6,0.1
+All,malfunction,80 to 90,22554,0.8,0.7,1.0,0.2
+All,malfunction,90 to 100,3340,1.6,1.2,2.1,0.6
+All,malfunction,100 to 200,24851,1.1,1.0,1.3,0.3
+All,malfunction,over 200,11775,1.6,1.4,1.9,0.6
+All,serious,0 to 10,212,90.1,85.3,93.4,56.1
+All,serious,10 to 20,363,79.9,75.5,83.7,45.7
+All,serious,20 to 30,734,78.3,75.2,81.2,39.1
+All,serious,30 to 40,865,78.8,76.0,81.4,41.0
+All,serious,40 to 50,1018,76.9,74.2,79.4,35.8
+All,serious,50 to 60,1290,77.8,75.4,79.9,35.1
+All,serious,60 to 70,1608,73.4,71.2,75.5,37.6
+All,serious,70 to 80,1848,74.1,72.0,76.0,38.3
+All,serious,80 to 90,2669,73.5,71.8,75.2,43.5
+All,serious,90 to 100,1348,83.2,81.1,85.1,47.1
+All,serious,100 to 200,2600,86.3,84.9,87.6,50.3
+All,serious,over 200,3682,88.2,87.1,89.2,48.2
+Abbott,malfunction,0 to 10,138,2.2,0.7,6.2,0.0
+Abbott,malfunction,10 to 20,425,1.6,0.8,3.4,0.2
+Abbott,malfunction,20 to 30,871,1.1,0.6,2.1,0.0
+Abbott,malfunction,30 to 40,1470,1.4,0.9,2.1,0.1
+Abbott,malfunction,40 to 50,2783,3.1,2.5,3.8,0.3
+Abbott,malfunction,50 to 60,9939,1.2,1.0,1.5,0.0
+Abbott,malfunction,60 to 70,44440,0.7,0.6,0.8,0.0
+Abbott,malfunction,70 to 80,44360,0.5,0.5,0.6,0.0
+Abbott,malfunction,80 to 90,20257,0.7,0.6,0.9,0.0
+Abbott,malfunction,90 to 100,2956,0.9,0.6,1.3,0.0
+Abbott,malfunction,100 to 200,23499,0.7,0.6,0.8,0.0
+Abbott,malfunction,over 200,10934,0.6,0.5,0.8,0.0
+Abbott,serious,0 to 10,47,78.7,65.1,88.0,42.6
+Abbott,serious,10 to 20,108,68.5,59.3,76.5,25.9
+Abbott,serious,20 to 30,183,66.1,59.0,72.6,25.1
+Abbott,serious,30 to 40,224,70.5,64.3,76.1,26.8
+Abbott,serious,40 to 50,330,61.8,56.5,66.9,26.7
+Abbott,serious,50 to 60,476,66.8,62.5,70.9,24.4
+Abbott,serious,60 to 70,696,58.6,54.9,62.2,31.8
+Abbott,serious,70 to 80,907,59.1,55.9,62.3,32.3
+Abbott,serious,80 to 90,1511,62.3,59.8,64.7,40.4
+Abbott,serious,90 to 100,630,77.5,74.0,80.6,42.5
+Abbott,serious,100 to 200,880,78.8,75.9,81.3,37.6
+Abbott,serious,over 200,1474,82.6,80.5,84.4,38.4
+Dexcom,malfunction,0 to 10,39,7.7,2.7,20.3,2.6
+Dexcom,malfunction,10 to 20,192,2.6,1.1,6.0,2.1
+Dexcom,malfunction,20 to 30,1661,0.7,0.4,1.2,0.8
+Dexcom,malfunction,30 to 40,2871,0.1,0.0,0.3,0.2
+Dexcom,malfunction,40 to 50,3568,0.6,0.4,0.9,0.3
+Dexcom,malfunction,50 to 60,4721,0.3,0.2,0.5,0.2
+Dexcom,malfunction,60 to 70,4936,0.4,0.2,0.6,0.5
+Dexcom,malfunction,70 to 80,3377,0.1,0.1,0.3,0.3
+Dexcom,malfunction,80 to 90,1937,0.9,0.6,1.5,1.2
+Dexcom,malfunction,90 to 100,321,5.6,3.6,8.7,4.4
+Dexcom,malfunction,100 to 200,985,2.5,1.7,3.7,2.2
+Dexcom,malfunction,over 200,665,7.5,5.7,9.8,5.0
+Dexcom,serious,0 to 10,155,94.8,90.1,97.4,61.9
+Dexcom,serious,10 to 20,219,90.0,85.3,93.3,59.4
+Dexcom,serious,20 to 30,507,86.2,82.9,88.9,45.6
+Dexcom,serious,30 to 40,573,85.3,82.2,88.0,48.9
+Dexcom,serious,40 to 50,607,88.6,85.9,90.9,42.2
+Dexcom,serious,50 to 60,711,88.3,85.8,90.5,44.3
+Dexcom,serious,60 to 70,823,88.5,86.1,90.5,44.5
+Dexcom,serious,70 to 80,849,92.2,90.2,93.8,46.4
+Dexcom,serious,80 to 90,1082,91.5,89.7,93.0,49.2
+Dexcom,serious,90 to 100,682,90.2,87.7,92.2,53.1
+Dexcom,serious,100 to 200,1549,91.2,89.6,92.5,57.9
+Dexcom,serious,over 200,2061,92.5,91.3,93.6,55.9

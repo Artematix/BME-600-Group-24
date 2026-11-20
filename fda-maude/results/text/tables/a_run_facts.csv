@@ -1,0 +1,42 @@
+metric,value
+log_first_line,2026-10-30 08:23:50
+log_last_line,2026-10-30 17:57:08
+elapsed_first_to_last_h,9.55
+segments_started,1
+resumes,0
+run_done_lines,1
+sum_of_run_segments_h,9.55
+errors_in_run_done_lines,0
+last_progress_reports_per_min,217.4
+last_progress_errors,0
+summary_n_requested,124599
+summary_n_ok,124599
+summary_n_errors,0
+summary_wall_s,34395.4
+summary_reports_per_min,217.4
+summary_latency_mean_s,2.21
+summary_latency_p50_s,2.13
+summary_latency_p90_s,2.811
+summary_guard_drop_rate,0.035
+summary_guard_drop_reports,4324
+summary_retries,0
+summary_role_swap_reports,26
+summary_mmol_converted_reports,4667
+summary_schema_fixed_reports,0
+summary_output_tok_per_s_aggregate,301.1
+summary_prompt_tokens_max,5889
+summary_guard_drops_by_field,"{""parkes_zone_stated:context"": 808, ""wear_day:range"": 59, ""wear_day"": 1561, ""sensor_value_raw"": 276, ""wear_day:context"": 654, ""meter_value_raw"": 1056}"
+summary_previous_runs,null
+summary_model,qwen2.5:7b-instruct
+summary_model_digest,845dbda0ea48
+rows_in_jsonl,124599
+rows_expected,124599
+model_errors_in_jsonl,0
+guard_drop_reports,4324
+guard_drop_rate_pct,3.47
+guard_drops_by_field,"{""parkes_zone_stated:context"": 808, ""wear_day:range"": 59, ""wear_day"": 1561, ""sensor_value_raw"": 276, ""wear_day:context"": 654, ""meter_value_raw"": 1056}"
+zone_guard_drops_rescued_by_regex,453
+zone_guard_drops_total,808
+median_latency_s,2.13
+retried_reports,0
+rows_per_min_over_elapsed,217.5

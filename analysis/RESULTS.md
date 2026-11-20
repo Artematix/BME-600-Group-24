@@ -1,5 +1,9 @@
 # Raw data check: plain-language results (2026-10-07)
 
+> **Note (2026-10-30): these are the first-pass results from October 7-9, kept as history.**
+> Their pair set includes calibration fingersticks and pump-typed "BG" values (many are CGM values typed into the pump), so the sensor looks better here than it is.
+> For the paper use ACCURACY_V2.md, ERROR_DRIVERS.md, SUBGROUPS.md and SIMULATION_V2.md.
+
 Key terms used in this file:
 - CGM = continuous glucose monitor. A sensor worn on the skin that reads glucose every few minutes.
 - Fingerstick = a drop of blood tested on a hand-held meter. Reference glucose = a fingerstick reading we treat as the true value. Pair = one CGM reading matched to one fingerstick taken at nearly the same time.

@@ -23,5 +23,5 @@ Asked by: Artemy
 - Thresholds 70 / 200 are a first choice from the lead's research description.
 
 ## Open questions / next
-- Lead approves README and push list. Then push.
+- Pushed to GitHub main as commit 6931af8 after lead approved README edits (research question reworded, smoother intro, dropped the 'no ML' and 'no names' lines).
 - Check Parkes zone borders against the paper.

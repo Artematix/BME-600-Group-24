@@ -1,0 +1,677 @@
+table,group,n_reports,weighted_n,theme,theme_label,hits_n,hit_pct
+serious by product family,all,122657,122657,eval_device_returned,Device was returned to the maker and looked at,24665,20.1
+serious by product family,all,122657,122657,eval_not_returned,"Device was NOT returned, discarded or not provided",81608,66.5
+serious by product family,all,122657,122657,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",36035,29.4
+serious by product family,all,122657,122657,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,79463,64.8
+serious by product family,all,122657,122657,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),9817,8.0
+serious by product family,all,122657,122657,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,25889,21.1
+serious by product family,all,122657,122657,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),54935,44.8
+serious by product family,all,122657,122657,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",44887,36.6
+serious by product family,all,122657,122657,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),2169,1.8
+serious by product family,all,122657,122657,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",9185,7.5
+serious by product family,all,122657,122657,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),1449,1.2
+serious by product family,all,122657,122657,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",1493,1.2
+serious by product family,all,122657,122657,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",34673,28.3
+serious by product family,all,122657,122657,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",10224,8.3
+serious by product family,all,122657,122657,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",22236,18.1
+serious by product family,all,122657,122657,bleeding_or_bruise,"Bleeding, blood at the site or bruising",8031,6.5
+serious by product family,all,122657,122657,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",3304,2.7
+serious by product family,all,122657,122657,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",6171,5.0
+serious by product family,all,122657,122657,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",417,0.3
+serious by product family,all,122657,122657,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",318,0.3
+serious by product family,all,122657,122657,night_or_sleep,"Event at night, during sleep, or on waking",8361,6.8
+serious by product family,all,122657,122657,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",1126,0.9
+serious by product family,all,122657,122657,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",2390,1.9
+serious by product family,all,122657,122657,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",5727,4.7
+serious by product family,all,122657,122657,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",11512,9.4
+serious by product family,all,122657,122657,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",6075,5.0
+serious by product family,all,122657,122657,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",7433,6.1
+serious by product family,all,122657,122657,alarm_any_mention,Any mention of an alarm or alert (reference row),15751,12.8
+serious by product family,all,122657,122657,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",2601,2.1
+serious by product family,all,122657,122657,pump_any_mention,Any mention of an insulin pump (reference row),14025,11.4
+serious by product family,all,122657,122657,voice_first_person,Written in the first person (patient or carer wrote it),3750,3.1
+serious by product family,all,122657,122657,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",39795,32.4
+serious by product family,all,122657,122657,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",48325,39.4
+serious by product family,all,122657,122657,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",90122,73.5
+serious by product family,all,122657,122657,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",46103,37.6
+serious by product family,all,122657,122657,glucagon_given,Glucagon (any brand) was used,7539,6.1
+serious by product family,all,122657,122657,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",42459,34.6
+serious by product family,all,122657,122657,dka_or_ketones,DKA or ketones named,7517,6.1
+serious by product family,all,122657,122657,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",3621,3.0
+serious by product family,all,122657,122657,pregnancy,"Pregnancy, fetus or breastfeeding",191,0.2
+serious by product family,all,122657,122657,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,692,0.6
+serious by product family,all,122657,122657,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",9231,7.5
+serious by product family,all,122657,122657,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",6650,5.4
+serious by product family,all,122657,122657,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",6767,5.5
+serious by product family,all,122657,122657,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),4692,3.8
+serious by product family,all,122657,122657,libre_scan,Scanning (Libre reader or phone scan) named,24386,19.9
+serious by product family,all,122657,122657,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",4997,4.1
+serious by product family,all,122657,122657,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",782,0.6
+serious by product family,all,122657,122657,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",4813,3.9
+serious by product family,all,122657,122657,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",17093,13.9
+serious by product family,all,122657,122657,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",6398,5.2
+serious by product family,all,122657,122657,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,337,0.3
+serious by product family,Abbott Libre 14-day / other,18063,18063,eval_device_returned,Device was returned to the maker and looked at,3512,19.4
+serious by product family,Abbott Libre 14-day / other,18063,18063,eval_not_returned,"Device was NOT returned, discarded or not provided",15027,83.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",3536,19.6
+serious by product family,Abbott Libre 14-day / other,18063,18063,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,16954,93.9
+serious by product family,Abbott Libre 14-day / other,18063,18063,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),366,2.0
+serious by product family,Abbott Libre 14-day / other,18063,18063,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,605,3.3
+serious by product family,Abbott Libre 14-day / other,18063,18063,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),9926,55.0
+serious by product family,Abbott Libre 14-day / other,18063,18063,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",7548,41.8
+serious by product family,Abbott Libre 14-day / other,18063,18063,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),140,0.8
+serious by product family,Abbott Libre 14-day / other,18063,18063,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",1680,9.3
+serious by product family,Abbott Libre 14-day / other,18063,18063,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),68,0.4
+serious by product family,Abbott Libre 14-day / other,18063,18063,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",66,0.4
+serious by product family,Abbott Libre 14-day / other,18063,18063,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",4418,24.5
+serious by product family,Abbott Libre 14-day / other,18063,18063,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",1683,9.3
+serious by product family,Abbott Libre 14-day / other,18063,18063,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",5460,30.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,bleeding_or_bruise,"Bleeding, blood at the site or bruising",494,2.7
+serious by product family,Abbott Libre 14-day / other,18063,18063,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",288,1.6
+serious by product family,Abbott Libre 14-day / other,18063,18063,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",1009,5.6
+serious by product family,Abbott Libre 14-day / other,18063,18063,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",86,0.5
+serious by product family,Abbott Libre 14-day / other,18063,18063,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",14,0.1
+serious by product family,Abbott Libre 14-day / other,18063,18063,night_or_sleep,"Event at night, during sleep, or on waking",403,2.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",117,0.6
+serious by product family,Abbott Libre 14-day / other,18063,18063,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",245,1.4
+serious by product family,Abbott Libre 14-day / other,18063,18063,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",164,0.9
+serious by product family,Abbott Libre 14-day / other,18063,18063,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",1707,9.5
+serious by product family,Abbott Libre 14-day / other,18063,18063,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",609,3.4
+serious by product family,Abbott Libre 14-day / other,18063,18063,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",686,3.8
+serious by product family,Abbott Libre 14-day / other,18063,18063,alarm_any_mention,Any mention of an alarm or alert (reference row),989,5.5
+serious by product family,Abbott Libre 14-day / other,18063,18063,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",71,0.4
+serious by product family,Abbott Libre 14-day / other,18063,18063,pump_any_mention,Any mention of an insulin pump (reference row),159,0.9
+serious by product family,Abbott Libre 14-day / other,18063,18063,voice_first_person,Written in the first person (patient or carer wrote it),401,2.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",5342,29.6
+serious by product family,Abbott Libre 14-day / other,18063,18063,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",10022,55.5
+serious by product family,Abbott Libre 14-day / other,18063,18063,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",13173,72.9
+serious by product family,Abbott Libre 14-day / other,18063,18063,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",4341,24.0
+serious by product family,Abbott Libre 14-day / other,18063,18063,glucagon_given,Glucagon (any brand) was used,1124,6.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",5876,32.5
+serious by product family,Abbott Libre 14-day / other,18063,18063,dka_or_ketones,DKA or ketones named,573,3.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",250,1.4
+serious by product family,Abbott Libre 14-day / other,18063,18063,pregnancy,"Pregnancy, fetus or breastfeeding",17,0.1
+serious by product family,Abbott Libre 14-day / other,18063,18063,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,9,0.0
+serious by product family,Abbott Libre 14-day / other,18063,18063,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",586,3.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",482,2.7
+serious by product family,Abbott Libre 14-day / other,18063,18063,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",445,2.5
+serious by product family,Abbott Libre 14-day / other,18063,18063,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),339,1.9
+serious by product family,Abbott Libre 14-day / other,18063,18063,libre_scan,Scanning (Libre reader or phone scan) named,4881,27.0
+serious by product family,Abbott Libre 14-day / other,18063,18063,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",192,1.1
+serious by product family,Abbott Libre 14-day / other,18063,18063,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",34,0.2
+serious by product family,Abbott Libre 14-day / other,18063,18063,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",740,4.1
+serious by product family,Abbott Libre 14-day / other,18063,18063,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",1634,9.0
+serious by product family,Abbott Libre 14-day / other,18063,18063,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",688,3.8
+serious by product family,Abbott Libre 14-day / other,18063,18063,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,6,0.0
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,eval_device_returned,Device was returned to the maker and looked at,11555,28.0
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,eval_not_returned,"Device was NOT returned, discarded or not provided",36921,89.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",5630,13.7
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,39203,95.2
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),1494,3.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,1252,3.0
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),26299,63.8
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",16749,40.7
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),848,2.1
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",2888,7.0
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),276,0.7
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",80,0.2
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",20807,50.5
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",4483,10.9
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",3699,9.0
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,bleeding_or_bruise,"Bleeding, blood at the site or bruising",651,1.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",626,1.5
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",1204,2.9
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",189,0.5
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",108,0.3
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,night_or_sleep,"Event at night, during sleep, or on waking",603,1.5
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",165,0.4
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",348,0.8
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",1327,3.2
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",3060,7.4
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",1954,4.7
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",2530,6.1
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,alarm_any_mention,Any mention of an alarm or alert (reference row),3863,9.4
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",60,0.1
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,pump_any_mention,Any mention of an insulin pump (reference row),237,0.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,voice_first_person,Written in the first person (patient or carer wrote it),245,0.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",16887,41.0
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",16866,40.9
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",24249,58.9
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",8482,20.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,glucagon_given,Glucagon (any brand) was used,3457,8.4
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",19801,48.1
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,dka_or_ketones,DKA or ketones named,586,1.4
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",351,0.9
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,pregnancy,"Pregnancy, fetus or breastfeeding",11,0.0
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,21,0.1
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",1764,4.3
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",1705,4.1
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",1129,2.7
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),650,1.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,libre_scan,Scanning (Libre reader or phone scan) named,12854,31.2
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",356,0.9
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",59,0.1
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",1367,3.3
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",5166,12.5
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",2318,5.6
+serious by product family,Abbott Libre 2 / 2 Plus,41200,41200,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,65,0.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,eval_device_returned,Device was returned to the maker and looked at,4026,22.3
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,eval_not_returned,"Device was NOT returned, discarded or not provided",14427,80.0
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",4642,25.7
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,15538,86.1
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),2545,14.1
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,489,2.7
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),13023,72.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",6676,37.0
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),288,1.6
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",2263,12.5
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),72,0.4
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",42,0.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",5636,31.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",1691,9.4
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",2515,13.9
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,bleeding_or_bruise,"Bleeding, blood at the site or bruising",400,2.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",205,1.1
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",577,3.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",60,0.3
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",33,0.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,night_or_sleep,"Event at night, during sleep, or on waking",445,2.5
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",78,0.4
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",197,1.1
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",1080,6.0
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",2313,12.8
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",958,5.3
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",929,5.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,alarm_any_mention,Any mention of an alarm or alert (reference row),1677,9.3
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",31,0.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,pump_any_mention,Any mention of an insulin pump (reference row),124,0.7
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,voice_first_person,Written in the first person (patient or carer wrote it),629,3.5
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",5624,31.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",8854,49.1
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",11737,65.1
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",4673,25.9
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,glucagon_given,Glucagon (any brand) was used,463,2.6
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",6173,34.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,dka_or_ketones,DKA or ketones named,348,1.9
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",211,1.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,pregnancy,"Pregnancy, fetus or breastfeeding",14,0.1
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,41,0.2
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",1270,7.0
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",1253,6.9
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",721,4.0
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),725,4.0
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,libre_scan,Scanning (Libre reader or phone scan) named,6371,35.3
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",1319,7.3
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",117,0.6
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",2241,12.4
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",4026,22.3
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",1963,10.9
+serious by product family,Abbott Libre 3 / 3 Plus,18037,18037,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,42,0.2
+serious by product family,Dexcom G4,2841,2841,eval_device_returned,Device was returned to the maker and looked at,536,18.9
+serious by product family,Dexcom G4,2841,2841,eval_not_returned,"Device was NOT returned, discarded or not provided",497,17.5
+serious by product family,Dexcom G4,2841,2841,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",451,15.9
+serious by product family,Dexcom G4,2841,2841,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1082,38.1
+serious by product family,Dexcom G4,2841,2841,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),164,5.8
+serious by product family,Dexcom G4,2841,2841,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,798,28.1
+serious by product family,Dexcom G4,2841,2841,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),65,2.3
+serious by product family,Dexcom G4,2841,2841,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",346,12.2
+serious by product family,Dexcom G4,2841,2841,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),10,0.4
+serious by product family,Dexcom G4,2841,2841,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",29,1.0
+serious by product family,Dexcom G4,2841,2841,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),31,1.1
+serious by product family,Dexcom G4,2841,2841,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",37,1.3
+serious by product family,Dexcom G4,2841,2841,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",68,2.4
+serious by product family,Dexcom G4,2841,2841,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",419,14.7
+serious by product family,Dexcom G4,2841,2841,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",1240,43.6
+serious by product family,Dexcom G4,2841,2841,bleeding_or_bruise,"Bleeding, blood at the site or bruising",813,28.6
+serious by product family,Dexcom G4,2841,2841,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",144,5.1
+serious by product family,Dexcom G4,2841,2841,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",821,28.9
+serious by product family,Dexcom G4,2841,2841,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",2,0.1
+serious by product family,Dexcom G4,2841,2841,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",3,0.1
+serious by product family,Dexcom G4,2841,2841,night_or_sleep,"Event at night, during sleep, or on waking",298,10.5
+serious by product family,Dexcom G4,2841,2841,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",48,1.7
+serious by product family,Dexcom G4,2841,2841,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",83,2.9
+serious by product family,Dexcom G4,2841,2841,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",67,2.4
+serious by product family,Dexcom G4,2841,2841,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",76,2.7
+serious by product family,Dexcom G4,2841,2841,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",308,10.8
+serious by product family,Dexcom G4,2841,2841,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",437,15.4
+serious by product family,Dexcom G4,2841,2841,alarm_any_mention,Any mention of an alarm or alert (reference row),479,16.9
+serious by product family,Dexcom G4,2841,2841,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",5,0.2
+serious by product family,Dexcom G4,2841,2841,pump_any_mention,Any mention of an insulin pump (reference row),208,7.3
+serious by product family,Dexcom G4,2841,2841,voice_first_person,Written in the first person (patient or carer wrote it),35,1.2
+serious by product family,Dexcom G4,2841,2841,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",1393,49.0
+serious by product family,Dexcom G4,2841,2841,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",1244,43.8
+serious by product family,Dexcom G4,2841,2841,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",1995,70.2
+serious by product family,Dexcom G4,2841,2841,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",1050,37.0
+serious by product family,Dexcom G4,2841,2841,glucagon_given,Glucagon (any brand) was used,203,7.1
+serious by product family,Dexcom G4,2841,2841,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",531,18.7
+serious by product family,Dexcom G4,2841,2841,dka_or_ketones,DKA or ketones named,69,2.4
+serious by product family,Dexcom G4,2841,2841,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",182,6.4
+serious by product family,Dexcom G4,2841,2841,pregnancy,"Pregnancy, fetus or breastfeeding",17,0.6
+serious by product family,Dexcom G4,2841,2841,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,6,0.2
+serious by product family,Dexcom G4,2841,2841,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",243,8.6
+serious by product family,Dexcom G4,2841,2841,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",34,1.2
+serious by product family,Dexcom G4,2841,2841,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",39,1.4
+serious by product family,Dexcom G4,2841,2841,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),69,2.4
+serious by product family,Dexcom G4,2841,2841,libre_scan,Scanning (Libre reader or phone scan) named,5,0.2
+serious by product family,Dexcom G4,2841,2841,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",85,3.0
+serious by product family,Dexcom G4,2841,2841,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",127,4.5
+serious by product family,Dexcom G4,2841,2841,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",3,0.1
+serious by product family,Dexcom G4,2841,2841,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",1251,44.0
+serious by product family,Dexcom G4,2841,2841,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",7,0.2
+serious by product family,Dexcom G4,2841,2841,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,1,0.0
+serious by product family,Dexcom G5,3200,3200,eval_device_returned,Device was returned to the maker and looked at,768,24.0
+serious by product family,Dexcom G5,3200,3200,eval_not_returned,"Device was NOT returned, discarded or not provided",1028,32.1
+serious by product family,Dexcom G5,3200,3200,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",1340,41.9
+serious by product family,Dexcom G5,3200,3200,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1239,38.7
+serious by product family,Dexcom G5,3200,3200,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),424,13.2
+serious by product family,Dexcom G5,3200,3200,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,2074,64.8
+serious by product family,Dexcom G5,3200,3200,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),63,2.0
+serious by product family,Dexcom G5,3200,3200,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",570,17.8
+serious by product family,Dexcom G5,3200,3200,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),55,1.7
+serious by product family,Dexcom G5,3200,3200,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",60,1.9
+serious by product family,Dexcom G5,3200,3200,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),52,1.6
+serious by product family,Dexcom G5,3200,3200,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",70,2.2
+serious by product family,Dexcom G5,3200,3200,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",70,2.2
+serious by product family,Dexcom G5,3200,3200,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",309,9.7
+serious by product family,Dexcom G5,3200,3200,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",1194,37.3
+serious by product family,Dexcom G5,3200,3200,bleeding_or_bruise,"Bleeding, blood at the site or bruising",898,28.1
+serious by product family,Dexcom G5,3200,3200,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",241,7.5
+serious by product family,Dexcom G5,3200,3200,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",694,21.7
+serious by product family,Dexcom G5,3200,3200,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",1,0.0
+serious by product family,Dexcom G5,3200,3200,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",3,0.1
+serious by product family,Dexcom G5,3200,3200,night_or_sleep,"Event at night, during sleep, or on waking",520,16.2
+serious by product family,Dexcom G5,3200,3200,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",65,2.0
+serious by product family,Dexcom G5,3200,3200,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",83,2.6
+serious by product family,Dexcom G5,3200,3200,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",146,4.6
+serious by product family,Dexcom G5,3200,3200,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",287,9.0
+serious by product family,Dexcom G5,3200,3200,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",245,7.7
+serious by product family,Dexcom G5,3200,3200,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",414,12.9
+serious by product family,Dexcom G5,3200,3200,alarm_any_mention,Any mention of an alarm or alert (reference row),631,19.7
+serious by product family,Dexcom G5,3200,3200,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",38,1.2
+serious by product family,Dexcom G5,3200,3200,pump_any_mention,Any mention of an insulin pump (reference row),231,7.2
+serious by product family,Dexcom G5,3200,3200,voice_first_person,Written in the first person (patient or carer wrote it),54,1.7
+serious by product family,Dexcom G5,3200,3200,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",1287,40.2
+serious by product family,Dexcom G5,3200,3200,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",1234,38.6
+serious by product family,Dexcom G5,3200,3200,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",2977,93.0
+serious by product family,Dexcom G5,3200,3200,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",1543,48.2
+serious by product family,Dexcom G5,3200,3200,glucagon_given,Glucagon (any brand) was used,258,8.1
+serious by product family,Dexcom G5,3200,3200,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",789,24.7
+serious by product family,Dexcom G5,3200,3200,dka_or_ketones,DKA or ketones named,132,4.1
+serious by product family,Dexcom G5,3200,3200,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",263,8.2
+serious by product family,Dexcom G5,3200,3200,pregnancy,"Pregnancy, fetus or breastfeeding",12,0.4
+serious by product family,Dexcom G5,3200,3200,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,21,0.7
+serious by product family,Dexcom G5,3200,3200,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",787,24.6
+serious by product family,Dexcom G5,3200,3200,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",87,2.7
+serious by product family,Dexcom G5,3200,3200,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",46,1.4
+serious by product family,Dexcom G5,3200,3200,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),71,2.2
+serious by product family,Dexcom G5,3200,3200,libre_scan,Scanning (Libre reader or phone scan) named,44,1.4
+serious by product family,Dexcom G5,3200,3200,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",132,4.1
+serious by product family,Dexcom G5,3200,3200,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",28,0.9
+serious by product family,Dexcom G5,3200,3200,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",7,0.2
+serious by product family,Dexcom G5,3200,3200,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",86,2.7
+serious by product family,Dexcom G5,3200,3200,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",14,0.4
+serious by product family,Dexcom G5,3200,3200,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,4,0.1
+serious by product family,Dexcom G6,13089,13089,eval_device_returned,Device was returned to the maker and looked at,1572,12.0
+serious by product family,Dexcom G6,13089,13089,eval_not_returned,"Device was NOT returned, discarded or not provided",3206,24.5
+serious by product family,Dexcom G6,13089,13089,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",8790,67.2
+serious by product family,Dexcom G6,13089,13089,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1304,10.0
+serious by product family,Dexcom G6,13089,13089,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),2165,16.5
+serious by product family,Dexcom G6,13089,13089,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,9831,75.1
+serious by product family,Dexcom G6,13089,13089,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),924,7.1
+serious by product family,Dexcom G6,13089,13089,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",4605,35.2
+serious by product family,Dexcom G6,13089,13089,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),300,2.3
+serious by product family,Dexcom G6,13089,13089,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",818,6.2
+serious by product family,Dexcom G6,13089,13089,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),301,2.3
+serious by product family,Dexcom G6,13089,13089,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",732,5.6
+serious by product family,Dexcom G6,13089,13089,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",1280,9.8
+serious by product family,Dexcom G6,13089,13089,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",749,5.7
+serious by product family,Dexcom G6,13089,13089,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",3385,25.9
+serious by product family,Dexcom G6,13089,13089,bleeding_or_bruise,"Bleeding, blood at the site or bruising",2372,18.1
+serious by product family,Dexcom G6,13089,13089,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",506,3.9
+serious by product family,Dexcom G6,13089,13089,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",619,4.7
+serious by product family,Dexcom G6,13089,13089,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",39,0.3
+serious by product family,Dexcom G6,13089,13089,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",56,0.4
+serious by product family,Dexcom G6,13089,13089,night_or_sleep,"Event at night, during sleep, or on waking",2226,17.0
+serious by product family,Dexcom G6,13089,13089,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",290,2.2
+serious by product family,Dexcom G6,13089,13089,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",483,3.7
+serious by product family,Dexcom G6,13089,13089,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",1817,13.9
+serious by product family,Dexcom G6,13089,13089,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",1246,9.5
+serious by product family,Dexcom G6,13089,13089,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",834,6.4
+serious by product family,Dexcom G6,13089,13089,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",1091,8.3
+serious by product family,Dexcom G6,13089,13089,alarm_any_mention,Any mention of an alarm or alert (reference row),2153,16.4
+serious by product family,Dexcom G6,13089,13089,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",599,4.6
+serious by product family,Dexcom G6,13089,13089,pump_any_mention,Any mention of an insulin pump (reference row),2658,20.3
+serious by product family,Dexcom G6,13089,13089,voice_first_person,Written in the first person (patient or carer wrote it),910,7.0
+serious by product family,Dexcom G6,13089,13089,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",4255,32.5
+serious by product family,Dexcom G6,13089,13089,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",3122,23.9
+serious by product family,Dexcom G6,13089,13089,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",12074,92.2
+serious by product family,Dexcom G6,13089,13089,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",8330,63.6
+serious by product family,Dexcom G6,13089,13089,glucagon_given,Glucagon (any brand) was used,946,7.2
+serious by product family,Dexcom G6,13089,13089,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",4126,31.5
+serious by product family,Dexcom G6,13089,13089,dka_or_ketones,DKA or ketones named,1452,11.1
+serious by product family,Dexcom G6,13089,13089,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",857,6.5
+serious by product family,Dexcom G6,13089,13089,pregnancy,"Pregnancy, fetus or breastfeeding",41,0.3
+serious by product family,Dexcom G6,13089,13089,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,100,0.8
+serious by product family,Dexcom G6,13089,13089,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",2101,16.1
+serious by product family,Dexcom G6,13089,13089,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",1317,10.1
+serious by product family,Dexcom G6,13089,13089,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",995,7.6
+serious by product family,Dexcom G6,13089,13089,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),674,5.1
+serious by product family,Dexcom G6,13089,13089,libre_scan,Scanning (Libre reader or phone scan) named,118,0.9
+serious by product family,Dexcom G6,13089,13089,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",901,6.9
+serious by product family,Dexcom G6,13089,13089,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",84,0.6
+serious by product family,Dexcom G6,13089,13089,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",271,2.1
+serious by product family,Dexcom G6,13089,13089,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",1247,9.5
+serious by product family,Dexcom G6,13089,13089,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",433,3.3
+serious by product family,Dexcom G6,13089,13089,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,95,0.7
+serious by product family,Dexcom G7,13158,13158,eval_device_returned,Device was returned to the maker and looked at,1062,8.1
+serious by product family,Dexcom G7,13158,13158,eval_not_returned,"Device was NOT returned, discarded or not provided",2545,19.3
+serious by product family,Dexcom G7,13158,13158,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",10607,80.6
+serious by product family,Dexcom G7,13158,13158,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1377,10.5
+serious by product family,Dexcom G7,13158,13158,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),2019,15.3
+serious by product family,Dexcom G7,13158,13158,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,10479,79.6
+serious by product family,Dexcom G7,13158,13158,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),1081,8.2
+serious by product family,Dexcom G7,13158,13158,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",6092,46.3
+serious by product family,Dexcom G7,13158,13158,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),358,2.7
+serious by product family,Dexcom G7,13158,13158,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",1306,9.9
+serious by product family,Dexcom G7,13158,13158,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),313,2.4
+serious by product family,Dexcom G7,13158,13158,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",422,3.2
+serious by product family,Dexcom G7,13158,13158,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",2065,15.7
+serious by product family,Dexcom G7,13158,13158,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",449,3.4
+serious by product family,Dexcom G7,13158,13158,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",2884,21.9
+serious by product family,Dexcom G7,13158,13158,bleeding_or_bruise,"Bleeding, blood at the site or bruising",1917,14.6
+serious by product family,Dexcom G7,13158,13158,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",594,4.5
+serious by product family,Dexcom G7,13158,13158,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",687,5.2
+serious by product family,Dexcom G7,13158,13158,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",23,0.2
+serious by product family,Dexcom G7,13158,13158,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",75,0.6
+serious by product family,Dexcom G7,13158,13158,night_or_sleep,"Event at night, during sleep, or on waking",2823,21.5
+serious by product family,Dexcom G7,13158,13158,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",267,2.0
+serious by product family,Dexcom G7,13158,13158,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",574,4.4
+serious by product family,Dexcom G7,13158,13158,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",1093,8.3
+serious by product family,Dexcom G7,13158,13158,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",1923,14.6
+serious by product family,Dexcom G7,13158,13158,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",504,3.8
+serious by product family,Dexcom G7,13158,13158,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",752,5.7
+serious by product family,Dexcom G7,13158,13158,alarm_any_mention,Any mention of an alarm or alert (reference row),2394,18.2
+serious by product family,Dexcom G7,13158,13158,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",1192,9.1
+serious by product family,Dexcom G7,13158,13158,pump_any_mention,Any mention of an insulin pump (reference row),3383,25.7
+serious by product family,Dexcom G7,13158,13158,voice_first_person,Written in the first person (patient or carer wrote it),1168,8.9
+serious by product family,Dexcom G7,13158,13158,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",3849,29.3
+serious by product family,Dexcom G7,13158,13158,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",3536,26.9
+serious by product family,Dexcom G7,13158,13158,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",11930,90.7
+serious by product family,Dexcom G7,13158,13158,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",9471,72.0
+serious by product family,Dexcom G7,13158,13158,glucagon_given,Glucagon (any brand) was used,891,6.8
+serious by product family,Dexcom G7,13158,13158,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",4001,30.4
+serious by product family,Dexcom G7,13158,13158,dka_or_ketones,DKA or ketones named,1938,14.7
+serious by product family,Dexcom G7,13158,13158,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",957,7.3
+serious by product family,Dexcom G7,13158,13158,pregnancy,"Pregnancy, fetus or breastfeeding",36,0.3
+serious by product family,Dexcom G7,13158,13158,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,161,1.2
+serious by product family,Dexcom G7,13158,13158,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",1566,11.9
+serious by product family,Dexcom G7,13158,13158,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",1467,11.1
+serious by product family,Dexcom G7,13158,13158,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",1048,8.0
+serious by product family,Dexcom G7,13158,13158,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),1468,11.2
+serious by product family,Dexcom G7,13158,13158,libre_scan,Scanning (Libre reader or phone scan) named,86,0.7
+serious by product family,Dexcom G7,13158,13158,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",1844,14.0
+serious by product family,Dexcom G7,13158,13158,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",127,1.0
+serious by product family,Dexcom G7,13158,13158,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",103,0.8
+serious by product family,Dexcom G7,13158,13158,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",1636,12.4
+serious by product family,Dexcom G7,13158,13158,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",667,5.1
+serious by product family,Dexcom G7,13158,13158,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,81,0.6
+serious by product family,Dexcom Stelo,156,156,eval_device_returned,Device was returned to the maker and looked at,45,28.8
+serious by product family,Dexcom Stelo,156,156,eval_not_returned,"Device was NOT returned, discarded or not provided",82,52.6
+serious by product family,Dexcom Stelo,156,156,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",83,53.2
+serious by product family,Dexcom Stelo,156,156,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,27,17.3
+serious by product family,Dexcom Stelo,156,156,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),9,5.8
+serious by product family,Dexcom Stelo,156,156,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,125,80.1
+serious by product family,Dexcom Stelo,156,156,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),2,1.3
+serious by product family,Dexcom Stelo,156,156,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",51,32.7
+serious by product family,Dexcom Stelo,156,156,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),3,1.9
+serious by product family,Dexcom Stelo,156,156,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",4,2.6
+serious by product family,Dexcom Stelo,156,156,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),0,0.0
+serious by product family,Dexcom Stelo,156,156,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",2,1.3
+serious by product family,Dexcom Stelo,156,156,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",15,9.6
+serious by product family,Dexcom Stelo,156,156,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",13,8.3
+serious by product family,Dexcom Stelo,156,156,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",118,75.6
+serious by product family,Dexcom Stelo,156,156,bleeding_or_bruise,"Bleeding, blood at the site or bruising",102,65.4
+serious by product family,Dexcom Stelo,156,156,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",25,16.0
+serious by product family,Dexcom Stelo,156,156,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",46,29.5
+serious by product family,Dexcom Stelo,156,156,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",0,0.0
+serious by product family,Dexcom Stelo,156,156,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",0,0.0
+serious by product family,Dexcom Stelo,156,156,night_or_sleep,"Event at night, during sleep, or on waking",4,2.6
+serious by product family,Dexcom Stelo,156,156,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",1,0.6
+serious by product family,Dexcom Stelo,156,156,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",8,5.1
+serious by product family,Dexcom Stelo,156,156,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",3,1.9
+serious by product family,Dexcom Stelo,156,156,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",11,7.1
+serious by product family,Dexcom Stelo,156,156,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",0,0.0
+serious by product family,Dexcom Stelo,156,156,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",3,1.9
+serious by product family,Dexcom Stelo,156,156,alarm_any_mention,Any mention of an alarm or alert (reference row),6,3.8
+serious by product family,Dexcom Stelo,156,156,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",0,0.0
+serious by product family,Dexcom Stelo,156,156,pump_any_mention,Any mention of an insulin pump (reference row),4,2.6
+serious by product family,Dexcom Stelo,156,156,voice_first_person,Written in the first person (patient or carer wrote it),51,32.7
+serious by product family,Dexcom Stelo,156,156,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",7,4.5
+serious by product family,Dexcom Stelo,156,156,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",105,67.3
+serious by product family,Dexcom Stelo,156,156,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",129,82.7
+serious by product family,Dexcom Stelo,156,156,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",48,30.8
+serious by product family,Dexcom Stelo,156,156,glucagon_given,Glucagon (any brand) was used,1,0.6
+serious by product family,Dexcom Stelo,156,156,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",10,6.4
+serious by product family,Dexcom Stelo,156,156,dka_or_ketones,DKA or ketones named,0,0.0
+serious by product family,Dexcom Stelo,156,156,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",2,1.3
+serious by product family,Dexcom Stelo,156,156,pregnancy,"Pregnancy, fetus or breastfeeding",0,0.0
+serious by product family,Dexcom Stelo,156,156,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,0,0.0
+serious by product family,Dexcom Stelo,156,156,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",98,62.8
+serious by product family,Dexcom Stelo,156,156,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",2,1.3
+serious by product family,Dexcom Stelo,156,156,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",8,5.1
+serious by product family,Dexcom Stelo,156,156,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),11,7.1
+serious by product family,Dexcom Stelo,156,156,libre_scan,Scanning (Libre reader or phone scan) named,0,0.0
+serious by product family,Dexcom Stelo,156,156,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",2,1.3
+serious by product family,Dexcom Stelo,156,156,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",2,1.3
+serious by product family,Dexcom Stelo,156,156,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",0,0.0
+serious by product family,Dexcom Stelo,156,156,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",28,17.9
+serious by product family,Dexcom Stelo,156,156,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",6,3.8
+serious by product family,Dexcom Stelo,156,156,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,0,0.0
+serious by product family,Dexcom other,1018,1018,eval_device_returned,Device was returned to the maker and looked at,58,5.7
+serious by product family,Dexcom other,1018,1018,eval_not_returned,"Device was NOT returned, discarded or not provided",390,38.3
+serious by product family,Dexcom other,1018,1018,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",69,6.8
+serious by product family,Dexcom other,1018,1018,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,169,16.6
+serious by product family,Dexcom other,1018,1018,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),10,1.0
+serious by product family,Dexcom other,1018,1018,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,126,12.4
+serious by product family,Dexcom other,1018,1018,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),11,1.1
+serious by product family,Dexcom other,1018,1018,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",158,15.5
+serious by product family,Dexcom other,1018,1018,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),11,1.1
+serious by product family,Dexcom other,1018,1018,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",16,1.6
+serious by product family,Dexcom other,1018,1018,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),9,0.9
+serious by product family,Dexcom other,1018,1018,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",9,0.9
+serious by product family,Dexcom other,1018,1018,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",44,4.3
+serious by product family,Dexcom other,1018,1018,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",121,11.9
+serious by product family,Dexcom other,1018,1018,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",314,30.8
+serious by product family,Dexcom other,1018,1018,bleeding_or_bruise,"Bleeding, blood at the site or bruising",93,9.1
+serious by product family,Dexcom other,1018,1018,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",16,1.6
+serious by product family,Dexcom other,1018,1018,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",64,6.3
+serious by product family,Dexcom other,1018,1018,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",1,0.1
+serious by product family,Dexcom other,1018,1018,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",5,0.5
+serious by product family,Dexcom other,1018,1018,night_or_sleep,"Event at night, during sleep, or on waking",125,12.3
+serious by product family,Dexcom other,1018,1018,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",33,3.2
+serious by product family,Dexcom other,1018,1018,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",29,2.8
+serious by product family,Dexcom other,1018,1018,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",5,0.5
+serious by product family,Dexcom other,1018,1018,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",78,7.7
+serious by product family,Dexcom other,1018,1018,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",35,3.4
+serious by product family,Dexcom other,1018,1018,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",82,8.1
+serious by product family,Dexcom other,1018,1018,alarm_any_mention,Any mention of an alarm or alert (reference row),164,16.1
+serious by product family,Dexcom other,1018,1018,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",25,2.5
+serious by product family,Dexcom other,1018,1018,pump_any_mention,Any mention of an insulin pump (reference row),79,7.8
+serious by product family,Dexcom other,1018,1018,voice_first_person,Written in the first person (patient or carer wrote it),142,13.9
+serious by product family,Dexcom other,1018,1018,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",331,32.5
+serious by product family,Dexcom other,1018,1018,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",282,27.7
+serious by product family,Dexcom other,1018,1018,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",475,46.7
+serious by product family,Dexcom other,1018,1018,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",454,44.6
+serious by product family,Dexcom other,1018,1018,glucagon_given,Glucagon (any brand) was used,67,6.6
+serious by product family,Dexcom other,1018,1018,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",255,25.0
+serious by product family,Dexcom other,1018,1018,dka_or_ketones,DKA or ketones named,32,3.1
+serious by product family,Dexcom other,1018,1018,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",82,8.1
+serious by product family,Dexcom other,1018,1018,pregnancy,"Pregnancy, fetus or breastfeeding",5,0.5
+serious by product family,Dexcom other,1018,1018,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,10,1.0
+serious by product family,Dexcom other,1018,1018,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",49,4.8
+serious by product family,Dexcom other,1018,1018,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",30,2.9
+serious by product family,Dexcom other,1018,1018,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",69,6.8
+serious by product family,Dexcom other,1018,1018,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),97,9.5
+serious by product family,Dexcom other,1018,1018,libre_scan,Scanning (Libre reader or phone scan) named,3,0.3
+serious by product family,Dexcom other,1018,1018,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",53,5.2
+serious by product family,Dexcom other,1018,1018,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",82,8.1
+serious by product family,Dexcom other,1018,1018,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",10,1.0
+serious by product family,Dexcom other,1018,1018,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",598,58.7
+serious by product family,Dexcom other,1018,1018,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",11,1.1
+serious by product family,Dexcom other,1018,1018,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,4,0.4
+serious by product family,Medtronic Guardian / other,8721,8721,eval_device_returned,Device was returned to the maker and looked at,1195,13.7
+serious by product family,Medtronic Guardian / other,8721,8721,eval_not_returned,"Device was NOT returned, discarded or not provided",7268,83.3
+serious by product family,Medtronic Guardian / other,8721,8721,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",12,0.1
+serious by product family,Medtronic Guardian / other,8721,8721,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1082,12.4
+serious by product family,Medtronic Guardian / other,8721,8721,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),264,3.0
+serious by product family,Medtronic Guardian / other,8721,8721,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,13,0.1
+serious by product family,Medtronic Guardian / other,8721,8721,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),2350,26.9
+serious by product family,Medtronic Guardian / other,8721,8721,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",1503,17.2
+serious by product family,Medtronic Guardian / other,8721,8721,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),98,1.1
+serious by product family,Medtronic Guardian / other,8721,8721,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",34,0.4
+serious by product family,Medtronic Guardian / other,8721,8721,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),16,0.2
+serious by product family,Medtronic Guardian / other,8721,8721,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",24,0.3
+serious by product family,Medtronic Guardian / other,8721,8721,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",162,1.9
+serious by product family,Medtronic Guardian / other,8721,8721,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",160,1.8
+serious by product family,Medtronic Guardian / other,8721,8721,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",575,6.6
+serious by product family,Medtronic Guardian / other,8721,8721,bleeding_or_bruise,"Bleeding, blood at the site or bruising",134,1.5
+serious by product family,Medtronic Guardian / other,8721,8721,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",494,5.7
+serious by product family,Medtronic Guardian / other,8721,8721,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",49,0.6
+serious by product family,Medtronic Guardian / other,8721,8721,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",13,0.1
+serious by product family,Medtronic Guardian / other,8721,8721,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",2,0.0
+serious by product family,Medtronic Guardian / other,8721,8721,night_or_sleep,"Event at night, during sleep, or on waking",570,6.5
+serious by product family,Medtronic Guardian / other,8721,8721,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",25,0.3
+serious by product family,Medtronic Guardian / other,8721,8721,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",264,3.0
+serious by product family,Medtronic Guardian / other,8721,8721,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",6,0.1
+serious by product family,Medtronic Guardian / other,8721,8721,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",487,5.6
+serious by product family,Medtronic Guardian / other,8721,8721,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",553,6.3
+serious by product family,Medtronic Guardian / other,8721,8721,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",303,3.5
+serious by product family,Medtronic Guardian / other,8721,8721,alarm_any_mention,Any mention of an alarm or alert (reference row),2265,26.0
+serious by product family,Medtronic Guardian / other,8721,8721,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",575,6.6
+serious by product family,Medtronic Guardian / other,8721,8721,pump_any_mention,Any mention of an insulin pump (reference row),6793,77.9
+serious by product family,Medtronic Guardian / other,8721,8721,voice_first_person,Written in the first person (patient or carer wrote it),94,1.1
+serious by product family,Medtronic Guardian / other,8721,8721,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",711,8.2
+serious by product family,Medtronic Guardian / other,8721,8721,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",1249,14.3
+serious by product family,Medtronic Guardian / other,8721,8721,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",8274,94.9
+serious by product family,Medtronic Guardian / other,8721,8721,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",7022,80.5
+serious by product family,Medtronic Guardian / other,8721,8721,glucagon_given,Glucagon (any brand) was used,101,1.2
+serious by product family,Medtronic Guardian / other,8721,8721,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",659,7.6
+serious by product family,Medtronic Guardian / other,8721,8721,dka_or_ketones,DKA or ketones named,2303,26.4
+serious by product family,Medtronic Guardian / other,8721,8721,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",320,3.7
+serious by product family,Medtronic Guardian / other,8721,8721,pregnancy,"Pregnancy, fetus or breastfeeding",36,0.4
+serious by product family,Medtronic Guardian / other,8721,8721,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,177,2.0
+serious by product family,Medtronic Guardian / other,8721,8721,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",6,0.1
+serious by product family,Medtronic Guardian / other,8721,8721,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",146,1.7
+serious by product family,Medtronic Guardian / other,8721,8721,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",1773,20.3
+serious by product family,Medtronic Guardian / other,8721,8721,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),502,5.8
+serious by product family,Medtronic Guardian / other,8721,8721,libre_scan,Scanning (Libre reader or phone scan) named,21,0.2
+serious by product family,Medtronic Guardian / other,8721,8721,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",72,0.8
+serious by product family,Medtronic Guardian / other,8721,8721,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",117,1.3
+serious by product family,Medtronic Guardian / other,8721,8721,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",68,0.8
+serious by product family,Medtronic Guardian / other,8721,8721,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",736,8.4
+serious by product family,Medtronic Guardian / other,8721,8721,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",227,2.6
+serious by product family,Medtronic Guardian / other,8721,8721,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,38,0.4
+serious by product family,Other / unknown,222,222,eval_device_returned,Device was returned to the maker and looked at,126,56.8
+serious by product family,Other / unknown,222,222,eval_not_returned,"Device was NOT returned, discarded or not provided",83,37.4
+serious by product family,Other / unknown,222,222,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",12,5.4
+serious by product family,Other / unknown,222,222,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,113,50.9
+serious by product family,Other / unknown,222,222,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),26,11.7
+serious by product family,Other / unknown,222,222,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,15,6.8
+serious by product family,Other / unknown,222,222,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),117,52.7
+serious by product family,Other / unknown,222,222,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",118,53.2
+serious by product family,Other / unknown,222,222,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),13,5.9
+serious by product family,Other / unknown,222,222,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",15,6.8
+serious by product family,Other / unknown,222,222,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),6,2.7
+serious by product family,Other / unknown,222,222,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",0,0.0
+serious by product family,Other / unknown,222,222,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",4,1.8
+serious by product family,Other / unknown,222,222,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",5,2.3
+serious by product family,Other / unknown,222,222,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",23,10.4
+serious by product family,Other / unknown,222,222,bleeding_or_bruise,"Bleeding, blood at the site or bruising",9,4.1
+serious by product family,Other / unknown,222,222,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",5,2.3
+serious by product family,Other / unknown,222,222,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",2,0.9
+serious by product family,Other / unknown,222,222,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",0,0.0
+serious by product family,Other / unknown,222,222,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",1,0.5
+serious by product family,Other / unknown,222,222,night_or_sleep,"Event at night, during sleep, or on waking",35,15.8
+serious by product family,Other / unknown,222,222,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",5,2.3
+serious by product family,Other / unknown,222,222,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",40,18.0
+serious by product family,Other / unknown,222,222,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",1,0.5
+serious by product family,Other / unknown,222,222,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",26,11.7
+serious by product family,Other / unknown,222,222,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",33,14.9
+serious by product family,Other / unknown,222,222,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",10,4.5
+serious by product family,Other / unknown,222,222,alarm_any_mention,Any mention of an alarm or alert (reference row),76,34.2
+serious by product family,Other / unknown,222,222,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",2,0.9
+serious by product family,Other / unknown,222,222,pump_any_mention,Any mention of an insulin pump (reference row),135,60.8
+serious by product family,Other / unknown,222,222,voice_first_person,Written in the first person (patient or carer wrote it),14,6.3
+serious by product family,Other / unknown,222,222,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",25,11.3
+serious by product family,Other / unknown,222,222,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",74,33.3
+serious by product family,Other / unknown,222,222,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",196,88.3
+serious by product family,Other / unknown,222,222,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",110,49.5
+serious by product family,Other / unknown,222,222,glucagon_given,Glucagon (any brand) was used,12,5.4
+serious by product family,Other / unknown,222,222,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",37,16.7
+serious by product family,Other / unknown,222,222,dka_or_ketones,DKA or ketones named,43,19.4
+serious by product family,Other / unknown,222,222,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",10,4.5
+serious by product family,Other / unknown,222,222,pregnancy,"Pregnancy, fetus or breastfeeding",1,0.5
+serious by product family,Other / unknown,222,222,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,1,0.5
+serious by product family,Other / unknown,222,222,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",7,3.2
+serious by product family,Other / unknown,222,222,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",8,3.6
+serious by product family,Other / unknown,222,222,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",82,36.9
+serious by product family,Other / unknown,222,222,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),21,9.5
+serious by product family,Other / unknown,222,222,libre_scan,Scanning (Libre reader or phone scan) named,2,0.9
+serious by product family,Other / unknown,222,222,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",10,4.5
+serious by product family,Other / unknown,222,222,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",3,1.4
+serious by product family,Other / unknown,222,222,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",0,0.0
+serious by product family,Other / unknown,222,222,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",73,32.9
+serious by product family,Other / unknown,222,222,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",1,0.5
+serious by product family,Other / unknown,222,222,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,0,0.0
+serious by product family,Senseonics Eversense,2952,2952,eval_device_returned,Device was returned to the maker and looked at,210,7.1
+serious by product family,Senseonics Eversense,2952,2952,eval_not_returned,"Device was NOT returned, discarded or not provided",134,4.5
+serious by product family,Senseonics Eversense,2952,2952,eval_remote_data_review,"Maker reviewed the device's data remotely (share logs, cloud data, performance data)",863,29.2
+serious by product family,Senseonics Eversense,2952,2952,eval_no_defect_found,Evaluation found no defect / within specification / could not confirm or reproduce,1375,46.6
+serious by product family,Senseonics Eversense,2952,2952,eval_defect_confirmed,Evaluation confirmed the problem or named a cause (incl. a known field-action defect),331,11.2
+serious by product family,Senseonics Eversense,2952,2952,eval_root_cause_not_determined,Cause could not be determined / undetermined / no conclusion / not enough information,82,2.8
+serious by product family,Senseonics Eversense,2952,2952,eval_investigation_pending,Investigation still open; follow-up or supplemental report promised (not the conditional boilerplate),1074,36.4
+serious by product family,Senseonics Eversense,2952,2952,symptoms_described,"Symptoms described (felt low, high or unwell; includes mismatch with the reading)",471,16.0
+serious by product family,Senseonics Eversense,2952,2952,symptoms_mismatch_explicit,The person says the reading did NOT match how they felt (explicit),45,1.5
+serious by product family,Senseonics Eversense,2952,2952,lab_or_clinic_value,"A lab draw, venous, hospital or HCP meter value is quoted",72,2.4
+serious by product family,Senseonics Eversense,2952,2952,alarm_prompted_check,An alarm or alert fired and prompted the check (alarm worked),305,10.3
+serious by product family,Senseonics Eversense,2952,2952,time_hours_or_minutes_after_start,"Failure timed in hours or minutes after insertion, start or warm-up (incl. same day)",9,0.3
+serious by product family,Senseonics Eversense,2952,2952,sensor_ended_early_or_error_message,"Sensor ended early, failed, or showed an error message (replace sensor, sensor error, scan again, ...)",104,3.5
+serious by product family,Senseonics Eversense,2952,2952,adhesive_or_fell_off,"Adhesive problem, sensor detached, fell off or was knocked off",142,4.8
+serious by product family,Senseonics Eversense,2952,2952,skin_reaction_or_infection,"Rash, itching, allergy, blister, redness, infection, abscess or scar at the site",829,28.1
+serious by product family,Senseonics Eversense,2952,2952,bleeding_or_bruise,"Bleeding, blood at the site or bruising",148,5.0
+serious by product family,Senseonics Eversense,2952,2952,sensor_wire_retained_detached_or_broken,"Sensor wire or filament detached, missing, broken or left in the skin",160,5.4
+serious by product family,Senseonics Eversense,2952,2952,insertion_pain,"Pain, burning or discomfort at insertion or while wearing",399,13.5
+serious by product family,Senseonics Eversense,2952,2952,applicator_or_insertion_failure,"Applicator or inserter failed, jammed, misfired, bent the tip, or sensor stayed in the tool",3,0.1
+serious by product family,Senseonics Eversense,2952,2952,compression_or_lying_on_sensor,"Compression low: pressure on, lying on, or bumping the sensor",18,0.6
+serious by product family,Senseonics Eversense,2952,2952,night_or_sleep,"Event at night, during sleep, or on waking",309,10.5
+serious by product family,Senseonics Eversense,2952,2952,interfering_substance_or_dialysis,"Interfering substance named (acetaminophen, vitamin C, hydroxyurea, ...) or dialysis",32,1.1
+serious by product family,Senseonics Eversense,2952,2952,exercise_water_heat,"Exercise, swimming, shower, bath, heat or sweat named as context",36,1.2
+serious by product family,Senseonics Eversense,2952,2952,placement_off_label_site,"Sensor worn on a site other than the labelled one, or maker says off-label",18,0.6
+serious by product family,Senseonics Eversense,2952,2952,app_phone_bluetooth,"App, phone, Bluetooth, software update, compatibility or pairing problem",298,10.1
+serious by product family,Senseonics Eversense,2952,2952,receiver_reader_hardware,"Receiver, reader, transmitter hardware, screen, battery, charging or overheating problem",42,1.4
+serious by product family,Senseonics Eversense,2952,2952,alarm_failed,"Alarm or alert did not sound, was not heard, missed, or too quiet",196,6.6
+serious by product family,Senseonics Eversense,2952,2952,alarm_any_mention,Any mention of an alarm or alert (reference row),1054,35.7
+serious by product family,Senseonics Eversense,2952,2952,pump_automation,"Insulin pump automation (auto mode, closed loop, Control-IQ, SmartGuard, suspend) acted on the reading",3,0.1
+serious by product family,Senseonics Eversense,2952,2952,pump_any_mention,Any mention of an insulin pump (reference row),14,0.5
+serious by product family,Senseonics Eversense,2952,2952,voice_first_person,Written in the first person (patient or carer wrote it),7,0.2
+serious by product family,Senseonics Eversense,2952,2952,voice_caregiver,"A parent, spouse, family member, friend or carer is speaking or involved",84,2.8
+serious by product family,Senseonics Eversense,2952,2952,voice_clinician,"A clinician (HCP, nurse, physician, clinic, hospital staff) is named as reporter or actor",1737,58.8
+serious by product family,Senseonics Eversense,2952,2952,voice_maker_template,"Maker-written third-person wording (customer reported, it was reported ...)",2913,98.7
+serious by product family,Senseonics Eversense,2952,2952,ems_or_hospital,"EMS, 911, ambulance, ER, urgent care, admission, ICU or hospital",579,19.6
+serious by product family,Senseonics Eversense,2952,2952,glucagon_given,Glucagon (any brand) was used,16,0.5
+serious by product family,Senseonics Eversense,2952,2952,severe_hypo_signs,"Seizure, unconsciousness, unresponsive, collapse, coma or passed out",201,6.8
+serious by product family,Senseonics Eversense,2952,2952,dka_or_ketones,DKA or ketones named,41,1.4
+serious by product family,Senseonics Eversense,2952,2952,driving_or_fall_injury,"Driving, a car, a fall, a head injury or a fracture is involved",136,4.6
+serious by product family,Senseonics Eversense,2952,2952,pregnancy,"Pregnancy, fetus or breastfeeding",1,0.0
+serious by product family,Senseonics Eversense,2952,2952,maker_advised_meter_or_calibration,Maker advised the user to use a meter / fingerstick / calibrate properly / charge or change the device,145,4.9
+serious by product family,Senseonics Eversense,2952,2952,maker_cites_label,"Maker cites the label / instructions for use (known risk, warned-about use)",754,25.5
+serious by product family,Senseonics Eversense,2952,2952,user_error_or_misuse_claimed,"Maker attributes the event to user error, misuse, off-label use, unsupported phone or bad calibration",119,4.0
+serious by product family,Senseonics Eversense,2952,2952,replacement_or_refund,"Replacement, credit or refund given, offered, requested or refused",412,14.0
+serious by product family,Senseonics Eversense,2952,2952,repeat_failures,Several sensors failed or the problem keeps happening (not a one-off),65,2.2
+serious by product family,Senseonics Eversense,2952,2952,libre_scan,Scanning (Libre reader or phone scan) named,1,0.0
+serious by product family,Senseonics Eversense,2952,2952,recall_or_field_action,"A recall, field action, safety notice or corrections-and-removals number is cited",31,1.1
+serious by product family,Senseonics Eversense,2952,2952,death_investigation,"Coroner, medical examiner, autopsy, death certificate or post-mortem named",2,0.1
+serious by product family,Senseonics Eversense,2952,2952,legal_or_escalation,"Lawyer, lawsuit, 'report to FDA', 'should be recalled' or similar escalation language",3,0.1
+serious by product family,Senseonics Eversense,2952,2952,report_channel_named,"How the complaint came in: social media, web form, email, MedWatch, distributor, HCP office",612,20.7
+serious by product family,Senseonics Eversense,2952,2952,reporter_unreachable_or_info_withheld,"Reporter could not be reached, declined follow-up, or patient details withheld (privacy rules)",63,2.1
+serious by product family,Senseonics Eversense,2952,2952,report_submitted_in_error,Maker later said the report was submitted in error / not reportable,1,0.0

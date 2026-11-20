@@ -1,0 +1,310 @@
+# Hand codes per report (same order as sample_300_keys.txt). Written 2026-11-06 after reading all 300 texts.
+# Hand codes for the 300-report reading sample (one line per report; codes separated by commas).
+# ret=device returned; noret=not returned or discarded; nodef=no defect / within spec / not confirmed; def=defect confirmed or cause named;
+# rcu=root cause not determined; pend=investigation pending or follow-up promised; sym=symptoms noted or did not match; lab=lab, venous or HCP meter value;
+# alarmok=alarm prompted the check; alarmfail=alarm did not sound or not heard; alarmloud=alarm too loud; time=hours/minutes/same-day timing; early=sensor ended early or error message;
+# wd=wear day stated; adh=adhesive or fell off; skin=skin reaction; bleed=bleeding or bruise; retained=filament/wire left; pain; applic=applicator or bent tip;
+# compr=compression low; night; interf=interfering substance or dialysis; exer=exercise/water/heat; site=off-label site; app=app/phone/software; hw=receiver/reader/battery/overheat;
+# pumpauto=pump automation acted; pump=pump mentioned; fp=first person; care=carer/family; clin=clinician involved; tmpl=maker template only; ems=EMS/ER/hospital/ICU; gluc=glucagon;
+# sev=seizure/LOC/unresponsive; dka; drive; preg; adv=maker advised fingerstick or cites label; repl=replacement/refund; rep=repeat failures; scan=Libre scan; legal=lawyer/FDA/recall/MedWatch;
+# pair=both values stated; ped=child; priv=patient info withheld for privacy rules; lag=sensor lag named; misuse=maker says user error/misuse
+1: retained, ems, care, clin, noret, rcu
+2: lab, pair, ret, nodef, noret, pend, tmpl
+3: ret, def, rcu, tmpl
+4: alarmfail, gluc, ems, care, night, sev, misuse
+5: tmpl, ret, nodef, noret, pend
+6: tmpl, noret, pend
+7: early, noret, pend
+8: tmpl, ret, nodef
+9: tmpl, ret, nodef
+10: tmpl
+11: tmpl
+12: tmpl
+13: early, nodef, def, ret
+14: skin, site, care, clin, def, rcu, adv
+15: skin, care, clin, def, rcu, adv
+16: early, ped, care, sev, ems, lab, clin, noret, nodef
+17: def, hw
+18: legal, noret, nodef, pend
+19: nodef, rcu
+20: tmpl, noret, nodef, pend
+21: noret, rcu
+22: skin, clin, adv
+23: tmpl, ret, nodef, noret
+24: ret, def, app
+25: ret, def, rcu
+26: nodef, rcu
+27: adh, wd, sev, ems, noret, nodef
+28: fp, care, app, alarmloud, legal
+29: tmpl, noret, ret, nodef
+30: alarmfail, sym, care, noret, app, nodef, time
+31: interf, rcu, tmpl
+32: ped, sym, pair, rcu
+33: hw, ems, sev, gluc, clin, noret, nodef
+34: fp, rep, repl, legal
+35: pair, lab, sev, gluc, care, noret, nodef
+36: early, ret, def, rcu, repl
+37: app, noret, rcu
+38: adh, wd, sym, care, ret, nodef, noret, pend
+39: hw, sev, care, noret, nodef
+40: app, misuse, nodef, rcu
+41: nodef, def, repl
+42: repl, bleed, care, ems, gluc, noret, nodef, pend
+43: care, lab, clin, ret, nodef, pend
+44: tmpl, noret, ret, nodef
+45: tmpl, ret, nodef, noret
+46: tmpl, noret, nodef
+47: alarmfail, pair, lag, nodef, pend
+48: pump, alarmok, noret, pend, tmpl
+49: early, sym, care, noret, ret, nodef
+50: pair, sym, care, noret, nodef
+51: early, care, clin, noret, pend, nodef
+52: rcu, noret
+53: early, care, noret, nodef
+54: hw, noret, tmpl
+55: tmpl, noret, nodef
+56: tmpl, noret, ret, nodef
+57: pain, skin, bleed, clin, nodef
+58: sym, care, ems, interf, nodef, rcu
+59: pump, noret, priv, tmpl
+60: sev, care, noret, nodef, pend
+61: early, care, noret, nodef
+62: adh, wd, sev, ems, ret, nodef
+63: wd, sym, pair, gluc, rcu
+64: dka, time, care, ems, pair, rcu
+65: early, time, noret, nodef, pend
+66: wd, sym, care, ems, pair, def, rcu
+67: early, app, sev, gluc, care, ret, nodef, noret
+68: sev, care, pair, ems, lab, rcu, noret
+69: hw, legal, noret, nodef
+70: applic, sev, care, noret, nodef
+71: skin, pain, clin, noret, nodef, pend
+72: early, sev, noret, nodef, pend
+73: alarmfail, app, sev, noret, nodef, pend
+74: early, app, sym, care, noret, ret, nodef, pend
+75: hw, sym, clin, noret, nodef, pend
+76: adh, sev, care, noret, nodef
+77: hw, noret, nodef, pend
+78: ret, nodef, rcu
+79: pump, alarmok, noret, priv, tmpl
+80: retained, site, care, clin, skin, wd, noret, rcu
+81: pump, noret, pend
+82: noret, rcu
+83: early, ret, nodef, def, repl, pend
+84: clin, priv
+85: pump, hw, noret, priv, tmpl
+86: app, clin, nodef, pend, rcu
+87: bleed, ems, clin, noret, nodef, rcu
+88: pump, alarmok, noret, priv, tmpl
+89: alarmfail, pair, app, misuse, adv, nodef, time
+90: rcu, noret
+91: tmpl, noret, nodef, pend
+92: skin, pain, clin, nodef
+93: pump, bleed, noret, priv, tmpl
+94: pump, dka, ems, sym, clin, misuse, noret
+95: alarmfail, ret, def, repl, pend, time, app
+96: tmpl, noret, nodef
+97: ret, def, app
+98: alarmfail, sev, care, ems, nodef, rcu, night, time, app
+99: alarmok, sym, night, ems, rcu, noret
+100: tmpl, noret, nodef, pend
+101: noret, rcu
+102: sym, lab, ems, clin, ret, nodef, pend
+103: pump, dka, ems, sym, noret, pend
+104: adh, sev, clin, lab, noret, nodef
+105: preg, early, sev, night, care, ems, app, nodef, rcu, pend, misuse
+106: alarmfail, drive, sev, ems, wd, time
+107: early, noret, repl
+108: pump, ems, alarmok, repl, ret, nodef
+109: fp, rep, pumpauto, gluc, ems, legal
+110: hw, clin, noret, nodef
+111: skin, clin, pend
+112: nodef, def, rcu
+113: rcu, tmpl
+114: noret, nodef, pend, tmpl
+115: pump, hw, adv, misuse, noret, priv, tmpl
+116: pump, dka, ems, care, clin, misuse, noret
+117: adh, sym, sev, clin, noret, nodef, pend
+118: app, pump, nodef, priv, tmpl
+119: early, sev, care, noret, ret, nodef, pend
+120: early, time, care, ems, dka, pump, pumpauto, alarmfail, sym, noret, rcu, repl
+121: fp, pain, repl, legal
+122: pump, ems, alarmok, noret
+123: early, sym, sev, gluc, clin, noret, nodef, pend
+124: noret, rcu
+125: rcu, noret, err
+126: alarmfail, night, sev, care, ems, app, rcu, def
+127: early, sym, care, noret, nodef, pend
+128: pump, alarmok, pumpauto, noret, tmpl
+129: pump, ems, alarmok, nodef, noret
+130: early, noret, rcu
+131: sym, care, noret, nodef, pend
+132: rcu, noret, tmpl
+133: err, noret
+134: care, noret, pend, pump
+135: legal, noret, pend, pump
+136: noret, rcu
+137: early, noret, def, repl, pend
+138: alarmfail, app, misuse, night, sev, care, ems, nodef, rcu, time
+139: early, sev, care, noret, ret, nodef, pend
+140: pump, ems, night, nodef, noret, pend
+141: pair, wd, tmpl, noret, nodef
+142: site, rcu, tmpl
+143: pair, sev, gluc, fall, ret, nodef, pend
+144: pump, ems, alarmok, nodef, noret
+145: applic, clin, rcu, repl
+146: pump, ems, care, clin, noret
+147: pump, dka, ems, sym, night, nodef, noret
+148: site, sym, sev, care, ems, pair, rcu, tmpl
+149: pump, ems, alarmok, noret, adv
+150: pumpauto, sym, sev, fall, exer, pair, ems, lab, care, def, rcu, legal, time
+151: pump, def, noret
+152: ped, pair, sev, ems, care, ret, rcu
+153: gluc, sym, ems, dka, rcu
+154: applic, rcu, noret
+155: retained, ret, err
+156: clin, pend, nodef
+157: pair, wd, tmpl, noret, nodef
+158: pump, app, noret, tmpl
+159: care, noret, pend, pump
+160: sym, gluc, rcu, tmpl
+161: pair, lab, tmpl, noret, nodef
+162: compr, misuse, night, sym, care, dka, pump, rcu
+163: pump, dka, ems, nodef, noret
+164: bleed, ems, lab, nodef
+165: pump, noret, priv, tmpl
+166: care, clin, noret, pend, pump
+167: ems, ret, pend, pump
+168: pump, dka, ems, clin, repl, ret, pend
+169: fp, rep, time, repl, legal, clin, dka
+170: early, noret, ret, nodef, def, repl, pend
+171: priv
+172: pair, wd, ret, nodef, noret, tmpl
+173: dka, ems, clin
+174: pump, noret, tmpl
+175: retained, ret, err
+176: skin, clin, noret, nodef, rcu, adv
+177: pair, wd, tmpl, noret, nodef
+178: pair, alarmfail, app, ret, nodef, def, adv, clin, pend
+179: early, def, rcu
+180: care, sev, noret, pend, pump
+181: alarmfail, night, care, sev, ems, noret, pend, legal, hw
+182: pair, wd, tmpl, noret, nodef
+183: alarmfail, app, dka, ems, nodef, rcu, noret, pend
+184: early, night, sev, ems, care, clin, legal, ret, nodef, pend
+185: sym, alarmfail, care, hw, ret, nodef, rcu
+186: legal, pump, noret, pend
+187: sev, care, ems, pair, lab, ped, alarmok, rcu, pend, def
+188: skin, clin, ems, noret, rcu, adv
+189: legal, pump, pumpauto, noret
+190: care, sym, sev, ems, night, clin, noret, nodef, lab
+191: legal, app, noret, rcu, rep
+192: ems, clin
+193: pump, pumpauto, alarmok, ret, def, nodef, pend, bleed
+194: noret, rcu, tmpl
+195: pair, wd, tmpl, noret, nodef
+196: pump, legal, noret, dka
+197: preg, pumpauto, pair, lab, wd, sym, ems, noret, nodef, def, pend
+198: clin, legal, priv, noret
+199: skin, clin, noret, rcu, adv
+200: pump, time, noret, tmpl
+201: pair, noret, tmpl, adv
+202: sym, ems, noret, rcu
+203: retained, noret, rcu
+204: care, legal, noret, nodef, pend
+205: alarmfail, app, def, ret
+206: alarmfail, app, def, ret
+207: alarmfail, app, def, ret
+208: alarmfail, app, def, ret
+209: skin, clin, noret, nodef, adv
+210: fp, care, alarmfail, sev, ems, legal, lab
+211: pump, noret, tmpl
+212: clin, legal, priv, noret
+213: legal, dka, pump, noret, rcu, pend
+214: fall, ems
+215: fp, bleed, rep, early, time, clin, legal
+216: def, legal, tmpl
+217: early, app, misuse, adv, nodef
+218: pump, noret, tmpl
+219: pump, noret, tmpl
+220: wd, sym, sev, care, ems, pair, lab, rcu, tmpl
+221: pair, wd, tmpl, noret, nodef, def
+222: ems, pair, sym, pumpauto, rcu, lab
+223: sym, lab, clin, noret, nodef, pend
+224: pair, wd, tmpl, noret, nodef
+225: def, legal, tmpl
+226: err, ems, pair, alarmfail, noret, rcu, clin
+227: pair, wd, tmpl, noret, nodef
+228: def, legal, tmpl
+229: def, legal, tmpl
+230: pair, wd, pend, tmpl
+231: clin, pend, tmpl
+232: def, legal, tmpl
+233: def, legal, tmpl
+234: def, legal, tmpl
+235: def, legal, tmpl
+236: pair, pend, tmpl
+237: legal, care, noret, nodef, priv
+238: pair, noret, priv, tmpl, adv
+239: sev, sym, care, ems, pair, rcu, noret, ped
+240: pair, wd, tmpl, noret, nodef, pend
+241: pair, wd, pend, tmpl
+242: def, legal, tmpl
+243: time, early, dka, sym, ems, lab, noret, rcu
+244: noret, rcu, rep
+245: rcu, tmpl
+246: early, ret, nodef, pend
+247: pump, ems, misuse, adv, noret
+248: night, care, pump, noret, pend
+249: pump, def, ret
+250: pump, ret, nodef
+251: pump, ems, noret
+252: pump, dka, ems, alarmok, clin, repl, ret, def, nodef
+253: pump, dka, ems, sym, alarmok, ret, def
+254: retained, time
+255: pair, night, adv, noret, misuse
+256: alarmok, care, ems, sev, hw
+257: pump, noret
+258: pump, noret
+259: hw, nodef
+260: sev, ems, clin, noret, ret, nodef, rcu
+261: sym, ems, pair, pump, pend, ret
+262: early, sym, pend
+263: clin, care, pump, interf, ret, alarmok, rcu, early, time
+264: clin, noret, nodef, pend
+265: pump, alarmok, applic, repl, noret, adv
+266: alarmfail, app, sev, care, rcu
+267: pump, dka, ems, noret, ret, def, nodef
+268: care, night, ems, legal, noret
+269: care, legal, nodef
+270: care
+271: care, priv
+272: ret, def, rcu
+273: care
+274: care, ems
+275: care
+276: hw, noret
+277: hw, ret, def, rcu
+278: hw, noret
+279: alarmok, night, sym, care, noret, nodef, rcu
+280: app, ret, def, nodef, rcu
+281: skin, bleed, adh, clin, noret, nodef, adv
+282: app, def, nodef, rcu
+283: hw, ret, nodef
+284: retained, care, ems, site, noret, rcu, ped
+285: adh, gluc, noret, nodef
+286: pair, lab, ret, nodef
+287: sev, ems, care, gluc, clin, pair, rcu, noret
+288: sym, pair, drive, clin, ems, rcu, noret
+289: hw, ret, def, rcu
+290: alarmfail, app, care, night, ped, err, pump, rcu
+291: retained, noret, rcu, clin
+292: rcu, tmpl
+293: retained, bleed, skin, pain, care, clin, lab, early, noret, rcu
+294: nodef, rcu
+295: noret, nodef, pend, tmpl
+296: sym, clin, noret, nodef
+297: hw, repl, rcu, noret, pend, time
+298: early, def
+299: ems, clin
+300: ret, def, app

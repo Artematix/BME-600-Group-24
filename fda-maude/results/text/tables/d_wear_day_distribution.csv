@@ -1,0 +1,113 @@
+tier,maker,wear_day,n,pct,flat_expectation_pct
+serious,Abbott,1,891,13.444997736532368,7.142857142857143
+serious,Abbott,2,718,10.834465067149539,7.142857142857143
+serious,Abbott,3,730,11.015542477742569,7.142857142857143
+serious,Abbott,4,635,9.582012977214426,7.142857142857143
+serious,Abbott,5,529,7.98249585030934,7.142857142857143
+serious,Abbott,6,362,5.462501886223027,7.142857142857143
+serious,Abbott,7,788,11.890749962275539,7.142857142857143
+serious,Abbott,8,371,5.598309944167799,7.142857142857143
+serious,Abbott,9,286,4.315678285800513,7.142857142857143
+serious,Abbott,10,449,6.7753131130224835,7.142857142857143
+serious,Abbott,11,214,3.229213822242342,7.142857142857143
+serious,Abbott,12,190,2.867059001056285,7.142857142857143
+serious,Abbott,13,118,1.7805945374981138,7.142857142857143
+serious,Abbott,14,321,4.843820733363513,7.142857142857143
+serious,Abbott,15,24,0.362154821186057,0.0
+serious,Abbott,>15,1,0.01508978421608571,0.0
+serious,Dexcom,1,81,7.105263157894737,10.0
+serious,Dexcom,2,123,10.789473684210526,10.0
+serious,Dexcom,3,164,14.385964912280702,10.0
+serious,Dexcom,4,68,5.964912280701754,10.0
+serious,Dexcom,5,112,9.824561403508772,10.0
+serious,Dexcom,6,97,8.508771929824562,10.0
+serious,Dexcom,7,191,16.75438596491228,10.0
+serious,Dexcom,8,81,7.105263157894737,10.0
+serious,Dexcom,9,53,4.649122807017544,10.0
+serious,Dexcom,10,155,13.596491228070175,10.0
+serious,Dexcom,11,3,0.2631578947368421,0.0
+serious,Dexcom,12,4,0.3508771929824561,0.0
+serious,Dexcom,13,0,0.0,0.0
+serious,Dexcom,14,1,0.08771929824561403,0.0
+serious,Dexcom,15,3,0.2631578947368421,0.0
+serious,Dexcom,>15,4,0.3508771929824561,0.0
+serious,Medtronic (undercounted; weakest validation),1,3,21.428571428571427,
+serious,Medtronic (undercounted; weakest validation),2,1,7.142857142857143,
+serious,Medtronic (undercounted; weakest validation),3,4,28.571428571428573,
+serious,Medtronic (undercounted; weakest validation),4,2,14.285714285714286,
+serious,Medtronic (undercounted; weakest validation),5,2,14.285714285714286,
+serious,Medtronic (undercounted; weakest validation),6,0,0.0,
+serious,Medtronic (undercounted; weakest validation),7,0,0.0,
+serious,Medtronic (undercounted; weakest validation),8,0,0.0,
+serious,Medtronic (undercounted; weakest validation),9,0,0.0,
+serious,Medtronic (undercounted; weakest validation),10,0,0.0,
+serious,Medtronic (undercounted; weakest validation),11,2,14.285714285714286,
+serious,Medtronic (undercounted; weakest validation),12,0,0.0,
+serious,Medtronic (undercounted; weakest validation),13,0,0.0,
+serious,Medtronic (undercounted; weakest validation),14,0,0.0,
+serious,Medtronic (undercounted; weakest validation),15,0,0.0,
+serious,Medtronic (undercounted; weakest validation),>15,0,0.0,
+serious,Other,1,2,4.761904761904762,
+serious,Other,2,7,16.666666666666668,
+serious,Other,3,7,16.666666666666668,
+serious,Other,4,5,11.904761904761905,
+serious,Other,5,2,4.761904761904762,
+serious,Other,6,2,4.761904761904762,
+serious,Other,7,4,9.523809523809524,
+serious,Other,8,3,7.142857142857143,
+serious,Other,9,1,2.380952380952381,
+serious,Other,10,3,7.142857142857143,
+serious,Other,11,1,2.380952380952381,
+serious,Other,12,0,0.0,
+serious,Other,13,0,0.0,
+serious,Other,14,0,0.0,
+serious,Other,15,1,2.380952380952381,
+serious,Other,>15,4,9.523809523809524,
+serious,All,1,977,12.488815032596191,
+serious,All,2,849,10.852614086667518,
+serious,All,3,905,11.568452000511313,
+serious,All,4,710,9.0758021219481,
+serious,All,5,645,8.244918829093699,
+serious,All,6,461,5.892879969321232,
+serious,All,7,983,12.565511951936598,
+serious,All,8,455,5.816183049980825,
+serious,All,9,340,4.346158762623035,
+serious,All,10,607,7.759171673271124,
+serious,All,11,220,2.812220375814905,
+serious,All,12,194,2.4798670586731433,
+serious,All,13,118,1.5083727470279944,
+serious,All,14,322,4.116068004601815,
+serious,All,15,28,0.35791895692189696,
+serious,All,>15,9,0.11504537901060974,
+sample (weighted),Abbott,1,72,34.50875042361967,7.142857142857143
+sample (weighted),Abbott,2,16,8.187732693219358,7.142857142857143
+sample (weighted),Abbott,3,24,10.267238033773305,7.142857142857143
+sample (weighted),Abbott,4,7,2.960241733670288,7.142857142857143
+sample (weighted),Abbott,5,11,5.2696686753806725,7.142857142857143
+sample (weighted),Abbott,6,8,3.5811476820466677,7.142857142857143
+sample (weighted),Abbott,7,20,7.968430176516701,7.142857142857143
+sample (weighted),Abbott,8,15,6.554576347044523,7.142857142857143
+sample (weighted),Abbott,9,10,4.229237472857584,7.142857142857143
+sample (weighted),Abbott,10,10,4.701270276183755,7.142857142857143
+sample (weighted),Abbott,11,7,3.0565190645754123,7.142857142857143
+sample (weighted),Abbott,12,9,5.169567315210521,7.142857142857143
+sample (weighted),Abbott,13,6,2.925311683953684,7.142857142857143
+sample (weighted),Abbott,14,1,0.0463453413454526,7.142857142857143
+sample (weighted),Abbott,15,1,0.5739630806024224,0.0
+sample (weighted),Abbott,>15,0,0.0,0.0
+sample (weighted),All,1,72,34.44825511550397,
+sample (weighted),All,2,17,8.176187862264689,
+sample (weighted),All,3,26,10.269133469992903,
+sample (weighted),All,4,7,2.9550523039292225,
+sample (weighted),All,5,13,5.2766582631839904,
+sample (weighted),All,6,8,3.5748697777535887,
+sample (weighted),All,7,23,7.991480257791182,
+sample (weighted),All,8,16,6.544061108574525,
+sample (weighted),All,9,10,4.221823439579813,
+sample (weighted),All,10,12,4.711947877942843,
+sample (weighted),All,11,8,3.052136069391872,
+sample (weighted),All,12,9,5.160504843700557,
+sample (weighted),All,13,7,2.938127403890209,
+sample (weighted),All,14,1,0.046264095989709396,
+sample (weighted),All,15,1,0.5729568988954107,
+sample (weighted),All,>15,5,0.06054121161553876,
