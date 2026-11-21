@@ -1,0 +1,101 @@
+mdr_report_key,maker,sensor_value_mgdl,meter_value_mgdl,verdict,reason
+50401947,Abbott,223,117,right,template; first of 4 listed pairs; reference called comparison device
+50774779,Abbott,300,100,right,template; first of 2 listed pairs; meter
+50601776,Abbott,38,139,right,template in mmol/L; conversion checked; reference called comparison device
+25887194,Abbott,52,154,right,template; one pair; meter
+25276308,Abbott,400,160,right,template; first of 2 listed pairs; meter
+24756758,Abbott,310,117,right,template; one pair; meter
+23231079,Abbott,74,193,right,template; one pair; meter
+50276808,Abbott,50,340,right,template in mmol/L; conversion checked; meter
+22577284,Abbott,230,23,right,template in mmol/L; conversion checked; HCP meter
+50321637,Abbott,45,330,right,template; one pair; reader's built-in meter
+23121789,Abbott,39,244,right,template; first of 2 listed pairs; meter
+22955026,Abbott,133,54,right,template; first of 2 listed pairs; meter
+25424332,Abbott,400,80,right,template; one pair; meter
+24778117,Abbott,360,108,right,template in mmol/L; conversion checked; meter
+50466211,Abbott,50,285,right,template; one pair; reference called comparison device
+25775329,Abbott,52,237,right,template; one pair; reference called comparison device
+25593800,Abbott,68,175,right,template; first of 2 listed pairs; meter
+23656936,Abbott,52,170,right,template; one pair; meter
+50771680,Abbott,54,400,right,template; one pair; reference called comparison device
+50704198,Abbott,67,214,right,template; one pair; reference called comparison device
+25331289,Abbott,357,126,right,template; one pair; meter
+22292230,Abbott,64,171,right,template; first of 2 listed pairs; meter
+25331858,Abbott,65,170,right,template; one pair; meter
+21696456,Abbott,313,207,right,template; first of 3 listed pairs; Abbott meter
+22795047,Abbott,53,192,right,template; first of 2 listed pairs; meter
+25690287,Abbott,38,216,right,template in mmol/L; conversion checked; meter
+50767230,Abbott,250,110,right,template; one pair; reference called comparison device
+50189713,Abbott,53,174,right,template; one pair; reference called comparison device
+25776709,Abbott,326,161,right,template; one pair; meter
+25477901,Abbott,50,180,unclear,"two scans (50, 65) against one reading; reference device unknown"
+25838821,Abbott,57,201,right,template; one pair; meter
+25774576,Abbott,50,300,right,template; first of 3 listed pairs; reference called comparison device
+25776765,Abbott,350,165,right,template; one pair; meter
+20794812,Abbott,75,470,right,template; one pair; HCP meter
+50704485,Abbott,42,137,right,template; one pair; reference called comparison device
+50789093,Abbott,45,150,right,template; one pair; meter
+24919117,Abbott,54,165,right,template; one pair; meter
+25732216,Abbott,114,54,right,template; first of 3 listed pairs; reference called comparison device
+24856450,Abbott,55,140,right,template; first of 2 listed pairs; meter
+50361228,Abbott,52,288,right,template in mmol/L; conversion checked; reference called comparison device
+50489316,Abbott,50,150,right,template; one pair; reference called comparison device
+21717402,Abbott,45,214,right,template; one pair; HCP meter
+50296311,Abbott,155,80,right,template; first of 2 listed pairs; reference called comparison device
+25775178,Abbott,56,165,right,template; one pair; reference called comparison device
+21487497,Abbott,55,401,right,template; one pair; reader's built-in meter
+50912432,Abbott,380,104,right,template; one pair; meter
+50602763,Abbott,56,502,right,template in mmol/L; conversion checked; reference called comparison device
+50612901,Abbott,72,306,right,template in mmol/L; conversion checked; reference called comparison device
+25497776,Abbott,56,173,right,template in mmol/L; conversion checked; competitor brand meter
+50473039,Abbott,222,105,right,template; first of 2 listed pairs; reference called comparison device
+50444621,Abbott,53,214,right,template; one pair; reference called comparison device
+50472395,Abbott,50,370,right,template; one pair; meter
+25869449,Abbott,38,151,right,template in mmol/L; conversion checked; meter
+25132297,Abbott,198,90,right,template in mmol/L; first of 2 listed pairs; meter
+50191235,Abbott,50,166,right,template; one pair; meter
+25779258,Abbott,350,138,right,template; first of 2 listed pairs; reference called comparison device
+20307984,Abbott,59,170,right,template; one pair; reader's built-in meter
+50758249,Abbott,110,254,right,template; one pair; meter
+50444815,Abbott,63,174,right,template; one pair; reference called comparison device
+21373700,Abbott,52,200,right,template; one pair; Abbott meter
+50588674,Abbott,52,193,right,template in mmol/L; conversion checked; reference called comparison device
+25405942,Abbott,61,178,right,template in mmol/L; conversion checked; meter
+22575745,Abbott,90,230,right,template; first of 2 listed pairs; meter
+24681103,Abbott,53,163,right,template; one pair; meter
+50769011,Abbott,52,155,right,template in mmol/L; conversion checked; meter
+24092603,Abbott,38,140,right,template in mmol/L; conversion checked; meter
+21874097,Abbott,80,36,right,template; first of 2 listed pairs; reader's built-in meter
+23592660,Abbott,54,144,right,template in mmol/L; first of 2 listed pairs; meter
+25586556,Abbott,39,278,right,template; one pair; HCP meter
+25217750,Abbott,58,203,right,template; one pair; meter
+25633184,Abbott,52,304,right,template in mmol/L; conversion checked; meter
+50336006,Abbott,66,196,right,template; first of 2 listed pairs; reference called comparison device
+23024882,Abbott,52,186,right,template; one pair; meter
+21020355,Abbott,392,144,right,template; one pair; reader's built-in meter
+21537262,Abbott,53,200,right,template; one pair; reader's built-in meter
+50519120,Abbott,69,178,right,template; one pair; meter
+25054449,Abbott,53,161,right,template; one pair; meter
+20862465,Abbott,324,90,right,template in mmol/L; conversion checked; Abbott meter
+25154139,Abbott,52,322,right,template; one pair; meter
+22042330,Abbott,360,140,right,template; one pair; Abbott meter
+24221095,Abbott,53,169,right,template; first of 3 listed pairs; meter
+20734005,Abbott,69,180,unclear,"reference readings written as from a FreeStyle Libre scan, not a meter"
+22097594,Abbott,38,216,right,template in mmol/L; conversion checked; meter
+21813043,Abbott,54,216,right,template in mmol/L; conversion checked; reader's built-in meter
+25137201,Abbott,250,130,right,template; one pair; meter
+10307275,Dexcom,41,190,right,one sentence gives the CGM reading and the meter reading
+9848629,Dexcom,44,217,right,one sentence gives the CGM reading and the meter reading
+12071345,Dexcom,44,286,right,one sentence gives the CGM reading and the meter reading
+11148955,Dexcom,80,163,right,one sentence gives the CGM reading and the meter reading
+10096998,Dexcom,200,260,right,one sentence gives the CGM reading and the meter reading
+8582753,Dexcom,42,142,unclear,ranges 42-58 and 142-177; low ends paired; no single moment
+10241873,Dexcom,51,79,right,one sentence gives the CGM reading and the meter reading
+10909595,Dexcom,120,316,right,one sentence gives the CGM reading and the meter reading
+8574099,Dexcom,52,187,right,one sentence gives the CGM reading and the meter reading
+9209730,Dexcom,44,207,right,one sentence gives the CGM reading and the meter reading
+9131386,Dexcom,93,209,right,one sentence gives the CGM reading and the meter reading
+8354171,Dexcom,99,62,right,one sentence gives the CGM reading and the meter reading
+10264966,Dexcom,60,81,right,first of 2 stated comparisons; second has a bound (below 40)
+4046471,Medtronic,56,200,right,"one sentence: blood glucose 200, sensor reading 56"
+21784458,Medtronic,50,144,right,one sentence in mmol/L; conversion checked; roles correct

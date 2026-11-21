@@ -44,3 +44,17 @@ fda-maude/results/text/llm_serious500_*
 # One row per trial participant. Keep local (rebuilt by subgroups.py and simulation_v2.py).
 analysis/participant_metrics.csv
 analysis/simulation_v2_participants.csv
+
+# Course documents from the instructor. Keep local.
+docs/BMEN600*.pdf
+
+# Test layouts of the paper (PDFs and page images, rebuilt by docs/paper/build/test_layout/build_layout.py). Keep local.
+docs/paper/build/
+
+# Teammates working drafts of the paper. Keep local.
+docs/\[Working draft\]*
+
+# Keep the paper build scripts, ignore what they produce.
+!docs/paper/build/
+docs/paper/build/*
+!docs/paper/build/*.py

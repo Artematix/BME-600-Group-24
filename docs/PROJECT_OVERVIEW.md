@@ -1,6 +1,6 @@
 # Project overview
 
-Last updated: 2026-11-10
+Last updated: 2026-11-21
 
 ## The problem (why we care)
 
@@ -52,6 +52,9 @@ Last updated: 2026-11-10
 | Phase 2: subgroups and demographics | Done. See `analysis/SUBGROUPS.md`. |
 | Phase 2: deep demographics check + sex follow-up | Done 2026-11-06. See `analysis/DEMOGRAPHICS_DEEP.md` and `analysis/DEMOGRAPHICS_FOLLOWUP.md`. |
 | Phase 2: fault simulation | Version 2 done (decisions, six fault families, lookup table). See `analysis/SIMULATION_V2.md`. |
+| Phase 2: three-fault simulation (the faults the FDA reports describe, in episodes) | Done 2026-11-20. See `analysis/SIMULATION_THREE_FAULTS.md`. |
+| Checks for the paper: trial errors against reported errors; low detection with a 15-minute window; precision of the text patterns; recall count and date | Done 2026-11-21. See `analysis/TAIL_COMPARISON.md`, `analysis/LOW_DETECTION_WINDOW.md`, `fda-maude/results/text/PATTERN_PRECISION.md`, `fda-maude/results/RECALL_COUNT_CHECK.md`, `fda-maude/results/RECALL_DATE_CHECK.md`. |
+| Final paper | Outline, five figures and three tables built 2026-11-21 (`docs/paper/`). Results in their second version after Artemy's read, Methods in a first version (`docs/paper/PAPER.md`). Discussion, Introduction and Abstract not started. |
 | Findings memo and paper checklist | Done 2026-10-30; updated 2026-11-08 with the 2026-11-06 memos. See `analysis/FINDINGS.md`. |
 | Midterm research plan | Submitted. File: `docs/plans/2026-10-23_midterm-research-plan.pdf` |
 | Final project | Due Dec 4 2026, 11:59 PM. One PDF + GitHub link. |
@@ -112,7 +115,7 @@ Last updated: 2026-11-10
 
 ## Next steps (to Dec 4 2026)
 
-- Push the repo once the user approves. Everything in the push list is rebuilt by scripts (`analysis/REPRODUCIBILITY.md`, `fda-maude/README.md`).
+- Pushed 2026-11-20 (commit `0baa650`). The three-fault simulation files were made after that push and are not pushed yet.
 - Second pass for more findings in the trial data (asked for 2026-10-30): deep demographics, sex follow-up and wear-day memos done 2026-11-06 and folded into `analysis/FINDINGS.md`.
 - Decide on the inventory memo's ranked suggestions (`fda-maude/results/FIELD_INVENTORY.md`): use the unused maker-evaluation and device-returned fields; add two dropped raw fields (10-minute clean re-run); two 100-report human reads instead of a bigger model run.
 - Open housekeeping: optional -12 % marker on figure 25; delete or keep the 19 GB `fda-maude/raw/bulk_zips/`.
@@ -124,7 +127,7 @@ Last updated: 2026-11-10
 
 - Answered 2026-11-06: which real-world error sizes to highlight from the report texts? Two failure modes, not one size. The 3.3 million malfunction-only reports are one fault: a false low of 60 to 80 % at normal or high true glucose. Serious reports are the other two: hidden lows, and sensors pinned at their floor at very high true glucose. `fda-maude/results/text/REGEX_V2_FULL_CORPUS.md`.
 - Answered 2026-11-06: does the wear-day pattern in Abbott complaints match the day-1 effect in trial data? The trial's day-1 effect is every sensor settling in (92 %), not bad sensors. Day 1 has 1.5 times the large errors and twice the false lows, so a day-1 complaint cluster is expected even without a defect. `analysis/WEAR_DAY.md`.
-- Decided 2026-11-09: simulate three faults (false low at true glucose 70 to 250; hidden low under 54; floor-pinned sensor over 250) next to the constant bias. Not started. Waiting on two design choices: episode length, and a rule for sugar eaten on a sensor low.
+- Decided 2026-11-09: simulate three faults (false low at true glucose 70 to 250; hidden low under 54; floor-pinned sensor over 250) next to the constant bias. Done 2026-11-20 with episodes of 2, 6 and 12 hours and a rule of 15 g sugar when the sensor shows under 70. Result for one 6-hour episode, median person: a false low gives 20 unneeded sugar treatments (an upper bound; the model does not let sugar change glucose); a hidden low gives 34 minutes truly under 54 with the sensor showing 70 or above, which a constant low bias never produces; a floor-pinned sensor withholds 1.3 units of insulin. `analysis/SIMULATION_THREE_FAULTS.md`.
 - Human read of about 100 malfunction-only and 100 injury reports from the two extreme error bands, to settle whether the harm gradient is real or coding style.
 
 ## Decided

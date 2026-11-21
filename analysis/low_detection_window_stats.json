@@ -1,0 +1,1377 @@
+{
+ "generated": "2026-11-20 22:43",
+ "seed": 600,
+ "n_boot": 2000,
+ "cache_version": "2026-10-30.1",
+ "definitions": {
+  "pair": "a verified fingerstick with the nearest sensor reading within 5 minutes (the matched reading); preprocess.verified_pairs()",
+  "true_low": "a pair whose meter value is under the meter threshold (70 or 54 mg/dL)",
+  "shown": "the sensor is under the sensor threshold under the rule in use; not shown = a true low that is not shown",
+  "rules": {
+   "matched": "matched reading only",
+   "within_15": "any reading within 15 min before or after",
+   "within_30": "any reading within 30 min before or after",
+   "before_15": "any reading in the 15 min before",
+   "after_15": "any reading in the 15 min after"
+  },
+  "window": "seconds from the fingerstick time on the meter clock; both ends count; a reading at the exact fingerstick second is in the before and in the after window",
+  "trace": "every sensor reading in the cache (5-minute steps), repeated time stamps dropped, all days",
+  "no_reading_in_window": "true lows with no sensor reading in the window (signal gap); left out of 'counted', never counted as not shown",
+  "sensor_low": "a pair whose matched sensor reading is under 70 mg/dL; not confirmed = the meter value is at or above the cut (70, or 80 as a softer check)",
+  "ci": "95 % CI = 2.5th to 97.5th percentile of 2,000 bootstrap resamples of participants (seed 600)",
+  "per_participant": "median and quartiles of each person's own share, for people with at least 10 counted events",
+  "signal_gaps": "verified fingersticks in the study window with no sensor reading within 5 minutes never became a pair; they are outside every row of the table",
+  "with_unpaired_lows_added": "check: the 15- and 30-minute shares when every verified fingerstick low with a reading in the window is counted, paired or not"
+ },
+ "published_for_context": {
+  "low_alert_detection_pct_low": 86,
+  "low_alert_detection_pct_high": 91,
+  "threshold_mgdl": 70,
+  "source": "docs/paper/OUTLINE.md, point D2 (b), and the task brief; published clinic studies, not re-checked in this script"
+ },
+ "sensor_readings_in_trace": 14806079,
+ "checks": {
+  "matched_reading_vs_accuracy_v2": {
+   "all_226": {
+    "pairs": {
+     "accuracy_v2": 168990,
+     "here": 168990,
+     "ok": true
+    },
+    "participants": {
+     "accuracy_v2": 226,
+     "here": 226,
+     "ok": true
+    },
+    "true_lows_meter_under_70": {
+     "accuracy_v2": 10104,
+     "here": 10104,
+     "ok": true
+    },
+    "not_shown_at_70": {
+     "accuracy_v2": 3177,
+     "here": 3177,
+     "ok": true
+    },
+    "sensor_lows_under_70": {
+     "accuracy_v2": 11724,
+     "here": 11724,
+     "ok": true
+    },
+    "not_confirmed_at_70": {
+     "accuracy_v2": 4797,
+     "here": 4797,
+     "ok": true
+    },
+    "true_lows_meter_under_54": {
+     "accuracy_v2": 2174,
+     "here": 2174,
+     "ok": true
+    },
+    "not_shown_at_54": {
+     "accuracy_v2": 1089,
+     "here": 1089,
+     "ok": true
+    },
+    "not_shown_at_70_pct": {
+     "accuracy_v2": 31.443,
+     "here": 31.443,
+     "ok": true
+    },
+    "not_confirmed_at_70_pct": {
+     "accuracy_v2": 40.9161,
+     "here": 40.9161,
+     "ok": true
+    }
+   },
+   "arm_77": {
+    "pairs": {
+     "accuracy_v2": 33467,
+     "here": 33467,
+     "ok": true
+    },
+    "participants": {
+     "accuracy_v2": 77,
+     "here": 77,
+     "ok": true
+    },
+    "true_lows_meter_under_70": {
+     "accuracy_v2": 2440,
+     "here": 2440,
+     "ok": true
+    },
+    "not_shown_at_70": {
+     "accuracy_v2": 689,
+     "here": 689,
+     "ok": true
+    },
+    "sensor_lows_under_70": {
+     "accuracy_v2": 2818,
+     "here": 2818,
+     "ok": true
+    },
+    "not_confirmed_at_70": {
+     "accuracy_v2": 1067,
+     "here": 1067,
+     "ok": true
+    },
+    "true_lows_meter_under_54": {
+     "accuracy_v2": 593,
+     "here": 593,
+     "ok": true
+    },
+    "not_shown_at_54": {
+     "accuracy_v2": 286,
+     "here": 286,
+     "ok": true
+    },
+    "not_shown_at_70_pct": {
+     "accuracy_v2": 28.2377,
+     "here": 28.2377,
+     "ok": true
+    },
+    "not_confirmed_at_70_pct": {
+     "accuracy_v2": 37.8637,
+     "here": 37.8637,
+     "ok": true
+    }
+   }
+  },
+  "pair_recount": {
+   "verified_fingersticks": 191196,
+   "with_a_reading_within_5_min": 168990,
+   "pairs_in_cache": 168990,
+   "ok": true
+  },
+  "window_logic": "passed: the matched reading lies inside the 15-minute window, the 15-minute window inside the 30-minute one, and the before and after windows together equal the 15-minute window"
+ },
+ "sets": {
+  "all_226": {
+   "label": "All 226 participants: verified fingerstick pairs, study window, run-in and randomised phase",
+   "n_pairs": 168990,
+   "n_participants": 226,
+   "true_lows": {
+    "meter_under_70_sensor_under_70": {
+     "meter_threshold_mgdl": 70,
+     "sensor_threshold_mgdl": 70,
+     "true_lows": 10104,
+     "participants_with_a_true_low": 225,
+     "rules": {
+      "matched": {
+       "rule": "matched reading only",
+       "true_lows": 10104,
+       "no_reading_in_window": 0,
+       "counted": 10104,
+       "not_shown": 3177,
+       "shown": 6927,
+       "participants": 225,
+       "not_shown_pct": {
+        "value": 31.443,
+        "ci_low": 29.3198,
+        "ci_high": 33.674
+       },
+       "shown_pct": {
+        "value": 68.557,
+        "ci_low": 66.326,
+        "ci_high": 70.6802
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 199,
+        "median_pct": 30.9091,
+        "q1_pct": 21.9512,
+        "q3_pct": 41.523
+       },
+       "readings_in_window_median": 1.0
+      },
+      "within_15": {
+       "rule": "any reading within 15 min before or after",
+       "true_lows": 10104,
+       "no_reading_in_window": 0,
+       "counted": 10104,
+       "not_shown": 1872,
+       "shown": 8232,
+       "participants": 225,
+       "not_shown_pct": {
+        "value": 18.5273,
+        "ci_low": 16.7755,
+        "ci_high": 20.4571
+       },
+       "shown_pct": {
+        "value": 81.4727,
+        "ci_low": 79.5429,
+        "ci_high": 83.2245
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 199,
+        "median_pct": 18.0,
+        "q1_pct": 10.5395,
+        "q3_pct": 26.7268
+       },
+       "readings_in_window_median": 6.0
+      },
+      "within_30": {
+       "rule": "any reading within 30 min before or after",
+       "true_lows": 10104,
+       "no_reading_in_window": 0,
+       "counted": 10104,
+       "not_shown": 1629,
+       "shown": 8475,
+       "participants": 225,
+       "not_shown_pct": {
+        "value": 16.1223,
+        "ci_low": 14.4667,
+        "ci_high": 17.9095
+       },
+       "shown_pct": {
+        "value": 83.8777,
+        "ci_low": 82.0905,
+        "ci_high": 85.5333
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 199,
+        "median_pct": 15.5556,
+        "q1_pct": 8.8761,
+        "q3_pct": 22.9309
+       },
+       "readings_in_window_median": 12.0
+      },
+      "before_15": {
+       "rule": "any reading in the 15 min before",
+       "true_lows": 10104,
+       "no_reading_in_window": 85,
+       "counted": 10019,
+       "not_shown": 3400,
+       "shown": 6619,
+       "participants": 225,
+       "not_shown_pct": {
+        "value": 33.9355,
+        "ci_low": 31.8392,
+        "ci_high": 36.2372
+       },
+       "shown_pct": {
+        "value": 66.0645,
+        "ci_low": 63.7628,
+        "ci_high": 68.1608
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 199,
+        "median_pct": 33.3333,
+        "q1_pct": 25.0,
+        "q3_pct": 43.4783
+       },
+       "readings_in_window_median": 3.0
+      },
+      "after_15": {
+       "rule": "any reading in the 15 min after",
+       "true_lows": 10104,
+       "no_reading_in_window": 57,
+       "counted": 10047,
+       "not_shown": 2044,
+       "shown": 8003,
+       "participants": 225,
+       "not_shown_pct": {
+        "value": 20.3444,
+        "ci_low": 18.5265,
+        "ci_high": 22.3732
+       },
+       "shown_pct": {
+        "value": 79.6556,
+        "ci_low": 77.6268,
+        "ci_high": 81.4735
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 199,
+        "median_pct": 18.75,
+        "q1_pct": 11.9168,
+        "q3_pct": 28.5714
+       },
+       "readings_in_window_median": 3.0
+      }
+     }
+    },
+    "meter_under_54_sensor_under_70": {
+     "meter_threshold_mgdl": 54,
+     "sensor_threshold_mgdl": 70,
+     "true_lows": 2174,
+     "participants_with_a_true_low": 206,
+     "rules": {
+      "matched": {
+       "rule": "matched reading only",
+       "true_lows": 2174,
+       "no_reading_in_window": 0,
+       "counted": 2174,
+       "not_shown": 395,
+       "shown": 1779,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 18.1693,
+        "ci_low": 15.4568,
+        "ci_high": 20.9316
+       },
+       "shown_pct": {
+        "value": 81.8307,
+        "ci_low": 79.0684,
+        "ci_high": 84.5432
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 85,
+        "median_pct": 13.7931,
+        "q1_pct": 7.1429,
+        "q3_pct": 23.0769
+       },
+       "readings_in_window_median": 1.0
+      },
+      "within_15": {
+       "rule": "any reading within 15 min before or after",
+       "true_lows": 2174,
+       "no_reading_in_window": 0,
+       "counted": 2174,
+       "not_shown": 220,
+       "shown": 1954,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 10.1196,
+        "ci_low": 7.9829,
+        "ci_high": 12.4184
+       },
+       "shown_pct": {
+        "value": 89.8804,
+        "ci_low": 87.5816,
+        "ci_high": 92.0171
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 85,
+        "median_pct": 7.1429,
+        "q1_pct": 0.0,
+        "q3_pct": 13.3333
+       },
+       "readings_in_window_median": 6.0
+      },
+      "within_30": {
+       "rule": "any reading within 30 min before or after",
+       "true_lows": 2174,
+       "no_reading_in_window": 0,
+       "counted": 2174,
+       "not_shown": 191,
+       "shown": 1983,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 8.7856,
+        "ci_low": 6.8329,
+        "ci_high": 10.978
+       },
+       "shown_pct": {
+        "value": 91.2144,
+        "ci_low": 89.022,
+        "ci_high": 93.1671
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 85,
+        "median_pct": 4.3478,
+        "q1_pct": 0.0,
+        "q3_pct": 10.0
+       },
+       "readings_in_window_median": 12.0
+      },
+      "before_15": {
+       "rule": "any reading in the 15 min before",
+       "true_lows": 2174,
+       "no_reading_in_window": 19,
+       "counted": 2155,
+       "not_shown": 426,
+       "shown": 1729,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 19.768,
+        "ci_low": 16.9021,
+        "ci_high": 22.7338
+       },
+       "shown_pct": {
+        "value": 80.232,
+        "ci_low": 77.2662,
+        "ci_high": 83.0979
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 84,
+        "median_pct": 16.954,
+        "q1_pct": 7.6923,
+        "q3_pct": 29.4662
+       },
+       "readings_in_window_median": 3.0
+      },
+      "after_15": {
+       "rule": "any reading in the 15 min after",
+       "true_lows": 2174,
+       "no_reading_in_window": 16,
+       "counted": 2158,
+       "not_shown": 238,
+       "shown": 1920,
+       "participants": 205,
+       "not_shown_pct": {
+        "value": 11.0287,
+        "ci_low": 8.8409,
+        "ci_high": 13.4881
+       },
+       "shown_pct": {
+        "value": 88.9713,
+        "ci_low": 86.5119,
+        "ci_high": 91.1591
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 84,
+        "median_pct": 7.1429,
+        "q1_pct": 0.0,
+        "q3_pct": 15.3846
+       },
+       "readings_in_window_median": 3.0
+      }
+     }
+    },
+    "meter_under_54_sensor_under_54": {
+     "meter_threshold_mgdl": 54,
+     "sensor_threshold_mgdl": 54,
+     "true_lows": 2174,
+     "participants_with_a_true_low": 206,
+     "rules": {
+      "matched": {
+       "rule": "matched reading only",
+       "true_lows": 2174,
+       "no_reading_in_window": 0,
+       "counted": 2174,
+       "not_shown": 1089,
+       "shown": 1085,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 50.092,
+        "ci_low": 46.7056,
+        "ci_high": 53.5205
+       },
+       "shown_pct": {
+        "value": 49.908,
+        "ci_low": 46.4795,
+        "ci_high": 53.2944
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 85,
+        "median_pct": 47.0588,
+        "q1_pct": 36.8421,
+        "q3_pct": 60.0
+       },
+       "readings_in_window_median": 1.0
+      },
+      "within_15": {
+       "rule": "any reading within 15 min before or after",
+       "true_lows": 2174,
+       "no_reading_in_window": 0,
+       "counted": 2174,
+       "not_shown": 690,
+       "shown": 1484,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 31.7387,
+        "ci_low": 28.5455,
+        "ci_high": 35.0624
+       },
+       "shown_pct": {
+        "value": 68.2613,
+        "ci_low": 64.9376,
+        "ci_high": 71.4545
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 85,
+        "median_pct": 28.5714,
+        "q1_pct": 20.0,
+        "q3_pct": 40.0
+       },
+       "readings_in_window_median": 6.0
+      },
+      "within_30": {
+       "rule": "any reading within 30 min before or after",
+       "true_lows": 2174,
+       "no_reading_in_window": 0,
+       "counted": 2174,
+       "not_shown": 653,
+       "shown": 1521,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 30.0368,
+        "ci_low": 26.9441,
+        "ci_high": 33.3345
+       },
+       "shown_pct": {
+        "value": 69.9632,
+        "ci_low": 66.6655,
+        "ci_high": 73.0559
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 85,
+        "median_pct": 25.0,
+        "q1_pct": 16.6667,
+        "q3_pct": 40.0
+       },
+       "readings_in_window_median": 12.0
+      },
+      "before_15": {
+       "rule": "any reading in the 15 min before",
+       "true_lows": 2174,
+       "no_reading_in_window": 19,
+       "counted": 2155,
+       "not_shown": 1130,
+       "shown": 1025,
+       "participants": 206,
+       "not_shown_pct": {
+        "value": 52.4362,
+        "ci_low": 48.9205,
+        "ci_high": 55.9569
+       },
+       "shown_pct": {
+        "value": 47.5638,
+        "ci_low": 44.0431,
+        "ci_high": 51.0795
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 84,
+        "median_pct": 52.5575,
+        "q1_pct": 39.6154,
+        "q3_pct": 63.4398
+       },
+       "readings_in_window_median": 3.0
+      },
+      "after_15": {
+       "rule": "any reading in the 15 min after",
+       "true_lows": 2174,
+       "no_reading_in_window": 16,
+       "counted": 2158,
+       "not_shown": 738,
+       "shown": 1420,
+       "participants": 205,
+       "not_shown_pct": {
+        "value": 34.1983,
+        "ci_low": 30.9378,
+        "ci_high": 37.5806
+       },
+       "shown_pct": {
+        "value": 65.8017,
+        "ci_low": 62.4194,
+        "ci_high": 69.0622
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 84,
+        "median_pct": 30.2174,
+        "q1_pct": 22.4003,
+        "q3_pct": 40.4167
+       },
+       "readings_in_window_median": 3.0
+      }
+     }
+    }
+   },
+   "sensor_lows": {
+    "sensor_threshold_mgdl": 70,
+    "sensor_lows": 11724,
+    "participants_with_a_sensor_low": 223,
+    "meter_70_or_above": {
+     "rule": "meter 70 mg/dL or above",
+     "counted": 11724,
+     "not_confirmed": 4797,
+     "confirmed": 6927,
+     "participants": 223,
+     "not_confirmed_pct": {
+      "value": 40.9161,
+      "ci_low": 38.7879,
+      "ci_high": 43.0305
+     },
+     "confirmed_pct": {
+      "value": 59.0839,
+      "ci_low": 56.9695,
+      "ci_high": 61.2121
+     },
+     "per_participant_not_confirmed_pct": {
+      "min_events": 10,
+      "participants": 201,
+      "median_pct": 41.1765,
+      "q1_pct": 32.4324,
+      "q3_pct": 53.8462
+     }
+    },
+    "meter_80_or_above": {
+     "rule": "meter 80 mg/dL or above",
+     "counted": 11724,
+     "not_confirmed": 2399,
+     "confirmed": 9325,
+     "participants": 223,
+     "not_confirmed_pct": {
+      "value": 20.4623,
+      "ci_low": 18.9352,
+      "ci_high": 22.0482
+     },
+     "confirmed_pct": {
+      "value": 79.5377,
+      "ci_low": 77.9518,
+      "ci_high": 81.0648
+     },
+     "per_participant_not_confirmed_pct": {
+      "min_events": 10,
+      "participants": 201,
+      "median_pct": 20.3125,
+      "q1_pct": 14.0845,
+      "q3_pct": 28.5714
+     }
+    }
+   },
+   "signal_gaps": {
+    "verified_fingersticks": 191196,
+    "pairs": 168990,
+    "not_paired_no_reading_within_5_min": 22206,
+    "not_paired_pct_of_fingersticks": 11.6143,
+    "meter_under_70": {
+     "verified_fingerstick_lows": 11537,
+     "pairs": 10104,
+     "not_paired": 1433,
+     "not_paired_pct_of_lows": 12.4209,
+     "not_paired_with_a_reading_within_15": 106,
+     "not_paired_no_reading_within_15": 1327,
+     "not_paired_with_a_reading_within_30": 207,
+     "not_paired_no_reading_within_30": 1226
+    },
+    "meter_under_54": {
+     "verified_fingerstick_lows": 2532,
+     "pairs": 2174,
+     "not_paired": 358,
+     "not_paired_pct_of_lows": 14.139,
+     "not_paired_with_a_reading_within_15": 26,
+     "not_paired_no_reading_within_15": 332,
+     "not_paired_with_a_reading_within_30": 56,
+     "not_paired_no_reading_within_30": 302
+    },
+    "with_unpaired_lows_added": {
+     "meter_under_70_sensor_under_70": {
+      "within_15": {
+       "counted": 10210,
+       "of_which_not_paired": 106,
+       "not_shown": 1904,
+       "not_shown_pct": {
+        "value": 18.6484,
+        "ci_low": 16.8973,
+        "ci_high": 20.5993
+       },
+       "shown_pct": {
+        "value": 81.3516,
+        "ci_low": 79.4007,
+        "ci_high": 83.1027
+       }
+      },
+      "within_30": {
+       "counted": 10311,
+       "of_which_not_paired": 207,
+       "not_shown": 1721,
+       "not_shown_pct": {
+        "value": 16.6909,
+        "ci_low": 15.0519,
+        "ci_high": 18.5226
+       },
+       "shown_pct": {
+        "value": 83.3091,
+        "ci_low": 81.4774,
+        "ci_high": 84.9481
+       }
+      }
+     },
+     "meter_under_54_sensor_under_70": {
+      "within_15": {
+       "counted": 2200,
+       "of_which_not_paired": 26,
+       "not_shown": 223,
+       "not_shown_pct": {
+        "value": 10.1364,
+        "ci_low": 8.0483,
+        "ci_high": 12.4039
+       },
+       "shown_pct": {
+        "value": 89.8636,
+        "ci_low": 87.5961,
+        "ci_high": 91.9517
+       }
+      },
+      "within_30": {
+       "counted": 2230,
+       "of_which_not_paired": 56,
+       "not_shown": 211,
+       "not_shown_pct": {
+        "value": 9.4619,
+        "ci_low": 7.4038,
+        "ci_high": 11.6203
+       },
+       "shown_pct": {
+        "value": 90.5381,
+        "ci_low": 88.3797,
+        "ci_high": 92.5962
+       }
+      }
+     },
+     "meter_under_54_sensor_under_54": {
+      "within_15": {
+       "counted": 2200,
+       "of_which_not_paired": 26,
+       "not_shown": 698,
+       "not_shown_pct": {
+        "value": 31.7273,
+        "ci_low": 28.5405,
+        "ci_high": 35.029
+       },
+       "shown_pct": {
+        "value": 68.2727,
+        "ci_low": 64.971,
+        "ci_high": 71.4595
+       }
+      },
+      "within_30": {
+       "counted": 2230,
+       "of_which_not_paired": 56,
+       "not_shown": 684,
+       "not_shown_pct": {
+        "value": 30.6726,
+        "ci_low": 27.672,
+        "ci_high": 33.8928
+       },
+       "shown_pct": {
+        "value": 69.3274,
+        "ci_low": 66.1072,
+        "ci_high": 72.328
+       }
+      }
+     }
+    }
+   }
+  },
+  "arm_77": {
+   "label": "Check: CGM+BGM arm, randomised phase",
+   "n_pairs": 33467,
+   "n_participants": 77,
+   "true_lows": {
+    "meter_under_70_sensor_under_70": {
+     "meter_threshold_mgdl": 70,
+     "sensor_threshold_mgdl": 70,
+     "true_lows": 2440,
+     "participants_with_a_true_low": 73,
+     "rules": {
+      "matched": {
+       "rule": "matched reading only",
+       "true_lows": 2440,
+       "no_reading_in_window": 0,
+       "counted": 2440,
+       "not_shown": 689,
+       "shown": 1751,
+       "participants": 73,
+       "not_shown_pct": {
+        "value": 28.2377,
+        "ci_low": 24.2279,
+        "ci_high": 33.064
+       },
+       "shown_pct": {
+        "value": 71.7623,
+        "ci_low": 66.936,
+        "ci_high": 75.7721
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 58,
+        "median_pct": 25.9784,
+        "q1_pct": 17.8277,
+        "q3_pct": 38.4615
+       },
+       "readings_in_window_median": 1.0
+      },
+      "within_15": {
+       "rule": "any reading within 15 min before or after",
+       "true_lows": 2440,
+       "no_reading_in_window": 0,
+       "counted": 2440,
+       "not_shown": 410,
+       "shown": 2030,
+       "participants": 73,
+       "not_shown_pct": {
+        "value": 16.8033,
+        "ci_low": 12.8514,
+        "ci_high": 21.7698
+       },
+       "shown_pct": {
+        "value": 83.1967,
+        "ci_low": 78.2302,
+        "ci_high": 87.1486
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 58,
+        "median_pct": 14.6429,
+        "q1_pct": 7.4405,
+        "q3_pct": 25.3748
+       },
+       "readings_in_window_median": 6.0
+      },
+      "within_30": {
+       "rule": "any reading within 30 min before or after",
+       "true_lows": 2440,
+       "no_reading_in_window": 0,
+       "counted": 2440,
+       "not_shown": 359,
+       "shown": 2081,
+       "participants": 73,
+       "not_shown_pct": {
+        "value": 14.7131,
+        "ci_low": 11.0029,
+        "ci_high": 19.4548
+       },
+       "shown_pct": {
+        "value": 85.2869,
+        "ci_low": 80.5452,
+        "ci_high": 88.9971
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 58,
+        "median_pct": 12.327,
+        "q1_pct": 6.7857,
+        "q3_pct": 22.5
+       },
+       "readings_in_window_median": 12.0
+      },
+      "before_15": {
+       "rule": "any reading in the 15 min before",
+       "true_lows": 2440,
+       "no_reading_in_window": 13,
+       "counted": 2427,
+       "not_shown": 736,
+       "shown": 1691,
+       "participants": 73,
+       "not_shown_pct": {
+        "value": 30.3255,
+        "ci_low": 26.6034,
+        "ci_high": 34.8213
+       },
+       "shown_pct": {
+        "value": 69.6745,
+        "ci_low": 65.1787,
+        "ci_high": 73.3966
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 58,
+        "median_pct": 29.7963,
+        "q1_pct": 19.2004,
+        "q3_pct": 39.8485
+       },
+       "readings_in_window_median": 3.0
+      },
+      "after_15": {
+       "rule": "any reading in the 15 min after",
+       "true_lows": 2440,
+       "no_reading_in_window": 12,
+       "counted": 2428,
+       "not_shown": 449,
+       "shown": 1979,
+       "participants": 73,
+       "not_shown_pct": {
+        "value": 18.4926,
+        "ci_low": 14.4407,
+        "ci_high": 23.6059
+       },
+       "shown_pct": {
+        "value": 81.5074,
+        "ci_low": 76.3941,
+        "ci_high": 85.5593
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 58,
+        "median_pct": 16.0357,
+        "q1_pct": 8.3333,
+        "q3_pct": 26.1471
+       },
+       "readings_in_window_median": 3.0
+      }
+     }
+    },
+    "meter_under_54_sensor_under_70": {
+     "meter_threshold_mgdl": 54,
+     "sensor_threshold_mgdl": 70,
+     "true_lows": 593,
+     "participants_with_a_true_low": 62,
+     "rules": {
+      "matched": {
+       "rule": "matched reading only",
+       "true_lows": 593,
+       "no_reading_in_window": 0,
+       "counted": 593,
+       "not_shown": 90,
+       "shown": 503,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 15.1771,
+        "ci_low": 10.0828,
+        "ci_high": 21.4293
+       },
+       "shown_pct": {
+        "value": 84.8229,
+        "ci_low": 78.5707,
+        "ci_high": 89.9172
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 11.25,
+        "q1_pct": 2.6374,
+        "q3_pct": 20.0
+       },
+       "readings_in_window_median": 1.0
+      },
+      "within_15": {
+       "rule": "any reading within 15 min before or after",
+       "true_lows": 593,
+       "no_reading_in_window": 0,
+       "counted": 593,
+       "not_shown": 54,
+       "shown": 539,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 9.1062,
+        "ci_low": 4.9319,
+        "ci_high": 14.7507
+       },
+       "shown_pct": {
+        "value": 90.8938,
+        "ci_low": 85.2493,
+        "ci_high": 95.0681
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 5.8442,
+        "q1_pct": 0.0,
+        "q3_pct": 10.0
+       },
+       "readings_in_window_median": 6.0
+      },
+      "within_30": {
+       "rule": "any reading within 30 min before or after",
+       "true_lows": 593,
+       "no_reading_in_window": 0,
+       "counted": 593,
+       "not_shown": 50,
+       "shown": 543,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 8.4317,
+        "ci_low": 4.2983,
+        "ci_high": 14.1541
+       },
+       "shown_pct": {
+        "value": 91.5683,
+        "ci_low": 85.8459,
+        "ci_high": 95.7017
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 4.3561,
+        "q1_pct": 0.0,
+        "q3_pct": 10.0
+       },
+       "readings_in_window_median": 12.0
+      },
+      "before_15": {
+       "rule": "any reading in the 15 min before",
+       "true_lows": 593,
+       "no_reading_in_window": 2,
+       "counted": 591,
+       "not_shown": 101,
+       "shown": 490,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 17.0897,
+        "ci_low": 11.4525,
+        "ci_high": 23.7864
+       },
+       "shown_pct": {
+        "value": 82.9103,
+        "ci_low": 76.2136,
+        "ci_high": 88.5475
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 11.8182,
+        "q1_pct": 4.6556,
+        "q3_pct": 19.5455
+       },
+       "readings_in_window_median": 3.0
+      },
+      "after_15": {
+       "rule": "any reading in the 15 min after",
+       "true_lows": 593,
+       "no_reading_in_window": 3,
+       "counted": 590,
+       "not_shown": 56,
+       "shown": 534,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 9.4915,
+        "ci_low": 5.1279,
+        "ci_high": 15.4962
+       },
+       "shown_pct": {
+        "value": 90.5085,
+        "ci_low": 84.5038,
+        "ci_high": 94.8721
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 7.5714,
+        "q1_pct": 0.5102,
+        "q3_pct": 10.0
+       },
+       "readings_in_window_median": 3.0
+      }
+     }
+    },
+    "meter_under_54_sensor_under_54": {
+     "meter_threshold_mgdl": 54,
+     "sensor_threshold_mgdl": 54,
+     "true_lows": 593,
+     "participants_with_a_true_low": 62,
+     "rules": {
+      "matched": {
+       "rule": "matched reading only",
+       "true_lows": 593,
+       "no_reading_in_window": 0,
+       "counted": 593,
+       "not_shown": 286,
+       "shown": 307,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 48.2293,
+        "ci_low": 43.0606,
+        "ci_high": 54.5042
+       },
+       "shown_pct": {
+        "value": 51.7707,
+        "ci_low": 45.4958,
+        "ci_high": 56.9394
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 41.0461,
+        "q1_pct": 37.5,
+        "q3_pct": 53.9583
+       },
+       "readings_in_window_median": 1.0
+      },
+      "within_15": {
+       "rule": "any reading within 15 min before or after",
+       "true_lows": 593,
+       "no_reading_in_window": 0,
+       "counted": 593,
+       "not_shown": 169,
+       "shown": 424,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 28.4992,
+        "ci_low": 22.748,
+        "ci_high": 35.2594
+       },
+       "shown_pct": {
+        "value": 71.5008,
+        "ci_low": 64.7406,
+        "ci_high": 77.252
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 25.0,
+        "q1_pct": 17.0455,
+        "q3_pct": 34.7403
+       },
+       "readings_in_window_median": 6.0
+      },
+      "within_30": {
+       "rule": "any reading within 30 min before or after",
+       "true_lows": 593,
+       "no_reading_in_window": 0,
+       "counted": 593,
+       "not_shown": 161,
+       "shown": 432,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 27.1501,
+        "ci_low": 21.835,
+        "ci_high": 33.4012
+       },
+       "shown_pct": {
+        "value": 72.8499,
+        "ci_low": 66.5988,
+        "ci_high": 78.165
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 21.1111,
+        "q1_pct": 17.0455,
+        "q3_pct": 32.9545
+       },
+       "readings_in_window_median": 12.0
+      },
+      "before_15": {
+       "rule": "any reading in the 15 min before",
+       "true_lows": 593,
+       "no_reading_in_window": 2,
+       "counted": 591,
+       "not_shown": 303,
+       "shown": 288,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 51.269,
+        "ci_low": 45.8223,
+        "ci_high": 57.7727
+       },
+       "shown_pct": {
+        "value": 48.731,
+        "ci_low": 42.2273,
+        "ci_high": 54.1777
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 45.9416,
+        "q1_pct": 40.0,
+        "q3_pct": 54.2424
+       },
+       "readings_in_window_median": 3.0
+      },
+      "after_15": {
+       "rule": "any reading in the 15 min after",
+       "true_lows": 593,
+       "no_reading_in_window": 3,
+       "counted": 590,
+       "not_shown": 181,
+       "shown": 409,
+       "participants": 62,
+       "not_shown_pct": {
+        "value": 30.678,
+        "ci_low": 24.9648,
+        "ci_high": 37.2532
+       },
+       "shown_pct": {
+        "value": 69.322,
+        "ci_low": 62.7468,
+        "ci_high": 75.0352
+       },
+       "per_participant_not_shown_pct": {
+        "min_events": 10,
+        "participants": 18,
+        "median_pct": 25.0,
+        "q1_pct": 20.0,
+        "q3_pct": 39.8214
+       },
+       "readings_in_window_median": 3.0
+      }
+     }
+    }
+   },
+   "sensor_lows": {
+    "sensor_threshold_mgdl": 70,
+    "sensor_lows": 2818,
+    "participants_with_a_sensor_low": 74,
+    "meter_70_or_above": {
+     "rule": "meter 70 mg/dL or above",
+     "counted": 2818,
+     "not_confirmed": 1067,
+     "confirmed": 1751,
+     "participants": 74,
+     "not_confirmed_pct": {
+      "value": 37.8637,
+      "ci_low": 33.4409,
+      "ci_high": 42.3352
+     },
+     "confirmed_pct": {
+      "value": 62.1363,
+      "ci_low": 57.6648,
+      "ci_high": 66.5591
+     },
+     "per_participant_not_confirmed_pct": {
+      "min_events": 10,
+      "participants": 61,
+      "median_pct": 40.9091,
+      "q1_pct": 30.0,
+      "q3_pct": 50.0
+     }
+    },
+    "meter_80_or_above": {
+     "rule": "meter 80 mg/dL or above",
+     "counted": 2818,
+     "not_confirmed": 535,
+     "confirmed": 2283,
+     "participants": 74,
+     "not_confirmed_pct": {
+      "value": 18.9851,
+      "ci_low": 15.5098,
+      "ci_high": 22.6707
+     },
+     "confirmed_pct": {
+      "value": 81.0149,
+      "ci_low": 77.3293,
+      "ci_high": 84.4902
+     },
+     "per_participant_not_confirmed_pct": {
+      "min_events": 10,
+      "participants": 61,
+      "median_pct": 19.7531,
+      "q1_pct": 10.0,
+      "q3_pct": 27.7778
+     }
+    }
+   },
+   "signal_gaps": {
+    "verified_fingersticks": 39742,
+    "pairs": 33467,
+    "not_paired_no_reading_within_5_min": 6275,
+    "not_paired_pct_of_fingersticks": 15.7893,
+    "meter_under_70": {
+     "verified_fingerstick_lows": 2863,
+     "pairs": 2440,
+     "not_paired": 423,
+     "not_paired_pct_of_lows": 14.7747,
+     "not_paired_with_a_reading_within_15": 21,
+     "not_paired_no_reading_within_15": 402,
+     "not_paired_with_a_reading_within_30": 47,
+     "not_paired_no_reading_within_30": 376
+    },
+    "meter_under_54": {
+     "verified_fingerstick_lows": 696,
+     "pairs": 593,
+     "not_paired": 103,
+     "not_paired_pct_of_lows": 14.7989,
+     "not_paired_with_a_reading_within_15": 6,
+     "not_paired_no_reading_within_15": 97,
+     "not_paired_with_a_reading_within_30": 12,
+     "not_paired_no_reading_within_30": 91
+    },
+    "with_unpaired_lows_added": {
+     "meter_under_70_sensor_under_70": {
+      "within_15": {
+       "counted": 2461,
+       "of_which_not_paired": 21,
+       "not_shown": 414,
+       "not_shown_pct": {
+        "value": 16.8224,
+        "ci_low": 12.8867,
+        "ci_high": 21.727
+       },
+       "shown_pct": {
+        "value": 83.1776,
+        "ci_low": 78.273,
+        "ci_high": 87.1133
+       }
+      },
+      "within_30": {
+       "counted": 2487,
+       "of_which_not_paired": 47,
+       "not_shown": 377,
+       "not_shown_pct": {
+        "value": 15.1588,
+        "ci_low": 11.4527,
+        "ci_high": 19.8114
+       },
+       "shown_pct": {
+        "value": 84.8412,
+        "ci_low": 80.1886,
+        "ci_high": 88.5473
+       }
+      }
+     },
+     "meter_under_54_sensor_under_70": {
+      "within_15": {
+       "counted": 599,
+       "of_which_not_paired": 6,
+       "not_shown": 54,
+       "not_shown_pct": {
+        "value": 9.015,
+        "ci_low": 4.8878,
+        "ci_high": 14.6509
+       },
+       "shown_pct": {
+        "value": 90.985,
+        "ci_low": 85.3491,
+        "ci_high": 95.1122
+       }
+      },
+      "within_30": {
+       "counted": 605,
+       "of_which_not_paired": 12,
+       "not_shown": 52,
+       "not_shown_pct": {
+        "value": 8.595,
+        "ci_low": 4.452,
+        "ci_high": 14.1881
+       },
+       "shown_pct": {
+        "value": 91.405,
+        "ci_low": 85.8119,
+        "ci_high": 95.548
+       }
+      }
+     },
+     "meter_under_54_sensor_under_54": {
+      "within_15": {
+       "counted": 599,
+       "of_which_not_paired": 6,
+       "not_shown": 170,
+       "not_shown_pct": {
+        "value": 28.3806,
+        "ci_low": 22.7069,
+        "ci_high": 35.1441
+       },
+       "shown_pct": {
+        "value": 71.6194,
+        "ci_low": 64.8559,
+        "ci_high": 77.2931
+       }
+      },
+      "within_30": {
+       "counted": 605,
+       "of_which_not_paired": 12,
+       "not_shown": 166,
+       "not_shown_pct": {
+        "value": 27.438,
+        "ci_low": 22.2088,
+        "ci_high": 33.5948
+       },
+       "shown_pct": {
+        "value": 72.562,
+        "ci_low": 66.4052,
+        "ci_high": 77.7912
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "runtime_s": 1.7
+}

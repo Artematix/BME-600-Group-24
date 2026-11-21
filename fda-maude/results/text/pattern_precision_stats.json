@@ -1,0 +1,1596 @@
+{
+ "date": "2026-11-21",
+ "script": "fda-maude/scripts/pattern_precision.py",
+ "saved_pattern_output": "fda-maude/clean/regex_v2_full.csv.gz",
+ "saved_output_reports": 3382071,
+ "saved_output_pairs": 209388,
+ "saved_output_pairs_malfunction_only": 191112,
+ "missing_input_files": [],
+ "1_reference_set": {
+  "all": {
+   "reference_reports": 287,
+   "reference_pairs": 77,
+   "pattern_pairs": 74,
+   "pattern_pairs_where_reference_has_a_pair": 74,
+   "pattern_pairs_where_reference_has_no_pair": 0,
+   "sensor_value_right": {
+    "count": 74,
+    "of": 74,
+    "pct": 100.0,
+    "wilson95_low_pct": 95.1,
+    "wilson95_high_pct": 100.0
+   },
+   "meter_value_right": {
+    "count": 74,
+    "of": 74,
+    "pct": 100.0,
+    "wilson95_low_pct": 95.1,
+    "wilson95_high_pct": 100.0
+   },
+   "both_right": {
+    "count": 74,
+    "of": 74,
+    "pct": 100.0,
+    "wilson95_low_pct": 95.1,
+    "wilson95_high_pct": 100.0
+   },
+   "swapped": 0,
+   "reference_pairs_missed_by_patterns": {
+    "count": 3,
+    "of": 77,
+    "pct": 3.9,
+    "wilson95_low_pct": 1.3,
+    "wilson95_high_pct": 10.8
+   },
+   "reference_pairs_found_and_both_right": {
+    "count": 74,
+    "of": 77,
+    "pct": 96.1,
+    "wilson95_low_pct": 89.2,
+    "wilson95_high_pct": 98.7
+   }
+  },
+  "by_side": {
+   "malfunction-only": {
+    "reference_reports": 150,
+    "reference_pairs": 49,
+    "pattern_pairs": 48,
+    "pattern_pairs_where_reference_has_a_pair": 48,
+    "pattern_pairs_where_reference_has_no_pair": 0,
+    "sensor_value_right": {
+     "count": 48,
+     "of": 48,
+     "pct": 100.0,
+     "wilson95_low_pct": 92.6,
+     "wilson95_high_pct": 100.0
+    },
+    "meter_value_right": {
+     "count": 48,
+     "of": 48,
+     "pct": 100.0,
+     "wilson95_low_pct": 92.6,
+     "wilson95_high_pct": 100.0
+    },
+    "both_right": {
+     "count": 48,
+     "of": 48,
+     "pct": 100.0,
+     "wilson95_low_pct": 92.6,
+     "wilson95_high_pct": 100.0
+    },
+    "swapped": 0,
+    "reference_pairs_missed_by_patterns": {
+     "count": 1,
+     "of": 49,
+     "pct": 2.0,
+     "wilson95_low_pct": 0.4,
+     "wilson95_high_pct": 10.7
+    },
+    "reference_pairs_found_and_both_right": {
+     "count": 48,
+     "of": 49,
+     "pct": 98.0,
+     "wilson95_low_pct": 89.3,
+     "wilson95_high_pct": 99.6
+    }
+   },
+   "death or injury": {
+    "reference_reports": 137,
+    "reference_pairs": 28,
+    "pattern_pairs": 26,
+    "pattern_pairs_where_reference_has_a_pair": 26,
+    "pattern_pairs_where_reference_has_no_pair": 0,
+    "sensor_value_right": {
+     "count": 26,
+     "of": 26,
+     "pct": 100.0,
+     "wilson95_low_pct": 87.1,
+     "wilson95_high_pct": 100.0
+    },
+    "meter_value_right": {
+     "count": 26,
+     "of": 26,
+     "pct": 100.0,
+     "wilson95_low_pct": 87.1,
+     "wilson95_high_pct": 100.0
+    },
+    "both_right": {
+     "count": 26,
+     "of": 26,
+     "pct": 100.0,
+     "wilson95_low_pct": 87.1,
+     "wilson95_high_pct": 100.0
+    },
+    "swapped": 0,
+    "reference_pairs_missed_by_patterns": {
+     "count": 2,
+     "of": 28,
+     "pct": 7.1,
+     "wilson95_low_pct": 2.0,
+     "wilson95_high_pct": 22.6
+    },
+    "reference_pairs_found_and_both_right": {
+     "count": 26,
+     "of": 28,
+     "pct": 92.9,
+     "wilson95_low_pct": 77.4,
+     "wilson95_high_pct": 98.0
+    }
+   }
+  },
+  "by_maker": {
+   "Abbott": {
+    "reference_reports": 100,
+    "reference_pairs": 59,
+    "pattern_pairs": 58,
+    "pattern_pairs_where_reference_has_a_pair": 58,
+    "pattern_pairs_where_reference_has_no_pair": 0,
+    "sensor_value_right": {
+     "count": 58,
+     "of": 58,
+     "pct": 100.0,
+     "wilson95_low_pct": 93.8,
+     "wilson95_high_pct": 100.0
+    },
+    "meter_value_right": {
+     "count": 58,
+     "of": 58,
+     "pct": 100.0,
+     "wilson95_low_pct": 93.8,
+     "wilson95_high_pct": 100.0
+    },
+    "both_right": {
+     "count": 58,
+     "of": 58,
+     "pct": 100.0,
+     "wilson95_low_pct": 93.8,
+     "wilson95_high_pct": 100.0
+    },
+    "swapped": 0,
+    "reference_pairs_missed_by_patterns": {
+     "count": 1,
+     "of": 59,
+     "pct": 1.7,
+     "wilson95_low_pct": 0.3,
+     "wilson95_high_pct": 9.0
+    },
+    "reference_pairs_found_and_both_right": {
+     "count": 58,
+     "of": 59,
+     "pct": 98.3,
+     "wilson95_low_pct": 91.0,
+     "wilson95_high_pct": 99.7
+    }
+   },
+   "Dexcom": {
+    "reference_reports": 100,
+    "reference_pairs": 15,
+    "pattern_pairs": 15,
+    "pattern_pairs_where_reference_has_a_pair": 15,
+    "pattern_pairs_where_reference_has_no_pair": 0,
+    "sensor_value_right": {
+     "count": 15,
+     "of": 15,
+     "pct": 100.0,
+     "wilson95_low_pct": 79.6,
+     "wilson95_high_pct": 100.0
+    },
+    "meter_value_right": {
+     "count": 15,
+     "of": 15,
+     "pct": 100.0,
+     "wilson95_low_pct": 79.6,
+     "wilson95_high_pct": 100.0
+    },
+    "both_right": {
+     "count": 15,
+     "of": 15,
+     "pct": 100.0,
+     "wilson95_low_pct": 79.6,
+     "wilson95_high_pct": 100.0
+    },
+    "swapped": 0,
+    "reference_pairs_missed_by_patterns": {
+     "count": 0,
+     "of": 15,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 20.4
+    },
+    "reference_pairs_found_and_both_right": {
+     "count": 15,
+     "of": 15,
+     "pct": 100.0,
+     "wilson95_low_pct": 79.6,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "Medtronic": {
+    "reference_reports": 87,
+    "reference_pairs": 3,
+    "pattern_pairs": 1,
+    "pattern_pairs_where_reference_has_a_pair": 1,
+    "pattern_pairs_where_reference_has_no_pair": 0,
+    "sensor_value_right": {
+     "count": 1,
+     "of": 1,
+     "pct": 100.0,
+     "wilson95_low_pct": 20.7,
+     "wilson95_high_pct": 100.0
+    },
+    "meter_value_right": {
+     "count": 1,
+     "of": 1,
+     "pct": 100.0,
+     "wilson95_low_pct": 20.7,
+     "wilson95_high_pct": 100.0
+    },
+    "both_right": {
+     "count": 1,
+     "of": 1,
+     "pct": 100.0,
+     "wilson95_low_pct": 20.7,
+     "wilson95_high_pct": 100.0
+    },
+    "swapped": 0,
+    "reference_pairs_missed_by_patterns": {
+     "count": 2,
+     "of": 3,
+     "pct": 66.7,
+     "wilson95_low_pct": 20.8,
+     "wilson95_high_pct": 93.9
+    },
+    "reference_pairs_found_and_both_right": {
+     "count": 1,
+     "of": 3,
+     "pct": 33.3,
+     "wilson95_low_pct": 6.1,
+     "wilson95_high_pct": 79.2
+    }
+   }
+  },
+  "reference_reports_not_in_saved_output": 0,
+  "pattern_pairs_not_both_right": [],
+  "reference_pairs_missed": [
+   {
+    "mdr_report_key": "25662953",
+    "maker": "Abbott",
+    "event_type": "Malfunction",
+    "reference_sensor": "50",
+    "reference_meter": "90",
+    "reference_notes": "2 pairs written as '50, 60' vs '90, 195'; both sensor below meter"
+   },
+   {
+    "mdr_report_key": "10069748",
+    "maker": "Medtronic",
+    "event_type": "Injury",
+    "reference_sensor": "179",
+    "reference_meter": "349",
+    "reference_notes": "pump shows the sensor value ('BG of 179' is the sensor); 'over 100 points different' is a difference; outcome from meter 349 (no harm words)"
+   },
+   {
+    "mdr_report_key": "10009047",
+    "maker": "Medtronic",
+    "event_type": "Injury",
+    "reference_sensor": "122",
+    "reference_meter": "70",
+    "reference_notes": "main complaint is the 670G auto mode delivering insulin near the low limit (pump programming); one explicit pair 6.8 vs 3.9 mmol/L (x18: 122"
+   }
+  ],
+  "rerun_check": {
+   "reports_rerun": 287,
+   "same_as_saved": 287,
+   "different": 0,
+   "different_keys": []
+  }
+ },
+ "2_language_model": {
+  "all": {
+   "reports": 124599,
+   "model_pairs": 18436,
+   "pattern_pairs": 17429,
+   "both_output_a_pair": 16434,
+   "agree_on_both_values": {
+    "count": 14535,
+    "of": 16434,
+    "pct": 88.4,
+    "wilson95_low_pct": 87.9,
+    "wilson95_high_pct": 88.9
+   },
+   "agree_within_5_mgdl": {
+    "count": 14705,
+    "of": 16434,
+    "pct": 89.5,
+    "wilson95_low_pct": 89.0,
+    "wilson95_high_pct": 89.9
+   },
+   "sensor_value_same": {
+    "count": 14823,
+    "of": 16434,
+    "pct": 90.2,
+    "wilson95_low_pct": 89.7,
+    "wilson95_high_pct": 90.6
+   },
+   "meter_value_same": {
+    "count": 15316,
+    "of": 16434,
+    "pct": 93.2,
+    "wilson95_low_pct": 92.8,
+    "wilson95_high_pct": 93.6
+   },
+   "swapped": {
+    "count": 33,
+    "of": 16434,
+    "pct": 0.2,
+    "wilson95_low_pct": 0.1,
+    "wilson95_high_pct": 0.3
+   },
+   "pattern_pairs_the_model_did_not_output": {
+    "count": 995,
+    "of": 17429,
+    "pct": 5.7,
+    "wilson95_low_pct": 5.4,
+    "wilson95_high_pct": 6.1
+   },
+   "model_pairs_the_patterns_also_output_recall": {
+    "count": 16434,
+    "of": 18436,
+    "pct": 89.1,
+    "wilson95_low_pct": 88.7,
+    "wilson95_high_pct": 89.6
+   }
+  },
+  "by_maker": {
+   "Abbott": {
+    "reports": 75500,
+    "model_pairs": 7802,
+    "pattern_pairs": 7115,
+    "both_output_a_pair": 6901,
+    "agree_on_both_values": {
+     "count": 6127,
+     "of": 6901,
+     "pct": 88.8,
+     "wilson95_low_pct": 88.0,
+     "wilson95_high_pct": 89.5
+    },
+    "agree_within_5_mgdl": {
+     "count": 6205,
+     "of": 6901,
+     "pct": 89.9,
+     "wilson95_low_pct": 89.2,
+     "wilson95_high_pct": 90.6
+    },
+    "sensor_value_same": {
+     "count": 6244,
+     "of": 6901,
+     "pct": 90.5,
+     "wilson95_low_pct": 89.8,
+     "wilson95_high_pct": 91.1
+    },
+    "meter_value_same": {
+     "count": 6370,
+     "of": 6901,
+     "pct": 92.3,
+     "wilson95_low_pct": 91.7,
+     "wilson95_high_pct": 92.9
+    },
+    "swapped": {
+     "count": 17,
+     "of": 6901,
+     "pct": 0.2,
+     "wilson95_low_pct": 0.2,
+     "wilson95_high_pct": 0.4
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 214,
+     "of": 7115,
+     "pct": 3.0,
+     "wilson95_low_pct": 2.6,
+     "wilson95_high_pct": 3.4
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 6901,
+     "of": 7802,
+     "pct": 88.5,
+     "wilson95_low_pct": 87.7,
+     "wilson95_high_pct": 89.1
+    }
+   },
+   "Dexcom": {
+    "reports": 36619,
+    "model_pairs": 9550,
+    "pattern_pairs": 9381,
+    "both_output_a_pair": 8640,
+    "agree_on_both_values": {
+     "count": 7604,
+     "of": 8640,
+     "pct": 88.0,
+     "wilson95_low_pct": 87.3,
+     "wilson95_high_pct": 88.7
+    },
+    "agree_within_5_mgdl": {
+     "count": 7678,
+     "of": 8640,
+     "pct": 88.9,
+     "wilson95_low_pct": 88.2,
+     "wilson95_high_pct": 89.5
+    },
+    "sensor_value_same": {
+     "count": 7763,
+     "of": 8640,
+     "pct": 89.8,
+     "wilson95_low_pct": 89.2,
+     "wilson95_high_pct": 90.5
+    },
+    "meter_value_same": {
+     "count": 8087,
+     "of": 8640,
+     "pct": 93.6,
+     "wilson95_low_pct": 93.1,
+     "wilson95_high_pct": 94.1
+    },
+    "swapped": {
+     "count": 12,
+     "of": 8640,
+     "pct": 0.1,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 0.2
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 741,
+     "of": 9381,
+     "pct": 7.9,
+     "wilson95_low_pct": 7.4,
+     "wilson95_high_pct": 8.5
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 8640,
+     "of": 9550,
+     "pct": 90.5,
+     "wilson95_low_pct": 89.9,
+     "wilson95_high_pct": 91.0
+    }
+   },
+   "Medtronic": {
+    "reports": 9067,
+    "model_pairs": 524,
+    "pattern_pairs": 380,
+    "both_output_a_pair": 367,
+    "agree_on_both_values": {
+     "count": 349,
+     "of": 367,
+     "pct": 95.1,
+     "wilson95_low_pct": 92.4,
+     "wilson95_high_pct": 96.9
+    },
+    "agree_within_5_mgdl": {
+     "count": 349,
+     "of": 367,
+     "pct": 95.1,
+     "wilson95_low_pct": 92.4,
+     "wilson95_high_pct": 96.9
+    },
+    "sensor_value_same": {
+     "count": 356,
+     "of": 367,
+     "pct": 97.0,
+     "wilson95_low_pct": 94.7,
+     "wilson95_high_pct": 98.3
+    },
+    "meter_value_same": {
+     "count": 352,
+     "of": 367,
+     "pct": 95.9,
+     "wilson95_low_pct": 93.4,
+     "wilson95_high_pct": 97.5
+    },
+    "swapped": {
+     "count": 2,
+     "of": 367,
+     "pct": 0.5,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 2.0
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 13,
+     "of": 380,
+     "pct": 3.4,
+     "wilson95_low_pct": 2.0,
+     "wilson95_high_pct": 5.8
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 367,
+     "of": 524,
+     "pct": 70.0,
+     "wilson95_low_pct": 66.0,
+     "wilson95_high_pct": 73.8
+    }
+   },
+   "Other": {
+    "reports": 3413,
+    "model_pairs": 560,
+    "pattern_pairs": 553,
+    "both_output_a_pair": 526,
+    "agree_on_both_values": {
+     "count": 455,
+     "of": 526,
+     "pct": 86.5,
+     "wilson95_low_pct": 83.3,
+     "wilson95_high_pct": 89.2
+    },
+    "agree_within_5_mgdl": {
+     "count": 473,
+     "of": 526,
+     "pct": 89.9,
+     "wilson95_low_pct": 87.1,
+     "wilson95_high_pct": 92.2
+    },
+    "sensor_value_same": {
+     "count": 460,
+     "of": 526,
+     "pct": 87.5,
+     "wilson95_low_pct": 84.3,
+     "wilson95_high_pct": 90.0
+    },
+    "meter_value_same": {
+     "count": 507,
+     "of": 526,
+     "pct": 96.4,
+     "wilson95_low_pct": 94.4,
+     "wilson95_high_pct": 97.7
+    },
+    "swapped": {
+     "count": 2,
+     "of": 526,
+     "pct": 0.4,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 1.4
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 27,
+     "of": 553,
+     "pct": 4.9,
+     "wilson95_low_pct": 3.4,
+     "wilson95_high_pct": 7.0
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 526,
+     "of": 560,
+     "pct": 93.9,
+     "wilson95_low_pct": 91.6,
+     "wilson95_high_pct": 95.6
+    }
+   }
+  },
+  "by_side": {
+   "malfunction-only": {
+    "reports": 6137,
+    "model_pairs": 327,
+    "pattern_pairs": 289,
+    "both_output_a_pair": 288,
+    "agree_on_both_values": {
+     "count": 257,
+     "of": 288,
+     "pct": 89.2,
+     "wilson95_low_pct": 85.1,
+     "wilson95_high_pct": 92.3
+    },
+    "agree_within_5_mgdl": {
+     "count": 260,
+     "of": 288,
+     "pct": 90.3,
+     "wilson95_low_pct": 86.3,
+     "wilson95_high_pct": 93.2
+    },
+    "sensor_value_same": {
+     "count": 258,
+     "of": 288,
+     "pct": 89.6,
+     "wilson95_low_pct": 85.5,
+     "wilson95_high_pct": 92.6
+    },
+    "meter_value_same": {
+     "count": 261,
+     "of": 288,
+     "pct": 90.6,
+     "wilson95_low_pct": 86.7,
+     "wilson95_high_pct": 93.5
+    },
+    "swapped": {
+     "count": 0,
+     "of": 288,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 1.3
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 1,
+     "of": 289,
+     "pct": 0.3,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 1.9
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 288,
+     "of": 327,
+     "pct": 88.1,
+     "wilson95_low_pct": 84.1,
+     "wilson95_high_pct": 91.2
+    }
+   },
+   "death or injury": {
+    "reports": 118462,
+    "model_pairs": 18109,
+    "pattern_pairs": 17140,
+    "both_output_a_pair": 16146,
+    "agree_on_both_values": {
+     "count": 14278,
+     "of": 16146,
+     "pct": 88.4,
+     "wilson95_low_pct": 87.9,
+     "wilson95_high_pct": 88.9
+    },
+    "agree_within_5_mgdl": {
+     "count": 14445,
+     "of": 16146,
+     "pct": 89.5,
+     "wilson95_low_pct": 89.0,
+     "wilson95_high_pct": 89.9
+    },
+    "sensor_value_same": {
+     "count": 14565,
+     "of": 16146,
+     "pct": 90.2,
+     "wilson95_low_pct": 89.7,
+     "wilson95_high_pct": 90.7
+    },
+    "meter_value_same": {
+     "count": 15055,
+     "of": 16146,
+     "pct": 93.2,
+     "wilson95_low_pct": 92.8,
+     "wilson95_high_pct": 93.6
+    },
+    "swapped": {
+     "count": 33,
+     "of": 16146,
+     "pct": 0.2,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 0.3
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 994,
+     "of": 17140,
+     "pct": 5.8,
+     "wilson95_low_pct": 5.5,
+     "wilson95_high_pct": 6.2
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 16146,
+     "of": 18109,
+     "pct": 89.2,
+     "wilson95_low_pct": 88.7,
+     "wilson95_high_pct": 89.6
+    }
+   }
+  },
+  "by_pattern": {
+   "abbott_template": {
+    "reports": 3204,
+    "model_pairs": 3184,
+    "pattern_pairs": 3204,
+    "both_output_a_pair": 3184,
+    "agree_on_both_values": {
+     "count": 2889,
+     "of": 3184,
+     "pct": 90.7,
+     "wilson95_low_pct": 89.7,
+     "wilson95_high_pct": 91.7
+    },
+    "agree_within_5_mgdl": {
+     "count": 2910,
+     "of": 3184,
+     "pct": 91.4,
+     "wilson95_low_pct": 90.4,
+     "wilson95_high_pct": 92.3
+    },
+    "sensor_value_same": {
+     "count": 2907,
+     "of": 3184,
+     "pct": 91.3,
+     "wilson95_low_pct": 90.3,
+     "wilson95_high_pct": 92.2
+    },
+    "meter_value_same": {
+     "count": 2947,
+     "of": 3184,
+     "pct": 92.6,
+     "wilson95_low_pct": 91.6,
+     "wilson95_high_pct": 93.4
+    },
+    "swapped": {
+     "count": 7,
+     "of": 3184,
+     "pct": 0.2,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 0.5
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 20,
+     "of": 3204,
+     "pct": 0.6,
+     "wilson95_low_pct": 0.4,
+     "wilson95_high_pct": 1.0
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 3184,
+     "of": 3184,
+     "pct": 100.0,
+     "wilson95_low_pct": 99.9,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "v1_prose_adjacent_sentence": {
+    "reports": 2372,
+    "model_pairs": 2090,
+    "pattern_pairs": 2372,
+    "both_output_a_pair": 2090,
+    "agree_on_both_values": {
+     "count": 1898,
+     "of": 2090,
+     "pct": 90.8,
+     "wilson95_low_pct": 89.5,
+     "wilson95_high_pct": 92.0
+    },
+    "agree_within_5_mgdl": {
+     "count": 1921,
+     "of": 2090,
+     "pct": 91.9,
+     "wilson95_low_pct": 90.7,
+     "wilson95_high_pct": 93.0
+    },
+    "sensor_value_same": {
+     "count": 1948,
+     "of": 2090,
+     "pct": 93.2,
+     "wilson95_low_pct": 92.0,
+     "wilson95_high_pct": 94.2
+    },
+    "meter_value_same": {
+     "count": 2007,
+     "of": 2090,
+     "pct": 96.0,
+     "wilson95_low_pct": 95.1,
+     "wilson95_high_pct": 96.8
+    },
+    "swapped": {
+     "count": 0,
+     "of": 2090,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 0.2
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 282,
+     "of": 2372,
+     "pct": 11.9,
+     "wilson95_low_pct": 10.6,
+     "wilson95_high_pct": 13.3
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 2090,
+     "of": 2090,
+     "pct": 100.0,
+     "wilson95_low_pct": 99.8,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "v1_prose_same_sentence": {
+    "reports": 7844,
+    "model_pairs": 7612,
+    "pattern_pairs": 7844,
+    "both_output_a_pair": 7612,
+    "agree_on_both_values": {
+     "count": 6898,
+     "of": 7612,
+     "pct": 90.6,
+     "wilson95_low_pct": 89.9,
+     "wilson95_high_pct": 91.3
+    },
+    "agree_within_5_mgdl": {
+     "count": 6968,
+     "of": 7612,
+     "pct": 91.5,
+     "wilson95_low_pct": 90.9,
+     "wilson95_high_pct": 92.1
+    },
+    "sensor_value_same": {
+     "count": 6986,
+     "of": 7612,
+     "pct": 91.8,
+     "wilson95_low_pct": 91.1,
+     "wilson95_high_pct": 92.4
+    },
+    "meter_value_same": {
+     "count": 7265,
+     "of": 7612,
+     "pct": 95.4,
+     "wilson95_low_pct": 94.9,
+     "wilson95_high_pct": 95.9
+    },
+    "swapped": {
+     "count": 8,
+     "of": 7612,
+     "pct": 0.1,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 0.2
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 232,
+     "of": 7844,
+     "pct": 3.0,
+     "wilson95_low_pct": 2.6,
+     "wilson95_high_pct": 3.4
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 7612,
+     "of": 7612,
+     "pct": 100.0,
+     "wilson95_low_pct": 99.9,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "v2_adjacent_sentence": {
+    "reports": 740,
+    "model_pairs": 634,
+    "pattern_pairs": 740,
+    "both_output_a_pair": 634,
+    "agree_on_both_values": {
+     "count": 526,
+     "of": 634,
+     "pct": 83.0,
+     "wilson95_low_pct": 79.8,
+     "wilson95_high_pct": 85.7
+    },
+    "agree_within_5_mgdl": {
+     "count": 534,
+     "of": 634,
+     "pct": 84.2,
+     "wilson95_low_pct": 81.2,
+     "wilson95_high_pct": 86.9
+    },
+    "sensor_value_same": {
+     "count": 562,
+     "of": 634,
+     "pct": 88.6,
+     "wilson95_low_pct": 85.9,
+     "wilson95_high_pct": 90.9
+    },
+    "meter_value_same": {
+     "count": 576,
+     "of": 634,
+     "pct": 90.9,
+     "wilson95_low_pct": 88.4,
+     "wilson95_high_pct": 92.9
+    },
+    "swapped": {
+     "count": 3,
+     "of": 634,
+     "pct": 0.5,
+     "wilson95_low_pct": 0.2,
+     "wilson95_high_pct": 1.4
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 106,
+     "of": 740,
+     "pct": 14.3,
+     "wilson95_low_pct": 12.0,
+     "wilson95_high_pct": 17.0
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 634,
+     "of": 634,
+     "pct": 100.0,
+     "wilson95_low_pct": 99.4,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "v2_comparison_implicit": {
+    "reports": 3,
+    "model_pairs": 3,
+    "pattern_pairs": 3,
+    "both_output_a_pair": 3,
+    "agree_on_both_values": {
+     "count": 3,
+     "of": 3,
+     "pct": 100.0,
+     "wilson95_low_pct": 43.9,
+     "wilson95_high_pct": 100.0
+    },
+    "agree_within_5_mgdl": {
+     "count": 3,
+     "of": 3,
+     "pct": 100.0,
+     "wilson95_low_pct": 43.9,
+     "wilson95_high_pct": 100.0
+    },
+    "sensor_value_same": {
+     "count": 3,
+     "of": 3,
+     "pct": 100.0,
+     "wilson95_low_pct": 43.9,
+     "wilson95_high_pct": 100.0
+    },
+    "meter_value_same": {
+     "count": 3,
+     "of": 3,
+     "pct": 100.0,
+     "wilson95_low_pct": 43.9,
+     "wilson95_high_pct": 100.0
+    },
+    "swapped": {
+     "count": 0,
+     "of": 3,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 56.1
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 0,
+     "of": 3,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 56.1
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 3,
+     "of": 3,
+     "pct": 100.0,
+     "wilson95_low_pct": 43.9,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "v2_comparison_one_side": {
+    "reports": 125,
+    "model_pairs": 115,
+    "pattern_pairs": 125,
+    "both_output_a_pair": 115,
+    "agree_on_both_values": {
+     "count": 96,
+     "of": 115,
+     "pct": 83.5,
+     "wilson95_low_pct": 75.6,
+     "wilson95_high_pct": 89.2
+    },
+    "agree_within_5_mgdl": {
+     "count": 99,
+     "of": 115,
+     "pct": 86.1,
+     "wilson95_low_pct": 78.6,
+     "wilson95_high_pct": 91.3
+    },
+    "sensor_value_same": {
+     "count": 101,
+     "of": 115,
+     "pct": 87.8,
+     "wilson95_low_pct": 80.6,
+     "wilson95_high_pct": 92.6
+    },
+    "meter_value_same": {
+     "count": 102,
+     "of": 115,
+     "pct": 88.7,
+     "wilson95_low_pct": 81.6,
+     "wilson95_high_pct": 93.3
+    },
+    "swapped": {
+     "count": 5,
+     "of": 115,
+     "pct": 4.3,
+     "wilson95_low_pct": 1.9,
+     "wilson95_high_pct": 9.8
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 10,
+     "of": 125,
+     "pct": 8.0,
+     "wilson95_low_pct": 4.4,
+     "wilson95_high_pct": 14.1
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 115,
+     "of": 115,
+     "pct": 100.0,
+     "wilson95_low_pct": 96.8,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "v2_same_sentence": {
+    "reports": 2936,
+    "model_pairs": 2681,
+    "pattern_pairs": 2936,
+    "both_output_a_pair": 2681,
+    "agree_on_both_values": {
+     "count": 2119,
+     "of": 2681,
+     "pct": 79.0,
+     "wilson95_low_pct": 77.5,
+     "wilson95_high_pct": 80.5
+    },
+    "agree_within_5_mgdl": {
+     "count": 2163,
+     "of": 2681,
+     "pct": 80.7,
+     "wilson95_low_pct": 79.1,
+     "wilson95_high_pct": 82.1
+    },
+    "sensor_value_same": {
+     "count": 2207,
+     "of": 2681,
+     "pct": 82.3,
+     "wilson95_low_pct": 80.8,
+     "wilson95_high_pct": 83.7
+    },
+    "meter_value_same": {
+     "count": 2305,
+     "of": 2681,
+     "pct": 86.0,
+     "wilson95_low_pct": 84.6,
+     "wilson95_high_pct": 87.2
+    },
+    "swapped": {
+     "count": 10,
+     "of": 2681,
+     "pct": 0.4,
+     "wilson95_low_pct": 0.2,
+     "wilson95_high_pct": 0.7
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 255,
+     "of": 2936,
+     "pct": 8.7,
+     "wilson95_low_pct": 7.7,
+     "wilson95_high_pct": 9.8
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 2681,
+     "of": 2681,
+     "pct": 100.0,
+     "wilson95_low_pct": 99.9,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "v2_text_unique": {
+    "reports": 205,
+    "model_pairs": 115,
+    "pattern_pairs": 205,
+    "both_output_a_pair": 115,
+    "agree_on_both_values": {
+     "count": 106,
+     "of": 115,
+     "pct": 92.2,
+     "wilson95_low_pct": 85.8,
+     "wilson95_high_pct": 95.8
+    },
+    "agree_within_5_mgdl": {
+     "count": 107,
+     "of": 115,
+     "pct": 93.0,
+     "wilson95_low_pct": 86.9,
+     "wilson95_high_pct": 96.4
+    },
+    "sensor_value_same": {
+     "count": 109,
+     "of": 115,
+     "pct": 94.8,
+     "wilson95_low_pct": 89.1,
+     "wilson95_high_pct": 97.6
+    },
+    "meter_value_same": {
+     "count": 111,
+     "of": 115,
+     "pct": 96.5,
+     "wilson95_low_pct": 91.4,
+     "wilson95_high_pct": 98.6
+    },
+    "swapped": {
+     "count": 0,
+     "of": 115,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 3.2
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 90,
+     "of": 205,
+     "pct": 43.9,
+     "wilson95_low_pct": 37.3,
+     "wilson95_high_pct": 50.7
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 115,
+     "of": 115,
+     "pct": 100.0,
+     "wilson95_low_pct": 96.8,
+     "wilson95_high_pct": 100.0
+    }
+   }
+  },
+  "by_one_pair_or_several": {
+   "text holds one pair": {
+    "reports": 14899,
+    "model_pairs": 14012,
+    "pattern_pairs": 14899,
+    "both_output_a_pair": 14012,
+    "agree_on_both_values": {
+     "count": 12825,
+     "of": 14012,
+     "pct": 91.5,
+     "wilson95_low_pct": 91.1,
+     "wilson95_high_pct": 92.0
+    },
+    "agree_within_5_mgdl": {
+     "count": 12939,
+     "of": 14012,
+     "pct": 92.3,
+     "wilson95_low_pct": 91.9,
+     "wilson95_high_pct": 92.8
+    },
+    "sensor_value_same": {
+     "count": 13023,
+     "of": 14012,
+     "pct": 92.9,
+     "wilson95_low_pct": 92.5,
+     "wilson95_high_pct": 93.4
+    },
+    "meter_value_same": {
+     "count": 13429,
+     "of": 14012,
+     "pct": 95.8,
+     "wilson95_low_pct": 95.5,
+     "wilson95_high_pct": 96.2
+    },
+    "swapped": {
+     "count": 26,
+     "of": 14012,
+     "pct": 0.2,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 0.3
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 887,
+     "of": 14899,
+     "pct": 6.0,
+     "wilson95_low_pct": 5.6,
+     "wilson95_high_pct": 6.3
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 14012,
+     "of": 14012,
+     "pct": 100.0,
+     "wilson95_low_pct": 100.0,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "text lists several pairs": {
+    "reports": 2530,
+    "model_pairs": 2422,
+    "pattern_pairs": 2530,
+    "both_output_a_pair": 2422,
+    "agree_on_both_values": {
+     "count": 1710,
+     "of": 2422,
+     "pct": 70.6,
+     "wilson95_low_pct": 68.8,
+     "wilson95_high_pct": 72.4
+    },
+    "agree_within_5_mgdl": {
+     "count": 1766,
+     "of": 2422,
+     "pct": 72.9,
+     "wilson95_low_pct": 71.1,
+     "wilson95_high_pct": 74.6
+    },
+    "sensor_value_same": {
+     "count": 1800,
+     "of": 2422,
+     "pct": 74.3,
+     "wilson95_low_pct": 72.5,
+     "wilson95_high_pct": 76.0
+    },
+    "meter_value_same": {
+     "count": 1887,
+     "of": 2422,
+     "pct": 77.9,
+     "wilson95_low_pct": 76.2,
+     "wilson95_high_pct": 79.5
+    },
+    "swapped": {
+     "count": 7,
+     "of": 2422,
+     "pct": 0.3,
+     "wilson95_low_pct": 0.1,
+     "wilson95_high_pct": 0.6
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 108,
+     "of": 2530,
+     "pct": 4.3,
+     "wilson95_low_pct": 3.5,
+     "wilson95_high_pct": 5.1
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 2422,
+     "of": 2422,
+     "pct": 100.0,
+     "wilson95_low_pct": 99.8,
+     "wilson95_high_pct": 100.0
+    }
+   }
+  },
+  "malfunction_only_by_one_pair_or_several": {
+   "text holds one pair": {
+    "reports": 215,
+    "model_pairs": 215,
+    "pattern_pairs": 215,
+    "both_output_a_pair": 215,
+    "agree_on_both_values": {
+     "count": 212,
+     "of": 215,
+     "pct": 98.6,
+     "wilson95_low_pct": 96.0,
+     "wilson95_high_pct": 99.5
+    },
+    "agree_within_5_mgdl": {
+     "count": 212,
+     "of": 215,
+     "pct": 98.6,
+     "wilson95_low_pct": 96.0,
+     "wilson95_high_pct": 99.5
+    },
+    "sensor_value_same": {
+     "count": 212,
+     "of": 215,
+     "pct": 98.6,
+     "wilson95_low_pct": 96.0,
+     "wilson95_high_pct": 99.5
+    },
+    "meter_value_same": {
+     "count": 214,
+     "of": 215,
+     "pct": 99.5,
+     "wilson95_low_pct": 97.4,
+     "wilson95_high_pct": 99.9
+    },
+    "swapped": {
+     "count": 0,
+     "of": 215,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 1.8
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 0,
+     "of": 215,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 1.8
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 215,
+     "of": 215,
+     "pct": 100.0,
+     "wilson95_low_pct": 98.2,
+     "wilson95_high_pct": 100.0
+    }
+   },
+   "text lists several pairs": {
+    "reports": 74,
+    "model_pairs": 73,
+    "pattern_pairs": 74,
+    "both_output_a_pair": 73,
+    "agree_on_both_values": {
+     "count": 45,
+     "of": 73,
+     "pct": 61.6,
+     "wilson95_low_pct": 50.2,
+     "wilson95_high_pct": 71.9
+    },
+    "agree_within_5_mgdl": {
+     "count": 48,
+     "of": 73,
+     "pct": 65.8,
+     "wilson95_low_pct": 54.3,
+     "wilson95_high_pct": 75.6
+    },
+    "sensor_value_same": {
+     "count": 46,
+     "of": 73,
+     "pct": 63.0,
+     "wilson95_low_pct": 51.5,
+     "wilson95_high_pct": 73.2
+    },
+    "meter_value_same": {
+     "count": 47,
+     "of": 73,
+     "pct": 64.4,
+     "wilson95_low_pct": 52.9,
+     "wilson95_high_pct": 74.4
+    },
+    "swapped": {
+     "count": 0,
+     "of": 73,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 5.0
+    },
+    "pattern_pairs_the_model_did_not_output": {
+     "count": 1,
+     "of": 74,
+     "pct": 1.4,
+     "wilson95_low_pct": 0.2,
+     "wilson95_high_pct": 7.3
+    },
+    "model_pairs_the_patterns_also_output_recall": {
+     "count": 73,
+     "of": 73,
+     "pct": 100.0,
+     "wilson95_low_pct": 95.0,
+     "wilson95_high_pct": 100.0
+    }
+   }
+  },
+  "run_set_reports_not_in_saved_output": 0,
+  "memo_values_REGEX_V2_FULL_CORPUS": {
+   "model_pairs": 18436,
+   "pattern_pairs": 17426,
+   "both_output_a_pair": 16426,
+   "agree_on_both_values_pct": 88.4,
+   "agree_within_5_mgdl_pct": 89.5,
+   "swapped_pct": 0.2,
+   "recall_pct": 89.1,
+   "pattern_only_pairs": 1000
+  },
+  "matches_memo": {
+   "both_output_a_pair": false,
+   "agree_on_both_values_pct": true,
+   "agree_within_5_mgdl_pct": true,
+   "pattern_pairs": false,
+   "model_pairs": true
+  },
+  "saved_table_h_regex_v2_recall_by_brand": {
+   "pattern_pairs": 17429,
+   "both_output_a_pair": 16434,
+   "agree_on_both_values_pct": 88.4,
+   "agree_within_5_mgdl_pct": 89.5,
+   "pattern_only_pairs": 995
+  },
+  "matches_saved_table": {
+   "pattern_pairs": true,
+   "both_output_a_pair": true,
+   "agree_on_both_values_pct": true,
+   "agree_within_5_mgdl_pct": true,
+   "pattern_only_pairs": true
+  }
+ },
+ "3_direct_read_malfunction_only": {
+  "seed": 20261120,
+  "frame": "malfunction-only reports where the saved pattern output holds a pair",
+  "frame_pairs": 191112,
+  "frame_pairs_by_maker": {
+   "Abbott": 162072,
+   "Dexcom": 25273,
+   "Medtronic": 3651,
+   "Other": 116
+  },
+  "frame_share_pct_by_maker": {
+   "Abbott": 84.8,
+   "Dexcom": 13.22,
+   "Medtronic": 1.91,
+   "Other": 0.06
+  },
+  "sample_size": 100,
+  "sample_by_maker": {
+   "Abbott": 85,
+   "Dexcom": 13,
+   "Medtronic": 2,
+   "Other": 0
+  },
+  "frame_pairs_by_pattern": {
+   "abbott_template": 161052,
+   "v1_prose_same_sentence": 26732,
+   "v2_same_sentence": 2245,
+   "v2_comparison_one_side": 729,
+   "v1_prose_adjacent_sentence": 257,
+   "v2_adjacent_sentence": 79,
+   "v2_text_unique": 17,
+   "v2_comparison_implicit": 1
+  },
+  "reader": "AI reader (Claude), not a person. One reader, one pass.",
+  "verdict_counts": {
+   "right": 97,
+   "swapped": 0,
+   "wrong moment": 0,
+   "wrong number": 0,
+   "unclear": 3
+  },
+  "precision_right_of_all": {
+   "count": 97,
+   "of": 100,
+   "pct": 97.0,
+   "wilson95_low_pct": 91.5,
+   "wilson95_high_pct": 99.0
+  },
+  "precision_right_of_decided_unclear_left_out": {
+   "count": 97,
+   "of": 97,
+   "pct": 100.0,
+   "wilson95_low_pct": 96.2,
+   "wilson95_high_pct": 100.0
+  },
+  "false_low_calls_sensor_under_70_meter_70_or_more": {
+   "right": {
+    "count": 63,
+    "of": 66,
+    "pct": 95.5,
+    "wilson95_low_pct": 87.5,
+    "wilson95_high_pct": 98.4
+   },
+   "verdict_counts": {
+    "right": 63,
+    "swapped": 0,
+    "wrong moment": 0,
+    "wrong number": 0,
+    "unclear": 3
+   }
+  },
+  "by_maker": {
+   "Abbott": {
+    "right": {
+     "count": 83,
+     "of": 85,
+     "pct": 97.6,
+     "wilson95_low_pct": 91.8,
+     "wilson95_high_pct": 99.4
+    },
+    "verdict_counts": {
+     "right": 83,
+     "unclear": 2
+    }
+   },
+   "Dexcom": {
+    "right": {
+     "count": 12,
+     "of": 13,
+     "pct": 92.3,
+     "wilson95_low_pct": 66.7,
+     "wilson95_high_pct": 98.6
+    },
+    "verdict_counts": {
+     "right": 12,
+     "unclear": 1
+    }
+   },
+   "Medtronic": {
+    "right": {
+     "count": 2,
+     "of": 2,
+     "pct": 100.0,
+     "wilson95_low_pct": 34.2,
+     "wilson95_high_pct": 100.0
+    },
+    "verdict_counts": {
+     "right": 2
+    }
+   }
+  },
+  "by_pattern": {
+   "abbott_template": {
+    "right": {
+     "count": 83,
+     "of": 85,
+     "pct": 97.6,
+     "wilson95_low_pct": 91.8,
+     "wilson95_high_pct": 99.4
+    },
+    "verdict_counts": {
+     "right": 83,
+     "unclear": 2
+    }
+   },
+   "v1_prose_same_sentence": {
+    "right": {
+     "count": 14,
+     "of": 14,
+     "pct": 100.0,
+     "wilson95_low_pct": 78.5,
+     "wilson95_high_pct": 100.0
+    },
+    "verdict_counts": {
+     "right": 14
+    }
+   },
+   "v2_same_sentence": {
+    "right": {
+     "count": 0,
+     "of": 1,
+     "pct": 0.0,
+     "wilson95_low_pct": 0.0,
+     "wilson95_high_pct": 79.3
+    },
+    "verdict_counts": {
+     "unclear": 1
+    }
+   }
+  },
+  "abbott_template_pairs": {
+   "count": 83,
+   "of": 85,
+   "pct": 97.6,
+   "wilson95_low_pct": 91.8,
+   "wilson95_high_pct": 99.4
+  },
+  "all_other_patterns_pairs": {
+   "count": 14,
+   "of": 15,
+   "pct": 93.3,
+   "wilson95_low_pct": 70.2,
+   "wilson95_high_pct": 98.8
+  },
+  "text_lists_several_pairs": {
+   "count": 21,
+   "of": 23,
+   "pct": 91.3,
+   "wilson95_low_pct": 73.2,
+   "wilson95_high_pct": 97.6
+  },
+  "text_holds_one_pair": {
+   "count": 76,
+   "of": 77,
+   "pct": 98.7,
+   "wilson95_low_pct": 93.0,
+   "wilson95_high_pct": 99.8
+  },
+  "sample_pairs_from_two_sentence_patterns": 0,
+  "frame_pairs_from_two_sentence_patterns": 353,
+  "rerun_check": {
+   "reports_rerun": 100,
+   "same_as_saved": 100,
+   "different": 0,
+   "different_keys": []
+  },
+  "abbott_template_pairs_by_name_of_reference_device": {
+   "a meter (meter, HCP meter, Abbott meter, reader's built-in meter)": 60,
+   "the comparison device (kind not named)": 23,
+   "unknown device": 1,
+   "other wording: freestyle libre scan": 1
+  },
+  "right_and_reference_named_as_meter_or_blood_glucose": {
+   "count": 74,
+   "of": 100,
+   "pct": 74.0,
+   "wilson95_low_pct": 64.6,
+   "wilson95_high_pct": 81.6
+  }
+ }
+}

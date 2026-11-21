@@ -1,0 +1,1166 @@
+{
+ "generated": "2026-11-21 00:22",
+ "script": "analysis/accuracy_by_range_sorting.py",
+ "seed": 600,
+ "n_boot": 1000,
+ "cache_version": "2026-10-30.1",
+ "pair_set": "accuracy_v2.py Set B: verified fingerstick pairs (meter-log reference, not used for calibration), in the study window, all participants and phases. Plain matched pairs, no delay correction.",
+ "definitions": {
+  "error": "sensor minus meter",
+  "mard_pct": "mean of |sensor - meter| / meter x 100 over the pairs in the range",
+  "bias_pct": "mean of (sensor - meter) / meter x 100 over the pairs in the range; negative = sensor reads too low",
+  "bias_mgdl": "mean of (sensor - meter) in mg/dL over the pairs in the range",
+  "within_20_20_pct": "share of pairs within 20 mg/dL (meter under 100 mg/dL) or within 20 % (meter 100 or above); from range_block, not used in the memo",
+  "ci": "95 % interval, 2.5th to 97.5th percentile of a bootstrap that re-draws participants (accuracy_v2.Booter)",
+  "ranges": "<54; 54-69; 70-180 (70 <= v <= 180); 181-250 (180 < v <= 250); >250 mg/dL (accuracy_v2.bin5)",
+  "low_n": "true when the range has fewer than 50 pairs or fewer than 10 participants"
+ },
+ "checks": {
+  "n_pairs": 168990,
+  "n_pairs_expected": 168990,
+  "n_participants": 226,
+  "mard_by_average_rounded": {
+   "<54": 19.6,
+   "54-69": 16.9,
+   "70-180": 14.2,
+   "181-250": 11.4,
+   ">250": 10.3
+  },
+  "mard_by_average_expected": {
+   "<54": 19.6,
+   "54-69": 16.9,
+   "70-180": 14.2,
+   "181-250": 11.4,
+   ">250": 10.3
+  },
+  "mard_by_average_reproduced": true,
+  "match_with_accuracy_v2_stats_json": {
+   "file_found": true,
+   "largest_absolute_difference": "5.0e-05",
+   "identical_to_4_decimals": true,
+   "note": "accuracy_v2_stats.json stores 4 decimals, so a difference up to 0.00005 is rounding only",
+   "compared": "Set B by_avg_range and by_cgm_range: pairs, participants, MARD, bias in % and in mg/dL, each with its 95 % interval"
+  }
+ },
+ "overall": {
+  "n_pairs": 168990,
+  "n_participants": 226,
+  "mard_pct": {
+   "value": 13.2517,
+   "ci_low": 12.6964,
+   "ci_high": 13.9085,
+   "lower_95_one_sided": 12.7758,
+   "n_pairs": 168990,
+   "n_participants": 226
+  },
+  "bias_pct": {
+   "value": -1.2751,
+   "ci_low": -1.6469,
+   "ci_high": -0.8722,
+   "lower_95_one_sided": -1.5899,
+   "n_pairs": 168990,
+   "n_participants": 226
+  },
+  "bias_mgdl": {
+   "value": -4.9774,
+   "ci_low": -5.3815,
+   "ci_high": -4.612,
+   "lower_95_one_sided": -5.3266,
+   "n_pairs": 168990,
+   "n_participants": 226
+  }
+ },
+ "sortings": {
+  "by_meter": {
+   "sorted_by": "the meter value alone",
+   "ranges": {
+    "<54": {
+     "n_pairs": 2174,
+     "n_participants": 206,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": 12.9669,
+      "ci_low": 10.8037,
+      "ci_high": 15.5382,
+      "lower_95_one_sided": 11.1434,
+      "n_pairs": 2174,
+      "n_participants": 206
+     },
+     "bias_pct": {
+      "value": 29.8317,
+      "ci_low": 25.1104,
+      "ci_high": 35.387,
+      "lower_95_one_sided": 25.7896,
+      "n_pairs": 2174,
+      "n_participants": 206
+     },
+     "mard_pct": {
+      "value": 37.5183,
+      "ci_low": 33.0386,
+      "ci_high": 42.6582,
+      "lower_95_one_sided": 33.7564,
+      "n_pairs": 2174,
+      "n_participants": 206
+     },
+     "within_20_20_pct": {
+      "value": 80.1748,
+      "ci_low": 77.1865,
+      "ci_high": 83.0699,
+      "lower_95_one_sided": 77.5659,
+      "n_pairs": 2174,
+      "n_participants": 206
+     },
+     "direction_pct": "too high",
+     "direction_mgdl": "too high",
+     "share_of_all_pairs_pct": 1.2865
+    },
+    "54-69": {
+     "n_pairs": 7930,
+     "n_participants": 224,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": 6.1381,
+      "ci_low": 4.841,
+      "ci_high": 7.7587,
+      "lower_95_one_sided": 5.0296,
+      "n_pairs": 7930,
+      "n_participants": 224
+     },
+     "bias_pct": {
+      "value": 10.0468,
+      "ci_low": 7.9586,
+      "ci_high": 12.65,
+      "lower_95_one_sided": 8.222,
+      "n_pairs": 7930,
+      "n_participants": 224
+     },
+     "mard_pct": {
+      "value": 22.4985,
+      "ci_low": 20.7117,
+      "ci_high": 24.7369,
+      "lower_95_one_sided": 20.9479,
+      "n_pairs": 7930,
+      "n_participants": 224
+     },
+     "within_20_20_pct": {
+      "value": 84.918,
+      "ci_low": 83.297,
+      "ci_high": 86.3552,
+      "lower_95_one_sided": 83.561,
+      "n_pairs": 7930,
+      "n_participants": 224
+     },
+     "direction_pct": "too high",
+     "direction_mgdl": "too high",
+     "share_of_all_pairs_pct": 4.6926
+    },
+    "70-180": {
+     "n_pairs": 97098,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -1.6963,
+      "ci_low": -2.294,
+      "ci_high": -1.0408,
+      "lower_95_one_sided": -2.1838,
+      "n_pairs": 97098,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": -0.7503,
+      "ci_low": -1.2783,
+      "ci_high": -0.1159,
+      "lower_95_one_sided": -1.2246,
+      "n_pairs": 97098,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 13.4041,
+      "ci_low": 12.8413,
+      "ci_high": 14.0493,
+      "lower_95_one_sided": 12.9471,
+      "n_pairs": 97098,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 82.4868,
+      "ci_low": 81.33,
+      "ci_high": 83.5928,
+      "lower_95_one_sided": 81.4672,
+      "n_pairs": 97098,
+      "n_participants": 226
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 57.4578
+    },
+    "181-250": {
+     "n_pairs": 41133,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -8.2763,
+      "ci_low": -9.2123,
+      "ci_high": -7.4254,
+      "lower_95_one_sided": -9.0727,
+      "n_pairs": 41133,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": -3.8765,
+      "ci_low": -4.3231,
+      "ci_high": -3.4639,
+      "lower_95_one_sided": -4.2469,
+      "n_pairs": 41133,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 10.9192,
+      "ci_low": 10.5389,
+      "ci_high": 11.3428,
+      "lower_95_one_sided": 10.6,
+      "n_pairs": 41133,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 86.0915,
+      "ci_low": 84.9762,
+      "ci_high": 87.18,
+      "lower_95_one_sided": 85.1465,
+      "n_pairs": 41133,
+      "n_participants": 226
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 24.3405
+    },
+    ">250": {
+     "n_pairs": 20655,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -19.9878,
+      "ci_low": -22.6722,
+      "ci_high": -17.8935,
+      "lower_95_one_sided": -22.2778,
+      "n_pairs": 20655,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": -6.1824,
+      "ci_low": -6.9806,
+      "ci_high": -5.5303,
+      "lower_95_one_sided": -6.8551,
+      "n_pairs": 20655,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 11.0767,
+      "ci_low": 10.5086,
+      "ci_high": 11.8049,
+      "lower_95_one_sided": 10.6008,
+      "n_pairs": 20655,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 85.771,
+      "ci_low": 83.9939,
+      "ci_high": 87.2071,
+      "lower_95_one_sided": 84.3897,
+      "n_pairs": 20655,
+      "n_participants": 226
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 12.2226
+    }
+   }
+  },
+  "by_sensor": {
+   "sorted_by": "the sensor value alone",
+   "ranges": {
+    "<54": {
+     "n_pairs": 3536,
+     "n_participants": 210,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -18.8139,
+      "ci_low": -20.2442,
+      "ci_high": -17.3425,
+      "lower_95_one_sided": -20.0077,
+      "n_pairs": 3536,
+      "n_participants": 210
+     },
+     "bias_pct": {
+      "value": -22.487,
+      "ci_low": -23.7127,
+      "ci_high": -21.2107,
+      "lower_95_one_sided": -23.5119,
+      "n_pairs": 3536,
+      "n_participants": 210
+     },
+     "mard_pct": {
+      "value": 25.6607,
+      "ci_low": 24.6609,
+      "ci_high": 26.6589,
+      "lower_95_one_sided": 24.8829,
+      "n_pairs": 3536,
+      "n_participants": 210
+     },
+     "within_20_20_pct": {
+      "value": 68.7783,
+      "ci_low": 66.2226,
+      "ci_high": 71.1224,
+      "lower_95_one_sided": 66.6157,
+      "n_pairs": 3536,
+      "n_participants": 210
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 2.0924
+    },
+    "54-69": {
+     "n_pairs": 8188,
+     "n_participants": 223,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -10.6845,
+      "ci_low": -11.8013,
+      "ci_high": -9.7489,
+      "lower_95_one_sided": -11.5721,
+      "n_pairs": 8188,
+      "n_participants": 223
+     },
+     "bias_pct": {
+      "value": -9.2566,
+      "ci_low": -10.1502,
+      "ci_high": -8.4108,
+      "lower_95_one_sided": -9.9965,
+      "n_pairs": 8188,
+      "n_participants": 223
+     },
+     "mard_pct": {
+      "value": 16.6321,
+      "ci_low": 16.1026,
+      "ci_high": 17.2105,
+      "lower_95_one_sided": 16.1764,
+      "n_pairs": 8188,
+      "n_participants": 223
+     },
+     "within_20_20_pct": {
+      "value": 81.7416,
+      "ci_low": 80.2127,
+      "ci_high": 83.1774,
+      "lower_95_one_sided": 80.4239,
+      "n_pairs": 8188,
+      "n_participants": 223
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 4.8453
+    },
+    "70-180": {
+     "n_pairs": 100016,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -7.2723,
+      "ci_low": -7.9841,
+      "ci_high": -6.7352,
+      "lower_95_one_sided": -7.8495,
+      "n_pairs": 100016,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": -2.4657,
+      "ci_low": -2.8648,
+      "ci_high": -2.0696,
+      "lower_95_one_sided": -2.7973,
+      "n_pairs": 100016,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 13.1615,
+      "ci_low": 12.6607,
+      "ci_high": 13.7265,
+      "lower_95_one_sided": 12.7317,
+      "n_pairs": 100016,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 82.5038,
+      "ci_low": 81.2834,
+      "ci_high": 83.6475,
+      "lower_95_one_sided": 81.4484,
+      "n_pairs": 100016,
+      "n_participants": 226
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 59.1846
+    },
+    "181-250": {
+     "n_pairs": 38439,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -1.855,
+      "ci_low": -2.7409,
+      "ci_high": -0.931,
+      "lower_95_one_sided": -2.6008,
+      "n_pairs": 38439,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": 2.0863,
+      "ci_low": 1.3484,
+      "ci_high": 2.9447,
+      "lower_95_one_sided": 1.4281,
+      "n_pairs": 38439,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 11.8407,
+      "ci_low": 11.0827,
+      "ci_high": 12.7148,
+      "lower_95_one_sided": 11.2208,
+      "n_pairs": 38439,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 87.5621,
+      "ci_low": 86.4552,
+      "ci_high": 88.6236,
+      "lower_95_one_sided": 86.6146,
+      "n_pairs": 38439,
+      "n_participants": 226
+     },
+     "direction_pct": "too high",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 22.7463
+    },
+    ">250": {
+     "n_pairs": 18811,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": 5.9294,
+      "ci_low": 4.1428,
+      "ci_high": 7.9496,
+      "lower_95_one_sided": 4.3457,
+      "n_pairs": 18811,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": 5.6476,
+      "ci_low": 4.497,
+      "ci_high": 7.0406,
+      "lower_95_one_sided": 4.6675,
+      "n_pairs": 18811,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 12.8108,
+      "ci_low": 11.704,
+      "ci_high": 14.1679,
+      "lower_95_one_sided": 11.8603,
+      "n_pairs": 18811,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 87.1724,
+      "ci_low": 85.5572,
+      "ci_high": 88.5322,
+      "lower_95_one_sided": 85.8588,
+      "n_pairs": 18811,
+      "n_participants": 226
+     },
+     "direction_pct": "too high",
+     "direction_mgdl": "too high",
+     "share_of_all_pairs_pct": 11.1314
+    }
+   }
+  },
+  "by_average": {
+   "sorted_by": "the average of sensor and meter",
+   "ranges": {
+    "<54": {
+     "n_pairs": 2156,
+     "n_participants": 197,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -4.1591,
+      "ci_low": -4.8739,
+      "ci_high": -3.4138,
+      "lower_95_one_sided": -4.7677,
+      "n_pairs": 2156,
+      "n_participants": 197
+     },
+     "bias_pct": {
+      "value": -5.1768,
+      "ci_low": -6.7628,
+      "ci_high": -3.6599,
+      "lower_95_one_sided": -6.4812,
+      "n_pairs": 2156,
+      "n_participants": 197
+     },
+     "mard_pct": {
+      "value": 19.6176,
+      "ci_low": 18.7401,
+      "ci_high": 20.5883,
+      "lower_95_one_sided": 18.8764,
+      "n_pairs": 2156,
+      "n_participants": 197
+     },
+     "within_20_20_pct": {
+      "value": 91.2801,
+      "ci_low": 89.9442,
+      "ci_high": 92.5911,
+      "lower_95_one_sided": 90.1463,
+      "n_pairs": 2156,
+      "n_participants": 197
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 1.2758
+    },
+    "54-69": {
+     "n_pairs": 7866,
+     "n_participants": 222,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -3.2923,
+      "ci_low": -3.9041,
+      "ci_high": -2.7299,
+      "lower_95_one_sided": -3.7965,
+      "n_pairs": 7866,
+      "n_participants": 222
+     },
+     "bias_pct": {
+      "value": -2.6889,
+      "ci_low": -3.6542,
+      "ci_high": -1.7182,
+      "lower_95_one_sided": -3.5009,
+      "n_pairs": 7866,
+      "n_participants": 222
+     },
+     "mard_pct": {
+      "value": 16.8961,
+      "ci_low": 16.3259,
+      "ci_high": 17.4944,
+      "lower_95_one_sided": 16.4278,
+      "n_pairs": 7866,
+      "n_participants": 222
+     },
+     "within_20_20_pct": {
+      "value": 85.7361,
+      "ci_low": 84.575,
+      "ci_high": 86.8319,
+      "lower_95_one_sided": 84.8001,
+      "n_pairs": 7866,
+      "n_participants": 222
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 4.6547
+    },
+    "70-180": {
+     "n_pairs": 99544,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -4.3554,
+      "ci_low": -4.7926,
+      "ci_high": -3.9067,
+      "lower_95_one_sided": -4.734,
+      "n_pairs": 99544,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": -1.1389,
+      "ci_low": -1.6648,
+      "ci_high": -0.5257,
+      "lower_95_one_sided": -1.5908,
+      "n_pairs": 99544,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 14.1596,
+      "ci_low": 13.477,
+      "ci_high": 14.9283,
+      "lower_95_one_sided": 13.576,
+      "n_pairs": 99544,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 81.5278,
+      "ci_low": 80.2417,
+      "ci_high": 82.7481,
+      "lower_95_one_sided": 80.4236,
+      "n_pairs": 99544,
+      "n_participants": 226
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 58.9053
+    },
+    "181-250": {
+     "n_pairs": 40262,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -5.8004,
+      "ci_low": -6.5514,
+      "ci_high": -5.111,
+      "lower_95_one_sided": -6.4605,
+      "n_pairs": 40262,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": -1.2222,
+      "ci_low": -1.6332,
+      "ci_high": -0.8345,
+      "lower_95_one_sided": -1.5675,
+      "n_pairs": 40262,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 11.3784,
+      "ci_low": 10.7811,
+      "ci_high": 12.1579,
+      "lower_95_one_sided": 10.8786,
+      "n_pairs": 40262,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 86.6102,
+      "ci_low": 85.2869,
+      "ci_high": 87.7762,
+      "lower_95_one_sided": 85.4781,
+      "n_pairs": 40262,
+      "n_participants": 226
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 23.8251
+    },
+    ">250": {
+     "n_pairs": 19162,
+     "n_participants": 226,
+     "low_n": false,
+     "bias_mgdl": {
+      "value": -7.2632,
+      "ci_low": -8.5297,
+      "ci_high": -5.946,
+      "lower_95_one_sided": -8.364,
+      "n_pairs": 19162,
+      "n_participants": 226
+     },
+     "bias_pct": {
+      "value": -1.0744,
+      "ci_low": -1.442,
+      "ci_high": -0.6507,
+      "lower_95_one_sided": -1.4034,
+      "n_pairs": 19162,
+      "n_participants": 226
+     },
+     "mard_pct": {
+      "value": 10.2596,
+      "ci_low": 9.766,
+      "ci_high": 10.8818,
+      "lower_95_one_sided": 9.8413,
+      "n_pairs": 19162,
+      "n_participants": 226
+     },
+     "within_20_20_pct": {
+      "value": 88.5033,
+      "ci_low": 87.1424,
+      "ci_high": 89.6473,
+      "lower_95_one_sided": 87.4468,
+      "n_pairs": 19162,
+      "n_participants": 226
+     },
+     "direction_pct": "too low",
+     "direction_mgdl": "too low",
+     "share_of_all_pairs_pct": 11.3391
+    }
+   }
+  }
+ },
+ "what_holds": {
+  "mard_lowest_range_vs_70_180": {
+   "by_meter": {
+    "range_a": "<54",
+    "range_b": "70-180",
+    "value_a": 37.5183,
+    "value_b": 13.4041,
+    "difference_a_minus_b": {
+     "value": 24.1143,
+     "ci_low": 19.836,
+     "ci_high": 29.0193
+    },
+    "ratio_a_over_b": {
+     "value": 2.799,
+     "ci_low": 2.4837,
+     "ci_high": 3.1486
+    },
+    "draws_used": 1000
+   },
+   "by_sensor": {
+    "range_a": "<54",
+    "range_b": "70-180",
+    "value_a": 25.6607,
+    "value_b": 13.1615,
+    "difference_a_minus_b": {
+     "value": 12.4992,
+     "ci_low": 11.551,
+     "ci_high": 13.5321
+    },
+    "ratio_a_over_b": {
+     "value": 1.9497,
+     "ci_low": 1.8554,
+     "ci_high": 2.0525
+    },
+    "draws_used": 1000
+   },
+   "by_average": {
+    "range_a": "<54",
+    "range_b": "70-180",
+    "value_a": 19.6176,
+    "value_b": 14.1596,
+    "difference_a_minus_b": {
+     "value": 5.4581,
+     "ci_low": 4.3083,
+     "ci_high": 6.584
+    },
+    "ratio_a_over_b": {
+     "value": 1.3855,
+     "ci_low": 1.291,
+     "ci_high": 1.4772
+    },
+    "draws_used": 1000
+   }
+  },
+  "mard_under_54_vs_54_69": {
+   "by_meter": {
+    "range_a": "<54",
+    "range_b": "54-69",
+    "value_a": 37.5183,
+    "value_b": 22.4985,
+    "difference_a_minus_b": {
+     "value": 15.0198,
+     "ci_low": 11.2157,
+     "ci_high": 18.9278
+    },
+    "ratio_a_over_b": {
+     "value": 1.6676,
+     "ci_low": 1.5015,
+     "ci_high": 1.8378
+    },
+    "draws_used": 1000
+   },
+   "by_sensor": {
+    "range_a": "<54",
+    "range_b": "54-69",
+    "value_a": 25.6607,
+    "value_b": 16.6321,
+    "difference_a_minus_b": {
+     "value": 9.0287,
+     "ci_low": 8.2007,
+     "ci_high": 9.8107
+    },
+    "ratio_a_over_b": {
+     "value": 1.5428,
+     "ci_low": 1.4867,
+     "ci_high": 1.5992
+    },
+    "draws_used": 1000
+   },
+   "by_average": {
+    "range_a": "<54",
+    "range_b": "54-69",
+    "value_a": 19.6176,
+    "value_b": 16.8961,
+    "difference_a_minus_b": {
+     "value": 2.7215,
+     "ci_low": 1.8018,
+     "ci_high": 3.6364
+    },
+    "ratio_a_over_b": {
+     "value": 1.1611,
+     "ci_low": 1.1048,
+     "ci_high": 1.2154
+    },
+    "draws_used": 1000
+   }
+  },
+  "mard_54_69_vs_70_180": {
+   "by_meter": {
+    "range_a": "54-69",
+    "range_b": "70-180",
+    "value_a": 22.4985,
+    "value_b": 13.4041,
+    "difference_a_minus_b": {
+     "value": 9.0945,
+     "ci_low": 7.6078,
+     "ci_high": 10.842
+    },
+    "ratio_a_over_b": {
+     "value": 1.6785,
+     "ci_low": 1.5767,
+     "ci_high": 1.7941
+    },
+    "draws_used": 1000
+   },
+   "by_sensor": {
+    "range_a": "54-69",
+    "range_b": "70-180",
+    "value_a": 16.6321,
+    "value_b": 13.1615,
+    "difference_a_minus_b": {
+     "value": 3.4705,
+     "ci_low": 2.8812,
+     "ci_high": 4.0562
+    },
+    "ratio_a_over_b": {
+     "value": 1.2637,
+     "ci_low": 1.2153,
+     "ci_high": 1.3158
+    },
+    "draws_used": 1000
+   },
+   "by_average": {
+    "range_a": "54-69",
+    "range_b": "70-180",
+    "value_a": 16.8961,
+    "value_b": 14.1596,
+    "difference_a_minus_b": {
+     "value": 2.7366,
+     "ci_low": 1.8714,
+     "ci_high": 3.5844
+    },
+    "ratio_a_over_b": {
+     "value": 1.1933,
+     "ci_low": 1.1245,
+     "ci_high": 1.2646
+    },
+    "draws_used": 1000
+   }
+  },
+  "mard_lowest_range_vs_over_250": {
+   "by_meter": {
+    "range_a": "<54",
+    "range_b": ">250",
+    "value_a": 37.5183,
+    "value_b": 11.0767,
+    "difference_a_minus_b": {
+     "value": 26.4417,
+     "ci_low": 22.0312,
+     "ci_high": 31.4371
+    },
+    "ratio_a_over_b": {
+     "value": 3.3871,
+     "ci_low": 2.9655,
+     "ci_high": 3.8609
+    },
+    "draws_used": 1000
+   },
+   "by_sensor": {
+    "range_a": "<54",
+    "range_b": ">250",
+    "value_a": 25.6607,
+    "value_b": 12.8108,
+    "difference_a_minus_b": {
+     "value": 12.85,
+     "ci_low": 11.3151,
+     "ci_high": 14.2303
+    },
+    "ratio_a_over_b": {
+     "value": 2.0031,
+     "ci_low": 1.8047,
+     "ci_high": 2.1933
+    },
+    "draws_used": 1000
+   },
+   "by_average": {
+    "range_a": "<54",
+    "range_b": ">250",
+    "value_a": 19.6176,
+    "value_b": 10.2596,
+    "difference_a_minus_b": {
+     "value": 9.3581,
+     "ci_low": 8.2372,
+     "ci_high": 10.4202
+    },
+    "ratio_a_over_b": {
+     "value": 1.9121,
+     "ci_low": 1.7664,
+     "ci_high": 2.0475
+    },
+    "draws_used": 1000
+   }
+  },
+  "mard_181_250_vs_70_180": {
+   "by_meter": {
+    "range_a": "181-250",
+    "range_b": "70-180",
+    "value_a": 10.9192,
+    "value_b": 13.4041,
+    "difference_a_minus_b": {
+     "value": -2.4849,
+     "ci_low": -2.8587,
+     "ci_high": -2.1243
+    },
+    "ratio_a_over_b": {
+     "value": 0.8146,
+     "ci_low": 0.7931,
+     "ci_high": 0.836
+    },
+    "draws_used": 1000
+   },
+   "by_sensor": {
+    "range_a": "181-250",
+    "range_b": "70-180",
+    "value_a": 11.8407,
+    "value_b": 13.1615,
+    "difference_a_minus_b": {
+     "value": -1.3208,
+     "ci_low": -1.7397,
+     "ci_high": -0.8537
+    },
+    "ratio_a_over_b": {
+     "value": 0.8996,
+     "ci_low": 0.8663,
+     "ci_high": 0.9357
+    },
+    "draws_used": 1000
+   },
+   "by_average": {
+    "range_a": "181-250",
+    "range_b": "70-180",
+    "value_a": 11.3784,
+    "value_b": 14.1596,
+    "difference_a_minus_b": {
+     "value": -2.7811,
+     "ci_low": -3.3916,
+     "ci_high": -2.1323
+    },
+    "ratio_a_over_b": {
+     "value": 0.8036,
+     "ci_low": 0.7671,
+     "ci_high": 0.8447
+    },
+    "draws_used": 1000
+   }
+  },
+  "mard_over_250_vs_70_180": {
+   "by_meter": {
+    "range_a": ">250",
+    "range_b": "70-180",
+    "value_a": 11.0767,
+    "value_b": 13.4041,
+    "difference_a_minus_b": {
+     "value": -2.3274,
+     "ci_low": -2.8397,
+     "ci_high": -1.7837
+    },
+    "ratio_a_over_b": {
+     "value": 0.8264,
+     "ci_low": 0.7908,
+     "ci_high": 0.8647
+    },
+    "draws_used": 1000
+   },
+   "by_sensor": {
+    "range_a": ">250",
+    "range_b": "70-180",
+    "value_a": 12.8108,
+    "value_b": 13.1615,
+    "difference_a_minus_b": {
+     "value": -0.3508,
+     "ci_low": -1.3426,
+     "ci_high": 0.9043
+    },
+    "ratio_a_over_b": {
+     "value": 0.9733,
+     "ci_low": 0.8982,
+     "ci_high": 1.0682
+    },
+    "draws_used": 1000
+   },
+   "by_average": {
+    "range_a": ">250",
+    "range_b": "70-180",
+    "value_a": 10.2596,
+    "value_b": 14.1596,
+    "difference_a_minus_b": {
+     "value": -3.9,
+     "ci_low": -4.6525,
+     "ci_high": -3.152
+    },
+    "ratio_a_over_b": {
+     "value": 0.7246,
+     "ci_low": 0.6834,
+     "ci_high": 0.7703
+    },
+    "draws_used": 1000
+   }
+  },
+  "range_with_largest_mard": {
+   "by_meter": "<54",
+   "by_sensor": "<54",
+   "by_average": "<54"
+  },
+  "range_with_smallest_mard": {
+   "by_meter": "181-250",
+   "by_sensor": "181-250",
+   "by_average": ">250"
+  },
+  "mard_falls_at_every_step_from_low_to_high": {
+   "by_meter": false,
+   "by_sensor": false,
+   "by_average": true
+  },
+  "mard_falls_from_under_54_to_54_69_to_70_180": {
+   "by_meter": true,
+   "by_sensor": true,
+   "by_average": true
+  },
+  "mard_spread_across_sortings_pct_points": {
+   "<54": {
+    "min": 19.6176,
+    "max": 37.5183
+   },
+   "54-69": {
+    "min": 16.6321,
+    "max": 22.4985
+   },
+   "70-180": {
+    "min": 13.1615,
+    "max": 14.1596
+   },
+   "181-250": {
+    "min": 10.9192,
+    "max": 11.8407
+   },
+   ">250": {
+    "min": 10.2596,
+    "max": 12.8108
+   }
+  },
+  "direction_by_range": {
+   "<54": {
+    "by_meter": "too high",
+    "by_sensor": "too low",
+    "by_average": "too low"
+   },
+   "54-69": {
+    "by_meter": "too high",
+    "by_sensor": "too low",
+    "by_average": "too low"
+   },
+   "70-180": {
+    "by_meter": "too low",
+    "by_sensor": "too low",
+    "by_average": "too low"
+   },
+   "181-250": {
+    "by_meter": "too low",
+    "by_sensor": "too high",
+    "by_average": "too low"
+   },
+   ">250": {
+    "by_meter": "too low",
+    "by_sensor": "too high",
+    "by_average": "too low"
+   }
+  },
+  "direction_same_under_all_three": {
+   "<54": false,
+   "54-69": false,
+   "70-180": true,
+   "181-250": false,
+   ">250": false
+  },
+  "bias_spread_across_sortings_pct": {
+   "<54": {
+    "min": -22.487,
+    "max": 29.8317
+   },
+   "54-69": {
+    "min": -9.2566,
+    "max": 10.0468
+   },
+   "70-180": {
+    "min": -2.4657,
+    "max": -0.7503
+   },
+   "181-250": {
+    "min": -3.8765,
+    "max": 2.0863
+   },
+   ">250": {
+    "min": -6.1824,
+    "max": 5.6476
+   }
+  }
+ },
+ "meter_range_vs_sensor_range": {
+  "pairs_rows_meter_columns_sensor": {
+   "<54": {
+    "<54": 1085,
+    "54-69": 694,
+    "70-180": 368,
+    "181-250": 16,
+    ">250": 11
+   },
+   "54-69": {
+    "<54": 1538,
+    "54-69": 3610,
+    "70-180": 2684,
+    "181-250": 78,
+    ">250": 20
+   },
+   "70-180": {
+    "<54": 881,
+    "54-69": 3815,
+    "70-180": 86427,
+    "181-250": 5586,
+    ">250": 389
+   },
+   "181-250": {
+    "<54": 26,
+    "54-69": 49,
+    "70-180": 9944,
+    "181-250": 27784,
+    ">250": 3330
+   },
+   ">250": {
+    "<54": 6,
+    "54-69": 20,
+    "70-180": 593,
+    "181-250": 4975,
+    ">250": 15061
+   }
+  },
+  "agreement": {
+   "pairs_in_same_range_by_meter_and_by_sensor": 133967,
+   "share_of_all_pairs_pct": 79.2751,
+   "of_pairs_with_meter_in_range_share_with_sensor_in_same_range_pct": {
+    "<54": 49.908,
+    "54-69": 45.5233,
+    "70-180": 89.0101,
+    "181-250": 67.5467,
+    ">250": 72.917
+   },
+   "of_pairs_with_sensor_in_range_share_with_meter_in_same_range_pct": {
+    "<54": 30.6844,
+    "54-69": 44.0889,
+    "70-180": 86.4132,
+    "181-250": 72.2808,
+    ">250": 80.0649
+   }
+  }
+ },
+ "runtime_s": 0.3
+}
