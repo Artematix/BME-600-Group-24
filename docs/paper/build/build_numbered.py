@@ -20,4 +20,8 @@ lib.PAPER = HERE / "PAPER_numbered.md"
 
 import build_paper
 
+# Optional: --fig-scale 0.9 makes the figures of the main text a little smaller.
+if "--fig-scale" in sys.argv:
+    build_paper.FIG_SCALE = float(sys.argv[sys.argv.index("--fig-scale") + 1])
+
 build_paper.main()

@@ -23,6 +23,7 @@ FONT_PT, MARGIN_IN = 10, 0.75
 TEXTW_IN = lib.PAGE_W_IN - 2 * MARGIN_IN
 TEXTH_IN = lib.PAGE_H_IN - 2 * MARGIN_IN
 PAGE_LIMIT = 10
+FIG_SCALE = 0.8          # figures in the main text as a share of their natural width (set by --fig-scale)
 GROUP = "BMEN 600 Group 24"
 AUTHORS = "Authors: to be added"
 GITHUB = "https://github.com/Artematix/BME-600-Group-24"
@@ -236,7 +237,7 @@ def build_tex(notes):
         if not any(word in n.lower() for n, _ in main):
             notes.append("No section with \"%s\" in its heading was found in PAPER.md." % word)
 
-    ctx = lib.Ctx(TEXTW_IN, BUILD)
+    ctx = lib.Ctx(TEXTW_IN, BUILD, figscale=FIG_SCALE)
     doc = [lib.preamble(FONT_PT, MARGIN_IN), "\\begin{document}", title_page(title, authors)]
     info = []                 # (label, name, words, empty) for the report
     for k, (name, blks) in enumerate(main):

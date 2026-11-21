@@ -24,7 +24,8 @@ def load_references():
         if m:
             link = ""
             for nxt in lines[i + 1:i + 4]:
-                lm = re.match(r"^- Link:\s*(\S+)", nxt)
+                # "- Link: https://..." or "- Link (FDA copy, ...): https://..."
+                lm = re.match(r"^- Link[^:]*:.*?(https?://[^\s)]+)", nxt)
                 if lm:
                     link = lm.group(1)
                     break
@@ -41,7 +42,8 @@ def clean(text, link):
     text = re.sub(r"\s*Midterm refs? \[\d+\](?: to \[\d+\])?\.?", "", text)
     text = re.sub(r"\s*These are refs \[\d+\] to \[\d+\] of the midterm plan\.?", "", text)
     text = text.strip()
-    is_web = "[Online]" in text or "Accessed:" in text
+    # A web source is an entry marked online, or one with a link and no DOI or arXiv number.
+    is_web = "[Online]" in text or "Accessed:" in text or ("doi:" not in text and "arXiv:" not in text)
     if is_web and link.startswith("http"):
         text = text.replace(" [Online].", "").rstrip()
         if not text.endswith("."):

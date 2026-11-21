@@ -52,7 +52,7 @@ TEXT = {
     "SA": dict(head="Simulation A",
                body="A sensor that steadily reads 0~to~80~% too~low"),
     "SB": dict(head="Simulation B",
-               body="The three reported faults, in episodes of 2,~6 and 12~hours"),
+               body="The three reported faults, in periods of 2,~6 and 12~hours"),
     "R1": dict(tag="R1", body="At what error decisions change"),
     "R2": dict(tag="R2", body="Accuracy of a working sensor"),
     "R4": dict(tag="R4", body="What each fault changes"),

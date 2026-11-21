@@ -535,7 +535,7 @@ PREAMBLE = r"""\documentclass[@@FONT@@pt,letterpaper]{article}
 \renewcommand{\floatpagefraction}{0.8}
 \setcounter{topnumber}{2}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{3}
 \clubpenalty=10000 \widowpenalty=10000
-\emergencystretch=1.5em
+\emergencystretch=8em
 \newbox\measbox
 \newcommand{\meas}[1]{\typeout{MEAS #1 \the\dimexpr\ht\measbox+\dp\measbox\relax}}
 """

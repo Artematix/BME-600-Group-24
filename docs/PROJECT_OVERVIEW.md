@@ -54,7 +54,7 @@ Last updated: 2026-11-21
 | Phase 2: fault simulation | Version 2 done (decisions, six fault families, lookup table). See `analysis/SIMULATION_V2.md`. |
 | Phase 2: three-fault simulation (the faults the FDA reports describe, in episodes) | Done 2026-11-20. See `analysis/SIMULATION_THREE_FAULTS.md`. |
 | Checks for the paper: trial errors against reported errors; low detection with a 15-minute window; precision of the text patterns; recall count and date | Done 2026-11-21. See `analysis/TAIL_COMPARISON.md`, `analysis/LOW_DETECTION_WINDOW.md`, `fda-maude/results/text/PATTERN_PRECISION.md`, `fda-maude/results/RECALL_COUNT_CHECK.md`, `fda-maude/results/RECALL_DATE_CHECK.md`. |
-| Final paper | Outline, five figures and three tables built 2026-11-21 (`docs/paper/`). Results in their second version after Artemy's read, Methods in a first version (`docs/paper/PAPER.md`). Discussion, Introduction and Abstract not started. |
+| Final paper | Outline, five figures and three tables built 2026-11-21 (`docs/paper/`). Full draft written 2026-11-21 (`docs/paper/PAPER.md`, PDF: `docs/paper/PAPER.pdf`, 10 pages). All sections have text except AI-Assisted Work and Author Contributions, which the team writes. Open: rubric check, two references to confirm, citations to confirm. |
 | Findings memo and paper checklist | Done 2026-10-30; updated 2026-11-08 with the 2026-11-06 memos. See `analysis/FINDINGS.md`. |
 | Midterm research plan | Submitted. File: `docs/plans/2026-10-23_midterm-research-plan.pdf` |
 | Final project | Due Dec 4 2026, 11:59 PM. One PDF + GitHub link. |
